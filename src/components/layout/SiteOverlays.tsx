@@ -9,7 +9,9 @@ export default function SiteLayout({
   return (
     <>
       <Header />
+
       <main>{children}</main>
+
       <FloatingActions />
     </>
   );
