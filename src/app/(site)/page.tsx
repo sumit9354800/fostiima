@@ -1,6 +1,15 @@
-import Hero from '../../components/home/Hero';
-
+import AboutSection from "@/components/home/AboutSection";
+import Hero from "@/components/home/Hero";
+import StatsBar from "@/components/home/StatsBar";
 
 export default function HomePage() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+
+      <StatsBar />
+
+      <AboutSection />
+    </>
+  );
 }
