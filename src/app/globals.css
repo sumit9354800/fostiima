@@ -1,2 +1,13 @@
 @import "tailwindcss";
 
+/* =========================================================
+   markAIble Voice Widget
+   ========================================================= */
+
+@media (max-width: 640px) {
+  /* Keep the widget inside the viewport */
+  [id*="markaible"],
+  [class*="markaible"] {
+    max-width: calc(100vw - 24px) !important;
+  }
+}
