@@ -79,20 +79,27 @@ export default function ReviewSection() {
         {visibleReviews.length > 0 ? (
           <div
             ref={sliderRef}
-            className={`flex gap-5 ${
-              hasCarousel
-                ? "overflow-x-auto snap-x snap-mandatory scroll-smooth pb-3 scrollbar-hide"
-                : "overflow-hidden"
-            }`}
+            className="
+      flex
+      gap-5
+      overflow-x-auto
+      snap-x
+      snap-mandatory
+      scroll-smooth
+      pb-3
+      scrollbar-hide
+    "
           >
             {visibleReviews.map((review) => (
               <div
                 key={review.id}
-                className={
-                  hasCarousel
-                    ? "w-[85%] shrink-0 snap-start sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
-                    : "w-full shrink-0 sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
-                }
+                className="
+          w-[88%]
+          shrink-0
+          snap-start
+          sm:w-[calc(50%-10px)]
+          lg:w-[calc(33.333%-14px)]
+        "
               >
                 <ReviewCard review={review} />
               </div>
