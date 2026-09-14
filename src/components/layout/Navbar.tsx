@@ -4,7 +4,10 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-import { navigationItems, type NavigationItem } from "@/config/navigation";
+import {
+  navigationItems,
+  type NavigationItem,
+} from "@/config/navigation";
 
 type DesktopMenuProps = {
   item: NavigationItem;
@@ -19,14 +22,15 @@ function DesktopMenuItem({ item }: DesktopMenuProps) {
     item.href === "/"
       ? pathname === "/"
       : item.href
-        ? pathname === item.href || pathname.startsWith(`${item.href}/`)
+        ? pathname === item.href ||
+          pathname.startsWith(`${item.href}/`)
         : false;
 
   if (!hasChildren) {
     return (
       <Link
         href={item.href ?? "#"}
-        className={`relative flex h-full items-center whitespace-nowrap px-3 text-[12px] font-semibold uppercase tracking-[0.035em] transition-colors duration-200 xl:px-3.5 ${
+        className={`relative flex h-full shrink-0 items-center whitespace-nowrap px-2 text-[10px] font-semibold uppercase tracking-[0.02em] transition-colors duration-200 min-[1350px]:px-2.5 min-[1350px]:text-[11px] min-[1450px]:px-3 min-[1450px]:text-[12px] ${
           isActive
             ? "text-[#c31e3b]"
             : "text-[#172033] hover:text-[#c31e3b]"
@@ -35,17 +39,17 @@ function DesktopMenuItem({ item }: DesktopMenuProps) {
         {item.label}
 
         {isActive && (
-          <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#c31e3b] xl:left-3.5 xl:right-3.5" />
+          <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#c31e3b] min-[1350px]:left-2.5 min-[1350px]:right-2.5 min-[1450px]:left-3 min-[1450px]:right-3" />
         )}
       </Link>
     );
   }
 
   return (
-    <div className="group relative flex h-full items-center">
+    <div className="group relative flex h-full shrink-0 items-center">
       <button
         type="button"
-        className={`relative flex h-full items-center gap-1 whitespace-nowrap px-3 text-[12px] font-semibold uppercase tracking-[0.035em] transition-colors duration-200 xl:px-3.5 ${
+        className={`relative flex h-full shrink-0 items-center gap-0.5 whitespace-nowrap px-2 text-[10px] font-semibold uppercase tracking-[0.02em] transition-colors duration-200 min-[1350px]:gap-1 min-[1350px]:px-2.5 min-[1350px]:text-[11px] min-[1450px]:px-3 min-[1450px]:text-[12px] ${
           isActive
             ? "text-[#c31e3b]"
             : "text-[#172033] hover:text-[#c31e3b]"
@@ -55,17 +59,19 @@ function DesktopMenuItem({ item }: DesktopMenuProps) {
         {item.label}
 
         <ChevronDown
-          size={13}
+          size={11}
           strokeWidth={2}
-          className="transition-transform duration-200 group-hover:rotate-180"
+          className="transition-transform duration-200 group-hover:rotate-180 min-[1350px]:size-3 min-[1450px]:size-[13px]"
+          aria-hidden="true"
         />
 
         {isActive && (
-          <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#c31e3b] xl:left-3.5 xl:right-3.5" />
+          <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#c31e3b] min-[1350px]:left-2.5 min-[1350px]:right-2.5 min-[1450px]:left-3 min-[1450px]:right-3" />
         )}
       </button>
 
-      <div className="pointer-events-none absolute left-0 top-full z-50 min-w-[245px] translate-y-2 pt-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+      {/* First-level dropdown */}
+      <div className="pointer-events-none absolute left-0 top-full z-[100] min-w-[230px] translate-y-2 pt-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 min-[1450px]:min-w-[245px]">
         <div className="overflow-visible border border-slate-200 bg-white py-2 shadow-[0_18px_50px_rgba(15,23,42,0.12)]">
           {item.children?.map((child) => (
             <DesktopSubMenuItem
@@ -81,10 +87,12 @@ function DesktopMenuItem({ item }: DesktopMenuProps) {
 
 function DesktopSubMenuItem({ item }: DesktopMenuProps) {
   const pathname = usePathname();
+
   const hasChildren = Boolean(item.children?.length);
 
   const isActive = item.href
-    ? pathname === item.href || pathname.startsWith(`${item.href}/`)
+    ? pathname === item.href ||
+      pathname.startsWith(`${item.href}/`)
     : false;
 
   if (!hasChildren) {
@@ -117,11 +125,13 @@ function DesktopSubMenuItem({ item }: DesktopMenuProps) {
 
         <ChevronDown
           size={13}
-          className="-rotate-90 transition-transform duration-200 group-hover/sub:-rotate-90"
+          className="-rotate-90"
+          aria-hidden="true"
         />
       </div>
 
-      <div className="pointer-events-none absolute left-full top-0 ml-1 min-w-[245px] translate-x-2 opacity-0 transition-all duration-200 group-hover/sub:pointer-events-auto group-hover/sub:translate-x-0 group-hover/sub:opacity-100">
+      {/* Second-level dropdown */}
+      <div className="pointer-events-none absolute left-full top-0 ml-1 min-w-[230px] translate-x-2 opacity-0 transition-all duration-200 group-hover/sub:pointer-events-auto group-hover/sub:translate-x-0 group-hover/sub:opacity-100 min-[1450px]:min-w-[245px]">
         <div className="border border-slate-200 bg-white py-2 shadow-[0_18px_50px_rgba(15,23,42,0.12)]">
           {item.children?.map((child) => (
             <Link
@@ -140,25 +150,30 @@ function DesktopSubMenuItem({ item }: DesktopMenuProps) {
 
 export default function Navbar() {
   return (
-    <nav className="hidden h-[76px] bg-white lg:block">
-      <div className="mx-auto flex h-full max-w-[1440px] items-center px-6 xl:px-8">
+    <nav
+      aria-label="Main navigation"
+      className="hidden h-[76px] w-full bg-white shadow-[0_2px_10px_rgba(15,23,42,0.06)] xl:block"
+    >
+      <div className="mx-auto flex h-full w-full max-w-[1440px] items-center px-4 min-[1350px]:px-6 min-[1450px]:px-8">
+        {/* Logo */}
         <Link
           href="/"
-          className="mr-auto flex shrink-0 items-center"
+          className="flex w-[120px] shrink-0 items-center min-[1350px]:w-[135px] min-[1450px]:w-[150px]"
           aria-label="FOSTIIMA Business School Home"
         >
           <div className="flex flex-col leading-none">
-            <span className="text-[24px] font-extrabold tracking-[-0.04em] text-[#123b79]">
+            <span className="text-[22px] font-extrabold tracking-[-0.04em] text-[#123b79] min-[1350px]:text-[23px] min-[1450px]:text-[24px]">
               FOSTIIMA
             </span>
 
-            <span className="mt-1 text-[8px] font-bold uppercase tracking-[0.25em] text-[#c31e3b]">
+            <span className="mt-1 text-[7px] font-bold uppercase tracking-[0.22em] text-[#c31e3b] min-[1350px]:text-[8px] min-[1450px]:tracking-[0.25em]">
               Business School
             </span>
           </div>
         </Link>
 
-        <div className="flex h-full items-center">
+        {/* Desktop Navigation */}
+        <div className="flex h-full min-w-0 flex-1 items-center justify-end overflow-visible">
           {navigationItems.map((item) => (
             <DesktopMenuItem
               key={item.label}
