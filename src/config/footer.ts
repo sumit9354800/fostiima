@@ -128,27 +128,27 @@ export const otherLinks: FooterLink[] = [
 export const socialLinks = [
   {
     label: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/fostiima",
   },
   {
     label: "X",
-    href: "#",
+    href: "https://twitter.com/fostiima",
   },
   {
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/fostiima",
   },
   {
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/school/fostiima-business-school",
   },
   {
     label: "YouTube",
-    href: "#",
+    href: "https://www.youtube.com/channel/UCUxSf6244jQxfPEWWOY628Q",
   },
   {
     label: "Pinterest",
-    href: "#",
+    href: "https://www.pinterest.com/",
   },
   {
     label: "WhatsApp",
