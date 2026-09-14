@@ -10,7 +10,8 @@ export const mediaPresenceData: MediaPresenceItem[] = [
   {
     id: "bw-education",
     publication: "BW Education",
-    logo: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_bw-education.jpg",
+    logo:
+      "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_bw-education.jpg",
     title:
       "A FOSTIIMA Visionary: Extending IIM-A Ethos to MBA Aspirants",
     href:
@@ -19,7 +20,8 @@ export const mediaPresenceData: MediaPresenceItem[] = [
   {
     id: "business-standard-global-leadership",
     publication: "Business Standard",
-    logo: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_business-standard.jpg",
+    logo:
+      "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_business-standard.jpg",
     title:
       "Global Leadership Summit 2025 Concludes Successfully at the University of Oxford",
     href:
@@ -28,7 +30,8 @@ export const mediaPresenceData: MediaPresenceItem[] = [
   {
     id: "india-today",
     publication: "India Today",
-    logo: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_india-today.jpg",
+    logo:
+      "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_india-today.jpg",
     title:
       "6 Factors to Consider While Choosing Specialisation in PGDM",
     href:
@@ -37,7 +40,8 @@ export const mediaPresenceData: MediaPresenceItem[] = [
   {
     id: "business-standard-margdarshak",
     publication: "Business Standard",
-    logo: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_business-standard1.jpg",
+    logo:
+      "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_business-standard1.jpg",
     title:
       "FOSTIIMA Business School Hosts MARGDARSHAK 3.0, Celebrating HR Excellence",
     href:
@@ -46,7 +50,8 @@ export const mediaPresenceData: MediaPresenceItem[] = [
   {
     id: "hindustan-times",
     publication: "Hindustan Times",
-    logo: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_hindustan-times.jpg",
+    logo:
+      "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_hindustan-times.jpg",
     title:
       "How to Conduct Yourself Professionally in Meetings and Presentations",
     href:
@@ -55,10 +60,21 @@ export const mediaPresenceData: MediaPresenceItem[] = [
   {
     id: "zee-news",
     publication: "Zee News",
-    logo: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_z-news.jpg",
+    logo:
+      "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_z-news.jpg",
     title:
       "The 9-to-5 Myth: Rethinking Traditional Work Hours for a Resilient Workforce",
     href:
       "https://zeenews.india.com/lifestyle/the-9-to-5-myth-rethinking-traditional-work-hours-for-a-resilient-workforce-2866010.html",
+  },
+  {
+    id: "nav-bharat",
+    publication: "Nav Bharat Times",
+    logo:
+      "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_nav-bharat.jpg",
+    title:
+      "MBA या PGDM के बाद मिलेगी तगड़ी सैलरी वाली नौकरी? बस अपना लें ये 7 एक्सपर्ट टिप्स",
+    href:
+      "https://navbharattimes.indiatimes.com/education/expert-advice/top-7-tips-to-get-highest-paying-job-placement-after-mba-and-pgdm/articleshow/111278772.cms#google_vignette",
   },
 ];
