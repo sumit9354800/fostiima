@@ -10,6 +10,8 @@ import ConclaveSection from "@/components/conclave/ConclaveSection";
 import AwardsSection from "@/components/home/AwardsSection";
 import CampusLifeSection from "@/components/home/CampusLifeSection";
 import FacultySection from "@/components/home/FacultySection";
+import ReviewSection from "@/components/reviews/ReviewSection";
+import FAQSection from "@/components/home/FAQSection";
 
 export default function HomePage() {
   return (
@@ -37,6 +39,10 @@ export default function HomePage() {
       <FacultySection />
 
       <RecruitersSection />
+
+      <ReviewSection />
+
+      <FAQSection />
     </>
   );
 }
