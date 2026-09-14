@@ -60,8 +60,8 @@ export default function FloatingActions() {
       {/* markAIble Voice AI */}
       <Script
         src="https://www.markaible.com/widget.js"
-        data-agent="6a8957a6e92dde4cee745e87"
-        data-style="pill"
+        data-agent="6a9fa7d1dab71eb81cbeb108"
+        data-style="peek"
         data-panel="solid"
         strategy="afterInteractive"
       />
