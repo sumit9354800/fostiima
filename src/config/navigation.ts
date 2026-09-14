@@ -10,28 +10,37 @@ export const navigationItems: NavigationItem[] = [
     href: "/",
   },
 
+  //   {
+  //   label: "About Us",
+  //   href: "/about-us",
+  // },
+
   {
     label: "About Us",
     children: [
       {
+        label: "About Fostiima",
+        href: "/about-us#about-fostiima",
+      },
+      {
         label: "Our Vision",
-        href: "/our-vision",
+        href: "/about-us#our-vision",
       },
       {
         label: "Message From Chairman",
-        href: "/message-from-chairman",
+        href: "/about-us#message-from-chairman",
       },
       {
         label: "Trustees Founder",
-        href: "/trustees-founder",
+        href: "/about-us#trustees-founder",
       },
       {
         label: "Our Objectives",
-        href: "/our-objectives",
+        href: "/about-us#our-objectives",
       },
       {
         label: "Infrastructures",
-        href: "/infrastructures",
+        href: "/about-us#infrastructures",
       },
     ],
   },

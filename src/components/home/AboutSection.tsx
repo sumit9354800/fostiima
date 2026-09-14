@@ -66,25 +66,19 @@ export default function AboutSection() {
               About FOSTIIMA
             </p>
 
-            <h2 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#123b79] sm:text-5xl lg:text-[52px]">
-              Shaping Leaders for a{" "}
-              <span className="text-[#c31e3b]">Better Tomorrow</span>
+            <h2 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#123b79] sm:text-5xl lg:text-[30px]">
+              FOSTIIMA Business School{" "}
+              <span className="text-[#c31e3b]">Among the Best MBA Colleges in Delhi NCR</span>
             </h2>
 
-            <div className="mt-7 space-y-5 text-[15px] leading-7 text-slate-600 sm:text-base">
+            <div className="mt-7 space-y-5 text-[15px] text-justify leading-7 text-slate-600 sm:text-base">
               <p>
-                FOSTIIMA Business School is AICTE approved and committed to
-                delivering quality management education. Our programs are
-                designed to develop competent professionals with a global
-                mindset and entrepreneurial spirit.
+               Selecting the <b>best MBA Colleges in Delhi</b> from a list of numerous institutes which may make claims of being the best can be challenging. Our difference isn&apos;t just in the marketing, its in the DNA, our faculty and how our curriculum has been designed at FOSTIIMA Business School. Educating through a highly interactive platform and an experiential environment, FOSTIIMA is one of <b>the Best MBA Colleges in Delhi NCR</b> that provides a conducive learning environment with an emphasis on teamwork, vision, creativity and discipline.
               </p>
 
               <p>
-                Founded by alumni of the prestigious Indian Institute of
-                Management (IIM), FOSTIIMA brings together experienced corporate
-                leaders, case-based learning frameworks, and transformative
-                mentorship to prepare students for executive leadership across
-                industries.
+               We have designed our <b>MBA Course and PGDM Course</b> in such a way that it helps the students understand the theory of the business and then apply it into the practical aspects of the business, a gap which many <b>PGDM Colleges in Delhi</b> are not able to bridge. What makes FOSTIIMA unique is that students are not only learning the concepts of management, but they are also in the presence of industry veterans who have experience in multiple cross-functional and cross-industry areas and bring their experience into every session.
+
               </p>
             </div>
           </div>

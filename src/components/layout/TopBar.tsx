@@ -31,32 +31,79 @@ const contactDetails = [
 
 export default function TopBar() {
   return (
-    <div className="hidden w-full border-b border-slate-200 bg-white lg:block">
-      <div className="mx-auto flex min-h-10 w-full max-w-[1440px] items-center justify-between px-6 xl:px-8">
-        {/* Contact Details */}
-        <div className="flex min-w-0 items-center">
+    <div
+      className="
+        hidden
+        h-[44px]
+        w-full
+        border-b
+        border-slate-200
+        bg-white
+        lg:block
+      "
+    >
+      <div
+        className="
+          mx-auto
+          flex
+          h-full
+          w-full
+          max-w-[1440px]
+          items-center
+          justify-between
+          px-6
+          xl:px-8
+        "
+      >
+        {/* =====================================================
+            CONTACT DETAILS
+        ====================================================== */}
+        <div className="flex h-full min-w-0 items-center">
           {contactDetails.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <div
                 key={item.label}
-                className="flex shrink-0 items-center"
+                className="flex h-full shrink-0 items-center"
               >
                 {index > 0 && (
-                  <span className="mx-5 h-4 w-px bg-slate-200" />
+                  <span
+                    aria-hidden="true"
+                    className="mx-5 h-4 w-px shrink-0 bg-slate-200"
+                  />
                 )}
 
                 <Link
                   href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 whitespace-nowrap text-[11px] font-medium text-slate-600 transition-colors hover:text-[#c31e3b]"
+                  target={
+                    item.href.startsWith("http")
+                      ? "_blank"
+                      : undefined
+                  }
+                  rel={
+                    item.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="
+                    group
+                    flex
+                    items-center
+                    gap-2
+                    whitespace-nowrap
+                    text-[11px]
+                    font-medium
+                    text-slate-600
+                    transition-colors
+                    duration-200
+                    hover:text-[#c31e3b]
+                  "
                 >
                   <Icon
                     size={13}
                     strokeWidth={1.8}
-                    className="text-[#c31e3b]"
+                    className="shrink-0 text-[#c31e3b]"
                     aria-hidden="true"
                   />
 
@@ -73,20 +120,45 @@ export default function TopBar() {
           })}
         </div>
 
-        {/* Pay Fees */}
+        {/* =====================================================
+            PAY FEES
+        ====================================================== */}
         <Link
           href={paymentUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group ml-6 inline-flex shrink-0 items-center gap-2 bg-[#c31e3b] px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-white transition-all duration-200 hover:bg-[#a81731]"
+          className="
+            group
+            ml-6
+            inline-flex
+            h-full
+            shrink-0
+            items-center
+            gap-2
+            bg-[#c31e3b]
+            px-5
+            text-[11px]
+            font-semibold
+            uppercase
+            tracking-[0.08em]
+            text-white
+            transition-colors
+            duration-200
+            hover:bg-[#a81731]
+          "
         >
-          Pay Fees
+          <span>Pay Fees</span>
 
           <ArrowUpRight
             size={13}
             strokeWidth={2}
-            className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
             aria-hidden="true"
+            className="
+              transition-transform
+              duration-200
+              group-hover:-translate-y-0.5
+              group-hover:translate-x-0.5
+            "
           />
         </Link>
       </div>
