@@ -20,7 +20,7 @@ const contactDetails = [
     icon: MapPin,
     label: "Location",
     value: "Dwarka Sector 9",
-    href: "#location",
+    href: "https://maps.app.goo.gl/kd8KVPNQYUw56hfW9",
   },
 ] as const;
 
