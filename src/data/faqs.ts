@@ -7,59 +7,47 @@ export type FAQ = {
 
 export const faqData: FAQ[] = [
   {
-    id: "what-is-fostiima-pgdm",
+    id: "q1-best-mba-colleges-delhi-ncr",
     category: "Admissions",
-    question: "What is the PGDM programme offered by FOSTIIMA?",
+    question:
+      "What makes FOSTIIMA one of the Best MBA Colleges in Delhi NCR?",
     answer:
-      "FOSTIIMA Business School offers a two-year full-time PGDM programme designed to develop management knowledge, practical skills and leadership capabilities.",
+      "The students who graduate from IIM Ahmedabad have started FOSTIIMA, which has been designed based on the IIM curriculum and the professors have ample corporate experience, which is rare at other institutes.",
   },
+
   {
-    id: "is-pgdm-aicte-approved",
+    id: "q2-industry-experienced-faculty",
     category: "Academics",
-    question: "Is FOSTIIMA's PGDM programme AICTE approved?",
+    question:
+      "Is FOSTIIMA's faculty actually industry-experienced?",
     answer:
-      "Yes. FOSTIIMA's PGDM programme is approved by the All India Council for Technical Education (AICTE).",
+      "Yes. This ensures that the students receive knowledge from industry practitioners and not just from academic professors, as almost all the core, adjunct and guest faculty from FOSTIIMA have worked in various industry roles for a few years before joining the faculty of the institute.",
   },
+
   {
-    id: "pgdm-specializations",
+    id: "q3-mba-pgdm-programs",
     category: "Academics",
-    question: "What specializations are available?",
+    question:
+      "Does FOSTIIMA offer both MBA and PGDM programs?",
     answer:
-      "The programme offers specialization areas including Finance, Marketing, Human Resources, AI/Analytics & Operations, and International Business.",
+      "FOSTIIMA provides a rigorous MBA Course and PGDM Course which is designed in a curriculum which is benchmarked with IIM and a very practical approach to learning based on industry inputs.",
   },
+
   {
-    id: "eligibility",
-    category: "Admissions",
-    question: "What is the eligibility criteria for admission?",
-    answer:
-      "Candidates should meet the eligibility requirements prescribed for admission to the PGDM programme. Please refer to the official admissions process for the current eligibility requirements.",
-  },
-  {
-    id: "programme-duration",
-    category: "Academics",
-    question: "What is the duration of the PGDM programme?",
-    answer:
-      "The PGDM programme is a two-year full-time management programme.",
-  },
-  {
-    id: "campus-location",
-    category: "Campus",
-    question: "Where is FOSTIIMA Business School located?",
-    answer:
-      "FOSTIIMA Business School is located in Dwarka Sector 9, New Delhi.",
-  },
-  {
-    id: "placements",
+    id: "q4-placement-support",
     category: "Placements",
-    question: "Does FOSTIIMA provide placement assistance?",
+    question:
+      "How does FOSTIIMA support placements compared to other PGDM Colleges in Delhi?",
     answer:
-      "FOSTIIMA provides placement assistance and facilitates interaction between students and industry through its corporate interface and placement activities.",
+      "FOSTIIMA's Pan IIT-IIM Global Network provides students with opportunities to connect them to better placements as compared to the industry network that many standalone B-schools can offer.",
   },
+
   {
-    id: "application",
+    id: "q5-best-pgdm-colleges-delhi",
     category: "Admissions",
-    question: "How can I apply to FOSTIIMA?",
+    question:
+      "Why should I consider FOSTIIMA among the Best PGDM Colleges in Delhi?",
     answer:
-      "Students can apply through the FOSTIIMA admissions process. The application process, eligibility requirements and other admission details are available through the admissions section of the website.",
+      "The entire institutional culture, spanning the founders, managements, curriculum benchmarking and faculty is aligned with the IIM standards, providing students with a learning experience very similar to what is received by the top of the IIM spectrum.",
   },
 ];

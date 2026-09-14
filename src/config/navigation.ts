@@ -22,8 +22,8 @@ export const navigationItems: NavigationItem[] = [
         href: "/message-from-chairman",
       },
       {
-        label: "Trustees",
-        href: "/trustees",
+        label: "Trustees Founder",
+        href: "/trustees-founder",
       },
       {
         label: "Our Objectives",
