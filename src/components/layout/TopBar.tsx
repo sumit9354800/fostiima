@@ -39,6 +39,7 @@ export default function TopBar() {
                 )}
 
                 <Link
+                target="_blank"
                   href={item.href}
                   className="group flex items-center gap-2 text-[11px] font-medium text-slate-600 transition-colors hover:text-[#c31e3b]"
                 >

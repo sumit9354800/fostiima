@@ -12,6 +12,7 @@ import CampusLifeSection from "@/components/home/CampusLifeSection";
 import FacultySection from "@/components/home/FacultySection";
 import ReviewSection from "@/components/reviews/ReviewSection";
 import FAQSection from "@/components/home/FAQSection";
+import MediaPresenceSection from "@/components/home/MediaPresenceSection";
 
 export default function HomePage() {
   return (
@@ -39,6 +40,8 @@ export default function HomePage() {
       <FacultySection />
 
       <RecruitersSection />
+
+      <MediaPresenceSection />
 
       <ReviewSection />
 
