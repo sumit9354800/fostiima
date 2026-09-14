@@ -1,0 +1,69 @@
+const highlights = [
+  {
+    title: "Life at FOSTIIMA",
+    description:
+      "A vibrant campus life that nurtures leadership, creativity and lifelong connections.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1683887034491-f58b4c4fca72?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3R1ZGVudHN8ZW58MHx8MHx8fDA%3D",
+    href: "/life-at-fostiima",
+    eyebrow: "Campus Life",
+  },
+  {
+    title: "Placements That Open Doors",
+    description:
+      "Strong corporate connect ensuring bright careers and meaningful career opportunities.",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZGVudHN8ZW58MHx8MHx8fDA%3D",
+    href: "/placement",
+    eyebrow: "Career Opportunities",
+  },
+];
+
+export default function CampusHighlights() {
+  return (
+    <section className="overflow-hidden bg-white py-14 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {highlights.map((item) => (
+            <a
+              key={item.title}
+              href={item.href}
+              className="group relative isolate block aspect-[2/0.82] min-h-[220px] overflow-hidden rounded-2xl bg-[#071a35] shadow-[0_12px_35px_rgba(18,59,121,0.12)]"
+            >
+              {/* Background */}
+              <img
+                src={item.image}
+                alt=""
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+
+              {/* Premium Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#071a35]/95 via-[#071a35]/75 to-[#071a35]/20" />
+
+              {/* Content */}
+              <div className="relative z-10 flex h-full max-w-[78%] flex-col justify-center px-6 py-7 sm:px-8 lg:px-9">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#f4c400] sm:text-xs">
+                  {item.eyebrow}
+                </p>
+
+                <h2 className="mt-2 font-serif text-2xl font-bold leading-tight text-white sm:text-3xl">
+                  {item.title}
+                </h2>
+
+                <p className="mt-3 max-w-md text-xs leading-5 text-white/75 sm:text-sm sm:leading-6">
+                  {item.description}
+                </p>
+
+                <span className="mt-4 inline-flex items-center text-[11px] font-bold uppercase tracking-[0.12em] text-white transition-transform duration-300 group-hover:translate-x-1">
+                  Explore More
+                  <span className="ml-2 text-[#f4c400]">→</span>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
