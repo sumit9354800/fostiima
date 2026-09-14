@@ -112,14 +112,19 @@ export default function CampusLifeSection() {
         </div>
 
         {/* Cards */}
+        {/* Cards */}
         <div
           ref={sliderRef}
-          className={[
-            "flex gap-5",
-            hasCarousel
-              ? "overflow-x-auto snap-x snap-mandatory scroll-smooth pb-3 scrollbar-hide"
-              : "overflow-hidden",
-          ].join(" ")}
+          className="
+    flex
+    gap-5
+    overflow-x-auto
+    snap-x
+    snap-mandatory
+    scroll-smooth
+    pb-3
+    scrollbar-hide
+  "
         >
           {campusLifeItems.map((item) => {
             const Icon = item.icon;
@@ -127,24 +132,44 @@ export default function CampusLifeSection() {
             return (
               <article
                 key={item.title}
-                className={[
-                  "group relative shrink-0 overflow-hidden rounded-xl",
-                  "border border-slate-200 bg-white shadow-sm",
-                  "transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
-                  hasCarousel
-                    ? "w-[85%] snap-start sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
-                    : "w-full sm:w-[calc(50%-10px)] lg:w-[calc(25%-15px)]",
-                ].join(" ")}
+                className="
+          group
+          relative
+          w-[88%]
+          shrink-0
+          snap-start
+          overflow-hidden
+          rounded-xl
+          border
+          border-slate-200
+          bg-white
+          shadow-sm
+          transition-all
+          duration-300
+          hover:-translate-y-1
+          hover:shadow-xl
+
+          sm:w-[calc(50%-10px)]
+
+          lg:w-[calc(25%-15px)]
+        "
               >
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden sm:h-72 lg:h-[300px]">
+                <div className="relative h-72 overflow-hidden sm:h-80 lg:h-[300px]">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="
+              h-full
+              w-full
+              object-cover
+              transition-transform
+              duration-700
+              group-hover:scale-105
+            "
                   />
 
-                  {/* Default subtle overlay */}
+                  {/* Default overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071a38]/35 via-transparent to-transparent" />
 
                   {/* Hover overlay */}
@@ -155,8 +180,8 @@ export default function CampusLifeSection() {
                     <Icon className="h-5 w-5" strokeWidth={1.8} />
                   </div>
 
-                  {/* Heading — ONLY visible on hover */}
-                  <div className="absolute inset-x-0 bottom-0 p-5 translate-y-3 opacity-0 transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
+                  {/* Heading - only on hover */}
+                  <div className="absolute inset-x-0 bottom-0 translate-y-3 p-5 opacity-0 transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
                     <h3 className="text-xl font-bold leading-tight text-white sm:text-2xl">
                       {item.title}
                     </h3>
