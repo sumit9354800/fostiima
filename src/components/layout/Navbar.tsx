@@ -4,10 +4,7 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-import {
-  navigationItems,
-  type NavigationItem,
-} from "@/config/navigation";
+import { navigationItems, type NavigationItem } from "@/config/navigation";
 
 type DesktopMenuProps = {
   item: NavigationItem;
@@ -22,8 +19,7 @@ function DesktopMenuItem({ item }: DesktopMenuProps) {
     item.href === "/"
       ? pathname === "/"
       : item.href
-        ? pathname === item.href ||
-          pathname.startsWith(`${item.href}/`)
+        ? pathname === item.href || pathname.startsWith(`${item.href}/`)
         : false;
 
   if (!hasChildren) {
@@ -31,9 +27,7 @@ function DesktopMenuItem({ item }: DesktopMenuProps) {
       <Link
         href={item.href ?? "#"}
         className={`relative flex h-full shrink-0 items-center whitespace-nowrap px-2 text-[10px] font-semibold uppercase tracking-[0.02em] transition-colors duration-200 min-[1350px]:px-2.5 min-[1350px]:text-[11px] min-[1450px]:px-3 min-[1450px]:text-[12px] ${
-          isActive
-            ? "text-[#c31e3b]"
-            : "text-[#172033] hover:text-[#c31e3b]"
+          isActive ? "text-[#c31e3b]" : "text-[#172033] hover:text-[#c31e3b]"
         }`}
       >
         {item.label}
@@ -47,12 +41,11 @@ function DesktopMenuItem({ item }: DesktopMenuProps) {
 
   return (
     <div className="group relative flex h-full shrink-0 items-center">
-      <button
-        type="button"
+      {/* Parent Link */}
+      <Link
+        href={item.href ?? "#"}
         className={`relative flex h-full shrink-0 items-center gap-0.5 whitespace-nowrap px-2 text-[10px] font-semibold uppercase tracking-[0.02em] transition-colors duration-200 min-[1350px]:gap-1 min-[1350px]:px-2.5 min-[1350px]:text-[11px] min-[1450px]:px-3 min-[1450px]:text-[12px] ${
-          isActive
-            ? "text-[#c31e3b]"
-            : "text-[#172033] hover:text-[#c31e3b]"
+          isActive ? "text-[#c31e3b]" : "text-[#172033] hover:text-[#c31e3b]"
         }`}
         aria-haspopup="menu"
       >
@@ -68,7 +61,7 @@ function DesktopMenuItem({ item }: DesktopMenuProps) {
         {isActive && (
           <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#c31e3b] min-[1350px]:left-2.5 min-[1350px]:right-2.5 min-[1450px]:left-3 min-[1450px]:right-3" />
         )}
-      </button>
+      </Link>
 
       {/* First-level dropdown */}
       <div className="pointer-events-none absolute left-0 top-full z-[100] min-w-[230px] translate-y-2 pt-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 min-[1450px]:min-w-[245px]">
@@ -91,8 +84,7 @@ function DesktopSubMenuItem({ item }: DesktopMenuProps) {
   const hasChildren = Boolean(item.children?.length);
 
   const isActive = item.href
-    ? pathname === item.href ||
-      pathname.startsWith(`${item.href}/`)
+    ? pathname === item.href || pathname.startsWith(`${item.href}/`)
     : false;
 
   if (!hasChildren) {
@@ -123,11 +115,7 @@ function DesktopSubMenuItem({ item }: DesktopMenuProps) {
       >
         <span>{item.label}</span>
 
-        <ChevronDown
-          size={13}
-          className="-rotate-90"
-          aria-hidden="true"
-        />
+        <ChevronDown size={13} className="-rotate-90" aria-hidden="true" />
       </div>
 
       {/* Second-level dropdown */}
@@ -175,10 +163,7 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="flex h-full min-w-0 flex-1 items-center justify-end overflow-visible">
           {navigationItems.map((item) => (
-            <DesktopMenuItem
-              key={item.label}
-              item={item}
-            />
+            <DesktopMenuItem key={item.label} item={item} />
           ))}
         </div>
       </div>
