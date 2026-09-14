@@ -19,6 +19,10 @@ export const navigationItems: NavigationItem[] = [
     label: "About Us",
     children: [
       {
+        label: "About Us",
+        href: "/about-us",
+      },
+      {
         label: "About Fostiima",
         href: "/about-us#about-fostiima",
       },
