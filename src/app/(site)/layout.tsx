@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/floating/FloatingActions";
 
 export default function SiteLayout({
@@ -9,7 +10,11 @@ export default function SiteLayout({
   return (
     <>
       <Header />
+
       <main>{children}</main>
+
+      <Footer />
+
       <FloatingActions />
     </>
   );
