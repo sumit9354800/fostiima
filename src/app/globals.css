@@ -50,3 +50,59 @@
     animation-duration: 1ms;
   }
 }
+
+@keyframes recruiters-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes recruiters-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-recruiters-left {
+  animation: recruiters-left 32s linear infinite;
+}
+
+.animate-recruiters-right {
+  animation: recruiters-right 32s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .animate-recruiters-left {
+    animation-duration: 26s;
+  }
+
+  .animate-recruiters-right {
+    animation-duration: 26s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-recruiters-left,
+  .animate-recruiters-right {
+    animation-play-state: paused;
+  }
+}
+
+/* globals.css */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
