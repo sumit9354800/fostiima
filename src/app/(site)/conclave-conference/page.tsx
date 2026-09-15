@@ -16,29 +16,56 @@ export default function ConclaveConferencePage() {
   return (
     <main className="bg-[#f8faff]">
       {/* Hero */}
+      {/* Hero */}
       <section className="relative overflow-hidden bg-[#102a56] py-16 sm:py-20">
-        {/* Decorations */}
-        <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#1555a5]/30 blur-3xl" />
+  {/* Background Grid */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-0 opacity-[0.07]"
+    style={{
+      backgroundImage: `
+        linear-gradient(
+          to right,
+          rgba(255,255,255,0.35) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(255,255,255,0.35) 1px,
+          transparent 1px
+        )
+      `,
+      backgroundSize: "42px 42px",
+    }}
+  />
 
-        <div className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-[#c31e3b]/25 blur-3xl" />
+  {/* Decorations */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#1555a5]/30 blur-3xl"
+  />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#eab308]">
-            <CalendarDays className="h-4 w-4" />
-            Conclave / Conference
-          </span>
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-[#c31e3b]/25 blur-3xl"
+  />
 
-          <h1 className="mt-4 max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Ideas That{" "}
-            <span className="text-[#eab308]">Shape Tomorrow</span>
-          </h1>
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#eab308]">
+      <CalendarDays className="h-4 w-4" />
+      Conclave / Conference
+    </span>
 
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
-            Explore our conferences, summits and industry conversations that
-            bring together leaders, experts and ideas shaping the future.
-          </p>
-        </div>
-      </section>
+    <h1 className="mt-4 max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+      Ideas That <span className="text-[#eab308]">Shape Tomorrow</span>
+    </h1>
+
+    <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+      Explore our conferences, summits and industry conversations that
+      bring together leaders, experts and ideas shaping the future.
+    </p>
+  </div>
+</section>Ï
 
       {/* Events */}
       <section className="py-12 sm:py-16">

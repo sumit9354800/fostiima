@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BriefcaseBusiness, GraduationCap } from "lucide-react";
+import {
+  ArrowLeft,
+  BriefcaseBusiness,
+  GraduationCap,
+} from "lucide-react";
+
 import { facultyData } from "@/data/faculty";
 
 type FacultyPageProps = {
@@ -49,13 +54,40 @@ export default async function FacultyDetailPage({
   return (
     <main className="bg-[#f8faff]">
       {/* Hero */}
-      <section className="bg-[#102a56] py-14 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-[#102a56] py-14 sm:py-20">
+        {/* Background Grid */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(255,255,255,0.35) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255,255,255,0.35) 1px, transparent 1px)
+            `,
+            backgroundSize: "42px 42px",
+          }}
+        />
+
+        {/* Background accents */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#c31e3b]/10 blur-3xl"
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl"
+        />
+
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/faculties"
             className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft
+              aria-hidden="true"
+              className="h-4 w-4"
+            />
             Back to Faculties
           </Link>
 
@@ -93,7 +125,10 @@ export default async function FacultyDetailPage({
           <div className="grid gap-5 md:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#dbeafe] text-[#1555a5]">
-                <GraduationCap className="h-5 w-5" />
+                <GraduationCap
+                  aria-hidden="true"
+                  className="h-5 w-5"
+                />
               </div>
 
               <h2 className="mt-5 text-lg font-bold text-[#102a56]">
@@ -107,7 +142,10 @@ export default async function FacultyDetailPage({
 
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#fee2e2] text-[#c31e3b]">
-                <BriefcaseBusiness className="h-5 w-5" />
+                <BriefcaseBusiness
+                  aria-hidden="true"
+                  className="h-5 w-5"
+                />
               </div>
 
               <h2 className="mt-5 text-lg font-bold text-[#102a56]">

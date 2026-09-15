@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import type { ConclaveEvent } from "@/data/conclave";
 
@@ -8,8 +7,8 @@ type EventCardProps = {
 
 export default function EventCard({ event }: EventCardProps) {
   return (
-    <Link
-      href={`/conclave-conference/${event.slug}`}
+    <a
+      href={event.href}
       className="group block h-full"
     >
       <article className="relative flex h-full min-h-[220px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#c31e3b]/20 hover:shadow-xl">
@@ -55,6 +54,7 @@ export default function EventCard({ event }: EventCardProps) {
           {/* Read more */}
           <div className="mt-auto flex items-center gap-2 pt-5 text-sm font-semibold text-[#102a56] transition-colors group-hover:text-[#c31e3b]">
             Read More
+
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </div>
         </div>
@@ -62,6 +62,6 @@ export default function EventCard({ event }: EventCardProps) {
         {/* Hover decoration */}
         <div className="pointer-events-none absolute -bottom-12 -right-12 h-28 w-28 rounded-full bg-[#dbeafe]/60 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
       </article>
-    </Link>
+    </a>
   );
 }
