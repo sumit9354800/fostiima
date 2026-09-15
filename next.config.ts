@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "fostiima.org",
+      },
+      {
+        protocol: "https",
+        hostname: "wlproject.weblink4you.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
