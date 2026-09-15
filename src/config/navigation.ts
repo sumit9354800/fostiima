@@ -93,10 +93,10 @@ export const navigationItems: NavigationItem[] = [
         label: "Fee Structure",
         href: "/fee-structure",
       },
-      {
-        label: "Testimonials",
-        href: "/testimonials",
-      },
+      // {
+      //   label: "Testimonials",
+      //   href: "/testimonials",
+      // },
     ],
   },
 
@@ -105,61 +105,21 @@ export const navigationItems: NavigationItem[] = [
     children: [
       {
         label: "Summer Internship",
-        children: [
-          {
-            label: "SIP 2024 - 2026",
-            href: "/placement/summer-internship/sip-2024-2026",
-          },
-          {
-            label: "SIP 2023 - 2025",
-            href: "/placement/summer-internship/sip-2023-2025",
-          },
-          {
-            label: "SIP 2022 - 2024",
-            href: "/placement/summer-internship/sip-2022-2024",
-          },
-          {
-            label: "SIP 2021 - 2023",
-            href: "/placement/summer-internship/sip-2021-2023",
-          },
-          {
-            label: "SIP 2020 - 2022",
-            href: "/placement/summer-internship/sip-2020-2022",
-          },
-          {
-            label: "SIP 2019 - 2021",
-            href: "/placement/summer-internship/sip-2019-2021",
-          },
-        ],
+        href: "/placement/summer-internship",
       },
-
       {
         label: "Final Placements",
-        children: [
-          {
-            label: "Final Placement 2021 - 2023",
-            href: "/placement/final-placements/final-placement-2021-2023",
-          },
-          {
-            label: "Final Placement 2020 - 2022",
-            href: "/placement/final-placements/final-placement-2020-2022",
-          },
-          {
-            label: "Final Placement 2019 - 2021",
-            href: "/placement/final-placements/final-placement-2019-2021",
-          },
-        ],
+        href: "/placement/final-placements",
       },
+      // {
+      //   label: "Industry Interface",
+      //   href: "/placement/industry-interface",
+      // },
 
-      {
-        label: "Industry Interface",
-        href: "/placement/industry-interface",
-      },
-
-      {
-        label: "Recruiters",
-        href: "/placement/recruiters",
-      },
+      // {
+      //   label: "Recruiters",
+      //   href: "/placement/recruiters",
+      // },
     ],
   },
 
