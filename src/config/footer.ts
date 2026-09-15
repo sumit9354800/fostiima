@@ -11,35 +11,31 @@ export const quickLinks: FooterLink[] = [
   },
   {
     label: "About",
-    href: "/our-vision",
-  },
-  {
-    label: "Blogs",
-    href: "/blog",
+    href: "/about-us",
   },
   {
     label: "Academics",
-    href: "/programs/pgdm-mba",
+    href: "/academics",
   },
   {
-    label: "FAQs",
-    href: "/faq",
+    label: "Faculty",
+    href: "/faculties",
   },
   {
-    label: "AICTE Mandatory Disclosure",
-    href: "/aicte-mandatory-disclosure",
+    label: "FOSTIIMA Strength",
+    href: "/fostiima-strength",
   },
   {
     label: "News & Events",
     href: "/conclave-conference",
   },
   {
-    label: "IQAC",
-    href: "/iqac",
+    label: "How to Apply",
+    href: "/how-to-apply",
   },
   {
-    label: "Faculty Innovations in Teaching",
-    href: "/faculty-innovations-in-teaching",
+    label: "Fee Structure",
+    href: "/fee-structure",
   },
   {
     label: "Sitemap",
@@ -81,19 +77,14 @@ export const importantLinks: FooterLink[] = [
     href: "/balance-sheet",
   },
 ];
-
 export const otherLinks: FooterLink[] = [
-  {
-    label: "FOSTIIMA Strength",
-    href: "/fostiima-strength",
-  },
   {
     label: "Life at FOSTIIMA",
     href: "/life-at-fostiima",
   },
   {
     label: "Vision, Mission & PEOs",
-    href: "/our-vision",
+    href: "/about-us#our-vision",
   },
   {
     label: "HR Policy 2024-25",
@@ -155,5 +146,3 @@ export const socialLinks = [
     href: "https://wa.me/917678389436",
   },
 ];
-
-
