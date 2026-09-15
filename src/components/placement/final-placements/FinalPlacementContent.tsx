@@ -5,7 +5,6 @@ import { useState } from "react";
 import type { FinalPlacementBatch } from "@/data/placement/final-placements";
 
 import FinalPlacementBatchSelector from "./FinalPlacementBatchSelector";
-import FinalPlacementsHero from "./FinalPlacementsHero";
 import PlacementHighlights from "./PlacementHighlights";
 import PlacementStudents from "./PlacementStudents";
 import PlacementChart from "./PlacementCharts";
@@ -32,7 +31,6 @@ export default function FinalPlacementContent({
 
   return (
     <>
-      <FinalPlacementsHero />
 
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
