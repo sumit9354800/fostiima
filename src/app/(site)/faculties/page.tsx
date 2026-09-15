@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+
 import { facultyData } from "@/data/faculty";
 
 export const metadata: Metadata = {
@@ -13,8 +14,32 @@ export default function FacultiesPage() {
   return (
     <main className="bg-[#f8faff]">
       {/* Header */}
-      <section className="bg-[#102a56] py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-[#102a56] py-14 sm:py-20">
+        {/* Background Grid */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(255,255,255,0.35) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255,255,255,0.35) 1px, transparent 1px)
+            `,
+            backgroundSize: "42px 42px",
+          }}
+        />
+
+        {/* Background accents */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#c31e3b]/10 blur-3xl"
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#eab308]">
             Academics
           </span>
@@ -50,7 +75,10 @@ export default function FacultiesPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071a38]/90 via-transparent to-transparent" />
 
                   <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#102a56] opacity-0 shadow-md transition-opacity group-hover:opacity-100">
-                    <ArrowUpRight className="h-4 w-4" />
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="h-4 w-4"
+                    />
                   </div>
 
                   <div className="absolute inset-x-0 bottom-0 p-5">

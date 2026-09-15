@@ -58,19 +58,23 @@ export const navigationItems: NavigationItem[] = [
     label: "Academics",
     children: [
       {
-        label: "PGDM / MBA",
-        href: "/programs/pgdm-mba",
-        children: [
-          {
-            label: "Course Eligibility",
-            href: "/programs/pgdm-mba/course-eligibility",
-          },
-          {
-            label: "Course Module",
-            href: "/programs/pgdm-mba/course-module",
-          },
-        ],
+        label: "Academics",
+        href: "/academics",
       },
+      // {
+      //   label: "PGDM / MBA",
+      //   href: "/programs/pgdm-mba",
+      //   children: [
+      //     {
+      //       label: "Course Eligibility",
+      //       href: "/programs/pgdm-mba/course-eligibility",
+      //     },
+      //     {
+      //       label: "Course Module",
+      //       href: "/programs/pgdm-mba/course-module",
+      //     },
+      //   ],
+      // },
       {
         label: "Faculties",
         href: "/faculties",
