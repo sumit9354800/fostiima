@@ -132,17 +132,13 @@ export const navigationItems: NavigationItem[] = [
     label: "CONCLAVE/CONFERENCE",
     children: [
       {
-        label: "About Margdarshak",
-        href: "/about-margdarshak",
+        label: "CONCLAVE/CONFERENCE",
+        href: "/conclave-conference",
       },
-      {
-        label: "Margdarshak 4",
-        href: "/margdarshak-4",
-      },
-      {
-        label: "Margdarshak Contact Detail",
-        href: "/margdarshak-contact-detail",
-      },
+     {
+      label: "Margdarshak",
+      href: "/margdarshak",
+    },
     ],
   },
 
