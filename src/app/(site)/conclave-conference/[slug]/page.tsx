@@ -54,107 +54,119 @@ export default async function EventDetailPage({
   }
 
   return (
-    <main className="bg-[#f8faff]">
+    <main className="min-h-screen bg-[#f8fafc]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#102a56]">
-        {/* Grid */}
+      <section className="relative overflow-hidden bg-[#061a3a]">
+        {/* Background Grid */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          className="pointer-events-none absolute inset-0 opacity-[0.08]"
           style={{
-            backgroundImage: `
-              linear-gradient(
-                to right,
-                rgba(255,255,255,0.35) 1px,
-                transparent 1px
-              ),
-              linear-gradient(
-                to bottom,
-                rgba(255,255,255,0.35) 1px,
-                transparent 1px
-              )
-            `,
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.75) 1px, transparent 1px)",
             backgroundSize: "42px 42px",
           }}
         />
 
-        {/* Decorations */}
+        {/* Subtle Red Glow */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-[#1555a5]/30 blur-3xl"
+          className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#c31e3b]/10 blur-[120px]"
         />
 
+        {/* Subtle Blue Glow */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-[#c31e3b]/25 blur-3xl"
+          className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
         />
 
-        <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-20">
+          {/* Back Link */}
           <Link
             href="/conclave-conference"
-            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
+            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[#b8c5d8] transition-colors hover:text-white"
           >
             <ArrowLeft className="h-4 w-4" />
             All Events
           </Link>
 
-          <span className="inline-flex rounded-full border border-[#eab308]/30 bg-[#eab308]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#eab308]">
-            Conclave / Conference
-          </span>
+          {/* Eyebrow */}
+          <div className="mb-6 flex items-center gap-3">
+            <span className="h-px w-10 bg-[#e5b83f]" />
 
-          <h1 className="mt-5 max-w-4xl text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+            <span className="text-xs font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
+              Conclave / Conference
+            </span>
+          </div>
+
+          {/* Event Title */}
+          <h1 className="max-w-5xl text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
             {event.title}
           </h1>
 
-          <div className="mt-7 flex flex-col gap-4 text-sm text-white/75 sm:flex-row sm:flex-wrap">
+          {/* Event Meta */}
+          <div className="mt-8 flex flex-col gap-4 text-sm text-[#b8c5d8] sm:flex-row sm:flex-wrap">
             <div className="flex items-center gap-2">
-              <CalendarDays className="h-4 w-4 text-[#eab308]" />
-              {event.date}
+              <CalendarDays className="h-4 w-4 shrink-0 text-[#e5b83f]" />
+              <span>{event.date}</span>
             </div>
 
             <div className="flex items-start gap-2">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#eab308]" />
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#e5b83f]" />
               <span>{event.location}</span>
             </div>
           </div>
+
+          {/* Accent Line */}
+          <div className="mt-10 h-px w-full max-w-4xl bg-[#1d3559]" />
         </div>
       </section>
 
       {/* Event Information */}
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
-              Event Information
-            </span>
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
+          <article className="border border-[#dbe3ee] bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+            {/* Section Label */}
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-px w-8 bg-[#e5b83f]" />
 
-            <h2 className="mt-2 text-2xl font-bold text-[#102a56] sm:text-3xl">
+              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
+                Event Information
+              </span>
+            </div>
+
+            {/* Title */}
+            <h2 className="text-2xl font-bold leading-tight text-[#c31e3b] sm:text-3xl">
               {event.title}
             </h2>
 
-            <p className="mt-5 text-base leading-8 text-slate-600">
+            {/* Description */}
+            <p className="mt-6 text-base leading-8 text-slate-600">
               {event.excerpt}
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl bg-[#f8faff] p-5">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#c31e3b]">
+            {/* Event Details */}
+            <div className="mt-9 grid gap-5 sm:grid-cols-2">
+              {/* Date */}
+              <div className="border border-[#e1e7ef] bg-[#f8fafc] p-5">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#c31e3b]">
                   <CalendarDays className="h-4 w-4" />
                   Date
                 </div>
 
-                <p className="mt-2 text-sm font-semibold text-[#102a56]">
+                <p className="mt-3 text-sm font-semibold leading-6 text-[#061a3a]">
                   {event.date}
                 </p>
               </div>
 
-              <div className="rounded-xl bg-[#f8faff] p-5">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#c31e3b]">
+              {/* Venue */}
+              <div className="border border-[#e1e7ef] bg-[#f8fafc] p-5">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#c31e3b]">
                   <MapPin className="h-4 w-4" />
                   Venue
                 </div>
 
-                <p className="mt-2 text-sm font-semibold leading-6 text-[#102a56]">
+                <p className="mt-3 text-sm font-semibold leading-6 text-[#061a3a]">
                   {event.location}
                 </p>
               </div>
@@ -162,22 +174,23 @@ export default async function EventDetailPage({
 
             {/* Original Event */}
             {event.href && (
-              <div className="mt-8 border-t border-slate-100 pt-8">
+              <div className="mt-9 border-t border-[#e5eaf1] pt-8">
                 <a
                   href={event.href}
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#c31e3b] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#a91831]"
+                  className="inline-flex items-center gap-2 bg-[#c31e3b] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#a91831]"
                 >
                   View Original Event
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </div>
             )}
-          </div>
+          </article>
 
-          <div className="mt-7">
+          {/* Back */}
+          <div className="mt-8">
             <Link
               href="/conclave-conference"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-[#c31e3b]"
+              className="group inline-flex items-center gap-2 text-sm font-bold text-[#c31e3b] transition-colors hover:text-[#061a3a]"
             >
               <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
               Back to All Events

@@ -1,35 +1,59 @@
 export default function MargdarshakHero() {
   return (
-    <section className="relative overflow-hidden bg-[#102a56]">
-      <div className="absolute inset-0 opacity-10">
+    <section className="relative overflow-hidden bg-[#061a3a]">
+      {/* Subtle Background Grid */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.08]"
+      >
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.35) 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.75) 1px, transparent 1px)",
             backgroundSize: "42px 42px",
           }}
         />
       </div>
 
-      <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[#c31e3b]/20 blur-3xl" />
+      {/* Subtle Ambient Glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#c31e3b]/10 blur-[120px]"
+      />
 
-      <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
+      />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-200">
-          FOSTIIMA Business School
-        </p>
+      <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
+        <div className="max-w-4xl">
+          {/* Eyebrow */}
+          <div className="mb-6 flex items-center gap-3">
+            <span className="h-px w-10 bg-[#e5b83f]" />
 
-        <h1 className="mt-4 max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          Margdarshak
-        </h1>
+            <span className="text-xs font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
+              FOSTIIMA Business School
+            </span>
+          </div>
 
-        <div className="mt-5 h-1 w-20 rounded-full bg-[#c31e3b]" />
+          {/* Heading */}
+          <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <span className="text-[#c31e3b]">Margdarshak</span>
+          </h1>
 
-        <p className="mt-6 max-w-2xl text-base leading-7 text-blue-100 sm:text-lg">
-          Guiding You Towards Academic &amp; Professional Excellence
-        </p>
+          {/* Accent Line */}
+          <div className="mt-6 h-px w-12 bg-[#e5b83f]" />
+
+          {/* Description */}
+          <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8c5d8] sm:text-lg">
+            Guiding You Towards Academic &amp; Professional Excellence
+          </p>
+
+          {/* Bottom Accent */}
+          <div className="mt-10 h-px w-full max-w-3xl bg-[#1d3559]" />
+        </div>
       </div>
     </section>
   );

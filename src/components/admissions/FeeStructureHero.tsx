@@ -12,21 +12,20 @@ export default function FeeStructureHero({
   totalFee,
 }: FeeStructureHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-[#102a56] py-16 sm:py-20">
-      {/* Background Grid */}
+    <section className="relative overflow-hidden bg-[#061a3a]">
+      {/* Subtle Background Grid */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        className="pointer-events-none absolute inset-0 opacity-[0.08]"
         style={{
           backgroundImage: `
             linear-gradient(
-              to right,
-              rgba(255,255,255,0.35) 1px,
+              rgba(255,255,255,0.75) 1px,
               transparent 1px
             ),
             linear-gradient(
-              to bottom,
-              rgba(255,255,255,0.35) 1px,
+              90deg,
+              rgba(255,255,255,0.75) 1px,
               transparent 1px
             )
           `,
@@ -34,43 +33,57 @@ export default function FeeStructureHero({
         }}
       />
 
-      {/* Decorations */}
+      {/* Subtle Ambient Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#1555a5]/30 blur-3xl"
+        className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#c31e3b]/10 blur-[120px]"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-[#c31e3b]/25 blur-3xl"
+        className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#eab308]">
-          Admissions Process
-        </span>
+      <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
+        <div className="max-w-4xl">
+          {/* Eyebrow */}
+          <div className="mb-6 flex items-center gap-3">
+            <span className="h-px w-10 bg-[#e5b83f]" />
 
-        <h1 className="mt-4 max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-          {title}
-        </h1>
-
-        <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
-          {program}
-        </p>
-
-        <div className="mt-7 inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 px-5 py-4 backdrop-blur-sm">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#c31e3b] text-white">
-            <IndianRupee className="h-5 w-5" />
+            <span className="text-xs font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
+              Admissions Process
+            </span>
           </div>
 
-          <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/50">
-              Fees for 2 Years including Registration Fee
-            </p>
-            <p className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
-              {totalFee}
-            </p>
+          {/* Heading */}
+          <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            {title}
+          </h1>
+
+          {/* Program */}
+          <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8c5d8] sm:text-lg">
+            {program}
+          </p>
+
+          {/* Fee Highlight */}
+          <div className="mt-9 inline-flex items-center gap-4 border border-[#1d3559] bg-[#0b2348] px-5 py-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#c31e3b] text-white">
+              <IndianRupee className="h-5 w-5" />
+            </div>
+
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#b8c5d8]">
+                Fees for 2 Years including Registration Fee
+              </p>
+
+              <p className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
+                {totalFee}
+              </p>
+            </div>
           </div>
+
+          {/* Accent Line */}
+          <div className="mt-10 h-px w-full max-w-3xl bg-[#1d3559]" />
         </div>
       </div>
     </section>

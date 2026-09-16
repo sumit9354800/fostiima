@@ -2,57 +2,83 @@ import { BriefcaseBusiness, GraduationCap } from "lucide-react";
 
 export default function SummerInternshipHero() {
   return (
-    <section className="relative overflow-hidden bg-[#102a56]">
+    <section className="relative overflow-hidden bg-[#061a3a]">
+      {/* Subtle Background Grid */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        className="pointer-events-none absolute inset-0 opacity-[0.08]"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(255,255,255,0.35) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,255,255,0.35) 1px, transparent 1px)
+            linear-gradient(
+              rgba(255,255,255,0.75) 1px,
+              transparent 1px
+            ),
+            linear-gradient(
+              90deg,
+              rgba(255,255,255,0.75) 1px,
+              transparent 1px
+            )
           `,
           backgroundSize: "42px 42px",
         }}
       />
 
+      {/* Subtle Ambient Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#c31e3b]/30 blur-3xl"
+        className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#c31e3b]/10 blur-[120px]"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-blue-400/10 blur-3xl"
+        className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-        <div className="max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
-            <BriefcaseBusiness className="h-4 w-4 text-[#eab308]" />
-            Placement
+      <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
+        <div className="max-w-4xl">
+          {/* Eyebrow */}
+          <div className="mb-6 flex items-center gap-3">
+            <span className="h-px w-10 bg-[#e5b83f]" />
+
+            <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
+              <BriefcaseBusiness className="h-4 w-4" />
+              Placement
+            </span>
           </div>
 
-          <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Summer Internship
-            <span className="ml-2 text-[#eab308]">(SIP)</span>
+          {/* Heading */}
+          <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Summer Internship{" "}
+            <span className="text-[#c31e3b]">(SIP)</span>
           </h1>
 
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+          {/* Description */}
+          <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8c5d8] sm:text-lg">
             Explore the specialization-wise profile of FOSTIIMA students
             across different summer internship batches.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 backdrop-blur-sm">
-              <GraduationCap className="h-4 w-4 text-[#eab308]" />
-              Multiple SIP Batches
+          {/* Information Cards */}
+          <div className="mt-9 flex flex-wrap gap-3">
+            <div className="inline-flex items-center gap-3 border border-[#1d3559] bg-[#0b2348] px-5 py-4">
+              <GraduationCap className="h-5 w-5 text-[#e5b83f]" />
+
+              <span className="text-sm font-semibold text-white">
+                Multiple SIP Batches
+              </span>
             </div>
 
-            <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 backdrop-blur-sm">
-              <BriefcaseBusiness className="h-4 w-4 text-[#eab308]" />
-              Profile Wise Data
+            <div className="inline-flex items-center gap-3 border border-[#1d3559] bg-[#0b2348] px-5 py-4">
+              <BriefcaseBusiness className="h-5 w-5 text-[#e5b83f]" />
+
+              <span className="text-sm font-semibold text-white">
+                Profile Wise Data
+              </span>
             </div>
           </div>
+
+          {/* Accent Line */}
+          <div className="mt-10 h-px w-full max-w-3xl bg-[#1d3559]" />
         </div>
       </div>
     </section>
