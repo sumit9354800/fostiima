@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ChevronDown,
   ChevronUp,
   Download,
   FileText,
-  MessageCircle,
-  Mic,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -26,13 +24,12 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 const FOSTIIMA_CHAT_SCRIPT_ID = "fostiima-admission-chatbot";
 const MARKAIBLE_SCRIPT_ID = "markaible-voice-ai";
 
-declare global {
-  interface Window {
-    eeChatBot?: {
-      toggleChatWindow?: () => void;
-    };
-  }
-}
+const FOSTIIMA_CHAT_SCRIPT =
+  "https://extraaedgeresources.blob.core.windows.net/documents/fbscrm/Chatbot/js/chat.js";
+
+const MARKAIBLE_CHAT_SCRIPT = "https://www.markaible.com/widget.js";
+
+type ChatLauncher = HTMLElement;
 
 function loadScript(
   id: string,
@@ -69,105 +66,319 @@ function loadScript(
   });
 }
 
-async function openFostiimaChat() {
-  try {
-    await loadScript(
-      FOSTIIMA_CHAT_SCRIPT_ID,
-      "https://extraaedgeresources.blob.core.windows.net/documents/fbscrm/Chatbot/js/chat.js",
-    );
+function getShadowRoots(root: Document | ShadowRoot | Element): ShadowRoot[] {
+  const roots: ShadowRoot[] = [];
 
-    console.log("FOSTIIMA chatbot script loaded.");
+  const elements =
+    root instanceof Document
+      ? root.querySelectorAll("*")
+      : root.querySelectorAll("*");
 
-    const checkChatbot = () => {
-      console.log("FOSTIIMA chatbot elements:", {
-        main: document.querySelector("#__eedivChatMain"),
-        container: document.querySelector("#eeChatContainer"),
-        indicator: document.querySelector("#eeChatIndicator"),
-        icon: document.querySelector("#_eechatIcon"),
-        window: document.querySelector("#_eechatWindow"),
-        botWindow: document.querySelector("#eeChatBotChatWindow"),
-      });
-    };
+  elements.forEach((element) => {
+    if (element.shadowRoot) {
+      roots.push(element.shadowRoot);
+    }
+  });
 
-    checkChatbot();
-
-    setTimeout(checkChatbot, 500);
-    setTimeout(checkChatbot, 1500);
-    setTimeout(checkChatbot, 3000);
-    setTimeout(checkChatbot, 5000);
-  } catch (error) {
-    console.error("FOSTIIMA Admission Chatbot error:", error);
-  }
+  return roots;
 }
-async function openMarkAIble() {
-  try {
-    await loadScript(
-      MARKAIBLE_SCRIPT_ID,
-      "https://www.markaible.com/widget.js",
-      {
-        "data-agent": "6a9fa7d1dab71eb81cbeb108",
-        "data-style": "peek",
-        "data-panel": "solid",
-      },
+
+function isVisibleElement(element: HTMLElement) {
+  const style = window.getComputedStyle(element);
+  const rect = element.getBoundingClientRect();
+
+  return (
+    style.display !== "none" &&
+    style.visibility !== "hidden" &&
+    Number(style.opacity) !== 0 &&
+    rect.width > 0 &&
+    rect.height > 0
+  );
+}
+
+function isLikelyLauncher(element: HTMLElement) {
+  if (!isVisibleElement(element)) {
+    return false;
+  }
+
+  if (element.closest("[data-fostiima-floating-actions]")) {
+    return false;
+  }
+
+  const rect = element.getBoundingClientRect();
+  const style = window.getComputedStyle(element);
+
+  const isFloating =
+    style.position === "fixed" ||
+    style.position === "sticky";
+
+  const isLauncherSize =
+    rect.width >= 32 &&
+    rect.width <= 120 &&
+    rect.height >= 32 &&
+    rect.height <= 120;
+
+  const isNearRightSide =
+    window.innerWidth - rect.right <= 180;
+
+  const isNearBottom =
+    window.innerHeight - rect.bottom <= 220;
+
+  return isFloating && isLauncherSize && isNearRightSide && isNearBottom;
+}
+
+function findKnownLauncher(selectors: string[]) {
+  for (const selector of selectors) {
+    const element = document.querySelector<HTMLElement>(selector);
+
+    if (element && isVisibleElement(element)) {
+      return element;
+    }
+  }
+
+  return null;
+}
+
+function findFloatingLaunchers(): ChatLauncher[] {
+  const candidates = new Set<HTMLElement>();
+
+  const addCandidates = (root: Document | ShadowRoot) => {
+    root.querySelectorAll<HTMLElement>("*").forEach((element) => {
+      if (isLikelyLauncher(element)) {
+        candidates.add(element);
+      }
+    });
+
+    getShadowRoots(root).forEach((shadowRoot) => {
+      addCandidates(shadowRoot);
+    });
+  };
+
+  addCandidates(document);
+
+  const knownFostiimaLauncher = findKnownLauncher([
+    "#eeChatIndicator",
+    "#_eechatIcon",
+    '[onclick*="eeChatBot.toggleChatWindow"]',
+  ]);
+
+  if (knownFostiimaLauncher) {
+    candidates.add(knownFostiimaLauncher);
+  }
+
+  return Array.from(candidates).filter((element) => {
+    const hasLauncherParent = Array.from(candidates).some(
+      (other) =>
+        other !== element &&
+        other.contains(element) &&
+        other.getBoundingClientRect().width >=
+          element.getBoundingClientRect().width,
     );
 
-    /*
-     * MarkAIble creates its own launcher after loading.
-     * We wait for it and look for its visible admission assistant launcher.
-     */
-    let attempts = 0;
+    return !hasLauncherParent;
+  });
+}
 
-    while (attempts < 50) {
-      await new Promise((resolve) => setTimeout(resolve, 100));
+function prepareOriginalLaunchers() {
+  const launchers = findFloatingLaunchers();
 
-      const elements = Array.from(
-        document.querySelectorAll<HTMLElement>(
-          'button, a, [role="button"], [aria-label], [title]',
-        ),
+  const uniqueLaunchers = launchers.slice(0, 2);
+
+  uniqueLaunchers.forEach((launcher, index) => {
+    const originalStyle = launcher.getAttribute(
+      "data-fostiima-original-style",
+    );
+
+    if (originalStyle === null) {
+      launcher.setAttribute(
+        "data-fostiima-original-style",
+        launcher.getAttribute("style") ?? "",
+      );
+    }
+
+    launcher.style.setProperty(
+      "position",
+      "fixed",
+      "important",
+    );
+
+    launcher.style.setProperty(
+      "right",
+      "18px",
+      "important",
+    );
+
+    launcher.style.setProperty(
+      "bottom",
+      `${index === 0 ? 78 : 18}px`,
+      "important",
+    );
+
+    launcher.style.setProperty(
+      "z-index",
+      "2147483000",
+      "important",
+    );
+
+    launcher.style.setProperty(
+      "margin",
+      "0",
+      "important",
+    );
+
+    launcher.setAttribute(
+      "data-fostiima-original-chat-launcher",
+      "true",
+    );
+  });
+
+  return uniqueLaunchers;
+}
+
+function restoreOriginalLaunchers() {
+  document
+    .querySelectorAll<HTMLElement>(
+      '[data-fostiima-original-chat-launcher="true"]',
+    )
+    .forEach((launcher) => {
+      const originalStyle = launcher.getAttribute(
+        "data-fostiima-original-style",
       );
 
-      const launcher = elements.find((element) => {
-        if (!element.offsetParent) {
-          return false;
+      if (originalStyle !== null) {
+        if (originalStyle) {
+          launcher.setAttribute("style", originalStyle);
+        } else {
+          launcher.removeAttribute("style");
         }
+      }
 
-        if (element.closest("#__eedivChatMain")) {
-          return false;
-        }
+      launcher.removeAttribute("data-fostiima-original-chat-launcher");
+      launcher.removeAttribute("data-fostiima-original-style");
+    });
+}
 
-        const content = [
-          element.textContent ?? "",
-          element.getAttribute("aria-label") ?? "",
-          element.getAttribute("title") ?? "",
-        ]
-          .join(" ")
-          .toLowerCase();
+function hideOriginalLaunchers() {
+  const launchers = findFloatingLaunchers();
 
-        return (
-          content.includes("questions about pgdm") ||
-          content.includes("admission expert") ||
-          content.includes("speak to our admission")
-        );
-      });
+  launchers.slice(0, 2).forEach((launcher) => {
+    if (launcher.getAttribute("data-fostiima-original-style") === null) {
+      launcher.setAttribute(
+        "data-fostiima-original-style",
+        launcher.getAttribute("style") ?? "",
+      );
+    }
 
-      if (launcher) {
-        launcher.click();
+    launcher.setAttribute(
+      "data-fostiima-original-chat-launcher",
+      "true",
+    );
+
+    launcher.style.setProperty("display", "none", "important");
+  });
+
+  document
+    .querySelectorAll<HTMLElement>(
+      '[data-fostiima-original-chat-launcher="true"]',
+    )
+    .forEach((launcher) => {
+      launcher.style.setProperty("display", "none", "important");
+    });
+}
+
+async function loadOriginalChatbots() {
+  await Promise.all([
+    loadScript(FOSTIIMA_CHAT_SCRIPT_ID, FOSTIIMA_CHAT_SCRIPT),
+    loadScript(MARKAIBLE_SCRIPT_ID, MARKAIBLE_CHAT_SCRIPT, {
+      "data-agent": "6a9fa7d1dab71eb81cbeb108",
+      "data-style": "peek",
+      "data-panel": "solid",
+    }),
+  ]);
+
+  return new Promise<void>((resolve) => {
+    let attempts = 0;
+
+    const tryPrepare = () => {
+      const launchers = prepareOriginalLaunchers();
+
+      if (launchers.length >= 2 || attempts >= 80) {
+        resolve();
         return;
       }
 
       attempts += 1;
-    }
+      window.setTimeout(tryPrepare, 150);
+    };
 
-    console.warn("MarkAIble launcher was not found.");
-  } catch (error) {
-    console.error("MarkAIble Voice AI error:", error);
-  }
+    tryPrepare();
+  });
 }
 
 export default function FloatingActions() {
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
   const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
   const [isChatOptionsOpen, setIsChatOptionsOpen] = useState(false);
+  const [areChatbotsLoaded, setAreChatbotsLoaded] = useState(false);
+
+  const chatLoadingRef = useRef(false);
+
+  useEffect(() => {
+    if (!isChatOptionsOpen || areChatbotsLoaded || chatLoadingRef.current) {
+      return;
+    }
+
+    chatLoadingRef.current = true;
+
+    loadOriginalChatbots()
+      .then(() => {
+        setAreChatbotsLoaded(true);
+      })
+      .catch((error) => {
+        console.error("FOSTIIMA chatbot loading error:", error);
+      })
+      .finally(() => {
+        chatLoadingRef.current = false;
+      });
+  }, [isChatOptionsOpen, areChatbotsLoaded]);
+
+  useEffect(() => {
+    if (!areChatbotsLoaded) {
+      return;
+    }
+
+    const syncLaunchers = () => {
+      if (isChatOptionsOpen) {
+        prepareOriginalLaunchers();
+      } else {
+        hideOriginalLaunchers();
+      }
+    };
+
+    syncLaunchers();
+
+    const interval = window.setInterval(syncLaunchers, 700);
+
+    const observer = new MutationObserver(() => {
+      syncLaunchers();
+    });
+
+    if (document.body) {
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+    }
+
+    return () => {
+      window.clearInterval(interval);
+      observer.disconnect();
+
+      if (!isChatOptionsOpen) {
+        hideOriginalLaunchers();
+      }
+    };
+  }, [isChatOptionsOpen, areChatbotsLoaded]);
 
   const handleChatToggle = () => {
     setIsChatOptionsOpen((current) => !current);
@@ -175,9 +386,6 @@ export default function FloatingActions() {
 
   return (
     <>
-      {/* =====================================================
-          EXISTING FLOATING ACTIONS
-      ====================================================== */}
       <div
         className="
           fixed
@@ -196,7 +404,6 @@ export default function FloatingActions() {
           sm:right-5
         "
       >
-        {/* BROCHURE */}
         <button
           type="button"
           onClick={() => setIsBrochureModalOpen(true)}
@@ -216,6 +423,7 @@ export default function FloatingActions() {
             transition-all
             duration-300
             hover:bg-[#c31e3b]
+            active:scale-95
             hover:text-white
             focus:outline-none
             focus:ring-2
@@ -232,13 +440,11 @@ export default function FloatingActions() {
             strokeWidth={2}
             className="transition-transform duration-200 group-hover:-translate-y-0.5"
           />
-
           <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
             Brochure
           </span>
         </button>
 
-        {/* APPLY */}
         <button
           type="button"
           onClick={() => setIsApplyModalOpen(true)}
@@ -273,13 +479,11 @@ export default function FloatingActions() {
             strokeWidth={2}
             className="transition-transform duration-200 group-hover:-translate-y-0.5"
           />
-
           <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
             Apply
           </span>
         </button>
 
-        {/* WHATSAPP */}
         <a
           href={WHATSAPP_URL}
           target="_blank"
@@ -314,114 +518,25 @@ export default function FloatingActions() {
             aria-hidden="true"
             className="transition-transform duration-200 group-hover:scale-110"
           />
-
           <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
             WhatsApp
           </span>
         </a>
       </div>
 
-      {/* =====================================================
-          CHATBOT SELECTOR
-      ====================================================== */}
-      <div className="fixed bottom-5 right-5 z-[90]">
-        {/* CHATBOT OPTIONS */}
-        <div
-          className={`
-            absolute
-            bottom-[calc(100%+10px)]
-            right-0
-            flex
-            w-[230px]
-            flex-col
-            gap-2
-            transition-all
-            duration-300
-            ${
-              isChatOptionsOpen
-                ? "pointer-events-auto translate-y-0 opacity-100"
-                : "pointer-events-none translate-y-3 opacity-0"
-            }
-          `}
-        >
-          {/* VOICE AI */}
-          <button
-            type="button"
-            onClick={openMarkAIble}
-            className="
-              group
-              flex
-              w-full
-              items-center
-              gap-3
-              border
-              border-[#dbe3ee]
-              bg-white
-              px-4
-              py-3
-              text-left
-              shadow-[0_8px_25px_rgba(6,26,58,0.14)]
-              transition-all
-              duration-200
-              hover:-translate-y-0.5
-              hover:border-[#061a3a]
-            "
-          >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#061a3a] text-white">
-              <Mic className="h-5 w-5" />
-            </span>
-
-            <span>
-              <span className="block text-sm font-bold text-[#061a3a]">
-                Voice AI
-              </span>
-
-              <span className="mt-0.5 block text-[11px] text-slate-500">
-                Talk with AI
-              </span>
-            </span>
-          </button>
-
-          {/* ADMISSION AI */}
-          <button
-            type="button"
-            onClick={openFostiimaChat}
-            className="
-              group
-              flex
-              w-full
-              items-center
-              gap-3
-              border
-              border-[#dbe3ee]
-              bg-white
-              px-4
-              py-3
-              text-left
-              shadow-[0_8px_25px_rgba(6,26,58,0.14)]
-              transition-all
-              duration-200
-              hover:-translate-y-0.5
-              hover:border-[#c31e3b]
-            "
-          >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#c31e3b] text-white">
-              <MessageCircle className="h-5 w-5" />
-            </span>
-
-            <span>
-              <span className="block text-sm font-bold text-[#061a3a]">
-                Admission AI
-              </span>
-
-              <span className="mt-0.5 block text-[11px] text-slate-500">
-                Chat with AI
-              </span>
-            </span>
-          </button>
-        </div>
-
-        {/* ARROW BUTTON */}
+      <div
+        data-fostiima-floating-actions
+        className={`
+          fixed
+          bottom-5
+          right-5
+          z-[2147482000]
+          transition-transform
+          duration-500
+          ease-[cubic-bezier(0.22,1,0.36,1)]
+          ${isChatOptionsOpen ? "-translate-y-[116px]" : "translate-y-0"}
+        `}
+      >
         <button
           type="button"
           onClick={handleChatToggle}
@@ -445,7 +560,11 @@ export default function FloatingActions() {
             focus:ring-[#c31e3b]
             focus:ring-offset-2
           "
-          aria-label="Show AI chat options"
+          aria-label={
+            isChatOptionsOpen
+              ? "Hide AI chat options"
+              : "Show AI chat options"
+          }
           aria-expanded={isChatOptionsOpen}
           title="Chat with AI"
         >
@@ -457,17 +576,11 @@ export default function FloatingActions() {
         </button>
       </div>
 
-      {/* =====================================================
-          APPLY MODAL
-      ====================================================== */}
       <ApplyFormModal
         isOpen={isApplyModalOpen}
         onClose={() => setIsApplyModalOpen(false)}
       />
 
-      {/* =====================================================
-          BROCHURE MODAL
-      ====================================================== */}
       <BrochureFormModal
         isOpen={isBrochureModalOpen}
         onClose={() => setIsBrochureModalOpen(false)}
