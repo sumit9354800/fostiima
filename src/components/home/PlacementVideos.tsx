@@ -7,11 +7,11 @@ type PlacementVideo = {
   id: string;
   title: string;
   batch: string;
+  
 };
 
 type YouTubePlayer = {
   destroy: () => void;
-  getPlayerState: () => number;
   pauseVideo: () => void;
 };
 
@@ -69,6 +69,15 @@ export default function PlacementVideos() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
+  /*
+   * IMPORTANT:
+   * This ref is the actual slider lock.
+   *
+   * We use a ref instead of depending only on React state
+   * because setInterval can execute with an older state value.
+   */
+  const isVideoPlayingRef = useRef(false);
+
   const playerRefs = useRef<Record<number, YouTubePlayer | null>>({});
   const iframeRefs = useRef<Record<number, HTMLIFrameElement | null>>({});
   const slideTimeoutRef = useRef<number | null>(null);
@@ -76,13 +85,23 @@ export default function PlacementVideos() {
   const totalVideos = placementVideos.length;
 
   /*
-   * Immediately stop the carousel when the user
-   * interacts with the YouTube video.
+   * Update video playing state.
    *
-   * This prevents the 3-second slider from changing
-   * before YouTube sends the PLAYING event.
+   * Both state and ref are updated immediately.
+   */
+  const updateVideoPlayingState = useCallback((playing: boolean) => {
+    isVideoPlayingRef.current = playing;
+    setIsVideoPlaying(playing);
+  }, []);
+
+  /*
+   * When user interacts with the YouTube iframe,
+   * immediately LOCK the slider.
+   *
+   * This happens before YouTube sends its PLAYING event.
    */
   const handleVideoInteraction = useCallback(() => {
+    isVideoPlayingRef.current = true;
     setIsVideoPlaying(true);
   }, []);
 
@@ -116,6 +135,9 @@ export default function PlacementVideos() {
 
   /*
    * Initialize YouTube players.
+   *
+   * This effect intentionally runs only once.
+   * We do NOT depend on activeIndex.
    */
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -145,12 +167,21 @@ export default function PlacementVideos() {
         playerRefs.current[index] = new YouTube.Player(iframe, {
           events: {
             onStateChange: (event) => {
+              /*
+               * Only the currently visible video
+               * should control the slider.
+               */
               if (index !== activeIndex) {
                 return;
               }
 
               if (event.data === YOUTUBE_PLAYING) {
+                /*
+                 * HARD LOCK
+                 */
+                isVideoPlayingRef.current = true;
                 setIsVideoPlaying(true);
+
                 return;
               }
 
@@ -158,6 +189,10 @@ export default function PlacementVideos() {
                 event.data === YOUTUBE_PAUSED ||
                 event.data === YOUTUBE_ENDED
               ) {
+                /*
+                 * UNLOCK
+                 */
+                isVideoPlayingRef.current = false;
                 setIsVideoPlaying(false);
               }
             },
@@ -177,18 +212,18 @@ export default function PlacementVideos() {
       };
     }
 
-    const fallbackTimer = window.setInterval(() => {
+    const apiCheckTimer = window.setInterval(() => {
       if (window.YT?.Player) {
         initializePlayers();
-        window.clearInterval(fallbackTimer);
+        window.clearInterval(apiCheckTimer);
       }
     }, 100);
 
     return () => {
       cancelled = true;
-      window.clearInterval(fallbackTimer);
+      window.clearInterval(apiCheckTimer);
     };
-  }, [activeIndex]);
+  }, []);
 
   /*
    * Cleanup.
@@ -212,7 +247,7 @@ export default function PlacementVideos() {
   }, []);
 
   /*
-   * Change video.
+   * Change active video.
    */
   const changeVideo = useCallback(
     (nextIndex: number, nextDirection: "next" | "previous") => {
@@ -229,7 +264,13 @@ export default function PlacementVideos() {
       }
 
       /*
-       * Stop the current video before changing slide.
+       * Unlock/reset state for the new slide.
+       */
+      isVideoPlayingRef.current = false;
+      setIsVideoPlaying(false);
+
+      /*
+       * Stop currently playing YouTube video.
        */
       try {
         playerRefs.current[activeIndex]?.pauseVideo();
@@ -237,7 +278,6 @@ export default function PlacementVideos() {
         // Ignore third-party player errors.
       }
 
-      setIsVideoPlaying(false);
       setDirection(nextDirection);
       setIsTransitioning(true);
 
@@ -254,6 +294,13 @@ export default function PlacementVideos() {
    * Next video.
    */
   const goToNext = useCallback(() => {
+    /*
+     * NEVER change the slide while the video is playing.
+     */
+    if (isVideoPlayingRef.current) {
+      return;
+    }
+
     const nextIndex =
       activeIndex === totalVideos - 1 ? 0 : activeIndex + 1;
 
@@ -271,38 +318,42 @@ export default function PlacementVideos() {
   }, [activeIndex, totalVideos, changeVideo]);
 
   /*
-   * Automatic slider.
+   * AUTO SLIDER
    *
-   * IMPORTANT:
-   * No timer is created while the user is
-   * interacting with / playing the video.
+   * The timer checks the REF directly.
+   *
+   * So even if React state has not updated yet,
+   * the video lock is respected.
    */
   useEffect(() => {
-    if (totalVideos <= 1 || isVideoPlaying || isTransitioning) {
+    if (totalVideos <= 1 || isTransitioning) {
       return;
     }
 
     const timer = window.setInterval(() => {
-      goToNext();
+      /*
+       * HARD STOP:
+       * If video is playing, do absolutely nothing.
+       */
+      if (isVideoPlayingRef.current) {
+        return;
+      }
+
+      const nextIndex =
+        activeIndex === totalVideos - 1 ? 0 : activeIndex + 1;
+
+      changeVideo(nextIndex, "next");
     }, AUTO_PLAY_INTERVAL);
 
     return () => {
       window.clearInterval(timer);
     };
   }, [
-    goToNext,
+    activeIndex,
     totalVideos,
-    isVideoPlaying,
     isTransitioning,
+    changeVideo,
   ]);
-
-  /*
-   * Reset state after changing video.
-   */
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsVideoPlaying(false);
-  }, [activeIndex]);
 
   if (totalVideos === 0) {
     return null;
@@ -322,7 +373,9 @@ export default function PlacementVideos() {
 
             <h2 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#123b79] sm:text-5xl">
               PGDM Placement-Batch{" "}
-              <span className="text-[#c31e3b]">(2023 - 2025)</span>
+              <span className="text-[#c31e3b]">
+                (2023 - 2025)
+              </span>
             </h2>
 
             <p className="mt-6 text-[15px] leading-7 text-slate-600 sm:text-base">
@@ -351,7 +404,7 @@ export default function PlacementVideos() {
               <button
                 type="button"
                 onClick={goToNext}
-                disabled={isTransitioning}
+                disabled={isTransitioning || isVideoPlaying}
                 aria-label="Next placement video"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-[#123b79]/20 bg-white text-[#123b79] shadow-sm transition hover:bg-[#123b79] hover:text-white disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-[#123b79]/30"
               >
@@ -381,7 +434,6 @@ export default function PlacementVideos() {
           {/* Video */}
           <div className="min-w-0">
             <div className="rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_15px_45px_rgba(18,59,121,0.08)] sm:p-3">
-              {/* Fixed viewport */}
               <div className="relative aspect-video overflow-hidden rounded-xl bg-[#071a35]">
                 {placementVideos.map((video, index) => {
                   const isActive = index === activeIndex;
