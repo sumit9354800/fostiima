@@ -28,14 +28,6 @@ declare global {
   interface Window {
     YT?: {
       Player: YouTubePlayerConstructor;
-      PlayerState?: {
-        UNSTARTED: number;
-        ENDED: number;
-        PLAYING: number;
-        PAUSED: number;
-        BUFFERING: number;
-        CUED: number;
-      };
     };
     onYouTubeIframeAPIReady?: () => void;
   }
@@ -84,7 +76,18 @@ export default function PlacementVideos() {
   const totalVideos = placementVideos.length;
 
   /*
-   * Load YouTube IFrame API only once.
+   * Immediately stop the carousel when the user
+   * interacts with the YouTube video.
+   *
+   * This prevents the 3-second slider from changing
+   * before YouTube sends the PLAYING event.
+   */
+  const handleVideoInteraction = useCallback(() => {
+    setIsVideoPlaying(true);
+  }, []);
+
+  /*
+   * Load YouTube IFrame API.
    */
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -112,7 +115,7 @@ export default function PlacementVideos() {
   }, []);
 
   /*
-   * Create YouTube players for every iframe.
+   * Initialize YouTube players.
    */
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -122,7 +125,13 @@ export default function PlacementVideos() {
     let cancelled = false;
 
     const initializePlayers = () => {
-      if (cancelled || !window.YT?.Player) {
+      if (cancelled) {
+        return;
+      }
+
+      const YouTube = window.YT;
+
+      if (!YouTube?.Player) {
         return;
       }
 
@@ -133,7 +142,7 @@ export default function PlacementVideos() {
           return;
         }
 
-        playerRefs.current[index] = new window.YT.Player(iframe, {
+        playerRefs.current[index] = new YouTube.Player(iframe, {
           events: {
             onStateChange: (event) => {
               if (index !== activeIndex) {
@@ -182,7 +191,7 @@ export default function PlacementVideos() {
   }, [activeIndex]);
 
   /*
-   * Cleanup YouTube players when component unmounts.
+   * Cleanup.
    */
   useEffect(() => {
     return () => {
@@ -194,7 +203,7 @@ export default function PlacementVideos() {
         try {
           player?.destroy();
         } catch {
-          // Ignore cleanup errors from the third-party YouTube API.
+          // Ignore third-party cleanup errors.
         }
       });
 
@@ -203,7 +212,7 @@ export default function PlacementVideos() {
   }, []);
 
   /*
-   * Change active video.
+   * Change video.
    */
   const changeVideo = useCallback(
     (nextIndex: number, nextDirection: "next" | "previous") => {
@@ -219,19 +228,18 @@ export default function PlacementVideos() {
         window.clearTimeout(slideTimeoutRef.current);
       }
 
-      setIsVideoPlaying(false);
-      setDirection(nextDirection);
-      setIsTransitioning(true);
-
       /*
-       * Pause the currently active YouTube video
-       * before changing the slide.
+       * Stop the current video before changing slide.
        */
       try {
         playerRefs.current[activeIndex]?.pauseVideo();
       } catch {
-        // Ignore player errors during slide change.
+        // Ignore third-party player errors.
       }
+
+      setIsVideoPlaying(false);
+      setDirection(nextDirection);
+      setIsTransitioning(true);
 
       slideTimeoutRef.current = window.setTimeout(() => {
         setActiveIndex(nextIndex);
@@ -263,14 +271,14 @@ export default function PlacementVideos() {
   }, [activeIndex, totalVideos, changeVideo]);
 
   /*
-   * Automatically move to the next video.
+   * Automatic slider.
    *
    * IMPORTANT:
-   * When a YouTube video is playing, the carousel
-   * completely stops changing.
+   * No timer is created while the user is
+   * interacting with / playing the video.
    */
   useEffect(() => {
-    if (totalVideos <= 1 || isVideoPlaying) {
+    if (totalVideos <= 1 || isVideoPlaying || isTransitioning) {
       return;
     }
 
@@ -281,10 +289,15 @@ export default function PlacementVideos() {
     return () => {
       window.clearInterval(timer);
     };
-  }, [goToNext, totalVideos, isVideoPlaying]);
+  }, [
+    goToNext,
+    totalVideos,
+    isVideoPlaying,
+    isTransitioning,
+  ]);
 
   /*
-   * Reset playing state whenever the active slide changes.
+   * Reset state after changing video.
    */
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -352,10 +365,11 @@ export default function PlacementVideos() {
 
                 <span>/</span>
 
-                <span>{String(totalVideos).padStart(2, "0")}</span>
+                <span>
+                  {String(totalVideos).padStart(2, "0")}
+                </span>
               </div>
 
-              {/* Playing indicator */}
               {isVideoPlaying && (
                 <span className="ml-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#c31e3b]">
                   Playing
@@ -395,6 +409,9 @@ export default function PlacementVideos() {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
+                        onMouseDown={handleVideoInteraction}
+                        onTouchStart={handleVideoInteraction}
+                        onFocus={handleVideoInteraction}
                       />
                     </div>
                   );
