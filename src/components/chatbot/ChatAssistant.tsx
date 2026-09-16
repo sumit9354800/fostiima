@@ -8,7 +8,11 @@ import FostiimaVoiceChat from "@/components/chatbot/FostiimaVoiceChat";
 
 type ChatMode = "selector" | "chat" | "voice";
 
-export default function ChatAssistant() {
+type ChatAssistantProps = {
+  onActiveChange?: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function ChatAssistant({ onActiveChange }: ChatAssistantProps) {
   const [mode, setMode] = useState<ChatMode>("selector");
 
   const close = () => setMode("selector");

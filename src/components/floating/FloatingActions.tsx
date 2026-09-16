@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import {
-  ChevronDown,
+  Bot,
   Download,
   FileText,
 } from "lucide-react";
@@ -222,11 +222,7 @@ export default function FloatingActions() {
           aria-expanded={isChatOptionsOpen}
           title="Chat with AI"
         >
-          {isChatOptionsOpen ? (
-            <ChevronDown className="h-5 w-5" />
-          ) : (
-            <ChevronDown className="h-5 w-5 rotate-180" />
-          )}
+          <Bot className="h-5 w-5" />
         </button>
       </div>
 
