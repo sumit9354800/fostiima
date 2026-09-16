@@ -9,7 +9,7 @@ import {
 const stats = [
   {
     value: "₹30 LPA",
-    label: "Highest Package",
+    label: "Highest Package ",
     icon: TrendingUp,
   },
   {
