@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 type PlacementVideo = {
@@ -8,6 +8,38 @@ type PlacementVideo = {
   title: string;
   batch: string;
 };
+
+type YouTubePlayer = {
+  destroy: () => void;
+  getPlayerState: () => number;
+  pauseVideo: () => void;
+};
+
+type YouTubePlayerConstructor = new (
+  element: HTMLIFrameElement,
+  options: {
+    events?: {
+      onStateChange?: (event: { data: number }) => void;
+    };
+  },
+) => YouTubePlayer;
+
+declare global {
+  interface Window {
+    YT?: {
+      Player: YouTubePlayerConstructor;
+      PlayerState?: {
+        UNSTARTED: number;
+        ENDED: number;
+        PLAYING: number;
+        PAUSED: number;
+        BUFFERING: number;
+        CUED: number;
+      };
+    };
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
 
 const placementVideos: PlacementVideo[] = [
   {
@@ -35,30 +67,184 @@ const placementVideos: PlacementVideo[] = [
 const AUTO_PLAY_INTERVAL = 3000;
 const SLIDE_DURATION = 450;
 
+const YOUTUBE_PLAYING = 1;
+const YOUTUBE_PAUSED = 2;
+const YOUTUBE_ENDED = 0;
+
 export default function PlacementVideos() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState<"next" | "previous">("next");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
+  const playerRefs = useRef<Record<number, YouTubePlayer | null>>({});
+  const iframeRefs = useRef<Record<number, HTMLIFrameElement | null>>({});
+  const slideTimeoutRef = useRef<number | null>(null);
 
   const totalVideos = placementVideos.length;
 
-  const changeVideo = useCallback(
-    (nextIndex: number, nextDirection: "next" | "previous") => {
-      if (isTransitioning || totalVideos <= 1) {
+  /*
+   * Load YouTube IFrame API only once.
+   */
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    if (window.YT?.Player) {
+      return;
+    }
+
+    const existingScript = document.querySelector(
+      'script[src="https://www.youtube.com/iframe_api"]',
+    );
+
+    if (existingScript) {
+      return;
+    }
+
+    const script = document.createElement("script");
+
+    script.src = "https://www.youtube.com/iframe_api";
+    script.async = true;
+
+    document.body.appendChild(script);
+  }, []);
+
+  /*
+   * Create YouTube players for every iframe.
+   */
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    let cancelled = false;
+
+    const initializePlayers = () => {
+      if (cancelled || !window.YT?.Player) {
         return;
       }
 
+      placementVideos.forEach((_, index) => {
+        const iframe = iframeRefs.current[index];
+
+        if (!iframe || playerRefs.current[index]) {
+          return;
+        }
+
+        playerRefs.current[index] = new window.YT.Player(iframe, {
+          events: {
+            onStateChange: (event) => {
+              if (index !== activeIndex) {
+                return;
+              }
+
+              if (event.data === YOUTUBE_PLAYING) {
+                setIsVideoPlaying(true);
+                return;
+              }
+
+              if (
+                event.data === YOUTUBE_PAUSED ||
+                event.data === YOUTUBE_ENDED
+              ) {
+                setIsVideoPlaying(false);
+              }
+            },
+          },
+        });
+      });
+    };
+
+    if (window.YT?.Player) {
+      initializePlayers();
+    } else {
+      const previousCallback = window.onYouTubeIframeAPIReady;
+
+      window.onYouTubeIframeAPIReady = () => {
+        previousCallback?.();
+        initializePlayers();
+      };
+    }
+
+    const fallbackTimer = window.setInterval(() => {
+      if (window.YT?.Player) {
+        initializePlayers();
+        window.clearInterval(fallbackTimer);
+      }
+    }, 100);
+
+    return () => {
+      cancelled = true;
+      window.clearInterval(fallbackTimer);
+    };
+  }, [activeIndex]);
+
+  /*
+   * Cleanup YouTube players when component unmounts.
+   */
+  useEffect(() => {
+    return () => {
+      if (slideTimeoutRef.current !== null) {
+        window.clearTimeout(slideTimeoutRef.current);
+      }
+
+      Object.values(playerRefs.current).forEach((player) => {
+        try {
+          player?.destroy();
+        } catch {
+          // Ignore cleanup errors from the third-party YouTube API.
+        }
+      });
+
+      playerRefs.current = {};
+    };
+  }, []);
+
+  /*
+   * Change active video.
+   */
+  const changeVideo = useCallback(
+    (nextIndex: number, nextDirection: "next" | "previous") => {
+      if (
+        isTransitioning ||
+        totalVideos <= 1 ||
+        nextIndex === activeIndex
+      ) {
+        return;
+      }
+
+      if (slideTimeoutRef.current !== null) {
+        window.clearTimeout(slideTimeoutRef.current);
+      }
+
+      setIsVideoPlaying(false);
       setDirection(nextDirection);
       setIsTransitioning(true);
 
-      window.setTimeout(() => {
+      /*
+       * Pause the currently active YouTube video
+       * before changing the slide.
+       */
+      try {
+        playerRefs.current[activeIndex]?.pauseVideo();
+      } catch {
+        // Ignore player errors during slide change.
+      }
+
+      slideTimeoutRef.current = window.setTimeout(() => {
         setActiveIndex(nextIndex);
         setIsTransitioning(false);
+        slideTimeoutRef.current = null;
       }, SLIDE_DURATION);
     },
-    [isTransitioning, totalVideos],
+    [activeIndex, isTransitioning, totalVideos],
   );
 
+  /*
+   * Next video.
+   */
   const goToNext = useCallback(() => {
     const nextIndex =
       activeIndex === totalVideos - 1 ? 0 : activeIndex + 1;
@@ -66,6 +252,9 @@ export default function PlacementVideos() {
     changeVideo(nextIndex, "next");
   }, [activeIndex, totalVideos, changeVideo]);
 
+  /*
+   * Previous video.
+   */
   const goToPrevious = useCallback(() => {
     const previousIndex =
       activeIndex === 0 ? totalVideos - 1 : activeIndex - 1;
@@ -74,10 +263,14 @@ export default function PlacementVideos() {
   }, [activeIndex, totalVideos, changeVideo]);
 
   /*
-   * Automatically move to the next video every 3 seconds.
+   * Automatically move to the next video.
+   *
+   * IMPORTANT:
+   * When a YouTube video is playing, the carousel
+   * completely stops changing.
    */
   useEffect(() => {
-    if (totalVideos <= 1) {
+    if (totalVideos <= 1 || isVideoPlaying) {
       return;
     }
 
@@ -88,7 +281,15 @@ export default function PlacementVideos() {
     return () => {
       window.clearInterval(timer);
     };
-  }, [goToNext, totalVideos]);
+  }, [goToNext, totalVideos, isVideoPlaying]);
+
+  /*
+   * Reset playing state whenever the active slide changes.
+   */
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsVideoPlaying(false);
+  }, [activeIndex]);
 
   if (totalVideos === 0) {
     return null;
@@ -153,6 +354,13 @@ export default function PlacementVideos() {
 
                 <span>{String(totalVideos).padStart(2, "0")}</span>
               </div>
+
+              {/* Playing indicator */}
+              {isVideoPlaying && (
+                <span className="ml-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#c31e3b]">
+                  Playing
+                </span>
+              )}
             </div>
           </div>
 
@@ -177,10 +385,13 @@ export default function PlacementVideos() {
                       aria-hidden={!isActive}
                     >
                       <iframe
-                        src={`https://www.youtube.com/embed/${video.id}`}
+                        ref={(element) => {
+                          iframeRefs.current[index] = element;
+                        }}
+                        src={`https://www.youtube.com/embed/${video.id}?enablejsapi=1`}
                         title={video.title}
                         className="h-full w-full"
-                        loading="eager"
+                        loading={index === 0 ? "eager" : "lazy"}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
