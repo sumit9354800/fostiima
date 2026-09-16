@@ -46,59 +46,84 @@ export default async function BlogDetailPage({
   }
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-[#f8fafc]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0b3b91]">
+      <section className="relative overflow-hidden bg-[#061a3a]">
+        {/* Subtle Background Grid */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-[0.08]"
+          className="pointer-events-none absolute inset-0 opacity-[0.08]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.75) 1px, transparent 1px)",
             backgroundSize: "42px 42px",
           }}
         />
 
+        {/* Subtle Ambient Glow */}
         <div
           aria-hidden="true"
-          className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#c31e3b]/30 blur-3xl"
+          className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#c31e3b]/10 blur-[120px]"
         />
 
         <div
           aria-hidden="true"
-          className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl"
+          className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
         />
 
-        <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="relative mx-auto max-w-5xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
           <div className="max-w-4xl">
-            <div className="mb-5 flex flex-wrap items-center gap-3 text-sm">
-              <span className="rounded-full bg-white/10 px-3 py-1.5 font-semibold text-blue-100 backdrop-blur-sm">
-                {blog.category}
-              </span>
+            {/* Category + Date */}
+            <div className="mb-6 flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-10 bg-[#e5b83f]" />
+
+                <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#e5b83f]">
+                  {blog.category}
+                </span>
+              </div>
 
               {blog.publishedAt && (
-                <span className="text-blue-200">{blog.publishedAt}</span>
+                <>
+                  <span
+                    aria-hidden="true"
+                    className="h-1 w-1 rounded-full bg-[#c31e3b]"
+                  />
+
+                  <span className="text-sm font-medium text-[#b8c5d8]">
+                    {blog.publishedAt}
+                  </span>
+                </>
               )}
             </div>
 
-            <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+            {/* Title */}
+            <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
               {blog.title}
             </h1>
 
-            <p className="mt-6 max-w-3xl text-base leading-7 text-blue-100 sm:text-lg">
+            {/* Excerpt */}
+            <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8c5d8] sm:text-lg">
               {blog.excerpt}
             </p>
 
-            <p className="mt-6 text-sm font-medium text-blue-200">
-              By {blog.author}
+            {/* Author */}
+            <p className="mt-7 text-sm font-semibold text-white">
+              By{" "}
+              <span className="text-[#e5b83f]">
+                {blog.author}
+              </span>
             </p>
+
+            {/* Accent Line */}
+            <div className="mt-10 h-px w-full max-w-3xl bg-[#1d3559]" />
           </div>
         </div>
       </section>
 
       {/* Article */}
-      <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8 lg:p-10">
+      <section className="mx-auto max-w-5xl px-6 py-12 sm:px-8 sm:py-16 lg:px-10">
+        <article className="border border-[#dbe3ee] bg-white p-6 shadow-sm sm:p-8 lg:p-10">
           <BlogContent content={blog.content} />
         </article>
       </section>
