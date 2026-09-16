@@ -9,10 +9,6 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "fostiima.org",
       },
-      {
-        protocol: "https",
-        hostname: "wlproject.weblink4you.com",
-      },
     ],
   },
 };
