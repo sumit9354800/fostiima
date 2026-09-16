@@ -136,7 +136,7 @@ export const navigationItems: NavigationItem[] = [
         href: "/conclave-conference",
       },
      {
-      label: "Margdarshak",
+      label: "MARGDARSHIK",
       href: "/margdarshak",
     },
     ],
@@ -149,7 +149,7 @@ export const navigationItems: NavigationItem[] = [
 
   {
     label: "Contact Us",
-    href: "/contact",
+    href: "/contact-us",
   },
 ];
 
