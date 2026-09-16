@@ -2,20 +2,20 @@ import { ArrowDown, ClipboardCheck } from "lucide-react";
 
 export default function HowToApplyHero() {
   return (
-    <section className="relative overflow-hidden bg-[#102a56] py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-[#061a3a]">
+      {/* Subtle Grid */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        className="pointer-events-none absolute inset-0 opacity-[0.08]"
         style={{
           backgroundImage: `
             linear-gradient(
-              to right,
-              rgba(255,255,255,0.35) 1px,
+              rgba(255,255,255,0.75) 1px,
               transparent 1px
             ),
             linear-gradient(
-              to bottom,
-              rgba(255,255,255,0.35) 1px,
+              90deg,
+              rgba(255,255,255,0.75) 1px,
               transparent 1px
             )
           `,
@@ -23,39 +23,68 @@ export default function HowToApplyHero() {
         }}
       />
 
+      {/* Subtle Ambient Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#1555a5]/30 blur-3xl"
+        className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#c31e3b]/10 blur-[120px]"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-[#c31e3b]/25 blur-3xl"
+        className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#eab308]">
-            <ClipboardCheck className="h-4 w-4" />
-            Admissions Process
-          </span>
+      <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
+        <div className="max-w-4xl">
+          {/* Eyebrow */}
+          <div className="mb-6 flex items-center gap-3">
+            <span className="h-px w-10 bg-[#e5b83f]" />
 
-          <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            How to Apply
+            <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
+              <ClipboardCheck className="h-4 w-4" />
+              Admissions Process
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            How to <span className="text-[#c31e3b]">Apply</span>
           </h1>
 
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+          {/* Description */}
+          <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8c5d8] sm:text-lg">
             Everything you need to know about applying to the FOSTIIMA
             Business School PGDM programme.
           </p>
 
+          {/* CTA */}
           <a
             href="#application-requirements"
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#c31e3b] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#102a56]"
+            className="
+              mt-9
+              inline-flex
+              items-center
+              gap-2
+              border
+              border-[#c31e3b]
+              bg-[#c31e3b]
+              px-5
+              py-3
+              text-sm
+              font-semibold
+              text-white
+              transition-all
+              duration-300
+              hover:bg-[#a91731]
+              hover:border-[#a91731]
+            "
           >
             Application Requirements
-            <ArrowDown className="h-4 w-4" />
+            <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
           </a>
+
+          {/* Accent Line */}
+          <div className="mt-10 h-px w-full max-w-3xl bg-[#1d3559]" />
         </div>
       </div>
     </section>

@@ -198,6 +198,11 @@ export default function FloatingActions() {
         strategy="afterInteractive"
       />
 
+      {/* <Script
+        src="https://extraaedgeresources.blob.core.windows.net/documents/fbscrm/Chatbot/js/chat.js"
+        strategy="afterInteractive"
+      /> */}
+
       {/* =====================================================
           APPLY MODAL
       ====================================================== */}
