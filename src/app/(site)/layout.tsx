@@ -1,7 +1,7 @@
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/floating/FloatingActions";
-
+import ChatbotFloatingActions from "@/components/chatbot/ChatbotFloatingActions";
+import ChatbotScript from "@/components/chatbot/ChatbotScript";
 export default function SiteLayout({
   children,
 }: Readonly<{
@@ -13,9 +13,10 @@ export default function SiteLayout({
 
       <main>{children}</main>
 
-      <Footer />
-
       <FloatingActions />
+
+      <ChatbotScript />
+      <ChatbotFloatingActions />
     </>
   );
 }

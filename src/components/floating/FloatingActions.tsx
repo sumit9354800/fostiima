@@ -1,16 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Bot,
-  Download,
-  FileText,
-} from "lucide-react";
+import { Download, FileText } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 import ApplyFormModal from "@/components/admissions/ApplyFormModal";
 import BrochureFormModal from "@/components/admissions/BrochureFormModal";
-import ChatAssistant from "@/components/chatbot/ChatAssistant";
 
 const WHATSAPP_NUMBER = "917678389436";
 
@@ -23,12 +18,15 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 
 export default function FloatingActions() {
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+
   const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
-  const [isChatOptionsOpen, setIsChatOptionsOpen] = useState(false);
-  const [isChatAssistantActive, setIsChatAssistantActive] = useState(false);
 
   return (
     <>
+      {/* =========================================
+          BROCHURE / APPLY / WHATSAPP
+      ========================================== */}
+
       <div
         className="
           fixed
@@ -47,6 +45,8 @@ export default function FloatingActions() {
           sm:right-5
         "
       >
+        {/* BROCHURE */}
+
         <button
           type="button"
           onClick={() => setIsBrochureModalOpen(true)}
@@ -80,12 +80,27 @@ export default function FloatingActions() {
           <Download
             size={17}
             strokeWidth={2}
-            className="transition-transform duration-200 group-hover:-translate-y-0.5"
+            className="
+              transition-transform
+              duration-200
+              group-hover:-translate-y-0.5
+            "
           />
-          <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
+
+          <span
+            className="
+              text-[7px]
+              font-bold
+              uppercase
+              tracking-tight
+              sm:text-[8px]
+            "
+          >
             Brochure
           </span>
         </button>
+
+        {/* APPLY */}
 
         <button
           type="button"
@@ -119,12 +134,27 @@ export default function FloatingActions() {
           <FileText
             size={17}
             strokeWidth={2}
-            className="transition-transform duration-200 group-hover:-translate-y-0.5"
+            className="
+              transition-transform
+              duration-200
+              group-hover:-translate-y-0.5
+            "
           />
-          <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
+
+          <span
+            className="
+              text-[7px]
+              font-bold
+              uppercase
+              tracking-tight
+              sm:text-[8px]
+            "
+          >
             Apply
           </span>
         </button>
+
+        {/* WHATSAPP */}
 
         <a
           href={WHATSAPP_URL}
@@ -158,73 +188,30 @@ export default function FloatingActions() {
           <FaWhatsapp
             size={21}
             aria-hidden="true"
-            className="transition-transform duration-200 group-hover:scale-110"
+            className="
+              transition-transform
+              duration-200
+              group-hover:scale-110
+            "
           />
-          <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
+
+          <span
+            className="
+              text-[7px]
+              font-bold
+              uppercase
+              tracking-tight
+              sm:text-[8px]
+            "
+          >
             WhatsApp
           </span>
         </a>
       </div>
 
-      {isChatOptionsOpen && (
-        <ChatAssistant onActiveChange={setIsChatAssistantActive} />
-      )}
-
-      <div
-        className={`
-          fixed
-          bottom-5
-          right-5
-          z-[2147482000]
-          transition-transform
-          duration-500
-          ease-[cubic-bezier(0.22,1,0.36,1)]
-          ${
-            isChatAssistantActive
-              ? "translate-y-0 opacity-0 pointer-events-none"
-              : isChatOptionsOpen
-                ? "-translate-y-[116px]"
-                : "translate-y-0"
-          }
-        `}
-      >
-        <button
-          type="button"
-          onClick={() => setIsChatOptionsOpen((current) => !current)}
-          className="
-            flex
-            h-12
-            w-12
-            items-center
-            justify-center
-            rounded-full
-            border
-            border-white
-            bg-[#061a3a]
-            text-white
-            shadow-[0_8px_30px_rgba(6,26,58,0.25)]
-            transition-all
-            duration-300
-            hover:bg-[#c31e3b]
-            active:scale-95
-            focus:outline-none
-            focus:ring-2
-            focus:ring-[#c31e3b]
-            focus:ring-offset-2
-            sm:h-14
-            sm:w-14
-          "
-          aria-label={
-            isChatOptionsOpen
-              ? "Close AI chat options"
-              : "Open AI chat options"
-          }
-          aria-expanded={isChatOptionsOpen}
-          title="Chat with AI"
-        >
-          <Bot className="h-5 w-5" />
-        </button>
-      </div>
+      {/* =========================================
+          MODALS
+      ========================================== */}
 
       <ApplyFormModal
         isOpen={isApplyModalOpen}

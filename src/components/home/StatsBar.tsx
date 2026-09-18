@@ -3,7 +3,6 @@ import {
   Landmark,
   Medal,
   TrendingUp,
-  Users,
 } from "lucide-react";
 
 const stats = [

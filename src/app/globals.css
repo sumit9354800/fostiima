@@ -107,3 +107,47 @@
   display: none;
 }
 
+/* =========================================================
+   FOSTIIMA NAVIGATION PROTECTION
+   Protect only the website navigation from third-party
+   chatbot stylesheet interference.
+   ========================================================= */
+
+@media (min-width: 1024px) {
+  html body [data-fostiima-topbar] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  html body [data-fostiima-topbar] > div {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  html body [data-fostiima-navigation] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  html body [data-fostiima-navigation] > nav {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+
+/* =========================================================
+   ORIGINAL EXTRAAEDGE LAUNCHER
+   Hide only the launcher.
+   Do not hide the actual chatbot window.
+   ========================================================= */
+
+#__eechatIcon,
+#eeChatIndicator,
+#_eechatIcon {
+  display: none !important;
+}
