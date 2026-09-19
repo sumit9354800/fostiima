@@ -90,14 +90,14 @@ export const otherLinks: FooterLink[] = [
     label: "HR Policy 2024-25",
     href: "/hr-policy",
   },
-  {
-    label: "Faculty Feedback",
-    href: "/faculty-feedback",
-  },
-  {
-    label: "Student Feedback",
-    href: "/student-feedback",
-  },
+  // {
+  //   label: "Faculty Feedback",
+  //   href: "/faculty-feedback",
+  // },
+  // {
+  //   label: "Student Feedback",
+  //   href: "/student-feedback",
+  // },
   {
     label: "Awards & Accreditations",
     href: "/awards-accreditation",
