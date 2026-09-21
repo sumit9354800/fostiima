@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactInfo from "@/components/contact/ContactInfo";
-import ContactForm from "@/components/contact/ContactForm";
+import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us | FOSTIIMA Business School",

@@ -157,13 +157,13 @@ export default function Footer() {
 
               {/* Email */}
               <a
-                href="mailto:admissions@fostiima.org"
+                href="mailto:no-reply@fostiima.org"
                 className="flex items-center gap-3 text-sm text-white/65 transition-colors hover:text-white"
               >
                 <Mail className="h-4 w-4 text-[#eab308]" />
 
                 <span>
-                  admissions@fostiima.org
+                  no-reply@fostiima.org
                 </span>
               </a>
 

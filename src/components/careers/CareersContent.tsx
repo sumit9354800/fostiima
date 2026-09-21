@@ -1,5 +1,5 @@
 import { careerOpenings } from "@/data/careers";
-import CareerApplicationForm from "./CareerApplicationForm";
+import CareerApplicationForm from "../forms/CareerApplicationForm";
 import CareerOpeningCard from "./CareerOpeningCard";
 
 export default function CareersContent() {
