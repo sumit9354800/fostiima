@@ -1,7 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import ApplyForm from "./ApplyForm";
+import ApplyForm from "../forms/ApplyForm";
 
 type ApplyFormModalProps = {
   isOpen: boolean;
