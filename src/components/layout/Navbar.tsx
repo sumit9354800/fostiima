@@ -140,7 +140,7 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Main navigation"
-      className="hidden h-[76px] w-full bg-white shadow-[0_2px_10px_rgba(15,23,42,0.06)] xl:block"
+      className="hidden h-[76px] w-full bg-white shadow-[0_2px_10px_rgba(15,23,42,0.06)] lg:block"
     >
       <div className="mx-auto flex h-full w-full max-w-[1440px] items-center px-4 min-[1350px]:px-6 min-[1450px]:px-8">
         {/* Logo */}

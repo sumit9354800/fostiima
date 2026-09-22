@@ -163,7 +163,7 @@ export default function MobileMenu() {
           bg-white
           px-5
           shadow-[0_2px_10px_rgba(15,23,42,0.06)]
-          xl:hidden
+          lg:hidden
         "
       >
         {/* Logo */}
