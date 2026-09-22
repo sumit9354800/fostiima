@@ -22,11 +22,24 @@ const generateCode = () => {
   return code;
 };
 
+type SubmissionState = "idle" | "submitting" | "success" | "error";
+
+type FormError = {
+  field: string;
+  message: string;
+} | null;
+
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [captchaCode, setCaptchaCode] = useState(generateCode);
+  const [captchaCode, setCaptchaCode] = useState("F7Km");
   const [enteredCode, setEnteredCode] = useState("");
   const [captchaError, setCaptchaError] = useState("");
+
+  const [submissionState, setSubmissionState] =
+    useState<SubmissionState>("idle");
+
+  const [errorMessage, setErrorMessage] = useState("");
+  const [formError, setFormError] = useState<FormError>(null);
 
   const refreshCaptcha = () => {
     setCaptchaCode(generateCode());
@@ -34,59 +47,198 @@ export default function ContactForm() {
     setCaptchaError("");
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const form = event.currentTarget;
     const formData = new FormData(form);
 
     const name = String(formData.get("name") ?? "").trim();
-
     const email = String(formData.get("email") ?? "").trim();
-
     const phone = String(formData.get("phone") ?? "").trim();
-
     const subject = String(formData.get("subject") ?? "").trim();
-
     const message = String(formData.get("message") ?? "").trim();
-
     const code = enteredCode.trim().toUpperCase();
 
-    if (!name || !email || !phone || !subject || !message) {
+    setFormError(null);
+    setCaptchaError("");
+    setErrorMessage("");
+    setSubmitted(false);
+
+    // Full Name validation
+    if (!name) {
+      setFormError({
+        field: "name",
+        message: "Please enter your full name.",
+      });
       return;
     }
 
+    if (name.length < 2) {
+      setFormError({
+        field: "name",
+        message: "Please enter a valid full name.",
+      });
+      return;
+    }
+
+    // Email validation
+    if (!email) {
+      setFormError({
+        field: "email",
+        message: "Please enter your email address.",
+      });
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setFormError({
+        field: "email",
+        message: "Please enter a valid email address.",
+      });
+      return;
+    }
+
+    // Phone validation
+    if (!phone) {
+      setFormError({
+        field: "phone",
+        message: "Please enter your phone number.",
+      });
+      return;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      setFormError({
+        field: "phone",
+        message: "Please enter a valid 10-digit phone number.",
+      });
+      return;
+    }
+
+    // CAPTCHA validation
     if (!code) {
+      setFormError({
+        field: "captcha",
+        message: "Please enter the verification code.",
+      });
+
       setCaptchaError("Please enter the code shown above.");
       return;
     }
 
-    if (code !== captchaCode) {
-      setCaptchaError("Invalid code. Please enter the correct code.");
+    if (code !== captchaCode.toUpperCase()) {
+      setFormError({
+        field: "captcha",
+        message: "The verification code is incorrect. Please try again.",
+      });
+
+      setCaptchaError("Incorrect code. Please enter the code shown above.");
+
       refreshCaptcha();
       return;
     }
 
-    setCaptchaError("");
+    // Subject validation
+    if (!subject) {
+      setFormError({
+        field: "subject",
+        message: "Please enter a subject for your enquiry.",
+      });
+      return;
+    }
 
-    const mailSubject = encodeURIComponent(
-      subject || "New Contact Enquiry - FOSTIIMA Business School",
-    );
+    if (subject.length < 3) {
+      setFormError({
+        field: "subject",
+        message: "Please enter a meaningful subject.",
+      });
+      return;
+    }
 
-    const mailBody = encodeURIComponent(
-      `Name: ${name}\n` +
-        `Email: ${email}\n` +
-        `Phone: ${phone}\n\n` +
-        `Message:\n${message}`,
-    );
+    // Message validation
+    if (!message) {
+      setFormError({
+        field: "message",
+        message: "Please enter your message.",
+      });
+      return;
+    }
 
-    window.location.href = `mailto:no-reply@fostiima.org?subject=${mailSubject}&body=${mailBody}`;
+    if (message.length < 10) {
+      setFormError({
+        field: "message",
+        message: "Please enter a message of at least 10 characters.",
+      });
+      return;
+    }
 
-    setSubmitted(true);
-    setEnteredCode("");
-    refreshCaptcha();
+    setSubmissionState("submitting");
 
-    form.reset();
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          subject,
+          message,
+        }),
+      });
+
+      const responseText = await response.text();
+
+      let data: unknown = null;
+
+      if (responseText.trim()) {
+        try {
+          data = JSON.parse(responseText);
+        } catch {
+          throw new Error(
+            "The server returned an invalid response. Please try again.",
+          );
+        }
+      }
+
+      if (
+        !response.ok ||
+        !data ||
+        typeof data !== "object" ||
+        !("success" in data) ||
+        data.success !== true
+      ) {
+        const message =
+          data &&
+          typeof data === "object" &&
+          "message" in data &&
+          typeof data.message === "string"
+            ? data.message
+            : `Unable to send your enquiry. Server returned status ${response.status}.`;
+
+        throw new Error(message);
+      }
+
+      setSubmissionState("success");
+      setSubmitted(true);
+
+      form.reset();
+      setEnteredCode("");
+      refreshCaptcha();
+    } catch (error) {
+      console.error("Contact enquiry submission failed:", error);
+
+      setSubmissionState("error");
+
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to send your enquiry right now.",
+      );
+    }
   };
 
   return (
@@ -109,20 +261,63 @@ export default function ContactForm() {
         </p>
       </div>
 
+      {/* Validation Error */}
+      {formError && (
+        <div
+          role="alert"
+          aria-live="assertive"
+          className="mb-6 flex items-start gap-3 border border-red-200 bg-red-50 p-4"
+        >
+          <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c31e3b] text-xs font-bold text-white">
+            !
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold text-red-800">
+              Please check your information
+            </p>
+
+            <p className="mt-1 text-xs leading-5 text-red-700">
+              {formError.message}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Success Message */}
       {submitted && (
-        <div className="mb-6 flex items-start gap-3 border border-green-200 bg-green-50 p-4">
+        <div
+          role="status"
+          aria-live="polite"
+          className="mb-6 flex items-start gap-3 border border-green-200 bg-green-50 p-4"
+        >
           <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
 
           <div>
             <p className="text-sm font-semibold text-green-800">
-              Your enquiry has been prepared successfully.
+              Your enquiry has been sent successfully.
             </p>
 
             <p className="mt-1 text-xs leading-5 text-green-700">
-              Your email application should open through your mail application.
+              Thank you for contacting FOSTIIMA Business School. Our team will
+              get back to you shortly.
             </p>
           </div>
+        </div>
+      )}
+
+      {/* Server Error */}
+      {submissionState === "error" && (
+        <div
+          role="alert"
+          aria-live="assertive"
+          className="mb-6 border border-red-200 bg-red-50 p-4"
+        >
+          <p className="text-sm font-semibold text-red-800">
+            We could not send your enquiry.
+          </p>
+
+          <p className="mt-1 text-xs leading-5 text-red-700">{errorMessage}</p>
         </div>
       )}
 
@@ -215,14 +410,17 @@ export default function ContactForm() {
               maxLength={4}
               value={enteredCode}
               onChange={(event) => {
-                setEnteredCode(event.target.value.replace(/[^a-zA-Z0-9]/g, ""));
+                setEnteredCode(
+                  event.target.value.replace(/[^a-zA-Z0-9]/g, "").slice(0, 4),
+                );
+
                 setCaptchaError("");
+                setFormError(null);
               }}
               placeholder="Enter Code"
               className="min-w-0 flex-1 border border-[#dbe3ee] bg-white px-4 py-3 text-sm tracking-[0.18em] text-[#061a3a] outline-none transition placeholder:tracking-normal placeholder:text-slate-400 focus:border-[#c31e3b] focus:ring-1 focus:ring-[#c31e3b] sm:max-w-[180px]"
             />
 
-            {/* CAPTCHA Code */}
             <div
               aria-label="Verification code"
               className="flex h-[46px] min-w-[92px] select-none items-center justify-center border border-[#dbe3ee] bg-[#f8fafc] px-4"
@@ -232,7 +430,6 @@ export default function ContactForm() {
               </span>
             </div>
 
-            {/* Refresh */}
             <button
               type="button"
               onClick={refreshCaptcha}
@@ -297,13 +494,27 @@ export default function ContactForm() {
         <div className="pt-2">
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center gap-2 bg-[#061a3a] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0b2855] sm:w-auto"
+            disabled={submissionState === "submitting"}
+            className="inline-flex w-full items-center justify-center gap-2 bg-[#061a3a] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0b2855] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
-            <Send className="h-4 w-4" />
-            Send Enquiry
+            {submissionState === "submitting" ? (
+              <>
+                <RefreshCw className="h-4 w-4 animate-spin" />
+                Sending Enquiry...
+              </>
+            ) : (
+              <>
+                <Send className="h-4 w-4" />
+                Send Enquiry
+              </>
+            )}
           </button>
         </div>
       </form>
     </div>
   );
+}
+
+function isValidEmail(email: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }

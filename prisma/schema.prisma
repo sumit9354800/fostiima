@@ -73,36 +73,3 @@ model Verification {
   @@map("verification")
 }
 
-model EmailOtp {
-  id        String   @id @default(cuid())
-  email     String   @db.VarChar(255)
-  otpHash   String   @db.VarChar(255)
-  expiresAt DateTime
-  attempts  Int      @default(0)
-  verified  Boolean  @default(false)
-  verifiedAt DateTime?
-  createdAt DateTime @default(now())
-
-  @@index([email])
-  @@index([expiresAt])
-  @@map("email_otp")
-}
-
-model AdmissionApplication {
-  id        String   @id @default(cuid())
-  fullName  String   @db.VarChar(150)
-  email     String   @db.VarChar(255)
-  phone     String   @db.VarChar(30)
-  state     String   @db.VarChar(100)
-  district  String   @db.VarChar(100)
-  programme String   @db.VarChar(100)
-  consent   Boolean
-  status    String   @default("NEW") @db.VarChar(50)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([email])
-  @@index([status])
-  @@index([createdAt])
-  @@map("admission_application")
-}
