@@ -1,6 +1,19 @@
-const HERO_VIDEO = "/videos/fostiima-hero.mp4";
+import { prisma } from "@/lib/prisma";
 
-export default function Hero() {
+const DEFAULT_HERO_VIDEO = "/videos/fostiima-hero.mp4";
+
+export default async function Hero() {
+  const hero = await prisma.homeHero.findFirst({
+    where: {
+      isActive: true,
+    },
+    orderBy: {
+      createdAt: "asc",
+    },
+  });
+
+  const heroVideo = hero?.videoUrl || DEFAULT_HERO_VIDEO;
+
   return (
     <section className="relative min-h-[calc(100svh-96px)] overflow-hidden bg-[#071a35]">
       <video
@@ -12,7 +25,7 @@ export default function Hero() {
         preload="metadata"
         aria-hidden="true"
       >
-        <source src={HERO_VIDEO} type="video/mp4" />
+        <source src={heroVideo} type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-[#071a35]/35" />

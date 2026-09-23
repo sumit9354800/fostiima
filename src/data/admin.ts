@@ -38,64 +38,55 @@ export const adminModules = [
   },
   {
     title: "Placement",
-    description:
-      "Manage placement-related information and records.",
+    description: "Manage placement-related information and records.",
     href: "/admin/placement",
     icon: BriefcaseBusiness,
   },
   {
     title: "Conclave / Conference",
-    description:
-      "Manage conclave and conference events.",
+    description: "Manage conclave and conference events.",
     href: "/admin/conclave",
     icon: Presentation,
   },
   {
     title: "Blog",
-    description:
-      "Create, edit and manage blog posts.",
+    description: "Create, edit and manage blog posts.",
     href: "/admin/blog",
     icon: Newspaper,
   },
   {
     title: "Margdarshak",
-    description:
-      "Manage Margdarshak information and editions.",
+    description: "Manage Margdarshak information and editions.",
     href: "/admin/margdarshak",
     icon: Award,
   },
   {
     title: "NIRF",
-    description:
-      "Manage NIRF data and related documents.",
+    description: "Manage NIRF data and related documents.",
     href: "/admin/nirf",
     icon: FileText,
   },
   {
     title: "Policies",
-    description:
-      "Manage HR policy, grievance and other policy content.",
+    description: "Manage HR policy, grievance and other policy content.",
     href: "/admin/policies",
     icon: BookOpen,
   },
   {
     title: "Contact & Enquiries",
-    description:
-      "View and manage website contact enquiries.",
+    description: "View and manage website contact enquiries.",
     href: "/admin/enquiries",
     icon: MessageSquare,
   },
   {
     title: "Student Support",
-    description:
-      "Manage grievance and student support information.",
+    description: "Manage grievance and student support information.",
     href: "/admin/student-support",
     icon: HeartHandshake,
   },
   {
     title: "Academic Content",
-    description:
-      "Manage academic and programme-related content.",
+    description: "Manage academic and programme-related content.",
     href: "/admin/academics",
     icon: School,
   },
@@ -105,6 +96,11 @@ export const adminNavigation = [
   {
     label: "Dashboard",
     href: "/admin",
+    icon: LayoutDashboard,
+  },
+  {
+    label: "Home Page",
+    href: "/admin/home",
     icon: LayoutDashboard,
   },
   {
