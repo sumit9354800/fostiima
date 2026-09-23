@@ -1,5 +1,5 @@
 import { careerOpenings } from "@/data/careers";
-import CareerApplicationForm from "../forms/CareerApplicationForm";
+// import CareerApplicationForm from "../forms/CareerApplicationForm";
 import CareerOpeningCard from "./CareerOpeningCard";
 
 export default function CareersContent() {
@@ -15,9 +15,9 @@ export default function CareersContent() {
           ))}
         </div>
 
-        <div className="mt-10">
+        {/* <div className="mt-10">
           <CareerApplicationForm />
-        </div>
+        </div> */}
       </div>
     </section>
   );

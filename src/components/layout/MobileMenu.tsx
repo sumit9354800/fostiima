@@ -1,14 +1,10 @@
 "use client";
 
 import { useState } from "react";
+
+import Image from "next/image";
 import Link from "next/link";
-import {
-  ChevronDown,
-  ChevronRight,
-  Menu,
-  X,
-  ArrowUpRight,
-} from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X, ArrowUpRight } from "lucide-react";
 
 import {
   navigationItems,
@@ -22,11 +18,7 @@ type MobileMenuItemProps = {
   onNavigate: () => void;
 };
 
-function MobileMenuItem({
-  item,
-  level = 0,
-  onNavigate,
-}: MobileMenuItemProps) {
+function MobileMenuItem({ item, level = 0, onNavigate }: MobileMenuItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const hasChildren = Boolean(item.children?.length);
@@ -55,11 +47,7 @@ function MobileMenuItem({
           transition-colors
           hover:bg-slate-50
           hover:text-[#c31e3b]
-          ${
-            level > 0
-              ? "pl-9"
-              : ""
-          }
+          ${level > 0 ? "pl-9" : ""}
         `}
       >
         <span>{item.label}</span>
@@ -97,11 +85,7 @@ function MobileMenuItem({
           transition-colors
           hover:bg-slate-50
           hover:text-[#c31e3b]
-          ${
-            level > 0
-              ? "pl-9"
-              : ""
-          }
+          ${level > 0 ? "pl-9" : ""}
         `}
         aria-expanded={isOpen}
       >
@@ -113,11 +97,7 @@ function MobileMenuItem({
             shrink-0
             transition-transform
             duration-200
-            ${
-              isOpen
-                ? "rotate-180 text-[#c31e3b]"
-                : "text-slate-400"
-            }
+            ${isOpen ? "rotate-180 text-[#c31e3b]" : "text-slate-400"}
           `}
           aria-hidden="true"
         />
@@ -167,35 +147,21 @@ export default function MobileMenu() {
         "
       >
         {/* Logo */}
+
         <Link
           href="/"
           onClick={closeMenu}
-          className="flex shrink-0 flex-col leading-none"
+          className="flex w-[120px] shrink-0 items-center"
           aria-label="FOSTIIMA Business School Home"
         >
-          <span
-            className="
-              text-[21px]
-              font-extrabold
-              tracking-[-0.04em]
-              text-[#123b79]
-            "
-          >
-            FOSTIIMA
-          </span>
-
-          <span
-            className="
-              mt-1
-              text-[7px]
-              font-bold
-              uppercase
-              tracking-[0.22em]
-              text-[#c31e3b]
-            "
-          >
-            Business School
-          </span>
+          <Image
+            src="/logo.jpeg"
+            alt="FOSTIIMA Business School"
+            width={150}
+            height={50}
+            className="h-auto w-full object-contain"
+            priority
+          />
         </Link>
 
         {/* Menu Button */}
@@ -222,10 +188,7 @@ export default function MobileMenu() {
           aria-label="Open navigation menu"
           aria-expanded={isOpen}
         >
-          <Menu
-            size={21}
-            aria-hidden="true"
-          />
+          <Menu size={21} aria-hidden="true" />
         </button>
       </div>
 
@@ -268,11 +231,7 @@ export default function MobileMenu() {
           duration-300
           ease-out
           xl:hidden
-          ${
-            isOpen
-              ? "translate-x-0"
-              : "translate-x-full"
-          }
+          ${isOpen ? "translate-x-0" : "translate-x-full"}
         `}
         aria-hidden={!isOpen}
       >
@@ -339,10 +298,7 @@ export default function MobileMenu() {
             "
             aria-label="Close navigation menu"
           >
-            <X
-              size={20}
-              aria-hidden="true"
-            />
+            <X size={20} aria-hidden="true" />
           </button>
         </div>
 
@@ -422,10 +378,7 @@ export default function MobileMenu() {
           {/* ====================================================
               NAVIGATION
           ===================================================== */}
-          <nav
-            aria-label="Mobile navigation"
-            className="bg-white"
-          >
+          <nav aria-label="Mobile navigation" className="bg-white">
             {navigationItems.map((item) => (
               <MobileMenuItem
                 key={item.label}

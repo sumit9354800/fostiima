@@ -62,12 +62,132 @@ export type Account = Prisma.AccountModel
  */
 export type Verification = Prisma.VerificationModel
 /**
- * Model EmailOtp
+ * Model Faculty
  * 
  */
-export type EmailOtp = Prisma.EmailOtpModel
+export type Faculty = Prisma.FacultyModel
 /**
- * Model AdmissionApplication
+ * Model BlogPost
  * 
  */
-export type AdmissionApplication = Prisma.AdmissionApplicationModel
+export type BlogPost = Prisma.BlogPostModel
+/**
+ * Model BlogBlock
+ * 
+ */
+export type BlogBlock = Prisma.BlogBlockModel
+/**
+ * Model BlogKeyword
+ * 
+ */
+export type BlogKeyword = Prisma.BlogKeywordModel
+/**
+ * Model ConclaveEvent
+ * 
+ */
+export type ConclaveEvent = Prisma.ConclaveEventModel
+/**
+ * Model FinalPlacementBatch
+ * 
+ */
+export type FinalPlacementBatch = Prisma.FinalPlacementBatchModel
+/**
+ * Model FinalPlacementChart
+ * 
+ */
+export type FinalPlacementChart = Prisma.FinalPlacementChartModel
+/**
+ * Model FinalPlacementProfile
+ * 
+ */
+export type FinalPlacementProfile = Prisma.FinalPlacementProfileModel
+/**
+ * Model FinalPlacementStudent
+ * 
+ */
+export type FinalPlacementStudent = Prisma.FinalPlacementStudentModel
+/**
+ * Model SummerInternshipBatch
+ * 
+ */
+export type SummerInternshipBatch = Prisma.SummerInternshipBatchModel
+/**
+ * Model SummerInternshipProfile
+ * 
+ */
+export type SummerInternshipProfile = Prisma.SummerInternshipProfileModel
+/**
+ * Model CareerOpening
+ * 
+ */
+export type CareerOpening = Prisma.CareerOpeningModel
+/**
+ * Model FAQ
+ * 
+ */
+export type FAQ = Prisma.FAQModel
+/**
+ * Model Review
+ * 
+ */
+export type Review = Prisma.ReviewModel
+/**
+ * Model MediaPresence
+ * 
+ */
+export type MediaPresence = Prisma.MediaPresenceModel
+/**
+ * Model HomeHero
+ * 
+ */
+export type HomeHero = Prisma.HomeHeroModel
+/**
+ * Model HomeStat
+ * 
+ */
+export type HomeStat = Prisma.HomeStatModel
+/**
+ * Model HomeRecognition
+ * 
+ */
+export type HomeRecognition = Prisma.HomeRecognitionModel
+/**
+ * Model HomeAbout
+ * 
+ */
+export type HomeAbout = Prisma.HomeAboutModel
+/**
+ * Model HomeAboutHighlight
+ * 
+ */
+export type HomeAboutHighlight = Prisma.HomeAboutHighlightModel
+/**
+ * Model HomePlacementVideo
+ * 
+ */
+export type HomePlacementVideo = Prisma.HomePlacementVideoModel
+/**
+ * Model HomeCampusHighlight
+ * 
+ */
+export type HomeCampusHighlight = Prisma.HomeCampusHighlightModel
+/**
+ * Model HomeProgram
+ * 
+ */
+export type HomeProgram = Prisma.HomeProgramModel
+/**
+ * Model HomeAward
+ * 
+ */
+export type HomeAward = Prisma.HomeAwardModel
+/**
+ * Model HomeCampusLife
+ * 
+ */
+export type HomeCampusLife = Prisma.HomeCampusLifeModel
+/**
+ * Model HomeRecruiter
+ * 
+ */
+export type HomeRecruiter = Prisma.HomeRecruiterModel

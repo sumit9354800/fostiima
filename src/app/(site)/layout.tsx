@@ -1,8 +1,8 @@
 import Header from "@/components/layout/Header";
 import FloatingActions from "@/components/floating/FloatingActions";
 import Footer from "@/components/layout/Footer";
-import ChatbotScript from "@/components/chatbot/ChatbotScript";
-import ChatbotToggle from "@/components/chatbot/ ChatbotToggle";
+import Script from "next/script";
+
 export default function SiteLayout({
   children,
 }: Readonly<{
@@ -14,7 +14,12 @@ export default function SiteLayout({
       <main>{children}</main>
       <FloatingActions />
       <Footer />
-      <ChatbotScript />
+
+      {/* ExtraaEdge Chatbot */}
+      <Script
+        src="https://extraaedgeresources.blob.core.windows.net/documents/fbscrm/Chatbot/js/chat.js"
+        strategy="afterInteractive"
+      />
     </>
   );
 }

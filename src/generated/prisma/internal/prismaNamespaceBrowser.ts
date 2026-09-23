@@ -55,8 +55,32 @@ export const ModelName = {
   Session: 'Session',
   Account: 'Account',
   Verification: 'Verification',
-  EmailOtp: 'EmailOtp',
-  AdmissionApplication: 'AdmissionApplication'
+  Faculty: 'Faculty',
+  BlogPost: 'BlogPost',
+  BlogBlock: 'BlogBlock',
+  BlogKeyword: 'BlogKeyword',
+  ConclaveEvent: 'ConclaveEvent',
+  FinalPlacementBatch: 'FinalPlacementBatch',
+  FinalPlacementChart: 'FinalPlacementChart',
+  FinalPlacementProfile: 'FinalPlacementProfile',
+  FinalPlacementStudent: 'FinalPlacementStudent',
+  SummerInternshipBatch: 'SummerInternshipBatch',
+  SummerInternshipProfile: 'SummerInternshipProfile',
+  CareerOpening: 'CareerOpening',
+  FAQ: 'FAQ',
+  Review: 'Review',
+  MediaPresence: 'MediaPresence',
+  HomeHero: 'HomeHero',
+  HomeStat: 'HomeStat',
+  HomeRecognition: 'HomeRecognition',
+  HomeAbout: 'HomeAbout',
+  HomeAboutHighlight: 'HomeAboutHighlight',
+  HomePlacementVideo: 'HomePlacementVideo',
+  HomeCampusHighlight: 'HomeCampusHighlight',
+  HomeProgram: 'HomeProgram',
+  HomeAward: 'HomeAward',
+  HomeCampusLife: 'HomeCampusLife',
+  HomeRecruiter: 'HomeRecruiter'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -100,8 +124,8 @@ export const SessionScalarFieldEnum = {
   updatedAt: 'updatedAt',
   ipAddress: 'ipAddress',
   userAgent: 'userAgent',
-  userId: 'userId',
-  impersonatedBy: 'impersonatedBy'
+  impersonatedBy: 'impersonatedBy',
+  userId: 'userId'
 } as const
 
 export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
@@ -138,35 +162,367 @@ export const VerificationScalarFieldEnum = {
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
 
 
-export const EmailOtpScalarFieldEnum = {
+export const FacultyScalarFieldEnum = {
   id: 'id',
-  email: 'email',
-  otpHash: 'otpHash',
-  expiresAt: 'expiresAt',
-  attempts: 'attempts',
-  verified: 'verified',
-  verifiedAt: 'verifiedAt',
-  createdAt: 'createdAt'
+  slug: 'slug',
+  name: 'name',
+  image: 'image',
+  qualification: 'qualification',
+  experience: 'experience',
+  domain: 'domain',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
-export type EmailOtpScalarFieldEnum = (typeof EmailOtpScalarFieldEnum)[keyof typeof EmailOtpScalarFieldEnum]
+export type FacultyScalarFieldEnum = (typeof FacultyScalarFieldEnum)[keyof typeof FacultyScalarFieldEnum]
 
 
-export const AdmissionApplicationScalarFieldEnum = {
+export const BlogPostScalarFieldEnum = {
   id: 'id',
-  fullName: 'fullName',
-  email: 'email',
-  phone: 'phone',
-  state: 'state',
-  district: 'district',
-  programme: 'programme',
-  consent: 'consent',
+  slug: 'slug',
+  title: 'title',
+  excerpt: 'excerpt',
+  category: 'category',
+  coverImage: 'coverImage',
+  coverImageAlt: 'coverImageAlt',
+  author: 'author',
+  publishedAt: 'publishedAt',
+  status: 'status',
+  metaTitle: 'metaTitle',
+  metaDescription: 'metaDescription',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BlogPostScalarFieldEnum = (typeof BlogPostScalarFieldEnum)[keyof typeof BlogPostScalarFieldEnum]
+
+
+export const BlogBlockScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  type: 'type',
+  position: 'position',
+  content: 'content',
+  data: 'data',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BlogBlockScalarFieldEnum = (typeof BlogBlockScalarFieldEnum)[keyof typeof BlogBlockScalarFieldEnum]
+
+
+export const BlogKeywordScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  keyword: 'keyword'
+} as const
+
+export type BlogKeywordScalarFieldEnum = (typeof BlogKeywordScalarFieldEnum)[keyof typeof BlogKeywordScalarFieldEnum]
+
+
+export const ConclaveEventScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  title: 'title',
+  day: 'day',
+  month: 'month',
+  year: 'year',
+  date: 'date',
+  location: 'location',
+  excerpt: 'excerpt',
+  content: 'content',
+  coverImage: 'coverImage',
+  featured: 'featured',
   status: 'status',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type AdmissionApplicationScalarFieldEnum = (typeof AdmissionApplicationScalarFieldEnum)[keyof typeof AdmissionApplicationScalarFieldEnum]
+export type ConclaveEventScalarFieldEnum = (typeof ConclaveEventScalarFieldEnum)[keyof typeof ConclaveEventScalarFieldEnum]
+
+
+export const FinalPlacementBatchScalarFieldEnum = {
+  id: 'id',
+  batch: 'batch',
+  title: 'title',
+  highlights: 'highlights',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type FinalPlacementBatchScalarFieldEnum = (typeof FinalPlacementBatchScalarFieldEnum)[keyof typeof FinalPlacementBatchScalarFieldEnum]
+
+
+export const FinalPlacementChartScalarFieldEnum = {
+  id: 'id',
+  batchId: 'batchId',
+  title: 'title',
+  position: 'position'
+} as const
+
+export type FinalPlacementChartScalarFieldEnum = (typeof FinalPlacementChartScalarFieldEnum)[keyof typeof FinalPlacementChartScalarFieldEnum]
+
+
+export const FinalPlacementProfileScalarFieldEnum = {
+  id: 'id',
+  chartId: 'chartId',
+  category: 'category',
+  percentage: 'percentage',
+  position: 'position'
+} as const
+
+export type FinalPlacementProfileScalarFieldEnum = (typeof FinalPlacementProfileScalarFieldEnum)[keyof typeof FinalPlacementProfileScalarFieldEnum]
+
+
+export const FinalPlacementStudentScalarFieldEnum = {
+  id: 'id',
+  batchId: 'batchId',
+  name: 'name',
+  role: 'role',
+  image: 'image',
+  position: 'position'
+} as const
+
+export type FinalPlacementStudentScalarFieldEnum = (typeof FinalPlacementStudentScalarFieldEnum)[keyof typeof FinalPlacementStudentScalarFieldEnum]
+
+
+export const SummerInternshipBatchScalarFieldEnum = {
+  id: 'id',
+  batch: 'batch',
+  title: 'title',
+  highlights: 'highlights',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SummerInternshipBatchScalarFieldEnum = (typeof SummerInternshipBatchScalarFieldEnum)[keyof typeof SummerInternshipBatchScalarFieldEnum]
+
+
+export const SummerInternshipProfileScalarFieldEnum = {
+  id: 'id',
+  batchId: 'batchId',
+  specialization: 'specialization',
+  percentage: 'percentage',
+  position: 'position'
+} as const
+
+export type SummerInternshipProfileScalarFieldEnum = (typeof SummerInternshipProfileScalarFieldEnum)[keyof typeof SummerInternshipProfileScalarFieldEnum]
+
+
+export const CareerOpeningScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  department: 'department',
+  location: 'location',
+  description: 'description',
+  requirements: 'requirements',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CareerOpeningScalarFieldEnum = (typeof CareerOpeningScalarFieldEnum)[keyof typeof CareerOpeningScalarFieldEnum]
+
+
+export const FAQScalarFieldEnum = {
+  id: 'id',
+  question: 'question',
+  answer: 'answer',
+  position: 'position',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type FAQScalarFieldEnum = (typeof FAQScalarFieldEnum)[keyof typeof FAQScalarFieldEnum]
+
+
+export const ReviewScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  role: 'role',
+  content: 'content',
+  image: 'image',
+  rating: 'rating',
+  isActive: 'isActive',
+  position: 'position',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ReviewScalarFieldEnum = (typeof ReviewScalarFieldEnum)[keyof typeof ReviewScalarFieldEnum]
+
+
+export const MediaPresenceScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  source: 'source',
+  url: 'url',
+  image: 'image',
+  position: 'position',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type MediaPresenceScalarFieldEnum = (typeof MediaPresenceScalarFieldEnum)[keyof typeof MediaPresenceScalarFieldEnum]
+
+
+export const HomeHeroScalarFieldEnum = {
+  id: 'id',
+  videoUrl: 'videoUrl',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeHeroScalarFieldEnum = (typeof HomeHeroScalarFieldEnum)[keyof typeof HomeHeroScalarFieldEnum]
+
+
+export const HomeStatScalarFieldEnum = {
+  id: 'id',
+  value: 'value',
+  label: 'label',
+  icon: 'icon',
+  sortOrder: 'sortOrder',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeStatScalarFieldEnum = (typeof HomeStatScalarFieldEnum)[keyof typeof HomeStatScalarFieldEnum]
+
+
+export const HomeRecognitionScalarFieldEnum = {
+  id: 'id',
+  imageUrl: 'imageUrl',
+  alt: 'alt',
+  linkUrl: 'linkUrl',
+  sortOrder: 'sortOrder',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeRecognitionScalarFieldEnum = (typeof HomeRecognitionScalarFieldEnum)[keyof typeof HomeRecognitionScalarFieldEnum]
+
+
+export const HomeAboutScalarFieldEnum = {
+  id: 'id',
+  eyebrow: 'eyebrow',
+  title: 'title',
+  description1: 'description1',
+  description2: 'description2',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeAboutScalarFieldEnum = (typeof HomeAboutScalarFieldEnum)[keyof typeof HomeAboutScalarFieldEnum]
+
+
+export const HomeAboutHighlightScalarFieldEnum = {
+  id: 'id',
+  homeAboutId: 'homeAboutId',
+  title: 'title',
+  description: 'description',
+  icon: 'icon',
+  sortOrder: 'sortOrder',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeAboutHighlightScalarFieldEnum = (typeof HomeAboutHighlightScalarFieldEnum)[keyof typeof HomeAboutHighlightScalarFieldEnum]
+
+
+export const HomePlacementVideoScalarFieldEnum = {
+  id: 'id',
+  youtubeId: 'youtubeId',
+  title: 'title',
+  batch: 'batch',
+  sortOrder: 'sortOrder',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomePlacementVideoScalarFieldEnum = (typeof HomePlacementVideoScalarFieldEnum)[keyof typeof HomePlacementVideoScalarFieldEnum]
+
+
+export const HomeCampusHighlightScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  imageUrl: 'imageUrl',
+  href: 'href',
+  eyebrow: 'eyebrow',
+  sortOrder: 'sortOrder',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeCampusHighlightScalarFieldEnum = (typeof HomeCampusHighlightScalarFieldEnum)[keyof typeof HomeCampusHighlightScalarFieldEnum]
+
+
+export const HomeProgramScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  category: 'category',
+  duration: 'duration',
+  imageUrl: 'imageUrl',
+  href: 'href',
+  sortOrder: 'sortOrder',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeProgramScalarFieldEnum = (typeof HomeProgramScalarFieldEnum)[keyof typeof HomeProgramScalarFieldEnum]
+
+
+export const HomeAwardScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  icon: 'icon',
+  accent: 'accent',
+  sortOrder: 'sortOrder',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeAwardScalarFieldEnum = (typeof HomeAwardScalarFieldEnum)[keyof typeof HomeAwardScalarFieldEnum]
+
+
+export const HomeCampusLifeScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  icon: 'icon',
+  imageUrl: 'imageUrl',
+  sortOrder: 'sortOrder',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeCampusLifeScalarFieldEnum = (typeof HomeCampusLifeScalarFieldEnum)[keyof typeof HomeCampusLifeScalarFieldEnum]
+
+
+export const HomeRecruiterScalarFieldEnum = {
+  id: 'id',
+  imageUrl: 'imageUrl',
+  alt: 'alt',
+  sortOrder: 'sortOrder',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeRecruiterScalarFieldEnum = (typeof HomeRecruiterScalarFieldEnum)[keyof typeof HomeRecruiterScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -202,8 +558,8 @@ export const SessionOrderByRelevanceFieldEnum = {
   token: 'token',
   ipAddress: 'ipAddress',
   userAgent: 'userAgent',
-  userId: 'userId',
-  impersonatedBy: 'impersonatedBy'
+  impersonatedBy: 'impersonatedBy',
+  userId: 'userId'
 } as const
 
 export type SessionOrderByRelevanceFieldEnum = (typeof SessionOrderByRelevanceFieldEnum)[keyof typeof SessionOrderByRelevanceFieldEnum]
@@ -233,25 +589,284 @@ export const VerificationOrderByRelevanceFieldEnum = {
 export type VerificationOrderByRelevanceFieldEnum = (typeof VerificationOrderByRelevanceFieldEnum)[keyof typeof VerificationOrderByRelevanceFieldEnum]
 
 
-export const EmailOtpOrderByRelevanceFieldEnum = {
+export const FacultyOrderByRelevanceFieldEnum = {
   id: 'id',
-  email: 'email',
-  otpHash: 'otpHash'
+  slug: 'slug',
+  name: 'name',
+  image: 'image',
+  qualification: 'qualification',
+  experience: 'experience',
+  domain: 'domain'
 } as const
 
-export type EmailOtpOrderByRelevanceFieldEnum = (typeof EmailOtpOrderByRelevanceFieldEnum)[keyof typeof EmailOtpOrderByRelevanceFieldEnum]
+export type FacultyOrderByRelevanceFieldEnum = (typeof FacultyOrderByRelevanceFieldEnum)[keyof typeof FacultyOrderByRelevanceFieldEnum]
 
 
-export const AdmissionApplicationOrderByRelevanceFieldEnum = {
+export const BlogPostOrderByRelevanceFieldEnum = {
   id: 'id',
-  fullName: 'fullName',
-  email: 'email',
-  phone: 'phone',
-  state: 'state',
-  district: 'district',
-  programme: 'programme',
-  status: 'status'
+  slug: 'slug',
+  title: 'title',
+  excerpt: 'excerpt',
+  category: 'category',
+  coverImage: 'coverImage',
+  coverImageAlt: 'coverImageAlt',
+  author: 'author',
+  metaTitle: 'metaTitle',
+  metaDescription: 'metaDescription'
 } as const
 
-export type AdmissionApplicationOrderByRelevanceFieldEnum = (typeof AdmissionApplicationOrderByRelevanceFieldEnum)[keyof typeof AdmissionApplicationOrderByRelevanceFieldEnum]
+export type BlogPostOrderByRelevanceFieldEnum = (typeof BlogPostOrderByRelevanceFieldEnum)[keyof typeof BlogPostOrderByRelevanceFieldEnum]
+
+
+export const BlogBlockOrderByRelevanceFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  type: 'type',
+  content: 'content',
+  data: 'data'
+} as const
+
+export type BlogBlockOrderByRelevanceFieldEnum = (typeof BlogBlockOrderByRelevanceFieldEnum)[keyof typeof BlogBlockOrderByRelevanceFieldEnum]
+
+
+export const BlogKeywordOrderByRelevanceFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  keyword: 'keyword'
+} as const
+
+export type BlogKeywordOrderByRelevanceFieldEnum = (typeof BlogKeywordOrderByRelevanceFieldEnum)[keyof typeof BlogKeywordOrderByRelevanceFieldEnum]
+
+
+export const ConclaveEventOrderByRelevanceFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  title: 'title',
+  day: 'day',
+  month: 'month',
+  year: 'year',
+  date: 'date',
+  location: 'location',
+  excerpt: 'excerpt',
+  content: 'content',
+  coverImage: 'coverImage'
+} as const
+
+export type ConclaveEventOrderByRelevanceFieldEnum = (typeof ConclaveEventOrderByRelevanceFieldEnum)[keyof typeof ConclaveEventOrderByRelevanceFieldEnum]
+
+
+export const FinalPlacementBatchOrderByRelevanceFieldEnum = {
+  id: 'id',
+  batch: 'batch',
+  title: 'title',
+  highlights: 'highlights'
+} as const
+
+export type FinalPlacementBatchOrderByRelevanceFieldEnum = (typeof FinalPlacementBatchOrderByRelevanceFieldEnum)[keyof typeof FinalPlacementBatchOrderByRelevanceFieldEnum]
+
+
+export const FinalPlacementChartOrderByRelevanceFieldEnum = {
+  id: 'id',
+  batchId: 'batchId',
+  title: 'title'
+} as const
+
+export type FinalPlacementChartOrderByRelevanceFieldEnum = (typeof FinalPlacementChartOrderByRelevanceFieldEnum)[keyof typeof FinalPlacementChartOrderByRelevanceFieldEnum]
+
+
+export const FinalPlacementProfileOrderByRelevanceFieldEnum = {
+  id: 'id',
+  chartId: 'chartId',
+  category: 'category'
+} as const
+
+export type FinalPlacementProfileOrderByRelevanceFieldEnum = (typeof FinalPlacementProfileOrderByRelevanceFieldEnum)[keyof typeof FinalPlacementProfileOrderByRelevanceFieldEnum]
+
+
+export const FinalPlacementStudentOrderByRelevanceFieldEnum = {
+  id: 'id',
+  batchId: 'batchId',
+  name: 'name',
+  role: 'role',
+  image: 'image'
+} as const
+
+export type FinalPlacementStudentOrderByRelevanceFieldEnum = (typeof FinalPlacementStudentOrderByRelevanceFieldEnum)[keyof typeof FinalPlacementStudentOrderByRelevanceFieldEnum]
+
+
+export const SummerInternshipBatchOrderByRelevanceFieldEnum = {
+  id: 'id',
+  batch: 'batch',
+  title: 'title',
+  highlights: 'highlights'
+} as const
+
+export type SummerInternshipBatchOrderByRelevanceFieldEnum = (typeof SummerInternshipBatchOrderByRelevanceFieldEnum)[keyof typeof SummerInternshipBatchOrderByRelevanceFieldEnum]
+
+
+export const SummerInternshipProfileOrderByRelevanceFieldEnum = {
+  id: 'id',
+  batchId: 'batchId',
+  specialization: 'specialization'
+} as const
+
+export type SummerInternshipProfileOrderByRelevanceFieldEnum = (typeof SummerInternshipProfileOrderByRelevanceFieldEnum)[keyof typeof SummerInternshipProfileOrderByRelevanceFieldEnum]
+
+
+export const CareerOpeningOrderByRelevanceFieldEnum = {
+  id: 'id',
+  title: 'title',
+  department: 'department',
+  location: 'location',
+  description: 'description',
+  requirements: 'requirements'
+} as const
+
+export type CareerOpeningOrderByRelevanceFieldEnum = (typeof CareerOpeningOrderByRelevanceFieldEnum)[keyof typeof CareerOpeningOrderByRelevanceFieldEnum]
+
+
+export const FAQOrderByRelevanceFieldEnum = {
+  id: 'id',
+  question: 'question',
+  answer: 'answer'
+} as const
+
+export type FAQOrderByRelevanceFieldEnum = (typeof FAQOrderByRelevanceFieldEnum)[keyof typeof FAQOrderByRelevanceFieldEnum]
+
+
+export const ReviewOrderByRelevanceFieldEnum = {
+  id: 'id',
+  name: 'name',
+  role: 'role',
+  content: 'content',
+  image: 'image'
+} as const
+
+export type ReviewOrderByRelevanceFieldEnum = (typeof ReviewOrderByRelevanceFieldEnum)[keyof typeof ReviewOrderByRelevanceFieldEnum]
+
+
+export const MediaPresenceOrderByRelevanceFieldEnum = {
+  id: 'id',
+  title: 'title',
+  source: 'source',
+  url: 'url',
+  image: 'image'
+} as const
+
+export type MediaPresenceOrderByRelevanceFieldEnum = (typeof MediaPresenceOrderByRelevanceFieldEnum)[keyof typeof MediaPresenceOrderByRelevanceFieldEnum]
+
+
+export const HomeHeroOrderByRelevanceFieldEnum = {
+  id: 'id',
+  videoUrl: 'videoUrl'
+} as const
+
+export type HomeHeroOrderByRelevanceFieldEnum = (typeof HomeHeroOrderByRelevanceFieldEnum)[keyof typeof HomeHeroOrderByRelevanceFieldEnum]
+
+
+export const HomeStatOrderByRelevanceFieldEnum = {
+  id: 'id',
+  value: 'value',
+  label: 'label',
+  icon: 'icon'
+} as const
+
+export type HomeStatOrderByRelevanceFieldEnum = (typeof HomeStatOrderByRelevanceFieldEnum)[keyof typeof HomeStatOrderByRelevanceFieldEnum]
+
+
+export const HomeRecognitionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  imageUrl: 'imageUrl',
+  alt: 'alt',
+  linkUrl: 'linkUrl'
+} as const
+
+export type HomeRecognitionOrderByRelevanceFieldEnum = (typeof HomeRecognitionOrderByRelevanceFieldEnum)[keyof typeof HomeRecognitionOrderByRelevanceFieldEnum]
+
+
+export const HomeAboutOrderByRelevanceFieldEnum = {
+  id: 'id',
+  eyebrow: 'eyebrow',
+  title: 'title',
+  description1: 'description1',
+  description2: 'description2'
+} as const
+
+export type HomeAboutOrderByRelevanceFieldEnum = (typeof HomeAboutOrderByRelevanceFieldEnum)[keyof typeof HomeAboutOrderByRelevanceFieldEnum]
+
+
+export const HomeAboutHighlightOrderByRelevanceFieldEnum = {
+  id: 'id',
+  homeAboutId: 'homeAboutId',
+  title: 'title',
+  description: 'description',
+  icon: 'icon'
+} as const
+
+export type HomeAboutHighlightOrderByRelevanceFieldEnum = (typeof HomeAboutHighlightOrderByRelevanceFieldEnum)[keyof typeof HomeAboutHighlightOrderByRelevanceFieldEnum]
+
+
+export const HomePlacementVideoOrderByRelevanceFieldEnum = {
+  id: 'id',
+  youtubeId: 'youtubeId',
+  title: 'title',
+  batch: 'batch'
+} as const
+
+export type HomePlacementVideoOrderByRelevanceFieldEnum = (typeof HomePlacementVideoOrderByRelevanceFieldEnum)[keyof typeof HomePlacementVideoOrderByRelevanceFieldEnum]
+
+
+export const HomeCampusHighlightOrderByRelevanceFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  imageUrl: 'imageUrl',
+  href: 'href',
+  eyebrow: 'eyebrow'
+} as const
+
+export type HomeCampusHighlightOrderByRelevanceFieldEnum = (typeof HomeCampusHighlightOrderByRelevanceFieldEnum)[keyof typeof HomeCampusHighlightOrderByRelevanceFieldEnum]
+
+
+export const HomeProgramOrderByRelevanceFieldEnum = {
+  id: 'id',
+  title: 'title',
+  category: 'category',
+  duration: 'duration',
+  imageUrl: 'imageUrl',
+  href: 'href'
+} as const
+
+export type HomeProgramOrderByRelevanceFieldEnum = (typeof HomeProgramOrderByRelevanceFieldEnum)[keyof typeof HomeProgramOrderByRelevanceFieldEnum]
+
+
+export const HomeAwardOrderByRelevanceFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  icon: 'icon',
+  accent: 'accent'
+} as const
+
+export type HomeAwardOrderByRelevanceFieldEnum = (typeof HomeAwardOrderByRelevanceFieldEnum)[keyof typeof HomeAwardOrderByRelevanceFieldEnum]
+
+
+export const HomeCampusLifeOrderByRelevanceFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  icon: 'icon',
+  imageUrl: 'imageUrl'
+} as const
+
+export type HomeCampusLifeOrderByRelevanceFieldEnum = (typeof HomeCampusLifeOrderByRelevanceFieldEnum)[keyof typeof HomeCampusLifeOrderByRelevanceFieldEnum]
+
+
+export const HomeRecruiterOrderByRelevanceFieldEnum = {
+  id: 'id',
+  imageUrl: 'imageUrl',
+  alt: 'alt'
+} as const
+
+export type HomeRecruiterOrderByRelevanceFieldEnum = (typeof HomeRecruiterOrderByRelevanceFieldEnum)[keyof typeof HomeRecruiterOrderByRelevanceFieldEnum]
 
