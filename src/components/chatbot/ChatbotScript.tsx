@@ -8,15 +8,11 @@ type BotType = "chatbot" | "voice" | null;
 const EXTRAEDGE_SCRIPT =
   "https://extraaedgeresources.blob.core.windows.net/documents/fbscrm/Chatbot/js/chat.js";
 
-const MARKAIBLE_SCRIPT =
-  "https://www.markaible.com/widget.js";
+const MARKAIBLE_SCRIPT = "https://www.markaible.com/widget.js";
 
 const MARKAIBLE_AGENT_ID = "6a9fa7d1dab71eb81cbeb108";
 
-function loadScript(
-  src: string,
-  attributes: Record<string, string> = {},
-) {
+function loadScript(src: string, attributes: Record<string, string> = {}) {
   return new Promise<HTMLScriptElement>((resolve, reject) => {
     const existing = document.querySelector<HTMLScriptElement>(
       `script[src="${src}"]`,
@@ -37,21 +33,14 @@ function loadScript(
     });
 
     script.onload = () => resolve(script);
-    script.onerror = () =>
-      reject(new Error(`Failed to load script: ${src}`));
+    script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
 
     document.body.appendChild(script);
   });
 }
 
 function hideThirdPartyLaunchers() {
-  const selectors = [
-    "#__eechatIcon",
-    "#eeChatIndicator",
-    "#_eechatIcon",
-    '[id*="eechat"]',
-    '[id*="eeChat"]',
-  ];
+  const selectors = ["#__eechatIcon", "#eeChatIndicator", "#_eechatIcon"];
 
   selectors.forEach((selector) => {
     document.querySelectorAll<HTMLElement>(selector).forEach((element) => {
@@ -63,13 +52,7 @@ function hideThirdPartyLaunchers() {
 }
 
 function showThirdPartyLaunchers() {
-  const selectors = [
-    "#__eechatIcon",
-    "#eeChatIndicator",
-    "#_eechatIcon",
-    '[id*="eechat"]',
-    '[id*="eeChat"]',
-  ];
+  const selectors = ["#__eechatIcon", "#eeChatIndicator", "#_eechatIcon"];
 
   selectors.forEach((selector) => {
     document.querySelectorAll<HTMLElement>(selector).forEach((element) => {
@@ -81,11 +64,7 @@ function showThirdPartyLaunchers() {
 }
 
 function findExtraEdgeLauncher() {
-  const selectors = [
-    "#__eechatIcon",
-    "#eeChatIndicator",
-    "#_eechatIcon",
-  ];
+  const selectors = ["#__eechatIcon", "#eeChatIndicator", "#_eechatIcon"];
 
   for (const selector of selectors) {
     const element = document.querySelector<HTMLElement>(selector);
@@ -97,7 +76,6 @@ function findExtraEdgeLauncher() {
 
   return null;
 }
-
 export default function ChatbotScript() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeBot, setActiveBot] = useState<BotType>(null);
@@ -220,9 +198,7 @@ export default function ChatbotScript() {
       {menuOpen && !activeBot && (
         <div className="fixed bottom-24 right-5 z-[99999] w-[260px] overflow-hidden rounded-2xl bg-white shadow-2xl">
           <div className="flex items-center justify-between bg-[#061a3a] px-4 py-3 text-white">
-            <span className="text-sm font-semibold">
-              FOSTIIMA Assistant
-            </span>
+            <span className="text-sm font-semibold">FOSTIIMA Assistant</span>
 
             <button
               type="button"
@@ -241,19 +217,12 @@ export default function ChatbotScript() {
               onClick={() => openBot("chatbot")}
               className="flex w-full items-center gap-3 rounded-xl border border-slate-200 p-3 text-left transition hover:bg-slate-50"
             >
-              <MessageCircle
-                size={22}
-                className="text-[#061a3a]"
-              />
+              <MessageCircle size={22} className="text-[#061a3a]" />
 
               <div>
-                <p className="text-sm font-medium text-slate-900">
-                  Chatbot
-                </p>
+                <p className="text-sm font-medium text-slate-900">Chatbot</p>
 
-                <p className="text-xs text-slate-500">
-                  Chat with FOSTIIMA
-                </p>
+                <p className="text-xs text-slate-500">Chat with FOSTIIMA</p>
               </div>
             </button>
 
@@ -263,19 +232,14 @@ export default function ChatbotScript() {
               onClick={() => openBot("voice")}
               className="flex w-full items-center gap-3 rounded-xl border border-slate-200 p-3 text-left transition hover:bg-slate-50"
             >
-              <Mic
-                size={22}
-                className="text-[#061a3a]"
-              />
+              <Mic size={22} className="text-[#061a3a]" />
 
               <div>
                 <p className="text-sm font-medium text-slate-900">
                   Voice Chatbot
                 </p>
 
-                <p className="text-xs text-slate-500">
-                  Talk with FOSTIIMA
-                </p>
+                <p className="text-xs text-slate-500">Talk with FOSTIIMA</p>
               </div>
             </button>
           </div>
@@ -296,11 +260,7 @@ export default function ChatbotScript() {
         aria-label="Toggle FOSTIIMA assistant"
         className="fixed bottom-5 right-5 z-[99999] flex h-14 w-14 items-center justify-center rounded-full bg-[#e5b83f] text-[#061a3a] shadow-xl transition hover:scale-105"
       >
-        {menuOpen || activeBot ? (
-          <X size={26} />
-        ) : (
-          <MessageCircle size={26} />
-        )}
+        {menuOpen || activeBot ? <X size={26} /> : <MessageCircle size={26} />}
       </button>
     </>
   );
