@@ -1,0 +1,2268 @@
+============================================================
+FILE: src/components/home/Hero.tsx
+============================================================
+const HERO_VIDEO = "/videos/fostiima-hero.mp4";
+
+export default function Hero() {
+  return (
+    <section className="relative min-h-[calc(100svh-96px)] overflow-hidden bg-[#071a35]">
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source src={HERO_VIDEO} type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 bg-[#071a35]/35" />
+
+      <div className="absolute inset-0 bg-gradient-to-b from-[#071a35]/20 via-transparent to-[#071a35]/65" />
+    </section>
+  );
+}============================================================
+FILE: src/components/home/StatsBar.tsx
+============================================================
+import {
+  GraduationCap,
+  Landmark,
+  Medal,
+  TrendingUp,
+} from "lucide-react";
+
+const stats = [
+  {
+    value: "₹30 LPA",
+    label: "Highest Package ",
+    icon: TrendingUp,
+  },
+  {
+    value: "₹11.8 LPA",
+    label: "Average Package",
+    icon: Medal,
+  },
+  {
+    value: "100%",
+    label: "Placement Assistance",
+    icon: Medal,
+  },
+  {
+    value: "50+",
+    label: "IIM Alumni Faculty",
+    icon: GraduationCap,
+  },
+  {
+    value: "1973",
+    label: "IIM-A Alumni Founded",
+    icon: Landmark,
+  },
+];
+
+export default function StatsBar() {
+  return (
+    <section
+      aria-label="FOSTIIMA highlights"
+      className="bg-[#0d2d59] text-white"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 divide-x divide-white/10 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x">
+          {stats.map((stat) => {
+            const Icon = stat.icon;
+
+            return (
+              <div
+                key={stat.label}
+                className="flex min-h-[92px] items-center gap-3 px-4 py-5 sm:min-h-[100px] sm:px-5 lg:px-6"
+              >
+                {/* Icon */}
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#d6a900]/50 text-[#f4c400]">
+                  <Icon
+                    size={20}
+                    strokeWidth={1.8}
+                    aria-hidden="true"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="min-w-0">
+                  <p className="text-xl font-bold leading-none tracking-tight sm:text-2xl">
+                    {stat.value}
+                  </p>
+
+                  <p className="mt-1.5 text-[10px] font-medium uppercase leading-4 tracking-[0.08em] text-white/70 sm:text-[11px]">
+                    {stat.label}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}============================================================
+FILE: src/components/home/RecognitionSection.tsx
+============================================================
+const recognitions = [
+  {
+    src: "https://fostiima.org/assets/designer/themes/default/images/badge1.jpg",
+    alt: "National board or accredition",
+  },
+  {
+    src: "https://fostiima.org/assets/designer/themes/default/images/badge2.jpg",
+    alt: "Association of Indian Universities recognition",
+  },
+  {
+    src: "https://fostiima.org/assets/designer/themes/default/images/badge3.jpg",
+    alt: "AICTE approval",
+  },
+];
+
+export default function RecognitionSection() {
+  return (
+    <section className="border-y border-slate-100 bg-white py-8 sm:py-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+          {/* Heading */}
+          <div className="text-center sm:text-left">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
+              Recognition & Affiliations
+            </p>
+
+            <h2 className="mt-1 text-xl font-bold text-[#123b79] sm:text-2xl">
+              Recognised & Affiliated
+            </h2>
+          </div>
+
+          {/* Badges */}
+          <div className="flex items-center gap-8 sm:gap-10">
+            {recognitions.map((recognition) => (
+              <a
+                key={recognition.src}
+                href={recognition.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-20 w-20 items-center justify-center rounded-xl border border-slate-200 bg-white p-2 transition hover:border-[#123b79]/30 hover:shadow-md sm:h-24 sm:w-24"
+                title="View recognition badge"
+              >
+                <img
+                  src={recognition.src}
+                  alt={recognition.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </a>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}============================================================
+FILE: src/components/home/AboutSection.tsx
+============================================================
+import {
+  Award,
+  Building2,
+  BriefcaseBusiness,
+  GraduationCap,
+  Landmark,
+  ShieldCheck,
+} from "lucide-react";
+
+const highlights = [
+  {
+    title: "Founded by IIM-A Alumni",
+    description:
+      'Conceived and managed by the 1973 batch of IIM Ahmedabad — "Friends Of The Stars of IIM-A" — bringing premier pedagogy to management aspirants.',
+    icon: Landmark,
+    iconClass: "bg-[#fff7c7] text-[#d89a00] border-[#f4df75]",
+  },
+  {
+    title: "AICTE Approved & AIU Equivalent",
+    description:
+      "2-Year Full-Time PGDM recognized by Association of Indian Universities (AIU) as equivalent to an MBA degree from premier Indian universities.",
+    icon: ShieldCheck,
+    iconClass: "bg-[#e4f5ff] text-[#1556a8] border-[#bde5fb]",
+  },
+  {
+    title: "Harvard Case Pedagogy",
+    description:
+      "Immersive corporate problem-solving with Harvard & IIM case studies, simulation labs, Bloomberg terminals, and 2-month summer internships.",
+    icon: Award,
+    iconClass: "bg-[#fff0f1] text-[#c31e3b] border-[#ffd0d5]",
+  },
+  {
+    title: "50+ IIM Mentors & Faculty",
+    description:
+      "Distinguished cohort of 50+ IIM alumni faculty with 30–40 years of corporate and academic leadership, maintaining a strong student-faculty ratio.",
+    icon: GraduationCap,
+    iconClass: "bg-[#fff7c7] text-[#d89a00] border-[#f4df75]",
+  },
+  {
+    title: "Consistent 100% Placements",
+    description:
+      "Top corporate conglomerates hire from campus every year with packages reaching up to ₹30 LPA across Marketing, BFSI, Consulting, Analytics & Tech.",
+    icon: BriefcaseBusiness,
+    iconClass: "bg-[#e4f5ff] text-[#1556a8] border-[#bde5fb]",
+  },
+  {
+    title: "Strategic Delhi NCR Campus",
+    description:
+      "Modern, fully air-conditioned smart campus in Dwarka Institutional Area, Sector 9, New Delhi with digital library and partner hostel facilities.",
+    icon: Building2,
+    iconClass: "bg-[#fff0f1] text-[#c31e3b] border-[#ffd0d5]",
+  },
+];
+
+export default function AboutSection() {
+  return (
+    <section
+      id="about"
+      className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 xl:gap-16">
+          {/* Left Content */}
+          <div className="max-w-xl">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
+              About FOSTIIMA
+            </p>
+
+            <h2 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#123b79] sm:text-5xl lg:text-[30px]">
+              FOSTIIMA Business School{" "}
+              <span className="text-[#c31e3b]">Among the Best MBA Colleges in Delhi NCR</span>
+            </h2>
+
+            <div className="mt-7 space-y-5 text-[15px] text-justify leading-7 text-slate-600 sm:text-base">
+              <p>
+               Selecting the <b>best MBA Colleges in Delhi</b> from a list of numerous institutes which may make claims of being the best can be challenging. Our difference isn&apos;t just in the marketing, its in the DNA, our faculty and how our curriculum has been designed at FOSTIIMA Business School. Educating through a highly interactive platform and an experiential environment, FOSTIIMA is one of <b>the Best MBA Colleges in Delhi NCR</b> that provides a conducive learning environment with an emphasis on teamwork, vision, creativity and discipline.
+              </p>
+
+              <p>
+               We have designed our <b>MBA Course and PGDM Course</b> in such a way that it helps the students understand the theory of the business and then apply it into the practical aspects of the business, a gap which many <b>PGDM Colleges in Delhi</b> are not able to bridge. What makes FOSTIIMA unique is that students are not only learning the concepts of management, but they are also in the presence of industry veterans who have experience in multiple cross-functional and cross-industry areas and bring their experience into every session.
+
+              </p>
+            </div>
+          </div>
+
+          {/* Right Highlights */}
+          <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+            {highlights.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <article
+                  key={item.title}
+                  className="group rounded-xl border border-slate-200 bg-[#fbfcff] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d9e2f0] hover:shadow-[0_10px_25px_rgba(18,59,121,0.07)]"
+                >
+                  <div className="flex flex-col gap-3">
+                    <div
+                      className={`flex h-10 w-10 items-center justify-center rounded-lg border ${item.iconClass}`}
+                    >
+                      <Icon size={19} strokeWidth={1.8} aria-hidden="true" />
+                    </div>
+
+                    <div>
+                      <h3 className="text-[15px] font-bold leading-5 text-[#123b79]">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-1.5 text-[12px] leading-5 text-slate-500">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+============================================================
+FILE: src/components/home/PlacementVideos.tsx
+============================================================
+"use client";
+
+import { useCallback, useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+
+type PlacementVideo = {
+  id: string;
+  title: string;
+  batch: string;
+  
+};
+
+type YouTubePlayer = {
+  destroy: () => void;
+  pauseVideo: () => void;
+};
+
+type YouTubePlayerConstructor = new (
+  element: HTMLIFrameElement,
+  options: {
+    events?: {
+      onStateChange?: (event: { data: number }) => void;
+    };
+  },
+) => YouTubePlayer;
+
+declare global {
+  interface Window {
+    YT?: {
+      Player: YouTubePlayerConstructor;
+    };
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
+
+const placementVideos: PlacementVideo[] = [
+  {
+    id: "YvzuWIMhzXU",
+    title: "Student Placement Experience",
+    batch: "PGDM Placement Batch 2023 - 2025",
+  },
+  {
+    id: "4_0P8WzR1XQ",
+    title: "Student Placement Journey",
+    batch: "PGDM Placement Batch 2023 - 2025",
+  },
+  {
+    id: "2QJHftGnUuw",
+    title: "Placement Success Story",
+    batch: "PGDM Placement Batch 2023 - 2025",
+  },
+  {
+    id: "JX07Iia1kog",
+    title: "Student Placement Experience",
+    batch: "PGDM Placement Batch 2023 - 2025",
+  },
+];
+
+const AUTO_PLAY_INTERVAL = 3000;
+const SLIDE_DURATION = 450;
+
+const YOUTUBE_PLAYING = 1;
+const YOUTUBE_PAUSED = 2;
+const YOUTUBE_ENDED = 0;
+
+export default function PlacementVideos() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState<"next" | "previous">("next");
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
+  /*
+   * IMPORTANT:
+   * This ref is the actual slider lock.
+   *
+   * We use a ref instead of depending only on React state
+   * because setInterval can execute with an older state value.
+   */
+  const isVideoPlayingRef = useRef(false);
+
+  const playerRefs = useRef<Record<number, YouTubePlayer | null>>({});
+  const iframeRefs = useRef<Record<number, HTMLIFrameElement | null>>({});
+  const slideTimeoutRef = useRef<number | null>(null);
+
+  const totalVideos = placementVideos.length;
+
+  /*
+   * Update video playing state.
+   *
+   * Both state and ref are updated immediately.
+   */
+  const updateVideoPlayingState = useCallback((playing: boolean) => {
+    isVideoPlayingRef.current = playing;
+    setIsVideoPlaying(playing);
+  }, []);
+
+  /*
+   * When user interacts with the YouTube iframe,
+   * immediately LOCK the slider.
+   *
+   * This happens before YouTube sends its PLAYING event.
+   */
+  const handleVideoInteraction = useCallback(() => {
+    isVideoPlayingRef.current = true;
+    setIsVideoPlaying(true);
+  }, []);
+
+  /*
+   * Load YouTube IFrame API.
+   */
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    if (window.YT?.Player) {
+      return;
+    }
+
+    const existingScript = document.querySelector(
+      'script[src="https://www.youtube.com/iframe_api"]',
+    );
+
+    if (existingScript) {
+      return;
+    }
+
+    const script = document.createElement("script");
+
+    script.src = "https://www.youtube.com/iframe_api";
+    script.async = true;
+
+    document.body.appendChild(script);
+  }, []);
+
+  /*
+   * Initialize YouTube players.
+   *
+   * This effect intentionally runs only once.
+   * We do NOT depend on activeIndex.
+   */
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    let cancelled = false;
+
+    const initializePlayers = () => {
+      if (cancelled) {
+        return;
+      }
+
+      const YouTube = window.YT;
+
+      if (!YouTube?.Player) {
+        return;
+      }
+
+      placementVideos.forEach((_, index) => {
+        const iframe = iframeRefs.current[index];
+
+        if (!iframe || playerRefs.current[index]) {
+          return;
+        }
+
+        playerRefs.current[index] = new YouTube.Player(iframe, {
+          events: {
+            onStateChange: (event) => {
+              /*
+               * Only the currently visible video
+               * should control the slider.
+               */
+              if (index !== activeIndex) {
+                return;
+              }
+
+              if (event.data === YOUTUBE_PLAYING) {
+                /*
+                 * HARD LOCK
+                 */
+                isVideoPlayingRef.current = true;
+                setIsVideoPlaying(true);
+
+                return;
+              }
+
+              if (
+                event.data === YOUTUBE_PAUSED ||
+                event.data === YOUTUBE_ENDED
+              ) {
+                /*
+                 * UNLOCK
+                 */
+                isVideoPlayingRef.current = false;
+                setIsVideoPlaying(false);
+              }
+            },
+          },
+        });
+      });
+    };
+
+    if (window.YT?.Player) {
+      initializePlayers();
+    } else {
+      const previousCallback = window.onYouTubeIframeAPIReady;
+
+      window.onYouTubeIframeAPIReady = () => {
+        previousCallback?.();
+        initializePlayers();
+      };
+    }
+
+    const apiCheckTimer = window.setInterval(() => {
+      if (window.YT?.Player) {
+        initializePlayers();
+        window.clearInterval(apiCheckTimer);
+      }
+    }, 100);
+
+    return () => {
+      cancelled = true;
+      window.clearInterval(apiCheckTimer);
+    };
+  }, []);
+
+  /*
+   * Cleanup.
+   */
+  useEffect(() => {
+    return () => {
+      if (slideTimeoutRef.current !== null) {
+        window.clearTimeout(slideTimeoutRef.current);
+      }
+
+      Object.values(playerRefs.current).forEach((player) => {
+        try {
+          player?.destroy();
+        } catch {
+          // Ignore third-party cleanup errors.
+        }
+      });
+
+      playerRefs.current = {};
+    };
+  }, []);
+
+  /*
+   * Change active video.
+   */
+  const changeVideo = useCallback(
+    (nextIndex: number, nextDirection: "next" | "previous") => {
+      if (
+        isTransitioning ||
+        totalVideos <= 1 ||
+        nextIndex === activeIndex
+      ) {
+        return;
+      }
+
+      if (slideTimeoutRef.current !== null) {
+        window.clearTimeout(slideTimeoutRef.current);
+      }
+
+      /*
+       * Unlock/reset state for the new slide.
+       */
+      isVideoPlayingRef.current = false;
+      setIsVideoPlaying(false);
+
+      /*
+       * Stop currently playing YouTube video.
+       */
+      try {
+        playerRefs.current[activeIndex]?.pauseVideo();
+      } catch {
+        // Ignore third-party player errors.
+      }
+
+      setDirection(nextDirection);
+      setIsTransitioning(true);
+
+      slideTimeoutRef.current = window.setTimeout(() => {
+        setActiveIndex(nextIndex);
+        setIsTransitioning(false);
+        slideTimeoutRef.current = null;
+      }, SLIDE_DURATION);
+    },
+    [activeIndex, isTransitioning, totalVideos],
+  );
+
+  /*
+   * Next video.
+   */
+  const goToNext = useCallback(() => {
+    /*
+     * NEVER change the slide while the video is playing.
+     */
+    if (isVideoPlayingRef.current) {
+      return;
+    }
+
+    const nextIndex =
+      activeIndex === totalVideos - 1 ? 0 : activeIndex + 1;
+
+    changeVideo(nextIndex, "next");
+  }, [activeIndex, totalVideos, changeVideo]);
+
+  /*
+   * Previous video.
+   */
+  const goToPrevious = useCallback(() => {
+    const previousIndex =
+      activeIndex === 0 ? totalVideos - 1 : activeIndex - 1;
+
+    changeVideo(previousIndex, "previous");
+  }, [activeIndex, totalVideos, changeVideo]);
+
+  /*
+   * AUTO SLIDER
+   *
+   * The timer checks the REF directly.
+   *
+   * So even if React state has not updated yet,
+   * the video lock is respected.
+   */
+  useEffect(() => {
+    if (totalVideos <= 1 || isTransitioning) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      /*
+       * HARD STOP:
+       * If video is playing, do absolutely nothing.
+       */
+      if (isVideoPlayingRef.current) {
+        return;
+      }
+
+      const nextIndex =
+        activeIndex === totalVideos - 1 ? 0 : activeIndex + 1;
+
+      changeVideo(nextIndex, "next");
+    }, AUTO_PLAY_INTERVAL);
+
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, [
+    activeIndex,
+    totalVideos,
+    isTransitioning,
+    changeVideo,
+  ]);
+
+  if (totalVideos === 0) {
+    return null;
+  }
+
+  const activeVideo = placementVideos[activeIndex];
+
+  return (
+    <section className="relative overflow-hidden bg-[#f8faff] py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
+          {/* Left Content */}
+          <div className="max-w-xl">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
+              Placement Stories
+            </p>
+
+            <h2 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#123b79] sm:text-5xl">
+              PGDM Placement-Batch{" "}
+              <span className="text-[#c31e3b]">
+                (2023 - 2025)
+              </span>
+            </h2>
+
+            <p className="mt-6 text-[15px] leading-7 text-slate-600 sm:text-base">
+              Hear directly from our students about their placement journey,
+              learning experience and transition from campus to the corporate
+              world.
+            </p>
+
+            <p className="mt-4 text-sm leading-6 text-slate-500">
+              Explore real student experiences and placement success stories
+              from the PGDM 2023 - 2025 batch.
+            </p>
+
+            {/* Controls */}
+            <div className="mt-7 flex items-center gap-3">
+              <button
+                type="button"
+                onClick={goToPrevious}
+                disabled={isTransitioning}
+                aria-label="Previous placement video"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#123b79]/20 bg-white text-[#123b79] shadow-sm transition hover:bg-[#123b79] hover:text-white disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-[#123b79]/30"
+              >
+                <ChevronLeft size={20} aria-hidden="true" />
+              </button>
+
+              <button
+                type="button"
+                onClick={goToNext}
+                disabled={isTransitioning || isVideoPlaying}
+                aria-label="Next placement video"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#123b79]/20 bg-white text-[#123b79] shadow-sm transition hover:bg-[#123b79] hover:text-white disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-[#123b79]/30"
+              >
+                <ChevronRight size={20} aria-hidden="true" />
+              </button>
+
+              <div className="ml-2 flex items-center gap-2 text-xs font-semibold text-slate-400">
+                <span className="text-[#c31e3b]">
+                  {String(activeIndex + 1).padStart(2, "0")}
+                </span>
+
+                <span>/</span>
+
+                <span>
+                  {String(totalVideos).padStart(2, "0")}
+                </span>
+              </div>
+
+              {isVideoPlaying && (
+                <span className="ml-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#c31e3b]">
+                  Playing
+                </span>
+              )}
+            </div>
+          </div>
+
+          {/* Video */}
+          <div className="min-w-0">
+            <div className="rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_15px_45px_rgba(18,59,121,0.08)] sm:p-3">
+              <div className="relative aspect-video overflow-hidden rounded-xl bg-[#071a35]">
+                {placementVideos.map((video, index) => {
+                  const isActive = index === activeIndex;
+
+                  return (
+                    <div
+                      key={video.id}
+                      className={`absolute inset-0 transition-transform duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                        isActive
+                          ? "translate-x-0"
+                          : direction === "next"
+                            ? "-translate-x-full"
+                            : "translate-x-full"
+                      }`}
+                      aria-hidden={!isActive}
+                    >
+                      <iframe
+                        ref={(element) => {
+                          iframeRefs.current[index] = element;
+                        }}
+                        src={`https://www.youtube.com/embed/${video.id}?enablejsapi=1`}
+                        title={video.title}
+                        className="h-full w-full"
+                        loading={index === 0 ? "eager" : "lazy"}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                        onMouseDown={handleVideoInteraction}
+                        onTouchStart={handleVideoInteraction}
+                        onFocus={handleVideoInteraction}
+                      />
+                    </div>
+                  );
+                })}
+
+                {/* Video Label */}
+                <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex items-center gap-2 rounded-full bg-black/70 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
+                  <Play
+                    size={11}
+                    fill="currentColor"
+                    aria-hidden="true"
+                  />
+                  Student Placement Story
+                </div>
+              </div>
+
+              {/* Current Video Information */}
+              <div className="px-2 pb-1 pt-4 sm:px-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#c31e3b]">
+                  {activeVideo.batch}
+                </p>
+
+                <h3 className="mt-1.5 text-lg font-bold text-[#123b79] sm:text-xl">
+                  {activeVideo.title}
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}============================================================
+FILE: src/components/home/CampusHighlights.tsx
+============================================================
+const highlights = [
+  {
+    title: "Life at FOSTIIMA",
+    description:
+      "A vibrant campus life that nurtures leadership, creativity and lifelong connections.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1683887034491-f58b4c4fca72?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3R1ZGVudHN8ZW58MHx8MHx8fDA%3D",
+    href: "/life-at-fostiima",
+    eyebrow: "Campus Life",
+  },
+  {
+    title: "Placements That Open Doors",
+    description:
+      "Strong corporate connect ensuring bright careers and meaningful career opportunities.",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZGVudHN8ZW58MHx8MHx8fDA%3D",
+    href: "/placement",
+    eyebrow: "Career Opportunities",
+  },
+];
+
+export default function CampusHighlights() {
+  return (
+    <section className="w-full overflow-hidden bg-white py-14 sm:py-16 lg:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid w-full min-w-0 grid-cols-1 gap-5 md:grid-cols-2">
+          {highlights.map((item) => (
+            <a
+              key={item.title}
+              href={item.href}
+              className="
+                group
+                relative
+                isolate
+                block
+                w-full
+                min-w-0
+                max-w-full
+                overflow-hidden
+                rounded-2xl
+                bg-[#071a35]
+                shadow-[0_12px_35px_rgba(18,59,121,0.12)]
+                aspect-[1.45/1]
+                sm:aspect-[1.8/1]
+                md:aspect-[2/0.82]
+              "
+            >
+              {/* Background */}
+              <img
+                src={item.image}
+                alt=""
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+
+              {/* Premium Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#071a35]/95 via-[#071a35]/75 to-[#071a35]/20" />
+
+              {/* Content */}
+              <div className="relative z-10 flex h-full max-w-[90%] flex-col justify-center px-5 py-6 sm:max-w-[82%] sm:px-8 sm:py-7 lg:max-w-[78%] lg:px-9">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#f4c400] sm:text-xs">
+                  {item.eyebrow}
+                </p>
+
+                <h2 className="mt-2 font-serif text-xl font-bold leading-tight text-white sm:text-3xl">
+                  {item.title}
+                </h2>
+
+                <p className="mt-3 max-w-md text-xs leading-5 text-white/75 sm:text-sm sm:leading-6">
+                  {item.description}
+                </p>
+
+                <span className="mt-4 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em] text-white transition-transform duration-300 group-hover:translate-x-1 sm:text-[11px]">
+                  Explore More
+                  <span className="ml-2 text-[#f4c400]">→</span>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}============================================================
+FILE: src/components/home/ProgramsSection.tsx
+============================================================
+"use client";
+
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+const programs = [
+  {
+    title: "PGDM",
+    category: "AICTE Approved",
+    duration: "2 Year Full-Time Program",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    title: "PGDM (Marketing)",
+    category: "AICTE Approved",
+    duration: "2 Year Full-Time Program",
+    image:
+      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    title: "PGDM (Finance)",
+    category: "AICTE Approved",
+    duration: "2 Year Full-Time Program",
+    image:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    title: "PGDM (HR)",
+    category: "AICTE Approved",
+    duration: "2 Year Full-Time Program",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    title: "PGDM (Business Analytics)",
+    category: "AICTE Approved",
+    duration: "2 Year Full-Time Program",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+  },
+];
+
+export default function ProgramsSection() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollCarousel = (direction: "left" | "right") => {
+    if (!carouselRef.current) {
+      return;
+    }
+
+    const scrollAmount = carouselRef.current.clientWidth * 0.82;
+
+    carouselRef.current.scrollBy({
+      left: direction === "right" ? scrollAmount : -scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section className="overflow-hidden bg-[#f8faff] py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
+            Our Programs
+          </p>
+
+          <h2 className="mt-2 font-serif text-4xl font-bold leading-tight text-[#123b79] sm:text-5xl">
+            Industry-aligned Programs{" "}
+            <span className="text-[#c31e3b]">
+              Built for Your Future
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base">
+            Designed to build skills, knowledge and leadership for tomorrow&apos;s
+            challenges.
+          </p>
+        </div>
+
+        {/* Carousel Header */}
+        <div className="mt-9 flex items-center justify-end gap-2">
+          <button
+            type="button"
+            onClick={() => scrollCarousel("left")}
+            aria-label="Previous programs"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#123b79]/20 bg-white text-[#123b79] shadow-sm transition hover:bg-[#123b79] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#123b79]/30"
+          >
+            <ChevronLeft size={19} aria-hidden="true" />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => scrollCarousel("right")}
+            aria-label="Next programs"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#123b79]/20 bg-white text-[#123b79] shadow-sm transition hover:bg-[#123b79] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#123b79]/30"
+          >
+            <ChevronRight size={19} aria-hidden="true" />
+          </button>
+        </div>
+
+        {/* Programs */}
+        <div
+          ref={carouselRef}
+          className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {programs.map((program) => (
+            <article
+              key={program.title}
+              className="group min-w-[82%] snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_25px_rgba(18,59,121,0.06)] sm:min-w-[47%] lg:min-w-[calc(25%-12px)]"
+            >
+              {/* Image */}
+              <div className="relative aspect-[1.65/1] overflow-hidden">
+                <img
+                  src={program.image}
+                  alt={program.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071a35]/60 via-transparent to-transparent" />
+              </div>
+
+              {/* Content */}
+              <div className="p-4 sm:p-5">
+                <h3 className="text-lg font-bold text-[#123b79]">
+                  {program.title}
+                </h3>
+
+                <p className="mt-1 text-xs font-medium text-slate-400">
+                  {program.category}
+                </p>
+
+                <p className="mt-1 text-xs text-slate-500">
+                  {program.duration}
+                </p>
+
+                <Link
+                  href="/programs"
+                  className="mt-4 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em] text-[#c31e3b] transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  Know More
+                  <ArrowRight
+                    size={13}
+                    className="ml-1.5"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}============================================================
+FILE: src/components/conclave/ConclaveSection.tsx
+============================================================
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+import EventCard from "@/components/conclave/EventCard";
+import { getPublishedConclaveEvents } from "@/data/conclave";
+
+const HOMEPAGE_EVENT_LIMIT = 6;
+
+export default function ConclaveSection() {
+  const events = getPublishedConclaveEvents().slice(
+    0,
+    HOMEPAGE_EVENT_LIMIT,
+  );
+
+  return (
+    <section className="relative overflow-hidden bg-[#f8faff] py-14 sm:py-16">
+      {/* Background decoration */}
+      <div className="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-[#dbeafe]/60 blur-3xl" />
+
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-[#fee2e2]/60 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-9 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-3xl">
+            <span className="mb-2 inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-[#c31e3b]">
+              Conclave / Conference
+            </span>
+
+            <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
+              Ideas That{" "}
+              <span className="text-[#c31e3b]">Shape Tomorrow</span>
+            </h2>
+
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              Discover conferences, summits and industry conversations that
+              bring together ideas, leadership and perspectives for the future.
+            </p>
+          </div>
+
+          {/* Desktop View All */}
+          <Link
+            href="/conclave-conference"
+            className="group hidden shrink-0 items-center gap-2 text-sm font-semibold text-[#c31e3b] transition-colors hover:text-[#102a56] sm:inline-flex"
+          >
+            View All Events
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </div>
+
+        {/* Events */}
+        {events.length > 0 ? (
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {events.map((event) => (
+              <EventCard key={event.id} event={event} />
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-2xl border border-slate-200 bg-white px-6 py-12 text-center shadow-sm">
+            <p className="text-sm text-slate-500">
+              No conferences or events are currently available.
+            </p>
+          </div>
+        )}
+
+        {/* Mobile View All */}
+        <div className="mt-7 flex justify-center sm:hidden">
+          <Link
+            href="/conclave-conference"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#102a56] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#c31e3b]"
+          >
+            View All Events
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}============================================================
+FILE: src/components/home/AwardsSection.tsx
+============================================================
+"use client";
+
+import { useRef } from "react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  Award,
+  ShieldCheck,
+  Star,
+} from "lucide-react";
+
+const awards = [
+  {
+    title: "AICTE APPROVAL 2021-22",
+    description:
+      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
+    icon: ShieldCheck,
+    accent: "blue",
+  },
+  {
+    title: "AICTE APPROVAL 2024-25",
+    description:
+      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
+    icon: Award,
+    accent: "red",
+  },
+  {
+    title: "AICTE APPROVAL 2023-24",
+    description:
+      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
+    icon: Star,
+    accent: "yellow",
+  },
+  {
+    title: "AICTE APPROVAL 2022-23",
+    description:
+      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
+    icon: Star,
+    accent: "blue",
+  },
+];
+
+
+export default function AwardsSection() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!sliderRef.current) return;
+
+    const amount = sliderRef.current.clientWidth * 0.8;
+
+    sliderRef.current.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section className="relative overflow-hidden bg-[#f8faff] py-14 sm:py-16">
+      {/* Background decoration */}
+      <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#dbeafe]/60 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-[#fee2e2]/60 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span className="mb-2 inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-[#c31e3b]">
+              Awards & Accreditation
+            </span>
+
+            <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
+              Recognised for Excellence
+            </h2>
+
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              Our academic standards, industry engagement and management
+              education ecosystem reflect {`FOSTIIMA's`} commitment to excellence.
+            </p>
+          </div>
+
+          {/* Arrows */}
+          <div className="flex shrink-0 items-center gap-2">
+            <button
+              type="button"
+              onClick={() => scroll("left")}
+              aria-label="Previous awards"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#102a56] shadow-sm transition-all hover:border-[#c31e3b] hover:bg-[#c31e3b] hover:text-white"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => scroll("right")}
+              aria-label="Next awards"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#102a56] shadow-sm transition-all hover:border-[#c31e3b] hover:bg-[#c31e3b] hover:text-white"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Horizontal carousel */}
+        <div
+          ref={sliderRef}
+          className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-3 scrollbar-hide"
+        >
+          {awards.map((award) => {
+            const Icon = award.icon;
+
+            const accent =
+              award.accent === "red"
+                ? {
+                    icon: "bg-[#c31e3b]/10 text-[#c31e3b]",
+                    line: "bg-[#c31e3b]",
+                  }
+                : award.accent === "yellow"
+                  ? {
+                      icon: "bg-[#fef3c7] text-[#b77900]",
+                      line: "bg-[#eab308]",
+                    }
+                  : {
+                      icon: "bg-[#dbeafe] text-[#1555a5]",
+                      line: "bg-[#1555a5]",
+                    };
+
+            return (
+              <article
+                key={award.title}
+                className="group relative min-w-[85%] snap-start overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:min-w-[calc(50%-10px)] lg:min-w-[calc(33.333%-14px)]"
+              >
+                {/* Top accent */}
+                <div
+                  className={`absolute left-0 top-0 h-1 w-full ${accent.line}`}
+                />
+
+                <div className="flex items-start justify-between">
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-xl ${accent.icon}`}
+                  >
+                    <Icon className="h-6 w-6" strokeWidth={1.8} />
+                  </div>
+
+                  <ArrowUpRight className="h-5 w-5 text-slate-300 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#c31e3b]" />
+                </div>
+
+                <h3 className="mt-5 text-lg font-bold text-[#102a56]">
+                  {award.title}
+                </h3>
+
+                <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">
+                  {award.description}
+                </p>
+              </article>
+            );
+          })}
+        </div>
+
+        {/* Bottom link */}
+        <div className="mt-6 flex justify-end">
+          <a
+            href="/awards-accreditation"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#c31e3b] transition-colors hover:text-[#102a56]"
+          >
+            View More
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}============================================================
+FILE: src/components/home/CampusLifeSection.tsx
+============================================================
+"use client";
+
+import { useRef } from "react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  BookOpen,
+  Dumbbell,
+  Landmark,
+  Users,
+} from "lucide-react";
+
+const campusLifeItems = [
+  {
+    title: "Student Community",
+    description:
+      "Build meaningful connections, collaborate with peers and create lifelong friendships beyond the classroom.",
+    icon: Users,
+    image:
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Intellectual Life",
+    description:
+      "Engage in discussions, debates, workshops and activities that encourage curiosity and new perspectives.",
+    icon: BookOpen,
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Sports & Recreation",
+    description:
+      "Balance academic life with sports, recreation and activities that encourage teamwork and sportsmanship.",
+    icon: Dumbbell,
+    image:
+      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Events & Experiences",
+    description:
+      "Experience cultural activities, celebrations, industry interactions and memorable campus experiences.",
+    icon: Landmark,
+    image:
+      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80",
+  },
+];
+
+export default function CampusLifeSection() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const hasCarousel = campusLifeItems.length > 4;
+
+  const scroll = (direction: "left" | "right") => {
+    if (!sliderRef.current || !hasCarousel) return;
+
+    const amount = sliderRef.current.clientWidth * 0.8;
+
+    sliderRef.current.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section className="relative overflow-hidden bg-white py-14 sm:py-16">
+      {/* Decorative background */}
+      <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#dbeafe]/50 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-[#fee2e2]/50 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-9 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-3xl">
+            <span className="mb-2 inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-[#c31e3b]">
+              Campus Life
+            </span>
+
+            <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
+              Beyond Classrooms,{" "}
+              <span className="text-[#c31e3b]">Beyond Boundaries</span>
+            </h2>
+
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              Immerse yourself in an ecosystem of cultural dynamism,
+              intellectual debate, sportsmanship, and lifelong camaraderie.
+            </p>
+          </div>
+
+          {/* Arrows ONLY when cards > 4 */}
+          {hasCarousel && (
+            <div className="flex shrink-0 items-center gap-2">
+              <button
+                type="button"
+                onClick={() => scroll("left")}
+                aria-label="Previous campus life cards"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#102a56] shadow-sm transition-all hover:border-[#c31e3b] hover:bg-[#c31e3b] hover:text-white"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scroll("right")}
+                aria-label="Next campus life cards"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#102a56] shadow-sm transition-all hover:border-[#c31e3b] hover:bg-[#c31e3b] hover:text-white"
+              >
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Cards */}
+        {/* Cards */}
+        <div
+          ref={sliderRef}
+          className="
+    flex
+    gap-5
+    overflow-x-auto
+    snap-x
+    snap-mandatory
+    scroll-smooth
+    pb-3
+    scrollbar-hide
+  "
+        >
+          {campusLifeItems.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <article
+                key={item.title}
+                className="
+          group
+          relative
+          w-[88%]
+          shrink-0
+          snap-start
+          overflow-hidden
+          rounded-xl
+          border
+          border-slate-200
+          bg-white
+          shadow-sm
+          transition-all
+          duration-300
+          hover:-translate-y-1
+          hover:shadow-xl
+
+          sm:w-[calc(50%-10px)]
+
+          lg:w-[calc(25%-15px)]
+        "
+              >
+                {/* Image */}
+                <div className="relative h-72 overflow-hidden sm:h-80 lg:h-[300px]">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="
+              h-full
+              w-full
+              object-cover
+              transition-transform
+              duration-700
+              group-hover:scale-105
+            "
+                  />
+
+                  {/* Default overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#071a38]/35 via-transparent to-transparent" />
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#071a38]/90 via-[#071a38]/35 to-transparent opacity-0 transition-opacity duration-400 group-hover:opacity-100" />
+
+                  {/* Icon */}
+                  <div className="absolute left-5 top-5 flex h-10 w-10 translate-y-2 items-center justify-center rounded-lg bg-white/95 text-[#c31e3b] opacity-0 shadow-md backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    <Icon className="h-5 w-5" strokeWidth={1.8} />
+                  </div>
+
+                  {/* Heading - only on hover */}
+                  <div className="absolute inset-x-0 bottom-0 translate-y-3 p-5 opacity-0 transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
+                    <h3 className="text-xl font-bold leading-tight text-white sm:text-2xl">
+                      {item.title}
+                    </h3>
+
+                    <div className="mt-3 h-0.5 w-10 bg-[#eab308]" />
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="absolute bottom-5 right-5 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full bg-[#c31e3b] text-white opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+============================================================
+FILE: src/components/home/FacultySection.tsx
+============================================================
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { facultyData } from "@/data/faculty";
+
+const homepageFaculty = facultyData.slice(0, 4);
+
+function truncateWords(text: string, limit = 30) {
+  const words = text.trim().split(/\s+/);
+
+  if (words.length <= limit) {
+    return text;
+  }
+
+  return `${words.slice(0, limit).join(" ")}...`;
+}
+
+export default function FacultySection() {
+  return (
+    <section className="relative overflow-hidden bg-[#f8faff] py-14 sm:py-16">
+      <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#dbeafe]/50 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span className="mb-2 inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-[#c31e3b]">
+              Faculty
+            </span>
+
+            <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
+              Learn From Experienced{" "}
+              <span className="text-[#c31e3b]">Industry Leaders</span>
+            </h2>
+
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              Learn from experienced academicians and industry professionals
+              bringing practical knowledge and deep domain expertise into the
+              classroom.
+            </p>
+          </div>
+
+          <Link
+            href="/faculties"
+            className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#c31e3b]"
+          >
+            View All Faculties
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+
+        {/* Faculty cards */}
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {homepageFaculty.map((faculty) => (
+            <Link
+              key={faculty.slug}
+              href={`/faculties/${faculty.slug}`}
+              className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              {/* Image */}
+              <div className="relative h-[300px] overflow-hidden">
+                <img
+                  src={faculty.image}
+                  alt={faculty.name}
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071a38]/90 via-transparent to-transparent" />
+
+                {/* Open icon */}
+                <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-[#102a56] opacity-0 shadow-md transition-all duration-300 group-hover:opacity-100">
+                  <ArrowUpRight className="h-4 w-4" />
+                </div>
+
+                {/* Name */}
+                <div className="absolute inset-x-0 bottom-0 p-5">
+                  <h3 className="text-lg font-bold text-white">
+                    {faculty.name}
+                  </h3>
+
+                  <div className="mt-2 h-0.5 w-8 bg-[#eab308] transition-all duration-300 group-hover:w-12" />
+                </div>
+              </div>
+
+              {/* Short information */}
+              <div className="p-5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#c31e3b]">
+                  {faculty.experience} Industry Experience
+                </p>
+
+                <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
+                  {truncateWords(
+                    `${faculty.qualification}. Industry Domain/Fields: ${faculty.domain}`,
+                  )}
+                </p>
+
+                <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-[#102a56]">
+                  View Profile
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile / bottom CTA */}
+        <div className="mt-7 flex justify-center lg:hidden">
+          <Link
+            href="/faculties"
+            className="inline-flex items-center gap-2 rounded-full bg-[#102a56] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#c31e3b]"
+          >
+            View All Faculties
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}============================================================
+FILE: src/components/home/RecruitersSection.tsx
+============================================================
+"use client";
+import { useState } from "react";
+
+const recruiterLogos = [
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-4.png",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-5.png",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-4.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-6.png",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-7.png",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-5.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img7.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-6.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img6.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_images-14.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img5.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img10.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img2.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img1.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img4.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img3.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img8.jpg",
+    alt: "Recruiter",
+  },
+  {
+    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img9.jpg",
+    alt: "Recruiter",
+  },
+];
+
+const firstRow = recruiterLogos.slice(0, 9);
+const secondRow = recruiterLogos.slice(9);
+
+type RecruiterLogo = {
+  src: string;
+  alt: string;
+};
+
+type LogoRowProps = {
+  logos: RecruiterLogo[];
+  direction: "left" | "right";
+};
+
+function LogoRow({ logos, direction }: LogoRowProps) {
+  const [isPaused, setIsPaused] = useState(false);
+
+  const duplicatedLogos = [...logos, ...logos];
+
+  return (
+    <div
+      className="overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <div
+        className={
+          direction === "left"
+            ? "animate-recruiters-left flex w-max gap-4"
+            : "animate-recruiters-right flex w-max gap-4"
+        }
+        style={{
+          animationPlayState: isPaused ? "paused" : "running",
+        }}
+      >
+        {duplicatedLogos.map((logo, index) => (
+          <div
+            key={`${logo.src}-${index}`}
+            className="flex h-[76px] w-[150px] shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white px-5 shadow-[0_4px_18px_rgba(18,59,121,0.04)] transition-all duration-300 hover:border-[#123b79]/30 hover:shadow-[0_8px_25px_rgba(18,59,121,0.08)] sm:h-[82px] sm:w-[170px]"
+          >
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              loading="lazy"
+              className="max-h-[48px] max-w-[125px] object-contain sm:max-h-[52px] sm:max-w-[145px]"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function RecruitersSection() {
+  return (
+    <section
+      aria-labelledby="recruiters-heading"
+      className="overflow-hidden bg-white py-16 sm:py-20 lg:py-24"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
+            Career Opportunities
+          </p>
+
+          <h2
+            id="recruiters-heading"
+            className="mt-2 font-serif text-4xl font-bold leading-tight text-[#123b79] sm:text-5xl"
+          >
+            Our Prominent{" "}
+            <span className="text-[#c31e3b]">Recruiters</span>
+          </h2>
+
+          <p className="mt-4 text-sm leading-6 text-slate-500 sm:text-base">
+            Leading organisations across industries recruit talented
+            professionals from FOSTIIMA Business School.
+          </p>
+        </div>
+
+        {/* Marquee */}
+        <div className="relative space-y-4">
+          {/* Left → Right */}
+          <LogoRow logos={firstRow} direction="right" />
+
+          {/* Right → Left */}
+          <LogoRow logos={secondRow} direction="left" />
+        </div>
+      </div>
+    </section>
+  );
+}============================================================
+FILE: src/components/home/MediaPresenceSection.tsx
+============================================================
+"use client";
+
+import { useRef } from "react";
+import { ArrowLeft, ArrowRight, ExternalLink, Newspaper } from "lucide-react";
+
+import { mediaPresenceData } from "@/data/mediaPresence";
+
+export default function MediaPresenceSection() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const hasCarousel = mediaPresenceData.length > 3;
+
+  const scrollSlider = (direction: "left" | "right") => {
+    const slider = sliderRef.current;
+
+    if (!slider) return;
+
+    const scrollAmount = slider.clientWidth * 0.88;
+
+    slider.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section className="w-full overflow-hidden bg-[#f6f9ff] py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="mb-10 flex flex-col gap-6 sm:mb-12 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <div className="mb-3 flex items-center gap-2">
+              <span className="h-px w-8 bg-[#c31e3b]" />
+
+              <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#c31e3b]">
+                Media Presence
+              </span>
+            </div>
+
+            <h2 className="text-3xl font-bold tracking-tight text-[#152d58] sm:text-4xl lg:text-[42px]">
+              FOSTIIMA in the <span className="text-[#c31e3b]">News</span>
+            </h2>
+
+            <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 sm:text-base">
+              Discover stories, insights and highlights featuring FOSTIIMA
+              Business School across leading media platforms.
+            </p>
+          </div>
+
+          {/* Arrows */}
+          {hasCarousel && (
+            <div className="flex shrink-0 items-center gap-2">
+              <button
+                type="button"
+                onClick={() => scrollSlider("left")}
+                aria-label="Previous media stories"
+                className="
+                  flex h-10 w-10 items-center justify-center rounded-full
+                  border border-[#c31e3b]/20 bg-white text-[#152d58]
+                  shadow-sm transition-all duration-300
+                  hover:border-[#c31e3b] hover:bg-[#c31e3b] hover:text-white
+                "
+              >
+                <ArrowLeft size={17} strokeWidth={1.8} />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scrollSlider("right")}
+                aria-label="Next media stories"
+                className="
+                  flex h-10 w-10 items-center justify-center rounded-full
+                  border border-[#c31e3b]/20 bg-white text-[#152d58]
+                  shadow-sm transition-all duration-300
+                  hover:border-[#c31e3b] hover:bg-[#c31e3b] hover:text-white
+                "
+              >
+                <ArrowRight size={17} strokeWidth={1.8} />
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Media Slider */}
+        <div
+          ref={sliderRef}
+          className="
+            flex
+            w-full
+            gap-5
+            overflow-x-auto
+            snap-x
+            snap-mandatory
+            scroll-smooth
+            pb-4
+            scrollbar-hide
+          "
+        >
+          {mediaPresenceData.map((item) => (
+            <a
+              key={item.id}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                group
+                block
+                w-[88%]
+                min-w-[88%]
+                snap-start
+                sm:w-[calc(50%-10px)]
+                sm:min-w-[calc(50%-10px)]
+                lg:w-[calc(33.333%-14px)]
+                lg:min-w-[calc(33.333%-14px)]
+              "
+            >
+              <article
+                className="
+                  relative flex h-full min-h-[370px] flex-col
+                  overflow-hidden rounded-2xl
+                  border border-[#dbe4f2]
+                  bg-white
+                  shadow-[0_8px_30px_rgba(21,45,88,0.06)]
+                  transition-all duration-500
+                  group-hover:-translate-y-1
+                  group-hover:border-[#c31e3b]/30
+                  group-hover:shadow-[0_18px_45px_rgba(21,45,88,0.12)]
+                "
+              >
+                {/* Top Accent */}
+                <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-[#152d58] via-[#c31e3b] to-[#e6b93f]" />
+
+                {/* Logo Area */}
+                <div className="relative flex h-40 items-center justify-center border-b border-slate-100 bg-[#fbfcff] px-8">
+                  <div
+                    className="
+                      absolute left-5 top-5 flex h-8 w-8 items-center
+                      justify-center rounded-lg bg-[#eef4ff]
+                      text-[#152d58]
+                    "
+                  >
+                    <Newspaper size={15} strokeWidth={1.8} />
+                  </div>
+
+                  <span
+                    className="
+                            absolute right-5 top-5 z-20
+                            rounded-full
+                            bg-[#fff1f3]
+                            px-3 py-1
+                            text-[9px]
+                            font-bold
+                            uppercase
+                            tracking-[0.14em]
+                            text-[#c31e3b]
+                            shadow-sm
+                                    "
+                  >
+                    Media Coverage
+                  </span>
+
+                  <img
+                    src={item.logo}
+                    alt={`${item.publication} logo`}
+                    className="
+                      max-h-24
+                      max-w-[82%]
+                      object-contain
+                      transition-transform
+                      duration-500
+                      group-hover:scale-105
+                    "
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#71809a]">
+                    {item.publication}
+                  </p>
+
+                  <h3
+                    className="
+                      line-clamp-3
+                      text-lg
+                      font-bold
+                      leading-7
+                      text-[#172f59]
+                      transition-colors
+                      duration-300
+                      group-hover:text-[#c31e3b]
+                    "
+                  >
+                    {item.title}
+                  </h3>
+
+                  {/* Bottom Link */}
+                  <div className="mt-auto flex items-center justify-between pt-7">
+                    <span className="text-sm font-semibold text-[#c31e3b]">
+                      Read Article
+                    </span>
+
+                    <span
+                      className="
+                        flex h-9 w-9 items-center justify-center
+                        rounded-full
+                        border border-[#dce4f0]
+                        text-[#152d58]
+                        transition-all duration-300
+                        group-hover:border-[#c31e3b]
+                        group-hover:bg-[#c31e3b]
+                        group-hover:text-white
+                      "
+                    >
+                      <ExternalLink size={15} strokeWidth={1.8} />
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+
+        {/* Mobile Swipe Hint */}
+        <div className="mt-3 flex items-center justify-center gap-2 text-[10px] font-medium uppercase tracking-[0.16em] text-slate-400 sm:hidden">
+          <ArrowLeft size={12} />
+          <span>Swipe to explore</span>
+          <ArrowRight size={12} />
+        </div>
+      </div>
+    </section>
+  );
+}
+============================================================
+FILE: src/components/reviews/ReviewSection.tsx
+============================================================
+"use client";
+
+import { useRef } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
+import ReviewCard from "@/components/reviews/ReviewCard";
+import { reviews } from "@/data/reviews";
+
+const HOMEPAGE_REVIEW_LIMIT = 6;
+const CAROUSEL_THRESHOLD = 3;
+
+export default function ReviewSection() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const visibleReviews = reviews.slice(0, HOMEPAGE_REVIEW_LIMIT);
+  const hasCarousel = visibleReviews.length > CAROUSEL_THRESHOLD;
+
+  const scroll = (direction: "left" | "right") => {
+    if (!sliderRef.current || !hasCarousel) return;
+
+    const amount = sliderRef.current.clientWidth * 0.8;
+
+    sliderRef.current.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section className="relative overflow-hidden bg-[#f8faff] py-14 sm:py-16">
+      {/* Decorative background */}
+      <div className="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-[#dbeafe]/60 blur-3xl" />
+
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-[#fee2e2]/60 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-9 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span className="mb-2 inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-[#c31e3b]">
+              Reviews & Feedback
+            </span>
+
+            <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
+              What Our <span className="text-[#c31e3b]">Students Say</span>
+            </h2>
+
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              Hear directly from students about their learning experience,
+              campus life and journey at FOSTIIMA.
+            </p>
+          </div>
+
+          {/* Arrows only when 4+ */}
+          {hasCarousel && (
+            <div className="flex shrink-0 items-center gap-2">
+              <button
+                type="button"
+                onClick={() => scroll("left")}
+                aria-label="Previous reviews"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#102a56] shadow-sm transition-all hover:border-[#c31e3b] hover:bg-[#c31e3b] hover:text-white"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scroll("right")}
+                aria-label="Next reviews"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#102a56] shadow-sm transition-all hover:border-[#c31e3b] hover:bg-[#c31e3b] hover:text-white"
+              >
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Reviews */}
+        {visibleReviews.length > 0 ? (
+          <div
+            ref={sliderRef}
+            className="
+      flex
+      gap-5
+      overflow-x-auto
+      snap-x
+      snap-mandatory
+      scroll-smooth
+      pb-3
+      scrollbar-hide
+    "
+          >
+            {visibleReviews.map((review) => (
+              <div
+                key={review.id}
+                className="
+          w-[88%]
+          shrink-0
+          snap-start
+          sm:w-[calc(50%-10px)]
+          lg:w-[calc(33.333%-14px)]
+        "
+              >
+                <ReviewCard review={review} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center">
+            <p className="text-sm text-slate-500">
+              No reviews are currently available.
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+============================================================
+FILE: src/components/home/FAQSection.tsx
+============================================================
+"use client";
+
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+
+import { faqData } from "@/data/faqs";
+
+const HOMEPAGE_FAQ_LIMIT = 6;
+
+export default function FAQSection() {
+  const [openId, setOpenId] = useState<string | null>(null);
+
+  const faqs = faqData.slice(0, HOMEPAGE_FAQ_LIMIT);
+
+  const toggleFAQ = (id: string) => {
+    setOpenId((currentId) => (currentId === id ? null : id));
+  };
+
+  return (
+    <section className="relative overflow-hidden bg-white py-14 sm:py-16">
+      {/* Background decoration */}
+      <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#dbeafe]/50 blur-3xl" />
+
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-[#fee2e2]/50 blur-3xl" />
+
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <div className="mx-auto mb-9 max-w-3xl text-center">
+          <span className="mb-2 inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-[#c31e3b]">
+            FAQs
+          </span>
+
+          <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
+            Frequently Asked{" "}
+            <span className="text-[#c31e3b]">Questions</span>
+          </h2>
+
+          <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
+            Find quick answers to common questions about academics, admissions,
+            campus life and placements at FOSTIIMA.
+          </p>
+        </div>
+
+        {/* FAQ list */}
+        <div className="space-y-3">
+          {faqs.map((faq) => {
+            const isOpen = openId === faq.id;
+
+            return (
+              <div
+                key={faq.id}
+                className={`overflow-hidden rounded-xl border bg-white transition-all duration-300 ${
+                  isOpen
+                    ? "border-[#c31e3b]/30 shadow-md"
+                    : "border-slate-200 shadow-sm hover:border-[#102a56]/20"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleFAQ(faq.id)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${faq.id}`}
+                  className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left sm:px-6"
+                >
+                  <div className="flex min-w-0 items-center gap-4">
+                    <span
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-sm font-bold transition-colors ${
+                        isOpen
+                          ? "bg-[#c31e3b] text-white"
+                          : "bg-[#dbeafe] text-[#1555a5]"
+                      }`}
+                    >
+                      ?
+                    </span>
+
+                    <span className="text-sm font-semibold leading-6 text-[#102a56] sm:text-base">
+                      {faq.question}
+                    </span>
+                  </div>
+
+                  <ChevronDown
+                    className={`h-5 w-5 shrink-0 text-[#102a56] transition-transform duration-300 ${
+                      isOpen ? "rotate-180 text-[#c31e3b]" : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Answer */}
+                <div
+                  id={`faq-answer-${faq.id}`}
+                  className={`grid transition-all duration-300 ${
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="min-h-0 overflow-hidden">
+                    <div className="border-t border-slate-100 px-5 pb-5 pt-4 pl-[76px] sm:px-6 sm:pl-[76px]">
+                      <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.16em] text-[#c31e3b]">
+                        {faq.category}
+                      </span>
+
+                      <p className="text-sm leading-7 text-slate-600">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+}

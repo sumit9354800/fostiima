@@ -12,11 +12,15 @@ export default async function AdminAuthGuard({
     headers: await headers(),
   });
 
-  if (!session) {
+  if (!session?.user) {
     redirect("/admin/login");
   }
 
   if (session.user.role !== "admin") {
+    redirect("/admin/login");
+  }
+
+  if (session.user.banned) {
     redirect("/admin/login");
   }
 

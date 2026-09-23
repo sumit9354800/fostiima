@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+
 import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -146,18 +148,17 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex w-[120px] shrink-0 items-center min-[1350px]:w-[135px] min-[1450px]:w-[150px]"
+          className="flex w-[120px] px-4 shrink-0 items-center min-[1350px]:w-[135px] min-[1450px]:w-[150px]"
           aria-label="FOSTIIMA Business School Home"
         >
-          <div className="flex flex-col leading-none">
-            <span className="text-[22px] font-extrabold tracking-[-0.04em] text-[#123b79] min-[1350px]:text-[23px] min-[1450px]:text-[24px]">
-              FOSTIIMA
-            </span>
-
-            <span className="mt-1 text-[7px] font-bold uppercase tracking-[0.22em] text-[#c31e3b] min-[1350px]:text-[8px] min-[1450px]:tracking-[0.25em]">
-              Business School
-            </span>
-          </div>
+          <Image
+            src="/logo.jpeg"
+            alt="FOSTIIMA Business School"
+            width={150}
+            height={50}
+            className="h-auto w-full object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "admin:create": "tsx scripts/create-admin.ts"
   },
   "dependencies": {
     "@better-auth/prisma-adapter": "^1.7.4",

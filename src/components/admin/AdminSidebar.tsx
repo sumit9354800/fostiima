@@ -34,11 +34,7 @@ export default function AdminSidebar({
           border-r border-[#dbe3ee] bg-white
           transition-transform duration-300
           lg:static lg:translate-x-0
-          ${
-            isOpen
-              ? "translate-x-0"
-              : "-translate-x-full"
-          }
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
         <div className="flex h-20 items-center justify-between border-b border-[#dbe3ee] px-5">
@@ -52,9 +48,7 @@ export default function AdminSidebar({
             </div>
 
             <div>
-              <p className="text-sm font-bold text-[#061a3a]">
-                FOSTIIMA
-              </p>
+              <p className="text-sm font-bold text-[#061a3a]">FOSTIIMA</p>
 
               <p className="text-[10px] uppercase tracking-[0.16em] text-slate-500">
                 Admin Panel
@@ -104,11 +98,7 @@ export default function AdminSidebar({
                   <Icon
                     className={`
                       h-[18px] w-[18px]
-                      ${
-                        isActive
-                          ? "text-[#e5b83f]"
-                          : "text-slate-400"
-                      }
+                      ${isActive ? "text-[#e5b83f]" : "text-slate-400"}
                     `}
                   />
 
