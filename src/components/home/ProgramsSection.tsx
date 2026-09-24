@@ -1,48 +1,28 @@
+
 "use client";
 
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const programs = [
-  {
-    title: "PGDM",
-    category: "AICTE Approved",
-    duration: "2 Year Full-Time Program",
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "PGDM (Marketing)",
-    category: "AICTE Approved",
-    duration: "2 Year Full-Time Program",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "PGDM (Finance)",
-    category: "AICTE Approved",
-    duration: "2 Year Full-Time Program",
-    image:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "PGDM (HR)",
-    category: "AICTE Approved",
-    duration: "2 Year Full-Time Program",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "PGDM (Business Analytics)",
-    category: "AICTE Approved",
-    duration: "2 Year Full-Time Program",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-  },
-];
+type Program = {
+  id: string;
+  title: string;
+  category: string;
+  duration: string;
+  imageUrl: string;
+  href: string;
+  sortOrder: number;
+  isActive: boolean;
+};
 
-export default function ProgramsSection() {
+type ProgramsSectionProps = {
+  programs: Program[];
+};
+
+export default function ProgramsSection({
+  programs,
+}: ProgramsSectionProps) {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const scrollCarousel = (direction: "left" | "right") => {
@@ -53,10 +33,17 @@ export default function ProgramsSection() {
     const scrollAmount = carouselRef.current.clientWidth * 0.82;
 
     carouselRef.current.scrollBy({
-      left: direction === "right" ? scrollAmount : -scrollAmount,
+      left:
+        direction === "right"
+          ? scrollAmount
+          : -scrollAmount,
       behavior: "smooth",
     });
   };
+
+  if (!programs.length) {
+    return null;
+  }
 
   return (
     <section className="overflow-hidden bg-[#f8faff] py-16 sm:py-20 lg:py-24">
@@ -75,8 +62,8 @@ export default function ProgramsSection() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base">
-            Designed to build skills, knowledge and leadership for tomorrow&apos;s
-            challenges.
+            Designed to build skills, knowledge and leadership
+            for tomorrow&apos;s challenges.
           </p>
         </div>
 
@@ -88,7 +75,10 @@ export default function ProgramsSection() {
             aria-label="Previous programs"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-[#123b79]/20 bg-white text-[#123b79] shadow-sm transition hover:bg-[#123b79] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#123b79]/30"
           >
-            <ChevronLeft size={19} aria-hidden="true" />
+            <ChevronLeft
+              size={19}
+              aria-hidden="true"
+            />
           </button>
 
           <button
@@ -97,7 +87,10 @@ export default function ProgramsSection() {
             aria-label="Next programs"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-[#123b79]/20 bg-white text-[#123b79] shadow-sm transition hover:bg-[#123b79] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#123b79]/30"
           >
-            <ChevronRight size={19} aria-hidden="true" />
+            <ChevronRight
+              size={19}
+              aria-hidden="true"
+            />
           </button>
         </div>
 
@@ -108,13 +101,13 @@ export default function ProgramsSection() {
         >
           {programs.map((program) => (
             <article
-              key={program.title}
+              key={program.id}
               className="group min-w-[82%] snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_25px_rgba(18,59,121,0.06)] sm:min-w-[47%] lg:min-w-[calc(25%-12px)]"
             >
               {/* Image */}
               <div className="relative aspect-[1.65/1] overflow-hidden">
                 <img
-                  src={program.image}
+                  src={program.imageUrl}
                   alt={program.title}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -138,10 +131,11 @@ export default function ProgramsSection() {
                 </p>
 
                 <Link
-                  href="/programs"
+                  href={program.href || "/programs"}
                   className="mt-4 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em] text-[#c31e3b] transition-transform duration-300 group-hover:translate-x-1"
                 >
                   Know More
+
                   <ArrowRight
                     size={13}
                     className="ml-1.5"

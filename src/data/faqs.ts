@@ -7,47 +7,93 @@ export type FAQ = {
 
 export const faqData: FAQ[] = [
   {
-    id: "q1-best-mba-colleges-delhi-ncr",
-    category: "Admissions",
-    question:
-      "What makes FOSTIIMA one of the Best MBA Colleges in Delhi NCR?",
-    answer:
-      "The students who graduate from IIM Ahmedabad have started FOSTIIMA, which has been designed based on the IIM curriculum and the professors have ample corporate experience, which is rare at other institutes.",
-  },
-
-  {
-    id: "q2-industry-experienced-faculty",
-    category: "Academics",
-    question:
-      "Is FOSTIIMA's faculty actually industry-experienced?",
-    answer:
-      "Yes. This ensures that the students receive knowledge from industry practitioners and not just from academic professors, as almost all the core, adjunct and guest faculty from FOSTIIMA have worked in various industry roles for a few years before joining the faculty of the institute.",
-  },
-
-  {
-    id: "q3-mba-pgdm-programs",
-    category: "Academics",
-    question:
-      "Does FOSTIIMA offer both MBA and PGDM programs?",
-    answer:
-      "FOSTIIMA provides a rigorous MBA Course and PGDM Course which is designed in a curriculum which is benchmarked with IIM and a very practical approach to learning based on industry inputs.",
-  },
-
-  {
-    id: "q4-placement-support",
+    id: "q1-international-placements",
     category: "Placements",
-    question:
-      "How does FOSTIIMA support placements compared to other PGDM Colleges in Delhi?",
+    question: "Does FOSTIIMA offer International placements?",
     answer:
-      "FOSTIIMA's Pan IIT-IIM Global Network provides students with opportunities to connect them to better placements as compared to the industry network that many standalone B-schools can offer.",
+      "Yes, some students do get International Placements.",
   },
-
   {
-    id: "q5-best-pgdm-colleges-delhi",
+    id: "q2-scholarship",
     category: "Admissions",
     question:
-      "Why should I consider FOSTIIMA among the Best PGDM Colleges in Delhi?",
+      "Does FOSTIIMA provide scholarship to their students?",
     answer:
-      "The entire institutional culture, spanning the founders, managements, curriculum benchmarking and faculty is aligned with the IIM standards, providing students with a learning experience very similar to what is received by the top of the IIM spectrum.",
+      "Yes, scholarships are provided to deserving candidates.",
+  },
+  {
+    id: "q3-average-ctc",
+    category: "Placements",
+    question: "What is the average CTC for last years?",
+    answer:
+      "Average CTC is ₹11.15 lacs and Median Salary is ₹11.60 lacs per annum.",
+  },
+  {
+    id: "q4-other-branch",
+    category: "General",
+    question:
+      "Does FOSTIIMA have any other branch in India?",
+    answer:
+      "No, FOSTIIMA doesn’t have any other branch in India.",
+  },
+  {
+    id: "q5-education-loan",
+    category: "Admissions",
+    question:
+      "Does the college help in getting education loan for the students?",
+    answer:
+      "Yes. All Nationalized Banks offer education loans to students of our PGDM Program. Loans up to Rs. 4.00 lacs are processed by the banks without collateral. Loans more than Rs. 4.00 lacs are also offered by the banks under their norms.",
+  },
+  {
+    id: "q6-dual-specialization",
+    category: "Academics",
+    question: "Does FOSTIIMA offer dual specialization?",
+    answer:
+      "Yes, FOSTIIMA does offer dual specialization which is to be opted for in the 2nd year of the PGDM program.",
+  },
+  {
+    id: "q7-admission-eligibility",
+    category: "Admissions",
+    question:
+      "What is the admission eligibility criteria?",
+    answer:
+      "Admissions to the FOSTIIMA Two-Year Full-Time PGDM Program are carried out through a structured process which takes into account the applicant's Academic Performance at School level and in Graduation, Score in CAT / XAT / CMAT exams, English Communication and Personal Interviews.\n\nThe short listing, selection and admission offer is based on a weighted average of the applicants overall performance in Academics, PIs, etc. Cut-off levels for admission calls are likely to be above 50% marks in graduation and a CAT or XAT Score above 60 percentile or MAT & CMAT score minimum 75 percentile.",
+  },
+  {
+    id: "q8-student-exposure",
+    category: "Student Life",
+    question:
+      "What kind of exposure do FOSTIIMA students get?",
+    answer:
+      "FOSTIIMA strives to give its students a variety of exposure by arranging domestic and international trips, industrial visits, workshops, live projects, etc.",
+  },
+  {
+    id: "q9-hostel",
+    category: "Campus Life",
+    question: "Is staying in the hostel compulsory?",
+    answer:
+      "No, staying in the hostel is completely optional.",
+  },
+  {
+    id: "q10-program-duration",
+    category: "Academics",
+    question: "What is the duration of the PGDM program?",
+    answer:
+      "The duration of the PGDM program is 2 years.",
+  },
+  {
+    id: "q11-mba-vs-pgdm",
+    category: "Academics",
+    question: "What is the difference between MBA and PGDM?",
+    answer:
+      "MBA / MMS is offered by 'Universities' or 'Colleges that are affiliated to Universities' or a Central Body directly under the Indian Govt. while PGDM / PGP is offered by individual colleges and IIMs.",
+  },
+  {
+    id: "q12-refund-policy",
+    category: "Admissions",
+    question:
+      "What is the refund policy if I want to cancel my admission?",
+    answer:
+      "FOSTIIMA Business School abides by the refund rules of AICTE should any student decide to cancel his / her admission and seek refund of the fee paid.",
   },
 ];

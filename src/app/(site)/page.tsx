@@ -17,7 +17,11 @@ import PlacementVideos from "@/components/home/PlacementVideos";
 import { getHomeContent } from "@/lib/admin/home";
 
 export default async function HomePage() {
-  const { stats, placementVideos } = await getHomeContent();
+  const {
+    stats,
+    placementVideos,
+    programs,
+  } = await getHomeContent();
 
   const videos = placementVideos.map((video) => ({
     id: video.id,
@@ -40,7 +44,7 @@ export default async function HomePage() {
 
       <CampusHighlights />
 
-      <ProgramsSection />
+      <ProgramsSection programs={programs} />
 
       <ConclaveSection />
 
