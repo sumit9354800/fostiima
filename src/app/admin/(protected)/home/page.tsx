@@ -27,12 +27,6 @@ const homeSections = [
     icon: BarChart3,
   },
   {
-    title: "Recognition",
-    description: "Manage recognition and affiliation logos.",
-    href: "/admin/home/recognition",
-    icon: Award,
-  },
-  {
     title: "About",
     description: "Manage homepage About FOSTIIMA content and highlights.",
     href: "/admin/home/about",

@@ -1,58 +1,67 @@
 import {
   Award,
-  Building2,
   BriefcaseBusiness,
+  Building2,
   GraduationCap,
   Landmark,
   ShieldCheck,
 } from "lucide-react";
 
-const highlights = [
-  {
-    title: "Founded by IIM-A Alumni",
-    description:
-      'Conceived and managed by the 1973 batch of IIM Ahmedabad — "Friends Of The Stars of IIM-A" — bringing premier pedagogy to management aspirants.',
-    icon: Landmark,
-    iconClass: "bg-[#fff7c7] text-[#d89a00] border-[#f4df75]",
-  },
-  {
-    title: "AICTE Approved & AIU Equivalent",
-    description:
-      "2-Year Full-Time PGDM recognized by Association of Indian Universities (AIU) as equivalent to an MBA degree from premier Indian universities.",
-    icon: ShieldCheck,
-    iconClass: "bg-[#e4f5ff] text-[#1556a8] border-[#bde5fb]",
-  },
-  {
-    title: "Harvard Case Pedagogy",
-    description:
-      "Immersive corporate problem-solving with Harvard & IIM case studies, simulation labs, Bloomberg terminals, and 2-month summer internships.",
-    icon: Award,
-    iconClass: "bg-[#fff0f1] text-[#c31e3b] border-[#ffd0d5]",
-  },
-  {
-    title: "50+ IIM Mentors & Faculty",
-    description:
-      "Distinguished cohort of 50+ IIM alumni faculty with 30–40 years of corporate and academic leadership, maintaining a strong student-faculty ratio.",
-    icon: GraduationCap,
-    iconClass: "bg-[#fff7c7] text-[#d89a00] border-[#f4df75]",
-  },
-  {
-    title: "Consistent 100% Placements",
-    description:
-      "Top corporate conglomerates hire from campus every year with packages reaching up to ₹30 LPA across Marketing, BFSI, Consulting, Analytics & Tech.",
-    icon: BriefcaseBusiness,
-    iconClass: "bg-[#e4f5ff] text-[#1556a8] border-[#bde5fb]",
-  },
-  {
-    title: "Strategic Delhi NCR Campus",
-    description:
-      "Modern, fully air-conditioned smart campus in Dwarka Institutional Area, Sector 9, New Delhi with digital library and partner hostel facilities.",
-    icon: Building2,
-    iconClass: "bg-[#fff0f1] text-[#c31e3b] border-[#ffd0d5]",
-  },
-];
+import { prisma } from "@/lib/prisma";
 
-export default function AboutSection() {
+const ICONS = {
+  Award,
+  BriefcaseBusiness,
+  Building2,
+  GraduationCap,
+  Landmark,
+  ShieldCheck,
+} as const;
+
+const ICON_COLORS = [
+  {
+    border: "border-[#f4df75]",
+    background: "bg-[#fff7c7]",
+    text: "text-[#d89a00]",
+  },
+  {
+    border: "border-[#a9d8ff]",
+    background: "bg-[#e8f6ff]",
+    text: "text-[#1477c9]",
+  },
+  {
+    border: "border-[#ffc5cf]",
+    background: "bg-[#fff0f3]",
+    text: "text-[#df3654]",
+  },
+] as const;
+
+export default async function AboutSection() {
+  const about = await prisma.homeAbout.findFirst({
+    where: {
+      isActive: true,
+    },
+    include: {
+      highlights: {
+        where: {
+          isActive: true,
+        },
+        orderBy: [
+          {
+            sortOrder: "asc",
+          },
+          {
+            createdAt: "asc",
+          },
+        ],
+      },
+    },
+  });
+
+  if (!about) {
+    return null;
+  }
+
   return (
     <section
       id="about"
@@ -60,44 +69,56 @@ export default function AboutSection() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 xl:gap-16">
-          {/* Left Content */}
           <div className="max-w-xl">
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
-              About FOSTIIMA
+              {about.eyebrow}
             </p>
 
             <h2 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#123b79] sm:text-5xl lg:text-[30px]">
-              FOSTIIMA Business School{" "}
-              <span className="text-[#c31e3b]">Among the Best MBA Colleges in Delhi NCR</span>
+              {(() => {
+                const words = about.title.split(" ");
+                const highlightStart = Math.max(words.length - 7, 0);
+
+                return (
+                  <>
+                    {words.slice(0, highlightStart).join(" ")}{" "}
+                    <span className="text-[#c31e3b]">
+                      {words.slice(highlightStart).join(" ")}
+                    </span>
+                  </>
+                );
+              })()}
             </h2>
 
             <div className="mt-7 space-y-5 text-[15px] text-justify leading-7 text-slate-600 sm:text-base">
-              <p>
-               Selecting the <b>best MBA Colleges in Delhi</b> from a list of numerous institutes which may make claims of being the best can be challenging. Our difference isn&apos;t just in the marketing, its in the DNA, our faculty and how our curriculum has been designed at FOSTIIMA Business School. Educating through a highly interactive platform and an experiential environment, FOSTIIMA is one of <b>the Best MBA Colleges in Delhi NCR</b> that provides a conducive learning environment with an emphasis on teamwork, vision, creativity and discipline.
-              </p>
+              <p>{about.description1}</p>
 
-              <p>
-               We have designed our <b>MBA Course and PGDM Course</b> in such a way that it helps the students understand the theory of the business and then apply it into the practical aspects of the business, a gap which many <b>PGDM Colleges in Delhi</b> are not able to bridge. What makes FOSTIIMA unique is that students are not only learning the concepts of management, but they are also in the presence of industry veterans who have experience in multiple cross-functional and cross-industry areas and bring their experience into every session.
-
-              </p>
+              {about.description2 && <p>{about.description2}</p>}
             </div>
           </div>
 
-          {/* Right Highlights */}
           <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
-            {highlights.map((item) => {
-              const Icon = item.icon;
+            {about.highlights.map((item, index) => {
+              const Icon =
+                ICONS[item.icon as keyof typeof ICONS] ?? Building2;
+
+              // 0 = Yellow, 1 = Blue, 2 = Red, then repeat
+              const color = ICON_COLORS[index % ICON_COLORS.length];
 
               return (
                 <article
-                  key={item.title}
+                  key={item.id}
                   className="group rounded-xl border border-slate-200 bg-[#fbfcff] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d9e2f0] hover:shadow-[0_10px_25px_rgba(18,59,121,0.07)]"
                 >
                   <div className="flex flex-col gap-3">
                     <div
-                      className={`flex h-10 w-10 items-center justify-center rounded-lg border ${item.iconClass}`}
+                      className={`flex h-10 w-10 items-center justify-center rounded-lg border ${color.border} ${color.background} ${color.text}`}
                     >
-                      <Icon size={19} strokeWidth={1.8} aria-hidden="true" />
+                      <Icon
+                        size={19}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                      />
                     </div>
 
                     <div>
