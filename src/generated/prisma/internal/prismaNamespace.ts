@@ -418,7 +418,7 @@ export const ModelName = {
   MediaPresence: 'MediaPresence',
   HomeHero: 'HomeHero',
   HomeStat: 'HomeStat',
-  HomeRecognition: 'HomeRecognition',
+  HomeRecruiter: 'HomeRecruiter',
   HomeAbout: 'HomeAbout',
   HomeAboutHighlight: 'HomeAboutHighlight',
   HomePlacementVideo: 'HomePlacementVideo',
@@ -426,7 +426,7 @@ export const ModelName = {
   HomeProgram: 'HomeProgram',
   HomeAward: 'HomeAward',
   HomeCampusLife: 'HomeCampusLife',
-  HomeRecruiter: 'HomeRecruiter'
+  HomeRecognition: 'HomeRecognition'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -442,7 +442,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "faculty" | "blogPost" | "blogBlock" | "blogKeyword" | "conclaveEvent" | "finalPlacementBatch" | "finalPlacementChart" | "finalPlacementProfile" | "finalPlacementStudent" | "summerInternshipBatch" | "summerInternshipProfile" | "careerOpening" | "fAQ" | "review" | "mediaPresence" | "homeHero" | "homeStat" | "homeRecognition" | "homeAbout" | "homeAboutHighlight" | "homePlacementVideo" | "homeCampusHighlight" | "homeProgram" | "homeAward" | "homeCampusLife" | "homeRecruiter"
+    modelProps: "user" | "session" | "account" | "verification" | "faculty" | "blogPost" | "blogBlock" | "blogKeyword" | "conclaveEvent" | "finalPlacementBatch" | "finalPlacementChart" | "finalPlacementProfile" | "finalPlacementStudent" | "summerInternshipBatch" | "summerInternshipProfile" | "careerOpening" | "fAQ" | "review" | "mediaPresence" | "homeHero" | "homeStat" | "homeRecruiter" | "homeAbout" | "homeAboutHighlight" | "homePlacementVideo" | "homeCampusHighlight" | "homeProgram" | "homeAward" | "homeCampusLife" | "homeRecognition"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1832,69 +1832,69 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    HomeRecognition: {
-      payload: Prisma.$HomeRecognitionPayload<ExtArgs>
-      fields: Prisma.HomeRecognitionFieldRefs
+    HomeRecruiter: {
+      payload: Prisma.$HomeRecruiterPayload<ExtArgs>
+      fields: Prisma.HomeRecruiterFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.HomeRecognitionFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload> | null
+          args: Prisma.HomeRecruiterFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.HomeRecognitionFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
+          args: Prisma.HomeRecruiterFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
         }
         findFirst: {
-          args: Prisma.HomeRecognitionFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload> | null
+          args: Prisma.HomeRecruiterFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.HomeRecognitionFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
+          args: Prisma.HomeRecruiterFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
         }
         findMany: {
-          args: Prisma.HomeRecognitionFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>[]
+          args: Prisma.HomeRecruiterFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>[]
         }
         create: {
-          args: Prisma.HomeRecognitionCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
+          args: Prisma.HomeRecruiterCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
         }
         createMany: {
-          args: Prisma.HomeRecognitionCreateManyArgs<ExtArgs>
+          args: Prisma.HomeRecruiterCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         delete: {
-          args: Prisma.HomeRecognitionDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
+          args: Prisma.HomeRecruiterDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
         }
         update: {
-          args: Prisma.HomeRecognitionUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
+          args: Prisma.HomeRecruiterUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
         }
         deleteMany: {
-          args: Prisma.HomeRecognitionDeleteManyArgs<ExtArgs>
+          args: Prisma.HomeRecruiterDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.HomeRecognitionUpdateManyArgs<ExtArgs>
+          args: Prisma.HomeRecruiterUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         upsert: {
-          args: Prisma.HomeRecognitionUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
+          args: Prisma.HomeRecruiterUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
         }
         aggregate: {
-          args: Prisma.HomeRecognitionAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateHomeRecognition>
+          args: Prisma.HomeRecruiterAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateHomeRecruiter>
         }
         groupBy: {
-          args: Prisma.HomeRecognitionGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.HomeRecognitionGroupByOutputType>[]
+          args: Prisma.HomeRecruiterGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.HomeRecruiterGroupByOutputType>[]
         }
         count: {
-          args: Prisma.HomeRecognitionCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.HomeRecognitionCountAggregateOutputType> | number
+          args: Prisma.HomeRecruiterCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.HomeRecruiterCountAggregateOutputType> | number
         }
       }
     }
@@ -2360,69 +2360,69 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    HomeRecruiter: {
-      payload: Prisma.$HomeRecruiterPayload<ExtArgs>
-      fields: Prisma.HomeRecruiterFieldRefs
+    HomeRecognition: {
+      payload: Prisma.$HomeRecognitionPayload<ExtArgs>
+      fields: Prisma.HomeRecognitionFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.HomeRecruiterFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload> | null
+          args: Prisma.HomeRecognitionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.HomeRecruiterFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
+          args: Prisma.HomeRecognitionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
         }
         findFirst: {
-          args: Prisma.HomeRecruiterFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload> | null
+          args: Prisma.HomeRecognitionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.HomeRecruiterFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
+          args: Prisma.HomeRecognitionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
         }
         findMany: {
-          args: Prisma.HomeRecruiterFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>[]
+          args: Prisma.HomeRecognitionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>[]
         }
         create: {
-          args: Prisma.HomeRecruiterCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
+          args: Prisma.HomeRecognitionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
         }
         createMany: {
-          args: Prisma.HomeRecruiterCreateManyArgs<ExtArgs>
+          args: Prisma.HomeRecognitionCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         delete: {
-          args: Prisma.HomeRecruiterDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
+          args: Prisma.HomeRecognitionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
         }
         update: {
-          args: Prisma.HomeRecruiterUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
+          args: Prisma.HomeRecognitionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
         }
         deleteMany: {
-          args: Prisma.HomeRecruiterDeleteManyArgs<ExtArgs>
+          args: Prisma.HomeRecognitionDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.HomeRecruiterUpdateManyArgs<ExtArgs>
+          args: Prisma.HomeRecognitionUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         upsert: {
-          args: Prisma.HomeRecruiterUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecruiterPayload>
+          args: Prisma.HomeRecognitionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeRecognitionPayload>
         }
         aggregate: {
-          args: Prisma.HomeRecruiterAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateHomeRecruiter>
+          args: Prisma.HomeRecognitionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateHomeRecognition>
         }
         groupBy: {
-          args: Prisma.HomeRecruiterGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.HomeRecruiterGroupByOutputType>[]
+          args: Prisma.HomeRecognitionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.HomeRecognitionGroupByOutputType>[]
         }
         count: {
-          args: Prisma.HomeRecruiterCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.HomeRecruiterCountAggregateOutputType> | number
+          args: Prisma.HomeRecognitionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.HomeRecognitionCountAggregateOutputType> | number
         }
       }
     }
@@ -2759,18 +2759,17 @@ export const HomeStatScalarFieldEnum = {
 export type HomeStatScalarFieldEnum = (typeof HomeStatScalarFieldEnum)[keyof typeof HomeStatScalarFieldEnum]
 
 
-export const HomeRecognitionScalarFieldEnum = {
+export const HomeRecruiterScalarFieldEnum = {
   id: 'id',
   imageUrl: 'imageUrl',
   alt: 'alt',
-  linkUrl: 'linkUrl',
   sortOrder: 'sortOrder',
   isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type HomeRecognitionScalarFieldEnum = (typeof HomeRecognitionScalarFieldEnum)[keyof typeof HomeRecognitionScalarFieldEnum]
+export type HomeRecruiterScalarFieldEnum = (typeof HomeRecruiterScalarFieldEnum)[keyof typeof HomeRecruiterScalarFieldEnum]
 
 
 export const HomeAboutScalarFieldEnum = {
@@ -2878,17 +2877,19 @@ export const HomeCampusLifeScalarFieldEnum = {
 export type HomeCampusLifeScalarFieldEnum = (typeof HomeCampusLifeScalarFieldEnum)[keyof typeof HomeCampusLifeScalarFieldEnum]
 
 
-export const HomeRecruiterScalarFieldEnum = {
+export const HomeRecognitionScalarFieldEnum = {
   id: 'id',
+  title: 'title',
   imageUrl: 'imageUrl',
   alt: 'alt',
+  linkUrl: 'linkUrl',
   sortOrder: 'sortOrder',
   isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type HomeRecruiterScalarFieldEnum = (typeof HomeRecruiterScalarFieldEnum)[keyof typeof HomeRecruiterScalarFieldEnum]
+export type HomeRecognitionScalarFieldEnum = (typeof HomeRecognitionScalarFieldEnum)[keyof typeof HomeRecognitionScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -3140,14 +3141,13 @@ export const HomeStatOrderByRelevanceFieldEnum = {
 export type HomeStatOrderByRelevanceFieldEnum = (typeof HomeStatOrderByRelevanceFieldEnum)[keyof typeof HomeStatOrderByRelevanceFieldEnum]
 
 
-export const HomeRecognitionOrderByRelevanceFieldEnum = {
+export const HomeRecruiterOrderByRelevanceFieldEnum = {
   id: 'id',
   imageUrl: 'imageUrl',
-  alt: 'alt',
-  linkUrl: 'linkUrl'
+  alt: 'alt'
 } as const
 
-export type HomeRecognitionOrderByRelevanceFieldEnum = (typeof HomeRecognitionOrderByRelevanceFieldEnum)[keyof typeof HomeRecognitionOrderByRelevanceFieldEnum]
+export type HomeRecruiterOrderByRelevanceFieldEnum = (typeof HomeRecruiterOrderByRelevanceFieldEnum)[keyof typeof HomeRecruiterOrderByRelevanceFieldEnum]
 
 
 export const HomeAboutOrderByRelevanceFieldEnum = {
@@ -3228,13 +3228,15 @@ export const HomeCampusLifeOrderByRelevanceFieldEnum = {
 export type HomeCampusLifeOrderByRelevanceFieldEnum = (typeof HomeCampusLifeOrderByRelevanceFieldEnum)[keyof typeof HomeCampusLifeOrderByRelevanceFieldEnum]
 
 
-export const HomeRecruiterOrderByRelevanceFieldEnum = {
+export const HomeRecognitionOrderByRelevanceFieldEnum = {
   id: 'id',
+  title: 'title',
   imageUrl: 'imageUrl',
-  alt: 'alt'
+  alt: 'alt',
+  linkUrl: 'linkUrl'
 } as const
 
-export type HomeRecruiterOrderByRelevanceFieldEnum = (typeof HomeRecruiterOrderByRelevanceFieldEnum)[keyof typeof HomeRecruiterOrderByRelevanceFieldEnum]
+export type HomeRecognitionOrderByRelevanceFieldEnum = (typeof HomeRecognitionOrderByRelevanceFieldEnum)[keyof typeof HomeRecognitionOrderByRelevanceFieldEnum]
 
 
 
@@ -3463,7 +3465,7 @@ export type GlobalOmitConfig = {
   mediaPresence?: Prisma.MediaPresenceOmit
   homeHero?: Prisma.HomeHeroOmit
   homeStat?: Prisma.HomeStatOmit
-  homeRecognition?: Prisma.HomeRecognitionOmit
+  homeRecruiter?: Prisma.HomeRecruiterOmit
   homeAbout?: Prisma.HomeAboutOmit
   homeAboutHighlight?: Prisma.HomeAboutHighlightOmit
   homePlacementVideo?: Prisma.HomePlacementVideoOmit
@@ -3471,7 +3473,7 @@ export type GlobalOmitConfig = {
   homeProgram?: Prisma.HomeProgramOmit
   homeAward?: Prisma.HomeAwardOmit
   homeCampusLife?: Prisma.HomeCampusLifeOmit
-  homeRecruiter?: Prisma.HomeRecruiterOmit
+  homeRecognition?: Prisma.HomeRecognitionOmit
 }
 
 /* Types for Logging */

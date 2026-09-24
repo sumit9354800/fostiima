@@ -1,7 +1,6 @@
 import AboutSection from "@/components/home/AboutSection";
 import CampusHighlights from "@/components/home/CampusHighlights";
 import Hero from "@/components/home/Hero";
-import PlacementVideos from "@/components/home/PlacementVideos";
 import RecognitionSection from "@/components/home/RecognitionSection";
 import RecruitersSection from "@/components/home/RecruitersSection";
 import StatsBar from "@/components/home/StatsBar";
@@ -13,19 +12,31 @@ import FacultySection from "@/components/home/FacultySection";
 import ReviewSection from "@/components/reviews/ReviewSection";
 import FAQSection from "@/components/home/FAQSection";
 import MediaPresenceSection from "@/components/home/MediaPresenceSection";
+import PlacementVideos from "@/components/home/PlacementVideos";
 
-export default function HomePage() {
+import { getHomeContent } from "@/lib/admin/home";
+
+export default async function HomePage() {
+  const { stats, placementVideos } = await getHomeContent();
+
+  const videos = placementVideos.map((video) => ({
+    id: video.id,
+    title: video.title,
+    batch: video.batch,
+    youtubeUrl: `https://www.youtube.com/watch?v=${video.youtubeId}`,
+  }));
+
   return (
     <>
       <Hero />
 
-      <StatsBar />
+      <StatsBar stats={stats} />
 
       <RecognitionSection />
 
       <AboutSection />
 
-      <PlacementVideos />
+      <PlacementVideos videos={videos} />
 
       <CampusHighlights />
 

@@ -72,7 +72,7 @@ export const ModelName = {
   MediaPresence: 'MediaPresence',
   HomeHero: 'HomeHero',
   HomeStat: 'HomeStat',
-  HomeRecognition: 'HomeRecognition',
+  HomeRecruiter: 'HomeRecruiter',
   HomeAbout: 'HomeAbout',
   HomeAboutHighlight: 'HomeAboutHighlight',
   HomePlacementVideo: 'HomePlacementVideo',
@@ -80,7 +80,7 @@ export const ModelName = {
   HomeProgram: 'HomeProgram',
   HomeAward: 'HomeAward',
   HomeCampusLife: 'HomeCampusLife',
-  HomeRecruiter: 'HomeRecruiter'
+  HomeRecognition: 'HomeRecognition'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -393,18 +393,17 @@ export const HomeStatScalarFieldEnum = {
 export type HomeStatScalarFieldEnum = (typeof HomeStatScalarFieldEnum)[keyof typeof HomeStatScalarFieldEnum]
 
 
-export const HomeRecognitionScalarFieldEnum = {
+export const HomeRecruiterScalarFieldEnum = {
   id: 'id',
   imageUrl: 'imageUrl',
   alt: 'alt',
-  linkUrl: 'linkUrl',
   sortOrder: 'sortOrder',
   isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type HomeRecognitionScalarFieldEnum = (typeof HomeRecognitionScalarFieldEnum)[keyof typeof HomeRecognitionScalarFieldEnum]
+export type HomeRecruiterScalarFieldEnum = (typeof HomeRecruiterScalarFieldEnum)[keyof typeof HomeRecruiterScalarFieldEnum]
 
 
 export const HomeAboutScalarFieldEnum = {
@@ -512,17 +511,19 @@ export const HomeCampusLifeScalarFieldEnum = {
 export type HomeCampusLifeScalarFieldEnum = (typeof HomeCampusLifeScalarFieldEnum)[keyof typeof HomeCampusLifeScalarFieldEnum]
 
 
-export const HomeRecruiterScalarFieldEnum = {
+export const HomeRecognitionScalarFieldEnum = {
   id: 'id',
+  title: 'title',
   imageUrl: 'imageUrl',
   alt: 'alt',
+  linkUrl: 'linkUrl',
   sortOrder: 'sortOrder',
   isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type HomeRecruiterScalarFieldEnum = (typeof HomeRecruiterScalarFieldEnum)[keyof typeof HomeRecruiterScalarFieldEnum]
+export type HomeRecognitionScalarFieldEnum = (typeof HomeRecognitionScalarFieldEnum)[keyof typeof HomeRecognitionScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -774,14 +775,13 @@ export const HomeStatOrderByRelevanceFieldEnum = {
 export type HomeStatOrderByRelevanceFieldEnum = (typeof HomeStatOrderByRelevanceFieldEnum)[keyof typeof HomeStatOrderByRelevanceFieldEnum]
 
 
-export const HomeRecognitionOrderByRelevanceFieldEnum = {
+export const HomeRecruiterOrderByRelevanceFieldEnum = {
   id: 'id',
   imageUrl: 'imageUrl',
-  alt: 'alt',
-  linkUrl: 'linkUrl'
+  alt: 'alt'
 } as const
 
-export type HomeRecognitionOrderByRelevanceFieldEnum = (typeof HomeRecognitionOrderByRelevanceFieldEnum)[keyof typeof HomeRecognitionOrderByRelevanceFieldEnum]
+export type HomeRecruiterOrderByRelevanceFieldEnum = (typeof HomeRecruiterOrderByRelevanceFieldEnum)[keyof typeof HomeRecruiterOrderByRelevanceFieldEnum]
 
 
 export const HomeAboutOrderByRelevanceFieldEnum = {
@@ -862,11 +862,13 @@ export const HomeCampusLifeOrderByRelevanceFieldEnum = {
 export type HomeCampusLifeOrderByRelevanceFieldEnum = (typeof HomeCampusLifeOrderByRelevanceFieldEnum)[keyof typeof HomeCampusLifeOrderByRelevanceFieldEnum]
 
 
-export const HomeRecruiterOrderByRelevanceFieldEnum = {
+export const HomeRecognitionOrderByRelevanceFieldEnum = {
   id: 'id',
+  title: 'title',
   imageUrl: 'imageUrl',
-  alt: 'alt'
+  alt: 'alt',
+  linkUrl: 'linkUrl'
 } as const
 
-export type HomeRecruiterOrderByRelevanceFieldEnum = (typeof HomeRecruiterOrderByRelevanceFieldEnum)[keyof typeof HomeRecruiterOrderByRelevanceFieldEnum]
+export type HomeRecognitionOrderByRelevanceFieldEnum = (typeof HomeRecognitionOrderByRelevanceFieldEnum)[keyof typeof HomeRecognitionOrderByRelevanceFieldEnum]
 

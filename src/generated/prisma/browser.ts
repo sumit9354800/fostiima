@@ -123,10 +123,10 @@ export type HomeHero = Prisma.HomeHeroModel
  */
 export type HomeStat = Prisma.HomeStatModel
 /**
- * Model HomeRecognition
+ * Model HomeRecruiter
  * 
  */
-export type HomeRecognition = Prisma.HomeRecognitionModel
+export type HomeRecruiter = Prisma.HomeRecruiterModel
 /**
  * Model HomeAbout
  * 
@@ -163,7 +163,7 @@ export type HomeAward = Prisma.HomeAwardModel
  */
 export type HomeCampusLife = Prisma.HomeCampusLifeModel
 /**
- * Model HomeRecruiter
+ * Model HomeRecognition
  * 
  */
-export type HomeRecruiter = Prisma.HomeRecruiterModel
+export type HomeRecognition = Prisma.HomeRecognitionModel

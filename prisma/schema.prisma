@@ -376,18 +376,17 @@ model HomeStat {
   @@map("home_stat")
 }
 
-model HomeRecognition {
+model HomeRecruiter {
   id        String   @id @default(cuid())
   imageUrl  String
   alt       String
-  linkUrl   String?
   sortOrder Int      @default(0)
   isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([sortOrder])
-  @@map("home_recognition")
+  @@map("home_recruiter")
 }
 
 model HomeAbout {
@@ -499,15 +498,16 @@ model HomeCampusLife {
   @@map("home_campus_life")
 }
 
-model HomeRecruiter {
+model HomeRecognition {
   id        String   @id @default(cuid())
+  title     String
   imageUrl  String
   alt       String
+  linkUrl   String?
   sortOrder Int      @default(0)
   isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([sortOrder])
-  @@map("home_recruiter")
+  @@index([isActive, sortOrder])
 }

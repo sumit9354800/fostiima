@@ -36,6 +36,7 @@ export type HomeRecognitionSumAggregateOutputType = {
 
 export type HomeRecognitionMinAggregateOutputType = {
   id: string | null
+  title: string | null
   imageUrl: string | null
   alt: string | null
   linkUrl: string | null
@@ -47,6 +48,7 @@ export type HomeRecognitionMinAggregateOutputType = {
 
 export type HomeRecognitionMaxAggregateOutputType = {
   id: string | null
+  title: string | null
   imageUrl: string | null
   alt: string | null
   linkUrl: string | null
@@ -58,6 +60,7 @@ export type HomeRecognitionMaxAggregateOutputType = {
 
 export type HomeRecognitionCountAggregateOutputType = {
   id: number
+  title: number
   imageUrl: number
   alt: number
   linkUrl: number
@@ -79,6 +82,7 @@ export type HomeRecognitionSumAggregateInputType = {
 
 export type HomeRecognitionMinAggregateInputType = {
   id?: true
+  title?: true
   imageUrl?: true
   alt?: true
   linkUrl?: true
@@ -90,6 +94,7 @@ export type HomeRecognitionMinAggregateInputType = {
 
 export type HomeRecognitionMaxAggregateInputType = {
   id?: true
+  title?: true
   imageUrl?: true
   alt?: true
   linkUrl?: true
@@ -101,6 +106,7 @@ export type HomeRecognitionMaxAggregateInputType = {
 
 export type HomeRecognitionCountAggregateInputType = {
   id?: true
+  title?: true
   imageUrl?: true
   alt?: true
   linkUrl?: true
@@ -199,6 +205,7 @@ export type HomeRecognitionGroupByArgs<ExtArgs extends runtime.Types.Extensions.
 
 export type HomeRecognitionGroupByOutputType = {
   id: string
+  title: string
   imageUrl: string
   alt: string
   linkUrl: string | null
@@ -233,6 +240,7 @@ export type HomeRecognitionWhereInput = {
   OR?: Prisma.HomeRecognitionWhereInput[]
   NOT?: Prisma.HomeRecognitionWhereInput | Prisma.HomeRecognitionWhereInput[]
   id?: Prisma.StringFilter<"HomeRecognition"> | string
+  title?: Prisma.StringFilter<"HomeRecognition"> | string
   imageUrl?: Prisma.StringFilter<"HomeRecognition"> | string
   alt?: Prisma.StringFilter<"HomeRecognition"> | string
   linkUrl?: Prisma.StringNullableFilter<"HomeRecognition"> | string | null
@@ -244,6 +252,7 @@ export type HomeRecognitionWhereInput = {
 
 export type HomeRecognitionOrderByWithRelationInput = {
   id?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   alt?: Prisma.SortOrder
   linkUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -259,6 +268,7 @@ export type HomeRecognitionWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.HomeRecognitionWhereInput | Prisma.HomeRecognitionWhereInput[]
   OR?: Prisma.HomeRecognitionWhereInput[]
   NOT?: Prisma.HomeRecognitionWhereInput | Prisma.HomeRecognitionWhereInput[]
+  title?: Prisma.StringFilter<"HomeRecognition"> | string
   imageUrl?: Prisma.StringFilter<"HomeRecognition"> | string
   alt?: Prisma.StringFilter<"HomeRecognition"> | string
   linkUrl?: Prisma.StringNullableFilter<"HomeRecognition"> | string | null
@@ -270,6 +280,7 @@ export type HomeRecognitionWhereUniqueInput = Prisma.AtLeast<{
 
 export type HomeRecognitionOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   alt?: Prisma.SortOrder
   linkUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -289,6 +300,7 @@ export type HomeRecognitionScalarWhereWithAggregatesInput = {
   OR?: Prisma.HomeRecognitionScalarWhereWithAggregatesInput[]
   NOT?: Prisma.HomeRecognitionScalarWhereWithAggregatesInput | Prisma.HomeRecognitionScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"HomeRecognition"> | string
+  title?: Prisma.StringWithAggregatesFilter<"HomeRecognition"> | string
   imageUrl?: Prisma.StringWithAggregatesFilter<"HomeRecognition"> | string
   alt?: Prisma.StringWithAggregatesFilter<"HomeRecognition"> | string
   linkUrl?: Prisma.StringNullableWithAggregatesFilter<"HomeRecognition"> | string | null
@@ -300,6 +312,7 @@ export type HomeRecognitionScalarWhereWithAggregatesInput = {
 
 export type HomeRecognitionCreateInput = {
   id?: string
+  title: string
   imageUrl: string
   alt: string
   linkUrl?: string | null
@@ -311,6 +324,7 @@ export type HomeRecognitionCreateInput = {
 
 export type HomeRecognitionUncheckedCreateInput = {
   id?: string
+  title: string
   imageUrl: string
   alt: string
   linkUrl?: string | null
@@ -322,6 +336,7 @@ export type HomeRecognitionUncheckedCreateInput = {
 
 export type HomeRecognitionUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
   alt?: Prisma.StringFieldUpdateOperationsInput | string
   linkUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -333,6 +348,7 @@ export type HomeRecognitionUpdateInput = {
 
 export type HomeRecognitionUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
   alt?: Prisma.StringFieldUpdateOperationsInput | string
   linkUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -344,6 +360,7 @@ export type HomeRecognitionUncheckedUpdateInput = {
 
 export type HomeRecognitionCreateManyInput = {
   id?: string
+  title: string
   imageUrl: string
   alt: string
   linkUrl?: string | null
@@ -355,6 +372,7 @@ export type HomeRecognitionCreateManyInput = {
 
 export type HomeRecognitionUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
   alt?: Prisma.StringFieldUpdateOperationsInput | string
   linkUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -366,6 +384,7 @@ export type HomeRecognitionUpdateManyMutationInput = {
 
 export type HomeRecognitionUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
   alt?: Prisma.StringFieldUpdateOperationsInput | string
   linkUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -383,6 +402,7 @@ export type HomeRecognitionOrderByRelevanceInput = {
 
 export type HomeRecognitionCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   alt?: Prisma.SortOrder
   linkUrl?: Prisma.SortOrder
@@ -398,6 +418,7 @@ export type HomeRecognitionAvgOrderByAggregateInput = {
 
 export type HomeRecognitionMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   alt?: Prisma.SortOrder
   linkUrl?: Prisma.SortOrder
@@ -409,6 +430,7 @@ export type HomeRecognitionMaxOrderByAggregateInput = {
 
 export type HomeRecognitionMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   alt?: Prisma.SortOrder
   linkUrl?: Prisma.SortOrder
@@ -426,6 +448,7 @@ export type HomeRecognitionSumOrderByAggregateInput = {
 
 export type HomeRecognitionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  title?: boolean
   imageUrl?: boolean
   alt?: boolean
   linkUrl?: boolean
@@ -439,6 +462,7 @@ export type HomeRecognitionSelect<ExtArgs extends runtime.Types.Extensions.Inter
 
 export type HomeRecognitionSelectScalar = {
   id?: boolean
+  title?: boolean
   imageUrl?: boolean
   alt?: boolean
   linkUrl?: boolean
@@ -448,13 +472,14 @@ export type HomeRecognitionSelectScalar = {
   updatedAt?: boolean
 }
 
-export type HomeRecognitionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "imageUrl" | "alt" | "linkUrl" | "sortOrder" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["homeRecognition"]>
+export type HomeRecognitionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "imageUrl" | "alt" | "linkUrl" | "sortOrder" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["homeRecognition"]>
 
 export type $HomeRecognitionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "HomeRecognition"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
+    title: string
     imageUrl: string
     alt: string
     linkUrl: string | null
@@ -832,6 +857,7 @@ export interface Prisma__HomeRecognitionClient<T, Null = never, ExtArgs extends 
  */
 export interface HomeRecognitionFieldRefs {
   readonly id: Prisma.FieldRef<"HomeRecognition", 'String'>
+  readonly title: Prisma.FieldRef<"HomeRecognition", 'String'>
   readonly imageUrl: Prisma.FieldRef<"HomeRecognition", 'String'>
   readonly alt: Prisma.FieldRef<"HomeRecognition", 'String'>
   readonly linkUrl: Prisma.FieldRef<"HomeRecognition", 'String'>
