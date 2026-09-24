@@ -26,6 +26,12 @@ const homeSections = [
     href: "/admin/home/stats",
     icon: BarChart3,
   },
+  // {
+  //   title: "Recognition",
+  //   description: "Manage recognition and affiliation logos.",
+  //   href: "/admin/home/recognition",
+  //   icon: Award,
+  // },
   {
     title: "About",
     description: "Manage homepage About FOSTIIMA content and highlights.",
@@ -38,12 +44,12 @@ const homeSections = [
     href: "/admin/home/placement-videos",
     icon: Clapperboard,
   },
-  {
-    title: "Campus Highlights",
-    description: "Manage the homepage campus highlight cards.",
-    href: "/admin/home/campus-highlights",
-    icon: ImageIcon,
-  },
+  // {
+  //   title: "Campus Highlights",
+  //   description: "Manage the homepage campus highlight cards.",
+  //   href: "/admin/home/campus-highlights",
+  //   icon: ImageIcon,
+  // },
   {
     title: "Programs",
     description: "Manage programmes displayed on the homepage.",
