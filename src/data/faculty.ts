@@ -11,8 +11,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-anil-somani",
     name: "Mr. Anil Somani",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_41.jpg",
+    image: "/home/faculty/faculty1.webp",
     qualification: "MBA-IIM A, B.Tech- IIT B",
     experience: "40 yrs",
     domain: "Automobiles & Tourism",
@@ -20,8 +19,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-sunil-kala",
     name: "Mr. Sunil Kala",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_35.jpg",
+    image: "/home/faculty/faculty2.webp",
     qualification: "MBA-IIM A, B.Tech- MNIT Jaipur",
     experience: "40 yrs",
     domain: "IT Management, Investment Banking, Capital Markets",
@@ -29,8 +27,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-rajeeva-kansal",
     name: "Mr. Rajeeva Kansal",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_26.jpg",
+    image: "/home/faculty/faculty3.webp",
     qualification: "MBA-IIM A, B.Tech- IIT KNP",
     experience: "37 yrs",
     domain: "Strategy & HR",
@@ -38,8 +35,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "dr-aditya-vij",
     name: "Dr. Aditya Vij",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_110.jpg",
+    image: "/home/faculty/faculty4.webp",
     qualification: "Bsc (Hons) Anthropology, MPM, MBA, PhD",
     experience: "30 years",
     domain: "Teaching, Management, Fashion, Media",
@@ -47,8 +43,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-gautam-kaul",
     name: "Mr. Gautam Kaul",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_8.jpg",
+    image: "/home/faculty/faculty5.webp",
     qualification: "MBA-IIMA, B.Tech.-IIT Delhi",
     experience: "45+ yrs",
     domain: "FMCG, Beverages, Tobacco, Academics",
@@ -56,8 +51,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-vinod-kaul",
     name: "Mr. Vinod Kaul",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_7.jpg",
+    image: "/home/faculty/faculty6.webp",
     qualification: "MBA-IIMA, B.Sc. (Hons), St. Stephen's College, New Delhi",
     experience: "40+ yrs",
     domain: "Fashion, Consultancy",
@@ -65,8 +59,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-hitesh-manocha",
     name: "Mr. Hitesh Manocha",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_6.jpg",
+    image: "/home/faculty/faculty7.webp",
     qualification: "MBA-IIM A, B.Tech - DTU",
     experience: "25+ yrs",
     domain: "Info Tech, Telecom and Office Automation",
@@ -74,17 +67,15 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-sl-ganapathi",
     name: "Mr. SL Ganapathi",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_5.jpg",
+    image: "/home/faculty/faculty8.webp",
     qualification: "MBA-IIM A, BE",
     experience: "45+ yrs",
     domain: "Logistics & Supply Chain",
   },
-    {
+  {
     slug: "rakesh-kumar",
     name: "Mr. Rakesh Kumar",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_5.jpg",
+    image: "/home/faculty/faculty9.webp",
     qualification: "MBA - IIM-A, B.E. - IIT Roorkee",
     experience: "38 yrs",
     domain: "Supply Chain Management",
@@ -92,8 +83,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "shailaja-manocha",
     name: "Ms. Shailaja Manocha",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_9.jpg",
+    image: "/home/faculty/faculty10.webp",
     qualification: "PGDBM (1988-1990) from IMT Ghaziabad",
     experience: "20 Years of Teaching Experience",
     domain: "",
@@ -101,17 +91,16 @@ export const facultyData: Faculty[] = [
   {
     slug: "vikram-tyagi",
     name: "Dr. Vikram Tyagi",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_whatsapp-image-2026-04-17-at-6.06.49-pm.jpeg",
-    qualification: "PhD in Management, PGDM (IIM Ahmedabad), Bachelor of Science",
+    image: "/home/faculty/faculty11.webp",
+    qualification:
+      "PhD in Management, PGDM (IIM Ahmedabad), Bachelor of Science",
     experience: "40 years of industry and 20 years of teaching experience",
     domain: "",
   },
   {
     slug: "gita-ms-agrawal",
     name: "Ms. Gita MS Agrawal",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_11.jpg",
+    image: "/home/faculty/faculty12.webp",
     qualification: "MBA (IIM-A), BE",
     experience: "28 yrs",
     domain: "Advertising, Public Relations",
@@ -119,8 +108,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "nadira-chaturvedi",
     name: "Ms. Nadira Chaturvedi",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_12.jpg",
+    image: "/home/faculty/faculty13.webp",
     qualification: "MBA (IIM-A)",
     experience: "35 yrs",
     domain: "Auto Ancillary, Plastic Products, Fashion",
@@ -128,8 +116,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "arun-sahay",
     name: "Mr. Arun Sahay",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_13.jpg",
+    image: "/home/faculty/faculty14.webp",
     qualification: "B-Tech (Hons), IIT-Kharagpur",
     experience: "36 yrs",
     domain: "Consumer Durables",
@@ -137,8 +124,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "sc-bansal",
     name: "Mr. SC Bansal",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_14.jpg",
+    image: "/home/faculty/faculty15.webp",
     qualification: "M.Com (H) from Delhi University",
     experience: "49 years of experience",
     domain: "Teaching and Research",
@@ -146,8 +132,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "jayant-bose",
     name: "Mr. Jayant Bose",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_15.jpg",
+    image: "/home/faculty/faculty16.webp",
     qualification: "MBA - IIMC",
     experience: "42+ yrs",
     domain: "Advertising, FMCG",
@@ -155,8 +140,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "vivek-kumar",
     name: "Mr. Vivek Kumar",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_16.jpg",
+    image: "/home/faculty/faculty17.webp",
     qualification:
       "Bachelor of Engineering, 1979 in Electrical Engineering, University of Roorkee",
     experience: "18 yrs industry experience",
@@ -165,8 +149,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ritika-arora",
     name: "Dr. Ritika Arora",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_17.jpg",
+    image: "/home/faculty/faculty18.webp",
     qualification:
       "B Tech (JNU, Delhi), Diploma in Advanced Computing (CDAC, Pune), Diploma in Management",
     experience: "",
@@ -175,8 +158,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ferzand",
     name: "Mr. Ferzand",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_18.jpg",
+    image: "/home/faculty/faculty19.webp",
     qualification: "PGDM - IIM-A, B.Tech",
     experience: "9+ yrs",
     domain: "Analyst, Data Finance",
@@ -184,8 +166,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "prashant-k-chaudhary",
     name: "Dr. Prashant K. Chaudhary",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_noimg.jpg",
+    image: "/home/faculty/faculty20.webp",
     qualification:
       "PhD (MDI Gurgaon), M Tech (IIT Kanpur), MBA (FMS, Delhi University)",
     experience: "39 years",
@@ -194,8 +175,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "brig-ajay-mehta",
     name: "Mr. Brig. Ajay Mehta",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_19.jpg",
+    image: "/home/faculty/faculty21.webp",
     qualification: "Ph.D. (Management), Management Studies (MMS)",
     experience: "35 years in Indian Army and 13 years teaching experience",
     domain: "",
@@ -203,8 +183,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ajit-gupta",
     name: "Dr. Ajit Gupta",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_21.jpg",
+    image: "/home/faculty/faculty22.webp",
     qualification:
       "Ph.D. from IIM Lucknow, MBA from Northeastern University, Boston, USA, PGDM from IIM Ahmedabad",
     experience: "",
@@ -213,8 +192,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ruchika-yadav",
     name: "Dr. Ruchika Yadav",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_22.jpg",
+    image: "/home/faculty/faculty23.webp",
     qualification: "Ph.D + M.Phil + MBA + BBA",
     experience: "22 years 3 months",
     domain: "HR & Management",
@@ -222,8 +200,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "gurbir-singh-khera",
     name: "Dr. Gurbir Singh Khera",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_23.jpg",
+    image: "/home/faculty/faculty24.webp",
     qualification: "CFA, EPM (Cornell), IIMK, Ph.D.",
     experience: "28+ yrs",
     domain: "",
@@ -231,8 +208,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "sharad-kumar",
     name: "Dr. Sharad Kumar",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_24.jpg",
+    image: "/home/faculty/faculty25.webp",
     qualification: "CFE (Texas), CrFA (UK), ACIS (UK), CIQA, LLB, LLM, Ph.D.",
     experience: "32+ yrs",
     domain: "",
@@ -240,8 +216,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "pulak-palit",
     name: "Mr. Pulak Palit",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_25.jpg",
+    image: "/home/faculty/faculty26.webp",
     qualification:
       "MBA (Marketing), Professional Diploma in Software Technology, NIIT",
     experience: "30 years",
@@ -250,8 +225,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "sanjay-chandwani",
     name: "Mr. Sanjay Chandwani",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_27.jpg",
+    image: "/home/faculty/faculty27.webp",
     qualification: "PGDRM (IRMA), 1988",
     experience: "22 years",
     domain: "",
@@ -259,18 +233,15 @@ export const facultyData: Faculty[] = [
   {
     slug: "suman-sarkar",
     name: "Mr. Suman Sarkar",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_28.jpg",
-    qualification:
-      "(EMIT), IIFT New Delhi, PGDBM IMM Kolkata, B.A. Economics",
+    image: "/home/faculty/faculty28.webp",
+    qualification: "(EMIT), IIFT New Delhi, PGDBM IMM Kolkata, B.A. Economics",
     experience: "",
     domain: "",
   },
   {
     slug: "atul-mehta",
     name: "Mr. Atul Mehta",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_29.jpg",
+    image: "/home/faculty/faculty29.webp",
     qualification: "MBA (IIM-A), BE",
     experience: "13 yrs",
     domain: "Consulting (MNC), Financial Services",
@@ -278,8 +249,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "amit-grover",
     name: "Mr. Amit Grover",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_30.jpg",
+    image: "/home/faculty/faculty30.webp",
     qualification: "M.Com, B.Com (H)",
     experience: "12 years",
     domain: "",
@@ -287,18 +257,15 @@ export const facultyData: Faculty[] = [
   {
     slug: "harman-mangat",
     name: "Ms. Harman Mangat",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_31.jpg",
-    qualification:
-      "BCA, MBA (Marketing & IT), PGDITM, PhD Pursuing",
+    image: "/home/faculty/faculty31.webp",
+    qualification: "BCA, MBA (Marketing & IT), PGDITM, PhD Pursuing",
     experience: "23 years",
     domain: "Digital Marketing",
   },
   {
     slug: "sameer-kathuria",
     name: "Mr. Sameer Kathuria",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_32.jpg",
+    image: "/home/faculty/faculty32.webp",
     qualification:
       "B.Com (H), M.Com, PGDM, MBA Finance, UGC NET, PhD Pursuing (AMU)",
     experience: "18 years",
@@ -307,8 +274,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "preeti-taneja",
     name: "Ms. Preeti Taneja",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_preeti.jpg",
+    image: "/home/faculty/faculty33.webp",
     qualification:
       "B.Com (H), M.Com, PGDM, MBA Finance, UGC NET, PhD Pursuing (AMU)",
     experience: "18 years",
@@ -317,8 +283,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "kamana-malik",
     name: "Ms. Kamana Malik",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_33.jpg",
+    image: "/home/faculty/faculty34.webp",
     qualification: "B.Com, M.Com, Data Science from IBM, B.Ed.",
     experience: "10+ years",
     domain: "",
@@ -326,8 +291,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "nimisha-srivastava",
     name: "Ms. Nimisha Srivastava",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_34.jpg",
+    image: "/home/faculty/faculty35.webp",
     qualification: "M.Com, MBA (Marketing & HR), UGC NET",
     experience: "",
     domain: "Marketing, Consumer Behaviour, Legal Aspects",
@@ -335,8 +299,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ms-ridhi-sehgal",
     name: "Ms. RIDHI SEHGAL",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_ridhi.jpg",
+    image: "/home/faculty/faculty36.webp",
     qualification: "PGDPM - NIPM-Kolkata",
     experience: "10+ yrs",
     domain: "Civil",
@@ -344,8 +307,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ms-muskaan-s",
     name: "Ms. Muskaan. S",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_muskan.jpg",
+    image: "/home/faculty/faculty37.webp",
     qualification: "MBA, BBA - Symbiosis International University",
     experience: "5+ yrs",
     domain: "",
@@ -353,8 +315,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ms-dishi-s",
     name: "Ms. Dishi S",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_untitled-design-48.jpg",
+    image: "/home/faculty/faculty38.webp",
     qualification: "MBA, IMT Dubai",
     experience: "10+ years",
     domain: "Banking, Financial Management",
@@ -362,8 +323,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "dr-tanuj-jain",
     name: "Dr. Tanuj Jain",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_tanuj.jpg",
+    image: "/home/faculty/faculty39.webp",
     qualification: "PhD. Library Science",
     experience: "10+ years",
     domain: "Library and Information Science",
@@ -371,8 +331,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-shagun-s",
     name: "Mr. Shagun. S",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_download-7.jpg",
+    image: "/home/faculty/faculty40.webp",
     qualification: "MBA",
     experience: "20+ years",
     domain: "Sales & Marketing, Business Growth",
@@ -380,8 +339,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-dhananjay-kumar",
     name: "Mr. Dhananjay Kumar",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_mr.-dhananjay-kumar.png",
+    image: "/home/faculty/faculty41.webp",
     qualification: "MBA/PGDM, B.Tech",
     experience: "15 yrs",
     domain: "Digital Marketing, Analytics, Business Strategy",
@@ -389,8 +347,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ms-mohini-deshwal",
     name: "Ms. Mohini Deshwal",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_ms-mohini-deshwal.jpg",
+    image: "/home/faculty/faculty42.webp",
     qualification: "PGDM (Symbiosis), B.Com (DU)",
     experience: "10+ yrs",
     domain: "Information Technology, Management",
@@ -398,8 +355,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mohammad-maroof",
     name: "Mohammad Maroof",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_mohammad-maroof.jpg",
+    image: "/home/faculty/faculty43.webp",
     qualification: "B.Com (Hons), MBA Jamia Millia Islamia, New Delhi",
     experience: "18 years",
     domain: "",

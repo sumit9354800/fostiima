@@ -80,7 +80,7 @@ export default function ChairmanMessage() {
               {/* Chairman Image */}
               <div className="relative flex flex-1 items-end justify-center overflow-hidden px-8 pt-10">
                 <Image
-                  src="https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_41.jpg"
+                  src="/home/faculty/faculty1.webp"
                   alt="Anil Somani - Founder and Executive Chairman of FOSTIIMA Business School"
                   width={281}
                   height={281}

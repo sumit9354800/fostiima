@@ -2,26 +2,23 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Maximize2,
-  X,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, Maximize2, X } from "lucide-react";
 
 const infrastructureImages = [
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_infra_img11.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_infra_img2.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_infra_img3.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_infra_img4.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_infra_img5.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_infra1.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_infra4.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_infra5.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_infra6.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_life-at-fbs2.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_life-at-fbs3.jpg",
-  "https://fostiima.org/uploaded_files/thumb_cache/thumb_300_200_life-at-fbs4-1.jpg",
+  "/about/infrastructures/infrastructures1.webp",
+  "/about/infrastructures/infrastructures2.webp",
+  "/about/infrastructures/infrastructures3.webp",
+  "/about/infrastructures/infrastructures4.webp",
+  "/about/infrastructures/infrastructures5.webp",
+  "/about/infrastructures/infrastructures6.webp",
+  "/about/infrastructures/infrastructures7.webp",
+  "/about/infrastructures/infrastructures8.webp",
+  "/about/infrastructures/infrastructures9.webp",
+  "/about/infrastructures/infrastructures10.webp",
+  "/about/infrastructures/infrastructures11.webp",
+  "/about/infrastructures/infrastructures12.webp",
+  "/about/infrastructures/infrastructures13.webp",
+  "/about/infrastructures/infrastructures14.webp",
 ];
 
 export default function InfrastructureSection() {

@@ -3,75 +3,83 @@ import { useState } from "react";
 
 const recruiterLogos = [
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-4.png",
+    src: "/home/company-logo/company-logo1.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-5.png",
+    src: "/home/company-logo/company-logo2.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-4.jpg",
+    src: "/home/company-logo/company-logo3.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-6.png",
+    src: "/home/company-logo/company-logo4.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-7.png",
+    src: "/home/company-logo/company-logo5.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-5.jpg",
+    src: "/home/company-logo/company-logo6.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img7.jpg",
+    src: "/home/company-logo/company-logo7.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_download-6.jpg",
+    src: "/home/company-logo/company-logo8.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img6.jpg",
+    src: "/home/company-logo/company-logo9.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_images-14.jpg",
+    src: "/home/company-logo/company-logo10.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img5.jpg",
+    src: "/home/company-logo/company-logo11.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img10.jpg",
+    src: "/home/company-logo/company-logo12.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img2.jpg",
+    src: "/home/company-logo/company-logo13.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img1.jpg",
+    src: "/home/company-logo/company-logo14.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img4.jpg",
+    src: "/home/company-logo/company-logo15.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img3.jpg",
+    src: "/home/company-logo/company-logo16.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img8.jpg",
+    src: "/home/company-logo/company-logo17.webp",
     alt: "Recruiter",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_101_recruiter_img9.jpg",
+    src: "/home/company-logo/company-logo18.webp",
+    alt: "Recruiter",
+  },
+  {
+    src: "/home/company-logo/company-logo19.webp",
+    alt: "Recruiter",
+  },
+  {
+    src: "/home/company-logo/company-logo20.webp",
     alt: "Recruiter",
   },
 ];
@@ -145,8 +153,7 @@ export default function RecruitersSection() {
             id="recruiters-heading"
             className="mt-2 font-serif text-4xl font-bold leading-tight text-[#123b79] sm:text-5xl"
           >
-            Our Prominent{" "}
-            <span className="text-[#c31e3b]">Recruiters</span>
+            Our Prominent <span className="text-[#c31e3b]">Recruiters</span>
           </h2>
 
           <p className="mt-4 text-sm leading-6 text-slate-500 sm:text-base">

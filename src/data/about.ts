@@ -8,42 +8,36 @@ export const founderTrustees: FounderTrustee[] = [
   {
     name: "Jaithirth Rao",
     role: "Founder Trustee",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_jerry-rao.jpg",
+    image: "/about/trustees-faculty/trustees-faculty1.webp",
   },
   {
     name: "Late Kamal Sharma",
     role: "Founder Trustee",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_kamal-sharma-1.jpg",
+    image: "/about/trustees-faculty/trustees-faculty2.webp",
   },
   {
     name: "Anil Somani",
     role: "Founder Trustee",
-    image:"https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_4.jpg",
+    image: "/about/trustees-faculty/trustees-faculty3.webp",
   },
   {
     name: "Sunil Kala",
     role: "Founder Trustee",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_3.jpg",
+    image: "/about/trustees-faculty/trustees-faculty4.webp",
   },
   {
     name: "Rajesh Kaura",
     role: "Founder Trustee",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_rajesh-kaura.jpg",
+    image: "/about/trustees-faculty/trustees-faculty5.webp",
   },
   {
     name: "T L Palani Kumar",
     role: "Founder Trustee",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_tl-palani-kumar.jpg",
+    image: "/about/trustees-faculty/trustees-faculty6.webp",
   },
   {
     name: "Rajan Shangi",
     role: "Founder Trustee",
-    image:
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_281_281_rajanshangi.jpg",
+    image: "/about/trustees-faculty/trustees-faculty7.webp",
   },
 ];
