@@ -51,7 +51,7 @@ export default function AdminLoginPage() {
             FB
           </div>
 
-          <span className="mt-7 block text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <span className="mt-7 block text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
             Administration
           </span>
 

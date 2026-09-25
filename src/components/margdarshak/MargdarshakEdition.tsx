@@ -12,7 +12,7 @@ export default function MargdarshakEdition({
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8 lg:p-10">
       <div className="border-b border-slate-200 pb-6">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
+        <p className="text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
           Margdarshak Awards
         </p>
 
@@ -66,7 +66,7 @@ export default function MargdarshakEdition({
                       key={item}
                       className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4"
                     >
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#102a56] text-xs font-bold text-white">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#102a56] text-md font-bold text-white">
                         {String(index + 1).padStart(2, "0")}
                       </span>
 
@@ -89,7 +89,7 @@ export default function MargdarshakEdition({
                           (header, index) => (
                             <th
                               key={`${header}-${index}`}
-                              className="px-4 py-3 text-xs font-bold uppercase tracking-wide"
+                              className="px-4 py-3 text-md font-bold uppercase tracking-wide"
                             >
                               {header}
                             </th>

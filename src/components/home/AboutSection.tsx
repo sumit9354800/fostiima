@@ -70,7 +70,7 @@ export default async function AboutSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 xl:gap-16">
           <div className="max-w-xl">
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
+            <p className="mb-4 text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
               {about.eyebrow}
             </p>
 

@@ -94,7 +94,7 @@ export default async function EventDetailPage({
           <div className="mb-6 flex items-center gap-3">
             <span className="h-px w-10 bg-[#e5b83f]" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
+            <span className="text-md font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
               Conclave / Conference
             </span>
           </div>
@@ -130,7 +130,7 @@ export default async function EventDetailPage({
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-8 bg-[#e5b83f]" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
+              <span className="text-md font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
                 Event Information
               </span>
             </div>
@@ -149,7 +149,7 @@ export default async function EventDetailPage({
             <div className="mt-9 grid gap-5 sm:grid-cols-2">
               {/* Date */}
               <div className="border border-[#e1e7ef] bg-[#f8fafc] p-5">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#c31e3b]">
+                <div className="flex items-center gap-2 text-md font-bold uppercase tracking-[0.12em] text-[#c31e3b]">
                   <CalendarDays className="h-4 w-4" />
                   Date
                 </div>
@@ -161,7 +161,7 @@ export default async function EventDetailPage({
 
               {/* Venue */}
               <div className="border border-[#e1e7ef] bg-[#f8fafc] p-5">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#c31e3b]">
+                <div className="flex items-center gap-2 text-md font-bold uppercase tracking-[0.12em] text-[#c31e3b]">
                   <MapPin className="h-4 w-4" />
                   Venue
                 </div>

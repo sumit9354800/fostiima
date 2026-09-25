@@ -7,7 +7,7 @@ export function RefundPolicyContent() {
       <div className="mx-auto max-w-4xl">
         <div className="overflow-hidden rounded-2xl border border-[#dbe3ee] bg-white shadow-sm">
           <div className="border-b border-[#dbe3ee] bg-[#061a3a] px-6 py-7 sm:px-8">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
+            <p className="text-md font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
               FOSTIIMA Business School
             </p>
 

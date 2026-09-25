@@ -37,7 +37,7 @@ export default function AboutHero() {
           <div className="flex items-center gap-3">
             <span className="h-px w-10 bg-[#f4c542]" />
 
-            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#f4c542] sm:text-xs">
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#f4c542] sm:text-md">
               FOSTIIMA Business School
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function AboutHero() {
         {/* Bottom Information */}
         <div className="mt-16 border-t border-white/10 pt-6 sm:mt-20 sm:pt-8">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-white/50">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-md text-white/50">
               <span>
                 <strong className="font-semibold text-white/80">
                   Founded
@@ -157,7 +157,7 @@ export default function AboutHero() {
 
             <a
               href="#about-fostiima"
-              className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-white/60 transition-colors hover:text-white"
+              className="group inline-flex items-center gap-2 text-md font-semibold uppercase tracking-[0.12em] text-white/60 transition-colors hover:text-white"
             >
               Explore
 

@@ -10,7 +10,7 @@ export default function PsychologicalCounselling() {
           <div className="flex items-center gap-3">
             <HeartHandshake className="h-5 w-5 text-[#e5b83f]" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
+            <span className="text-md font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
               Student Guidance
             </span>
           </div>

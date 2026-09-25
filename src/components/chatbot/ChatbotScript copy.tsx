@@ -222,7 +222,7 @@ export default function ChatbotScript() {
               <div>
                 <p className="text-sm font-medium text-slate-900">Chatbot</p>
 
-                <p className="text-xs text-slate-500">Chat with FOSTIIMA</p>
+                <p className="text-md text-slate-500">Chat with FOSTIIMA</p>
               </div>
             </button>
 
@@ -239,7 +239,7 @@ export default function ChatbotScript() {
                   Voice Chatbot
                 </p>
 
-                <p className="text-xs text-slate-500">Talk with FOSTIIMA</p>
+                <p className="text-md text-slate-500">Talk with FOSTIIMA</p>
               </div>
             </button>
           </div>

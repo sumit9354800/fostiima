@@ -29,7 +29,7 @@ export default function BlogHero() {
           <div className="mb-6 flex items-center gap-3">
             <span className="h-px w-10 bg-[#e5b83f]" />
 
-            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
+            <p className="text-md font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
               FOSTIIMA BUSINESS SCHOOL
             </p>
           </div>

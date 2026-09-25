@@ -341,7 +341,7 @@ export default function PlacementVideosAdminPage() {
         {/* HEADER */}
         <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="mb-1 text-xs font-bold uppercase tracking-[0.18em] text-[#64748b]">
+            <p className="mb-1 text-md font-bold uppercase tracking-[0.18em] text-[#64748b]">
               Home Management
             </p>
 
@@ -367,7 +367,7 @@ export default function PlacementVideosAdminPage() {
 
         {/* TABLE */}
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <div className="hidden grid-cols-[70px_1.7fr_1.3fr_100px_150px_110px] items-center border-b border-slate-200 bg-[#fbfcff] px-5 py-4 text-xs font-bold uppercase tracking-wide text-slate-500 md:grid">
+          <div className="hidden grid-cols-[70px_1.7fr_1.3fr_100px_150px_110px] items-center border-b border-slate-200 bg-[#fbfcff] px-5 py-4 text-md font-bold uppercase tracking-wide text-slate-500 md:grid">
             <div>Order</div>
             <div>Video</div>
             <div>Batch</div>
@@ -431,7 +431,7 @@ export default function PlacementVideosAdminPage() {
                         {video.title}
                       </p>
 
-                      <p className="mt-1 truncate text-xs text-slate-400">
+                      <p className="mt-1 truncate text-md text-slate-400">
                         {video.youtubeId}
                       </p>
                     </div>
@@ -452,7 +452,7 @@ export default function PlacementVideosAdminPage() {
                           video.isActive,
                         )
                       }
-                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold ${
+                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-md font-semibold ${
                         video.isActive
                           ? "bg-emerald-50 text-emerald-700"
                           : "bg-slate-100 text-slate-500"
@@ -470,7 +470,7 @@ export default function PlacementVideosAdminPage() {
                     <button
                       type="button"
                       onClick={() => openEditModal(video)}
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 transition hover:bg-slate-50"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-2 text-md font-semibold text-slate-600 transition hover:bg-slate-50"
                     >
                       <Pencil size={14} />
                       Edit
@@ -514,7 +514,7 @@ export default function PlacementVideosAdminPage() {
             {/* MODAL HEADER */}
             <div className="flex items-center justify-between border-b border-slate-200 px-6 py-5">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#64748b]">
+                <p className="text-md font-bold uppercase tracking-[0.16em] text-[#64748b]">
                   Home Management
                 </p>
 
@@ -559,7 +559,7 @@ export default function PlacementVideosAdminPage() {
                   className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-[#123b79] focus:ring-2 focus:ring-[#123b79]/10"
                 />
 
-                <p className="mt-1.5 text-xs text-slate-400">
+                <p className="mt-1.5 text-md text-slate-400">
                   You can paste the complete YouTube URL or
                   the 11-character video ID.
                 </p>

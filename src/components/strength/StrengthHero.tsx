@@ -37,7 +37,7 @@ export default function StrengthHero() {
           <div className="flex items-center gap-3">
             <span className="h-px w-10 bg-[#f4c542]" />
 
-            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#f4c542] sm:text-xs">
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#f4c542] sm:text-md">
               FOSTIIMA Business School
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function StrengthHero() {
                   aria-hidden="true"
                 />
 
-                <span className="text-xs font-semibold text-white/85">
+                <span className="text-md font-semibold text-white/85">
                   IIM Faculty
                 </span>
               </div>
@@ -80,7 +80,7 @@ export default function StrengthHero() {
                   aria-hidden="true"
                 />
 
-                <span className="text-xs font-semibold text-white/85">
+                <span className="text-md font-semibold text-white/85">
                   Experiential Learning
                 </span>
               </div>
@@ -94,7 +94,7 @@ export default function StrengthHero() {
                   aria-hidden="true"
                 />
 
-                <span className="text-xs font-semibold text-white/85">
+                <span className="text-md font-semibold text-white/85">
                   Corporate Linkages
                 </span>
               </div>
@@ -171,7 +171,7 @@ export default function StrengthHero() {
         {/* Bottom Meta */}
         <div className="mt-16 border-t border-white/10 pt-6 sm:mt-20 sm:pt-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-2xl text-xs leading-5 text-white/45">
+            <p className="max-w-2xl text-md leading-5 text-white/45">
               Academic rigour, practical exposure and industry interaction
               come together to create a distinctive FOSTIIMA learning
               experience.
@@ -179,7 +179,7 @@ export default function StrengthHero() {
 
             <a
               href="#the-fostiima-difference"
-              className="group inline-flex shrink-0 items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-white/60 transition-colors hover:text-white"
+              className="group inline-flex shrink-0 items-center gap-2 text-md font-semibold uppercase tracking-[0.12em] text-white/60 transition-colors hover:text-white"
             >
               Explore
 

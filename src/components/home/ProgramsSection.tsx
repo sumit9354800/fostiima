@@ -50,7 +50,7 @@ export default function ProgramsSection({
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
+          <p className="text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
             Our Programs
           </p>
 
@@ -122,11 +122,11 @@ export default function ProgramsSection({
                   {program.title}
                 </h3>
 
-                <p className="mt-1 text-xs font-medium text-slate-400">
+                <p className="mt-1 text-md font-medium text-slate-400">
                   {program.category}
                 </p>
 
-                <p className="mt-1 text-xs text-slate-500">
+                <p className="mt-1 text-md text-slate-500">
                   {program.duration}
                 </p>
 

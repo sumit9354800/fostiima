@@ -12,7 +12,7 @@ export function CampusGallerySection() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <p className="mb-3 text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
             Life at FOSTIIMA
           </p>
 
@@ -109,7 +109,7 @@ function GalleryImage({
               {title}
             </p>
 
-            <p className="mt-1 text-xs text-[#64748b]">
+            <p className="mt-1 text-md text-[#64748b]">
               Image unavailable
             </p>
           </div>

@@ -215,7 +215,7 @@ export default function Footer() {
                 Connect With FOSTIIMA
               </p>
 
-              <p className="mt-1 text-xs text-white/45">
+              <p className="mt-1 text-md text-white/45">
                 Follow us for campus updates, events and opportunities.
               </p>
             </div>
@@ -287,12 +287,12 @@ export default function Footer() {
         <div className="border-t border-white/10 py-5">
           <div className="flex flex-col items-center justify-between gap-2 text-center sm:flex-row sm:text-left">
 
-            <p className="text-xs text-white/45">
+            <p className="text-md text-white/45">
               Copyright © {currentYear}, FOSTIIMA Business School.
               All rights reserved.
             </p>
 
-            <p className="text-xs text-white/35">
+            <p className="text-md text-white/35">
               FOSTIIMA Business School
             </p>
 

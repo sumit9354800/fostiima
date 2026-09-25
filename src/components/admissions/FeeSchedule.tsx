@@ -22,7 +22,7 @@ export default function FeeSchedule({
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <div className="hidden grid-cols-[1.2fr_0.8fr_1.5fr] bg-[#102a56] px-6 py-4 text-xs font-bold uppercase tracking-[0.12em] text-white md:grid">
+          <div className="hidden grid-cols-[1.2fr_0.8fr_1.5fr] bg-[#102a56] px-6 py-4 text-md font-bold uppercase tracking-[0.12em] text-white md:grid">
             <span>Installment</span>
             <span>Amount</span>
             <span>Due / Notes</span>

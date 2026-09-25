@@ -40,7 +40,7 @@ export default function RegistrationHighlight({
                   {amount}
                 </p>
 
-                <div className="mt-3 flex items-center gap-2 text-xs text-white/60">
+                <div className="mt-3 flex items-center gap-2 text-md text-white/60">
                   <CreditCard className="h-4 w-4" />
                   Registration Fee
                 </div>
@@ -48,7 +48,7 @@ export default function RegistrationHighlight({
             </div>
           </div>
 
-          <div className="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-xs font-medium text-white/60 sm:px-8 lg:px-10">
+          <div className="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-md font-medium text-white/60 sm:px-8 lg:px-10">
             <FileCheck2 className="h-4 w-4 shrink-0 text-[#c31e3b]" />
             Payable immediately on receipt of Offer Letter
           </div>

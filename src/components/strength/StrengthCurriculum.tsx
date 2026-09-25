@@ -29,7 +29,7 @@ export default function StrengthCurriculum() {
             <div className="flex items-center gap-3">
               <span className="h-px w-9 bg-[#c31e3b]" />
 
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-xs">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-md">
                 {curriculumSection.eyebrow}
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function StrengthCurriculum() {
                   Business Concepts
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-slate-500">
+                <p className="mt-1 text-md leading-5 text-slate-500">
                   Strong focus on understanding key business concepts.
                 </p>
               </div>
@@ -78,7 +78,7 @@ export default function StrengthCurriculum() {
                   Analytical Skills
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-slate-500">
+                <p className="mt-1 text-md leading-5 text-slate-500">
                   Learning designed to develop analytical capabilities.
                 </p>
               </div>
@@ -94,7 +94,7 @@ export default function StrengthCurriculum() {
                   Periodic Review
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-slate-500">
+                <p className="mt-1 text-md leading-5 text-slate-500">
                   Curriculum reviewed to maintain relevance to industry.
                 </p>
               </div>

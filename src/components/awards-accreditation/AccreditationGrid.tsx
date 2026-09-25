@@ -7,7 +7,7 @@ export default function AccreditationGrid() {
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="mb-10">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <span className="text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
             AICTE Approvals
           </span>
 

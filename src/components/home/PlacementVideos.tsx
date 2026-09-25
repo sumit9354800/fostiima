@@ -431,7 +431,7 @@ export default function PlacementVideos({
 
           {/* LEFT CONTENT */}
           <div className="max-w-xl">
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
+            <p className="mb-4 text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
               Placement Stories
             </p>
 
@@ -488,7 +488,7 @@ export default function PlacementVideos({
                 />
               </button>
 
-              <div className="ml-2 flex items-center gap-2 text-xs font-semibold text-slate-400">
+              <div className="ml-2 flex items-center gap-2 text-md font-semibold text-slate-400">
                 <span className="text-[#c31e3b]">
                   {String(
                     safeActiveIndex + 1,
@@ -587,7 +587,7 @@ export default function PlacementVideos({
 
               {/* VIDEO INFORMATION */}
               <div className="px-2 pb-1 pt-4 sm:px-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#c31e3b]">
+                <p className="text-md font-semibold uppercase tracking-[0.12em] text-[#c31e3b]">
                   {activeVideo.batch}
                 </p>
 

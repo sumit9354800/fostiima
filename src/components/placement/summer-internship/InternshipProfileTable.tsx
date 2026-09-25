@@ -23,15 +23,15 @@ export default function InternshipProfileTable({
         <table className="w-full min-w-[520px] border-collapse text-left">
           <thead>
             <tr className="bg-[#102a56] text-white">
-              <th className="w-20 px-5 py-4 text-xs font-bold uppercase tracking-wider sm:px-6">
+              <th className="w-20 px-5 py-4 text-md font-bold uppercase tracking-wider sm:px-6">
                 S/N
               </th>
 
-              <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider sm:px-6">
+              <th className="px-5 py-4 text-md font-bold uppercase tracking-wider sm:px-6">
                 Specializations
               </th>
 
-              <th className="w-40 px-5 py-4 text-xs font-bold uppercase tracking-wider sm:px-6">
+              <th className="w-40 px-5 py-4 text-md font-bold uppercase tracking-wider sm:px-6">
                 % of Students
               </th>
             </tr>

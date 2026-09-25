@@ -20,7 +20,7 @@ export default function RecognitionSection() {
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           {/* Heading */}
           <div className="text-center sm:text-left">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
+            <p className="text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
               Recognition & Affiliations
             </p>
 

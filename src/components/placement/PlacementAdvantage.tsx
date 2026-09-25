@@ -6,7 +6,7 @@ export default function PlacementAdvantage() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+            <span className="text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
               The FOSTIIMA Difference
             </span>
 
@@ -34,7 +34,7 @@ export default function PlacementAdvantage() {
                 key={item.number}
                 className="border border-[#dbe3ee] bg-[#f8fafc] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#c31e3b]/30 hover:shadow-[0_12px_30px_rgba(6,26,58,0.08)]"
               >
-                <span className="text-xs font-bold tracking-[0.16em] text-[#e5b83f]">
+                <span className="text-md font-bold tracking-[0.16em] text-[#e5b83f]">
                   {item.number}
                 </span>
 

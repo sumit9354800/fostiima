@@ -99,7 +99,7 @@ export default function VisionMission() {
           <div className="flex items-center gap-3">
             <span className="h-px w-9 bg-[#c31e3b]" />
 
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-xs">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-md">
               Vision, Mission &amp; PEOs
             </p>
           </div>
@@ -221,7 +221,7 @@ export default function VisionMission() {
               <div className="mt-7 flex items-center gap-3">
                 <span className="h-px w-8 bg-[#f4c542]" />
 
-                <p className="text-xs font-semibold text-white/60">
+                <p className="text-md font-semibold text-white/60">
                   Education • Ethics • Integrity • Discipline
                 </p>
               </div>
@@ -268,7 +268,7 @@ export default function VisionMission() {
                     {item.title}
                   </h4>
 
-                  <p className="mt-2 text-xs leading-5 text-slate-500">
+                  <p className="mt-2 text-md leading-5 text-slate-500">
                     {item.description}
                   </p>
                 </div>
@@ -335,7 +335,7 @@ export default function VisionMission() {
                         {item.title}
                       </h4>
 
-                      <p className="mt-2 text-xs leading-5 text-white/55">
+                      <p className="mt-2 text-md leading-5 text-white/55">
                         {item.description}
                       </p>
                     </div>

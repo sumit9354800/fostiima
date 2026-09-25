@@ -45,7 +45,7 @@ export default function FacultiesPage() {
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-10 bg-[#e5b83f]" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
+              <span className="text-md font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
                 Academics
               </span>
             </div>
@@ -75,7 +75,7 @@ export default function FacultiesPage() {
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-8 bg-[#e5b83f]" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
+              <span className="text-md font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
                 Our Faculty
               </span>
             </div>
@@ -129,7 +129,7 @@ export default function FacultiesPage() {
 
                 {/* Faculty Information */}
                 <div className="flex flex-1 flex-col p-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#c31e3b]">
+                  <p className="text-md font-bold uppercase tracking-[0.12em] text-[#c31e3b]">
                     {faculty.experience} Industry Experience
                   </p>
 
@@ -140,7 +140,7 @@ export default function FacultiesPage() {
                   </p>
 
                   <div className="mt-auto pt-5">
-                    <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-[#061a3a] transition-colors group-hover:text-[#c31e3b]">
+                    <span className="inline-flex items-center gap-2 text-md font-bold uppercase tracking-[0.1em] text-[#061a3a] transition-colors group-hover:text-[#c31e3b]">
                       View Profile
                       <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>

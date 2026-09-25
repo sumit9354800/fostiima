@@ -11,7 +11,7 @@ export default function OutOfOfficeDuty() {
             <MapPinCheck className="h-5 w-5" />
           </div>
 
-          <span className="mt-6 block text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <span className="mt-6 block text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
             Duty Rules
           </span>
 

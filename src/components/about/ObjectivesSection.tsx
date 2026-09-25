@@ -92,7 +92,7 @@ export default function ObjectivesSection() {
           <div className="flex items-center gap-3">
             <span className="h-px w-9 bg-[#c31e3b]" />
 
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-xs">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-md">
               Our Objectives
             </p>
           </div>
@@ -211,7 +211,7 @@ export default function ObjectivesSection() {
             learning, feedback and professional preparation.
           </p>
 
-          <div className="flex shrink-0 items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#123b79]">
+          <div className="flex shrink-0 items-center gap-2 text-md font-bold uppercase tracking-[0.12em] text-[#123b79]">
             <span className="h-1.5 w-1.5 rounded-full bg-[#c31e3b]" />
             8 Core Objectives
           </div>

@@ -137,7 +137,7 @@ export default function RecruitersSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
+          <p className="text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
             Career Opportunities
           </p>
 

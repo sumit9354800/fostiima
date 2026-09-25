@@ -215,7 +215,7 @@ export default function AboutAdminPage() {
 
       <div className="mt-6 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
+          <p className="text-md font-bold uppercase tracking-[0.18em] text-slate-500">
             Home Management
           </p>
 

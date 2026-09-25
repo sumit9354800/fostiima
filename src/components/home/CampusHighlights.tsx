@@ -58,7 +58,7 @@ export default function CampusHighlights() {
 
               {/* Content */}
               <div className="relative z-10 flex h-full max-w-[90%] flex-col justify-center px-5 py-6 sm:max-w-[82%] sm:px-8 sm:py-7 lg:max-w-[78%] lg:px-9">
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#f4c400] sm:text-xs">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#f4c400] sm:text-md">
                   {item.eyebrow}
                 </p>
 
@@ -66,7 +66,7 @@ export default function CampusHighlights() {
                   {item.title}
                 </h2>
 
-                <p className="mt-3 max-w-md text-xs leading-5 text-white/75 sm:text-sm sm:leading-6">
+                <p className="mt-3 max-w-md text-md leading-5 text-white/75 sm:text-sm sm:leading-6">
                   {item.description}
                 </p>
 

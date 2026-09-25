@@ -169,7 +169,7 @@ export default function MediaUploader({
             className="w-full border border-[#dbe3ee] bg-white px-4 py-3 text-sm text-[#061a3a] outline-none transition focus:border-[#061a3a]"
           />
 
-          <p className="mt-2 text-xs text-slate-500">
+          <p className="mt-2 text-md text-slate-500">
             Paste a Cloudinary or any direct media URL.
           </p>
         </div>
@@ -196,7 +196,7 @@ export default function MediaUploader({
                   Cloudinary
                 </p>
                 <p
-                  className={`mt-1 text-xs ${
+                  className={`mt-1 text-md ${
                     destination === "cloudinary"
                       ? "text-slate-300"
                       : "text-slate-400"
@@ -225,7 +225,7 @@ export default function MediaUploader({
                   Public Folder
                 </p>
                 <p
-                  className={`mt-1 text-xs ${
+                  className={`mt-1 text-md ${
                     destination === "public"
                       ? "text-slate-300"
                       : "text-slate-400"
@@ -268,7 +268,7 @@ export default function MediaUploader({
                   : "Choose a file"}
               </p>
 
-              <p className="mt-1 text-xs text-slate-400">
+              <p className="mt-1 text-md text-slate-400">
                 Maximum {maxSizeMB}MB
               </p>
             </label>
@@ -296,7 +296,7 @@ export default function MediaUploader({
 
       {value && (
         <div className="mt-4 border border-[#dbe3ee] bg-[#f8fafc] p-3">
-          <p className="break-all text-xs text-slate-500">
+          <p className="break-all text-md text-slate-500">
             {value}
           </p>
         </div>

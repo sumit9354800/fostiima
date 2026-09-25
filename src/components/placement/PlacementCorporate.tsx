@@ -20,7 +20,7 @@ export default function PlacementCorporate() {
             <div className="flex items-center gap-3">
               <Network className="h-5 w-5 text-[#e5b83f]" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
+              <span className="text-md font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
                 Corporate Linkages
               </span>
             </div>
@@ -63,7 +63,7 @@ export default function PlacementCorporate() {
             <div className="flex items-center gap-3">
               <GraduationCap className="h-5 w-5 text-[#e5b83f]" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
+              <span className="text-md font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
                 Career Domains
               </span>
             </div>

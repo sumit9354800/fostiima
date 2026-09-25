@@ -25,7 +25,7 @@ export default function AcademicOverview() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <span className="text-md font-semibold uppercase tracking-[0.2em] text-[#c31e3b]">
             Academic Approach
           </span>
 

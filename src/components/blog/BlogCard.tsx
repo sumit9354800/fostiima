@@ -70,7 +70,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
             <>
               <span className="h-1 w-1 rounded-full bg-[#e5b83f]" />
 
-              <span className="text-xs font-medium text-slate-500">
+              <span className="text-md font-medium text-slate-500">
                 {blog.publishedAt}
               </span>
             </>

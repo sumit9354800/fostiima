@@ -307,7 +307,7 @@ export default function StatsAdminPage() {
         {/* HEADER */}
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#64748b]">
+            <p className="mb-1 text-md font-semibold uppercase tracking-[0.16em] text-[#64748b]">
               Home Management
             </p>
 
@@ -383,23 +383,23 @@ export default function StatsAdminPage() {
                 <table className="w-full min-w-[760px]">
                   <thead>
                     <tr className="border-b border-slate-200 bg-slate-50">
-                      <th className="w-20 px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      <th className="w-20 px-5 py-3 text-left text-md font-semibold uppercase tracking-wide text-slate-500">
                         Order
                       </th>
 
-                      <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      <th className="px-5 py-3 text-left text-md font-semibold uppercase tracking-wide text-slate-500">
                         Stat
                       </th>
 
-                      <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      <th className="px-5 py-3 text-left text-md font-semibold uppercase tracking-wide text-slate-500">
                         Icon
                       </th>
 
-                      <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      <th className="px-5 py-3 text-left text-md font-semibold uppercase tracking-wide text-slate-500">
                         Status
                       </th>
 
-                      <th className="w-32 px-5 py-3 text-right text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      <th className="w-32 px-5 py-3 text-right text-md font-semibold uppercase tracking-wide text-slate-500">
                         Actions
                       </th>
                     </tr>
@@ -470,7 +470,7 @@ export default function StatsAdminPage() {
                               </span>
 
                               <span
-                                className={`text-xs font-medium ${
+                                className={`text-md font-medium ${
                                   stat.isActive
                                     ? "text-emerald-600"
                                     : "text-slate-500"
@@ -544,7 +544,7 @@ export default function StatsAdminPage() {
                               </p>
                             </div>
 
-                            <span className="inline-flex h-7 min-w-7 items-center justify-center rounded-lg bg-slate-100 px-2 text-xs font-semibold text-slate-600">
+                            <span className="inline-flex h-7 min-w-7 items-center justify-center rounded-lg bg-slate-100 px-2 text-md font-semibold text-slate-600">
                               #{stat.sortOrder}
                             </span>
                           </div>
@@ -573,7 +573,7 @@ export default function StatsAdminPage() {
                                 />
                               </span>
 
-                              <span className="text-xs font-medium text-slate-500">
+                              <span className="text-md font-medium text-slate-500">
                                 {stat.isActive
                                   ? "Active"
                                   : "Hidden"}
@@ -626,7 +626,7 @@ export default function StatsAdminPage() {
                   {editingId ? "Edit Stat" : "Add Stat"}
                 </h2>
 
-                <p className="mt-0.5 text-xs text-slate-500">
+                <p className="mt-0.5 text-md text-slate-500">
                   {editingId
                     ? "Update this homepage statistic."
                     : "Create a new homepage statistic."}

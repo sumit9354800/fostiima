@@ -5,7 +5,7 @@ export function StudentJourneySection() {
     <section className="bg-white px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <p className="mb-3 text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
             Student Journey
           </p>
 

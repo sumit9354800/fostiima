@@ -82,7 +82,7 @@ export default function InternshipChart({ profiles }: InternshipChartProps) {
         </h2>
 
         {total !== 100 && (
-          <p className="mt-2 text-xs leading-5 text-slate-500">
+          <p className="mt-2 text-md leading-5 text-slate-500">
             The chart represents the supplied profile percentages
             proportionally.
           </p>

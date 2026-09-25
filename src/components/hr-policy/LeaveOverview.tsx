@@ -64,7 +64,7 @@ function PolicyPoint({
 }) {
   return (
     <div className="flex gap-4 border border-[#dbe3ee] bg-[#f8fafc] p-5">
-      <div className="flex h-7 w-7 shrink-0 items-center justify-center bg-[#c31e3b] text-xs font-bold text-white">
+      <div className="flex h-7 w-7 shrink-0 items-center justify-center bg-[#c31e3b] text-md font-bold text-white">
         {number ?? "•"}
       </div>
 
@@ -89,7 +89,7 @@ function SectionHeading({
       <div className="flex items-center gap-3">
         <Icon className="h-5 w-5 text-[#c31e3b]" />
 
-        <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+        <span className="text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
           {eyebrow}
         </span>
       </div>

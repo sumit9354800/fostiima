@@ -21,7 +21,7 @@ export function LifeAtFostiimaHero() {
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-[#e5b83f]" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
+            <span className="text-md font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
               {lifeAtFostiimaHero.eyebrow}
             </span>
           </div>
