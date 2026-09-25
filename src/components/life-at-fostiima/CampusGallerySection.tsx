@@ -83,8 +83,8 @@ function GalleryImage({
   return (
     <div
       className={[
-        "relative overflow-hidden bg-[#eef2f7]",
-        isLarge ? "h-64 sm:h-80" : "h-52",
+        "relative aspect-square overflow-hidden bg-[#eef2f7]",
+        isLarge ? "sm:aspect-auto sm:h-80" : "",
       ].join(" ")}
     >
       {hasError ? (
@@ -124,7 +124,7 @@ function GalleryImage({
               ? "(max-width: 640px) 100vw, 50vw"
               : "(max-width: 640px) 100vw, 25vw"
           }
-          className="object-cover transition duration-500 group-hover:scale-105"
+          className="object-contain transition duration-500"
           onError={() => setHasError(true)}
         />
       )}
