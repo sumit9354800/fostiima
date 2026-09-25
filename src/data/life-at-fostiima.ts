@@ -47,7 +47,7 @@ export const lifeExperiences = [
 
 export const campusGallery = [
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_110_110_brainstorming-1.jpg.jpeg",
+    src: "/life-at-fostiima/life-at-fostiima1.png",
     alt: "Academic Excellence at FOSTIIMA",
     title: "Academic Excellence",
     description:
@@ -55,7 +55,7 @@ export const campusGallery = [
     size: "small",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_110_110_fbs-202x171-size-website-banner-sportcultralbrainstroming-2.jpg.jpeg",
+    src: "/life-at-fostiima/life-at-fostiima2.png",
     alt: "Sports and Fitness at FOSTIIMA",
     title: "Sports & Fitness",
     description:
@@ -63,7 +63,7 @@ export const campusGallery = [
     size: "small",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_110_110_cultural-events.jpg.jpeg",
+    src: "/life-at-fostiima/life-at-fostiima3.png",
     alt: "Cultural Events at FOSTIIMA",
     title: "Cultural Events",
     description:
@@ -71,14 +71,14 @@ export const campusGallery = [
     size: "small",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_110_110_business-exposure-dubai-3.jpg.jpeg",
+    src: "/life-at-fostiima/life-at-fostiima4.png",
     alt: "Business Exposure Trip",
     title: "Business Exposure Trip",
     description: "",
     size: "small",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_110_110_brainstorming-2.jpg.jpeg",
+    src: "/life-at-fostiima/life-at-fostiima5.png",
     alt: "FOSTIIMA Campus Tour",
     title: "Campus Tour",
     description:
@@ -86,7 +86,7 @@ export const campusGallery = [
     size: "large",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_110_110_domestic-trip-5.jpg.jpeg",
+    src: "/life-at-fostiima/life-at-fostiima6.png",
     alt: "Brainstorming Activities at FOSTIIMA",
     title: "Brainstorming",
     description:
@@ -94,7 +94,7 @@ export const campusGallery = [
     size: "small",
   },
   {
-    src: "https://fostiima.org/uploaded_files/thumb_cache/thumb_110_110_industrial-visit.jpg.jpeg",
+    src: "/life-at-fostiima/life-at-fostiima7.png",
     alt: "Team Building Camp",
     title: "Team Building Camp",
     description:
@@ -102,14 +102,14 @@ export const campusGallery = [
     size: "small",
   },
   {
-    src: "/images/life-at-fostiima/industrial-visit.jpg",
+    src: "/life-at-fostiima/life-at-fostiima8.png",
     alt: "Industrial Visit",
     title: "Industrial Visit",
     description: "",
     size: "small",
   },
   {
-    src: "/images/life-at-fostiima/corporate-talk.jpg",
+    src: "/life-at-fostiima/life-at-fostiima9.png",
     alt: "Corporate Talk at FOSTIIMA",
     title: "Corporate Talk",
     description: "",
