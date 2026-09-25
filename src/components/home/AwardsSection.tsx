@@ -19,11 +19,11 @@ const awards = [
     accent: "blue",
   },
   {
-    title: "AICTE APPROVAL 2024-25",
+    title: "AICTE APPROVAL 2022-23",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
-    icon: Award,
-    accent: "red",
+    icon: Star,
+    accent: "blue",
   },
   {
     title: "AICTE APPROVAL 2023-24",
@@ -33,14 +33,13 @@ const awards = [
     accent: "yellow",
   },
   {
-    title: "AICTE APPROVAL 2022-23",
+    title: "AICTE APPROVAL 2024-25",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
-    icon: Star,
-    accent: "blue",
+    icon: Award,
+    accent: "red",
   },
 ];
-
 
 export default function AwardsSection() {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -76,7 +75,8 @@ export default function AwardsSection() {
 
             <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
               Our academic standards, industry engagement and management
-              education ecosystem reflect {`FOSTIIMA's`} commitment to excellence.
+              education ecosystem reflect {`FOSTIIMA's`} commitment to
+              excellence.
             </p>
           </div>
 
