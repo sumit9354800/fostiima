@@ -4,7 +4,7 @@ const highlights = [
     description:
       "A vibrant campus life that nurtures leadership, creativity and lifelong connections.",
     image:
-      "https://plus.unsplash.com/premium_photo-1683887034491-f58b4c4fca72?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3R1ZGVudHN8ZW58MHx8MHx8fDA%3D",
+      "/home/campus/campus1.jpeg",
     href: "/life-at-fostiima",
     eyebrow: "Campus Life",
   },
@@ -13,7 +13,7 @@ const highlights = [
     description:
       "Strong corporate connect ensuring bright careers and meaningful career opportunities.",
     image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZGVudHN8ZW58MHx8MHx8fDA%3D",
+      "/home/campus/capmus2.jpeg",
     href: "/placement",
     eyebrow: "Career Opportunities",
   },
