@@ -252,29 +252,21 @@ export default function MobileMenu() {
           "
         >
           <div className="flex flex-col leading-none">
-            <span
-              className="
-                text-xl
-                font-extrabold
-                tracking-[-0.04em]
-                text-[#123b79]
-              "
+            <Link
+              href="/"
+              onClick={closeMenu}
+              className="flex w-[120px] shrink-0 items-center"
+              aria-label="FOSTIIMA Business School Home"
             >
-              FOSTIIMA
-            </span>
-
-            <span
-              className="
-                mt-1
-                text-[7px]
-                font-bold
-                uppercase
-                tracking-[0.22em]
-                text-[#c31e3b]
-              "
-            >
-              Business School
-            </span>
+              <Image
+                src="/logo.jpeg"
+                alt="FOSTIIMA Business School"
+                width={150}
+                height={50}
+                className="h-auto w-full object-contain"
+                priority
+              />
+            </Link>
           </div>
 
           <button
