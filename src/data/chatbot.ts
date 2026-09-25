@@ -136,7 +136,7 @@ export const chatbotFaqs: ChatbotFaq[] = [
     id: "contact",
     question: "How can I contact admissions?",
     answer:
-      "You can contact FOSTIIMA at no-reply@fostiima.org or +91-7678389436. The supplied website contact information lists Dwarka Sector 9.",
+      "You can contact FOSTIIMA at admissions@fostiima.org or +91-7678389436. The supplied website contact information lists Dwarka Sector 9.",
     keywords: ["contact", "phone", "email", "admissions", "admission office"],
   },
 ];
@@ -202,6 +202,6 @@ export function getChatbotAnswer(question: string) {
 
   return (
     "I do not have confirmed information for that question yet. " +
-    "Please contact FOSTIIMA Admissions at no-reply@fostiima.org or +91-7678389436."
+    "Please contact FOSTIIMA Admissions at admissions@fostiima.org or +91-7678389436."
   );
 }
