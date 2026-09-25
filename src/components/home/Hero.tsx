@@ -1,3 +1,4 @@
+
 import { prisma } from "@/lib/prisma";
 
 const DEFAULT_HERO_VIDEO = "/videos/fostiima-hero.mp4";
@@ -15,9 +16,9 @@ export default async function Hero() {
   const heroVideo = hero?.videoUrl || DEFAULT_HERO_VIDEO;
 
   return (
-    <section className="relative min-h-[calc(100svh-96px)] overflow-hidden bg-[#071a35]">
+    <section className="relative w-full overflow-hidden bg-[#071a35]">
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="block h-auto w-full"
         autoPlay
         muted
         loop
@@ -28,7 +29,7 @@ export default async function Hero() {
         <source src={heroVideo} type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-[#071a35]/35" />
+      {/* <div className="absolute inset-0 bg-[#071a35]/35" /> */}
 
       <div className="absolute inset-0 bg-gradient-to-b from-[#071a35]/20 via-transparent to-[#071a35]/65" />
     </section>
