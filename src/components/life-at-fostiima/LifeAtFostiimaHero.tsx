@@ -1,19 +1,43 @@
+
 import { ArrowRight } from "lucide-react";
 import { lifeAtFostiimaHero } from "@/data/life-at-fostiima";
 
 export function LifeAtFostiimaHero() {
+  const hasBackgroundImage = Boolean(lifeAtFostiimaHero.backgroundImage);
+
   return (
-    <section className="relative isolate overflow-hidden bg-[#061a3a]">
-      <div
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
-          backgroundSize: "42px 42px",
-        }}
-      />
+    <section
+      className="relative isolate overflow-hidden bg-[#061a3a]"
+      style={
+        hasBackgroundImage
+          ? {
+              backgroundImage: `url(${lifeAtFostiimaHero.backgroundImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }
+          : undefined
+      }
+    >
+      {/* Grid - only shown when background image is not available */}
+      {!hasBackgroundImage && (
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+            backgroundSize: "42px 42px",
+          }}
+        />
+      )}
+
+      {/* Dark overlay when background image exists */}
+      {hasBackgroundImage && (
+        <div className="absolute inset-0 bg-[#061a3a]/65" />
+      )}
 
       <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#c31e3b]/10 blur-3xl" />
+
       <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#e5b83f]/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">

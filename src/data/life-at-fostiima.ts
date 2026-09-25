@@ -13,9 +13,13 @@ import {
 
 export const lifeAtFostiimaHero = {
   eyebrow: "Campus Experience",
+
   title: "Life at FOSTIIMA",
+
   description:
     "More than a classroom. A place to learn, participate, collaborate, create and grow together.",
+
+  backgroundImage: "/bg-hero-banner/life-at-fostiima-hero.png",
 };
 
 export const lifeExperiences = [
