@@ -117,17 +117,13 @@ export default function Footer() {
           ==================================================== */}
           <div>
             {/* Logo */}
-            <div className="inline-flex rounded-lg bg-white px-4 py-3">
+            <div className="inline-flex rounded-lg bg-white px-1 py-1">
               <img
-                src="https://fostiima.org/assets/designer/themes/default/images/fostiima-business-school-logo2.jpg"
+                src="/logo.jpeg"
                 alt="FOSTIIMA Business School"
                 className="h-auto w-[190px]"
               />
             </div>
-
-            <h3 className="mt-6 text-base font-bold text-white">
-              FOSTIIMA Business School
-            </h3>
 
             {/* Contact */}
             <div className="mt-4 space-y-4">
