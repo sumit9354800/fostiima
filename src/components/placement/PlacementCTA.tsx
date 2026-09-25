@@ -16,7 +16,7 @@ export default function PlacementCTA() {
           />
 
           <div className="relative">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+            <span className="text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
               FOSTIIMA Business School
             </span>
 

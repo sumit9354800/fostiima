@@ -84,7 +84,7 @@ export default function FacultySection() {
 
               {/* Short information */}
               <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#c31e3b]">
+                <p className="text-md font-semibold uppercase tracking-wide text-[#c31e3b]">
                   {faculty.experience} Industry Experience
                 </p>
 

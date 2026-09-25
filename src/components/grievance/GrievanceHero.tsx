@@ -21,7 +21,7 @@ export default function GrievanceHero() {
           <div className="flex items-center gap-3">
             <ShieldCheck className="h-5 w-5 text-[#e5b83f]" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
+            <span className="text-md font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
               Student Support
             </span>
           </div>

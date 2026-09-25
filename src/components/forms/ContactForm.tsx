@@ -268,7 +268,7 @@ export default function ContactForm() {
           aria-live="assertive"
           className="mb-6 flex items-start gap-3 border border-red-200 bg-red-50 p-4"
         >
-          <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c31e3b] text-xs font-bold text-white">
+          <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c31e3b] text-md font-bold text-white">
             !
           </div>
 
@@ -277,7 +277,7 @@ export default function ContactForm() {
               Please check your information
             </p>
 
-            <p className="mt-1 text-xs leading-5 text-red-700">
+            <p className="mt-1 text-md leading-5 text-red-700">
               {formError.message}
             </p>
           </div>
@@ -298,7 +298,7 @@ export default function ContactForm() {
               Your enquiry has been sent successfully.
             </p>
 
-            <p className="mt-1 text-xs leading-5 text-green-700">
+            <p className="mt-1 text-md leading-5 text-green-700">
               Thank you for contacting FOSTIIMA Business School. Our team will
               get back to you shortly.
             </p>
@@ -317,7 +317,7 @@ export default function ContactForm() {
             We could not send your enquiry.
           </p>
 
-          <p className="mt-1 text-xs leading-5 text-red-700">{errorMessage}</p>
+          <p className="mt-1 text-md leading-5 text-red-700">{errorMessage}</p>
         </div>
       )}
 
@@ -442,7 +442,7 @@ export default function ContactForm() {
           </div>
 
           {captchaError && (
-            <p className="mt-2 text-xs font-medium text-[#c31e3b]">
+            <p className="mt-2 text-md font-medium text-[#c31e3b]">
               {captchaError}
             </p>
           )}

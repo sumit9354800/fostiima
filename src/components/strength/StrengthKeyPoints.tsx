@@ -19,7 +19,7 @@ export default function StrengthKeyPoints() {
           <div className="flex items-center gap-3">
             <span className="h-px w-9 bg-[#c31e3b]" />
 
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-xs">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-md">
               Key Strengths
             </p>
           </div>

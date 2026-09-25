@@ -45,7 +45,7 @@ export default function ConclaveConferencePage() {
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-10 bg-[#e5b83f]" />
 
-              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
+              <span className="inline-flex items-center gap-2 text-md font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
                 <CalendarDays className="h-4 w-4" />
                 Conclave / Conference
               </span>
@@ -77,7 +77,7 @@ export default function ConclaveConferencePage() {
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-8 bg-[#e5b83f]" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
+              <span className="text-md font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
                 Events &amp; Initiatives
               </span>
             </div>

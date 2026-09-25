@@ -55,7 +55,7 @@ export default function BalanceSheetPage() {
                   </div>
 
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#64748b]">
+                    <p className="text-md font-semibold uppercase tracking-[0.16em] text-[#64748b]">
                       Financial Year
                     </p>
 

@@ -34,7 +34,7 @@ export default function ApplyFormModal({
         <div className="border-b border-slate-100 bg-[#123b79] px-6 py-5 sm:px-8">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">
+              <p className="mb-1 text-md font-semibold uppercase tracking-[0.18em] text-blue-200">
                 Admissions
               </p>
 

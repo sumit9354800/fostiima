@@ -174,12 +174,12 @@ export default function PlacementChart({
                   }}
                 />
 
-                <span className="truncate text-xs font-medium text-[#102a56]">
+                <span className="truncate text-md font-medium text-[#102a56]">
                   {slice.category}
                 </span>
               </div>
 
-              <span className="shrink-0 text-xs font-bold text-[#c31e3b]">
+              <span className="shrink-0 text-md font-bold text-[#c31e3b]">
                 {slice.percentage}%
               </span>
             </div>

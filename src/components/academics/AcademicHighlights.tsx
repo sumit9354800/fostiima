@@ -29,7 +29,7 @@ export default function AcademicHighlights() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <span className="text-md font-semibold uppercase tracking-[0.2em] text-[#c31e3b]">
             Key Strength
           </span>
 
@@ -74,7 +74,7 @@ export default function AcademicHighlights() {
                   {highlight.description}
                 </p>
 
-                <div className="mt-5 flex items-center gap-2 text-xs font-semibold text-[#c31e3b]">
+                <div className="mt-5 flex items-center gap-2 text-md font-semibold text-[#c31e3b]">
                   <Check
                     aria-hidden="true"
                     className="h-4 w-4"

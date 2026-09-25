@@ -70,7 +70,7 @@ export default function AboutFostiima() {
             <div className="flex items-center gap-3">
               <span className="h-px w-9 bg-[#c31e3b]" />
 
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-xs">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-md">
                 About FOSTIIMA
               </p>
             </div>
@@ -139,7 +139,7 @@ export default function AboutFostiima() {
         <div>
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div className="max-w-2xl">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-xs">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-md">
                 The FOSTIIMA Advantage
               </p>
 
@@ -149,7 +149,7 @@ export default function AboutFostiima() {
             </div>
 
             <div className="hidden shrink-0 sm:block">
-              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+              <span className="text-md font-semibold uppercase tracking-[0.14em] text-slate-400">
                 5 Key Advantages
               </span>
             </div>

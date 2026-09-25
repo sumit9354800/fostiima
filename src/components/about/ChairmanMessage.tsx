@@ -47,7 +47,7 @@ export default function ChairmanMessage() {
           <div className="flex items-center gap-3">
             <span className="h-px w-9 bg-[#c31e3b]" />
 
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-xs">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-md">
               Message From Chairman
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function ChairmanMessage() {
                       {item.title}
                     </h4>
 
-                    <p className="mt-1 text-xs leading-5 text-slate-500">
+                    <p className="mt-1 text-md leading-5 text-slate-500">
                       {item.description}
                     </p>
                   </div>

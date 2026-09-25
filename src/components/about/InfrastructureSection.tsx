@@ -141,7 +141,7 @@ export default function InfrastructureSection() {
               <div className="flex items-center gap-3">
                 <span className="h-px w-9 bg-[#c31e3b]" />
 
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-xs">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-md">
                   Infrastructures
                 </p>
               </div>
@@ -230,7 +230,7 @@ export default function InfrastructureSection() {
 
           {/* Bottom Info */}
           <div className="mt-4 flex items-center justify-between border-t border-slate-200 pt-5">
-            <p className="text-xs text-slate-400">
+            <p className="text-md text-slate-400">
               {infrastructureImages.length} Images
             </p>
 
@@ -298,7 +298,7 @@ export default function InfrastructureSection() {
           </button>
 
           {/* Image Counter */}
-          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md">
+          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-2 text-md font-semibold text-white backdrop-blur-md">
             {selectedIndex + 1} / {infrastructureImages.length}
           </div>
         </div>

@@ -37,7 +37,7 @@ export default function NIRFOverview() {
                   <Icon className="h-5 w-5" />
                 </div>
 
-                <p className="mt-5 text-xs font-bold uppercase tracking-[0.15em] text-[#c31e3b]">
+                <p className="mt-5 text-md font-bold uppercase tracking-[0.15em] text-[#c31e3b]">
                   {item.label}
                 </p>
 

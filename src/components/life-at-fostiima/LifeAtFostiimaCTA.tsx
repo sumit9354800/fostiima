@@ -9,7 +9,7 @@ export function LifeAtFostiimaCTA() {
 
           <div className="relative flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
+              <p className="text-md font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
                 Start Your Journey
               </p>
 

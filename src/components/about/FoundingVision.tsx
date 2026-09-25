@@ -51,7 +51,7 @@ export default function FoundingVision() {
             <div className="flex items-center gap-3">
               <span className="h-px w-9 bg-[#c31e3b]" />
 
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-xs">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-md">
                 Trustees &amp; Founders
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function FoundingVision() {
               Founder Trustees
             </h3>
 
-            <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">
+            <p className="mt-1 text-md leading-5 text-slate-500 sm:text-sm">
               Explore the founder trustees who have played an important role
               in shaping the institution&apos;s vision and educational
               philosophy.
@@ -189,7 +189,7 @@ export default function FoundingVision() {
 
         {/* Bottom Note */}
         <div className="mt-5 flex items-center justify-between gap-4 border-t border-slate-200 pt-5">
-          <p className="text-xs text-slate-400">
+          <p className="text-md text-slate-400">
             {founderTrustees.length} Founder Trustees
           </p>
 

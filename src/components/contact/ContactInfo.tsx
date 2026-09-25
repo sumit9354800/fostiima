@@ -98,7 +98,7 @@ export default function ContactInfo() {
         href="https://maps.app.goo.gl/kd8KVPNQYUw56hfW9"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#c31e3b] transition hover:text-[#061a3a]"
+        className="inline-flex items-center gap-2 text-md font-bold uppercase tracking-[0.12em] text-[#c31e3b] transition hover:text-[#061a3a]"
       >
         Open Location in Maps
         <ArrowUpRight className="h-4 w-4" />

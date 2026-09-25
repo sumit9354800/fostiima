@@ -40,7 +40,7 @@ export default function PgdmOverview({
             ))}
           </div>
 
-          <div className="mt-7 flex items-center gap-2 border-t border-slate-100 pt-5 text-xs font-semibold text-[#102a56]">
+          <div className="mt-7 flex items-center gap-2 border-t border-slate-100 pt-5 text-md font-semibold text-[#102a56]">
             <BookOpenCheck className="h-4 w-4 text-[#c31e3b]" />
             Two-year full-time PGDM programme
           </div>

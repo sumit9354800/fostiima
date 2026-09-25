@@ -5,7 +5,7 @@ export function LifeExperienceSection() {
     <section className="border-b border-[#dbe3ee] bg-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
         <div>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <p className="mb-3 text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
             The FOSTIIMA Experience
           </p>
 

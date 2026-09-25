@@ -394,7 +394,7 @@ export default function ProgramsAdminPage() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#c31e3b]">
+            <p className="text-md font-semibold uppercase tracking-[0.18em] text-[#c31e3b]">
               Home CMS
             </p>
 
@@ -449,27 +449,27 @@ export default function ProgramsAdminPage() {
               <table className="w-full min-w-[900px] text-left">
                 <thead className="border-b border-slate-200 bg-slate-50">
                   <tr>
-                    <th className="px-5 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    <th className="px-5 py-3 text-md font-semibold uppercase tracking-wide text-slate-500">
                       Program
                     </th>
 
-                    <th className="px-5 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    <th className="px-5 py-3 text-md font-semibold uppercase tracking-wide text-slate-500">
                       Category
                     </th>
 
-                    <th className="px-5 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    <th className="px-5 py-3 text-md font-semibold uppercase tracking-wide text-slate-500">
                       Duration
                     </th>
 
-                    <th className="px-5 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    <th className="px-5 py-3 text-md font-semibold uppercase tracking-wide text-slate-500">
                       Order
                     </th>
 
-                    <th className="px-5 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    <th className="px-5 py-3 text-md font-semibold uppercase tracking-wide text-slate-500">
                       Status
                     </th>
 
-                    <th className="px-5 py-3 text-right text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    <th className="px-5 py-3 text-right text-md font-semibold uppercase tracking-wide text-slate-500">
                       Actions
                     </th>
                   </tr>
@@ -494,7 +494,7 @@ export default function ProgramsAdminPage() {
                               {program.title}
                             </p>
 
-                            <p className="mt-0.5 max-w-[280px] truncate text-xs text-slate-400">
+                            <p className="mt-0.5 max-w-[280px] truncate text-md text-slate-400">
                               {program.href}
                             </p>
                           </div>
@@ -521,7 +521,7 @@ export default function ProgramsAdminPage() {
                               program,
                             )
                           }
-                          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${
+                          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-md font-semibold ${
                             program.isActive
                               ? "bg-emerald-50 text-emerald-700"
                               : "bg-slate-100 text-slate-500"
@@ -584,7 +584,7 @@ export default function ProgramsAdminPage() {
                     : "Add Program"}
                 </h2>
 
-                <p className="mt-0.5 text-xs text-slate-500">
+                <p className="mt-0.5 text-md text-slate-500">
                   Fill in the program details
                   below.
                 </p>
@@ -702,7 +702,7 @@ export default function ProgramsAdminPage() {
                   className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none transition focus:border-[#123b79] focus:ring-2 focus:ring-[#123b79]/10"
                 />
 
-                <p className="mt-1 text-xs text-slate-400">
+                <p className="mt-1 text-md text-slate-400">
                   Example: /programs/mba
                 </p>
               </div>
@@ -763,7 +763,7 @@ export default function ProgramsAdminPage() {
                           : "Upload Image"}
                       </span>
 
-                      <span className="mt-1 text-xs text-slate-400">
+                      <span className="mt-1 text-md text-slate-400">
                         PNG, JPG, WEBP or SVG
                       </span>
                     </button>
@@ -786,7 +786,7 @@ export default function ProgramsAdminPage() {
                         fileInputRef.current?.click()
                       }
                       disabled={uploading}
-                      className="mt-3 inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-[#123b79] hover:text-[#123b79] disabled:opacity-50"
+                      className="mt-3 inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-md font-semibold text-slate-700 transition hover:border-[#123b79] hover:text-[#123b79] disabled:opacity-50"
                     >
                       <Upload size={14} />
                       Replace Image
@@ -801,7 +801,7 @@ export default function ProgramsAdminPage() {
                     Show on Homepage
                   </p>
 
-                  <p className="text-xs text-slate-400">
+                  <p className="text-md text-slate-400">
                     Inactive programs will not appear
                     on the homepage.
                   </p>

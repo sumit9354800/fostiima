@@ -11,7 +11,7 @@ export function BeyondAcademicsSection() {
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-[#e5b83f]" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
+            <span className="text-md font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
               Beyond Academics
             </span>
           </div>

@@ -14,7 +14,7 @@ export default function Margdarshak4() {
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8 lg:p-10">
       <div className="border-b border-slate-200 pb-6">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
+        <p className="text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
           Margdarshak Awards
         </p>
 

@@ -38,7 +38,7 @@ export default function AdminHeader({
             FOSTIIMA Admin
           </p>
 
-          <p className="hidden text-xs text-slate-500 sm:block">
+          <p className="hidden text-md text-slate-500 sm:block">
             Website Content Management
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function AdminHeader({
       <button
         type="button"
         onClick={handleLogout}
-        className="flex items-center gap-2 border border-[#dbe3ee] px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-[#c31e3b] hover:text-[#c31e3b]"
+        className="flex items-center gap-2 border border-[#dbe3ee] px-3 py-2 text-md font-semibold text-slate-600 transition hover:border-[#c31e3b] hover:text-[#c31e3b]"
       >
         <LogOut className="h-4 w-4" />
 

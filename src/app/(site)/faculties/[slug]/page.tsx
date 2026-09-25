@@ -103,7 +103,7 @@ export default async function FacultyDetailPage({
 
             {/* Intro */}
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#eab308]">
+              <span className="text-md font-bold uppercase tracking-[0.2em] text-[#eab308]">
                 Core Faculty
               </span>
 
@@ -159,7 +159,7 @@ export default async function FacultyDetailPage({
           </div>
 
           <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
+            <span className="text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
               Industry Domain / Fields
             </span>
 

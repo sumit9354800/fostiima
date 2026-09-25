@@ -78,7 +78,7 @@ export default async function BlogDetailPage({
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 bg-[#e5b83f]" />
 
-                <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#e5b83f]">
+                <span className="text-md font-bold uppercase tracking-[0.24em] text-[#e5b83f]">
                   {blog.category}
                 </span>
               </div>

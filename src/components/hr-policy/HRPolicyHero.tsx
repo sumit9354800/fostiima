@@ -21,7 +21,7 @@ export default function HRPolicyHero() {
           <div className="flex items-center gap-3">
             <BriefcaseBusiness className="h-5 w-5 text-[#e5b83f]" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
+            <span className="text-md font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
               HR Policy 2024-25
             </span>
           </div>

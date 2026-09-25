@@ -40,7 +40,7 @@ export default function StrengthFaculty() {
             <div className="flex items-center gap-3">
               <span className="h-px w-9 bg-[#c31e3b]" />
 
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-xs">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c31e3b] sm:text-md">
                 {facultySection.eyebrow}
               </p>
             </div>
@@ -78,7 +78,7 @@ export default function StrengthFaculty() {
                   IIM Graduates
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-slate-500">
+                <p className="mt-1 text-md leading-5 text-slate-500">
                   Core, adjunct and guest faculty with IIM backgrounds.
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function StrengthFaculty() {
                   Corporate Experience
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-slate-500">
+                <p className="mt-1 text-md leading-5 text-slate-500">
                   Experience across diverse portfolios and responsibilities.
                 </p>
               </div>
@@ -106,7 +106,7 @@ export default function StrengthFaculty() {
                   Experiential Learning
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-slate-500">
+                <p className="mt-1 text-md leading-5 text-slate-500">
                   Theory connected with practical business experiences.
                 </p>
               </div>

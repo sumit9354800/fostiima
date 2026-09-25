@@ -12,7 +12,7 @@ export default function AdminDashboard() {
             <div className="flex items-center gap-3">
               <ShieldCheck className="h-5 w-5 text-[#e5b83f]" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
+              <span className="text-md font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
                 Administration
               </span>
             </div>
@@ -36,7 +36,7 @@ export default function AdminDashboard() {
 
       <div className="mt-10">
         <div>
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <span className="text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
             Content Management
           </span>
 

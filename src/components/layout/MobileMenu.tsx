@@ -344,7 +344,7 @@ export default function MobileMenu() {
                 onClick={closeMenu}
                 className="
                   block
-                  text-xs
+                  text-md
                   font-medium
                   text-slate-700
                   transition-colors
@@ -359,7 +359,7 @@ export default function MobileMenu() {
                 onClick={closeMenu}
                 className="
                   block
-                  text-xs
+                  text-md
                   font-medium
                   text-slate-700
                   transition-colors
@@ -369,7 +369,7 @@ export default function MobileMenu() {
                 +91-7678389436
               </a>
 
-              <p className="text-xs font-medium text-slate-700">
+              <p className="text-md font-medium text-slate-700">
                 Dwarka Sector 9
               </p>
             </div>
@@ -420,7 +420,7 @@ export default function MobileMenu() {
               gap-2
               bg-[#c31e3b]
               px-4
-              text-xs
+              text-md
               font-bold
               uppercase
               tracking-[0.12em]

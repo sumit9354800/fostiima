@@ -40,7 +40,7 @@ export default function FinalPlacementsHero() {
           <div className="mb-6 flex items-center gap-3">
             <span className="h-px w-10 bg-[#e5b83f]" />
 
-            <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
+            <span className="flex items-center gap-2 text-md font-bold uppercase tracking-[0.28em] text-[#e5b83f] sm:text-sm">
               <BriefcaseBusiness className="h-4 w-4" />
               Placement
             </span>

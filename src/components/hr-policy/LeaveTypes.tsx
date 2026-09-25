@@ -13,7 +13,7 @@ export default function LeaveTypes() {
         <div className="flex items-center gap-3">
           <ClipboardList className="h-5 w-5 text-[#c31e3b]" />
 
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <span className="text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
             Types of Leave
           </span>
         </div>

@@ -87,7 +87,7 @@ export default function HomeAdminPage() {
             </div>
 
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
+              <p className="text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
                 Homepage
               </p>
 

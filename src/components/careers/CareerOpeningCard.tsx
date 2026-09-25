@@ -47,7 +47,7 @@ export default function CareerOpeningCard({
           {opening.experience && (
             <div className="rounded-xl bg-slate-50 p-4">
               <Clock3 className="h-5 w-5 text-blue-700" />
-              <p className="mt-2 text-xs font-medium text-slate-500">
+              <p className="mt-2 text-md font-medium text-slate-500">
                 Experience
               </p>
               <p className="mt-1 text-sm font-semibold text-slate-800">
@@ -59,7 +59,7 @@ export default function CareerOpeningCard({
           {opening.preferred && (
             <div className="rounded-xl bg-slate-50 p-4">
               <UserRound className="h-5 w-5 text-blue-700" />
-              <p className="mt-2 text-xs font-medium text-slate-500">
+              <p className="mt-2 text-md font-medium text-slate-500">
                 Preferred
               </p>
               <p className="mt-1 text-sm font-semibold text-slate-800">
@@ -71,7 +71,7 @@ export default function CareerOpeningCard({
           {opening.education && (
             <div className="rounded-xl bg-slate-50 p-4">
               <GraduationCap className="h-5 w-5 text-blue-700" />
-              <p className="mt-2 text-xs font-medium text-slate-500">
+              <p className="mt-2 text-md font-medium text-slate-500">
                 Education
               </p>
               <p className="mt-1 text-sm font-semibold text-slate-800">

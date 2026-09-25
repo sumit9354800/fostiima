@@ -26,13 +26,13 @@ export default function AdminHeader({
             FOSTIIMA Admin
           </p>
 
-          <p className="hidden text-xs text-slate-500 sm:block">
+          <p className="hidden text-md text-slate-500 sm:block">
             Website Content Management
           </p>
         </div>
       </div>
 
-      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#061a3a] text-xs font-bold text-[#e5b83f]">
+      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#061a3a] text-md font-bold text-[#e5b83f]">
         A
       </div>
     </header>

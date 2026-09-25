@@ -106,7 +106,7 @@ export default function BrochureForm({
       <div>
         <label
           htmlFor="brochure-fullName"
-          className="mb-1.5 block text-xs font-semibold text-[#172f59]"
+          className="mb-1.5 block text-md font-semibold text-[#172f59]"
         >
           Full Name
         </label>
@@ -144,7 +144,7 @@ export default function BrochureForm({
       <div>
         <label
           htmlFor="brochure-email"
-          className="mb-1.5 block text-xs font-semibold text-[#172f59]"
+          className="mb-1.5 block text-md font-semibold text-[#172f59]"
         >
           Email Address
         </label>
@@ -182,7 +182,7 @@ export default function BrochureForm({
       <div>
         <label
           htmlFor="brochure-phone"
-          className="mb-1.5 block text-xs font-semibold text-[#172f59]"
+          className="mb-1.5 block text-md font-semibold text-[#172f59]"
         >
           Phone Number
         </label>
@@ -226,7 +226,7 @@ export default function BrochureForm({
             bg-red-50
             px-3
             py-2
-            text-xs
+            text-md
             font-medium
             text-red-600
           "

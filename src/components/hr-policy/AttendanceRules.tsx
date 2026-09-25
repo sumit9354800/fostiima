@@ -16,7 +16,7 @@ export default function AttendanceRules() {
         <div className="flex items-center gap-3">
           <Clock3 className="h-5 w-5 text-[#c31e3b]" />
 
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+          <span className="text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
             Attendance
           </span>
         </div>
@@ -106,7 +106,7 @@ export default function AttendanceRules() {
                 key={rule}
                 className="flex gap-4 border border-[#dbe3ee] bg-white p-5"
               >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-[#c31e3b] text-xs font-bold text-white">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-[#c31e3b] text-md font-bold text-white">
                   {index + 1}
                 </span>
 

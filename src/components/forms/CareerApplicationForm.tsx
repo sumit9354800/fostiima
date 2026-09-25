@@ -100,7 +100,7 @@ export default function CareerApplicationForm() {
               Application submitted successfully.
             </p>
 
-            <p className="mt-1 text-xs leading-5 text-green-700">
+            <p className="mt-1 text-md leading-5 text-green-700">
               Thank you for applying. Your application details and CV have been
               sent to our team.
             </p>
@@ -119,7 +119,7 @@ export default function CareerApplicationForm() {
             We could not submit your application.
           </p>
 
-          <p className="mt-1 text-xs leading-5 text-red-700">
+          <p className="mt-1 text-md leading-5 text-red-700">
             {errorMessage}
           </p>
         </div>
@@ -273,7 +273,7 @@ export default function CareerApplicationForm() {
             className="block w-full rounded-xl border border-slate-200 bg-white text-sm file:mr-4 file:border-0 file:bg-slate-100 file:px-4 file:py-3 file:text-sm file:font-medium"
           />
 
-          <p className="mt-2 text-xs text-slate-500">
+          <p className="mt-2 text-md text-slate-500">
             Upload your latest resume in PDF, DOC, or DOCX format.
           </p>
         </div>
@@ -306,14 +306,14 @@ export default function CareerApplicationForm() {
                 Secure application
               </p>
 
-              <p className="mt-1 text-xs leading-5 text-slate-500">
+              <p className="mt-1 text-md leading-5 text-slate-500">
                 Your application details are securely sent to the FOSTIIMA
                 recruitment team.
               </p>
             </div>
           </div>
 
-          <div className="text-xs font-medium text-slate-500">
+          <div className="text-md font-medium text-slate-500">
             Application Form
           </div>
         </div>

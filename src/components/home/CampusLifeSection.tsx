@@ -18,7 +18,7 @@ const campusLifeItems = [
       "Build meaningful connections, collaborate with peers and create lifelong friendships beyond the classroom.",
     icon: Users,
     image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80",
+      "/home/campuslife/campuslife1.png",
   },
   {
     title: "Intellectual Life",
@@ -26,7 +26,7 @@ const campusLifeItems = [
       "Engage in discussions, debates, workshops and activities that encourage curiosity and new perspectives.",
     icon: BookOpen,
     image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80",
+      "/home/campuslife/campuslife2.png",
   },
   {
     title: "Sports & Recreation",
@@ -34,7 +34,7 @@ const campusLifeItems = [
       "Balance academic life with sports, recreation and activities that encourage teamwork and sportsmanship.",
     icon: Dumbbell,
     image:
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80",
+      "/home/campuslife/campuslife3.png",
   },
   {
     title: "Events & Experiences",
@@ -42,7 +42,7 @@ const campusLifeItems = [
       "Experience cultural activities, celebrations, industry interactions and memorable campus experiences.",
     icon: Landmark,
     image:
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80",
+      "/home/campuslife/campuslife4.png",
   },
 ];
 

@@ -52,7 +52,7 @@ function Metric({
 }) {
   return (
     <div className="border-t border-[#dbe3ee] pt-4">
-      <p className="text-xs uppercase tracking-wide text-slate-500">
+      <p className="text-md uppercase tracking-wide text-slate-500">
         {label}
       </p>
 
@@ -72,7 +72,7 @@ function SectionHeading({
 }) {
   return (
     <div>
-      <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+      <span className="text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
         {eyebrow}
       </span>
 

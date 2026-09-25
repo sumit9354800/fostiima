@@ -43,7 +43,7 @@ export default function AcademicsHero() {
                 className="h-4 w-4 text-[#f5c542]"
               />
 
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75">
+              <span className="text-md font-semibold uppercase tracking-[0.18em] text-white/75">
                 FOSTIIMA Business School
               </span>
             </div>
@@ -78,7 +78,7 @@ export default function AcademicsHero() {
               <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-[#c31e3b]/10" />
 
               <div className="relative">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#f5c542]">
+                <p className="text-md font-semibold uppercase tracking-[0.2em] text-[#f5c542]">
                   Academic Focus
                 </p>
 

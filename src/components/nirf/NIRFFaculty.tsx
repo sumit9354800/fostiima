@@ -31,7 +31,7 @@ export default function NIRFFaculty() {
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
+        <span className="text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
           Faculty Details
         </span>
 
@@ -140,7 +140,7 @@ export default function NIRFFaculty() {
           </div>
         </div>
 
-        <p className="mt-4 text-xs text-slate-500">
+        <p className="mt-4 text-md text-slate-500">
           Showing {filteredFaculty.length} of{" "}
           {nirfFaculty.length} faculty records.
         </p>

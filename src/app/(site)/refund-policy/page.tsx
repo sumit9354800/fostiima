@@ -14,7 +14,7 @@ export default function RefundPolicyPage() {
         />
 
         <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
+          <p className="text-md font-bold uppercase tracking-[0.2em] text-[#e5b83f]">
             Policies
           </p>
 
