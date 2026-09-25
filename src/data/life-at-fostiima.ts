@@ -82,7 +82,7 @@ export const campusGallery = [
     size: "small",
   },
   {
-    src: "/life-at-fostiima/life-at-fostiima5.png",
+    src: "/life-at-fostiima/life-at-fostiima5.webp",
     alt: "FOSTIIMA Campus Tour",
     title: "Campus Tour",
     description:
