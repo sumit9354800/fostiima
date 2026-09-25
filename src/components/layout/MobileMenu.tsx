@@ -340,7 +340,7 @@ export default function MobileMenu() {
 
             <div className="mt-3 space-y-2">
               <a
-                href="mailto:no-reply@fostiima.org"
+                href="mailto:admissions@fostiima.org"
                 onClick={closeMenu}
                 className="
                   block
@@ -351,7 +351,7 @@ export default function MobileMenu() {
                   hover:text-[#c31e3b]
                 "
               >
-                no-reply@fostiima.org
+                admissions@fostiima.org
               </a>
 
               <a

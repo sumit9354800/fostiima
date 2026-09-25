@@ -12,8 +12,8 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email",
-    value: "no-reply@fostiima.org",
-    href: "mailto:no-reply@fostiima.org",
+    value: "admissions@fostiima.org",
+    href: "mailto:admissions@fostiima.org",
   },
   {
     icon: Phone,
