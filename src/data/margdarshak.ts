@@ -65,82 +65,80 @@ export const aboutMargdarshak = {
 };
 
 const margdarshak1Images: ImageItem[] = [
-  "DSC_0031-scaled.jpg",
-  "DSC_0038-scaled.jpg",
-  "DSC_0040-scaled.jpg",
-  "DSC_0042-min-scaled.jpg",
-  "DSC_0045-min-scaled.jpg",
-  "DSC_0055-min-scaled.jpg",
-  "DSC_0088-min-scaled.jpg",
-  "IMG_0103-min-scaled.jpg",
-  "IMG_0116-min-scaled.jpg",
-].map((name) => ({
-  src: `https://fostiima.org/uploaded_files/cms/margdarshak/${name}`,
-  alt: `Margdarshak 1 event photograph - ${name}`,
+  "/margdarshak/margdarshak1/margdarshak1.webp",
+  "/margdarshak/margdarshak1/margdarshak2.webp",
+  "/margdarshak/margdarshak1/margdarshak3.webp",
+  "/margdarshak/margdarshak1/margdarshak4.webp",
+  "/margdarshak/margdarshak1/margdarshak5.webp",
+  "/margdarshak/margdarshak1/margdarshak6.webp",
+  "/margdarshak/margdarshak1/margdarshak7.webp",
+  "/margdarshak/margdarshak1/margdarshak8.webp",
+  "/margdarshak/margdarshak1/margdarshak9.webp",
+].map((src, index) => ({
+  src,
+  alt: `Margdarshak 1 event photograph - margdarshak${index + 1}.webp`,
 }));
 
 const margdarshak2Images: ImageItem[] = [
-  "DSC_1469-min-scaled.jpg",
-  "DSC_1480-min-scaled.jpg",
-  "DSC_1482-min-scaled.jpg",
-  "DSC_1540-min-scaled.jpg",
-  "DSC_1547-min-scaled.jpg",
-  "DSC_1557-min-scaled.jpg",
-  "DSC_1565-min-scaled.jpg",
-  "DSC_1576-min-scaled.jpg",
-  "DSC_1583-min-scaled.jpg",
-  "DSC_1592-min-scaled.jpg",
-  "DSC_1597-min-scaled.jpg",
-  "DSC_1602-min-scaled.jpg",
-  "DSC_1610-min-scaled.jpg",
-  "DSC_1614-min-scaled.jpg",
-  "DSC_1632-min-scaled.jpg",
-  "DSC_1645-min-scaled.jpg",
-  "DSC_1653-min-scaled.jpg",
-  "DSC_1669-min-scaled.jpg",
-  "DSC_1708-min-scaled.jpg",
-  "DSC_1710-min-scaled.jpg",
-  "DSC_1717-min-scaled.jpg",
-].map((name) => ({
-  src: `https://fostiima.org/uploaded_files/cms/margdarshak/${name}`,
-  alt: `Margdarshak 2 event photograph - ${name}`,
+  "/margdarshak/margdarshak2/margdarshak1.webp",
+  "/margdarshak/margdarshak2/margdarshak2.webp",
+  "/margdarshak/margdarshak2/margdarshak3.webp",
+  "/margdarshak/margdarshak2/margdarshak4.webp",
+  "/margdarshak/margdarshak2/margdarshak5.webp",
+  "/margdarshak/margdarshak2/margdarshak6.webp",
+  "/margdarshak/margdarshak2/margdarshak7.webp",
+  "/margdarshak/margdarshak2/margdarshak8.webp",
+  "/margdarshak/margdarshak2/margdarshak9.webp",
+  "/margdarshak/margdarshak2/margdarshak10.webp",
+  "/margdarshak/margdarshak2/margdarshak11.webp",
+  "/margdarshak/margdarshak2/margdarshak12.webp",
+  "/margdarshak/margdarshak2/margdarshak13.webp",
+  "/margdarshak/margdarshak2/margdarshak14.webp",
+  "/margdarshak/margdarshak2/margdarshak15.webp",
+  "/margdarshak/margdarshak2/margdarshak16.webp",
+  "/margdarshak/margdarshak2/margdarshak17.webp",
+  "/margdarshak/margdarshak2/margdarshak18.webp",
+  "/margdarshak/margdarshak2/margdarshak19.webp",
+  "/margdarshak/margdarshak2/margdarshak20.webp",
+  "/margdarshak/margdarshak2/margdarshak21.webp",
+].map((src, index) => ({
+  src,
+  alt: `Margdarshak 3 event photograph - margdarshak${index + 1}.webp`,
 }));
 
 const margdarshak3Images: ImageItem[] = [
-  "DSC_0108-min-scaled.jpg",
-  "DSC_0117-min-scaled.jpg",
-  "DSC_0131-min-scaled.jpg",
-  "DSC_0143-min-scaled.jpg",
-  "DSC_0147-min-scaled.jpg",
-  "DSC_0166-min-scaled.jpg",
-  "DSC_0170-min-scaled.jpg",
-  "DSC_0171-min-scaled.jpg",
-  "DSC_0174-min-scaled.jpg",
-  "DSC_0191-min-scaled.jpg",
-  "DSC_0197-min-scaled.jpg",
-  "DSC_0212-min-scaled.jpg",
-  "DSC_0214-min-scaled.jpg",
-  "DSC_0217-min-scaled.jpg",
-  "DSC_0223-min-scaled.jpg",
-  "DSC_0227-min-scaled.jpg",
-  "DSC_0234-min-scaled.jpg",
-  "DSC_0250-min-scaled.jpg",
-  "DSC_0259-min-scaled.jpg",
-  "DSC_0262-min-scaled.jpg",
-  "DSC_0273-min-scaled.jpg",
-  "DSC_0274-min-scaled.jpg",
-  "DSC_0280-min-scaled.jpg",
-  "DSC_0286-min-scaled.jpg",
-  "DSC_0294-min-scaled.jpg",
-  "DSC_0304-min-scaled.jpg",
-  "DSC_0311-min-scaled.jpg",
-  "DSC_0325-min-scaled.jpg",
-  "DSC_0338-min-scaled.jpg",
-  "DSC_0404-min-scaled.jpg",
-  "DSC_0406-min-scaled.jpg",
-].map((name) => ({
-  src: `https://fostiima.org/uploaded_files/cms/margdarshak/${name}`,
-  alt: `Margdarshak 3 event photograph - ${name}`,
+  "/margdarshak/margdarshak3/margdarshak1.webp",
+  "/margdarshak/margdarshak3/margdarshak2.webp",
+  "/margdarshak/margdarshak3/margdarshak3.webp",
+  "/margdarshak/margdarshak3/margdarshak4.webp",
+  "/margdarshak/margdarshak3/margdarshak5.webp",
+  "/margdarshak/margdarshak3/margdarshak6.webp",
+  "/margdarshak/margdarshak3/margdarshak7.webp",
+  "/margdarshak/margdarshak3/margdarshak8.webp",
+  "/margdarshak/margdarshak3/margdarshak9.webp",
+  "/margdarshak/margdarshak3/margdarshak10.webp",
+  "/margdarshak/margdarshak3/margdarshak11.webp",
+  "/margdarshak/margdarshak3/margdarshak12.webp",
+  "/margdarshak/margdarshak3/margdarshak13.webp",
+  "/margdarshak/margdarshak3/margdarshak14.webp",
+  "/margdarshak/margdarshak3/margdarshak15.webp",
+  "/margdarshak/margdarshak3/margdarshak16.webp",
+  "/margdarshak/margdarshak3/margdarshak17.webp",
+  "/margdarshak/margdarshak3/margdarshak18.webp",
+  "/margdarshak/margdarshak3/margdarshak19.webp",
+  "/margdarshak/margdarshak3/margdarshak20.webp",
+  "/margdarshak/margdarshak3/margdarshak21.webp",
+  "/margdarshak/margdarshak3/margdarshak22.webp",
+  "/margdarshak/margdarshak3/margdarshak23.webp",
+  "/margdarshak/margdarshak3/margdarshak24.webp",
+  "/margdarshak/margdarshak3/margdarshak25.webp",
+  "/margdarshak/margdarshak3/margdarshak26.webp",
+  "/margdarshak/margdarshak3/margdarshak27.webp",
+  "/margdarshak/margdarshak3/margdarshak28.webp",
+  "/margdarshak/margdarshak3/margdarshak29.webp",
+].map((src, index) => ({
+  src,
+  alt: `Margdarshak 3 event photograph - margdarshak${index + 1}.webp`,
 }));
 
 export const margdarshakEditions: EditionData[] = [
@@ -181,15 +179,19 @@ export const margdarshakEditions: EditionData[] = [
       {
         title: "Jury Panel & Advisory Council",
         table: {
-          headers: [
-            "Sr No",
-            "Jury Panel",
-            "Advisory Council",
-          ],
+          headers: ["Sr No", "Jury Panel", "Advisory Council"],
           rows: [
-            ["1", "Mr Suresh Narayanan,CMD,Nestle", "Mr Aquil Busrai, Motorola, IBM"],
+            [
+              "1",
+              "Mr Suresh Narayanan,CMD,Nestle",
+              "Mr Aquil Busrai, Motorola, IBM",
+            ],
             ["2", "Ms Vinita Bali,( Cognizant)", "Mr P Dwarakanath GSK"],
-            ["3", "Mr Deep Kalra (makemytrip.com, IIM-A)", "Mr Dhruv Prakash (IIM-A) Indiamart"],
+            [
+              "3",
+              "Mr Deep Kalra (makemytrip.com, IIM-A)",
+              "Mr Dhruv Prakash (IIM-A) Indiamart",
+            ],
             ["4", "Mr Rahul Bhasin (Barings Equity, IIM-A)", ""],
             ["5", "Mr Manish Sabharwal, (Team Lease IIM-A)", ""],
             ["6", "Mr S Y Siddique-Maruti Suzuki Ind Ltd", ""],
@@ -222,25 +224,35 @@ export const margdarshakEditions: EditionData[] = [
       {
         title: "List of Companies to Which Our Participants Belonged",
         table: {
-          headers: [
-            "Company",
-            "Company",
-            "Company",
-            "Company",
-          ],
+          headers: ["Company", "Company", "Company", "Company"],
           rows: [
             ["ICICI Bank", "Axis Bank", "Mahindra & Mahindra", "L&T"],
             ["Infosys", "Indiamart", "Mondelez", "Aditya Birla Sunlife"],
             ["Lupin Global", "Om Logistics", "ANI News", "SREI"],
             ["Deloitte", "Tata Steel", "RPG Group", "India Today"],
             ["P&G", "HPCL Ltd.", "Bharat fritz Werner", "MoEngage"],
-            ["Jeena & Co", "People Strong", "Roinet Solutions", "Zensor Technologies"],
+            [
+              "Jeena & Co",
+              "People Strong",
+              "Roinet Solutions",
+              "Zensor Technologies",
+            ],
             ["TCS", "Oyo", "Nayka", "Policy Bazaar"],
             ["Blackbuck", "Kotak Bank", "AT Foods", "Accenture"],
             ["OTIS", "JSW L&T Nxt", "Birla Carbo", "Macawbery BeeKay P Ltd."],
-            ["Monte Carlo", "Team Computers", "SMC Global Securities", "L&T Howden"],
+            [
+              "Monte Carlo",
+              "Team Computers",
+              "SMC Global Securities",
+              "L&T Howden",
+            ],
             ["Sap Labs Ltd.", "IDFC Bank", "Nayara Energy", "Potash India"],
-            ["Carrier Media India P Ltd.", "Reliance Jio", "JK Group", "Aajtak"],
+            [
+              "Carrier Media India P Ltd.",
+              "Reliance Jio",
+              "JK Group",
+              "Aajtak",
+            ],
           ],
         },
       },
@@ -261,44 +273,48 @@ export const margdarshakEditions: EditionData[] = [
 
       "The Award Ceremony, held in September 2022, was an unforgettable experience where great HR professionals came together to be recognized and awarded. It was presided over by Mr Jyotiraditya Scindia, Hon'ble Union Minister of Civil Aviation and Steel, with Mr Yashish Dahiya, co-founder Policy Bazar, as the Chief Guest.",
 
-      "Welcoming the guests the Chairman, Mr Somani, paid tribute to the founding faculty of IIMA. \"They were extremely tall in their stature. They were visionaries, institution builders and need to be recognised.\" Mr Somani further stated that these awards were entirely process driven. \"I wish to categorically state that these awards are not bestowed but actually won by a very fair selection process.\"",
+      'Welcoming the guests the Chairman, Mr Somani, paid tribute to the founding faculty of IIMA. "They were extremely tall in their stature. They were visionaries, institution builders and need to be recognised." Mr Somani further stated that these awards were entirely process driven. "I wish to categorically state that these awards are not bestowed but actually won by a very fair selection process."',
 
       "Ms Shivani Sanwal, Director, Governance Risk & Compliance Services, M/s KPMG explained the entire process clearly spelling out the role of the Advisory Council and the Jury.",
 
       "The Chief Guest Jyotiraditya M. Scindia complimented the Chairman for the journey the latter had undertaken in setting up FOSTIIMA. Such institutes, Mr Scindia added, were always based on bonds and kinship. They were a unique coupling between an age-old institute and a newly spawned school.",
 
-      "Giving the role of the HR luminaries a national perspective Mr Scindia added \"India's time has come. There is no power in the world can deny our place in the comity of nations.\" The awardees and their work have not only impacted individual lives but in a way it is changing the nation. The only way that we can keep empowering life is through developing Human Resources through innovative ideas. HR is the soul of any organization and it helps the organization to stay balanced and perform better.",
+      'Giving the role of the HR luminaries a national perspective Mr Scindia added "India\'s time has come. There is no power in the world can deny our place in the comity of nations." The awardees and their work have not only impacted individual lives but in a way it is changing the nation. The only way that we can keep empowering life is through developing Human Resources through innovative ideas. HR is the soul of any organization and it helps the organization to stay balanced and perform better.',
 
       "Mr Scindia went on to emphasise the role of women by stating very clearly that a nation cannot proper if half the work force is left behind. In his very perceptive way Mr Scindia said he was pleased to note that among the winners, women were in the majority. Turning to the Chairman, Mr Scindia said that he hoped that in the future the dignitaries on the dais would reflect the similar pattern. It was his earnest hope in near future too this trend will be maintained and more women come forward and lead from the front.",
 
-      "The event truly missed the presence of the Jury Member Mr K V Kamath., who is amongst the senior most alumni of IIMA. Mr Kamath could not make it to Delhi due to prior engagements but, addressing the gathering virtually, mentioned that \"MARGDARSHAK AWARDS are a humble tribute to the IIM-A faculty who made the Institute what it is today.\" Mr Kamath thanked M/s KPMG, the Jury Panel, the Advisory Council and wished the winners the very best.",
+      'The event truly missed the presence of the Jury Member Mr K V Kamath., who is amongst the senior most alumni of IIMA. Mr Kamath could not make it to Delhi due to prior engagements but, addressing the gathering virtually, mentioned that "MARGDARSHAK AWARDS are a humble tribute to the IIM-A faculty who made the Institute what it is today." Mr Kamath thanked M/s KPMG, the Jury Panel, the Advisory Council and wished the winners the very best.',
 
-      "Addressing the audience, Mr Rajeev Dubey, the Advisory Council Member, mentioned that its inspiring to be a part of this process.\" It is an amazing time to be an Indian. The potential is unlimited\" added Mr Dubey. The ultimate purpose is to remove poverty, disease and lack of education.",
+      'Addressing the audience, Mr Rajeev Dubey, the Advisory Council Member, mentioned that its inspiring to be a part of this process." It is an amazing time to be an Indian. The potential is unlimited" added Mr Dubey. The ultimate purpose is to remove poverty, disease and lack of education.',
 
-      "Mr. Yashish Dahiya, the Guest of Honour said \"…I think the quality of the awardees was just stunning. The Judges I saw are absolutely stellar….and all this just in the second attempt\" Speaking in a lighter vein, Mr Dahiya added that was very sure that he was heading the HR function till he realised that one of his juniors, who won MARGDARSHAK award, was being perceived as the real HR Head!",
+      'Mr. Yashish Dahiya, the Guest of Honour said "…I think the quality of the awardees was just stunning. The Judges I saw are absolutely stellar….and all this just in the second attempt" Speaking in a lighter vein, Mr Dahiya added that was very sure that he was heading the HR function till he realised that one of his juniors, who won MARGDARSHAK award, was being perceived as the real HR Head!',
 
-      "Mr Rashesh Shah, the eminent Jury Member could not make it as he was travelling during this period. But Mr Shah certainly conveyed his message over ZOOM when he mentioned that \"I can see that MARGDARSHAK AWARDS have become an exemplary and aspirational awards for the industry.\" Mr Shah advised the FOSTIIMA Team to keep the IIMA flag flying.",
+      'Mr Rashesh Shah, the eminent Jury Member could not make it as he was travelling during this period. But Mr Shah certainly conveyed his message over ZOOM when he mentioned that "I can see that MARGDARSHAK AWARDS have become an exemplary and aspirational awards for the industry." Mr Shah advised the FOSTIIMA Team to keep the IIMA flag flying.',
 
-      "Proposing the Vote of Thanks to the Chief Guest, Mr Ajay Garg, Founder & Director, Equirus Capital, complimented FOSTIIMA and expressed his desire to \"carry it forward for the next 25 yrs to give back to the society\"",
+      'Proposing the Vote of Thanks to the Chief Guest, Mr Ajay Garg, Founder & Director, Equirus Capital, complimented FOSTIIMA and expressed his desire to "carry it forward for the next 25 yrs to give back to the society"',
 
-      "The Chief Mentor of FOSTIIMA, Mr Jaithirth Rao, being in New York for his book launch, advised the gathering via ZOOM that we have forgotten our traditions of guru shishya parampara, guru seva, guru dakshinya. Mr Rao added that \"through MARGDARSHAK AWARDS, FOSTIIMA wants simultaneously to make a connection with our traditions and also adopt a very modern approach of celebration\"",
+      'The Chief Mentor of FOSTIIMA, Mr Jaithirth Rao, being in New York for his book launch, advised the gathering via ZOOM that we have forgotten our traditions of guru shishya parampara, guru seva, guru dakshinya. Mr Rao added that "through MARGDARSHAK AWARDS, FOSTIIMA wants simultaneously to make a connection with our traditions and also adopt a very modern approach of celebration"',
 
-      "Mr Suresh Narayana, CMD, Nestle India, mentioned that it has been a \"privilege and a honour to be a member of the Jury for last two years\" and complimented M/s KPMG for their remarkable efforts. Mr Narayanan paid \"special tribute to the Jury for whom I have the highest regard\" and wished all the winners the very best in their careers.",
+      'Mr Suresh Narayana, CMD, Nestle India, mentioned that it has been a "privilege and a honour to be a member of the Jury for last two years" and complimented M/s KPMG for their remarkable efforts. Mr Narayanan paid "special tribute to the Jury for whom I have the highest regard" and wished all the winners the very best in their careers.',
     ],
 
     sections: [
       {
         title: "Jury Panel & Advisory Council",
         table: {
-          headers: [
-            "Sr No",
-            "Jury Panel",
-            "Advisory Council",
-          ],
+          headers: ["Sr No", "Jury Panel", "Advisory Council"],
           rows: [
             ["1", "Mr K V Kamath", "Mr Rajeev Dubey-Mahindras"],
-            ["2", "Ms Naina Lal Kidwai, ex-HSBC Bank", "Mr Manoj Kohli-Soft Bank"],
-            ["3", "Mr Sanjeev Bikhchandani-IIM-A .Founder Infoedge", "Mr Dhruv Prakash (IIM-A)"],
+            [
+              "2",
+              "Ms Naina Lal Kidwai, ex-HSBC Bank",
+              "Mr Manoj Kohli-Soft Bank",
+            ],
+            [
+              "3",
+              "Mr Sanjeev Bikhchandani-IIM-A .Founder Infoedge",
+              "Mr Dhruv Prakash (IIM-A)",
+            ],
             ["4", "Mr Suresh Narayanan,CMD,Nestle", ""],
             ["5", "Mr Rashesh Shah IIM-A, CO-Founder Edelweiss", ""],
             ["6", "Mr S Y Siddique-Maruti Suzuki Ind Ltd", ""],
@@ -314,7 +330,11 @@ export const margdarshakEditions: EditionData[] = [
           rows: [
             ["P Dwarakanath", "ex GSK", "Hall of Fame"],
             ["Vivek Patwardhan", "HyTech Engineers", "Lifetime Acheivement"],
-            ["Manu Wadhwa", "Sony Pictures Networks", "Transformational Leadership"],
+            [
+              "Manu Wadhwa",
+              "Sony Pictures Networks",
+              "Transformational Leadership",
+            ],
             ["Pragya Singh", "PepsiCo", "Young Turk"],
             ["Aradhana Lal", "Lemon Tree", "Corporate Social Responsibility"],
             ["Rajesh Kumar", "Lemon Tree", "Corporate Social Responsibility"],
@@ -330,15 +350,87 @@ export const margdarshakEditions: EditionData[] = [
       {
         title: "List of Participating Companies",
         table: {
-          headers: ["Company", "Company", "Company", "Company", "Company", "Company", "Company", "Company"],
+          headers: [
+            "Company",
+            "Company",
+            "Company",
+            "Company",
+            "Company",
+            "Company",
+            "Company",
+            "Company",
+          ],
           rows: [
-            ["Hindustan Unilever", "PWC", "PepsiCo Global Services", "Mitsubishi Electric Group", "Vodafone Idea", "Amazon", "Proctor & Gamble", "Delta Airlines Global Technology Hub"],
-            ["Sony Pictures Network Ltd.", "HDFC Life", "Reliance Retail", "Reliance Jio Infocomm", "Mindtree Nxt (L&T)", "Dr. Lal Path Lab", "GSK India", "Pidilite"],
-            ["JSW Energy Ltd.", "OSRAM Lighting", "Monte Carlo", "Nayara Energy", "Om Logistics", "Lemon Tree Hotels", "IFFCO TOKKIO General Insurance", "ZS Associates India"],
-            ["Blue Star", "Adani Gas", "MakeMyTrip.com", "Dr. Reddy Lab", "Lupin Ltd.", "RM Education Solutions Ltd.", "JBM Group", "Swiggy"],
-            ["Gameskraft India", "People Konnect", "Quest Retails Pvt. Ltd.", "Lakshimikumaran and Sridharan", "HMD mobile India", "Chaayos", "People strong", "MoEngage"],
-            ["Savills", "Asian News International", "Pramerica Life Insurance", "DS Group", "ESME Consumer Pvt. Ltd.", "Credgenics", "Future Generali Life India Insurance", "Manpower"],
-            ["NA_ independent Advisor & consultant", "The Body Shop International", "Macawbery BeeKay P Ltd", "Wipro", "Hy Tech Engineers", "J K Organization", "Policy Bazaar", "Ultra Tech Cement"],
+            [
+              "Hindustan Unilever",
+              "PWC",
+              "PepsiCo Global Services",
+              "Mitsubishi Electric Group",
+              "Vodafone Idea",
+              "Amazon",
+              "Proctor & Gamble",
+              "Delta Airlines Global Technology Hub",
+            ],
+            [
+              "Sony Pictures Network Ltd.",
+              "HDFC Life",
+              "Reliance Retail",
+              "Reliance Jio Infocomm",
+              "Mindtree Nxt (L&T)",
+              "Dr. Lal Path Lab",
+              "GSK India",
+              "Pidilite",
+            ],
+            [
+              "JSW Energy Ltd.",
+              "OSRAM Lighting",
+              "Monte Carlo",
+              "Nayara Energy",
+              "Om Logistics",
+              "Lemon Tree Hotels",
+              "IFFCO TOKKIO General Insurance",
+              "ZS Associates India",
+            ],
+            [
+              "Blue Star",
+              "Adani Gas",
+              "MakeMyTrip.com",
+              "Dr. Reddy Lab",
+              "Lupin Ltd.",
+              "RM Education Solutions Ltd.",
+              "JBM Group",
+              "Swiggy",
+            ],
+            [
+              "Gameskraft India",
+              "People Konnect",
+              "Quest Retails Pvt. Ltd.",
+              "Lakshimikumaran and Sridharan",
+              "HMD mobile India",
+              "Chaayos",
+              "People strong",
+              "MoEngage",
+            ],
+            [
+              "Savills",
+              "Asian News International",
+              "Pramerica Life Insurance",
+              "DS Group",
+              "ESME Consumer Pvt. Ltd.",
+              "Credgenics",
+              "Future Generali Life India Insurance",
+              "Manpower",
+            ],
+            [
+              "NA_ independent Advisor & consultant",
+              "The Body Shop International",
+              "Macawbery BeeKay P Ltd",
+              "Wipro",
+              "Hy Tech Engineers",
+              "J K Organization",
+              "Policy Bazaar",
+              "Ultra Tech Cement",
+            ],
           ],
         },
       },
@@ -361,7 +453,7 @@ export const margdarshakEditions: EditionData[] = [
 
       "The Award Ceremony, held in December 2024, was a memorable evening where great HR professionals came together to be recognized and awarded. It was presided over by Dr Shashi Tharoor, Hon'ble Member of Parliament.",
 
-      "Speaking on the occasion Dr Tharoor stated that he was \"Delighted to be with you and it's wonderful to participate in the third edition of MARGDARSHAK AWARDS\"",
+      'Speaking on the occasion Dr Tharoor stated that he was "Delighted to be with you and it\'s wonderful to participate in the third edition of MARGDARSHAK AWARDS"',
 
       "Dr Tharoor recalled the efforts and contribution of the founding faculty who, under the stewardship of first Prime Minister, Jawaharlal Nehru, gave up their lucrative assignments to build the newly established Indian Institute of Management in Ahmedabad. Dr Tharoor thanked FOSTIIMA for re-igniting that vision by introducing MARGDARSAK AWARDS. At the same time, Dr Tharoor reminded FOSTIIMA that the road ahead is long and the institute must traverse the path to continue to be a source of inspiration to young aspirational managers, educators and entrepreneurs.",
 
@@ -374,15 +466,15 @@ export const margdarshakEditions: EditionData[] = [
       {
         title: "Jury Panel & Advisory Council",
         table: {
-          headers: [
-            "Sr No",
-            "Jury Panel",
-            "Advisory Council",
-          ],
+          headers: ["Sr No", "Jury Panel", "Advisory Council"],
           rows: [
             ["1", "Mr K V Kamath", "Mr Rajeev Dubey-Mahindras"],
             ["2", "Ms Vinita Bali", "Mr Vivek Patwardhan, Ex Asian Paints"],
-            ["3", "Mr Sanjeev Bikhchandani-IIM-A .Founder Infoedge", "Mr Dhruv Prakash (IIM-A)"],
+            [
+              "3",
+              "Mr Sanjeev Bikhchandani-IIM-A .Founder Infoedge",
+              "Mr Dhruv Prakash (IIM-A)",
+            ],
             ["4", "Mr Suresh Narayanan,CMD,Nestle", ""],
             ["5", "Mr Kiran Karnik, IIM-A, EX NASSCOM", ""],
             ["6", "Mr S Y Siddique-Maruti Suzuki Ind Ltd", ""],
@@ -402,7 +494,11 @@ export const margdarshakEditions: EditionData[] = [
             ["Manu Wadhwa", "Infosys", "Transformational Leadership"],
             ["Pragya Singh", "PepsiCo", "Young Turk"],
             ["Carried Forward", "NA", "ESG"],
-            ["Mohammad asif iqbal", "Price Waterhouse Cooper", "Jury Spl Award for CSR"],
+            [
+              "Mohammad asif iqbal",
+              "Price Waterhouse Cooper",
+              "Jury Spl Award for CSR",
+            ],
             ["Shrandhanjali Rao", "Google India", "Disruptor of the Year"],
             ["Swati Rustagi", "Amazon", "Diversity & Inclusion"],
             ["Neha Dugad", "Marico Industries", "Talent Acquisition"],
@@ -442,23 +538,23 @@ export const margdarshakEditions: EditionData[] = [
         title: "Margdarshak 4 Visuals",
         images: [
           {
-            src: "https://fostiima.org/uploaded_files/cms/margdarshak/Margdarshak4-1.jpg",
+            src: "/margdarshak/margdarshak4/margdarshak1.webp",
             alt: "Margdarshak Awards 4 Chairman message",
           },
           {
-            src: "https://fostiima.org/uploaded_files/cms/margdarshak/Margdarshak4-2.png",
+            src: "/margdarshak/margdarshak4/margdarshak2.webp",
             alt: "Margdarshak Awards 4 partners",
           },
           {
-            src: "https://fostiima.org/uploaded_files/cms/margdarshak/Margdarshak4-3.jpg",
+            src: "/margdarshak/margdarshak4/margdarshak3.webp",
             alt: "Margdarshak Awards 4 Jury Panel",
           },
           {
-            src: "https://fostiima.org/uploaded_files/cms/margdarshak/Margdarshak4-4.jpg",
+            src: "/margdarshak/margdarshak4/margdarshak4.webp",
             alt: "Margdarshak Awards 4 Advisory Council",
           },
           {
-            src: "https://fostiima.org/uploaded_files/cms/margdarshak/Margdarshak4-5.jpg",
+            src: "/margdarshak/margdarshak4/margdarshak5.webp",
             alt: "Margdarshak Awards 4 Conclave Directorate",
           },
         ],
@@ -467,10 +563,6 @@ export const margdarshakEditions: EditionData[] = [
   },
 ];
 
-export function getMargdarshakEdition(
-  id: MargdarshakTabId,
-) {
-  return margdarshakEditions.find(
-    (edition) => edition.id === id,
-  );
+export function getMargdarshakEdition(id: MargdarshakTabId) {
+  return margdarshakEditions.find((edition) => edition.id === id);
 }
