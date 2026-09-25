@@ -464,8 +464,41 @@ model HomeProgram {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  semesters ProgramSemester[]
+
   @@index([sortOrder])
   @@map("home_program")
+}
+
+model ProgramSemester {
+  id        String   @id @default(cuid())
+  programId String
+  title     String
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  program  HomeProgram      @relation(fields: [programId], references: [id], onDelete: Cascade)
+  subjects ProgramSubject[]
+
+  @@index([programId, sortOrder])
+  @@map("program_semester")
+}
+
+model ProgramSubject {
+  id         String   @id @default(cuid())
+  semesterId String
+  name       String
+  code       String?
+  credits    String?
+  sortOrder  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  semester ProgramSemester @relation(fields: [semesterId], references: [id], onDelete: Cascade)
+
+  @@index([semesterId, sortOrder])
+  @@map("program_subject")
 }
 
 model HomeAward {
