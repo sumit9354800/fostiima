@@ -10,6 +10,7 @@ import {
   Landmark,
   Users,
 } from "lucide-react";
+import Link from "next/link";
 
 const campusLifeItems = [
   {
@@ -17,32 +18,28 @@ const campusLifeItems = [
     description:
       "Build meaningful connections, collaborate with peers and create lifelong friendships beyond the classroom.",
     icon: Users,
-    image:
-      "/home/campuslife/campuslife1.png",
+    image: "/home/campuslife/campuslife1.png",
   },
   {
     title: "Intellectual Life",
     description:
       "Engage in discussions, debates, workshops and activities that encourage curiosity and new perspectives.",
     icon: BookOpen,
-    image:
-      "/home/campuslife/campuslife2.png",
+    image: "/home/campuslife/campuslife2.png",
   },
   {
     title: "Sports & Recreation",
     description:
       "Balance academic life with sports, recreation and activities that encourage teamwork and sportsmanship.",
     icon: Dumbbell,
-    image:
-      "/home/campuslife/campuslife3.png",
+    image: "/home/campuslife/campuslife3.png",
   },
   {
     title: "Events & Experiences",
     description:
       "Experience cultural activities, celebrations, industry interactions and memorable campus experiences.",
     icon: Landmark,
-    image:
-      "/home/campuslife/campuslife4.png",
+    image: "/home/campuslife/campuslife4.png",
   },
 ];
 
@@ -78,7 +75,9 @@ export default function CampusLifeSection() {
 
             <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
               Beyond Classrooms,{" "}
-              <span className="text-[#c31e3b]">Beyond Boundaries</span>
+              <span className="text-[#c31e3b]">
+                Beyond Boundaries
+              </span>
             </h2>
 
             <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
@@ -112,47 +111,47 @@ export default function CampusLifeSection() {
         </div>
 
         {/* Cards */}
-        {/* Cards */}
         <div
           ref={sliderRef}
           className="
-    flex
-    gap-5
-    overflow-x-auto
-    snap-x
-    snap-mandatory
-    scroll-smooth
-    pb-3
-    scrollbar-hide
-  "
+            flex
+            gap-5
+            overflow-x-auto
+            snap-x
+            snap-mandatory
+            scroll-smooth
+            pb-3
+            scrollbar-hide
+          "
         >
           {campusLifeItems.map((item) => {
             const Icon = item.icon;
 
             return (
-              <article
+              <Link
                 key={item.title}
+                href="/alumni"
                 className="
-          group
-          relative
-          w-[88%]
-          shrink-0
-          snap-start
-          overflow-hidden
-          rounded-xl
-          border
-          border-slate-200
-          bg-white
-          shadow-sm
-          transition-all
-          duration-300
-          hover:-translate-y-1
-          hover:shadow-xl
+                  group
+                  relative
+                  w-[88%]
+                  shrink-0
+                  snap-start
+                  overflow-hidden
+                  rounded-xl
+                  border
+                  border-slate-200
+                  bg-white
+                  shadow-sm
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:shadow-xl
 
-          sm:w-[calc(50%-10px)]
+                  sm:w-[calc(50%-10px)]
 
-          lg:w-[calc(25%-15px)]
-        "
+                  lg:w-[calc(25%-15px)]
+                "
               >
                 {/* Image */}
                 <div className="relative h-72 overflow-hidden sm:h-80 lg:h-[300px]">
@@ -160,13 +159,13 @@ export default function CampusLifeSection() {
                     src={item.image}
                     alt={item.title}
                     className="
-              h-full
-              w-full
-              object-cover
-              transition-transform
-              duration-700
-              group-hover:scale-105
-            "
+                      h-full
+                      w-full
+                      object-cover
+                      transition-transform
+                      duration-700
+                      group-hover:scale-105
+                    "
                   />
 
                   {/* Default overlay */}
@@ -177,10 +176,13 @@ export default function CampusLifeSection() {
 
                   {/* Icon */}
                   <div className="absolute left-5 top-5 flex h-10 w-10 translate-y-2 items-center justify-center rounded-lg bg-white/95 text-[#c31e3b] opacity-0 shadow-md backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                    <Icon className="h-5 w-5" strokeWidth={1.8} />
+                    <Icon
+                      className="h-5 w-5"
+                      strokeWidth={1.8}
+                    />
                   </div>
 
-                  {/* Heading - only on hover */}
+                  {/* Heading */}
                   <div className="absolute inset-x-0 bottom-0 translate-y-3 p-5 opacity-0 transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
                     <h3 className="text-xl font-bold leading-tight text-white sm:text-2xl">
                       {item.title}
@@ -194,7 +196,7 @@ export default function CampusLifeSection() {
                     <ArrowUpRight className="h-4 w-4" />
                   </div>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>

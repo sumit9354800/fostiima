@@ -1,11 +1,5 @@
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Clock3,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { ArrowUpRight, Clock3, Mail, MapPin, Phone } from "lucide-react";
 
 import {
   FaFacebookF,
@@ -21,6 +15,7 @@ import {
   importantLinks,
   otherLinks,
   quickLinks,
+  socialLinks,
 } from "@/config/footer";
 
 type FooterLink = {
@@ -65,15 +60,10 @@ const socialIcons = {
   },
 };
 
-function FooterLinkList({
-  title,
-  links,
-}: FooterLinkListProps) {
+function FooterLinkList({ title, links }: FooterLinkListProps) {
   return (
     <div>
-      <h3 className="text-sm font-bold text-white">
-        {title}
-      </h3>
+      <h3 className="text-sm font-bold text-white">{title}</h3>
 
       <div className="mt-5 space-y-2.5">
         {links.map((link) => (
@@ -106,12 +96,10 @@ export default function Footer() {
       <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[#c31e3b]/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
         {/* =====================================================
             MAIN FOOTER
         ====================================================== */}
         <div className="grid gap-10 py-12 sm:py-14 lg:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-8">
-
           {/* ===================================================
               BRAND + CONTACT
           ==================================================== */}
@@ -127,7 +115,6 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="mt-4 space-y-4">
-
               {/* Address */}
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#eab308]" />
@@ -146,9 +133,7 @@ export default function Footer() {
               >
                 <Phone className="h-4 w-4 text-[#eab308]" />
 
-                <span>
-                  +91-7678389436
-                </span>
+                <span>+91-7678389436</span>
               </a>
 
               {/* Email */}
@@ -158,18 +143,14 @@ export default function Footer() {
               >
                 <Mail className="h-4 w-4 text-[#eab308]" />
 
-                <span>
-                  admissions@fostiima.org
-                </span>
+                <span>admissions@fostiima.org</span>
               </a>
 
               {/* Office Hours */}
               <div className="flex items-center gap-3 text-sm text-white/65">
                 <Clock3 className="h-4 w-4 text-[#eab308]" />
 
-                <span>
-                  09:00am to 06:00pm
-                </span>
+                <span>09:00am to 06:00pm</span>
               </div>
             </div>
           </div>
@@ -177,26 +158,17 @@ export default function Footer() {
           {/* ===================================================
               QUICK LINKS
           ==================================================== */}
-          <FooterLinkList
-            title="Quick Links"
-            links={quickLinks}
-          />
+          <FooterLinkList title="Quick Links" links={quickLinks} />
 
           {/* ===================================================
               IMPORTANT LINKS
           ==================================================== */}
-          <FooterLinkList
-            title="Important Links"
-            links={importantLinks}
-          />
+          <FooterLinkList title="Important Links" links={importantLinks} />
 
           {/* ===================================================
               OTHER LINKS
           ==================================================== */}
-          <FooterLinkList
-            title="Others Links"
-            links={otherLinks}
-          />
+          <FooterLinkList title="Others Links" links={otherLinks} />
         </div>
 
         {/* =====================================================
@@ -204,7 +176,6 @@ export default function Footer() {
         ====================================================== */}
         <div className="border-t border-white/10 py-8">
           <div className="flex flex-col items-center justify-between gap-5 sm:flex-row">
-
             {/* Social heading */}
             <div>
               <p className="text-sm font-bold text-white">
@@ -218,61 +189,49 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex items-center gap-2">
-              {Object.entries(socialIcons).map(
-                ([name, social]) => {
-                  const Icon = social.icon;
+              {Object.entries(socialIcons).map(([name, social]) => {
+                const Icon = social.icon;
 
-                  const socialLink =
-                    name === "WhatsApp"
-                      ? "https://wa.me/917678389436"
-                      : "#";
+                const socialLink = socialLinks.find(
+                  (link) => link.label === name,
+                )?.href;
 
-                  return (
-                    <a
-                      key={name}
-                      href={socialLink}
-                      target={
-                        name === "WhatsApp"
-                          ? "_blank"
-                          : undefined
-                      }
-                      rel={
-                        name === "WhatsApp"
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
-                      aria-label={name}
-                      style={
-                        {
-                          "--brand-color":
-                            social.color,
-                        } as React.CSSProperties
-                      }
-                      className="
-                        group
-                        flex
-                        h-9
-                        w-9
-                        items-center
-                        justify-center
-                        rounded-lg
-                        border
-                        border-white/10
-                        bg-white/5
-                        text-white/55
-                        transition-all
-                        duration-300
-                        hover:border-[var(--brand-color)]
-                        hover:bg-[var(--brand-color)]
-                        hover:text-white
-                        hover:shadow-lg
-                      "
-                    >
-                      <Icon className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
-                    </a>
-                  );
-                },
-              )}
+                return (
+                  <a
+                    key={name}
+                    href={socialLink || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={name}
+                    style={
+                      {
+                        "--brand-color": social.color,
+                      } as React.CSSProperties
+                    }
+                    className="
+          group
+          flex
+          h-9
+          w-9
+          items-center
+          justify-center
+          rounded-lg
+          border
+          border-white/10
+          bg-white/5
+          text-white/55
+          transition-all
+          duration-300
+          hover:border-[var(--brand-color)]
+          hover:bg-[var(--brand-color)]
+          hover:text-white
+          hover:shadow-lg
+        "
+                  >
+                    <Icon className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -282,19 +241,14 @@ export default function Footer() {
         ====================================================== */}
         <div className="border-t border-white/10 py-5">
           <div className="flex flex-col items-center justify-between gap-2 text-center sm:flex-row sm:text-left">
-
             <p className="text-md text-white/45">
-              Copyright © {currentYear}, FOSTIIMA Business School.
-              All rights reserved.
+              Copyright © {currentYear}, FOSTIIMA Business School. All rights
+              reserved.
             </p>
 
-            <p className="text-md text-white/35">
-              FOSTIIMA Business School
-            </p>
-
+            <p className="text-md text-white/35">FOSTIIMA Business School</p>
           </div>
         </div>
-
       </div>
     </footer>
   );
