@@ -1,7 +1,8 @@
 
+import { cloudinaryAsset } from "@/lib/cloudinary";
 import { prisma } from "@/lib/prisma";
 
-const DEFAULT_HERO_VIDEO = "/videos/fostiima-hero.mp4";
+const DEFAULT_HERO_VIDEO = cloudinaryAsset("/videos/fostiima-hero.mp4");
 
 export default async function Hero() {
   const hero = await prisma.homeHero.findFirst({

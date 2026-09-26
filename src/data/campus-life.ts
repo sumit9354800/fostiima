@@ -1,3 +1,5 @@
+import { cloudinaryAsset } from "@/lib/cloudinary";
+
 export type CampusLifeItem = {
   slug: string;
   title: string;
@@ -9,10 +11,14 @@ export type CampusLifeItem = {
 export const campusLifeItems: CampusLifeItem[] = [
   {
     slug: "student-community",
+
     title: "Student Community",
+
     description:
       "Build meaningful connections, collaborate with peers and create lifelong friendships beyond the classroom.",
-    image: "/home/campuslife/campuslife1.png",
+
+    image: cloudinaryAsset("home/campuslife/campuslife1"),
+
     details: [
       "Collaborate with peers across diverse backgrounds.",
       "Build meaningful friendships and professional connections.",
@@ -23,10 +29,14 @@ export const campusLifeItems: CampusLifeItem[] = [
 
   {
     slug: "intellectual-life",
+
     title: "Intellectual Life",
+
     description:
       "Engage in discussions, debates, workshops and activities that encourage curiosity and new perspectives.",
-    image: "/home/campuslife/campuslife2.png",
+
+    image: cloudinaryAsset("home/campuslife/campuslife2"),
+
     details: [
       "Participate in discussions and knowledge-sharing sessions.",
       "Explore new ideas through debates and workshops.",
@@ -37,10 +47,14 @@ export const campusLifeItems: CampusLifeItem[] = [
 
   {
     slug: "sports-recreation",
+
     title: "Sports & Recreation",
+
     description:
       "Balance academic life with sports, recreation and activities that encourage teamwork and sportsmanship.",
-    image: "/home/campuslife/campuslife3.png",
+
+    image: cloudinaryAsset("home/campuslife/campuslife3"),
+
     details: [
       "Take part in sports and recreational activities.",
       "Develop teamwork and sportsmanship.",
@@ -51,10 +65,14 @@ export const campusLifeItems: CampusLifeItem[] = [
 
   {
     slug: "events-experiences",
+
     title: "Events & Experiences",
+
     description:
       "Experience cultural activities, celebrations, industry interactions and memorable campus experiences.",
-    image: "/home/campuslife/campuslife4.png",
+
+    image: cloudinaryAsset("home/campuslife/campuslife4"),
+
     details: [
       "Experience cultural activities and campus celebrations.",
       "Participate in industry interactions and events.",

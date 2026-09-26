@@ -1,3 +1,4 @@
+import { cloudinaryAsset } from "@/lib/cloudinary";
 import { ArrowLeft, CalendarDays } from "lucide-react";
 import Link from "next/link";
 
@@ -28,7 +29,7 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A comprehensive two-year full-time management program designed to build strong business knowledge, analytical capabilities, leadership skills and industry readiness.",
-    heroImage: "/programs/pgdm.png",
+    heroImage: cloudinaryAsset("/programs/pgdm.png"),
     semesters: [
       {
         title: "Semester I",
@@ -116,7 +117,7 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program focused on developing expertise in marketing, customer understanding, brand management, digital marketing and strategic decision-making.",
-    heroImage: "/programs/marketing.png",
+    heroImage: cloudinaryAsset("/programs/marketing.png"),
 
     specialization: {
       title: "Marketing Specialization",
@@ -143,7 +144,7 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program designed to develop financial management, analytical and strategic decision-making capabilities for modern business environments.",
-    heroImage: "/programs/Finance.png",
+    heroImage: cloudinaryAsset("/programs/Finance.png"),
     specialization: {
       title: "Finance Specialization",
       subjects: [
@@ -165,7 +166,7 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program focused on human capital, leadership, employee relations, organizational development and modern HR practices.",
-    heroImage: "/programs/hr.png",
+    heroImage: cloudinaryAsset("/programs/hr.png"),
 
     specialization: {
       title: "HR - Specialization",
@@ -192,7 +193,7 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program focused on developing business analytics, data-driven decision-making, analytical thinking and modern business management capabilities.",
-    heroImage: "/programs/business-analytics.png",
+    heroImage: cloudinaryAsset("/programs/business-analytics.png"),
 
     specialization: {
       title: "International Business - Specialization",

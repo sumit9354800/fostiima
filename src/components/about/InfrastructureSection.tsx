@@ -3,22 +3,38 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Maximize2, X } from "lucide-react";
+import { cloudinaryAsset } from "@/lib/cloudinary";
 
 const infrastructureImages = [
-  "/about/infrastructures/infrastructures1.webp",
-  "/about/infrastructures/infrastructures2.webp",
-  "/about/infrastructures/infrastructures3.webp",
-  "/about/infrastructures/infrastructures4.webp",
-  "/about/infrastructures/infrastructures5.webp",
-  "/about/infrastructures/infrastructures6.webp",
-  "/about/infrastructures/infrastructures7.webp",
-  "/about/infrastructures/infrastructures8.webp",
-  "/about/infrastructures/infrastructures9.webp",
-  "/about/infrastructures/infrastructures10.webp",
-  "/about/infrastructures/infrastructures11.webp",
-  "/about/infrastructures/infrastructures12.webp",
-  "/about/infrastructures/infrastructures13.webp",
-  "/about/infrastructures/infrastructures14.webp",
+
+  cloudinaryAsset("/about/infrastructures/infrastructures1.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures2.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures3.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures4.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures5.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures6.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures7.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures8.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures9.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures10.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures11.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures12.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures13.webp"),
+
+  cloudinaryAsset("/about/infrastructures/infrastructures14.webp"),
+
 ];
 
 export default function InfrastructureSection() {

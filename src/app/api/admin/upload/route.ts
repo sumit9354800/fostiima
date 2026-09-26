@@ -1,8 +1,6 @@
 import { createHash } from "crypto";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
-import { mkdir, writeFile } from "fs/promises";
-import path from "path";
 
 import { auth } from "@/lib/auth";
 
@@ -35,40 +33,23 @@ async function requireAdmin() {
   return session;
 }
 
-function getSafeExtension(fileName: string, mimeType: string) {
-  const extension = path.extname(fileName).toLowerCase();
-
-  if (extension) {
-    return extension;
-  }
-
-  const extensions: Record<string, string> = {
-    "image/jpeg": ".jpg",
-    "image/png": ".png",
-    "image/webp": ".webp",
-    "image/svg+xml": ".svg",
-    "image/gif": ".gif",
-    "video/mp4": ".mp4",
-    "video/webm": ".webm",
-    "video/quicktime": ".mov",
-  };
-
-  return extensions[mimeType] ?? "";
-}
-
 async function uploadToCloudinary(file: File) {
   const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
   const apiKey = process.env.CLOUDINARY_API_KEY;
   const apiSecret = process.env.CLOUDINARY_API_SECRET;
 
   if (!cloudName || !apiKey || !apiSecret) {
-    throw new Error("Cloudinary environment variables are not configured.");
+    throw new Error(
+      "Cloudinary environment variables are not configured.",
+    );
   }
 
   const timestamp = Math.floor(Date.now() / 1000);
+
   const folder = "fostiima/home";
 
-  const signatureBase = `folder=${folder}&timestamp=${timestamp}${apiSecret}`;
+  const signatureBase =
+    `folder=${folder}&timestamp=${timestamp}${apiSecret}`;
 
   const signature = createHash("sha1")
     .update(signatureBase)
@@ -100,43 +81,12 @@ async function uploadToCloudinary(file: File) {
     console.error("Cloudinary upload error:", data);
 
     throw new Error(
-      data?.error?.message ?? "Cloudinary upload failed.",
+      data?.error?.message ??
+        "Cloudinary upload failed.",
     );
   }
 
   return data.secure_url as string;
-}
-
-async function uploadToPublicFolder(file: File) {
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
-
-  const extension = getSafeExtension(
-    file.name,
-    file.type,
-  );
-
-  const fileName = `${crypto.randomUUID()}${extension}`;
-
-  const uploadDirectory = path.join(
-    process.cwd(),
-    "public",
-    "uploads",
-    "home",
-  );
-
-  await mkdir(uploadDirectory, {
-    recursive: true,
-  });
-
-  const filePath = path.join(
-    uploadDirectory,
-    fileName,
-  );
-
-  await writeFile(filePath, buffer);
-
-  return `/uploads/home/${fileName}`;
 }
 
 export async function POST(request: Request) {
@@ -157,9 +107,6 @@ export async function POST(request: Request) {
     const formData = await request.formData();
 
     const file = formData.get("file");
-    const destination = String(
-      formData.get("destination") ?? "",
-    );
 
     if (!(file instanceof File)) {
       return NextResponse.json(
@@ -194,29 +141,12 @@ export async function POST(request: Request) {
       );
     }
 
-    if (
-      destination !== "cloudinary" &&
-      destination !== "public"
-    ) {
-      return NextResponse.json(
-        {
-          error: "Invalid upload destination.",
-        },
-        {
-          status: 400,
-        },
-      );
-    }
-
-    const url =
-      destination === "cloudinary"
-        ? await uploadToCloudinary(file)
-        : await uploadToPublicFolder(file);
+    const url = await uploadToCloudinary(file);
 
     return NextResponse.json({
       success: true,
       url,
-      destination,
+      destination: "cloudinary",
       fileName: file.name,
       fileType: file.type,
       fileSize: file.size,

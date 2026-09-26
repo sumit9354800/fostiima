@@ -5,6 +5,7 @@ import {
   BriefcaseBusiness,
   GraduationCap,
 } from "lucide-react";
+import { cloudinaryAsset } from "@/lib/cloudinary";
 
 const chairmanHighlights = [
   {
@@ -80,7 +81,7 @@ export default function ChairmanMessage() {
               {/* Chairman Image */}
               <div className="relative flex flex-1 items-end justify-center overflow-hidden px-8 pt-10">
                 <Image
-                  src="/home/faculty/faculty1.webp"
+                  src={cloudinaryAsset("/home/faculty/faculty1.webp")}
                   alt="Anil Somani - Founder and Executive Chairman of FOSTIIMA Business School"
                   width={281}
                   height={281}

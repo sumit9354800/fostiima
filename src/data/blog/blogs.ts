@@ -882,7 +882,7 @@ export const blogs: BlogPost[] = [
     excerpt:
       "Explore PGDM colleges in Delhi NCR, the PGDM programme, its benefits and the admission process.",
     category: "PGDM",
-    coverImage: "https://fostiima.org/uploaded_files/thumb_cache/thumb_390_224_pgdm-colleges-in-delhi-ncr.jpg",
+    coverImage: "",
     coverImageAlt: "Best PGDM Colleges in Delhi NCR",
     author: "FOSTIIMA Business School",
     publishedAt: "",

@@ -1,3 +1,5 @@
+import { cloudinaryAsset } from "@/lib/cloudinary";
+
 export type Accreditation = {
   id: string;
   title: string;
@@ -14,8 +16,8 @@ export const accreditations: Accreditation[] = [
     year: "2025-26",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 28.03.2025",
-    image: "/awards-accreditation/nba.jpeg",
-    pdf: "/awards-accreditation/NBA-28.03.2025.pdf",
+    image: cloudinaryAsset("awards-accreditation/nba"),
+    pdf: cloudinaryAsset("awards-accreditation/NBA-28.03.2025"),
   },
 
   {
@@ -24,8 +26,8 @@ export const accreditations: Accreditation[] = [
     year: "2026-27",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2026-27",
-    image: "/award.webp",
-    pdf: "/awards-accreditation/2026-27.pdf",
+    image: cloudinaryAsset("award"),
+    pdf: cloudinaryAsset("awards-accreditation/2026-27"),
   },
 
   {
@@ -34,8 +36,8 @@ export const accreditations: Accreditation[] = [
     year: "2025-26",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2025-26",
-    image: "/award.webp",
-    pdf: "/awards-accreditation/2025-26.pdf",
+    image: cloudinaryAsset("award"),
+    pdf: cloudinaryAsset("awards-accreditation/2025-26"),
   },
 
   {
@@ -44,8 +46,8 @@ export const accreditations: Accreditation[] = [
     year: "2024-25",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2024-25",
-    image: "/award.webp",
-    pdf: "/awards-accreditation/2024-25.pdf",
+    image: cloudinaryAsset("award"),
+    pdf: cloudinaryAsset("awards-accreditation/2024-25"),
   },
 
   {
@@ -54,8 +56,8 @@ export const accreditations: Accreditation[] = [
     year: "2022-23",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2022-23",
-    image: "/award.webp",
-    pdf: "/awards-accreditation/2022-23.pdf",
+    image: cloudinaryAsset("award"),
+    pdf: cloudinaryAsset("awards-accreditation/2022-23"),
   },
 
   {
@@ -64,8 +66,8 @@ export const accreditations: Accreditation[] = [
     year: "2021-22",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
-    image: "/award.webp",
-    pdf: "/awards-accreditation/2021-22.pdf",
+    image: cloudinaryAsset("award"),
+    pdf: cloudinaryAsset("awards-accreditation/2021-22"),
   },
 
   {
@@ -74,8 +76,8 @@ export const accreditations: Accreditation[] = [
     year: "2020-21",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2020-21",
-    image: "/award.webp",
-    pdf: "/awards-accreditation/2020-21.pdf",
+    image: cloudinaryAsset("award"),
+    pdf: cloudinaryAsset("awards-accreditation/2020-21"),
   },
 
   {
@@ -84,7 +86,7 @@ export const accreditations: Accreditation[] = [
     year: "2019-20",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2019-20",
-    image: "/award.webp",
-    pdf: "/awards-accreditation/2019-20.pdf",
+    image: cloudinaryAsset("award"),
+    pdf: cloudinaryAsset("awards-accreditation/2019-20"),
   },
 ];

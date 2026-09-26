@@ -1,5 +1,6 @@
 "use client";
 
+import { cloudinaryAsset } from "@/lib/cloudinary";
 import {
   BarChart3,
   BriefcaseBusiness,
@@ -18,88 +19,113 @@ type AlumniSection = {
   image?: string;
   icon: React.ElementType;
 };
-
 const alumniSections: AlumniSection[] = [
   {
     id: "finance-committee",
+
     title: "Finance Committee",
+
     description:
       "The Finance Committee bridges academic learning with industry practice through four key pillars: Knowledge Enhancement, Industry Engagement, Skill Development, and Research. Beyond organizing large-scale events, members manage digital platforms and conduct deep financial research, cultivating leadership, critical thinking, teamwork, and digital marketing skills. Moving forward, the committee aims to elevate campus-wide financial literacy and scale operations up to inter-college events—enhancing institutional prestige while empowering student career readiness.",
-    image: "/alumni/finance-committee.jpeg",
+
+    image: cloudinaryAsset("/alumni/finance-committee.jpeg"),
+
     icon: BarChart3,
   },
 
   {
     id: "hr",
+
     title: "HR",
+
     description:
       "The HR Committee at FOSTIIMA Business School wants to be the most trusted and industry-connected student group on campus. Our aim is to prepare students to become HR professionals who can look ahead and prepare for change, not just react to it. We want to get students ready for the HR jobs of the future — jobs that will involve AI, hybrid and gig workers, ESG-linked people strategies, and new rules that keep changing.",
-    image: "/alumni/hr.jpeg",
+
+    image: cloudinaryAsset("/alumni/hr.jpeg"),
+
     icon: Users,
   },
 
   {
     id: "marketing",
+
     title: "Marketing",
+
     description:
       "The Marketing Club at FOSTIIMA Business School is a vibrant, student-driven forum dedicated to fostering creativity, strategic thinking, and professional excellence. We bridge classroom learning with real-world practice, equipping students to navigate the evolving landscapes of branding, digital strategy, consumer behavior, analytics, and entrepreneurship. Through industry engagements, experiential learning, and interactive events, the Club instills a customer-centric, innovative mindset across the entire campus community—serving as a catalyst for future marketing leaders, decision-makers, and ethical entrepreneurs.",
-    image: "/alumni/marketing.jpeg",
+
+    image: cloudinaryAsset("/alumni/marketing.jpeg"),
+
     icon: Megaphone,
   },
 
   {
     id: "placement",
+
     title: "Placement",
+
     description:
       "We partner with leading organizations to build enduring talent pipelines through final placements, summer internships, and interactive guest lectures. Our placement committee drives targeted digital outreach, strategic database management, and active employer engagement to connect top recruiters with our students. By conducting comprehensive CV reviews, optimizing professional profiles, and incorporating structured feedback from recruitment drives, we ensure our candidates consistently meet industry standards and excel in on-campus recruitment processes.",
-    image: "/alumni/placement.jpeg",
+
+    image: cloudinaryAsset("/alumni/placement.jpeg"),
+
     icon: BriefcaseBusiness,
   },
 
   {
     id: "smart-campus",
+
     title: "Smart Campus",
+
     description:
       "The Smart Campus Infrastructure Committee is dedicated to maintaining a clean, safe, hygienic, and student-friendly environment through the continuous monitoring and timely enhancement of campus facilities. Its scope encompasses rigorous daily housekeeping and washroom sanitation, routine maintenance of classroom furniture and climate control systems, and strict oversight of campus safety protocols, including electrical infrastructure, fire emergency preparedness, and purified drinking water systems. By establishing streamlined complaint-resolution workflows and actively integrating feedback from students, faculty, and staff, the committee ensures high operational standards and a seamlessly functioning academic environment.",
-    image: "/alumni/smart-campus.jpeg",
+
+    image: cloudinaryAsset("/alumni/smart-campus.jpeg"),
+
     icon: Landmark,
   },
 
   {
     id: "student-interface",
+
     title: "Student Interface",
+
     description:
       "The Student Interface Committee acts as the vital bridge between the student body and campus administration, ensuring transparent communication, constructive engagement, and continuous improvement in student life. The committee’s agenda focuses on gathering structured feedback regarding academic services, campus amenities, and administrative support to address student concerns promptly. By facilitating regular dialogue, town halls, and open forums, the committee fosters a collaborative environment where student voices actively inform institutional decisions. Additionally, it streamlines grievance redressal mechanisms, promotes peer mentorship, and coordinates key campus initiatives to enhance overall student satisfaction. Through proactive leadership and structured communication channels, the committee remains dedicated to cultivating an inclusive, responsive, and student-centric campus ecosystem.",
-    image: "/alumni/student-interface.jpeg",
+
+    image: cloudinaryAsset("/alumni/student-interface.jpeg"),
+
     icon: HeartHandshake,
   },
 
   {
     id: "events-sports",
+
     title: "Events & Sports",
+
     description:
       'Driven by the motto "Together we lead, Together we achieve," the Events & Sports Committee is dedicated to building an active, inclusive, and vibrant campus life where every student feels empowered to discover their talents, participate in competitive sports, and gain meaningful experiences. The committee focuses on organizing fair, seamlessly executed cultural, athletic, and institutional events that cultivate essential life skills beyond academics. By fostering dynamic opportunities for student engagement, the committee systematically develops leadership, teamwork, event execution, creative problem-solving, and sportsmanship, while instilling time management, effective communication, and social responsibility across the student body.',
-    image: "/alumni/events-sports.jpeg",
+
+    image: cloudinaryAsset("/alumni/events-sports.jpeg"),
+
     icon: Trophy,
   },
 
   {
     id: "literary",
+
     title: "Literary",
+
     description:
       "The Literary Committee fosters an active intellectual and creative ecosystem by encouraging self-expression, critical thinking, and effective communication across campus. Its agenda focuses on organizing diverse literary engagements, including debates, creative writing workshops, book discussions, poetry slams, and panel talks with guest authors. The committee manages the publication of the annual college magazine and campus newsletters, offering students a structured platform to showcase their written work and editorial skills. Additionally, it oversees literary competitions, coordinates inter-college festival participation, and builds inclusive forums where students can refine their public speaking, analytical reasoning, and creative expression.",
-    image: "/alumni/literary.jpeg",
+
+    image: cloudinaryAsset("/alumni/literary.jpeg"),
+
     icon: CalendarDays,
   },
 ];
 
-function ImageFallback({
-  image,
-  title,
-}: {
-  image?: string;
-  title: string;
-}) {
+function ImageFallback({ image, title }: { image?: string; title: string }) {
   return (
     <div className="relative h-full w-full overflow-hidden">
       {/* Grid fallback */}
@@ -201,11 +227,7 @@ export default function AlumniSections() {
             const reversed = index % 2 !== 0;
 
             return (
-              <article
-                key={item.id}
-                id={item.id}
-                className="scroll-mt-28"
-              >
+              <article key={item.id} id={item.id} className="scroll-mt-28">
                 <div
                   className={`
                     grid
@@ -228,10 +250,7 @@ export default function AlumniSections() {
                       ${reversed ? "lg:order-2" : "lg:order-1"}
                     `}
                   >
-                    <ImageFallback
-                      image={item.image}
-                      title={item.title}
-                    />
+                    <ImageFallback image={item.image} title={item.title} />
 
                     {/* Icon */}
                     <div className="absolute left-6 top-6 z-30 flex h-12 w-12 items-center justify-center rounded-xl bg-white/95 text-[#c31e3b] shadow-lg backdrop-blur-sm">

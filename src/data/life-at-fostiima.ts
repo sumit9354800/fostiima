@@ -1,3 +1,4 @@
+import { cloudinaryAsset } from "@/lib/cloudinary";
 import {
   BookOpen,
   BriefcaseBusiness,
@@ -19,7 +20,7 @@ export const lifeAtFostiimaHero = {
   description:
     "More than a classroom. A place to learn, participate, collaborate, create and grow together.",
 
-  backgroundImage: "/bg-hero-banner/life-at-fostiima-hero.png",
+  backgroundImage: cloudinaryAsset("/bg-hero-banner/life-at-fostiima-hero.png"),
 };
 
 export const lifeExperiences = [
@@ -51,89 +52,134 @@ export const lifeExperiences = [
 
 export const campusGallery = [
   {
-    src: "/life-at-fostiima/life-at-fostiima1.png",
+    src: cloudinaryAsset("/life-at-fostiima/life-at-fostiima1.png"),
+
     alt: "Academic Excellence at FOSTIIMA",
+
     title: "Academic Excellence",
+
     description:
       "State-of-the-art classrooms, well-equipped library, and modern learning facilities.",
+
     size: "small",
+
     href: "/life-at-fostiima/academic-excellence",
   },
 
   {
-    src: "/life-at-fostiima/life-at-fostiima2.png",
+    src: cloudinaryAsset("/life-at-fostiima/life-at-fostiima2.png"),
+
     alt: "Sports and Fitness at FOSTIIMA",
+
     title: "Sports & Fitness",
+
     description:
       "Indoor and outdoor sports facilities to maintain work-life balance.",
+
     size: "small",
+
     href: "/life-at-fostiima/sports-and-fitness",
   },
 
   {
-    src: "/life-at-fostiima/life-at-fostiima3.png",
+    src: cloudinaryAsset("/life-at-fostiima/life-at-fostiima3.png"),
+
     alt: "Cultural Events at FOSTIIMA",
+
     title: "Cultural Events",
+
     description:
       "Annual fest, cultural nights, and celebrations throughout the year.",
+
     size: "small",
+
     href: "/life-at-fostiima/cultural-events",
   },
 
   {
-    src: "/life-at-fostiima/life-at-fostiima4.png",
+    src: cloudinaryAsset("/life-at-fostiima/life-at-fostiima4.png"),
+
     alt: "Business Exposure Trip",
+
     title: "Business Exposure Trip",
+
     description: "",
+
     size: "small",
+
     href: "/life-at-fostiima/business-exposure-trip",
   },
 
   {
-    src: "/life-at-fostiima/life-at-fostiima5.webp",
+    src: cloudinaryAsset("/life-at-fostiima/life-at-fostiima5.webp"),
+
     alt: "FOSTIIMA Campus Tour",
+
     title: "Margdarshak Awards",
+
     description:
       "Take a virtual tour of our modern campus facilities and vibrant student life.",
+
     size: "large",
+
     href: "/life-at-fostiima/margdarshak-awards",
   },
 
   {
-    src: "/life-at-fostiima/life-at-fostiima6.png",
+    src: cloudinaryAsset("/life-at-fostiima/life-at-fostiima6.png"),
+
     alt: "Brainstorming Activities at FOSTIIMA",
+
     title: "Brainstorming",
+
     description:
       "Business case competitions, hackathons, and inter-college activities.",
+
     size: "small",
+
     href: "/life-at-fostiima/brainstorming",
   },
 
   {
-    src: "/life-at-fostiima/life-at-fostiima7.png",
+    src: cloudinaryAsset("/life-at-fostiima/life-at-fostiima7.png"),
+
     alt: "Team Building Camp",
+
     title: "Team Building Camp",
+
     description:
       "Domestic trip – Fun, exploration, bonding, adventure, learning.",
+
     size: "small",
+
     href: "/life-at-fostiima/team-building-camp",
   },
 
   {
-    src: "/life-at-fostiima/life-at-fostiima8.png",
+    src: cloudinaryAsset("/life-at-fostiima/life-at-fostiima8.png"),
+
     alt: "Industrial Visit",
+
     title: "Industrial Visit",
+
     description: "",
+
     size: "small",
+
     href: "/life-at-fostiima/industrial-visit",
   },
 
   {
-    src: "/life-at-fostiima/life-at-fostiima9.png",
+    src: cloudinaryAsset("/life-at-fostiima/life-at-fostiima9.png"),
+
     alt: "Corporate Talk at FOSTIIMA",
+
     title: "Corporate Talk",
+
     description: "",
+
     size: "small",
+
     href: "/life-at-fostiima/corporate-talk",
   },
 ];

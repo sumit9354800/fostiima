@@ -1,3 +1,5 @@
+import { cloudinaryAsset } from "@/lib/cloudinary";
+
 export type FounderTrustee = {
   name: string;
   role: string;
@@ -8,36 +10,36 @@ export const founderTrustees: FounderTrustee[] = [
   {
     name: "Jaithirth Rao",
     role: "Founder Trustee",
-    image: "/about/trustees-faculty/trustees-faculty1.webp",
+    image: cloudinaryAsset("about/trustees-faculty/trustees-faculty1"),
   },
   {
     name: "Late Kamal Sharma",
     role: "Founder Trustee",
-    image: "/about/trustees-faculty/trustees-faculty2.webp",
+    image: cloudinaryAsset("about/trustees-faculty/trustees-faculty2"),
   },
   {
     name: "Anil Somani",
     role: "Founder Trustee",
-    image: "/about/trustees-faculty/trustees-faculty3.webp",
+    image: cloudinaryAsset("about/trustees-faculty/trustees-faculty3"),
   },
   {
     name: "Sunil Kala",
     role: "Founder Trustee",
-    image: "/about/trustees-faculty/trustees-faculty4.webp",
+    image: cloudinaryAsset("about/trustees-faculty/trustees-faculty4"),
   },
   {
     name: "Rajesh Kaura",
     role: "Founder Trustee",
-    image: "/about/trustees-faculty/trustees-faculty5.webp",
+    image: cloudinaryAsset("about/trustees-faculty/trustees-faculty5"),
   },
   {
     name: "T L Palani Kumar",
     role: "Founder Trustee",
-    image: "/about/trustees-faculty/trustees-faculty6.webp",
+    image: cloudinaryAsset("about/trustees-faculty/trustees-faculty6"),
   },
   {
     name: "Rajan Shangi",
     role: "Founder Trustee",
-    image: "/about/trustees-faculty/trustees-faculty7.webp",
+    image: cloudinaryAsset("about/trustees-faculty/trustees-faculty7"),
   },
 ];

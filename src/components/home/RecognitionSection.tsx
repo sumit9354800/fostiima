@@ -1,16 +1,31 @@
+import { cloudinaryAsset } from "@/lib/cloudinary";
+
 const recognitions = [
+
   {
-    src: "/badge/badge1.webp",
+
+    src: cloudinaryAsset("/badge/badge1.webp"),
+
     alt: "National board or accredition",
+
   },
+
   {
-    src: "/badge/badge2.webp",
+
+    src: cloudinaryAsset("/badge/badge2.webp"),
+
     alt: "Association of Indian Universities recognition",
+
   },
+
   {
-    src: "/badge/badge3.webp",
+
+    src: cloudinaryAsset("/badge/badge3.webp"),
+
     alt: "AICTE approval",
+
   },
+
 ];
 
 export default function RecognitionSection() {

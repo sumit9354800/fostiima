@@ -1,0 +1,3366 @@
+{
+  "about": {
+    "infrastructures": {
+      "infrastructures1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441148/fostiima/about/infrastructures/infrastructures1.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures10": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441149/fostiima/about/infrastructures/infrastructures10.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures11": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441150/fostiima/about/infrastructures/infrastructures11.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures12": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441151/fostiima/about/infrastructures/infrastructures12.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures13": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441152/fostiima/about/infrastructures/infrastructures13.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures14": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441153/fostiima/about/infrastructures/infrastructures14.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441154/fostiima/about/infrastructures/infrastructures2.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441156/fostiima/about/infrastructures/infrastructures3.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441157/fostiima/about/infrastructures/infrastructures4.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441158/fostiima/about/infrastructures/infrastructures5.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441160/fostiima/about/infrastructures/infrastructures6.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures7": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441160/fostiima/about/infrastructures/infrastructures7.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures8": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441162/fostiima/about/infrastructures/infrastructures8.webp",
+        "width": 300,
+        "height": 200
+      },
+      "infrastructures9": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/infrastructures/infrastructures9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441163/fostiima/about/infrastructures/infrastructures9.webp",
+        "width": 300,
+        "height": 200
+      }
+    },
+    "trustees-faculty": {
+      "trustees-faculty1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/trustees-faculty/trustees-faculty1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441164/fostiima/about/trustees-faculty/trustees-faculty1.webp",
+        "width": 281,
+        "height": 281
+      },
+      "trustees-faculty2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/trustees-faculty/trustees-faculty2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441165/fostiima/about/trustees-faculty/trustees-faculty2.webp",
+        "width": 281,
+        "height": 281
+      },
+      "trustees-faculty3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/trustees-faculty/trustees-faculty3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441166/fostiima/about/trustees-faculty/trustees-faculty3.webp",
+        "width": 281,
+        "height": 281
+      },
+      "trustees-faculty4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/trustees-faculty/trustees-faculty4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441167/fostiima/about/trustees-faculty/trustees-faculty4.webp",
+        "width": 281,
+        "height": 281
+      },
+      "trustees-faculty5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/trustees-faculty/trustees-faculty5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441168/fostiima/about/trustees-faculty/trustees-faculty5.webp",
+        "width": 281,
+        "height": 281
+      },
+      "trustees-faculty6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/trustees-faculty/trustees-faculty6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441170/fostiima/about/trustees-faculty/trustees-faculty6.webp",
+        "width": 281,
+        "height": 281
+      },
+      "trustees-faculty7": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/about/trustees-faculty/trustees-faculty7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441171/fostiima/about/trustees-faculty/trustees-faculty7.webp",
+        "width": 281,
+        "height": 281
+      }
+    }
+  },
+  "alumni": {
+    "Alumni Committee": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/alumni/Alumni Committee",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441173/fostiima/alumni/Alumni%20Committee.jpg",
+      "width": 1600,
+      "height": 1200
+    },
+    "events-sports": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/alumni/events-sports",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441175/fostiima/alumni/events-sports.jpg",
+      "width": 1280,
+      "height": 960
+    },
+    "finance-committee": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/alumni/finance-committee",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441177/fostiima/alumni/finance-committee.jpg",
+      "width": 1280,
+      "height": 960
+    },
+    "hr": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/alumni/hr",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441178/fostiima/alumni/hr.jpg",
+      "width": 1600,
+      "height": 1200
+    },
+    "literary": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/alumni/literary",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441179/fostiima/alumni/literary.jpg",
+      "width": 1280,
+      "height": 959
+    },
+    "marketing": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/alumni/marketing",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441180/fostiima/alumni/marketing.jpg",
+      "width": 1080,
+      "height": 807
+    },
+    "placement": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/alumni/placement",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441182/fostiima/alumni/placement.jpg",
+      "width": 1600,
+      "height": 1200
+    },
+    "student-interface": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/alumni/student-interface",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441187/fostiima/alumni/student-interface.jpg",
+      "width": 1280,
+      "height": 960
+    }
+  },
+  "award": {
+    "type": "image",
+    "format": "webp",
+    "publicId": "fostiima/award",
+    "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441190/fostiima/award.webp",
+    "width": 256,
+    "height": 195
+  },
+  "awards-accreditation": {
+    "nba": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/awards-accreditation/nba",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441205/fostiima/awards-accreditation/nba.jpg",
+      "width": 1200,
+      "height": 946
+    }
+  },
+  "badge": {
+    "badge1": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/badge/badge1",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441206/fostiima/badge/badge1.webp",
+      "width": 78,
+      "height": 57
+    },
+    "badge2": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/badge/badge2",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441207/fostiima/badge/badge2.webp",
+      "width": 59,
+      "height": 57
+    },
+    "badge3": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/badge/badge3",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441208/fostiima/badge/badge3.webp",
+      "width": 59,
+      "height": 57
+    }
+  },
+  "bg-hero-banner": {
+    "life-at-fostiima-hero": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/bg-hero-banner/life-at-fostiima-hero",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441212/fostiima/bg-hero-banner/life-at-fostiima-hero.png",
+      "width": 1916,
+      "height": 821
+    }
+  },
+  "conclave": {
+    "AI-Conclave-2026": {
+      "AI1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441216/fostiima/conclave/AI-Conclave-2026/AI1.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI10": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441221/fostiima/conclave/AI-Conclave-2026/AI10.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI11": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441229/fostiima/conclave/AI-Conclave-2026/AI11.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI12": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441239/fostiima/conclave/AI-Conclave-2026/AI12.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI13": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441250/fostiima/conclave/AI-Conclave-2026/AI13.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI14": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441289/fostiima/conclave/AI-Conclave-2026/AI14.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI15": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441316/fostiima/conclave/AI-Conclave-2026/AI15.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI16": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441369/fostiima/conclave/AI-Conclave-2026/AI16.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI17": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI17",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441403/fostiima/conclave/AI-Conclave-2026/AI17.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI18": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI18",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441431/fostiima/conclave/AI-Conclave-2026/AI18.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI19": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI19",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441447/fostiima/conclave/AI-Conclave-2026/AI19.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441509/fostiima/conclave/AI-Conclave-2026/AI2.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441534/fostiima/conclave/AI-Conclave-2026/AI3.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441550/fostiima/conclave/AI-Conclave-2026/AI4.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI5": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441571/fostiima/conclave/AI-Conclave-2026/AI5.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI6": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441578/fostiima/conclave/AI-Conclave-2026/AI6.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI7": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441587/fostiima/conclave/AI-Conclave-2026/AI7.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI8": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441591/fostiima/conclave/AI-Conclave-2026/AI8.jpg",
+        "width": 9504,
+        "height": 6336
+      },
+      "AI9": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/AI-Conclave-2026/AI9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441604/fostiima/conclave/AI-Conclave-2026/AI9.jpg",
+        "width": 9504,
+        "height": 6336
+      }
+    },
+    "aima": {
+      "aima1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/aima/aima1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441661/fostiima/conclave/aima/aima1.jpg",
+        "width": 4000,
+        "height": 6000
+      },
+      "aima2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/aima/aima2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441677/fostiima/conclave/aima/aima2.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "aima3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/aima/aima3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441692/fostiima/conclave/aima/aima3.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "aima4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/aima/aima4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441712/fostiima/conclave/aima/aima4.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "aima5": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/aima/aima5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441722/fostiima/conclave/aima/aima5.jpg",
+        "width": 4000,
+        "height": 6000
+      }
+    },
+    "budget": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/conclave/budget",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441723/fostiima/conclave/budget.jpg",
+      "width": 1920,
+      "height": 1080
+    },
+    "HR-round": {
+      "hr1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441607/fostiima/conclave/HR-round/hr1.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr10": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441610/fostiima/conclave/HR-round/hr10.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr11": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441612/fostiima/conclave/HR-round/hr11.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr12": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441615/fostiima/conclave/HR-round/hr12.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr13": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441619/fostiima/conclave/HR-round/hr13.jpg",
+        "width": 5713,
+        "height": 4000
+      },
+      "hr14": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441626/fostiima/conclave/HR-round/hr14.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr15": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441630/fostiima/conclave/HR-round/hr15.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr16": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441631/fostiima/conclave/HR-round/hr16.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr17": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr17",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441633/fostiima/conclave/HR-round/hr17.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441636/fostiima/conclave/HR-round/hr2.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441637/fostiima/conclave/HR-round/hr3.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441639/fostiima/conclave/HR-round/hr4.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr5": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441642/fostiima/conclave/HR-round/hr5.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr6": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441644/fostiima/conclave/HR-round/hr6.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr7": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441646/fostiima/conclave/HR-round/hr7.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr8": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441648/fostiima/conclave/HR-round/hr8.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "hr9": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/HR-round/hr9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441650/fostiima/conclave/HR-round/hr9.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    },
+    "margdarshak2": {
+      "Margdarshak2.0-1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441732/fostiima/conclave/margdarshak2/Margdarshak2.0-1.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-10": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441746/fostiima/conclave/margdarshak2/Margdarshak2.0-10.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-11": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441799/fostiima/conclave/margdarshak2/Margdarshak2.0-11.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-12": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441912/fostiima/conclave/margdarshak2/Margdarshak2.0-12.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-13": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441971/fostiima/conclave/margdarshak2/Margdarshak2.0-13.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442006/fostiima/conclave/margdarshak2/Margdarshak2.0-2.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442034/fostiima/conclave/margdarshak2/Margdarshak2.0-3.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442112/fostiima/conclave/margdarshak2/Margdarshak2.0-4.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-5": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442200/fostiima/conclave/margdarshak2/Margdarshak2.0-5.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-6": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442225/fostiima/conclave/margdarshak2/Margdarshak2.0-6.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-7": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442250/fostiima/conclave/margdarshak2/Margdarshak2.0-7.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-8": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442290/fostiima/conclave/margdarshak2/Margdarshak2.0-8.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "Margdarshak2.0-9": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/Margdarshak2.0-9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442336/fostiima/conclave/margdarshak2/Margdarshak2.0-9.jpg",
+        "width": 4176,
+        "height": 2784
+      },
+      "s jaishankar": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak2/s jaishankar",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442338/fostiima/conclave/margdarshak2/s%20jaishankar.jpg",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "margdarshak3": {
+      "Margdarshak3.0-1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442363/fostiima/conclave/margdarshak3/Margdarshak3.0-1.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-10": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442433/fostiima/conclave/margdarshak3/Margdarshak3.0-10.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-11": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442461/fostiima/conclave/margdarshak3/Margdarshak3.0-11.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-12": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442477/fostiima/conclave/margdarshak3/Margdarshak3.0-12.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-13": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442494/fostiima/conclave/margdarshak3/Margdarshak3.0-13.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-14": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442511/fostiima/conclave/margdarshak3/Margdarshak3.0-14.jpg",
+        "width": 6000,
+        "height": 3368
+      },
+      "Margdarshak3.0-2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442544/fostiima/conclave/margdarshak3/Margdarshak3.0-2.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442578/fostiima/conclave/margdarshak3/Margdarshak3.0-3.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442603/fostiima/conclave/margdarshak3/Margdarshak3.0-4.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-5": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442647/fostiima/conclave/margdarshak3/Margdarshak3.0-5.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-6": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442688/fostiima/conclave/margdarshak3/Margdarshak3.0-6.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-7": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442715/fostiima/conclave/margdarshak3/Margdarshak3.0-7.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-8": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442734/fostiima/conclave/margdarshak3/Margdarshak3.0-8.jpg",
+        "width": 5568,
+        "height": 3712
+      },
+      "Margdarshak3.0-9": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/margdarshak3/Margdarshak3.0-9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442762/fostiima/conclave/margdarshak3/Margdarshak3.0-9.jpg",
+        "width": 5568,
+        "height": 3712
+      }
+    },
+    "s jaishankar": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/conclave/s jaishankar",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442766/fostiima/conclave/s%20jaishankar.jpg",
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "final-placement": {
+    "student1": {
+      "std1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442779/fostiima/final-placement/student1/std1.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std101": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std101",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442780/fostiima/final-placement/student1/std101.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std11": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442782/fostiima/final-placement/student1/std11.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std12": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442784/fostiima/final-placement/student1/std12.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std13": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442785/fostiima/final-placement/student1/std13.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std14": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442786/fostiima/final-placement/student1/std14.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std15": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442787/fostiima/final-placement/student1/std15.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std16": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442788/fostiima/final-placement/student1/std16.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std17": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std17",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442789/fostiima/final-placement/student1/std17.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std18": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std18",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442791/fostiima/final-placement/student1/std18.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std19": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std19",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442792/fostiima/final-placement/student1/std19.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442794/fostiima/final-placement/student1/std2.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std20": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std20",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442796/fostiima/final-placement/student1/std20.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std21": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std21",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442798/fostiima/final-placement/student1/std21.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std22": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std22",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442799/fostiima/final-placement/student1/std22.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std23": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std23",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442800/fostiima/final-placement/student1/std23.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std24": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std24",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442802/fostiima/final-placement/student1/std24.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std25": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std25",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442803/fostiima/final-placement/student1/std25.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std26": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std26",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442804/fostiima/final-placement/student1/std26.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std27": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std27",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442806/fostiima/final-placement/student1/std27.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std28": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std28",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442807/fostiima/final-placement/student1/std28.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std29": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std29",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442808/fostiima/final-placement/student1/std29.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442810/fostiima/final-placement/student1/std3.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std30": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std30",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442811/fostiima/final-placement/student1/std30.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std31": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std31",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442812/fostiima/final-placement/student1/std31.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std32": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std32",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442814/fostiima/final-placement/student1/std32.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std34": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std34",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442817/fostiima/final-placement/student1/std34.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std35": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std35",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442818/fostiima/final-placement/student1/std35.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std36": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std36",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442821/fostiima/final-placement/student1/std36.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std37": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std37",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442823/fostiima/final-placement/student1/std37.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std38": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std38",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442824/fostiima/final-placement/student1/std38.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std39": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std39",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442825/fostiima/final-placement/student1/std39.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442826/fostiima/final-placement/student1/std4.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std40": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std40",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442827/fostiima/final-placement/student1/std40.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std41": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std41",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442830/fostiima/final-placement/student1/std41.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std42": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std42",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442835/fostiima/final-placement/student1/std42.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std45": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std45",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442836/fostiima/final-placement/student1/std45.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std46": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std46",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442838/fostiima/final-placement/student1/std46.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std47": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std47",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442839/fostiima/final-placement/student1/std47.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std48": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std48",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442840/fostiima/final-placement/student1/std48.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std49": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std49",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442841/fostiima/final-placement/student1/std49.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442842/fostiima/final-placement/student1/std5.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std50": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std50",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442843/fostiima/final-placement/student1/std50.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std51": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std51",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442847/fostiima/final-placement/student1/std51.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std52": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std52",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442849/fostiima/final-placement/student1/std52.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442850/fostiima/final-placement/student1/std6.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std7": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442853/fostiima/final-placement/student1/std7.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std8": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442854/fostiima/final-placement/student1/std8.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std9": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student1/std9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442856/fostiima/final-placement/student1/std9.webp",
+        "width": 281,
+        "height": 281
+      }
+    },
+    "student2": {
+      "std1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442858/fostiima/final-placement/student2/std1.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std10": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442859/fostiima/final-placement/student2/std10.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std11": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442863/fostiima/final-placement/student2/std11.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std12": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442866/fostiima/final-placement/student2/std12.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std13": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442868/fostiima/final-placement/student2/std13.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std14": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442869/fostiima/final-placement/student2/std14.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std15": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442871/fostiima/final-placement/student2/std15.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std16": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442872/fostiima/final-placement/student2/std16.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std17": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std17",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442874/fostiima/final-placement/student2/std17.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std18": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std18",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442875/fostiima/final-placement/student2/std18.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std19": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std19",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442877/fostiima/final-placement/student2/std19.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442880/fostiima/final-placement/student2/std2.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std20": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std20",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442881/fostiima/final-placement/student2/std20.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std21": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std21",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442884/fostiima/final-placement/student2/std21.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std22": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std22",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442886/fostiima/final-placement/student2/std22.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std23": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std23",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442887/fostiima/final-placement/student2/std23.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std24": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std24",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442888/fostiima/final-placement/student2/std24.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std25": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std25",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442889/fostiima/final-placement/student2/std25.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std26": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std26",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442892/fostiima/final-placement/student2/std26.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std27": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std27",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442893/fostiima/final-placement/student2/std27.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std28": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std28",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442895/fostiima/final-placement/student2/std28.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std29": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std29",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442896/fostiima/final-placement/student2/std29.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442897/fostiima/final-placement/student2/std3.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std30": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std30",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442899/fostiima/final-placement/student2/std30.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std31": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std31",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442900/fostiima/final-placement/student2/std31.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std32": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std32",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442901/fostiima/final-placement/student2/std32.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std33": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std33",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442902/fostiima/final-placement/student2/std33.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std34": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std34",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442904/fostiima/final-placement/student2/std34.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std35": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std35",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442905/fostiima/final-placement/student2/std35.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std36": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std36",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442907/fostiima/final-placement/student2/std36.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std37": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std37",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442908/fostiima/final-placement/student2/std37.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std38": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std38",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442909/fostiima/final-placement/student2/std38.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std39": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std39",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442911/fostiima/final-placement/student2/std39.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442913/fostiima/final-placement/student2/std4.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std40": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std40",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442914/fostiima/final-placement/student2/std40.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std41": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std41",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442915/fostiima/final-placement/student2/std41.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std42": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std42",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442917/fostiima/final-placement/student2/std42.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std43": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std43",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442918/fostiima/final-placement/student2/std43.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std44": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std44",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442919/fostiima/final-placement/student2/std44.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std45": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std45",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442920/fostiima/final-placement/student2/std45.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std46": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std46",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442921/fostiima/final-placement/student2/std46.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std47": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std47",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442922/fostiima/final-placement/student2/std47.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std48": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std48",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442924/fostiima/final-placement/student2/std48.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std49": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std49",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442925/fostiima/final-placement/student2/std49.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442926/fostiima/final-placement/student2/std5.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std50": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std50",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442928/fostiima/final-placement/student2/std50.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442929/fostiima/final-placement/student2/std6.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std7": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442930/fostiima/final-placement/student2/std7.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std8": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442931/fostiima/final-placement/student2/std8.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std9": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student2/std9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442932/fostiima/final-placement/student2/std9.webp",
+        "width": 281,
+        "height": 281
+      }
+    },
+    "student3": {
+      "std1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442934/fostiima/final-placement/student3/std1.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std10": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442935/fostiima/final-placement/student3/std10.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std11": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442936/fostiima/final-placement/student3/std11.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std12": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442938/fostiima/final-placement/student3/std12.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std13": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442939/fostiima/final-placement/student3/std13.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std14": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442940/fostiima/final-placement/student3/std14.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std15": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442941/fostiima/final-placement/student3/std15.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std16": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442942/fostiima/final-placement/student3/std16.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std17": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std17",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442943/fostiima/final-placement/student3/std17.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std18": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std18",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442945/fostiima/final-placement/student3/std18.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std19": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std19",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442947/fostiima/final-placement/student3/std19.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442948/fostiima/final-placement/student3/std2.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std20": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std20",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442949/fostiima/final-placement/student3/std20.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std21": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std21",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442951/fostiima/final-placement/student3/std21.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std22": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std22",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442953/fostiima/final-placement/student3/std22.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std23": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std23",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442954/fostiima/final-placement/student3/std23.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std24": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std24",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442955/fostiima/final-placement/student3/std24.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std25": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std25",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442957/fostiima/final-placement/student3/std25.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std26": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std26",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442958/fostiima/final-placement/student3/std26.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std27": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std27",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442959/fostiima/final-placement/student3/std27.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std28": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std28",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442960/fostiima/final-placement/student3/std28.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std29": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std29",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442961/fostiima/final-placement/student3/std29.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442961/fostiima/final-placement/student3/std3.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std30": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std30",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442962/fostiima/final-placement/student3/std30.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std31": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std31",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442963/fostiima/final-placement/student3/std31.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std32": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std32",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442965/fostiima/final-placement/student3/std32.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std33": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std33",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442967/fostiima/final-placement/student3/std33.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std34": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std34",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442967/fostiima/final-placement/student3/std34.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std35": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std35",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442968/fostiima/final-placement/student3/std35.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std36": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std36",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442969/fostiima/final-placement/student3/std36.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std37": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std37",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442970/fostiima/final-placement/student3/std37.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std38": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std38",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442972/fostiima/final-placement/student3/std38.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std39": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std39",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442972/fostiima/final-placement/student3/std39.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442975/fostiima/final-placement/student3/std4.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std40": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std40",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442976/fostiima/final-placement/student3/std40.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std41": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std41",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442978/fostiima/final-placement/student3/std41.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std42": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std42",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442979/fostiima/final-placement/student3/std42.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std43": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std43",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442982/fostiima/final-placement/student3/std43.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std44": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std44",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442983/fostiima/final-placement/student3/std44.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std45": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std45",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442985/fostiima/final-placement/student3/std45.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std46": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std46",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442986/fostiima/final-placement/student3/std46.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std47": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std47",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442989/fostiima/final-placement/student3/std47.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std48": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std48",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442990/fostiima/final-placement/student3/std48.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std49": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std49",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442991/fostiima/final-placement/student3/std49.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442992/fostiima/final-placement/student3/std5.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std50": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std50",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442993/fostiima/final-placement/student3/std50.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442995/fostiima/final-placement/student3/std6.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std7": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442996/fostiima/final-placement/student3/std7.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std8": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790442998/fostiima/final-placement/student3/std8.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std9": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student3/std9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443001/fostiima/final-placement/student3/std9.webp",
+        "width": 281,
+        "height": 281
+      }
+    },
+    "student4": {
+      "std1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student4/std1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443002/fostiima/final-placement/student4/std1.webp",
+        "width": 281,
+        "height": 281
+      },
+      "std2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/final-placement/student4/std2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443004/fostiima/final-placement/student4/std2.webp",
+        "width": 281,
+        "height": 281
+      }
+    }
+  },
+  "home": {
+    "campus": {
+      "campus1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/campus/campus1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443012/fostiima/home/campus/campus1.jpg",
+        "width": 1024,
+        "height": 572
+      },
+      "capmus2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/campus/capmus2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443017/fostiima/home/campus/capmus2.jpg",
+        "width": 1024,
+        "height": 572
+      }
+    },
+    "campuslife": {
+      "campuslife1": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/campuslife/campuslife1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790440784/fostiima/home/campuslife/campuslife1.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "campuslife2": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/campuslife/campuslife2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443057/fostiima/home/campuslife/campuslife2.png",
+        "width": 1536,
+        "height": 1024
+      },
+      "campuslife3": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/campuslife/campuslife3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443061/fostiima/home/campuslife/campuslife3.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "campuslife4": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/campuslife/campuslife4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443066/fostiima/home/campuslife/campuslife4.png",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    "chairman-message": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/home/chairman-message",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443067/fostiima/home/chairman-message.webp",
+      "width": 281,
+      "height": 281
+    },
+    "company-logo": {
+      "company-logo1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443070/fostiima/home/company-logo/company-logo1.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo10": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443071/fostiima/home/company-logo/company-logo10.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo11": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443072/fostiima/home/company-logo/company-logo11.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo12": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443073/fostiima/home/company-logo/company-logo12.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo13": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443076/fostiima/home/company-logo/company-logo13.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo14": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443077/fostiima/home/company-logo/company-logo14.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo15": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443078/fostiima/home/company-logo/company-logo15.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo16": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443079/fostiima/home/company-logo/company-logo16.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo17": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo17",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443081/fostiima/home/company-logo/company-logo17.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo18": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo18",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443083/fostiima/home/company-logo/company-logo18.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443084/fostiima/home/company-logo/company-logo2.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443085/fostiima/home/company-logo/company-logo3.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443086/fostiima/home/company-logo/company-logo4.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443087/fostiima/home/company-logo/company-logo5.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443088/fostiima/home/company-logo/company-logo6.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo7": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443089/fostiima/home/company-logo/company-logo7.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo8": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443090/fostiima/home/company-logo/company-logo8.webp",
+        "width": 180,
+        "height": 101
+      },
+      "company-logo9": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/company-logo/company-logo9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443091/fostiima/home/company-logo/company-logo9.webp",
+        "width": 180,
+        "height": 101
+      }
+    },
+    "faculty": {
+      "faculty1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443092/fostiima/home/faculty/faculty1.jpg",
+        "width": 1024,
+        "height": 1024
+      },
+      "faculty10": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443093/fostiima/home/faculty/faculty10.jpg",
+        "width": 1536,
+        "height": 1024
+      },
+      "faculty11": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443094/fostiima/home/faculty/faculty11.jpg",
+        "width": 1536,
+        "height": 1024
+      },
+      "faculty12": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443095/fostiima/home/faculty/faculty12.jpg",
+        "width": 1536,
+        "height": 1024
+      },
+      "faculty14": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443096/fostiima/home/faculty/faculty14.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty15": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443097/fostiima/home/faculty/faculty15.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty16": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443099/fostiima/home/faculty/faculty16.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty17": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty17",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443100/fostiima/home/faculty/faculty17.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty18": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty18",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443101/fostiima/home/faculty/faculty18.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty19": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty19",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443101/fostiima/home/faculty/faculty19.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443102/fostiima/home/faculty/faculty2.jpg",
+        "width": 1024,
+        "height": 1024
+      },
+      "faculty20": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty20",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443103/fostiima/home/faculty/faculty20.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty21": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty21",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443105/fostiima/home/faculty/faculty21.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty22": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty22",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443106/fostiima/home/faculty/faculty22.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty23": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty23",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443107/fostiima/home/faculty/faculty23.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty24": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty24",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443109/fostiima/home/faculty/faculty24.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty25": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty25",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443110/fostiima/home/faculty/faculty25.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty26": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty26",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443111/fostiima/home/faculty/faculty26.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty27": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty27",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443112/fostiima/home/faculty/faculty27.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty28": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty28",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443113/fostiima/home/faculty/faculty28.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty29": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty29",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443114/fostiima/home/faculty/faculty29.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443115/fostiima/home/faculty/faculty3.jpg",
+        "width": 1024,
+        "height": 1024
+      },
+      "faculty30": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty30",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443116/fostiima/home/faculty/faculty30.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty31": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty31",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443117/fostiima/home/faculty/faculty31.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty32": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty32",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443118/fostiima/home/faculty/faculty32.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty33": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty33",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443119/fostiima/home/faculty/faculty33.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty34": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty34",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443120/fostiima/home/faculty/faculty34.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty35": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty35",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443122/fostiima/home/faculty/faculty35.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty36": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty36",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443123/fostiima/home/faculty/faculty36.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty37": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty37",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443124/fostiima/home/faculty/faculty37.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty38": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty38",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443125/fostiima/home/faculty/faculty38.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty39": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty39",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443126/fostiima/home/faculty/faculty39.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443127/fostiima/home/faculty/faculty4.jpg",
+        "width": 1024,
+        "height": 1024
+      },
+      "faculty40": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty40",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443128/fostiima/home/faculty/faculty40.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty41": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty41",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443129/fostiima/home/faculty/faculty41.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty42": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty42",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443130/fostiima/home/faculty/faculty42.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty43": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/faculty/faculty43",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443131/fostiima/home/faculty/faculty43.webp",
+        "width": 281,
+        "height": 281
+      },
+      "faculty5": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443132/fostiima/home/faculty/faculty5.jpg",
+        "width": 1024,
+        "height": 1024
+      },
+      "faculty6": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443133/fostiima/home/faculty/faculty6.jpg",
+        "width": 1024,
+        "height": 1024
+      },
+      "faculty7": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443134/fostiima/home/faculty/faculty7.jpg",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty8": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443135/fostiima/home/faculty/faculty8.jpg",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty9": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443136/fostiima/home/faculty/faculty9.jpg",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    "ie3ee7qprrw34szjtvtx": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/home/ie3ee7qprrw34szjtvtx",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790323623/fostiima/home/ie3ee7qprrw34szjtvtx.png",
+      "width": 1254,
+      "height": 1254
+    },
+    "media-presence": {
+      "media-presence1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/media-presence/media-presence1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443137/fostiima/home/media-presence/media-presence1.webp",
+        "width": 180,
+        "height": 120
+      },
+      "media-presence2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/media-presence/media-presence2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443138/fostiima/home/media-presence/media-presence2.webp",
+        "width": 180,
+        "height": 120
+      },
+      "media-presence3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/media-presence/media-presence3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443139/fostiima/home/media-presence/media-presence3.webp",
+        "width": 180,
+        "height": 120
+      },
+      "media-presence4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/media-presence/media-presence4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443141/fostiima/home/media-presence/media-presence4.webp",
+        "width": 180,
+        "height": 120
+      },
+      "media-presence5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/media-presence/media-presence5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443142/fostiima/home/media-presence/media-presence5.webp",
+        "width": 180,
+        "height": 120
+      },
+      "media-presence6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/home/media-presence/media-presence6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443143/fostiima/home/media-presence/media-presence6.webp",
+        "width": 180,
+        "height": 120
+      }
+    },
+    "programe": {
+      "programme1": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/programe/programme1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443145/fostiima/home/programe/programme1.png",
+        "width": 1254,
+        "height": 1254
+      }
+    }
+  },
+  "life-at-fostiima": {
+    "life-at-fostiima1": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/life-at-fostiima/life-at-fostiima1",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443148/fostiima/life-at-fostiima/life-at-fostiima1.png",
+      "width": 1254,
+      "height": 1254
+    },
+    "life-at-fostiima2": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/life-at-fostiima/life-at-fostiima2",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443151/fostiima/life-at-fostiima/life-at-fostiima2.png",
+      "width": 1254,
+      "height": 1254
+    },
+    "life-at-fostiima3": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/life-at-fostiima/life-at-fostiima3",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443154/fostiima/life-at-fostiima/life-at-fostiima3.png",
+      "width": 1254,
+      "height": 1254
+    },
+    "life-at-fostiima4": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/life-at-fostiima/life-at-fostiima4",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443157/fostiima/life-at-fostiima/life-at-fostiima4.png",
+      "width": 1254,
+      "height": 1254
+    },
+    "life-at-fostiima5": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/life-at-fostiima/life-at-fostiima5",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443158/fostiima/life-at-fostiima/life-at-fostiima5.webp",
+      "width": 1600,
+      "height": 543
+    },
+    "life-at-fostiima6": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/life-at-fostiima/life-at-fostiima6",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443161/fostiima/life-at-fostiima/life-at-fostiima6.png",
+      "width": 1254,
+      "height": 1254
+    },
+    "life-at-fostiima7": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/life-at-fostiima/life-at-fostiima7",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443165/fostiima/life-at-fostiima/life-at-fostiima7.png",
+      "width": 1254,
+      "height": 1254
+    },
+    "life-at-fostiima8": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/life-at-fostiima/life-at-fostiima8",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443169/fostiima/life-at-fostiima/life-at-fostiima8.png",
+      "width": 1254,
+      "height": 1254
+    },
+    "life-at-fostiima9": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/life-at-fostiima/life-at-fostiima9",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443173/fostiima/life-at-fostiima/life-at-fostiima9.png",
+      "width": 1254,
+      "height": 1254
+    }
+  },
+  "logo": {
+    "type": "image",
+    "format": "jpg",
+    "publicId": "fostiima/logo",
+    "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443174/fostiima/logo.jpg",
+    "width": 418,
+    "height": 92
+  },
+  "margdarshak": {
+    "margdarshak1": {
+      "margdarshak1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak1/margdarshak1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443175/fostiima/margdarshak/margdarshak1/margdarshak1.webp",
+        "width": 1080,
+        "height": 721
+      },
+      "margdarshak2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak1/margdarshak2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443176/fostiima/margdarshak/margdarshak1/margdarshak2.webp",
+        "width": 1080,
+        "height": 721
+      },
+      "margdarshak3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak1/margdarshak3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443177/fostiima/margdarshak/margdarshak1/margdarshak3.webp",
+        "width": 1080,
+        "height": 721
+      },
+      "margdarshak4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak1/margdarshak4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443178/fostiima/margdarshak/margdarshak1/margdarshak4.webp",
+        "width": 1080,
+        "height": 721
+      },
+      "margdarshak5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak1/margdarshak5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443180/fostiima/margdarshak/margdarshak1/margdarshak5.webp",
+        "width": 1080,
+        "height": 721
+      },
+      "margdarshak6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak1/margdarshak6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443181/fostiima/margdarshak/margdarshak1/margdarshak6.webp",
+        "width": 1080,
+        "height": 721
+      },
+      "margdarshak7": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak1/margdarshak7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443182/fostiima/margdarshak/margdarshak1/margdarshak7.webp",
+        "width": 1080,
+        "height": 721
+      },
+      "margdarshak8": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak1/margdarshak8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443183/fostiima/margdarshak/margdarshak1/margdarshak8.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak9": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak1/margdarshak9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443184/fostiima/margdarshak/margdarshak1/margdarshak9.webp",
+        "width": 1080,
+        "height": 720
+      }
+    },
+    "margdarshak2": {
+      "margdarshak1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443186/fostiima/margdarshak/margdarshak2/margdarshak1.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak10": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443187/fostiima/margdarshak/margdarshak2/margdarshak10.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak11": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443188/fostiima/margdarshak/margdarshak2/margdarshak11.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak12": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443190/fostiima/margdarshak/margdarshak2/margdarshak12.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak13": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443191/fostiima/margdarshak/margdarshak2/margdarshak13.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak14": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443192/fostiima/margdarshak/margdarshak2/margdarshak14.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak15": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443193/fostiima/margdarshak/margdarshak2/margdarshak15.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak16": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443194/fostiima/margdarshak/margdarshak2/margdarshak16.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak17": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak17",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443195/fostiima/margdarshak/margdarshak2/margdarshak17.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak18": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak18",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443196/fostiima/margdarshak/margdarshak2/margdarshak18.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak19": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak19",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443197/fostiima/margdarshak/margdarshak2/margdarshak19.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443198/fostiima/margdarshak/margdarshak2/margdarshak2.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak20": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak20",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443199/fostiima/margdarshak/margdarshak2/margdarshak20.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak21": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak21",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443200/fostiima/margdarshak/margdarshak2/margdarshak21.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443201/fostiima/margdarshak/margdarshak2/margdarshak3.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443203/fostiima/margdarshak/margdarshak2/margdarshak4.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443204/fostiima/margdarshak/margdarshak2/margdarshak5.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443206/fostiima/margdarshak/margdarshak2/margdarshak6.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak7": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443207/fostiima/margdarshak/margdarshak2/margdarshak7.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak8": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443208/fostiima/margdarshak/margdarshak2/margdarshak8.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak9": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak2/margdarshak9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443209/fostiima/margdarshak/margdarshak2/margdarshak9.webp",
+        "width": 1080,
+        "height": 720
+      }
+    },
+    "margdarshak3": {
+      "margdarshak1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443211/fostiima/margdarshak/margdarshak3/margdarshak1.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak10": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443212/fostiima/margdarshak/margdarshak3/margdarshak10.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak11": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443213/fostiima/margdarshak/margdarshak3/margdarshak11.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak12": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443214/fostiima/margdarshak/margdarshak3/margdarshak12.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak13": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443215/fostiima/margdarshak/margdarshak3/margdarshak13.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak14": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443216/fostiima/margdarshak/margdarshak3/margdarshak14.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak15": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443217/fostiima/margdarshak/margdarshak3/margdarshak15.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak16": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443219/fostiima/margdarshak/margdarshak3/margdarshak16.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak17": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak17",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443220/fostiima/margdarshak/margdarshak3/margdarshak17.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak18": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak18",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443221/fostiima/margdarshak/margdarshak3/margdarshak18.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak19": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak19",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443223/fostiima/margdarshak/margdarshak3/margdarshak19.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443225/fostiima/margdarshak/margdarshak3/margdarshak2.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak20": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak20",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443226/fostiima/margdarshak/margdarshak3/margdarshak20.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak21": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak21",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443227/fostiima/margdarshak/margdarshak3/margdarshak21.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak22": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak22",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443228/fostiima/margdarshak/margdarshak3/margdarshak22.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak23": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak23",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443230/fostiima/margdarshak/margdarshak3/margdarshak23.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak24": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak24",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443231/fostiima/margdarshak/margdarshak3/margdarshak24.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak25": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak25",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443233/fostiima/margdarshak/margdarshak3/margdarshak25.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak26": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak26",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443234/fostiima/margdarshak/margdarshak3/margdarshak26.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak27": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak27",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443235/fostiima/margdarshak/margdarshak3/margdarshak27.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak28": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak28",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443236/fostiima/margdarshak/margdarshak3/margdarshak28.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak29": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak29",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443237/fostiima/margdarshak/margdarshak3/margdarshak29.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443238/fostiima/margdarshak/margdarshak3/margdarshak3.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443240/fostiima/margdarshak/margdarshak3/margdarshak4.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443241/fostiima/margdarshak/margdarshak3/margdarshak5.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443242/fostiima/margdarshak/margdarshak3/margdarshak6.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak7": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443243/fostiima/margdarshak/margdarshak3/margdarshak7.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak8": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443244/fostiima/margdarshak/margdarshak3/margdarshak8.webp",
+        "width": 1080,
+        "height": 720
+      },
+      "margdarshak9": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak3/margdarshak9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443245/fostiima/margdarshak/margdarshak3/margdarshak9.webp",
+        "width": 1080,
+        "height": 720
+      }
+    },
+    "margdarshak4": {
+      "margdarshak1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak4/margdarshak1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443246/fostiima/margdarshak/margdarshak4/margdarshak1.webp",
+        "width": 1600,
+        "height": 549
+      },
+      "margdarshak2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak4/margdarshak2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443248/fostiima/margdarshak/margdarshak4/margdarshak2.webp",
+        "width": 904,
+        "height": 276
+      },
+      "margdarshak3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak4/margdarshak3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443249/fostiima/margdarshak/margdarshak4/margdarshak3.webp",
+        "width": 1600,
+        "height": 933
+      },
+      "margdarshak4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak4/margdarshak4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443250/fostiima/margdarshak/margdarshak4/margdarshak4.webp",
+        "width": 1600,
+        "height": 597
+      },
+      "margdarshak5": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/margdarshak/margdarshak4/margdarshak5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443251/fostiima/margdarshak/margdarshak4/margdarshak5.webp",
+        "width": 1600,
+        "height": 574
+      }
+    }
+  },
+  "programs": {
+    "business-analytics": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/programs/business-analytics",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443254/fostiima/programs/business-analytics.png",
+      "width": 1916,
+      "height": 821
+    },
+    "Finance": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/programs/Finance",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443253/fostiima/programs/Finance.png",
+      "width": 1916,
+      "height": 821
+    },
+    "hr": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/programs/hr",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443256/fostiima/programs/hr.png",
+      "width": 1672,
+      "height": 941
+    },
+    "marketing": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/programs/marketing",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443258/fostiima/programs/marketing.png",
+      "width": 1916,
+      "height": 821
+    },
+    "pgdm": {
+      "type": "image",
+      "format": "png",
+      "publicId": "fostiima/programs/pgdm",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443259/fostiima/programs/pgdm.png",
+      "width": 1916,
+      "height": 821
+    }
+  },
+  "uploads": {
+    "home": {
+      "53fa813b-cd9e-4311-a382-31b904e2502d": {
+        "type": "video",
+        "format": "mov",
+        "publicId": "fostiima/uploads/home/53fa813b-cd9e-4311-a382-31b904e2502d",
+        "url": "https://res.cloudinary.com/mhchxtpl/video/upload/v1790444447/fostiima/uploads/home/53fa813b-cd9e-4311-a382-31b904e2502d.mov",
+        "width": 1920,
+        "height": 1080
+      }
+    }
+  }
+}

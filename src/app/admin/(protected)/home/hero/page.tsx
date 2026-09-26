@@ -9,8 +9,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import MediaUploader from "@/components/admin/MediaUploader";
+import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const DEFAULT_VIDEO = "/videos/fostiima-hero.mp4";
+const DEFAULT_VIDEO = cloudinaryAsset("/videos/fostiima-hero.mp4");
 
 export default function HomeHeroAdminPage() {
   const [videoUrl, setVideoUrl] =

@@ -1,24 +1,44 @@
-const highlights = [
-  {
-    title: "Life at FOSTIIMA",
-    description:
-      "A vibrant campus life that nurtures leadership, creativity and lifelong connections.",
-    image:
-      "/home/campus/campus1.jpeg",
-    href: "/life-at-fostiima",
-    eyebrow: "Campus Life",
-  },
-  {
-    title: "Placements That Open Doors",
-    description:
-      "Strong corporate connect ensuring bright careers and meaningful career opportunities.",
-    image:
-      "/home/campus/capmus2.jpeg",
-    href: "/placement",
-    eyebrow: "Career Opportunities",
-  },
-];
+import { cloudinaryAsset } from "@/lib/cloudinary";
 
+const highlights = [
+
+  {
+
+    title: "Life at FOSTIIMA",
+
+    description:
+
+      "A vibrant campus life that nurtures leadership, creativity and lifelong connections.",
+
+    image:
+
+      cloudinaryAsset("/home/campus/campus1.jpeg"),
+
+    href: "/life-at-fostiima",
+
+    eyebrow: "Campus Life",
+
+  },
+
+  {
+
+    title: "Placements That Open Doors",
+
+    description:
+
+      "Strong corporate connect ensuring bright careers and meaningful career opportunities.",
+
+    image:
+
+      cloudinaryAsset("/home/campus/capmus2.jpeg"),
+
+    href: "/placement",
+
+    eyebrow: "Career Opportunities",
+
+  },
+
+];
 export default function CampusHighlights() {
   return (
     <section className="w-full overflow-hidden bg-white py-14 sm:py-16 lg:py-20">

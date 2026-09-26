@@ -1,3 +1,4 @@
+import { cloudinaryAsset } from "@/lib/cloudinary";
 import Image from "next/image";
 
 export default function LeadershipMessage() {
@@ -10,7 +11,7 @@ export default function LeadershipMessage() {
             {/* Chairman Image */}
             <div className="relative h-[250px] overflow-hidden sm:h-[300px] lg:h-[320px]">
               <Image
-                src="/home/chairman-message.webp"
+              src={cloudinaryAsset("/home/chairman-message.webp")}
                 alt="FOSTIIMA Business School Leadership"
                 fill
                 className="object-cover object-top"
