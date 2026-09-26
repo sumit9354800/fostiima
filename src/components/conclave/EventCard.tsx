@@ -1,5 +1,6 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
 import type { ConclaveEvent } from "@/data/conclave";
+import Link from "next/link";
 
 type EventCardProps = {
   event: ConclaveEvent;
@@ -7,7 +8,7 @@ type EventCardProps = {
 
 export default function EventCard({ event }: EventCardProps) {
   return (
-    <a
+    <Link
       href={event.href}
       className="group block h-full"
     >
@@ -62,6 +63,6 @@ export default function EventCard({ event }: EventCardProps) {
         {/* Hover decoration */}
         <div className="pointer-events-none absolute -bottom-12 -right-12 h-28 w-28 rounded-full bg-[#dbeafe]/60 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
       </article>
-    </a>
+    </Link>
   );
 }

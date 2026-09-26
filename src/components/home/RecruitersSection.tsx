@@ -74,14 +74,6 @@ const recruiterLogos = [
     src: "/home/company-logo/company-logo18.webp",
     alt: "Recruiter",
   },
-  {
-    src: "/home/company-logo/company-logo19.webp",
-    alt: "Recruiter",
-  },
-  {
-    src: "/home/company-logo/company-logo20.webp",
-    alt: "Recruiter",
-  },
 ];
 
 const firstRow = recruiterLogos.slice(0, 9);

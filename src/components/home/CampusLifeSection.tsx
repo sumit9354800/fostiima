@@ -12,36 +12,14 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const campusLifeItems = [
-  {
-    title: "Student Community",
-    description:
-      "Build meaningful connections, collaborate with peers and create lifelong friendships beyond the classroom.",
-    icon: Users,
-    image: "/home/campuslife/campuslife1.png",
-  },
-  {
-    title: "Intellectual Life",
-    description:
-      "Engage in discussions, debates, workshops and activities that encourage curiosity and new perspectives.",
-    icon: BookOpen,
-    image: "/home/campuslife/campuslife2.png",
-  },
-  {
-    title: "Sports & Recreation",
-    description:
-      "Balance academic life with sports, recreation and activities that encourage teamwork and sportsmanship.",
-    icon: Dumbbell,
-    image: "/home/campuslife/campuslife3.png",
-  },
-  {
-    title: "Events & Experiences",
-    description:
-      "Experience cultural activities, celebrations, industry interactions and memorable campus experiences.",
-    icon: Landmark,
-    image: "/home/campuslife/campuslife4.png",
-  },
-];
+import { campusLifeItems } from "@/data/campus-life";
+
+const iconMap = {
+  "student-community": Users,
+  "intellectual-life": BookOpen,
+  "sports-recreation": Dumbbell,
+  "events-experiences": Landmark,
+};
 
 export default function CampusLifeSection() {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -63,6 +41,7 @@ export default function CampusLifeSection() {
     <section className="relative overflow-hidden bg-white py-14 sm:py-16">
       {/* Decorative background */}
       <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#dbeafe]/50 blur-3xl" />
+
       <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-[#fee2e2]/50 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -86,7 +65,7 @@ export default function CampusLifeSection() {
             </p>
           </div>
 
-          {/* Arrows ONLY when cards > 4 */}
+          {/* Arrows */}
           {hasCarousel && (
             <div className="flex shrink-0 items-center gap-2">
               <button
@@ -125,12 +104,12 @@ export default function CampusLifeSection() {
           "
         >
           {campusLifeItems.map((item) => {
-            const Icon = item.icon;
+            const Icon = iconMap[item.slug as keyof typeof iconMap];
 
             return (
               <Link
-                key={item.title}
-                href="/alumni"
+                key={item.slug}
+                href={`/campus-life/${item.slug}`}
                 className="
                   group
                   relative
@@ -147,9 +126,7 @@ export default function CampusLifeSection() {
                   duration-300
                   hover:-translate-y-1
                   hover:shadow-xl
-
                   sm:w-[calc(50%-10px)]
-
                   lg:w-[calc(25%-15px)]
                 "
               >

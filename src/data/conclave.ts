@@ -36,8 +36,8 @@ export type ConclaveEvent = {
 
 export const conclaveEvents: ConclaveEvent[] = [
   {
-    id: "mission-ai-sashakt-bharat",
-    slug: "mission-ai-sashakt-bharat",
+    id: "margdarshak-4",
+    slug: "margdarshak-4",
     title: "Margdarshak 4.0",
     day: "10",
     month: "JAN",
@@ -53,11 +53,10 @@ export const conclaveEvents: ConclaveEvent[] = [
       "https://www.youtube-nocookie.com/embed/uHBCJwwSiSc",
       "https://www.youtube-nocookie.com/embed/ZxXq0N5i060",
     ],
-    href: "/conclave-conference/mission-ai-sashakt-bharat",
+    href: "/conclave-conference/margdarshak-4",
     featured: true,
     status: "published",
   },
-
 
   {
     id: "fostiima-convocation-2026",
@@ -115,8 +114,6 @@ export const conclaveEvents: ConclaveEvent[] = [
     featured: true,
     status: "published",
   },
-
-
 
   {
     id: "mission-ai-sashakt-bharat",
@@ -295,7 +292,6 @@ export const conclaveEvents: ConclaveEvent[] = [
     featured: false,
     status: "published",
   },
-
 
   {
     id: "anil-somani-with-ashwini-vaishnaw",

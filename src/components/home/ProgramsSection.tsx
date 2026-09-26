@@ -34,7 +34,7 @@ const getProgramKey = (title: string) => {
       return "hr";
 
     case "PGDM (Business Analytics)":
-      return "business-analytics";
+      return "businessAnalytics";
 
     default:
       return "pgdm";

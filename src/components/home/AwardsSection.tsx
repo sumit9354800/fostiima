@@ -12,32 +12,35 @@ import {
 
 const awards = [
   {
+    title: "AICTE APPROVAL 2024-25",
+    description:
+      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2024-25",
+    icon: Award,
+    accent: "red",
+  },
+
+  {
+    title: "AICTE APPROVAL 2023-24",
+    description:
+      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2023-24",
+    icon: Star,
+    accent: "yellow",
+  },
+
+  {
+    title: "AICTE APPROVAL 2022-23",
+    description:
+      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2022-23",
+    icon: Star,
+    accent: "blue",
+  },
+
+  {
     title: "AICTE APPROVAL 2021-22",
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
     icon: ShieldCheck,
     accent: "blue",
-  },
-  {
-    title: "AICTE APPROVAL 2022-23",
-    description:
-      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
-    icon: Star,
-    accent: "blue",
-  },
-  {
-    title: "AICTE APPROVAL 2023-24",
-    description:
-      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
-    icon: Star,
-    accent: "yellow",
-  },
-  {
-    title: "AICTE APPROVAL 2024-25",
-    description:
-      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
-    icon: Award,
-    accent: "red",
   },
 ];
 

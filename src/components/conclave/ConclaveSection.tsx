@@ -7,10 +7,7 @@ import { getPublishedConclaveEvents } from "@/data/conclave";
 const HOMEPAGE_EVENT_LIMIT = 6;
 
 export default function ConclaveSection() {
-  const events = getPublishedConclaveEvents().slice(
-    0,
-    HOMEPAGE_EVENT_LIMIT,
-  );
+  const events = getPublishedConclaveEvents().slice(0, HOMEPAGE_EVENT_LIMIT);
 
   return (
     <section className="relative overflow-hidden bg-[#f8faff] py-14 sm:py-16">
@@ -28,8 +25,7 @@ export default function ConclaveSection() {
             </span>
 
             <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
-              Ideas That{" "}
-              <span className="text-[#c31e3b]">Shape Tomorrow</span>
+              Ideas That <span className="text-[#c31e3b]">Shape Tomorrow</span>
             </h2>
 
             <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">

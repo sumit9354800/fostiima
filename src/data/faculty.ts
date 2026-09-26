@@ -67,7 +67,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "rakesh-kumar",
     name: "Mr. Rakesh Kumar",
-    image: "/home/faculty/faculty9.webp",
+    image: "/home/faculty/faculty8.webp",
     qualification: "MBA - IIM-A, B.E. - IIT Roorkee",
     experience: "38 yrs",
     domain: "Supply Chain Management",
@@ -75,7 +75,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "shailaja-manocha",
     name: "Ms. Shailaja Manocha",
-    image: "/home/faculty/faculty10.webp",
+    image: "/home/faculty/faculty9.webp",
     qualification: "PGDBM (1988-1990) from IMT Ghaziabad",
     experience: "20 Years of Teaching Experience",
     domain: "",
@@ -83,7 +83,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "vikram-tyagi",
     name: "Dr. Vikram Tyagi",
-    image: "/home/faculty/faculty11.webp",
+    image: "/home/faculty/faculty10.webp",
     qualification:
       "PhD in Management, PGDM (IIM Ahmedabad), Bachelor of Science",
     experience: "40 years of industry and 20 years of teaching experience",
@@ -92,7 +92,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "gita-ms-agrawal",
     name: "Ms. Gita MS Agrawal",
-    image: "/home/faculty/faculty12.webp",
+    image: "/home/faculty/faculty11.webp",
     qualification: "MBA (IIM-A), BE",
     experience: "28 yrs",
     domain: "Advertising, Public Relations",
@@ -100,23 +100,23 @@ export const facultyData: Faculty[] = [
   {
     slug: "nadira-chaturvedi",
     name: "Ms. Nadira Chaturvedi",
-    image: "/home/faculty/faculty13.webp",
+    image: "/home/faculty/faculty12.webp",
     qualification: "MBA (IIM-A)",
     experience: "35 yrs",
     domain: "Auto Ancillary, Plastic Products, Fashion",
   },
-  {
-    slug: "arun-sahay",
-    name: "Mr. Arun Sahay",
-    image: "/home/faculty/faculty14.webp",
-    qualification: "B-Tech (Hons), IIT-Kharagpur",
-    experience: "36 yrs",
-    domain: "Consumer Durables",
-  },
+  // {
+  //   slug: "arun-sahay",
+  //   name: "Mr. Arun Sahay",
+  //   image: "/home/faculty/faculty13.webp",
+  //   qualification: "B-Tech (Hons), IIT-Kharagpur",
+  //   experience: "36 yrs",
+  //   domain: "Consumer Durables",
+  // },
   {
     slug: "sc-bansal",
     name: "Mr. SC Bansal",
-    image: "/home/faculty/faculty15.webp",
+    image: "/home/faculty/faculty14.webp",
     qualification: "M.Com (H) from Delhi University",
     experience: "49 years of experience",
     domain: "Teaching and Research",
@@ -124,7 +124,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "jayant-bose",
     name: "Mr. Jayant Bose",
-    image: "/home/faculty/faculty16.webp",
+    image: "/home/faculty/faculty15.webp",
     qualification: "MBA - IIMC",
     experience: "42+ yrs",
     domain: "Advertising, FMCG",
@@ -132,7 +132,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "vivek-kumar",
     name: "Mr. Vivek Kumar",
-    image: "/home/faculty/faculty17.webp",
+    image: "/home/faculty/faculty16.webp",
     qualification:
       "Bachelor of Engineering, 1979 in Electrical Engineering, University of Roorkee",
     experience: "18 yrs industry experience",
@@ -141,7 +141,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ritika-arora",
     name: "Dr. Ritika Arora",
-    image: "/home/faculty/faculty18.webp",
+    image: "/home/faculty/faculty17.webp",
     qualification:
       "B Tech (JNU, Delhi), Diploma in Advanced Computing (CDAC, Pune), Diploma in Management",
     experience: "",
@@ -150,7 +150,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ferzand",
     name: "Mr. Ferzand",
-    image: "/home/faculty/faculty19.webp",
+    image: "/home/faculty/faculty18.webp",
     qualification: "PGDM - IIM-A, B.Tech",
     experience: "9+ yrs",
     domain: "Analyst, Data Finance",
@@ -158,7 +158,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "brig-ajay-mehta",
     name: "Mr. Brig. Ajay Mehta",
-    image: "/home/faculty/faculty21.webp",
+    image: "/home/faculty/faculty19.webp",
     qualification: "Ph.D. (Management), Management Studies (MMS)",
     experience: "35 years in Indian Army and 13 years teaching experience",
     domain: "",
@@ -166,7 +166,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ajit-gupta",
     name: "Dr. Ajit Gupta",
-    image: "/home/faculty/faculty22.webp",
+    image: "/home/faculty/faculty21.webp",
     qualification:
       "Ph.D. from IIM Lucknow, MBA from Northeastern University, Boston, USA, PGDM from IIM Ahmedabad",
     experience: "",
@@ -175,7 +175,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ruchika-yadav",
     name: "Dr. Ruchika Yadav",
-    image: "/home/faculty/faculty23.webp",
+    image: "/home/faculty/faculty22.webp",
     qualification: "Ph.D + M.Phil + MBA + BBA",
     experience: "22 years 3 months",
     domain: "HR & Management",

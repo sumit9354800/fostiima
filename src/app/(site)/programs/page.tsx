@@ -1,3 +1,4 @@
+import { ArrowLeft, CalendarDays } from "lucide-react";
 import Link from "next/link";
 
 type ProgramData = {
@@ -5,6 +6,9 @@ type ProgramData = {
   category: string;
   duration: string;
   description: string;
+
+  // Optional hero background image
+  heroImage?: string;
 
   specialization?: {
     title: string;
@@ -24,7 +28,7 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A comprehensive two-year full-time management program designed to build strong business knowledge, analytical capabilities, leadership skills and industry readiness.",
-
+    heroImage: "/programs/pgdm.png",
     semesters: [
       {
         title: "Semester I",
@@ -112,6 +116,7 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program focused on developing expertise in marketing, customer understanding, brand management, digital marketing and strategic decision-making.",
+    heroImage: "/programs/marketing.png",
 
     specialization: {
       title: "Marketing Specialization",
@@ -138,7 +143,7 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program designed to develop financial management, analytical and strategic decision-making capabilities for modern business environments.",
-
+    heroImage: "/programs/Finance.png",
     specialization: {
       title: "Finance Specialization",
       subjects: [
@@ -160,6 +165,7 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program focused on human capital, leadership, employee relations, organizational development and modern HR practices.",
+    heroImage: "/programs/hr.png",
 
     specialization: {
       title: "HR - Specialization",
@@ -179,6 +185,28 @@ const programs: Record<string, ProgramData> = {
 
     semesters: [],
   },
+
+  businessAnalytics: {
+    title: "PGDM (Business Analytics)",
+    category: "AICTE Approved",
+    duration: "2 Year Full-Time Program",
+    description:
+      "A management program focused on developing business analytics, data-driven decision-making, analytical thinking and modern business management capabilities.",
+    heroImage: "/programs/business-analytics.png",
+
+    specialization: {
+      title: "International Business - Specialization",
+      subjects: [
+        "Foreign Trade and Policy",
+        "Exim Financing, Documentation and Forex Management",
+        "International Logistics Management",
+        "Perspective in International Business",
+        "Global Services and Supply Management",
+      ],
+    },
+
+    semesters: [],
+  },
 };
 
 export default async function ProgramsPage({
@@ -190,161 +218,98 @@ export default async function ProgramsPage({
 }) {
   const params = await searchParams;
 
-  const programKey = params.program?.toLowerCase() || "pgdm";
+  const programKey = params.program || "pgdm";
 
   const program = programs[programKey] || programs.pgdm;
 
   return (
     <main className="min-h-screen bg-white">
-
-      {/* =====================================================
-          HERO
-      ===================================================== */}
       <section
-        className="
-          relative
-          overflow-hidden
-          bg-[#061b3a]
-          px-4
-          py-20
-          sm:px-6
-          sm:py-24
-          lg:px-8
-          lg:py-28
-        "
+        className="relative overflow-hidden bg-[#061a3a]"
+        style={
+          program.heroImage
+            ? {
+                backgroundImage: `url("${program.heroImage}")`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }
+            : undefined
+        }
       >
-        {/* Subtle grid background */}
-        <div
-          className="
-            pointer-events-none
-            absolute
-            inset-0
-            opacity-[0.07]
-            [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)]
-            [background-size:52px_52px]
-          "
-        />
+        {/* Dark overlay — only when image exists */}
+        {program.heroImage && (
+          <div className="pointer-events-none absolute inset-0 bg-[#061a3a]/70" />
+        )}
 
-        {/* Soft red glow */}
-        <div
-          className="
-            pointer-events-none
-            absolute
-            -right-40
-            -top-40
-            h-[500px]
-            w-[500px]
-            rounded-full
-            bg-[#d61f3c]/10
-            blur-3xl
-          "
-        />
+        {/* Background Grid — only when image does NOT exist */}
+        {!program.heroImage && (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 opacity-[0.08]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.75) 1px, transparent 1px)",
+              backgroundSize: "42px 42px",
+            }}
+          />
+        )}
 
-        <div className="relative mx-auto max-w-7xl">
+        {/* Red Glow — only when image does NOT exist */}
+        {!program.heroImage && (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#c31e3b]/10 blur-[120px]"
+          />
+        )}
 
-          {/* Back */}
+        {/* Blue Glow — only when image does NOT exist */}
+        {!program.heroImage && (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
+          />
+        )}
+
+        {/* =====================================================
+      HERO CONTENT — EXISTING TEXTS
+  ====================================================== */}
+        <div className="relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+          {/* Back Link */}
           <Link
-            href="/"
-            className="
-              mb-10
-              inline-flex
-              items-center
-              text-sm
-              font-medium
-              text-white/60
-              transition
-              hover:text-white
-            "
+            href="/programs"
+            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[#b8c5d8] transition-colors hover:text-white"
           >
-            ← Back to Home
+            <ArrowLeft className="h-4 w-4" />
+            All Programs
           </Link>
 
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3">
-            <span className="h-px w-10 bg-[#d61f3c]" />
+          {/* Eyebrow / Category */}
+          <div className="mb-6 flex items-center gap-3">
+            <span className="h-px w-10 bg-[#e5b83f]" />
 
-            <p
-              className="
-                text-xs
-                font-bold
-                uppercase
-                tracking-[0.24em]
-                text-[#f5b82e]
-                sm:text-sm
-              "
-            >
-              FOSTIIMA Business School
-            </p>
+            <span className="text-sm font-bold uppercase tracking-[0.28em] text-[#e5b83f]">
+              {program.category}
+            </span>
           </div>
 
-          {/* Heading */}
-          <h1
-            className="
-              mt-6
-              max-w-5xl
-              text-4xl
-              font-bold
-              leading-[1.05]
-              tracking-tight
-              text-white
-              sm:text-5xl
-              lg:text-7xl
-          "
-          >
+          {/* Program Title */}
+          <h1 className="max-w-5xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
             {program.title}
           </h1>
 
-          {/* Red accent line */}
-          <div className="mt-7 h-1 w-20 bg-[#d61f3c]" />
+          {/* Duration */}
+          <div className="mt-6 flex items-center gap-2 text-sm font-medium text-[#b8c5d8]">
+            <CalendarDays className="h-4 w-4 text-[#e5b83f]" />
+            <span>{program.duration}</span>
+          </div>
 
           {/* Description */}
-          <p
-            className="
-              mt-7
-              max-w-3xl
-              text-base
-              leading-8
-              text-white/70
-              sm:text-lg
-            "
-          >
+          <p className="mt-6 max-w-3xl text-base leading-8 text-[#d1d9e6] sm:text-lg">
             {program.description}
           </p>
 
-          {/* Badges */}
-          <div className="mt-8 flex flex-wrap gap-3">
-            <span
-              className="
-                border
-                border-white/15
-                bg-white/[0.06]
-                px-4
-                py-2
-                text-sm
-                font-medium
-                text-white
-                backdrop-blur-sm
-              "
-            >
-              {program.category}
-            </span>
-
-            <span
-              className="
-                border
-                border-white/15
-                bg-white/[0.06]
-                px-4
-                py-2
-                text-sm
-                font-medium
-                text-white
-                backdrop-blur-sm
-              "
-            >
-              {program.duration}
-            </span>
-          </div>
+          {/* Accent Line */}
+          <div className="mt-10 h-px w-full max-w-4xl bg-[#1d3559]" />
         </div>
       </section>
 
@@ -353,7 +318,6 @@ export default async function ProgramsPage({
       ===================================================== */}
       <section className="bg-[#f8faff] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
-
           {/* =================================================
               OVERVIEW
           ================================================= */}
@@ -383,9 +347,7 @@ export default async function ProgramsPage({
               "
             >
               Build Your Future with{" "}
-              <span className="text-[#d61f3c]">
-                {program.title}
-              </span>
+              <span className="text-[#d61f3c]">{program.title}</span>
             </h2>
 
             <p
@@ -406,7 +368,6 @@ export default async function ProgramsPage({
           ================================================= */}
           {program.specialization && (
             <div className="mt-16">
-
               <p
                 className="
                   text-xs
@@ -434,11 +395,10 @@ export default async function ProgramsPage({
               </h2>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {program.specialization.subjects.map(
-                  (subject, index) => (
-                    <div
-                      key={index}
-                      className="
+                {program.specialization.subjects.map((subject, index) => (
+                  <div
+                    key={index}
+                    className="
                         group
                         border
                         border-slate-200
@@ -451,26 +411,25 @@ export default async function ProgramsPage({
                         hover:border-[#d61f3c]/30
                         hover:shadow-[0_12px_30px_rgba(6,27,58,0.09)]
                       "
-                    >
-                      <div className="flex gap-3">
-                        <span
-                          className="
+                  >
+                    <div className="flex gap-3">
+                      <span
+                        className="
                             mt-1
                             text-[#d61f3c]
                             transition
                             group-hover:translate-x-1
                           "
-                        >
-                          ➤
-                        </span>
+                      >
+                        ➤
+                      </span>
 
-                        <p className="font-medium leading-6 text-slate-700">
-                          {subject}
-                        </p>
-                      </div>
+                      <p className="font-medium leading-6 text-slate-700">
+                        {subject}
+                      </p>
                     </div>
-                  ),
-                )}
+                  </div>
+                ))}
               </div>
             </div>
           )}
@@ -480,7 +439,6 @@ export default async function ProgramsPage({
           ================================================= */}
           {program.semesters.length > 0 && (
             <div className="mt-20">
-
               <p
                 className="
                   text-xs
@@ -536,29 +494,22 @@ export default async function ProgramsPage({
                     </div>
 
                     <div className="mt-6 space-y-3">
-                      {semester.subjects.map(
-                        (subject, index) => (
-                          <div
-                            key={index}
-                            className="flex gap-3"
-                          >
-                            <span className="mt-1 text-[#d61f3c]">
-                              ➤
-                            </span>
+                      {semester.subjects.map((subject, index) => (
+                        <div key={index} className="flex gap-3">
+                          <span className="mt-1 text-[#d61f3c]">➤</span>
 
-                            <p
-                              className="
+                          <p
+                            className="
                                 text-sm
                                 leading-6
                                 text-slate-600
                                 sm:text-base
                               "
-                            >
-                              {subject}
-                            </p>
-                          </div>
-                        ),
-                      )}
+                          >
+                            {subject}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ))}
@@ -617,10 +568,7 @@ export default async function ProgramsPage({
                 "
               >
                 Interested in{" "}
-                <span className="text-[#d61f3c]">
-                  {program.title}
-                </span>
-                ?
+                <span className="text-[#d61f3c]">{program.title}</span>?
               </h2>
 
               <p
@@ -634,8 +582,8 @@ export default async function ProgramsPage({
                   sm:text-base
                 "
               >
-                Explore the admission process and take the next
-                step towards your management education.
+                Explore the admission process and take the next step towards
+                your management education.
               </p>
 
               <Link
