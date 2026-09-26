@@ -13,15 +13,12 @@ import ReviewSection from "@/components/reviews/ReviewSection";
 import FAQSection from "@/components/home/FAQSection";
 import MediaPresenceSection from "@/components/home/MediaPresenceSection";
 import PlacementVideos from "@/components/home/PlacementVideos";
+import LeadershipMessage from "@/components/home/LeadershipMessage";
 
 import { getHomeContent } from "@/lib/admin/home";
 
 export default async function HomePage() {
-  const {
-    stats,
-    placementVideos,
-    programs,
-  } = await getHomeContent();
+  const { stats, placementVideos, programs } = await getHomeContent();
 
   const videos = placementVideos.map((video) => ({
     id: video.id,
@@ -39,6 +36,8 @@ export default async function HomePage() {
       <RecognitionSection />
 
       <AboutSection />
+
+      <LeadershipMessage />
 
       <PlacementVideos videos={videos} />
 
