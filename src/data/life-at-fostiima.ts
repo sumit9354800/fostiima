@@ -57,7 +57,9 @@ export const campusGallery = [
     description:
       "State-of-the-art classrooms, well-equipped library, and modern learning facilities.",
     size: "small",
+    href: "/life-at-fostiima/academic-excellence",
   },
+
   {
     src: "/life-at-fostiima/life-at-fostiima2.png",
     alt: "Sports and Fitness at FOSTIIMA",
@@ -65,7 +67,9 @@ export const campusGallery = [
     description:
       "Indoor and outdoor sports facilities to maintain work-life balance.",
     size: "small",
+    href: "/life-at-fostiima/sports-and-fitness",
   },
+
   {
     src: "/life-at-fostiima/life-at-fostiima3.png",
     alt: "Cultural Events at FOSTIIMA",
@@ -73,22 +77,28 @@ export const campusGallery = [
     description:
       "Annual fest, cultural nights, and celebrations throughout the year.",
     size: "small",
+    href: "/life-at-fostiima/cultural-events",
   },
+
   {
     src: "/life-at-fostiima/life-at-fostiima4.png",
     alt: "Business Exposure Trip",
     title: "Business Exposure Trip",
     description: "",
     size: "small",
+    href: "/life-at-fostiima/business-exposure-trip",
   },
+
   {
     src: "/life-at-fostiima/life-at-fostiima5.webp",
     alt: "FOSTIIMA Campus Tour",
-    title: "Campus Tour",
+    title: "Margdarshak Awards",
     description:
       "Take a virtual tour of our modern campus facilities and vibrant student life.",
     size: "large",
+    href: "/life-at-fostiima/margdarshak-awards",
   },
+
   {
     src: "/life-at-fostiima/life-at-fostiima6.png",
     alt: "Brainstorming Activities at FOSTIIMA",
@@ -96,7 +106,9 @@ export const campusGallery = [
     description:
       "Business case competitions, hackathons, and inter-college activities.",
     size: "small",
+    href: "/life-at-fostiima/brainstorming",
   },
+
   {
     src: "/life-at-fostiima/life-at-fostiima7.png",
     alt: "Team Building Camp",
@@ -104,20 +116,25 @@ export const campusGallery = [
     description:
       "Domestic trip – Fun, exploration, bonding, adventure, learning.",
     size: "small",
+    href: "/life-at-fostiima/team-building-camp",
   },
+
   {
     src: "/life-at-fostiima/life-at-fostiima8.png",
     alt: "Industrial Visit",
     title: "Industrial Visit",
     description: "",
     size: "small",
+    href: "/life-at-fostiima/industrial-visit",
   },
+
   {
     src: "/life-at-fostiima/life-at-fostiima9.png",
     alt: "Corporate Talk at FOSTIIMA",
     title: "Corporate Talk",
     description: "",
     size: "small",
+    href: "/life-at-fostiima/corporate-talk",
   },
 ];
 

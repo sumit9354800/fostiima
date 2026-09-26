@@ -1,7 +1,11 @@
+
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+
 import { campusGallery } from "@/data/life-at-fostiima";
 
 export function CampusGallerySection() {
@@ -31,10 +35,11 @@ export function CampusGallerySection() {
             const isLarge = item.size === "large";
 
             return (
-              <article
+              <Link
                 key={item.title}
+                href={item.href}
                 className={[
-                  "group overflow-hidden rounded-2xl border border-[#dbe3ee] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(6,26,58,0.10)]",
+                  "group block overflow-hidden rounded-2xl border border-[#dbe3ee] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(6,26,58,0.10)]",
                   isLarge ? "sm:col-span-2" : "",
                 ].join(" ")}
               >
@@ -46,17 +51,32 @@ export function CampusGallerySection() {
                 />
 
                 <div className="p-5">
-                  <h3 className="text-lg font-bold text-[#061a3a]">
-                    {item.title}
-                  </h3>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="min-w-0">
+                      <h3 className="text-lg font-bold text-[#061a3a]">
+                        {item.title}
+                      </h3>
 
-                  {item.description && (
-                    <p className="mt-2 text-sm leading-6 text-[#64748b]">
-                      {item.description}
-                    </p>
-                  )}
+                      {item.description && (
+                        <p className="mt-2 text-sm leading-6 text-[#64748b]">
+                          {item.description}
+                        </p>
+                      )}
+                    </div>
+
+                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#dbe3ee] text-[#c31e3b] transition-all duration-300 group-hover:border-[#c31e3b] group-hover:bg-[#c31e3b] group-hover:text-white">
+                      <ArrowUpRight
+                        className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </div>
+
+                  <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.14em] text-[#c31e3b]">
+                    Explore Details
+                  </p>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>

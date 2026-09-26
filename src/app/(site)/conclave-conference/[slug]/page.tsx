@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  ArrowLeft,
-  CalendarDays,
-  MapPin,
-  Play,
-} from "lucide-react";
+import { ArrowLeft, CalendarDays, MapPin, Play } from "lucide-react";
 
 import {
   getConclaveEventBySlug,
@@ -53,30 +48,46 @@ export default async function EventDetailPage({
     notFound();
   }
 
-  const hasCoverImage = Boolean(event.coverImage?.trim());
+  const hasBgImage = Boolean(event.bgImage?.trim());
 
   const hasGalleryImages =
     Array.isArray(event.images) && event.images.length > 0;
 
-  const hasVideos =
-    Array.isArray(event.video) && event.video.length > 0;
+  const hasVideos = Array.isArray(event.video) && event.video.length > 0;
 
   return (
     <main className="min-h-screen bg-[#f8fafc]">
       {/* =====================================================
           HERO
       ====================================================== */}
-      <section className="relative overflow-hidden bg-[#061a3a]">
-        {/* Background Grid */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.75) 1px, transparent 1px)",
-            backgroundSize: "42px 42px",
-          }}
-        />
+      <section
+        className="relative overflow-hidden bg-[#061a3a]"
+        style={
+          hasBgImage
+            ? {
+                backgroundImage: `linear-gradient(
+            rgba(6, 26, 58, 0.72),
+            rgba(6, 26, 58, 0.82)
+          ), url("${event.bgImage}")`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }
+            : undefined
+        }
+      >
+        {/* Background Grid — only when bgImage is NOT available */}
+        {!hasBgImage && (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 opacity-[0.08]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.75) 1px, transparent 1px)",
+              backgroundSize: "42px 42px",
+            }}
+          />
+        )}
 
         {/* Subtle Red Glow */}
         <div
@@ -90,7 +101,8 @@ export default async function EventDetailPage({
           className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
         />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-20">
+        {/* Content */}
+        <div className="relative mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
           {/* Back Link */}
           <Link
             href="/conclave-conference"
@@ -131,12 +143,11 @@ export default async function EventDetailPage({
           <div className="mt-10 h-px w-full max-w-4xl bg-[#1d3559]" />
         </div>
       </section>
-
       {/* =====================================================
           COVER IMAGE
           Only renders when coverImage exists
       ====================================================== */}
-      {hasCoverImage && (
+      {/* {hasCoverImage && (
         <section className="bg-[#f8fafc] pt-10 sm:pt-14">
           <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10">
             <div className="overflow-hidden border border-[#dbe3ee] bg-white shadow-sm">
@@ -148,7 +159,7 @@ export default async function EventDetailPage({
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
       {/* =====================================================
           EVENT INFORMATION

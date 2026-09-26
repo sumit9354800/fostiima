@@ -19,8 +19,7 @@ export type ConclaveEvent = {
 
   content: string;
 
-  // Main/cover image
-  coverImage: string;
+  bgImage: string;
 
   // Gallery images
   images: string[];
@@ -37,6 +36,49 @@ export type ConclaveEvent = {
 
 export const conclaveEvents: ConclaveEvent[] = [
   {
+    id: "mission-ai-sashakt-bharat",
+    slug: "mission-ai-sashakt-bharat",
+    title: "Margdarshak 4.0",
+    day: "10",
+    month: "JAN",
+    year: "2027",
+    date: "10 January 2027",
+    location: "dates . to be announced",
+    excerpt: "Mission AI Sashakt Bharat",
+    content:
+      "Mission AI Sashakt Bharat at PhD Chamber of Commerce, August Kranti Marg, Siri Institutional Area, Hauz Khas, New Delhi, Delhi 110016.",
+    bgImage: "",
+    images: [],
+    video: [
+      "https://www.youtube-nocookie.com/embed/uHBCJwwSiSc",
+      "https://www.youtube-nocookie.com/embed/ZxXq0N5i060",
+    ],
+    href: "/conclave-conference/mission-ai-sashakt-bharat",
+    featured: true,
+    status: "published",
+  },
+
+
+  {
+    id: "fostiima-convocation-2026",
+    slug: "fostiima-convocation-2026",
+    title: "FOSTIIMA Convocation 2026",
+    day: "11",
+    month: "MAR",
+    year: "2026",
+    date: "11 March 2026",
+    location: "At Fostiima Business School",
+    excerpt: "FOSTIIMA Convocation 2026",
+    content: "FOSTIIMA Convocation 2026 at Fostiima Business School.",
+    bgImage: "",
+
+    images: [],
+    href: "/conclave-conference/fostiima-convocation-2023",
+    featured: false,
+    status: "published",
+  },
+
+  {
     id: "responsible-ai-summit-2026",
     slug: "responsible-ai-summit-2026",
     title: "RESPONSIBLE AI SUMMIT 2026",
@@ -47,7 +89,7 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "Fostiima Business School",
     excerpt: "RESPONSIBLE AI SUMMIT 2026",
     content: "RESPONSIBLE AI SUMMIT 2026 at Fostiima Business School.",
-    coverImage: "",
+    bgImage: "/conclave/AI-Conclave-2026/AI1.JPG",
     images: [
       "/conclave/AI-Conclave-2026/AI1.JPG",
       "/conclave/AI-Conclave-2026/AI2.JPG",
@@ -74,6 +116,8 @@ export const conclaveEvents: ConclaveEvent[] = [
     status: "published",
   },
 
+
+
   {
     id: "mission-ai-sashakt-bharat",
     slug: "mission-ai-sashakt-bharat",
@@ -87,7 +131,8 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "Mission AI Sashakt Bharat",
     content:
       "Mission AI Sashakt Bharat at PhD Chamber of Commerce, August Kranti Marg, Siri Institutional Area, Hauz Khas, New Delhi, Delhi 110016.",
-    coverImage: "",
+
+    bgImage: "",
     images: [],
     video: [
       "https://www.youtube-nocookie.com/embed/uHBCJwwSiSc",
@@ -109,7 +154,7 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "Margdarshak Awards Ceremony At Nehru Place, Delhi",
     excerpt: "Margdarshak Awards Ceremony",
     content: "Margdarshak Awards Ceremony At Nehru Place, Delhi.",
-    coverImage: "",
+    bgImage: "/conclave/margdarshak3/Margdarshak3.0-12.JPG",
     video: [
       "https://www.youtube-nocookie.com/embed/dMNO1a6laDs",
       "https://www.youtube-nocookie.com/embed/g0F7DL_B9ns",
@@ -137,7 +182,7 @@ export const conclaveEvents: ConclaveEvent[] = [
   {
     id: "margdarshak-3",
     slug: "margdarshak-3",
-    title: "Margdarshak 2.0 Award Ceremony",
+    title: "Margdarshak-2.0 Award Ceremony",
     day: "15",
     month: "DEC",
     year: "2024",
@@ -145,21 +190,21 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "At FOSTIIMA, Delhi",
     excerpt: "Margdarshak 2.0 Award Ceremony",
     content: "Margdarshak 2.0 Award Ceremony- At FOSTIIMA, Delhi.",
-    coverImage: "",
+    bgImage: "/conclave/margdarshak2/Margdarshak2.0-11.JPG",
     images: [
-      "/conclave/margdarshak3/Margdarshak3.0-1.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-2.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-3.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-4.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-5.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-6.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-7.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-8.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-9.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-10.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-11.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-12.JPG",
-      "/conclave/margdarshak3/Margdarshak3.0-13.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-1.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-2.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-3.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-4.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-5.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-6.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-7.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-8.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-9.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-10.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-11.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-12.JPG",
+      "/conclave/margdarshak2/Margdarshak2.0-13.JPG",
     ],
     href: "/conclave-conference/margdarshak-3",
     featured: false,
@@ -177,9 +222,15 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "At AIMA's 51st NMC",
     excerpt: "AIMA's 51st NMC 2024.",
     content: "AIMA's 51st NMC 2024. At AIMA's 51st NMC.",
-    coverImage: "",
+    bgImage: "",
+
     video: ["https://www.youtube-nocookie.com/embed/FBaQPH0qRCY"],
-    images: [],
+    images: [
+      "/conclave/aima/aima5.JPG",
+      "/conclave/aima/aima2.JPG",
+      "/conclave/aima/aima3.JPG",
+      "/conclave/aima/aima4.JPG",
+    ],
     href: "/conclave-conference/aima-51st-nmc-2024",
     featured: false,
     status: "published",
@@ -196,7 +247,8 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "At Fostiima Business School, Delhi",
     excerpt: "Olympians Manu Bhaker.",
     content: "Olympians Manu Bhaker. At Fostiima Business School, Delhi.",
-    coverImage: "",
+    bgImage: "",
+
     images: [],
     href: "/conclave-conference/olympians-manu-bhaker",
     featured: false,
@@ -214,12 +266,36 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "At Fostiima Business School",
     excerpt: "HR Round Table 2024",
     content: "HR Round Table 2024 at Fostiima Business School.",
-    coverImage: "",
-    images: [],
+    video: [
+      "https://www.youtube-nocookie.com/embed/anidmyGO8TI",
+      "https://www.youtube-nocookie.com/embed/v2csvRiB7QQ",
+      "https://www.youtube-nocookie.com/embed/_dKIFstCaas",
+      "https://www.youtube-nocookie.com/embed/4xpr7OQ9VXc",
+    ],
+    bgImage: "/conclave/HR-round/hr11.jpg",
+    images: [
+      "/conclave/HR-round/hr1.jpg",
+      "/conclave/HR-round/hr2.jpg",
+      "/conclave/HR-round/hr3.jpg",
+      "/conclave/HR-round/hr4.jpg",
+      "/conclave/HR-round/hr5.jpg",
+      "/conclave/HR-round/hr6.jpg",
+      "/conclave/HR-round/hr7.jpg",
+      "/conclave/HR-round/hr8.jpg",
+      "/conclave/HR-round/hr9.jpg",
+      "/conclave/HR-round/hr10.jpg",
+      "/conclave/HR-round/hr11.jpg",
+      "/conclave/HR-round/hr12.jpg",
+      "/conclave/HR-round/hr13.jpg",
+      "/conclave/HR-round/hr14.jpg",
+      "/conclave/HR-round/hr15.jpg",
+      "/conclave/HR-round/hr16.jpg",
+    ],
     href: "/conclave-conference/hr-round-table-2024",
     featured: false,
     status: "published",
   },
+
 
   {
     id: "anil-somani-with-ashwini-vaishnaw",
@@ -233,7 +309,8 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "Mr. Anil Somani with Ashwini Vaishnaw.",
     content:
       "Mr. Anil Somani with Ashwini Vaishnaw. At The Indian Express Adda.",
-    coverImage: "",
+    bgImage: "",
+
     images: [],
     href: "/conclave-conference/anil-somani-with-ashwini-vaishnaw",
     featured: false,
@@ -251,7 +328,8 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "At Exit Poll ?? ???? ??????",
     excerpt: "Exit Poll पर ख़ास बातचीत.",
     content: "Exit Poll पर ख़ास बातचीत.",
-    coverImage: "",
+    bgImage: "",
+
     images: [],
     href: "/conclave-conference/exit-poll",
     featured: false,
@@ -269,8 +347,9 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "At Indian Express Adda",
     excerpt: "Dr. S. Jaishankar at Indian Express Adda.",
     content: "Dr. S. Jaishankar at Indian Express Adda.",
-    coverImage: "/conclave/s jaishankar.jpg",
-    images: [],
+    bgImage: "/conclave/s jaishankar.jpg",
+    video: ["https://www.youtube-nocookie.com/embed/y50QVxs9G7E"],
+    images: ["/conclave/s jaishankar.jpg"],
     href: "/conclave-conference/dr-s-jaishankar-indian-express-adda",
     featured: false,
     status: "published",
@@ -287,8 +366,12 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "On ABP News discussion",
     excerpt: "Discussion On Budget 2024",
     content: "Discussion On Budget 2024 on ABP News discussion.",
-    coverImage: "",
-    images: [],
+    bgImage: "/conclave/budget.jpg",
+    video: [
+      "https://www.youtube-nocookie.com/embed/20kb_kuj95k",
+      "https://www.youtube-nocookie.com/embed/dQto_WwpSxk",
+    ],
+    images: ["/conclave/budget.jpg"],
     href: "/conclave-conference/discussion-on-budget-2024",
     featured: false,
     status: "published",
@@ -306,46 +389,11 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "Mr. Anil Somani conversation with #sadhguru",
     content:
       "Mr. Anil Somani conversation with #sadhguru at Indian Express Adda.",
-    coverImage: "",
+    bgImage: "",
+
     video: ["https://www.youtube-nocookie.com/embed/g9qx6YeVF98"],
     images: [],
     href: "/conclave-conference/anil-somani-conversation-with-sadhguru",
-    featured: false,
-    status: "published",
-  },
-
-  {
-    id: "fostiima-convocation-2023",
-    slug: "fostiima-convocation-2023",
-    title: "FOSTIIMA Convocation 2023",
-    day: "11",
-    month: "MAR",
-    year: "2023",
-    date: "11 March 2023",
-    location: "At Fostiima Business School",
-    excerpt: "FOSTIIMA Convocation 2023",
-    content: "FOSTIIMA Convocation 2023 at Fostiima Business School.",
-    coverImage: "",
-    images: [],
-    href: "/conclave-conference/fostiima-convocation-2023",
-    featured: false,
-    status: "published",
-  },
-
-  {
-    id: "margdarshak-award-2",
-    slug: "margdarshak-award-2",
-    title: "Margdarshak Award 2.0",
-    day: "12",
-    month: "SEP",
-    year: "2022",
-    date: "12 September 2022",
-    location: "At Fostiima Business School, Delhi",
-    excerpt: "Margdarshak Award 2.0",
-    content: "Margdarshak Award 2.0 at Fostiima Business School, Delhi.",
-    coverImage: "",
-    images: [],
-    href: "/conclave-conference/margdarshak-award-2",
     featured: false,
     status: "published",
   },
