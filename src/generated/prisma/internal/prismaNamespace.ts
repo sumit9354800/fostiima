@@ -424,6 +424,8 @@ export const ModelName = {
   HomePlacementVideo: 'HomePlacementVideo',
   HomeCampusHighlight: 'HomeCampusHighlight',
   HomeProgram: 'HomeProgram',
+  ProgramSemester: 'ProgramSemester',
+  ProgramSubject: 'ProgramSubject',
   HomeAward: 'HomeAward',
   HomeCampusLife: 'HomeCampusLife',
   HomeRecognition: 'HomeRecognition'
@@ -442,7 +444,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "faculty" | "blogPost" | "blogBlock" | "blogKeyword" | "conclaveEvent" | "finalPlacementBatch" | "finalPlacementChart" | "finalPlacementProfile" | "finalPlacementStudent" | "summerInternshipBatch" | "summerInternshipProfile" | "careerOpening" | "fAQ" | "review" | "mediaPresence" | "homeHero" | "homeStat" | "homeRecruiter" | "homeAbout" | "homeAboutHighlight" | "homePlacementVideo" | "homeCampusHighlight" | "homeProgram" | "homeAward" | "homeCampusLife" | "homeRecognition"
+    modelProps: "user" | "session" | "account" | "verification" | "faculty" | "blogPost" | "blogBlock" | "blogKeyword" | "conclaveEvent" | "finalPlacementBatch" | "finalPlacementChart" | "finalPlacementProfile" | "finalPlacementStudent" | "summerInternshipBatch" | "summerInternshipProfile" | "careerOpening" | "fAQ" | "review" | "mediaPresence" | "homeHero" | "homeStat" | "homeRecruiter" | "homeAbout" | "homeAboutHighlight" | "homePlacementVideo" | "homeCampusHighlight" | "homeProgram" | "programSemester" | "programSubject" | "homeAward" | "homeCampusLife" | "homeRecognition"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2228,6 +2230,138 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ProgramSemester: {
+      payload: Prisma.$ProgramSemesterPayload<ExtArgs>
+      fields: Prisma.ProgramSemesterFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ProgramSemesterFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSemesterPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ProgramSemesterFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSemesterPayload>
+        }
+        findFirst: {
+          args: Prisma.ProgramSemesterFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSemesterPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ProgramSemesterFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSemesterPayload>
+        }
+        findMany: {
+          args: Prisma.ProgramSemesterFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSemesterPayload>[]
+        }
+        create: {
+          args: Prisma.ProgramSemesterCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSemesterPayload>
+        }
+        createMany: {
+          args: Prisma.ProgramSemesterCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.ProgramSemesterDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSemesterPayload>
+        }
+        update: {
+          args: Prisma.ProgramSemesterUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSemesterPayload>
+        }
+        deleteMany: {
+          args: Prisma.ProgramSemesterDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ProgramSemesterUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.ProgramSemesterUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSemesterPayload>
+        }
+        aggregate: {
+          args: Prisma.ProgramSemesterAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateProgramSemester>
+        }
+        groupBy: {
+          args: Prisma.ProgramSemesterGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProgramSemesterGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ProgramSemesterCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProgramSemesterCountAggregateOutputType> | number
+        }
+      }
+    }
+    ProgramSubject: {
+      payload: Prisma.$ProgramSubjectPayload<ExtArgs>
+      fields: Prisma.ProgramSubjectFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ProgramSubjectFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSubjectPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ProgramSubjectFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSubjectPayload>
+        }
+        findFirst: {
+          args: Prisma.ProgramSubjectFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSubjectPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ProgramSubjectFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSubjectPayload>
+        }
+        findMany: {
+          args: Prisma.ProgramSubjectFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSubjectPayload>[]
+        }
+        create: {
+          args: Prisma.ProgramSubjectCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSubjectPayload>
+        }
+        createMany: {
+          args: Prisma.ProgramSubjectCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.ProgramSubjectDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSubjectPayload>
+        }
+        update: {
+          args: Prisma.ProgramSubjectUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSubjectPayload>
+        }
+        deleteMany: {
+          args: Prisma.ProgramSubjectDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ProgramSubjectUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.ProgramSubjectUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProgramSubjectPayload>
+        }
+        aggregate: {
+          args: Prisma.ProgramSubjectAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateProgramSubject>
+        }
+        groupBy: {
+          args: Prisma.ProgramSubjectGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProgramSubjectGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ProgramSubjectCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProgramSubjectCountAggregateOutputType> | number
+        }
+      }
+    }
     HomeAward: {
       payload: Prisma.$HomeAwardPayload<ExtArgs>
       fields: Prisma.HomeAwardFieldRefs
@@ -2490,8 +2624,8 @@ export const SessionScalarFieldEnum = {
   updatedAt: 'updatedAt',
   ipAddress: 'ipAddress',
   userAgent: 'userAgent',
-  impersonatedBy: 'impersonatedBy',
-  userId: 'userId'
+  userId: 'userId',
+  impersonatedBy: 'impersonatedBy'
 } as const
 
 export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
@@ -2847,6 +2981,32 @@ export const HomeProgramScalarFieldEnum = {
 export type HomeProgramScalarFieldEnum = (typeof HomeProgramScalarFieldEnum)[keyof typeof HomeProgramScalarFieldEnum]
 
 
+export const ProgramSemesterScalarFieldEnum = {
+  id: 'id',
+  programId: 'programId',
+  title: 'title',
+  sortOrder: 'sortOrder',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProgramSemesterScalarFieldEnum = (typeof ProgramSemesterScalarFieldEnum)[keyof typeof ProgramSemesterScalarFieldEnum]
+
+
+export const ProgramSubjectScalarFieldEnum = {
+  id: 'id',
+  semesterId: 'semesterId',
+  name: 'name',
+  code: 'code',
+  credits: 'credits',
+  sortOrder: 'sortOrder',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProgramSubjectScalarFieldEnum = (typeof ProgramSubjectScalarFieldEnum)[keyof typeof ProgramSubjectScalarFieldEnum]
+
+
 export const HomeAwardScalarFieldEnum = {
   id: 'id',
   title: 'title',
@@ -2925,8 +3085,8 @@ export const SessionOrderByRelevanceFieldEnum = {
   token: 'token',
   ipAddress: 'ipAddress',
   userAgent: 'userAgent',
-  impersonatedBy: 'impersonatedBy',
-  userId: 'userId'
+  userId: 'userId',
+  impersonatedBy: 'impersonatedBy'
 } as const
 
 export type SessionOrderByRelevanceFieldEnum = (typeof SessionOrderByRelevanceFieldEnum)[keyof typeof SessionOrderByRelevanceFieldEnum]
@@ -3206,6 +3366,26 @@ export const HomeProgramOrderByRelevanceFieldEnum = {
 export type HomeProgramOrderByRelevanceFieldEnum = (typeof HomeProgramOrderByRelevanceFieldEnum)[keyof typeof HomeProgramOrderByRelevanceFieldEnum]
 
 
+export const ProgramSemesterOrderByRelevanceFieldEnum = {
+  id: 'id',
+  programId: 'programId',
+  title: 'title'
+} as const
+
+export type ProgramSemesterOrderByRelevanceFieldEnum = (typeof ProgramSemesterOrderByRelevanceFieldEnum)[keyof typeof ProgramSemesterOrderByRelevanceFieldEnum]
+
+
+export const ProgramSubjectOrderByRelevanceFieldEnum = {
+  id: 'id',
+  semesterId: 'semesterId',
+  name: 'name',
+  code: 'code',
+  credits: 'credits'
+} as const
+
+export type ProgramSubjectOrderByRelevanceFieldEnum = (typeof ProgramSubjectOrderByRelevanceFieldEnum)[keyof typeof ProgramSubjectOrderByRelevanceFieldEnum]
+
+
 export const HomeAwardOrderByRelevanceFieldEnum = {
   id: 'id',
   title: 'title',
@@ -3471,6 +3651,8 @@ export type GlobalOmitConfig = {
   homePlacementVideo?: Prisma.HomePlacementVideoOmit
   homeCampusHighlight?: Prisma.HomeCampusHighlightOmit
   homeProgram?: Prisma.HomeProgramOmit
+  programSemester?: Prisma.ProgramSemesterOmit
+  programSubject?: Prisma.ProgramSubjectOmit
   homeAward?: Prisma.HomeAwardOmit
   homeCampusLife?: Prisma.HomeCampusLifeOmit
   homeRecognition?: Prisma.HomeRecognitionOmit

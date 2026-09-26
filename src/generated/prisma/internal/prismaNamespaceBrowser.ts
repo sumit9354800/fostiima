@@ -78,6 +78,8 @@ export const ModelName = {
   HomePlacementVideo: 'HomePlacementVideo',
   HomeCampusHighlight: 'HomeCampusHighlight',
   HomeProgram: 'HomeProgram',
+  ProgramSemester: 'ProgramSemester',
+  ProgramSubject: 'ProgramSubject',
   HomeAward: 'HomeAward',
   HomeCampusLife: 'HomeCampusLife',
   HomeRecognition: 'HomeRecognition'
@@ -124,8 +126,8 @@ export const SessionScalarFieldEnum = {
   updatedAt: 'updatedAt',
   ipAddress: 'ipAddress',
   userAgent: 'userAgent',
-  impersonatedBy: 'impersonatedBy',
-  userId: 'userId'
+  userId: 'userId',
+  impersonatedBy: 'impersonatedBy'
 } as const
 
 export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
@@ -481,6 +483,32 @@ export const HomeProgramScalarFieldEnum = {
 export type HomeProgramScalarFieldEnum = (typeof HomeProgramScalarFieldEnum)[keyof typeof HomeProgramScalarFieldEnum]
 
 
+export const ProgramSemesterScalarFieldEnum = {
+  id: 'id',
+  programId: 'programId',
+  title: 'title',
+  sortOrder: 'sortOrder',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProgramSemesterScalarFieldEnum = (typeof ProgramSemesterScalarFieldEnum)[keyof typeof ProgramSemesterScalarFieldEnum]
+
+
+export const ProgramSubjectScalarFieldEnum = {
+  id: 'id',
+  semesterId: 'semesterId',
+  name: 'name',
+  code: 'code',
+  credits: 'credits',
+  sortOrder: 'sortOrder',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProgramSubjectScalarFieldEnum = (typeof ProgramSubjectScalarFieldEnum)[keyof typeof ProgramSubjectScalarFieldEnum]
+
+
 export const HomeAwardScalarFieldEnum = {
   id: 'id',
   title: 'title',
@@ -559,8 +587,8 @@ export const SessionOrderByRelevanceFieldEnum = {
   token: 'token',
   ipAddress: 'ipAddress',
   userAgent: 'userAgent',
-  impersonatedBy: 'impersonatedBy',
-  userId: 'userId'
+  userId: 'userId',
+  impersonatedBy: 'impersonatedBy'
 } as const
 
 export type SessionOrderByRelevanceFieldEnum = (typeof SessionOrderByRelevanceFieldEnum)[keyof typeof SessionOrderByRelevanceFieldEnum]
@@ -838,6 +866,26 @@ export const HomeProgramOrderByRelevanceFieldEnum = {
 } as const
 
 export type HomeProgramOrderByRelevanceFieldEnum = (typeof HomeProgramOrderByRelevanceFieldEnum)[keyof typeof HomeProgramOrderByRelevanceFieldEnum]
+
+
+export const ProgramSemesterOrderByRelevanceFieldEnum = {
+  id: 'id',
+  programId: 'programId',
+  title: 'title'
+} as const
+
+export type ProgramSemesterOrderByRelevanceFieldEnum = (typeof ProgramSemesterOrderByRelevanceFieldEnum)[keyof typeof ProgramSemesterOrderByRelevanceFieldEnum]
+
+
+export const ProgramSubjectOrderByRelevanceFieldEnum = {
+  id: 'id',
+  semesterId: 'semesterId',
+  name: 'name',
+  code: 'code',
+  credits: 'credits'
+} as const
+
+export type ProgramSubjectOrderByRelevanceFieldEnum = (typeof ProgramSubjectOrderByRelevanceFieldEnum)[keyof typeof ProgramSubjectOrderByRelevanceFieldEnum]
 
 
 export const HomeAwardOrderByRelevanceFieldEnum = {

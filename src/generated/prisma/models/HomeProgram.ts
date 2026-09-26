@@ -256,6 +256,7 @@ export type HomeProgramWhereInput = {
   isActive?: Prisma.BoolFilter<"HomeProgram"> | boolean
   createdAt?: Prisma.DateTimeFilter<"HomeProgram"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"HomeProgram"> | Date | string
+  semesters?: Prisma.ProgramSemesterListRelationFilter
 }
 
 export type HomeProgramOrderByWithRelationInput = {
@@ -269,6 +270,7 @@ export type HomeProgramOrderByWithRelationInput = {
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  semesters?: Prisma.ProgramSemesterOrderByRelationAggregateInput
   _relevance?: Prisma.HomeProgramOrderByRelevanceInput
 }
 
@@ -286,6 +288,7 @@ export type HomeProgramWhereUniqueInput = Prisma.AtLeast<{
   isActive?: Prisma.BoolFilter<"HomeProgram"> | boolean
   createdAt?: Prisma.DateTimeFilter<"HomeProgram"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"HomeProgram"> | Date | string
+  semesters?: Prisma.ProgramSemesterListRelationFilter
 }, "id">
 
 export type HomeProgramOrderByWithAggregationInput = {
@@ -333,6 +336,7 @@ export type HomeProgramCreateInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  semesters?: Prisma.ProgramSemesterCreateNestedManyWithoutProgramInput
 }
 
 export type HomeProgramUncheckedCreateInput = {
@@ -346,6 +350,7 @@ export type HomeProgramUncheckedCreateInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  semesters?: Prisma.ProgramSemesterUncheckedCreateNestedManyWithoutProgramInput
 }
 
 export type HomeProgramUpdateInput = {
@@ -359,6 +364,7 @@ export type HomeProgramUpdateInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  semesters?: Prisma.ProgramSemesterUpdateManyWithoutProgramNestedInput
 }
 
 export type HomeProgramUncheckedUpdateInput = {
@@ -372,6 +378,7 @@ export type HomeProgramUncheckedUpdateInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  semesters?: Prisma.ProgramSemesterUncheckedUpdateManyWithoutProgramNestedInput
 }
 
 export type HomeProgramCreateManyInput = {
@@ -466,6 +473,122 @@ export type HomeProgramSumOrderByAggregateInput = {
   sortOrder?: Prisma.SortOrder
 }
 
+export type HomeProgramScalarRelationFilter = {
+  is?: Prisma.HomeProgramWhereInput
+  isNot?: Prisma.HomeProgramWhereInput
+}
+
+export type HomeProgramCreateNestedOneWithoutSemestersInput = {
+  create?: Prisma.XOR<Prisma.HomeProgramCreateWithoutSemestersInput, Prisma.HomeProgramUncheckedCreateWithoutSemestersInput>
+  connectOrCreate?: Prisma.HomeProgramCreateOrConnectWithoutSemestersInput
+  connect?: Prisma.HomeProgramWhereUniqueInput
+}
+
+export type HomeProgramUpdateOneRequiredWithoutSemestersNestedInput = {
+  create?: Prisma.XOR<Prisma.HomeProgramCreateWithoutSemestersInput, Prisma.HomeProgramUncheckedCreateWithoutSemestersInput>
+  connectOrCreate?: Prisma.HomeProgramCreateOrConnectWithoutSemestersInput
+  upsert?: Prisma.HomeProgramUpsertWithoutSemestersInput
+  connect?: Prisma.HomeProgramWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.HomeProgramUpdateToOneWithWhereWithoutSemestersInput, Prisma.HomeProgramUpdateWithoutSemestersInput>, Prisma.HomeProgramUncheckedUpdateWithoutSemestersInput>
+}
+
+export type HomeProgramCreateWithoutSemestersInput = {
+  id?: string
+  title: string
+  category: string
+  duration: string
+  imageUrl: string
+  href: string
+  sortOrder?: number
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type HomeProgramUncheckedCreateWithoutSemestersInput = {
+  id?: string
+  title: string
+  category: string
+  duration: string
+  imageUrl: string
+  href: string
+  sortOrder?: number
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type HomeProgramCreateOrConnectWithoutSemestersInput = {
+  where: Prisma.HomeProgramWhereUniqueInput
+  create: Prisma.XOR<Prisma.HomeProgramCreateWithoutSemestersInput, Prisma.HomeProgramUncheckedCreateWithoutSemestersInput>
+}
+
+export type HomeProgramUpsertWithoutSemestersInput = {
+  update: Prisma.XOR<Prisma.HomeProgramUpdateWithoutSemestersInput, Prisma.HomeProgramUncheckedUpdateWithoutSemestersInput>
+  create: Prisma.XOR<Prisma.HomeProgramCreateWithoutSemestersInput, Prisma.HomeProgramUncheckedCreateWithoutSemestersInput>
+  where?: Prisma.HomeProgramWhereInput
+}
+
+export type HomeProgramUpdateToOneWithWhereWithoutSemestersInput = {
+  where?: Prisma.HomeProgramWhereInput
+  data: Prisma.XOR<Prisma.HomeProgramUpdateWithoutSemestersInput, Prisma.HomeProgramUncheckedUpdateWithoutSemestersInput>
+}
+
+export type HomeProgramUpdateWithoutSemestersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  duration?: Prisma.StringFieldUpdateOperationsInput | string
+  imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  href?: Prisma.StringFieldUpdateOperationsInput | string
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type HomeProgramUncheckedUpdateWithoutSemestersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  duration?: Prisma.StringFieldUpdateOperationsInput | string
+  imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  href?: Prisma.StringFieldUpdateOperationsInput | string
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type HomeProgramCountOutputType
+ */
+
+export type HomeProgramCountOutputType = {
+  semesters: number
+}
+
+export type HomeProgramCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  semesters?: boolean | HomeProgramCountOutputTypeCountSemestersArgs
+}
+
+/**
+ * HomeProgramCountOutputType without action
+ */
+export type HomeProgramCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the HomeProgramCountOutputType
+   */
+  select?: Prisma.HomeProgramCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * HomeProgramCountOutputType without action
+ */
+export type HomeProgramCountOutputTypeCountSemestersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProgramSemesterWhereInput
+}
 
 
 export type HomeProgramSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -479,6 +602,8 @@ export type HomeProgramSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   isActive?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  semesters?: boolean | Prisma.HomeProgram$semestersArgs<ExtArgs>
+  _count?: boolean | Prisma.HomeProgramCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["homeProgram"]>
 
 
@@ -497,10 +622,16 @@ export type HomeProgramSelectScalar = {
 }
 
 export type HomeProgramOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "category" | "duration" | "imageUrl" | "href" | "sortOrder" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["homeProgram"]>
+export type HomeProgramInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  semesters?: boolean | Prisma.HomeProgram$semestersArgs<ExtArgs>
+  _count?: boolean | Prisma.HomeProgramCountOutputTypeDefaultArgs<ExtArgs>
+}
 
 export type $HomeProgramPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "HomeProgram"
-  objects: {}
+  objects: {
+    semesters: Prisma.$ProgramSemesterPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     title: string
@@ -852,6 +983,7 @@ readonly fields: HomeProgramFieldRefs;
  */
 export interface Prisma__HomeProgramClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  semesters<T extends Prisma.HomeProgram$semestersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.HomeProgram$semestersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProgramSemesterPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -908,6 +1040,10 @@ export type HomeProgramFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.I
    */
   omit?: Prisma.HomeProgramOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HomeProgramInclude<ExtArgs> | null
+  /**
    * Filter, which HomeProgram to fetch.
    */
   where: Prisma.HomeProgramWhereUniqueInput
@@ -926,6 +1062,10 @@ export type HomeProgramFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Exten
    */
   omit?: Prisma.HomeProgramOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HomeProgramInclude<ExtArgs> | null
+  /**
    * Filter, which HomeProgram to fetch.
    */
   where: Prisma.HomeProgramWhereUniqueInput
@@ -943,6 +1083,10 @@ export type HomeProgramFindFirstArgs<ExtArgs extends runtime.Types.Extensions.In
    * Omit specific fields from the HomeProgram
    */
   omit?: Prisma.HomeProgramOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HomeProgramInclude<ExtArgs> | null
   /**
    * Filter, which HomeProgram to fetch.
    */
@@ -992,6 +1136,10 @@ export type HomeProgramFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extens
    */
   omit?: Prisma.HomeProgramOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HomeProgramInclude<ExtArgs> | null
+  /**
    * Filter, which HomeProgram to fetch.
    */
   where?: Prisma.HomeProgramWhereInput
@@ -1039,6 +1187,10 @@ export type HomeProgramFindManyArgs<ExtArgs extends runtime.Types.Extensions.Int
    * Omit specific fields from the HomeProgram
    */
   omit?: Prisma.HomeProgramOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HomeProgramInclude<ExtArgs> | null
   /**
    * Filter, which HomePrograms to fetch.
    */
@@ -1088,6 +1240,10 @@ export type HomeProgramCreateArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.HomeProgramOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HomeProgramInclude<ExtArgs> | null
+  /**
    * The data needed to create a HomeProgram.
    */
   data: Prisma.XOR<Prisma.HomeProgramCreateInput, Prisma.HomeProgramUncheckedCreateInput>
@@ -1116,6 +1272,10 @@ export type HomeProgramUpdateArgs<ExtArgs extends runtime.Types.Extensions.Inter
    * Omit specific fields from the HomeProgram
    */
   omit?: Prisma.HomeProgramOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HomeProgramInclude<ExtArgs> | null
   /**
    * The data needed to update a HomeProgram.
    */
@@ -1157,6 +1317,10 @@ export type HomeProgramUpsertArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.HomeProgramOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HomeProgramInclude<ExtArgs> | null
+  /**
    * The filter to search for the HomeProgram to update in case it exists.
    */
   where: Prisma.HomeProgramWhereUniqueInput
@@ -1183,6 +1347,10 @@ export type HomeProgramDeleteArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.HomeProgramOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HomeProgramInclude<ExtArgs> | null
+  /**
    * Filter which HomeProgram to delete.
    */
   where: Prisma.HomeProgramWhereUniqueInput
@@ -1203,6 +1371,30 @@ export type HomeProgramDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.I
 }
 
 /**
+ * HomeProgram.semesters
+ */
+export type HomeProgram$semestersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ProgramSemester
+   */
+  select?: Prisma.ProgramSemesterSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ProgramSemester
+   */
+  omit?: Prisma.ProgramSemesterOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProgramSemesterInclude<ExtArgs> | null
+  where?: Prisma.ProgramSemesterWhereInput
+  orderBy?: Prisma.ProgramSemesterOrderByWithRelationInput | Prisma.ProgramSemesterOrderByWithRelationInput[]
+  cursor?: Prisma.ProgramSemesterWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProgramSemesterScalarFieldEnum | Prisma.ProgramSemesterScalarFieldEnum[]
+}
+
+/**
  * HomeProgram without action
  */
 export type HomeProgramDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1214,4 +1406,8 @@ export type HomeProgramDefaultArgs<ExtArgs extends runtime.Types.Extensions.Inte
    * Omit specific fields from the HomeProgram
    */
   omit?: Prisma.HomeProgramOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HomeProgramInclude<ExtArgs> | null
 }

@@ -153,6 +153,16 @@ export type HomeCampusHighlight = Prisma.HomeCampusHighlightModel
  */
 export type HomeProgram = Prisma.HomeProgramModel
 /**
+ * Model ProgramSemester
+ * 
+ */
+export type ProgramSemester = Prisma.ProgramSemesterModel
+/**
+ * Model ProgramSubject
+ * 
+ */
+export type ProgramSubject = Prisma.ProgramSubjectModel
+/**
  * Model HomeAward
  * 
  */

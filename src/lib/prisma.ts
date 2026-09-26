@@ -1,6 +1,10 @@
 import { PrismaMariaDb } from "@prisma/adapter-mariadb";
 import { PrismaClient } from "@/generated/prisma/client";
 
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined;
+};
+
 const databaseUrl = process.env.DATABASE_URL;
 
 if (!databaseUrl) {
@@ -15,12 +19,13 @@ const adapter = new PrismaMariaDb({
   user: decodeURIComponent(parsedDatabaseUrl.username),
   password: decodeURIComponent(parsedDatabaseUrl.password),
   database: parsedDatabaseUrl.pathname.replace(/^\//, ""),
-  connectionLimit: 5,
-});
 
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
-};
+  // Keep this low for serverless/Vercel
+  connectionLimit: 2,
+
+  // Optional: don't wait too long for a connection
+  connectTimeout: 10000,
+});
 
 export const prisma =
   globalForPrisma.prisma ??
