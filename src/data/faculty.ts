@@ -65,14 +65,6 @@ export const facultyData: Faculty[] = [
     domain: "Info Tech, Telecom and Office Automation",
   },
   {
-    slug: "mr-sl-ganapathi",
-    name: "Mr. SL Ganapathi",
-    image: "/home/faculty/faculty8.webp",
-    qualification: "MBA-IIM A, BE",
-    experience: "45+ yrs",
-    domain: "Logistics & Supply Chain",
-  },
-  {
     slug: "rakesh-kumar",
     name: "Mr. Rakesh Kumar",
     image: "/home/faculty/faculty9.webp",
@@ -162,15 +154,6 @@ export const facultyData: Faculty[] = [
     qualification: "PGDM - IIM-A, B.Tech",
     experience: "9+ yrs",
     domain: "Analyst, Data Finance",
-  },
-  {
-    slug: "prashant-k-chaudhary",
-    name: "Dr. Prashant K. Chaudhary",
-    image: "/home/faculty/faculty20.webp",
-    qualification:
-      "PhD (MDI Gurgaon), M Tech (IIT Kanpur), MBA (FMS, Delhi University)",
-    experience: "39 years",
-    domain: "",
   },
   {
     slug: "brig-ajay-mehta",
