@@ -1,14 +1,14 @@
 const recognitions = [
   {
-    src: "https://fostiima.org/assets/designer/themes/default/images/badge1.jpg",
+    src: "/badge/badge1.webp",
     alt: "National board or accredition",
   },
   {
-    src: "https://fostiima.org/assets/designer/themes/default/images/badge2.jpg",
+    src: "/badge/badge2.webp",
     alt: "Association of Indian Universities recognition",
   },
   {
-    src: "https://fostiima.org/assets/designer/themes/default/images/badge3.jpg",
+    src: "/badge/badge3.webp",
     alt: "AICTE approval",
   },
 ];

@@ -1,19 +1,40 @@
 export type ConclaveEvent = {
   id: string;
+
   slug: string;
+
   title: string;
+
   day: string;
+
   month: string;
+
   year: string;
+
   date: string;
+
   location: string;
+
   excerpt: string;
+
   content: string;
+
+  // Main/cover image
   coverImage: string;
+
+  // Gallery images
+  images: string[];
+
+  // Optional event video
+  video?: string[];
+
   href: string;
+
   featured: boolean;
+
   status: "published" | "draft";
 };
+
 export const conclaveEvents: ConclaveEvent[] = [
   {
     id: "responsible-ai-summit-2026",
@@ -27,6 +48,7 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "RESPONSIBLE AI SUMMIT 2026",
     content: "RESPONSIBLE AI SUMMIT 2026 at Fostiima Business School.",
     coverImage: "",
+    images: [],
     href: "/conclave-conference/responsible-ai-summit-2026",
     featured: true,
     status: "published",
@@ -46,6 +68,8 @@ export const conclaveEvents: ConclaveEvent[] = [
     content:
       "Mission AI Sashakt Bharat at PhD Chamber of Commerce, August Kranti Marg, Siri Institutional Area, Hauz Khas, New Delhi, Delhi 110016.",
     coverImage: "",
+    images: [],
+    video: ["https://www.youtube-nocookie.com/embed/uHBCJwwSiSc","https://www.youtube-nocookie.com/embed/ZxXq0N5i060"],
     href: "/conclave-conference/mission-ai-sashakt-bharat",
     featured: true,
     status: "published",
@@ -63,6 +87,25 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "Margdarshak Awards Ceremony",
     content: "Margdarshak Awards Ceremony At Nehru Place, Delhi.",
     coverImage: "",
+    video: [
+      "https://www.youtube-nocookie.com/embed/dMNO1a6laDs",
+      "https://www.youtube-nocookie.com/embed/g0F7DL_B9ns",
+    ],
+    images: [
+      "/conclave/margdarshak3/Margdarshak3.0-1.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-2.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-3.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-4.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-5.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-6.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-7.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-8.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-9.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-10.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-11.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-12.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-13.JPG",
+    ],
     href: "/conclave-conference/margdarshak-awards-Ceremony",
     featured: false,
     status: "published",
@@ -71,7 +114,7 @@ export const conclaveEvents: ConclaveEvent[] = [
   {
     id: "margdarshak-3",
     slug: "margdarshak-3",
-    title: "Margdarshak 2.0  Award Ceremony",
+    title: "Margdarshak 2.0 Award Ceremony",
     day: "15",
     month: "DEC",
     year: "2024",
@@ -80,6 +123,21 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "Margdarshak 2.0 Award Ceremony",
     content: "Margdarshak 2.0 Award Ceremony- At FOSTIIMA, Delhi.",
     coverImage: "",
+    images: [
+      "/conclave/margdarshak3/Margdarshak3.0-1.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-2.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-3.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-4.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-5.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-6.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-7.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-8.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-9.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-10.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-11.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-12.JPG",
+      "/conclave/margdarshak3/Margdarshak3.0-13.JPG",
+    ],
     href: "/conclave-conference/margdarshak-3",
     featured: false,
     status: "published",
@@ -97,6 +155,8 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "AIMA's 51st NMC 2024.",
     content: "AIMA's 51st NMC 2024. At AIMA's 51st NMC.",
     coverImage: "",
+    video: ["https://www.youtube-nocookie.com/embed/FBaQPH0qRCY"],
+    images: [],
     href: "/conclave-conference/aima-51st-nmc-2024",
     featured: false,
     status: "published",
@@ -112,9 +172,9 @@ export const conclaveEvents: ConclaveEvent[] = [
     date: "11 September 2024",
     location: "At Fostiima Business School, Delhi",
     excerpt: "Olympians Manu Bhaker.",
-    content:
-      "Olympians Manu Bhaker. At Fostiima Business School, Delhi.",
+    content: "Olympians Manu Bhaker. At Fostiima Business School, Delhi.",
     coverImage: "",
+    images: [],
     href: "/conclave-conference/olympians-manu-bhaker",
     featured: false,
     status: "published",
@@ -132,6 +192,7 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "HR Round Table 2024",
     content: "HR Round Table 2024 at Fostiima Business School.",
     coverImage: "",
+    images: [],
     href: "/conclave-conference/hr-round-table-2024",
     featured: false,
     status: "published",
@@ -150,6 +211,7 @@ export const conclaveEvents: ConclaveEvent[] = [
     content:
       "Mr. Anil Somani with Ashwini Vaishnaw. At The Indian Express Adda.",
     coverImage: "",
+    images: [],
     href: "/conclave-conference/anil-somani-with-ashwini-vaishnaw",
     featured: false,
     status: "published",
@@ -167,6 +229,7 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "Exit Poll पर ख़ास बातचीत.",
     content: "Exit Poll पर ख़ास बातचीत.",
     coverImage: "",
+    images: [],
     href: "/conclave-conference/exit-poll",
     featured: false,
     status: "published",
@@ -183,7 +246,8 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "At Indian Express Adda",
     excerpt: "Dr. S. Jaishankar at Indian Express Adda.",
     content: "Dr. S. Jaishankar at Indian Express Adda.",
-    coverImage: "",
+    coverImage: "/conclave/s jaishankar.jpg",
+    images: [],
     href: "/conclave-conference/dr-s-jaishankar-indian-express-adda",
     featured: false,
     status: "published",
@@ -201,6 +265,7 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "Discussion On Budget 2024",
     content: "Discussion On Budget 2024 on ABP News discussion.",
     coverImage: "",
+    images: [],
     href: "/conclave-conference/discussion-on-budget-2024",
     featured: false,
     status: "published",
@@ -219,6 +284,8 @@ export const conclaveEvents: ConclaveEvent[] = [
     content:
       "Mr. Anil Somani conversation with #sadhguru at Indian Express Adda.",
     coverImage: "",
+    video: ["https://www.youtube-nocookie.com/embed/g9qx6YeVF98"],
+    images: [],
     href: "/conclave-conference/anil-somani-conversation-with-sadhguru",
     featured: false,
     status: "published",
@@ -236,6 +303,7 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "FOSTIIMA Convocation 2023",
     content: "FOSTIIMA Convocation 2023 at Fostiima Business School.",
     coverImage: "",
+    images: [],
     href: "/conclave-conference/fostiima-convocation-2023",
     featured: false,
     status: "published",
@@ -253,6 +321,7 @@ export const conclaveEvents: ConclaveEvent[] = [
     excerpt: "Margdarshak Award 2.0",
     content: "Margdarshak Award 2.0 at Fostiima Business School, Delhi.",
     coverImage: "",
+    images: [],
     href: "/conclave-conference/margdarshak-award-2",
     featured: false,
     status: "published",
@@ -260,19 +329,13 @@ export const conclaveEvents: ConclaveEvent[] = [
 ];
 
 export function getPublishedConclaveEvents() {
-  return conclaveEvents.filter(
-    (event) => event.status === "published",
-  );
+  return conclaveEvents.filter((event) => event.status === "published");
 }
 
 export function getFeaturedConclaveEvents() {
-  return getPublishedConclaveEvents().filter(
-    (event) => event.featured,
-  );
+  return getPublishedConclaveEvents().filter((event) => event.featured);
 }
 
 export function getConclaveEventBySlug(slug: string) {
-  return getPublishedConclaveEvents().find(
-    (event) => event.slug === slug,
-  );
+  return getPublishedConclaveEvents().find((event) => event.slug === slug);
 }
