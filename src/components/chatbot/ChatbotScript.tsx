@@ -5,23 +5,16 @@ import { MessageCircle, Mic, X } from "lucide-react";
 
 type BotType = "chatbot" | "voice" | null;
 
+/* =========================================================
+   EXTRAEDGE
+========================================================= */
+
 const EXTRAEDGE_SCRIPT =
   "https://extraaedgeresources.blob.core.windows.net/documents/fbscrm/Chatbot/js/chat.js";
 
-const MARKAIBLE_SCRIPT =
-  "https://www.markaible.com/widget.js";
-
-const MARKAIBLE_AGENT_ID =
-  "6a9fa7d1dab71eb81cbeb108";
-
-declare global {
-  interface Window {
-    __markaibleWidget?: {
-      open: () => void;
-      close: () => void;
-    };
-  }
-}
+/* =========================================================
+   LOAD SCRIPT
+========================================================= */
 
 function loadScript(
   src: string,
@@ -109,94 +102,6 @@ function findExtraEdgeLauncher() {
 }
 
 /* =========================================================
-   MARKAIBLE
-========================================================= */
-
-function openMarkaibleDirectly() {
-  let attempts = 0;
-
-  const tryOpen = () => {
-    const widget =
-      window.__markaibleWidget;
-
-    if (widget?.open) {
-      console.log(
-        "[Markaible] Opening voice chatbot directly...",
-      );
-
-      widget.open();
-
-      return;
-    }
-
-    attempts += 1;
-
-    if (attempts >= 50) {
-      console.warn(
-        "[Markaible] Widget API was not ready.",
-      );
-
-      return;
-    }
-
-    window.setTimeout(
-      tryOpen,
-      100,
-    );
-  };
-
-  tryOpen();
-}
-
-/**
- * Completely remove Markaible.
- *
- * This does more than just close the panel:
- * - closes the widget
- * - removes the widget host
- * - removes the script
- * - removes the widget global
- *
- * So after closing, only our FOSTIIMA toggle remains.
- */
-function closeMarkaibleCompletely() {
-  console.log(
-    "[Markaible] Closing and removing widget...",
-  );
-
-  // Close the panel first.
-  window.__markaibleWidget?.close?.();
-
-  // Remove the actual Markaible widget host.
-  document
-    .querySelectorAll<HTMLElement>(
-      "[data-markaible-widget]",
-    )
-    .forEach((host) => {
-      host.remove();
-    });
-
-  // Remove any Markaible widget script.
-  document
-    .querySelectorAll<HTMLScriptElement>(
-      'script[src="https://www.markaible.com/widget.js"]',
-    )
-    .forEach((script) => {
-      script.remove();
-    });
-
-  // Remove our own script ID if present.
-  document
-    .getElementById(
-      "__fostiima-markaible",
-    )
-    ?.remove();
-
-  // Remove the global widget API.
-  delete window.__markaibleWidget;
-}
-
-/* =========================================================
    COMPONENT
 ========================================================= */
 
@@ -208,9 +113,6 @@ export default function ChatbotScript() {
     useState<BotType>(null);
 
   const [extraEdgeReady, setExtraEdgeReady] =
-    useState(false);
-
-  const [markaibleReady, setMarkaibleReady] =
     useState(false);
 
   /* =======================================================
@@ -301,52 +203,13 @@ export default function ChatbotScript() {
       return;
     }
 
-    /* =====================================================
-       MARKAIBLE VOICE CHATBOT
-    ===================================================== */
-
-    if (activeBot === "voice") {
-      if (!markaibleReady) {
-        loadScript(
-          MARKAIBLE_SCRIPT,
-          {
-            "data-agent":
-              MARKAIBLE_AGENT_ID,
-
-            "data-style":
-              "peek",
-
-            "data-panel":
-              "solid",
-          },
-        )
-          .then(() => {
-            console.log(
-              "[Markaible] Script loaded.",
-            );
-
-            setMarkaibleReady(true);
-
-            hideThirdPartyLaunchers();
-
-            // Open Markaible directly.
-            openMarkaibleDirectly();
-          })
-          .catch((error) => {
-            console.error(
-              "Markaible voice chatbot failed to load:",
-              error,
-            );
-          });
-      } else {
-        // Already loaded → open directly.
-        openMarkaibleDirectly();
-      }
-    }
+    /*
+      Voice chatbot is now handled directly
+      through the Markaible iframe below.
+    */
   }, [
     activeBot,
     extraEdgeReady,
-    markaibleReady,
   ]);
 
   /* =======================================================
@@ -376,20 +239,6 @@ export default function ChatbotScript() {
   ======================================================= */
 
   const closeAll = () => {
-    /*
-     * If Voice Chatbot is active,
-     * completely remove Markaible.
-     */
-    if (activeBot === "voice") {
-      closeMarkaibleCompletely();
-
-      /*
-       * Allow the next Voice Chatbot click
-       * to load Markaible again.
-       */
-      setMarkaibleReady(false);
-    }
-
     setActiveBot(null);
     setMenuOpen(false);
 
@@ -415,10 +264,42 @@ export default function ChatbotScript() {
 
   return (
     <>
-      {/* OPTIONS MENU */}
+      {/* =================================================
+          MARKAIBLE VOICE CHATBOT
+      ================================================= */}
+
+      {activeBot === "voice" && (
+        <div className="fixed inset-0 z-[99998] bg-black/20">
+          <div
+            className="
+              absolute bottom-24 right-3
+              h-[calc(100vh-140px)]
+              w-[calc(100vw-24px)]
+              overflow-hidden rounded-2xl
+              bg-white shadow-2xl
+              sm:right-5
+              sm:h-[600px]
+              sm:w-[400px]
+            "
+          >
+            <iframe
+              src="https://www.markaible.com/kiosk?agent=6a9fa7d1dab71eb81cbeb108&orb=orb&bg=%23f4f1fb&bg_opacity=1"
+              allow="microphone"
+              className="h-full w-full border-0"
+              title="Talk to us"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* =================================================
+          OPTIONS MENU
+      ================================================= */}
 
       {menuOpen && !activeBot && (
         <div className="fixed bottom-24 right-5 z-[99999] w-[260px] overflow-hidden rounded-2xl bg-white shadow-2xl">
+          {/* Header */}
+
           <div className="flex items-center justify-between bg-[#061a3a] px-4 py-3 text-white">
             <span className="text-sm font-semibold">
               FOSTIIMA Assistant
@@ -437,7 +318,9 @@ export default function ChatbotScript() {
           </div>
 
           <div className="space-y-2 p-3">
-            {/* CHATBOT */}
+            {/* =================================================
+                CHATBOT
+            ================================================= */}
 
             <button
               type="button"
@@ -462,7 +345,9 @@ export default function ChatbotScript() {
               </div>
             </button>
 
-            {/* VOICE CHATBOT */}
+            {/* =================================================
+                VOICE CHATBOT
+            ================================================= */}
 
             <button
               type="button"
@@ -490,7 +375,9 @@ export default function ChatbotScript() {
         </div>
       )}
 
-      {/* MAIN FLOATING BUTTON */}
+      {/* =================================================
+          MAIN FLOATING BUTTON
+      ================================================= */}
 
       <button
         type="button"

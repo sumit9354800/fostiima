@@ -154,7 +154,7 @@ export default function Navbar() {
           <Image
             src="/logo.jpeg"
             alt="FOSTIIMA Business School"
-            width={150}
+            width={170}
             height={50}
             className="h-auto w-full object-contain"
             priority
