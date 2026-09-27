@@ -20,9 +20,9 @@ export const facultyData: Faculty[] = [
 
   {
 
-    slug: "mr-anil-somani",
+    slug: "dr-anil-somani",
 
-    name: "Mr. Anil Somani",
+    name: "Dr. Anil Somani",
 
     image: cloudinaryAsset("/home/faculty/faculty1.webp"),
 

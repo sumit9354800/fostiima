@@ -23,9 +23,7 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
 
-  const section = lifeAtFostiimaSections.find(
-    (item) => item.slug === slug
-  );
+  const section = lifeAtFostiimaSections.find((item) => item.slug === slug);
 
   if (!section) {
     return {
@@ -39,14 +37,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function LifeAtFostiimaDetailPage({
-  params,
-}: PageProps) {
+export default async function LifeAtFostiimaDetailPage({ params }: PageProps) {
   const { slug } = await params;
 
-  const section = lifeAtFostiimaSections.find(
-    (item) => item.slug === slug
-  );
+  const section = lifeAtFostiimaSections.find((item) => item.slug === slug);
 
   if (!section) {
     notFound();
@@ -110,19 +104,25 @@ export default async function LifeAtFostiimaDetailPage({
           {/* Title */}
           <h1
             className="
-              max-w-4xl
-              text-3xl
-              font-extrabold
-              leading-tight
-              tracking-tight
-              text-white
-              sm:text-4xl
-              lg:text-5xl
-            "
+    max-w-4xl
+    text-3xl
+    font-extrabold
+    leading-tight
+    tracking-tight
+    text-white
+    sm:text-4xl
+    lg:text-5xl
+  "
           >
-            {section.title}
+            {section.title.split("FOSTIIMA").map((part, index, arr) => (
+              <span key={index}>
+                {part}
+                {index < arr.length - 1 && (
+                  <span className="text-[#c31e3b]">FOSTIIMA</span>
+                )}
+              </span>
+            ))}
           </h1>
-
           {/* Description */}
           <p
             className="
@@ -144,7 +144,6 @@ export default async function LifeAtFostiimaDetailPage({
 
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-
           {/* =================================================
               TOP GALLERY
           ================================================= */}

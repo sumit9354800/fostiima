@@ -1,4 +1,3 @@
-
 import { cloudinaryAsset } from "@/lib/cloudinary";
 import { ArrowRight } from "lucide-react";
 
@@ -7,7 +6,7 @@ export const lifeAtFostiimaHero = {
   description:
     "Discover a vibrant campus experience where academic learning, student activities, collaboration and personal growth come together.",
   backgroundImage: cloudinaryAsset(
-    "/life-at-fostiima/life-at-fostiima-hero.png"
+    "/life-at-fostiima/life-at-fostiima-hero.png",
   ),
 };
 
@@ -15,40 +14,39 @@ export function LifeAtFostiimaHero() {
   const hasBackgroundImage = Boolean(lifeAtFostiimaHero.backgroundImage);
 
   return (
-    <section
-      className="relative isolate overflow-hidden bg-[#061a3a]"
-      style={
-        hasBackgroundImage
-          ? {
-              backgroundImage: `url(${lifeAtFostiimaHero.backgroundImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }
-          : undefined
-      }
-    >
-      {/* Grid - only shown when background image is not available */}
-      {!hasBackgroundImage && (
+    <section className="relative isolate overflow-hidden bg-[#061a3a]">
+      {/* Background image */}
+      {hasBackgroundImage && (
         <div
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage:
-              "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
-            backgroundSize: "42px 42px",
+            backgroundImage: `url(${lifeAtFostiimaHero.backgroundImage})`,
           }}
         />
       )}
 
-      {/* Dark overlay when background image exists */}
+      {/* Dark overlay */}
       {hasBackgroundImage && (
         <div className="absolute inset-0 bg-[#061a3a]/65" />
       )}
 
+      {/* Subtle grid overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+          backgroundSize: "42px 42px",
+        }}
+      />
+
+      {/* Red glow */}
       <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#c31e3b]/10 blur-3xl" />
 
+      {/* Gold glow */}
       <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#e5b83f]/10 blur-3xl" />
 
+      {/* Content */}
       <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
         <div className="max-w-4xl">
           <div className="mb-5 flex items-center gap-3">
@@ -61,7 +59,7 @@ export function LifeAtFostiimaHero() {
 
           <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-7xl">
             Life at
-            <span className="text-[#e5b83f]"> FOSTIIMA</span>
+            <span className="text-[#c31e3b]"> FOSTIIMA</span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-7 text-[#b8c5d8] sm:text-lg">

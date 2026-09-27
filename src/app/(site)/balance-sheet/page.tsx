@@ -1,20 +1,21 @@
+import { cloudinaryAsset } from "@/lib/cloudinary";
 import { FileText, ExternalLink } from "lucide-react";
 
 const balanceSheets = [
   {
     year: "2022–23",
     title: "Balance Sheet 2022–23",
-    file: "/documents/balance-sheet/fostiima_2022-23.pdf",
+    file: cloudinaryAsset("/documents/balance-sheet/fostiima_2022-23.pdf"),
   },
   {
     year: "2021–22",
     title: "Balance Sheet 2021–22",
-    file: "/documents/balance-sheet/fostiima_2021-22.pdf",
+    file: cloudinaryAsset("/documents/balance-sheet/fostiima_2021-22.pdf"),
   },
   {
     year: "2020–21",
     title: "Balance Sheet 2020–21",
-    file: "/documents/balance-sheet/fostiima_2020-21.pdf",
+    file: cloudinaryAsset("/documents/balance-sheet/fostiima_2020-21.pdf"),
   },
 ];
 

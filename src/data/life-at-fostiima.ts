@@ -121,6 +121,34 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           },
         ],
       },
+
+      {
+        title: "Mr. Ashish Bhalla",
+        description:
+          "Founder and CEO - Synsperity Business Consulting. Ashish Bhalla is the Head Campus Relations – Director HR for HCL Tech. He has overall 19 years of extensive experience in HR and has a very long association with the HCL group. His current role involves hiring from B-Schools. His expertise involves Volume Recruitments, US IT staffing, operating large projects, Customer service, Technical support, Collections Back Office and order to Cash domains.",
+        images: [],
+      },
+
+      {
+        title: "Mr. Gaurav Bhatia",
+        description:
+          "Director - Protiviti. Gaurav Bhatia is working as Director. He is India lead with Protiviti's Knowledge and Innovation Group. Prior to this, he was associated as an AVP with Evideserve. He has an overall experience of 23 years. He is pass out from one of India's prestigious colleges, IIM Kolkata, and completed his MBA from International University of Japan.",
+        images: [],
+      },
+
+      {
+        title: "Ms. Bhavna Marwah",
+        description:
+          "Director - People & Culture | Human Resources Leader - Protiviti Consulting. Bhavna Marwah is dedicated to fostering an inclusive and supportive work environment as she spearheads HR initiatives at Protiviti. With a focus on building strong HPR capabilities to drive business growth. Her extensive experience spans over two decades, during which she played pivotal roles in organizations such as Protiviti Capability Center India, IHS Global Inside and Exide Industries Limited.",
+        images: [],
+      },
+
+      {
+        title: "Ms. Mitali Tayal",
+        description:
+          "Senior Vice President & Head Affluent Client Servicing - IndusInd Bank. Mitali Tayal, based in Gurgaon, India, is a seasoned professional with over 22 years of extensive experience in Banking, Finance and BPO industries. Currently she is serving as the Head of service strategy and Quality Assurance at RBL Bank. With a rich background including roles at prestigious institutions such as GE, Royal Bank of Scotland and ICICI Bank, she brings a wealth of knowledge in Banking operations, Quality Improvement, Team Management, and BPO operations management. Mitali's career journey reflects her commitment to excellence and customer satisfaction.",
+        images: [],
+      },
     ],
   },
 
@@ -171,9 +199,9 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
       "/life-at-fostiima/business-exposure-tips/dubai/dubai1.jpg",
     ),
 
-    alt: "Business Exposure Tips - Dubai",
+    alt: "Business Exposure Trips - Dubai",
 
-    title: "Business Exposure Tips",
+    title: "Business Exposure Trips",
 
     description:
       "International business exposure through educational and industry experiences in Dubai and Malaysia.",
@@ -548,12 +576,26 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
       },
       {
         src: cloudinaryAsset(
-          "/life-at-fostiima/team-building-camp/team-building-camp6.jpeg",
+          "/life-at-fostiima/team-building-camp/team-building-camp6.webp",
         ),
         alt: "Team Building Camp at FOSTIIMA - 6",
       },
     ],
 
-    content: [],
+    content: [
+      {
+        title: "Life@ FOSTIIMA",
+        description:
+          "Life at FOSTIIMA Business School brings together academic learning, student engagement, teamwork, professional development and memorable campus experiences. Students participate in a wide range of activities that encourage collaboration, creativity, confidence and personal growth.",
+        images: [ ],
+      },
+
+      {
+        title: "Computer Laboratory",
+        description:
+          "FOSTIIMA has four computer labs with Wi-Fi network facilities in a dynamic and spacious environment. The computer centre is equipped with branded Dell computers and the latest application software, with approximately 160 computers across the campus. The labs have high-speed connectivity, firewall security systems and LCD projectors for classroom presentations and video conferencing facilities.",
+        images: [],
+      },
+    ],
   },
 ];

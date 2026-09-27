@@ -38,6 +38,10 @@ const VIDEO_EXTENSIONS = new Set([
   ".webm",
 ]);
 
+const RAW_EXTENSIONS = new Set([
+  ".pdf",
+]);
+
 function getAllFiles(dir) {
   const entries = readdirSync(dir, {
     withFileTypes: true,
@@ -67,6 +71,10 @@ function getResourceType(filePath) {
 
   if (VIDEO_EXTENSIONS.has(ext)) {
     return "video";
+  }
+
+  if (RAW_EXTENSIONS.has(ext)) {
+    return "raw";
   }
 
   return "raw";
@@ -116,7 +124,10 @@ async function uploadFile(filePath) {
     };
   } catch (error) {
     console.error(`   ❌ FAILED`);
-    console.error(`   ${error.message}`);
+    console.error("   Error:", error);
+    console.error("   Message:", error?.message);
+    console.error("   HTTP Code:", error?.http_code);
+    console.error("   Name:", error?.name);
 
     return {
       success: false,

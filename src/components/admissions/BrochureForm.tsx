@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Download, Loader2 } from "lucide-react";
+import { cloudinaryAsset } from "@/lib/cloudinary";
 
 type BrochureFormProps = {
   onSuccess?: () => void;
@@ -81,7 +82,7 @@ export default function BrochureForm({
 
       downloadLink.href = BROCHURE_URL;
       downloadLink.download =
-        "FOSTIIMA-Business-School-Brochure.pdf";
+        cloudinaryAsset("brochure/FOSTIIMA-Business-School-Brochure.pdf");
 
       document.body.appendChild(downloadLink);
       downloadLink.click();

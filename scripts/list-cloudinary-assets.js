@@ -81,15 +81,17 @@ function buildFolderObject(resources) {
 async function main() {
   console.log("☁️ Fetching Cloudinary assets...\n");
 
-  const [images, videos] = await Promise.all([
+  const [images, videos, raw] = await Promise.all([
     getAllResources("image"),
     getAllResources("video"),
+    getAllResources("raw"),
   ]);
 
-  const allResources = [...images, ...videos];
+  const allResources = [...images, ...videos, ...raw];
 
   console.log(`🖼️ Images: ${images.length}`);
   console.log(`🎥 Videos: ${videos.length}`);
+  console.log(`📄 Raw/PDF: ${raw.length}`);
   console.log(`📦 Total: ${allResources.length}\n`);
 
   const folderObject = buildFolderObject(allResources);

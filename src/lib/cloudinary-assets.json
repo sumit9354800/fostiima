@@ -255,6 +255,46 @@
       "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441205/fostiima/awards-accreditation/nba.jpg",
       "width": 1200,
       "height": 946
+    },
+    "2019-20.PDF": {
+      "type": "raw",
+      "publicId": "fostiima/awards-accreditation/2019-20.PDF",
+      "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790441193/fostiima/awards-accreditation/2019-20.PDF"
+    },
+    "2020-21.PDF": {
+      "type": "raw",
+      "publicId": "fostiima/awards-accreditation/2020-21.PDF",
+      "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790441195/fostiima/awards-accreditation/2020-21.PDF"
+    },
+    "2021-22.PDF": {
+      "type": "raw",
+      "publicId": "fostiima/awards-accreditation/2021-22.PDF",
+      "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790441197/fostiima/awards-accreditation/2021-22.PDF"
+    },
+    "2022-23.PDF": {
+      "type": "raw",
+      "publicId": "fostiima/awards-accreditation/2022-23.PDF",
+      "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790441199/fostiima/awards-accreditation/2022-23.PDF"
+    },
+    "2024-25.pdf": {
+      "type": "raw",
+      "publicId": "fostiima/awards-accreditation/2024-25.pdf",
+      "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790441200/fostiima/awards-accreditation/2024-25.pdf"
+    },
+    "2025-26.PDF": {
+      "type": "raw",
+      "publicId": "fostiima/awards-accreditation/2025-26.PDF",
+      "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790441201/fostiima/awards-accreditation/2025-26.PDF"
+    },
+    "2026-27.PDF": {
+      "type": "raw",
+      "publicId": "fostiima/awards-accreditation/2026-27.PDF",
+      "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790441202/fostiima/awards-accreditation/2026-27.PDF"
+    },
+    "NBA-28.03.2025.pdf": {
+      "type": "raw",
+      "publicId": "fostiima/awards-accreditation/NBA-28.03.2025.pdf",
+      "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790441204/fostiima/awards-accreditation/NBA-28.03.2025.pdf"
     }
   },
   "badge": {
@@ -3246,6 +3286,22 @@
         "height": 867
       }
     },
+    "FOSTIIMA-FINAL33": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/life-at-fostiima/FOSTIIMA-FINAL33",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790527873/fostiima/life-at-fostiima/FOSTIIMA-FINAL33.webp",
+      "width": 2480,
+      "height": 3508
+    },
+    "FOSTIIMA-FINAL34": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/life-at-fostiima/FOSTIIMA-FINAL34",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790527882/fostiima/life-at-fostiima/FOSTIIMA-FINAL34.webp",
+      "width": 2480,
+      "height": 3508
+    },
     "life-at-fostiima1": {
       "type": "image",
       "format": "png",
@@ -3520,6 +3576,14 @@
         "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502614/fostiima/life-at-fostiima/team-building-camp/team-building-camp5.jpg",
         "width": 1280,
         "height": 960
+      },
+      "team-building-camp6": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/life-at-fostiima/team-building-camp/team-building-camp6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790527886/fostiima/life-at-fostiima/team-building-camp/team-building-camp6.webp",
+        "width": 2480,
+        "height": 3508
       },
       "WhatsApp Image 2026-09-26 at 2.37.21 PM (1)": {
         "type": "image",
@@ -4112,6 +4176,25 @@
         "url": "https://res.cloudinary.com/mhchxtpl/video/upload/v1790444447/fostiima/uploads/home/53fa813b-cd9e-4311-a382-31b904e2502d.mov",
         "width": 1920,
         "height": 1080
+      }
+    }
+  },
+  "documents": {
+    "balance-sheet": {
+      "fostiima_2020-21.pdf": {
+        "type": "raw",
+        "publicId": "fostiima/documents/balance-sheet/fostiima_2020-21.pdf",
+        "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790442768/fostiima/documents/balance-sheet/fostiima_2020-21.pdf"
+      },
+      "fostiima_2021-22.pdf": {
+        "type": "raw",
+        "publicId": "fostiima/documents/balance-sheet/fostiima_2021-22.pdf",
+        "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790442770/fostiima/documents/balance-sheet/fostiima_2021-22.pdf"
+      },
+      "fostiima_2022-23.pdf": {
+        "type": "raw",
+        "publicId": "fostiima/documents/balance-sheet/fostiima_2022-23.pdf",
+        "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790442777/fostiima/documents/balance-sheet/fostiima_2022-23.pdf"
       }
     }
   }
