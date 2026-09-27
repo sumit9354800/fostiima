@@ -24,7 +24,7 @@ export type ConclaveEvent = {
   bgImage: string;
 
   // Gallery images
-  images: (string | { src: string; alt: string })[];
+  images: string[];
 
   // Optional event video
   video?: string[];

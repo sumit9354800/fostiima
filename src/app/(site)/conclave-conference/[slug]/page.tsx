@@ -7,6 +7,7 @@ import {
   getConclaveEventBySlug,
   getPublishedConclaveEvents,
 } from "@/data/conclave";
+import Image from "next/image";
 
 type EventDetailPageProps = {
   params: Promise<{
@@ -273,7 +274,7 @@ export default async function EventDetailPage({
                       key={`${image}-${index}`}
                       className="group overflow-hidden border border-[#dbe3ee] bg-[#f8fafc]"
                     >
-                      <img
+                      <Image
                         src={image}
                         alt={`${event.title} - Image ${index + 1}`}
                         className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
