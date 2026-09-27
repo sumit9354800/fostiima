@@ -13,9 +13,10 @@ cloudinary.config({
 
 const OUTPUT_FILE = path.join(
   process.cwd(),
+  "src",
+  "lib",
   "cloudinary-assets.json"
 );
-
 async function getAllResources(resourceType) {
   const resources = [];
 

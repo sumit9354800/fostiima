@@ -59,6 +59,21 @@ export default function ConclaveSection() {
           </div>
         )}
 
+        {/* View More */}
+        {events.length > 0 && (
+          <div className="mt-7 flex justify-end">
+            {" "}
+            <Link
+              href="/conclave-conference"
+              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#c31e3b] transition-colors hover:text-[#102a56]"
+            >
+              {" "}
+              View More{" "}
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />{" "}
+            </Link>{" "}
+          </div>
+        )}
+
         {/* Mobile View All */}
         <div className="mt-7 flex justify-center sm:hidden">
           <Link

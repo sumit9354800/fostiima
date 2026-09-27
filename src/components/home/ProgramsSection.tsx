@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRef } from "react";
@@ -109,13 +110,13 @@ export default function ProgramsSection({ programs }: ProgramsSectionProps) {
         >
           {programs.map((program) => {
             const programQuery = getProgramKey(program.title);
-
             const programHref = `/programs?program=${programQuery}`;
 
             return (
-              <article
+              <Link
                 key={program.id}
-                className="group min-w-[82%] snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_25px_rgba(18,59,121,0.06)] sm:min-w-[47%] lg:min-w-[calc(25%-12px)]"
+                href={programHref}
+                className="group min-w-[82%] snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_25px_rgba(18,59,121,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(18,59,121,0.12)] sm:min-w-[47%] lg:min-w-[calc(25%-12px)]"
               >
                 {/* Image */}
                 <div className="relative aspect-[1.65/1] overflow-hidden">
@@ -143,19 +144,16 @@ export default function ProgramsSection({ programs }: ProgramsSectionProps) {
                     {program.duration}
                   </p>
 
-                  <Link
-                    href={`/programs?program=${getProgramKey(program.title)}`}
-                    className="mt-4 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em] text-[#c31e3b] transition-transform duration-300 group-hover:translate-x-1"
-                  >
+                  <span className="mt-4 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em] text-[#c31e3b] transition-transform duration-300 group-hover:translate-x-1">
                     Know More
                     <ArrowRight
                       size={13}
                       className="ml-1.5"
                       aria-hidden="true"
                     />
-                  </Link>
+                  </span>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>

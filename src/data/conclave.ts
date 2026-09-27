@@ -24,7 +24,7 @@ export type ConclaveEvent = {
   bgImage: string;
 
   // Gallery images
-  images: string[];
+  images: (string | { src: string; alt: string })[];
 
   // Optional event video
   video?: string[];
@@ -73,8 +73,31 @@ export const conclaveEvents: ConclaveEvent[] = [
     content: "FOSTIIMA Convocation 2026 at Fostiima Business School.",
     bgImage: "",
 
-    images: [],
-    href: "/conclave-conference/fostiima-convocation-2023",
+    images: [
+      cloudinaryAsset("/conclave/convocation/convocation1.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation2.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation3.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation4.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation5.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation6.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation7.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation8.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation9.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation10.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation11.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation12.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation13.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation14.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation15.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation16.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation18.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation19.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation20.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation21.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation22.jpg"),
+      cloudinaryAsset("/conclave/convocation/convocation23.jpg"),
+    ],
+    href: "/conclave-conference/fostiima-convocation-2026",
     featured: false,
     status: "published",
   },
@@ -364,12 +387,12 @@ export const conclaveEvents: ConclaveEvent[] = [
     location: "On ABP News discussion",
     excerpt: "Discussion On Budget 2024",
     content: "Discussion On Budget 2024 on ABP News discussion.",
-   bgImage: cloudinaryAsset("/conclave/budget.jpg"),
+    bgImage: cloudinaryAsset("/conclave/budget.jpg"),
     video: [
       "https://www.youtube-nocookie.com/embed/20kb_kuj95k",
       "https://www.youtube-nocookie.com/embed/dQto_WwpSxk",
     ],
-   images: [cloudinaryAsset("/conclave/budget.jpg")],
+    images: [cloudinaryAsset("/conclave/budget.jpg")],
     href: "/conclave-conference/discussion-on-budget-2024",
     featured: false,
     status: "published",

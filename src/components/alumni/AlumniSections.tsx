@@ -1,6 +1,7 @@
 "use client";
 
 import { cloudinaryAsset } from "@/lib/cloudinary";
+import { useState } from "react";
 import {
   BarChart3,
   BriefcaseBusiness,
@@ -20,6 +21,18 @@ type AlumniSection = {
   icon: React.ElementType;
 };
 const alumniSections: AlumniSection[] = [
+  {
+    id: "finance-committee",
+
+    title: "Alumni Relations",
+
+    description:
+      "At FOSTIIMA Business School, we believe an institution’s reputation is defined by the achievements of its alumni. While exceptional faculty and infrastructure lay the foundation, it is the performance, leadership, and global impact of our graduates that elevate our standing alongside top-tier institutions. We cultivate lifelong, mutually beneficial relationships with our alumni network. FOSTIIMA supports graduates through strategic professional networking, continuous access to campus expertise, and exclusive partner benefits. In return, our alumni serve as trusted brand ambassadors, driving our growth, mentorship programs, and institutional prestige.",
+
+    image: cloudinaryAsset(""),
+
+    icon: BarChart3,
+  },
   {
     id: "finance-committee",
 
@@ -162,39 +175,9 @@ export default function AlumniSections() {
       <div className="pointer-events-none absolute -right-40 top-[45%] h-80 w-80 rounded-full bg-[#fee2e2]/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Intro */}
-        <div className="mx-auto mb-16 max-w-4xl text-center">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-[#c31e3b]">
-            Alumni Relations
-          </span>
-
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-[#102a56] sm:text-4xl lg:text-5xl">
-            Building Excellence Through Our{" "}
-            <span className="text-[#c31e3b]">Alumni</span>
-          </h1>
-
-          <div className="mx-auto mt-5 space-y-4 text-sm leading-7 text-slate-600 sm:text-base">
-            <p>
-              At FOSTIIMA Business School, we believe an institution’s
-              reputation is defined by the achievements of its alumni. While
-              exceptional faculty and infrastructure lay the foundation, it is
-              the performance, leadership, and global impact of our graduates
-              that elevate our standing alongside top-tier institutions.
-            </p>
-
-            <p>
-              We cultivate lifelong, mutually beneficial relationships with our
-              alumni network. FOSTIIMA supports graduates through strategic
-              professional networking, continuous access to campus expertise,
-              and exclusive partner benefits. In return, our alumni serve as
-              trusted brand ambassadors, driving our growth, mentorship
-              programs, and institutional prestige.
-            </p>
-          </div>
-        </div>
 
         {/* Quick Navigation */}
-        <div className="mb-16 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+        <div className="mb-16 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-5">
           {alumniSections.map((item) => (
             <a
               key={item.id}

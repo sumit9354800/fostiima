@@ -10,11 +10,7 @@ export default function LifeAtFostiimaPage() {
   return (
     <main className="min-h-screen bg-[#f8fafc]">
       <LifeAtFostiimaHero />
-      <LifeExperienceSection />
       <CampusGallerySection />
-      <CampusActivitiesSection />
-      <BeyondAcademicsSection />
-      <StudentJourneySection />
       <LifeAtFostiimaCTA />
     </main>
   );

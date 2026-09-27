@@ -1,5 +1,5 @@
 import { Camera, GraduationCap, Sparkles, Users } from "lucide-react";
-import { beyondAcademics } from "@/data/life-at-fostiima";
+import { lifeAtFostiimaSections } from "@/data/life-at-fostiima";
 
 const icons = [Camera, Sparkles, GraduationCap, Users];
 
@@ -28,7 +28,7 @@ export function BeyondAcademicsSection() {
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
-          {beyondAcademics.map((item, index) => {
+          {lifeAtFostiimaSections.map((item, index) => {
             const Icon = icons[index];
 
             return (

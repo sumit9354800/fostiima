@@ -12,7 +12,7 @@ const highlights = [
 
     image:
 
-      cloudinaryAsset("/home/campus/campus1.jpeg"),
+      cloudinaryAsset("/home/campus/capmpus2.jpeg"),
 
     href: "/life-at-fostiima",
 
@@ -30,7 +30,7 @@ const highlights = [
 
     image:
 
-      cloudinaryAsset("/home/campus/capmus2.jpeg"),
+      cloudinaryAsset("/home/campus/capmpus1.jpeg"),
 
     href: "/placement",
 

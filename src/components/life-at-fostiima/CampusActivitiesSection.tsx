@@ -1,5 +1,54 @@
-import { ChevronRight } from "lucide-react";
-import { campusActivities } from "@/data/life-at-fostiima";
+
+import {
+  BookOpen,
+  Dumbbell,
+  Music,
+  Users,
+  Trophy,
+  Sparkles,
+  ChevronRight,
+} from "lucide-react";
+
+
+export const campusActivities = [
+  {
+    title: "Student Clubs & Committees",
+    description:
+      "Participate in student-led clubs and committees that encourage collaboration, leadership, creativity and meaningful campus engagement.",
+    icon: Users,
+  },
+  {
+    title: "Sports & Fitness",
+    description:
+      "Take part in sports and fitness activities that promote teamwork, discipline, healthy competition and an active campus lifestyle.",
+    icon: Dumbbell,
+  },
+  {
+    title: "Cultural Activities",
+    description:
+      "Engage in cultural events and activities that provide students with opportunities to express themselves, celebrate creativity and connect with peers.",
+    icon: Music,
+  },
+  {
+    title: "Academic & Knowledge Events",
+    description:
+      "Participate in academic discussions, workshops, competitions and knowledge-sharing activities that complement classroom learning.",
+    icon: BookOpen,
+  },
+  {
+    title: "Competitions & Challenges",
+    description:
+      "Explore competitions and challenges that encourage problem-solving, teamwork, leadership and practical application of skills.",
+    icon: Trophy,
+  },
+  {
+    title: "Student Engagement",
+    description:
+      "Build connections through campus initiatives, collaborative activities and student-led experiences that make campus life more engaging.",
+    icon: Sparkles,
+  },
+];
+
 
 export function CampusActivitiesSection() {
   return (

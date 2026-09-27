@@ -9,40 +9,10 @@ import {
   ShieldCheck,
   Star,
 } from "lucide-react";
+import Link from "next/link";
+import { accreditations } from "@/data/awards-accreditation";
 
-const awards = [
-  {
-    title: "AICTE APPROVAL 2024-25",
-    description:
-      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2024-25",
-    icon: Award,
-    accent: "red",
-  },
-
-  {
-    title: "AICTE APPROVAL 2023-24",
-    description:
-      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2023-24",
-    icon: Star,
-    accent: "yellow",
-  },
-
-  {
-    title: "AICTE APPROVAL 2022-23",
-    description:
-      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2022-23",
-    icon: Star,
-    accent: "blue",
-  },
-
-  {
-    title: "AICTE APPROVAL 2021-22",
-    description:
-      "Online application of the Institution submitted for Extension of Approval for the Academic Year 2021-22",
-    icon: ShieldCheck,
-    accent: "blue",
-  },
-];
+const icons = [Award, Star, ShieldCheck];
 
 export default function AwardsSection() {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -62,6 +32,7 @@ export default function AwardsSection() {
     <section className="relative overflow-hidden bg-[#f8faff] py-14 sm:py-16">
       {/* Background decoration */}
       <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#dbeafe]/60 blur-3xl" />
+
       <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-[#fee2e2]/60 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -110,16 +81,16 @@ export default function AwardsSection() {
           ref={sliderRef}
           className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-3 scrollbar-hide"
         >
-          {awards.map((award) => {
-            const Icon = award.icon;
+          {accreditations.map((accreditation, index) => {
+            const Icon = icons[index % icons.length];
 
             const accent =
-              award.accent === "red"
+              index % 3 === 0
                 ? {
                     icon: "bg-[#c31e3b]/10 text-[#c31e3b]",
                     line: "bg-[#c31e3b]",
                   }
-                : award.accent === "yellow"
+                : index % 3 === 1
                   ? {
                       icon: "bg-[#fef3c7] text-[#b77900]",
                       line: "bg-[#eab308]",
@@ -130,46 +101,62 @@ export default function AwardsSection() {
                     };
 
             return (
-              <article
-                key={award.title}
-                className="group relative min-w-[85%] snap-start overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:min-w-[calc(50%-10px)] lg:min-w-[calc(33.333%-14px)]"
+              <Link
+                key={accreditation.id}
+                href={`/awards-accreditation/${accreditation.id}`}
+                className="group min-w-[85%] snap-start sm:min-w-[calc(50%-15px)] lg:min-w-[calc(25%-15px)]"
               >
-                {/* Top accent */}
-                <div
-                  className={`absolute left-0 top-0 h-1 w-full ${accent.line}`}
-                />
-
-                <div className="flex items-start justify-between">
+                <article className="relative h-full overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  {/* Top accent */}
                   <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-xl ${accent.icon}`}
-                  >
-                    <Icon className="h-6 w-6" strokeWidth={1.8} />
+                    className={`absolute left-0 top-0 h-1 w-full ${accent.line}`}
+                  />
+
+                  <div className="flex items-start justify-between">
+                    <div
+                      className={`flex h-12 w-12 items-center justify-center rounded-xl ${accent.icon}`}
+                    >
+                      <Icon
+                        className="h-6 w-6"
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                      />
+                    </div>
+
+                    <ArrowUpRight className="h-5 w-5 text-slate-300 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#c31e3b]" />
                   </div>
 
-                  <ArrowUpRight className="h-5 w-5 text-slate-300 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#c31e3b]" />
-                </div>
+                  {/* Title */}
+                  <h3 className="mt-5 text-lg font-bold text-[#102a56]">
+                    {accreditation.title}
+                  </h3>
 
-                <h3 className="mt-5 text-lg font-bold text-[#102a56]">
-                  {award.title}
-                </h3>
+                  {/* Year */}
+                  {accreditation.year && (
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[#c31e3b]">
+                      {accreditation.year}
+                    </p>
+                  )}
 
-                <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">
-                  {award.description}
-                </p>
-              </article>
+                  {/* Description */}
+                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">
+                    {accreditation.description}
+                  </p>
+                </article>
+              </Link>
             );
           })}
         </div>
 
         {/* Bottom link */}
         <div className="mt-6 flex justify-end">
-          <a
+          <Link
             href="/awards-accreditation"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#c31e3b] transition-colors hover:text-[#102a56]"
+            className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#c31e3b] transition-colors hover:text-[#102a56]"
           >
             View More
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </div>
     </section>

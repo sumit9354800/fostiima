@@ -498,6 +498,184 @@
       "width": 1920,
       "height": 1080
     },
+    "convocation": {
+      "convocation1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501906/fostiima/conclave/convocation/convocation1.jpg",
+        "width": 1067,
+        "height": 1600
+      },
+      "convocation10": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501916/fostiima/conclave/convocation/convocation10.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation11": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501921/fostiima/conclave/convocation/convocation11.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation12": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501927/fostiima/conclave/convocation/convocation12.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation13": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501932/fostiima/conclave/convocation/convocation13.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation14": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501937/fostiima/conclave/convocation/convocation14.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation15": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501950/fostiima/conclave/convocation/convocation15.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation16": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501955/fostiima/conclave/convocation/convocation16.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation18": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation18",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501960/fostiima/conclave/convocation/convocation18.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation19": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation19",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501965/fostiima/conclave/convocation/convocation19.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501970/fostiima/conclave/convocation/convocation2.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation20": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation20",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501977/fostiima/conclave/convocation/convocation20.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation21": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation21",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501985/fostiima/conclave/convocation/convocation21.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation22": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation22",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501995/fostiima/conclave/convocation/convocation22.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation23": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation23",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790501999/fostiima/conclave/convocation/convocation23.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502003/fostiima/conclave/convocation/convocation3.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502007/fostiima/conclave/convocation/convocation4.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation5": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502013/fostiima/conclave/convocation/convocation5.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation6": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502018/fostiima/conclave/convocation/convocation6.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation7": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502022/fostiima/conclave/convocation/convocation7.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation8": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502026/fostiima/conclave/convocation/convocation8.jpg",
+        "width": 1500,
+        "height": 1000
+      },
+      "convocation9": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/convocation/convocation9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502031/fostiima/conclave/convocation/convocation9.jpg",
+        "width": 1500,
+        "height": 1000
+      }
+    },
     "HR-round": {
       "hr1": {
         "type": "image",
@@ -2092,6 +2270,14 @@
     }
   },
   "home": {
+    "avn8ek1fcvyt6esfcydv": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/home/avn8ek1fcvyt6esfcydv",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491888/fostiima/home/avn8ek1fcvyt6esfcydv.jpg",
+      "width": 1066,
+      "height": 795
+    },
     "campus": {
       "campus1": {
         "type": "image",
@@ -2100,6 +2286,22 @@
         "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443012/fostiima/home/campus/campus1.jpg",
         "width": 1024,
         "height": 572
+      },
+      "capmpus1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/campus/capmpus1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502047/fostiima/home/campus/capmpus1.jpg",
+        "width": 768,
+        "height": 389
+      },
+      "capmpus2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/campus/capmpus2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502050/fostiima/home/campus/capmpus2.jpg",
+        "width": 1264,
+        "height": 843
       },
       "capmus2": {
         "type": "image",
@@ -2636,6 +2838,14 @@
         "height": 1254
       }
     },
+    "hryuwr13bilpg5zrfc8k": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/home/hryuwr13bilpg5zrfc8k",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491875/fostiima/home/hryuwr13bilpg5zrfc8k.jpg",
+      "width": 1066,
+      "height": 739
+    },
     "ie3ee7qprrw34szjtvtx": {
       "type": "image",
       "format": "png",
@@ -2643,6 +2853,22 @@
       "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790323623/fostiima/home/ie3ee7qprrw34szjtvtx.png",
       "width": 1254,
       "height": 1254
+    },
+    "lcvfrsz2g61sajwvkxo9": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/home/lcvfrsz2g61sajwvkxo9",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491615/fostiima/home/lcvfrsz2g61sajwvkxo9.jpg",
+      "width": 1066,
+      "height": 1600
+    },
+    "lxmy9tdm5evdqcq1r9tq": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/home/lxmy9tdm5evdqcq1r9tq",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491806/fostiima/home/lxmy9tdm5evdqcq1r9tq.jpg",
+      "width": 1600,
+      "height": 1066
     },
     "media-presence": {
       "media-presence1": {
@@ -2703,9 +2929,323 @@
         "width": 1254,
         "height": 1254
       }
+    },
+    "vqgxlkqhtbzrgpb2hfal": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/home/vqgxlkqhtbzrgpb2hfal",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491789/fostiima/home/vqgxlkqhtbzrgpb2hfal.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    "ye2cwm9fm7hqdkgjbwgl": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/home/ye2cwm9fm7hqdkgjbwgl",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491769/fostiima/home/ye2cwm9fm7hqdkgjbwgl.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    "dj7iskvf5po3vwwwg18e": {
+      "type": "video",
+      "format": "mov",
+      "publicId": "fostiima/home/dj7iskvf5po3vwwwg18e",
+      "url": "https://res.cloudinary.com/mhchxtpl/video/upload/v1790453905/fostiima/home/dj7iskvf5po3vwwwg18e.mov",
+      "width": 1920,
+      "height": 1080
     }
   },
   "life-at-fostiima": {
+    "1": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/life-at-fostiima/1",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502076/fostiima/life-at-fostiima/1.jpg",
+      "width": 898,
+      "height": 658
+    },
+    "2": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/life-at-fostiima/2",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502077/fostiima/life-at-fostiima/2.jpg",
+      "width": 1007,
+      "height": 653
+    },
+    "3": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/life-at-fostiima/3",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502079/fostiima/life-at-fostiima/3.jpg",
+      "width": 447,
+      "height": 327
+    },
+    "4": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/life-at-fostiima/4",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502081/fostiima/life-at-fostiima/4.jpg",
+      "width": 888,
+      "height": 506
+    },
+    "5": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/life-at-fostiima/5",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502083/fostiima/life-at-fostiima/5.jpg",
+      "width": 1600,
+      "height": 1067
+    },
+    "6": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/life-at-fostiima/6",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502084/fostiima/life-at-fostiima/6.jpg",
+      "width": 1042,
+      "height": 432
+    },
+    "brain-storming": {
+      "brainstorming1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/brain-storming/brainstorming1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502088/fostiima/life-at-fostiima/brain-storming/brainstorming1.jpg",
+        "width": 4032,
+        "height": 3024
+      },
+      "brainstorming2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/brain-storming/brainstorming2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502092/fostiima/life-at-fostiima/brain-storming/brainstorming2.jpg",
+        "width": 4032,
+        "height": 3024
+      },
+      "brainstorming3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/brain-storming/brainstorming3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502097/fostiima/life-at-fostiima/brain-storming/brainstorming3.jpg",
+        "width": 4032,
+        "height": 3024
+      }
+    },
+    "business-exposure-tips": {
+      "dubai": {
+        "dubai1": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai1",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502099/fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai1.jpg",
+          "width": 1600,
+          "height": 1200
+        },
+        "dubai2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502102/fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai2.jpg",
+          "width": 960,
+          "height": 1280
+        },
+        "dubai3": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai3",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502104/fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai3.jpg",
+          "width": 1600,
+          "height": 1200
+        },
+        "dubai4": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai4",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502106/fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai4.jpg",
+          "width": 960,
+          "height": 1280
+        },
+        "dubai5": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai5",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502108/fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai5.jpg",
+          "width": 720,
+          "height": 1280
+        },
+        "dubai6": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai6",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502109/fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai6.jpg",
+          "width": 1290,
+          "height": 952
+        },
+        "dubai7": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai7",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502117/fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai7.jpg",
+          "width": 4032,
+          "height": 3024
+        },
+        "dubai8": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai8",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502118/fostiima/life-at-fostiima/business-exposure-tips/dubai/dubai8.jpg",
+          "width": 720,
+          "height": 1280
+        }
+      },
+      "malaysia": {
+        "malaysia1": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia1",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502120/fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia1.jpg",
+          "width": 780,
+          "height": 1040
+        },
+        "malaysia2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502121/fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia2.jpg",
+          "width": 1040,
+          "height": 780
+        },
+        "malaysia3": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia3",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502128/fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia3.jpg",
+          "width": 4160,
+          "height": 3120
+        },
+        "malaysia4": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia4",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502134/fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia4.jpg",
+          "width": 4160,
+          "height": 3120
+        },
+        "malaysia5": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia5",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502136/fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia5.jpg",
+          "width": 1280,
+          "height": 1032
+        },
+        "malaysia6": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia6",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502138/fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia6.jpg",
+          "width": 1200,
+          "height": 1600
+        },
+        "malaysia7": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia7",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502140/fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia7.jpg",
+          "width": 1040,
+          "height": 780
+        },
+        "malaysia8": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia8",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502142/fostiima/life-at-fostiima/business-exposure-tips/malaysia/malaysia8.jpg",
+          "width": 1040,
+          "height": 780
+        }
+      }
+    },
+    "corporate-talk": {
+      "corporate-talk1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/corporate-talk/corporate-talk1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502184/fostiima/life-at-fostiima/corporate-talk/corporate-talk1.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "corporate-talk10": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/corporate-talk/corporate-talk10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502186/fostiima/life-at-fostiima/corporate-talk/corporate-talk10.jpg",
+        "width": 1280,
+        "height": 960
+      },
+      "corporate-talk2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/corporate-talk/corporate-talk2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502223/fostiima/life-at-fostiima/corporate-talk/corporate-talk2.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "corporate-talk3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/corporate-talk/corporate-talk3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502253/fostiima/life-at-fostiima/corporate-talk/corporate-talk3.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "corporate-talk4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/corporate-talk/corporate-talk4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502275/fostiima/life-at-fostiima/corporate-talk/corporate-talk4.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "corporate-talk5": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/corporate-talk/corporate-talk5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502334/fostiima/life-at-fostiima/corporate-talk/corporate-talk5.jpg",
+        "width": 4000,
+        "height": 6000
+      },
+      "corporate-talk6": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/corporate-talk/corporate-talk6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502360/fostiima/life-at-fostiima/corporate-talk/corporate-talk6.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "corporate-talk7": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/corporate-talk/corporate-talk7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502376/fostiima/life-at-fostiima/corporate-talk/corporate-talk7.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "corporate-talk8": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/corporate-talk/corporate-talk8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502414/fostiima/life-at-fostiima/corporate-talk/corporate-talk8.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "corporate-talk9": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/corporate-talk/corporate-talk9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502415/fostiima/life-at-fostiima/corporate-talk/corporate-talk9.jpg",
+        "width": 1156,
+        "height": 867
+      }
+    },
     "life-at-fostiima1": {
       "type": "image",
       "format": "png",
@@ -2777,6 +3317,218 @@
       "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790443173/fostiima/life-at-fostiima/life-at-fostiima9.png",
       "width": 1254,
       "height": 1254
+    },
+    "sports-and-fitness": {
+      "sport1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502435/fostiima/life-at-fostiima/sports-and-fitness/sport1.jpg",
+        "width": 6000,
+        "height": 3368
+      },
+      "sport10": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport10",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502438/fostiima/life-at-fostiima/sports-and-fitness/sport10.jpg",
+        "width": 1600,
+        "height": 1200
+      },
+      "sport11": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport11",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502440/fostiima/life-at-fostiima/sports-and-fitness/sport11.jpg",
+        "width": 1125,
+        "height": 1500
+      },
+      "sport12": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport12",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502443/fostiima/life-at-fostiima/sports-and-fitness/sport12.jpg",
+        "width": 960,
+        "height": 1280
+      },
+      "sport13": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport13",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502445/fostiima/life-at-fostiima/sports-and-fitness/sport13.jpg",
+        "width": 1600,
+        "height": 1200
+      },
+      "sport14": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport14",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502446/fostiima/life-at-fostiima/sports-and-fitness/sport14.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "sport15": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport15",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502451/fostiima/life-at-fostiima/sports-and-fitness/sport15.jpg",
+        "width": 4096,
+        "height": 3072
+      },
+      "sport16": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport16",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502453/fostiima/life-at-fostiima/sports-and-fitness/sport16.jpg",
+        "width": 1599,
+        "height": 720
+      },
+      "sport17": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport17",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502454/fostiima/life-at-fostiima/sports-and-fitness/sport17.jpg",
+        "width": 960,
+        "height": 1280
+      },
+      "sport18": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport18",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502455/fostiima/life-at-fostiima/sports-and-fitness/sport18.jpg",
+        "width": 1156,
+        "height": 651
+      },
+      "sport19": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport19",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502457/fostiima/life-at-fostiima/sports-and-fitness/sport19.jpg",
+        "width": 3264,
+        "height": 1836
+      },
+      "sport2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502491/fostiima/life-at-fostiima/sports-and-fitness/sport2.jpg",
+        "width": 6000,
+        "height": 3368
+      },
+      "sport20": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport20",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502494/fostiima/life-at-fostiima/sports-and-fitness/sport20.jpg",
+        "width": 1599,
+        "height": 899
+      },
+      "sport3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502522/fostiima/life-at-fostiima/sports-and-fitness/sport3.jpg",
+        "width": 6000,
+        "height": 3368
+      },
+      "sport4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502545/fostiima/life-at-fostiima/sports-and-fitness/sport4.jpg",
+        "width": 6000,
+        "height": 3368
+      },
+      "sport5": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502574/fostiima/life-at-fostiima/sports-and-fitness/sport5.jpg",
+        "width": 6000,
+        "height": 3368
+      },
+      "sport6": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502584/fostiima/life-at-fostiima/sports-and-fitness/sport6.jpg",
+        "width": 2656,
+        "height": 3984
+      },
+      "sport7": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502588/fostiima/life-at-fostiima/sports-and-fitness/sport7.jpg",
+        "width": 3984,
+        "height": 2656
+      },
+      "sport8": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502595/fostiima/life-at-fostiima/sports-and-fitness/sport8.jpg",
+        "width": 3984,
+        "height": 2656
+      },
+      "sport9": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/sports-and-fitness/sport9",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502605/fostiima/life-at-fostiima/sports-and-fitness/sport9.jpg",
+        "width": 3984,
+        "height": 2656
+      }
+    },
+    "team-building-camp": {
+      "team-building-camp1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/team-building-camp/team-building-camp1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502608/fostiima/life-at-fostiima/team-building-camp/team-building-camp1.jpg",
+        "width": 960,
+        "height": 1280
+      },
+      "team-building-camp2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/team-building-camp/team-building-camp2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502609/fostiima/life-at-fostiima/team-building-camp/team-building-camp2.jpg",
+        "width": 1600,
+        "height": 1200
+      },
+      "team-building-camp3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/team-building-camp/team-building-camp3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502611/fostiima/life-at-fostiima/team-building-camp/team-building-camp3.jpg",
+        "width": 1600,
+        "height": 1200
+      },
+      "team-building-camp4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/team-building-camp/team-building-camp4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502612/fostiima/life-at-fostiima/team-building-camp/team-building-camp4.jpg",
+        "width": 960,
+        "height": 1280
+      },
+      "team-building-camp5": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/team-building-camp/team-building-camp5",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502614/fostiima/life-at-fostiima/team-building-camp/team-building-camp5.jpg",
+        "width": 1280,
+        "height": 960
+      },
+      "WhatsApp Image 2026-09-26 at 2.37.21 PM (1)": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/life-at-fostiima/team-building-camp/WhatsApp Image 2026-09-26 at 2.37.21 PM (1)",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502607/fostiima/life-at-fostiima/team-building-camp/WhatsApp%20Image%202026-09-26%20at%202.37.21%20PM%20%281%29.jpg",
+        "width": 960,
+        "height": 1280
+      }
     }
   },
   "logo": {

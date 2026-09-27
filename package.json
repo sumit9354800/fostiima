@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "admin:create": "tsx scripts/create-admin.ts"
+    "admin:create": "tsx scripts/create-admin.ts",
+    "cloudinary:upload": "node scripts/upload-public-to-cloudinary.js",
+    "cloudinary:sync": "node scripts/list-cloudinary-assets.js"
   },
   "dependencies": {
     "@better-auth/prisma-adapter": "^1.7.4",
@@ -36,7 +38,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "cloudinary-cli": "^1.1.2",
-    "dotenv": "^17.2.2",
+    "dotenv": "^17.4.2",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.3.3",
     "postcss": "^8.5.6",

@@ -1,6 +1,15 @@
 
+import { cloudinaryAsset } from "@/lib/cloudinary";
 import { ArrowRight } from "lucide-react";
-import { lifeAtFostiimaHero } from "@/data/life-at-fostiima";
+
+export const lifeAtFostiimaHero = {
+  eyebrow: "Life at FOSTIIMA",
+  description:
+    "Discover a vibrant campus experience where academic learning, student activities, collaboration and personal growth come together.",
+  backgroundImage: cloudinaryAsset(
+    "/life-at-fostiima/life-at-fostiima-hero.png"
+  ),
+};
 
 export function LifeAtFostiimaHero() {
   const hasBackgroundImage = Boolean(lifeAtFostiimaHero.backgroundImage);

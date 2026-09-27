@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -6,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-import { campusGallery } from "@/data/life-at-fostiima";
+import { lifeAtFostiimaSections } from "@/data/life-at-fostiima";
 
 export function CampusGallerySection() {
   return (
@@ -15,6 +14,7 @@ export function CampusGallerySection() {
       className="bg-[#f8fafc] px-5 py-16 sm:px-6 lg:px-8 lg:py-20"
     >
       <div className="mx-auto max-w-7xl">
+        {/* Heading */}
         <div className="max-w-2xl">
           <p className="mb-3 text-md font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
             Life at FOSTIIMA
@@ -30,19 +30,23 @@ export function CampusGallerySection() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {campusGallery.map((item) => {
+        {/* Gallery Cards */}
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {lifeAtFostiimaSections.map((item) => {
             const isLarge = item.size === "large";
 
             return (
               <Link
-                key={item.title}
-                href={item.href}
+                key={item.slug}
+                href={`/life-at-fostiima/${item.slug}`}
                 className={[
-                  "group block overflow-hidden rounded-2xl border border-[#dbe3ee] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(6,26,58,0.10)]",
+                  "group block overflow-hidden rounded-2xl border border-[#dbe3ee] bg-white shadow-sm",
+                  "transition duration-300 hover:-translate-y-1",
+                  "hover:shadow-[0_16px_35px_rgba(6,26,58,0.10)]",
                   isLarge ? "sm:col-span-2" : "",
                 ].join(" ")}
               >
+                {/* Image */}
                 <GalleryImage
                   src={item.src}
                   alt={item.alt}
@@ -50,28 +54,68 @@ export function CampusGallerySection() {
                   isLarge={isLarge}
                 />
 
+                {/* Card Content */}
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-4">
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
+                      {/* Title */}
                       <h3 className="text-lg font-bold text-[#061a3a]">
                         {item.title}
                       </h3>
 
+                      {/* Description */}
                       {item.description && (
-                        <p className="mt-2 text-sm leading-6 text-[#64748b]">
-                          {item.description}
+                        <p
+                          className="
+                            mt-2
+                            line-clamp-4
+                            min-h-[96px]
+                            text-sm
+                            leading-6
+                            text-[#64748b]
+                          "
+                        >
+                          {truncateWords(item.description, 20)}
                         </p>
                       )}
                     </div>
 
-                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#dbe3ee] text-[#c31e3b] transition-all duration-300 group-hover:border-[#c31e3b] group-hover:bg-[#c31e3b] group-hover:text-white">
+                    {/* Arrow */}
+                    <span
+                      className="
+                        mt-0.5
+                        flex
+                        h-9
+                        w-9
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        border
+                        border-[#dbe3ee]
+                        text-[#c31e3b]
+                        transition-all
+                        duration-300
+                        group-hover:border-[#c31e3b]
+                        group-hover:bg-[#c31e3b]
+                        group-hover:text-white
+                      "
+                    >
                       <ArrowUpRight
-                        className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                        className="
+                          h-4
+                          w-4
+                          transition-transform
+                          duration-300
+                          group-hover:translate-x-0.5
+                          group-hover:-translate-y-0.5
+                        "
                         aria-hidden="true"
                       />
                     </span>
                   </div>
 
+                  {/* Explore Details */}
                   <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.14em] text-[#c31e3b]">
                     Explore Details
                   </p>
@@ -84,6 +128,24 @@ export function CampusGallerySection() {
     </section>
   );
 }
+
+/* =====================================================
+   DESCRIPTION TRUNCATION
+===================================================== */
+
+function truncateWords(text: string, limit = 20) {
+  const words = text.trim().split(/\s+/);
+
+  if (words.length <= limit) {
+    return text;
+  }
+
+  return words.slice(0, limit).join(" ");
+}
+
+/* =====================================================
+   GALLERY IMAGE
+===================================================== */
 
 type GalleryImageProps = {
   src: string;
@@ -103,16 +165,27 @@ function GalleryImage({
   return (
     <div
       className={[
-        "relative aspect-square overflow-hidden bg-[#eef2f7]",
+        "relative overflow-hidden bg-[#eef2f7]",
+        "aspect-square",
         isLarge ? "sm:aspect-auto sm:h-80" : "",
       ].join(" ")}
     >
       {hasError ? (
+        /* Image Error */
         <div
-          className="absolute inset-0 flex items-center justify-center overflow-hidden bg-[#eef2f7]"
+          className="
+            absolute
+            inset-0
+            flex
+            items-center
+            justify-center
+            overflow-hidden
+            bg-[#eef2f7]
+          "
           role="img"
           aria-label={`${title} image unavailable`}
         >
+          {/* Grid Background */}
           <div
             className="absolute inset-0 opacity-[0.55]"
             style={{
@@ -122,6 +195,7 @@ function GalleryImage({
             }}
           />
 
+          {/* Error Text */}
           <div className="relative z-10 px-6 text-center">
             <div className="mx-auto mb-3 h-px w-10 bg-[#c31e3b]" />
 
@@ -144,7 +218,12 @@ function GalleryImage({
               ? "(max-width: 640px) 100vw, 50vw"
               : "(max-width: 640px) 100vw, 25vw"
           }
-          className="object-contain transition duration-500"
+          className="
+            object-cover
+            transition
+            duration-500
+            group-hover:scale-105
+          "
           onError={() => setHasError(true)}
         />
       )}
