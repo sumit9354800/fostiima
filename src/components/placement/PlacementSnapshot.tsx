@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   Building2,
   Target,
@@ -30,16 +32,13 @@ export default function PlacementSnapshot() {
           <div className="mx-auto mt-5 h-1 w-14 bg-[#e5b83f]" />
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {placementStats.map((stat, index) => {
             const Icon = statIcons[index];
 
-            return (
-              <article
-                key={stat.label}
-                className="group border border-[#dbe3ee] bg-white p-7 text-center shadow-[0_8px_30px_rgba(6,26,58,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(6,26,58,0.12)]"
-              >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center border border-[#e5b83f] text-[#c31e3b] transition-colors duration-300 group-hover:bg-[#c31e3b] group-hover:text-white">
+            const card = (
+              <article className="group border border-[#dbe3ee] bg-white p-7 text-center shadow-[0_8px_30px_rgba(6,26,58,0.06)]">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center border border-[#e5b83f] text-[#c31e3b]">
                   <Icon className="h-6 w-6" />
                 </div>
 
@@ -51,6 +50,24 @@ export default function PlacementSnapshot() {
                   {stat.label}
                 </p>
               </article>
+            );
+
+            if ('href' in stat && stat.href) {
+              return (
+                <Link
+                  key={stat.label}
+                  href={stat.href}
+                  className="block"
+                >
+                  {card}
+                </Link>
+              );
+            }
+
+            return (
+              <div key={stat.label}>
+                {card}
+              </div>
             );
           })}
         </div>

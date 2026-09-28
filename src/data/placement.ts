@@ -1,3 +1,12 @@
+import { cloudinaryAsset } from "@/lib/cloudinary";
+
+export type PlacementPage = {
+  title: string;
+  description: string;
+  rowImages?: string[];
+  fullImages?: string[];
+};
+
 export const placementStats = [
   {
     value: "₹30.0 LPA",
@@ -10,12 +19,44 @@ export const placementStats = [
   {
     value: "100%",
     label: "Placement Rate",
+    href: "/placement/placement-rate",
   },
   {
     value: "128+",
     label: "Companies Visited",
+    href: "/placement/companies-visited",
   },
 ] as const;
+
+export const placementPages = {
+  "placement-rate": {
+    title: "Placement Rate",
+    description:
+      "FOSTIIMA Business School's placement outcomes and student placement highlights.",
+    rowImages: [
+      cloudinaryAsset("/placement/col1.jpeg"),
+      cloudinaryAsset("/placement/col2.jpeg"),
+      cloudinaryAsset("/placement/col3.jpeg"),
+      cloudinaryAsset("/placement/col4.jpeg"),
+      cloudinaryAsset("/placement/col55.jpeg"),
+    ],
+    fullImages: [
+      cloudinaryAsset("/placement/placement1.webp"),
+      cloudinaryAsset("/placement/placement2.webp"),
+    ],
+  },
+
+  "companies-visited": {
+    title: "Companies Visited",
+    description:
+      "Companies and recruiters associated with FOSTIIMA's placement opportunities.",
+    rowImages: [],
+    fullImages: [
+      cloudinaryAsset("/placement/company1.webp"),
+      cloudinaryAsset("/placement/company2.webp"),
+    ],
+  },
+} as const;
 
 export const placementAdvantages = [
   {

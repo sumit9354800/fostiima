@@ -226,151 +226,191 @@ export default async function LifeAtFostiimaDetailPage({ params }: PageProps) {
               ================================================= */}
 
               <div className="grid gap-6 lg:grid-cols-2">
-                {section.content.map((item, index) => (
-                  <article
-                    key={`${section.slug}-content-${index}`}
-                    className="
-                      group
-                      relative
-                      overflow-hidden
-                      rounded-2xl
-                      border
-                      border-[#dbe3ee]
-                      bg-white
-                      p-6
-                      shadow-sm
-                      transition
-                      duration-300
-                      hover:-translate-y-1
-                      hover:shadow-[0_16px_35px_rgba(6,26,58,0.09)]
-                      sm:p-8
-                    "
-                  >
-                    {/* Decorative Circle */}
-                    <div
-                      className="
-                        pointer-events-none
-                        absolute
-                        -right-16
-                        -top-16
-                        h-48
-                        w-48
-                        rounded-full
-                        bg-[#eef4ff]
-                      "
-                    />
-
-                    {/* Number */}
-                    <div
-                      className="
-                        absolute
-                        right-8
-                        top-8
-                        text-sm
-                        font-bold
-                        tracking-widest
-                        text-[#e5b83f]
-                      "
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative z-10">
-                      {/* Icon Box */}
+                {section.content.map((item, index) => {
+                  const cardContent = (
+                    <>
+                      {/* Decorative Circle */}
                       <div
                         className="
-                          mb-7
-                          flex
-                          h-12
-                          w-12
-                          items-center
-                          justify-center
-                          rounded-xl
-                          bg-[#c31e3b]/10
-                        "
+            pointer-events-none
+            absolute
+            -right-16
+            -top-16
+            h-48
+            w-48
+            rounded-full
+            bg-[#eef4ff]
+          "
+                      />
+
+                      {/* Number */}
+                      <div
+                        className="
+            absolute
+            right-8
+            top-8
+            text-sm
+            font-bold
+            tracking-widest
+            text-[#e5b83f]
+          "
                       >
-                        <div className="h-5 w-5 rounded border-2 border-[#c31e3b]" />
+                        {String(index + 1).padStart(2, "0")}
                       </div>
 
-                      {/* Title */}
-                      <h3
-                        className="
-                          max-w-xl
-                          text-xl
-                          font-bold
-                          leading-tight
-                          text-[#061a3a]
-                          sm:text-2xl
-                        "
-                      >
-                        {item.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p
-                        className="
-                          mt-6
-                          text-sm
-                          leading-7
-                          text-[#64748b]
-                          sm:text-base
-                        "
-                      >
-                        {item.description}
-                      </p>
-
-                      {/* =================================================
-                          CARD IMAGES
-                      ================================================= */}
-
-                      {item.images?.length > 0 && (
-                        <div className="mt-7">
-                          <div
-                            className="
-                              grid
-                              gap-3
-                              sm:grid-cols-2
-                            "
-                          >
-                            {item.images.map((image, imageIndex) => (
-                              <div
-                                key={`${section.slug}-${index}-image-${imageIndex}`}
-                                className="
-                                  group/image
-                                  relative
-                                  overflow-hidden
-                                  rounded-xl
-                                  border
-                                  border-[#dbe3ee]
-                                  bg-[#eef2f7]
-                                "
-                              >
-                                <div className="relative aspect-[4/3] overflow-hidden">
-                                  <Image
-                                    src={image.src}
-                                    alt={image.alt}
-                                    fill
-                                    sizes="
-                                      (max-width: 640px) 100vw,
-                                      50vw
-                                    "
-                                    className="
-                                      object-cover
-                                      transition
-                                      duration-500
-                                      group-hover/image:scale-105
-                                    "
-                                  />
-                                </div>
-                              </div>
-                            ))}
-                          </div>
+                      {/* Content */}
+                      <div className="relative z-10">
+                        {/* Icon Box */}
+                        <div
+                          className="
+              mb-7
+              flex
+              h-12
+              w-12
+              items-center
+              justify-center
+              rounded-xl
+              bg-[#c31e3b]/10
+            "
+                        >
+                          <div className="h-5 w-5 rounded border-2 border-[#c31e3b]" />
                         </div>
-                      )}
-                    </div>
-                  </article>
-                ))}
+
+                        {/* Title */}
+                        <h3
+                          className="
+              max-w-xl
+              text-xl
+              font-bold
+              leading-tight
+              text-[#061a3a]
+              sm:text-2xl
+            "
+                        >
+                          {item.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p
+                          className="
+              mt-6
+              text-sm
+              leading-7
+              text-[#64748b]
+              sm:text-base
+            "
+                        >
+                          {item.description}
+                        </p>
+
+                        {/* =================================================
+    CARD IMAGES
+    Cultural Events ke main page par images hide
+    hongi. Images individual event slug page par
+    show hongi.
+================================================= */}
+
+                        {section.slug !== "cultural-events" &&
+                          item.images?.length > 0 && (
+                            <div className="mt-7">
+                              <div
+                                className="
+        grid
+        gap-3
+        sm:grid-cols-2
+      "
+                              >
+                                {item.images.map((image, imageIndex) => (
+                                  <div
+                                    key={`${section.slug}-${index}-image-${imageIndex}`}
+                                    className="
+            group/image
+            relative
+            overflow-hidden
+            rounded-xl
+            border
+            border-[#dbe3ee]
+            bg-[#eef2f7]
+          "
+                                  >
+                                    <div className="relative aspect-[4/3] overflow-hidden">
+                                      <Image
+                                        src={image.src}
+                                        alt={image.alt}
+                                        fill
+                                        sizes="
+                (max-width: 640px) 100vw,
+                50vw
+              "
+                                        className="
+                object-cover
+                transition
+                duration-500
+                group-hover/image:scale-105
+              "
+                                      />
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                      </div>
+                    </>
+                  );
+
+                  return item.href ? (
+                    <Link
+                      key={`${section.slug}-content-${index}`}
+                      href={item.href}
+                      className="
+          group
+          relative
+          block
+          overflow-hidden
+          rounded-2xl
+          border
+          border-[#dbe3ee]
+          bg-white
+          p-6
+          shadow-sm
+          transition
+          duration-300
+          hover:-translate-y-1
+          hover:shadow-[0_16px_35px_rgba(6,26,58,0.09)]
+          focus:outline-none
+          focus-visible:ring-2
+          focus-visible:ring-[#c31e3b]
+          focus-visible:ring-offset-2
+          sm:p-8
+        "
+                    >
+                      {cardContent}
+                    </Link>
+                  ) : (
+                    <article
+                      key={`${section.slug}-content-${index}`}
+                      className="
+          group
+          relative
+          overflow-hidden
+          rounded-2xl
+          border
+          border-[#dbe3ee]
+          bg-white
+          p-6
+          shadow-sm
+          transition
+          duration-300
+          hover:-translate-y-1
+          hover:shadow-[0_16px_35px_rgba(6,26,58,0.09)]
+          sm:p-8
+        "
+                    >
+                      {cardContent}
+                    </article>
+                  );
+                })}
               </div>
             </>
           )}

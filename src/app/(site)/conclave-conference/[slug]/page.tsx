@@ -277,6 +277,9 @@ export default async function EventDetailPage({
                       <Image
                         src={image}
                         alt={`${event.title} - Image ${index + 1}`}
+                        width={1200}
+                        height={800}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>

@@ -1,162 +1,154 @@
 "use client";
 
-import { useRef } from "react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUpRight,
-  Award,
-  ShieldCheck,
-  Star,
-} from "lucide-react";
+import Image from "next/image";
+import { Award, ShieldCheck, Star } from "lucide-react";
 import Link from "next/link";
 import { accreditations } from "@/data/awards-accreditation";
 
 const icons = [Award, Star, ShieldCheck];
 
 export default function AwardsSection() {
-  const sliderRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (!sliderRef.current) return;
-
-    const amount = sliderRef.current.clientWidth * 0.8;
-
-    sliderRef.current.scrollBy({
-      left: direction === "left" ? -amount : amount,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <section className="relative overflow-hidden bg-[#f8faff] py-14 sm:py-16">
-      {/* Background decoration */}
-      <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#dbeafe]/60 blur-3xl" />
+    <section className="w-full bg-white py-14 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <div className="mb-10 sm:mb-12">
+          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#c31e3b] sm:text-xs">
+            AICTE APPROVALS
+          </p>
 
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-[#fee2e2]/60 blur-3xl" />
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102a56] sm:text-4xl">
+            Approval Records
+          </h2>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <span className="mb-2 inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-[#c31e3b]">
-              Awards & Accreditation
-            </span>
-
-            <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
-              Recognised for Excellence
-            </h2>
-
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
-              Our academic standards, industry engagement and management
-              education ecosystem reflect {`FOSTIIMA's`} commitment to
-              excellence.
-            </p>
-          </div>
-
-          {/* Arrows */}
-          <div className="flex shrink-0 items-center gap-2">
-            <button
-              type="button"
-              onClick={() => scroll("left")}
-              aria-label="Previous awards"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#102a56] shadow-sm transition-all hover:border-[#c31e3b] hover:bg-[#c31e3b] hover:text-white"
-            >
-              <ArrowLeft className="h-4 w-4" />
-            </button>
-
-            <button
-              type="button"
-              onClick={() => scroll("right")}
-              aria-label="Next awards"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#102a56] shadow-sm transition-all hover:border-[#c31e3b] hover:bg-[#c31e3b] hover:text-white"
-            >
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </div>
+          <div className="mt-5 h-1 w-14 bg-[#e5b83f]" />
         </div>
 
-        {/* Horizontal carousel */}
+        {/* Cards */}
         <div
-          ref={sliderRef}
-          className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-3 scrollbar-hide"
+          className="
+            flex
+            gap-5
+            overflow-x-auto
+            pb-3
+            snap-x
+            snap-mandatory
+            scrollbar-hide
+            sm:gap-5
+            lg:grid
+            lg:grid-cols-3
+            lg:overflow-visible
+          "
         >
           {accreditations.map((accreditation, index) => {
             const Icon = icons[index % icons.length];
-
-            const accent =
-              index % 3 === 0
-                ? {
-                    icon: "bg-[#c31e3b]/10 text-[#c31e3b]",
-                    line: "bg-[#c31e3b]",
-                  }
-                : index % 3 === 1
-                  ? {
-                      icon: "bg-[#fef3c7] text-[#b77900]",
-                      line: "bg-[#eab308]",
-                    }
-                  : {
-                      icon: "bg-[#dbeafe] text-[#1555a5]",
-                      line: "bg-[#1555a5]",
-                    };
 
             return (
               <Link
                 key={accreditation.id}
                 href={`/awards-accreditation/${accreditation.id}`}
-                className="group min-w-[85%] snap-start sm:min-w-[calc(50%-15px)] lg:min-w-[calc(25%-15px)]"
+                className="
+                  group
+                  block
+                  min-w-[88%]
+                  snap-start
+                  sm:min-w-[48%]
+                  lg:min-w-0
+                "
               >
-                <article className="relative h-full overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  {/* Top accent */}
+                <article
+                  className="
+                    relative
+                    flex
+                    min-h-[370px]
+                    flex-col
+                    items-center
+                    rounded-xl
+                    border
+                    border-[#a9bee0]
+                    bg-white
+                    px-6
+                    py-7
+                    text-center
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:border-[#c31e3b]/40
+                    hover:shadow-[0_15px_40px_rgba(6,26,58,0.10)]
+                  "
+                >
+                  {/* Logo */}
                   <div
-                    className={`absolute left-0 top-0 h-1 w-full ${accent.line}`}
-                  />
-
-                  <div className="flex items-start justify-between">
-                    <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-xl ${accent.icon}`}
-                    >
+                    className="
+                      relative
+                      flex
+                      h-[122px]
+                      w-[122px]
+                      shrink-0
+                      items-center
+                      justify-center
+                      overflow-hidden
+                      rounded-full
+                      border
+                      border-[#e8a5b4]
+                      bg-white
+                    "
+                  >
+                    {accreditation.logo ? (
+                      <Image
+                        src={accreditation.logo}
+                        alt={`${accreditation.title} ${accreditation.year}`}
+                        fill
+                        sizes="122px"
+                        className="object-contain p-2"
+                      />
+                    ) : (
                       <Icon
-                        className="h-6 w-6"
-                        strokeWidth={1.8}
+                        className="h-12 w-12 text-[#c31e3b]"
+                        strokeWidth={1.5}
                         aria-hidden="true"
                       />
-                    </div>
-
-                    <ArrowUpRight className="h-5 w-5 text-slate-300 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#c31e3b]" />
+                    )}
                   </div>
 
-                  {/* Title */}
-                  <h3 className="mt-5 text-lg font-bold text-[#102a56]">
-                    {accreditation.title}
+                  {/* Title + Year */}
+                  <h3 className="mt-7 text-lg font-bold leading-tight text-[#102a56]">
+                    {accreditation.title}{" "}
+                    <span className="text-[#c31e3b]">
+                      {accreditation.year}
+                    </span>
                   </h3>
 
-                  {/* Year */}
-                  {accreditation.year && (
-                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[#c31e3b]">
-                      {accreditation.year}
-                    </p>
-                  )}
-
                   {/* Description */}
-                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">
+                  <p
+                    className="
+                      mt-5
+                      max-w-[340px]
+                      text-sm
+                      leading-7
+                      text-[#526582]
+                    "
+                  >
                     {accreditation.description}
                   </p>
+
+                  {/* Bottom gold line */}
+                  <div className="mt-auto pt-7">
+                    <div
+                      className="
+                        h-px
+                        w-11
+                        bg-[#e5b83f]
+                        transition-all
+                        duration-300
+                        group-hover:w-16
+                      "
+                    />
+                  </div>
                 </article>
               </Link>
             );
           })}
-        </div>
-
-        {/* Bottom link */}
-        <div className="mt-6 flex justify-end">
-          <Link
-            href="/awards-accreditation"
-            className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#c31e3b] transition-colors hover:text-[#102a56]"
-          >
-            View More
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </Link>
         </div>
       </div>
     </section>

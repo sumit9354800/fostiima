@@ -129,7 +129,7 @@ export const navigationItems: NavigationItem[] = [
   },
 
   {
-    label: "CONCLAVE/CONFERENCE",
+    label: "CONCLAVES/CONFERENCES",
     children: [
       {
         label: "CONCLAVE/CONFERENCE",

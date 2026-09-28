@@ -109,7 +109,7 @@ export default function CampusLifeSection() {
             return (
               <Link
                 key={item.slug}
-                href={`/alumni`}
+                href={item.href}
                 className="
                   group
                   relative

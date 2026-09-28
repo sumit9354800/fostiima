@@ -248,13 +248,63 @@
     "height": 195
   },
   "awards-accreditation": {
+    "acte": {
+      "2026-27-1": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/awards-accreditation/acte/2026-27-1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615106/fostiima/awards-accreditation/acte/2026-27-1.webp",
+        "width": 2550,
+        "height": 3300
+      },
+      "2026-27-2": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/awards-accreditation/acte/2026-27-2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615108/fostiima/awards-accreditation/acte/2026-27-2.webp",
+        "width": 2550,
+        "height": 3300
+      },
+      "2026-27-3": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/awards-accreditation/acte/2026-27-3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615111/fostiima/awards-accreditation/acte/2026-27-3.webp",
+        "width": 2550,
+        "height": 3300
+      },
+      "2026-27-4": {
+        "type": "image",
+        "format": "webp",
+        "publicId": "fostiima/awards-accreditation/acte/2026-27-4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615113/fostiima/awards-accreditation/acte/2026-27-4.webp",
+        "width": 2550,
+        "height": 3300
+      }
+    },
     "nba": {
       "type": "image",
       "format": "jpg",
       "publicId": "fostiima/awards-accreditation/nba",
       "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441205/fostiima/awards-accreditation/nba.jpg",
       "width": 1200,
-      "height": 946
+      "height": 946,
+      "NBA1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/awards-accreditation/nba/NBA1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615118/fostiima/awards-accreditation/nba/NBA1.jpg",
+        "width": 1241,
+        "height": 1755
+      },
+      "NBA2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/awards-accreditation/nba/NBA2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615120/fostiima/awards-accreditation/nba/NBA2.jpg",
+        "width": 1241,
+        "height": 1755
+      }
     },
     "2019-20.PDF": {
       "type": "raw",
@@ -321,6 +371,16 @@
       "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441208/fostiima/badge/badge3.webp",
       "width": 59,
       "height": 57
+    }
+  },
+  "banner": {
+    "about-banner": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/banner/about-banner",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790588437/fostiima/banner/about-banner.jpg",
+      "width": 1280,
+      "height": 853
     }
   },
   "bg-hero-banner": {
@@ -2319,6 +2379,22 @@
       "height": 795
     },
     "campus": {
+      "campus01": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/campus/campus01",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600275/fostiima/home/campus/campus01.jpg",
+        "width": 743,
+        "height": 305
+      },
+      "campus02": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/campus/campus02",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600276/fostiima/home/campus/campus02.jpg",
+        "width": 743,
+        "height": 305
+      },
       "campus1": {
         "type": "image",
         "format": "jpg",
@@ -2353,6 +2429,38 @@
       }
     },
     "campuslife": {
+      "campuslife01": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/campuslife/campuslife01",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790588450/fostiima/home/campuslife/campuslife01.jpg",
+        "width": 750,
+        "height": 750
+      },
+      "campuslife02": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/campuslife/campuslife02",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790588453/fostiima/home/campuslife/campuslife02.jpg",
+        "width": 750,
+        "height": 750
+      },
+      "campuslife03": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/campuslife/campuslife03",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790588455/fostiima/home/campuslife/campuslife03.jpg",
+        "width": 750,
+        "height": 750
+      },
+      "campuslife04": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/campuslife/campuslife04",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790588458/fostiima/home/campuslife/campuslife04.jpg",
+        "width": 750,
+        "height": 750
+      },
       "campuslife1": {
         "type": "image",
         "format": "png",
@@ -2541,6 +2649,206 @@
       }
     },
     "faculty": {
+      "faculty014": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty014",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615170/fostiima/home/faculty/faculty014.png",
+        "width": 1024,
+        "height": 1024
+      },
+      "faculty015": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty015",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615186/fostiima/home/faculty/faculty015.png",
+        "width": 1024,
+        "height": 1024
+      },
+      "faculty016": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty016",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615200/fostiima/home/faculty/faculty016.png",
+        "width": 1024,
+        "height": 1024
+      },
+      "faculty017": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty017",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615210/fostiima/home/faculty/faculty017.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty018": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty018",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615221/fostiima/home/faculty/faculty018.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty019": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty019",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615225/fostiima/home/faculty/faculty019.jpg",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty021": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty021",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615227/fostiima/home/faculty/faculty021.jpg",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty023": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty023",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615238/fostiima/home/faculty/faculty023.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty025": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty025",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615246/fostiima/home/faculty/faculty025.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty026": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty026",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615256/fostiima/home/faculty/faculty026.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty027": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty027",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615266/fostiima/home/faculty/faculty027.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty029": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty029",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615273/fostiima/home/faculty/faculty029.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty030": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty030",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615282/fostiima/home/faculty/faculty030.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty031": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty031",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615290/fostiima/home/faculty/faculty031.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty032": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty032",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615298/fostiima/home/faculty/faculty032.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty033": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty033",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615303/fostiima/home/faculty/faculty033.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty035": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty035",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615312/fostiima/home/faculty/faculty035.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty036": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty036",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615319/fostiima/home/faculty/faculty036.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty038": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty038",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615326/fostiima/home/faculty/faculty038.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty039": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty039",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615337/fostiima/home/faculty/faculty039.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty04": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty04",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615348/fostiima/home/faculty/faculty04.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty040": {
+        "type": "image",
+        "format": "png",
+        "publicId": "fostiima/home/faculty/faculty040",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615356/fostiima/home/faculty/faculty040.png",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty041": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty041",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615358/fostiima/home/faculty/faculty041.jpg",
+        "width": 1254,
+        "height": 1254
+      },
+      "faculty042": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty042",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615361/fostiima/home/faculty/faculty042.jpg",
+        "width": 268,
+        "height": 264
+      },
+      "faculty043": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty043",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790615363/fostiima/home/faculty/faculty043.jpg",
+        "width": 1254,
+        "height": 1254
+      },
       "faculty1": {
         "type": "image",
         "format": "jpg",
@@ -2893,6 +3201,32 @@
       "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790323623/fostiima/home/ie3ee7qprrw34szjtvtx.png",
       "width": 1254,
       "height": 1254
+    },
+    "imagesection": {
+      "1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/imagesection/1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790588460/fostiima/home/imagesection/1.jpg",
+        "width": 1080,
+        "height": 1090
+      },
+      "2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/imagesection/2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790588463/fostiima/home/imagesection/2.jpg",
+        "width": 1080,
+        "height": 1090
+      },
+      "3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/imagesection/3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790588465/fostiima/home/imagesection/3.jpg",
+        "width": 1080,
+        "height": 1090
+      }
     },
     "lcvfrsz2g61sajwvkxo9": {
       "type": "image",
@@ -3284,6 +3618,710 @@
         "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790502415/fostiima/life-at-fostiima/corporate-talk/corporate-talk9.jpg",
         "width": 1156,
         "height": 867
+      }
+    },
+    "cultural-events": {
+      "aagaman-day": {
+        "aagaman-day1": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day1",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589533/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day1.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day10": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day10",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589536/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day10.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day11": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day11",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589538/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day11.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day12": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day12",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589541/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day12.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day13": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day13",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589544/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day13.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day14": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day14",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589546/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day14.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day15": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day15",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589549/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day15.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day16": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day16",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589551/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day16.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day17": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day17",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589554/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day17.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day18": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day18",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589557/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day18.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day19": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day19",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589560/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day19.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589563/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day2.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day3": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day3",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589566/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day3.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day4": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day4",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589569/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day4.jpg",
+          "width": 6000,
+          "height": 4000
+        },
+        "aagaman-day9": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day9",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589571/fostiima/life-at-fostiima/cultural-events/aagaman-day/aagaman-day9.jpg",
+          "width": 6000,
+          "height": 4000
+        }
+      },
+      "diwali": {
+        "diwali04": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/diwali/diwali04",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600446/fostiima/life-at-fostiima/cultural-events/diwali/diwali04.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "diwali1": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/diwali/diwali1",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600448/fostiima/life-at-fostiima/cultural-events/diwali/diwali1.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        "diwali10": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/diwali/diwali10",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600450/fostiima/life-at-fostiima/cultural-events/diwali/diwali10.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "diwali2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/diwali/diwali2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600452/fostiima/life-at-fostiima/cultural-events/diwali/diwali2.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        "diwali3": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/diwali/diwali3",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600454/fostiima/life-at-fostiima/cultural-events/diwali/diwali3.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        "diwali5": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/diwali/diwali5",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600457/fostiima/life-at-fostiima/cultural-events/diwali/diwali5.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        "diwali6": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/diwali/diwali6",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600460/fostiima/life-at-fostiima/cultural-events/diwali/diwali6.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        "diwali7": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/diwali/diwali7",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600464/fostiima/life-at-fostiima/cultural-events/diwali/diwali7.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "diwali8": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/diwali/diwali8",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600467/fostiima/life-at-fostiima/cultural-events/diwali/diwali8.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "diwali9": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/diwali/diwali9",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600471/fostiima/life-at-fostiima/cultural-events/diwali/diwali9.jpg",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      "marketing": {
+        "marketing1": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/marketing/marketing1",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589634/fostiima/life-at-fostiima/cultural-events/marketing/marketing1.jpg",
+          "width": 1600,
+          "height": 1200
+        },
+        "marketing2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/marketing/marketing2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589635/fostiima/life-at-fostiima/cultural-events/marketing/marketing2.jpg",
+          "width": 1600,
+          "height": 1200
+        },
+        "marketing3": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/marketing/marketing3",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589637/fostiima/life-at-fostiima/cultural-events/marketing/marketing3.jpg",
+          "width": 4032,
+          "height": 3024
+        },
+        "marketing4": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/marketing/marketing4",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589640/fostiima/life-at-fostiima/cultural-events/marketing/marketing4.jpg",
+          "width": 3024,
+          "height": 4032
+        }
+      },
+      "Milan": {
+        "DSC09401 2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09401 2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600294/fostiima/life-at-fostiima/cultural-events/Milan/DSC09401%202.jpg",
+          "width": 867,
+          "height": 1300
+        },
+        "DSC09407 2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09407 2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600299/fostiima/life-at-fostiima/cultural-events/Milan/DSC09407%202.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "DSC09418 2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09418 2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600304/fostiima/life-at-fostiima/cultural-events/Milan/DSC09418%202.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "DSC09419 2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09419 2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600308/fostiima/life-at-fostiima/cultural-events/Milan/DSC09419%202.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "DSC09422 2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09422 2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600314/fostiima/life-at-fostiima/cultural-events/Milan/DSC09422%202.jpg",
+          "width": 867,
+          "height": 1300
+        },
+        "DSC09430 2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09430 2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600319/fostiima/life-at-fostiima/cultural-events/Milan/DSC09430%202.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "DSC09432": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09432",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600323/fostiima/life-at-fostiima/cultural-events/Milan/DSC09432.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "DSC09436 2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09436 2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600328/fostiima/life-at-fostiima/cultural-events/Milan/DSC09436%202.jpg",
+          "width": 1200,
+          "height": 675
+        },
+        "DSC09437 2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09437 2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600333/fostiima/life-at-fostiima/cultural-events/Milan/DSC09437%202.jpg",
+          "width": 1200,
+          "height": 675
+        },
+        "DSC09440 2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09440 2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600337/fostiima/life-at-fostiima/cultural-events/Milan/DSC09440%202.jpg",
+          "width": 1200,
+          "height": 675
+        },
+        "DSC09445 2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09445 2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600342/fostiima/life-at-fostiima/cultural-events/Milan/DSC09445%202.jpg",
+          "width": 1200,
+          "height": 675
+        },
+        "DSC09448": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09448",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600346/fostiima/life-at-fostiima/cultural-events/Milan/DSC09448.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "DSC09451": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/DSC09451",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600351/fostiima/life-at-fostiima/cultural-events/Milan/DSC09451.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "IMG_9448": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/Milan/IMG_9448",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600356/fostiima/life-at-fostiima/cultural-events/Milan/IMG_9448.jpg",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      "swadeshi-mela": {
+        "swadeshi-mela1": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela1",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600488/fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela1.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "swadeshi-mela2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600492/fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela2.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "swadeshi-mela3": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela3",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600496/fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela3.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "swadeshi-mela4": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela4",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600500/fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela4.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "swadeshi-mela5": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela5",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600503/fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela5.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "swadeshi-mela6": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela6",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600507/fostiima/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela6.jpg",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      "teacher_day": {
+        "teacher_day1": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day1",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600511/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day1.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "teacher_day10": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day10",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600514/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day10.jpg",
+          "width": 720,
+          "height": 1280
+        },
+        "teacher_day11": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day11",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600519/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day11.jpg",
+          "width": 720,
+          "height": 1280
+        },
+        "teacher_day12": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day12",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600523/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day12.jpg",
+          "width": 1200,
+          "height": 675
+        },
+        "teacher_day13": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day13",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600527/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day13.jpg",
+          "width": 1200,
+          "height": 675
+        },
+        "teacher_day14": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day14",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600531/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day14.jpg",
+          "width": 720,
+          "height": 1280
+        },
+        "teacher_day2": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day2",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600535/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "teacher_day3": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day3",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600538/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day3.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "teacher_day4": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day4",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600541/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day4.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "teacher_day5": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day5",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600544/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day5.jpg",
+          "width": 1200,
+          "height": 800
+        },
+        "teacher_day6": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day6",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600548/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day6.jpg",
+          "width": 975,
+          "height": 1300
+        },
+        "teacher_day7": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day7",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600552/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day7.jpg",
+          "width": 975,
+          "height": 1300
+        },
+        "teacher_day8": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day8",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600555/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day8.jpg",
+          "width": 975,
+          "height": 1300
+        },
+        "teacher_day9": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day9",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600560/fostiima/life-at-fostiima/cultural-events/teacher_day/teacher_day9.jpg",
+          "width": 1200,
+          "height": 900
+        }
+      },
+      "vitt-manthan": {
+        "IMG_6104": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589801/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6105": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6105",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589803/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6105.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6107": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6107",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589806/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6107.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6108": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6108",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589809/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6108.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6113": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6113",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589811/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6113.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6114": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6114",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589815/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6114.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6120": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6120",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589817/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6120.jpg",
+          "width": 2656,
+          "height": 3984
+        },
+        "IMG_6126": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6126",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589821/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6126.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6138": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6138",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589823/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6138.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6146": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6146",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589826/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6146.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6156": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6156",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589828/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6156.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6162": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6162",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589830/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6162.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6163": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6163",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589832/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6163.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6180": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6180",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589835/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6180.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6181": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6181",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589838/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6181.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6184": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6184",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589842/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6184.jpg",
+          "width": 2656,
+          "height": 3984
+        },
+        "IMG_6188": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6188",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589845/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6188.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6218": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6218",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589847/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6218.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6249": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6249",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589850/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6249.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6285": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6285",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589853/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6285.jpg",
+          "width": 2656,
+          "height": 3984
+        },
+        "IMG_6286": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6286",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589856/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6286.jpg",
+          "width": 3984,
+          "height": 2656
+        },
+        "IMG_6343": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6343",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589859/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6343.jpg",
+          "width": 2656,
+          "height": 3984
+        },
+        "IMG_6387": {
+          "type": "image",
+          "format": "jpg",
+          "publicId": "fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6387",
+          "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589862/fostiima/life-at-fostiima/cultural-events/vitt-manthan/IMG_6387.jpg",
+          "width": 3984,
+          "height": 2656
+        }
       }
     },
     "FOSTIIMA-FINAL33": {
@@ -4123,6 +5161,80 @@
         "width": 1600,
         "height": 574
       }
+    }
+  },
+  "placement": {
+    "col1": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/placement/col1",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589865/fostiima/placement/col1.jpg",
+      "width": 1080,
+      "height": 1090
+    },
+    "col2": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/placement/col2",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589867/fostiima/placement/col2.jpg",
+      "width": 1080,
+      "height": 1090
+    },
+    "col3": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/placement/col3",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589869/fostiima/placement/col3.jpg",
+      "width": 1080,
+      "height": 1090
+    },
+    "col4": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/placement/col4",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589871/fostiima/placement/col4.jpg",
+      "width": 1080,
+      "height": 1090
+    },
+    "col55": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/placement/col55",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589873/fostiima/placement/col55.jpg",
+      "width": 1080,
+      "height": 1090
+    },
+    "company1": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/placement/company1",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589875/fostiima/placement/company1.webp",
+      "width": 2480,
+      "height": 3508
+    },
+    "company2": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/placement/company2",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589877/fostiima/placement/company2.webp",
+      "width": 2480,
+      "height": 3508
+    },
+    "placement1": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/placement/placement1",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589880/fostiima/placement/placement1.webp",
+      "width": 2480,
+      "height": 3508
+    },
+    "placement2": {
+      "type": "image",
+      "format": "webp",
+      "publicId": "fostiima/placement/placement2",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790589884/fostiima/placement/placement2.webp",
+      "width": 2480,
+      "height": 3508
     }
   },
   "programs": {

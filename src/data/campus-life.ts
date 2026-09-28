@@ -6,6 +6,7 @@ export type CampusLifeItem = {
   description: string;
   image: string;
   details: string[];
+  href: string;
 };
 
 export const campusLifeItems: CampusLifeItem[] = [
@@ -19,6 +20,8 @@ export const campusLifeItems: CampusLifeItem[] = [
 
     image: cloudinaryAsset("home/campuslife/campuslife01.jpeg"),
 
+    href: "/alumni",
+
     details: [
       "Collaborate with peers across diverse backgrounds.",
       "Build meaningful friendships and professional connections.",
@@ -30,12 +33,14 @@ export const campusLifeItems: CampusLifeItem[] = [
   {
     slug: "intellectual-life",
 
-    title: "Intellectual Life",
+    title: "Brain Storming",
 
     description:
       "Engage in discussions, debates, workshops and activities that encourage curiosity and new perspectives.",
 
     image: cloudinaryAsset("home/campuslife/campuslife02.jpeg"),
+
+    href: "/life-at-fostiima/brain-storming",
 
     details: [
       "Participate in discussions and knowledge-sharing sessions.",
@@ -48,12 +53,14 @@ export const campusLifeItems: CampusLifeItem[] = [
   {
     slug: "sports-recreation",
 
-    title: "Sports & Recreation",
+    title: "Sports & Fitness",
 
     description:
       "Balance academic life with sports, recreation and activities that encourage teamwork and sportsmanship.",
 
     image: cloudinaryAsset("home/campuslife/campuslife03.jpeg"),
+
+    href: "/life-at-fostiima/sports-and-fitness",
 
     details: [
       "Take part in sports and recreational activities.",
@@ -66,12 +73,14 @@ export const campusLifeItems: CampusLifeItem[] = [
   {
     slug: "events-experiences",
 
-    title: "Events & Experiences",
+    title: "Cultural Events",
 
     description:
       "Experience cultural activities, celebrations, industry interactions and memorable campus experiences.",
 
     image: cloudinaryAsset("home/campuslife/campuslife04.jpeg"),
+
+    href: "/life-at-fostiima/cultural-events",
 
     details: [
       "Experience cultural activities and campus celebrations.",

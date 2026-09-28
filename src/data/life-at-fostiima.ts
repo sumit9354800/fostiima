@@ -9,6 +9,10 @@ export type LifeAtFostiimaContent = {
   title: string;
   description: string;
   images: LifeAtFostiimaImage[];
+
+  // Optional rakho — existing data break nahi hoga
+  href?: string;
+  slug?: string;
 };
 
 export type LifeAtFostiimaSection = {
@@ -19,7 +23,6 @@ export type LifeAtFostiimaSection = {
   size: "small" | "large";
   href: string;
   slug: string;
-
   images: LifeAtFostiimaImage[];
   content: LifeAtFostiimaContent[];
 };
@@ -121,34 +124,6 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           },
         ],
       },
-
-      {
-        title: "Mr. Ashish Bhalla",
-        description:
-          "Founder and CEO - Synsperity Business Consulting. Ashish Bhalla is the Head Campus Relations – Director HR for HCL Tech. He has overall 19 years of extensive experience in HR and has a very long association with the HCL group. His current role involves hiring from B-Schools. His expertise involves Volume Recruitments, US IT staffing, operating large projects, Customer service, Technical support, Collections Back Office and order to Cash domains.",
-        images: [],
-      },
-
-      {
-        title: "Mr. Gaurav Bhatia",
-        description:
-          "Director - Protiviti. Gaurav Bhatia is working as Director. He is India lead with Protiviti's Knowledge and Innovation Group. Prior to this, he was associated as an AVP with Evideserve. He has an overall experience of 23 years. He is pass out from one of India's prestigious colleges, IIM Kolkata, and completed his MBA from International University of Japan.",
-        images: [],
-      },
-
-      {
-        title: "Ms. Bhavna Marwah",
-        description:
-          "Director - People & Culture | Human Resources Leader - Protiviti Consulting. Bhavna Marwah is dedicated to fostering an inclusive and supportive work environment as she spearheads HR initiatives at Protiviti. With a focus on building strong HPR capabilities to drive business growth. Her extensive experience spans over two decades, during which she played pivotal roles in organizations such as Protiviti Capability Center India, IHS Global Inside and Exide Industries Limited.",
-        images: [],
-      },
-
-      {
-        title: "Ms. Mitali Tayal",
-        description:
-          "Senior Vice President & Head Affluent Client Servicing - IndusInd Bank. Mitali Tayal, based in Gurgaon, India, is a seasoned professional with over 22 years of extensive experience in Banking, Finance and BPO industries. Currently she is serving as the Head of service strategy and Quality Assurance at RBL Bank. With a rich background including roles at prestigious institutions such as GE, Royal Bank of Scotland and ICICI Bank, she brings a wealth of knowledge in Banking operations, Quality Improvement, Team Management, and BPO operations management. Mitali's career journey reflects her commitment to excellence and customer satisfaction.",
-        images: [],
-      },
     ],
   },
 
@@ -199,9 +174,9 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
       "/life-at-fostiima/business-exposure-tips/dubai/dubai1.jpg",
     ),
 
-    alt: "Business Exposure Trips - Dubai",
+    alt: "Global Immersion Trips",
 
-    title: "Business Exposure Trips",
+    title: "Global Immersion Trips",
 
     description:
       "International business exposure through educational and industry experiences in Dubai and Malaysia.",
@@ -237,12 +212,6 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           "/life-at-fostiima/business-exposure-tips/dubai/dubai4.jpg",
         ),
         alt: "Business exposure in Dubai - 4",
-      },
-      {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/business-exposure-tips/dubai/dubai5.jpg",
-        ),
-        alt: "Business exposure in Dubai - 5",
       },
       {
         src: cloudinaryAsset(
@@ -402,7 +371,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
   },
 
   {
-    src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport1.JPG"),
+    src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport17.JPG"),
 
     alt: "Sports and Fitness at FOSTIIMA",
 
@@ -527,12 +496,12 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
   {
     src: cloudinaryAsset(
-      "/life-at-fostiima/team-building-camp/team-building-camp1.jpeg",
+      "/life-at-fostiima/team-building-camp/team-building-camp2.jpeg",
     ),
 
     alt: "Team Building Camp at FOSTIIMA",
 
-    title: "Team Building Camp",
+    title: "Team Building And Leadership Camp",
 
     description:
       "Collaborative activities and experiences designed to strengthen teamwork, leadership and student engagement.",
@@ -582,19 +551,620 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
       },
     ],
 
+    content: [],
+  },
+
+  {
+    src: cloudinaryAsset(
+      "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpg",
+    ),
+
+    alt: "Cultural Events at FOSTIIMA",
+
+    title: "Cultural Events",
+
+    description:
+      "A vibrant celebration of festivals, traditions, sports and memorable student experiences at FOSTIIMA Business School.",
+
+    size: "small",
+
+    href: "/life-at-fostiima/cultural-events",
+
+    slug: "cultural-events",
+
+    images: [],
+
     content: [
       {
-        title: "Life@ FOSTIIMA",
+        title: "Swadeshi Mela",
         description:
-          "Life at FOSTIIMA Business School brings together academic learning, student engagement, teamwork, professional development and memorable campus experiences. Students participate in a wide range of activities that encourage collaboration, creativity, confidence and personal growth.",
-        images: [ ],
+          "A vibrant celebration promoting Indian culture, traditions, creativity and entrepreneurship through student participation and cultural activities.",
+        images: [
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela1.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela2.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela3.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela4.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela5.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela6.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+        ],
+        href: "/life-at-fostiima/cultural-events/swadeshi-mela/",
+        slug: "swadeshi-mela",
       },
 
       {
-        title: "Computer Laboratory",
+        title: "Diwali Mela",
         description:
-          "FOSTIIMA has four computer labs with Wi-Fi network facilities in a dynamic and spacious environment. The computer centre is equipped with branded Dell computers and the latest application software, with approximately 160 computers across the campus. The labs have high-speed connectivity, firewall security systems and LCD projectors for classroom presentations and video conferencing facilities.",
-        images: [],
+          "A festive celebration filled with lights, cultural activities, student participation and the spirit of togetherness.",
+        images: [
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/diwali/diwali1.jpg",
+            ),
+            alt: "diwali Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/diwali/diwali2.jpg",
+            ),
+            alt: "diwali Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/diwali/diwali3.jpg",
+            ),
+            alt: "diwali Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/diwali/diwali04.jpg",
+            ),
+            alt: "diwali Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/diwali/diwali5.jpg",
+            ),
+            alt: "diwali Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/diwali/diwali6.jpg",
+            ),
+            alt: "diwali Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/diwali/diwali7.jpg",
+            ),
+            alt: "diwali Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/diwali/diwali8.jpg",
+            ),
+            alt: "diwali Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/diwali/diwali9.jpg",
+            ),
+            alt: "diwali Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/diwali/diwali10.jpg",
+            ),
+            alt: "diwali Mela at FOSTIIMA - 1",
+          },
+        ],
+        href: "/life-at-fostiima/cultural-events/diwali-mela",
+        slug: "diwali-mela",
+      },
+
+      {
+        title: "Aagaman Day",
+        description:
+          "A welcoming celebration designed to introduce new students to the FOSTIIMA community through engaging activities and memorable experiences.",
+        images: [
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day1.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day2.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day3.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day4.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day9.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day10.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day11.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day12.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day13.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day14.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day15.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day16.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day17.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day18.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day19.jpg",
+            ),
+            alt: "Aagaman Day at FOSTIIMA - 1",
+          },
+        ],
+        href: "/life-at-fostiima/cultural-events/aagaman-day",
+        slug: "aagaman-day",
+      },
+
+      {
+        title: "VITT Manthan",
+        description:
+          "An engaging platform encouraging interaction, ideas, discussion and learning through student-driven activities and experiences.",
+        images: [
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6105.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6107.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6108.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6113.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6114.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6120.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6126.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6138.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6146.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6156.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6162.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6163.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6180.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6181.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6184.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6188.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6218.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6249.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6285.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6286.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6343.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6387.JPG",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+        ],
+        href: "/life-at-fostiima/cultural-events/vitt-manthan",
+        slug: "vitt-manthan",
+      },
+
+      {
+        title: "Teacher's Day",
+        description:
+          "A special occasion celebrating the dedication, guidance and contribution of faculty members through student-led activities and expressions of gratitude.",
+        images: [
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day1.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day3.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day4.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day5.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day6.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day7.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day8.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day9.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day10.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day11.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day12.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day13.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day14.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+        ],
+        href: "/life-at-fostiima/cultural-events/teachers-day",
+        slug: "teachers-day",
+      },
+
+      {
+        title: "Milan",
+        description:
+          "A memorable gathering that brings students and the FOSTIIMA community together through interaction, celebration and shared experiences.",
+        images: [
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09401 (2).jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09407 (2).jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09418 (2).jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09419 (2).jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09422 (2).jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09430 (2).jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09432.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09436 (2).jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09437 (2).jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09440 (2).jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09445 (2).jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09448.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/DSC09451.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/milan/IMG_9448.jpg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+        ],
+        href: "/life-at-fostiima/cultural-events/milan",
+        slug: "milan",
+      },
+
+      {
+        title: "Marketing Carnival",
+        description:
+          "A creative and engaging event showcasing marketing ideas, student creativity, communication skills and practical business learning.",
+        images: [
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/marketing/marketing1.jpeg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/marketing/marketing2.jpeg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/marketing/marketing3.jpeg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+          {
+            src: cloudinaryAsset(
+              "/life-at-fostiima/cultural-events/marketing/marketing4.jpeg",
+            ),
+            alt: "Swadeshi Mela at FOSTIIMA - 1",
+          },
+        ],
+        href: "/life-at-fostiima/cultural-events/marketing-carnival",
+        slug: "marketing-carnival",
       },
     ],
   },

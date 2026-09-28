@@ -36,7 +36,7 @@ const alumniSections: AlumniSection[] = [
   {
     id: "finance-committee",
 
-    title: "Finance Committee",
+    title: "Finance",
 
     description:
       "The Finance Committee bridges academic learning with industry practice through four key pillars: Knowledge Enhancement, Industry Engagement, Skill Development, and Research. Beyond organizing large-scale events, members manage digital platforms and conduct deep financial research, cultivating leadership, critical thinking, teamwork, and digital marketing skills. Moving forward, the committee aims to elevate campus-wide financial literacy and scale operations up to inter-college events—enhancing institutional prestige while empowering student career readiness.",

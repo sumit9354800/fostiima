@@ -17,19 +17,24 @@ const OUTPUT_FILE = path.join(
   "lib",
   "cloudinary-assets.json"
 );
+
 async function getAllResources(resourceType) {
   const resources = [];
-
   let nextCursor;
 
   do {
-    const result = await cloudinary.api.resources({
+    const params = {
       type: "upload",
       resource_type: resourceType,
       prefix: "fostiima/",
       max_results: 500,
-      next_cursor: nextCursor,
-    });
+    };
+
+    if (nextCursor) {
+      params.next_cursor = nextCursor;
+    }
+
+    const result = await cloudinary.api.resources(params);
 
     resources.push(...result.resources);
 
@@ -45,11 +50,14 @@ function buildFolderObject(resources) {
   for (const resource of resources) {
     const publicId = resource.public_id;
 
+    if (!publicId.startsWith("fostiima/")) {
+      continue;
+    }
+
     const parts = publicId.split("/");
 
-    if (parts[0] === "fostiima") {
-      parts.shift();
-    }
+    // Remove "fostiima"
+    parts.shift();
 
     let current = root;
 
@@ -66,7 +74,7 @@ function buildFolderObject(resources) {
           height: resource.height,
         };
       } else {
-        if (!current[part]) {
+        if (!current[part] || typeof current[part] !== "object") {
           current[part] = {};
         }
 
@@ -87,7 +95,11 @@ async function main() {
     getAllResources("raw"),
   ]);
 
-  const allResources = [...images, ...videos, ...raw];
+  const allResources = [
+    ...images,
+    ...videos,
+    ...raw,
+  ];
 
   console.log(`🖼️ Images: ${images.length}`);
   console.log(`🎥 Videos: ${videos.length}`);
@@ -96,6 +108,10 @@ async function main() {
 
   const folderObject = buildFolderObject(allResources);
 
+  fs.mkdirSync(path.dirname(OUTPUT_FILE), {
+    recursive: true,
+  });
+
   fs.writeFileSync(
     OUTPUT_FILE,
     JSON.stringify(folderObject, null, 2),
@@ -103,6 +119,21 @@ async function main() {
   );
 
   console.log(`✅ Saved: ${OUTPUT_FILE}`);
+
+  // Check specific NBA asset
+  const nba =
+    folderObject?.["awards-accreditation"]?.nba;
+
+  if (nba) {
+    console.log("\n✅ NBA asset found:");
+    console.log(`   Public ID: ${nba.publicId}`);
+    console.log(`   Format: ${nba.format}`);
+    console.log(`   URL: ${nba.url}`);
+  } else {
+    console.log(
+      "\n⚠️ NBA asset was NOT found in Cloudinary response."
+    );
+  }
 }
 
 main().catch((error) => {

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "admin:create": "tsx scripts/create-admin.ts",
+     "compress:images": "node scripts/compress-images.js",
     "cloudinary:upload": "node scripts/upload-public-to-cloudinary.js",
     "cloudinary:sync": "node scripts/list-cloudinary-assets.js"
   },
@@ -28,6 +29,7 @@
     "react-hook-form": "^7.88.0",
     "react-icons": "^5.7.0",
     "resend": "^6.28.1",
+    "sharp": "^0.35.5",
     "tailwind-merge": "^3.3.1",
     "zod": "^4.6.2"
   },

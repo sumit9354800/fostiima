@@ -112,6 +112,8 @@ async function uploadFile(filePath) {
       resource_type: resourceType,
       overwrite: true,
       invalidate: true,
+      unique_filename: false,
+      use_filename: false,
     });
 
     console.log(`   ✅ Uploaded`);

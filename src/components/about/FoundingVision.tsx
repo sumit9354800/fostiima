@@ -157,11 +157,6 @@ export default function FoundingVision() {
                   {/* Image Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071a38]/75 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
 
-
-                  {/* Number */}
-                  <span className="absolute bottom-3 left-3 text-[10px] font-bold tracking-[0.15em] text-white/60">
-                    FOUNDER
-                  </span>
                 </div>
 
                 {/* Content */}
@@ -171,9 +166,6 @@ export default function FoundingVision() {
                   </h3>
 
                   <div className="mt-2 flex items-center justify-between gap-2">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#c31e3b]">
-                      {trustee.role}
-                    </p>
 
                     <ArrowRight
                       size={14}
