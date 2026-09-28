@@ -27,11 +27,11 @@ export default function AccreditationGrid() {
               className="group block"
             >
               <article className="flex min-h-[350px] flex-col rounded-xl border border-[#9aaed0] bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#c31e3b]/40 hover:shadow-[0_14px_35px_rgba(6,26,58,0.10)] sm:p-7">
-                {/* Image */}
+                {/* Badge / Logo */}
                 <div className="flex justify-center">
                   <div className="relative flex h-[118px] w-[118px] items-center justify-center overflow-hidden rounded-full border border-[#d8a0b0] bg-white">
                     <Image
-                      src={item.image}
+                      src={item.image[0]}
                       alt={`AICTE approval ${item.year}`}
                       width={108}
                       height={108}
