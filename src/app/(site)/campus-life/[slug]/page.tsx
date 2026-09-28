@@ -1,3 +1,5 @@
+
+
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,6 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { campusLifeItems } from "@/data/campus-life";
+import { cloudinaryAsset } from "@/lib/cloudinary";
 
 type PageProps = {
   params: Promise<{
@@ -52,23 +55,32 @@ export default async function CampusLifeDetailPage({
     notFound();
   }
 
+  const heroImage = cloudinaryAsset("/banner/campus-life-banner.webp");
+
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#061a3a]">
-        <div className="absolute inset-0">
-          <Image
-            src={item.image}
-            alt={item.title}
-            fill
-            priority
-            className="object-cover"
-          />
+        {/* Background Image — only rendered when available */}
+        {heroImage && (
+          <>
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url("${heroImage}")`,
+              }}
+            />
 
-          <div className="absolute inset-0 bg-[#061a3a]/75" />
-        </div>
+            {/* Existing Hero Overlay */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-[#061a3a]/75"
+            />
+          </>
+        )}
 
-        <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
+        <div className="relative z-10 mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
           <Link
             href="/"
             className="mb-10 inline-flex items-center gap-2 text-sm font-medium text-[#b8c5d8] transition-colors hover:text-white"

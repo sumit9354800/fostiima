@@ -1,7 +1,11 @@
+
 import Link from "next/link";
 import { ArrowRight, BookOpen } from "lucide-react";
 
 import { academicsData } from "@/data/academics";
+import { cloudinaryAsset } from "@/lib/cloudinary";
+
+const heroImage = cloudinaryAsset("/programs/pgdm.png");
 
 export default function AcademicsHero() {
   return (
@@ -9,6 +13,28 @@ export default function AcademicsHero() {
       aria-labelledby="academics-hero-title"
       className="relative overflow-hidden bg-[#071a38] py-20 sm:py-24 lg:py-28"
     >
+      {/* Background Image — only rendered when available */}
+      {heroImage && (
+        <>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0"
+          >
+            <img
+              src={heroImage}
+              alt="FOSTIIMA Business School management education"
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          {/* Image Overlay */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[#071a38]/75"
+          />
+        </>
+      )}
+
       {/* Background Grid */}
       <div
         aria-hidden="true"
@@ -33,7 +59,7 @@ export default function AcademicsHero() {
         className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.75fr] lg:gap-16">
           {/* Content */}
           <div className="max-w-3xl">

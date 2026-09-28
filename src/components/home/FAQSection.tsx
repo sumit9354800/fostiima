@@ -31,8 +31,7 @@ export default function FAQSection() {
           </span>
 
           <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
-            Frequently Asked{" "}
-            <span className="text-[#c31e3b]">Questions</span>
+            Frequently Asked <span className="text-[#c31e3b]">Questions</span>
           </h2>
 
           <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
@@ -110,7 +109,7 @@ export default function FAQSection() {
             );
           })}
         </div>
-
+        {/* made by sammy/sumit */}
       </div>
     </section>
   );

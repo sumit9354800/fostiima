@@ -5,7 +5,13 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: [
+        "/admin/",
+        "/api/",
+        "/_next/",
+      ],
     },
-    sitemap: "https://www.fostiima.org/sitemap.xml",
+
+    sitemap: "https://fostiima.org/sitemap.xml",
   };
 }

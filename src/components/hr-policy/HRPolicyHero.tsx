@@ -1,10 +1,35 @@
+
 import { BriefcaseBusiness } from "lucide-react";
+import { cloudinaryAsset } from "@/lib/cloudinary";
+
+const heroImage = cloudinaryAsset("/banner/hr-policy-banner.webp");
 
 export default function HRPolicyHero() {
   return (
     <section className="relative overflow-hidden bg-[#061a3a]">
+      {/* Background Image — only rendered when available */}
+      {heroImage && (
+        <>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("${heroImage}")`,
+            }}
+          />
+
+          {/* Background Overlay */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[#061a3a]/70"
+          />
+        </>
+      )}
+
+      {/* Existing Grid */}
       <div
-        className="absolute inset-0 opacity-[0.045]"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.045]"
         style={{
           backgroundImage:
             "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
@@ -12,11 +37,12 @@ export default function HRPolicyHero() {
         }}
       />
 
-      <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#c31e3b]/10 blur-3xl" />
+      {/* Existing Background Effects */}
+      <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#c31e3b]/10 blur-3xl" />
 
-      <div className="absolute -bottom-40 -left-32 h-80 w-80 rounded-full bg-[#e5b83f]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 -left-32 h-80 w-80 rounded-full bg-[#e5b83f]/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
         <div className="max-w-4xl">
           <div className="flex items-center gap-3">
             <BriefcaseBusiness className="h-5 w-5 text-[#e5b83f]" />

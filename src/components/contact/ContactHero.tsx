@@ -1,19 +1,46 @@
+import { cloudinaryAsset } from "@/lib/cloudinary";
+
+const heroImage = cloudinaryAsset("/banner/contact-banner.webp");
+
 export default function ContactHero() {
   return (
     <section className="relative overflow-hidden bg-[#061a3a] px-6 py-20 text-white sm:px-8 lg:px-12 lg:py-28">
+      {/* Background Image — only rendered when available */}
+      {heroImage && (
+        <>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("${heroImage}")`,
+            }}
+          />
+
+          {/* Image Overlay */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[#061a3a]/75"
+          />
+        </>
+      )}
+
+      {/* Existing Grid */}
       <div
+        aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.09]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)",
+            "linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,0.25) 1px, transparent 1px)",
           backgroundSize: "42px 42px",
         }}
       />
 
+      {/* Existing Background Effects */}
       <div className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-[#c31e3b]/10 blur-3xl" />
+
       <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[#e5b83f]/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative z-10 mx-auto max-w-7xl">
         <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#e5b83f]">
           Get In Touch
         </p>

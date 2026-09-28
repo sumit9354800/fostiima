@@ -1,3 +1,4 @@
+
 import { cloudinaryAsset } from "@/lib/cloudinary";
 import { ArrowRight } from "lucide-react";
 
@@ -6,7 +7,7 @@ export const lifeAtFostiimaHero = {
   description:
     "Discover a vibrant campus experience where academic learning, student activities, collaboration and personal growth come together.",
   backgroundImage: cloudinaryAsset(
-    "/life-at-fostiima/life-at-fostiima-hero.png",
+    "/banner/life-at-fostiima-banner.webp",
   ),
 };
 
@@ -15,24 +16,29 @@ export function LifeAtFostiimaHero() {
 
   return (
     <section className="relative isolate overflow-hidden bg-[#061a3a]">
-      {/* Background image */}
+      {/* Background Image */}
       {hasBackgroundImage && (
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${lifeAtFostiimaHero.backgroundImage})`,
-          }}
-        />
+        <>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("${lifeAtFostiimaHero.backgroundImage}")`,
+            }}
+          />
+
+          {/* Dark Overlay */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[#061a3a]/65"
+          />
+        </>
       )}
 
-      {/* Dark overlay */}
-      {hasBackgroundImage && (
-        <div className="absolute inset-0 bg-[#061a3a]/65" />
-      )}
-
-      {/* Subtle grid overlay */}
+      {/* Subtle Grid Overlay */}
       <div
-        className="absolute inset-0 opacity-[0.06]"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
             "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
@@ -40,14 +46,20 @@ export function LifeAtFostiimaHero() {
         }}
       />
 
-      {/* Red glow */}
-      <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#c31e3b]/10 blur-3xl" />
+      {/* Red Glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#c31e3b]/10 blur-3xl"
+      />
 
-      {/* Gold glow */}
-      <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#e5b83f]/10 blur-3xl" />
+      {/* Gold Glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#e5b83f]/10 blur-3xl"
+      />
 
       {/* Content */}
-      <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
         <div className="max-w-4xl">
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-[#e5b83f]" />

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { facultyData } from "@/data/faculty";
+import { cloudinaryAsset } from "@/lib/cloudinary";
 
 export const metadata: Metadata = {
   title: "Core Faculties | FOSTIIMA Business School",
@@ -11,18 +12,39 @@ export const metadata: Metadata = {
     "Meet the experienced core faculty members of FOSTIIMA Business School.",
 };
 
+const heroImage = cloudinaryAsset("/banner/faculties-banner.webp");
+
 export default function FacultiesPage() {
   return (
     <main className="min-h-screen bg-[#f8fafc]">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#061a3a]">
+        {/* Background Image — only rendered when available */}
+        {heroImage && (
+          <>
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url("${heroImage}")`,
+              }}
+            />
+
+            {/* Image Overlay */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-[#061a3a]/75"
+            />
+          </>
+        )}
+
         {/* Background Grid */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-[0.08]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.75) 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.75) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,0.75) 1px, transparent 1px)",
             backgroundSize: "42px 42px",
           }}
         />
@@ -39,7 +61,7 @@ export default function FacultiesPage() {
           className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
         />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
           <div className="max-w-4xl">
             {/* Eyebrow */}
             <div className="mb-6 flex items-center gap-3">

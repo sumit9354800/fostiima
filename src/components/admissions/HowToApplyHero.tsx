@@ -1,8 +1,31 @@
+
 import { ArrowDown, ClipboardCheck } from "lucide-react";
+import { cloudinaryAsset } from "@/lib/cloudinary";
+
+const heroImage = cloudinaryAsset("/banner/how-to-apply-banner.webp");
 
 export default function HowToApplyHero() {
   return (
     <section className="relative overflow-hidden bg-[#061a3a]">
+      {/* Background Image — only rendered when available */}
+      {heroImage && (
+        <>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("${heroImage}")`,
+            }}
+          />
+
+          {/* Background Overlay */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[#061a3a]/70"
+          />
+        </>
+      )}
+
       {/* Subtle Grid */}
       <div
         aria-hidden="true"
@@ -34,7 +57,7 @@ export default function HowToApplyHero() {
         className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
         <div className="max-w-4xl">
           {/* Eyebrow */}
           <div className="mb-6 flex items-center gap-3">

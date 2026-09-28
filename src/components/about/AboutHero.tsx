@@ -2,26 +2,42 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/about-banner.jpeg");
+const heroImagePath = "/banner/about-banner.jpeg";
 
 export default function AboutHero() {
+  let heroImage: string | null = null;
+
+  try {
+    const image = cloudinaryAsset(heroImagePath);
+
+    // Only use the image if cloudinaryAsset returns a valid URL.
+    if (image && image !== heroImagePath) {
+      heroImage = image;
+    }
+  } catch {
+    heroImage = null;
+  }
+
   return (
     <section className="relative isolate overflow-hidden bg-[#071a38] text-white">
-      {/* Background Image */}
-      <div aria-hidden="true" className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt=""
-          aria-hidden="true"
-          className="h-full w-full object-cover"
-        />
-      </div>
+      {/* Background Image — only rendered when available */}
+      {heroImage && (
+        <>
+          <div aria-hidden="true" className="absolute inset-0">
+            <img
+              src={heroImage}
+              alt="FOSTIIMA Business School campus"
+              className="h-full w-full object-cover"
+            />
+          </div>
 
-      {/* Existing Background Overlay */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[#071a38]/70"
-      />
+          {/* Image Overlay */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[#071a38]/70"
+          />
+        </>
+      )}
 
       {/* Background Effects */}
       <div
@@ -71,9 +87,9 @@ export default function AboutHero() {
 
           {/* Description */}
           <p className="mt-7 max-w-3xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
-            FOSTIIMA Business School was founded by IIM Ahmedabad alumni with
-            a vision to create a distinctive management education experience
-            built around academic rigour, practical learning, experienced
+            FOSTIIMA Business School was founded by IIM Ahmedabad alumni with a
+            vision to create a distinctive management education experience built
+            around academic rigour, practical learning, experienced
             professionals and leadership development.
           </p>
 
@@ -104,7 +120,6 @@ export default function AboutHero() {
               "
             >
               Discover FOSTIIMA
-
               <ArrowRight
                 size={16}
                 aria-hidden="true"
@@ -149,9 +164,7 @@ export default function AboutHero() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-md text-white/50">
               <span>
-                <strong className="font-semibold text-white/80">
-                  Founded
-                </strong>{" "}
+                <strong className="font-semibold text-white/80">Founded</strong>{" "}
                 2007
               </span>
 
@@ -167,9 +180,7 @@ export default function AboutHero() {
               <span className="hidden h-3 w-px bg-white/15 sm:block" />
 
               <span>
-                <strong className="font-semibold text-white/80">
-                  Campus
-                </strong>{" "}
+                <strong className="font-semibold text-white/80">Campus</strong>{" "}
                 Dwarka, New Delhi
               </span>
             </div>
@@ -179,7 +190,6 @@ export default function AboutHero() {
               className="group inline-flex items-center gap-2 text-md font-semibold uppercase tracking-[0.12em] text-white/60 transition-colors hover:text-white"
             >
               Explore
-
               <ArrowDown
                 size={14}
                 aria-hidden="true"

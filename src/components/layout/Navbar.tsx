@@ -142,13 +142,13 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Main navigation"
-      className="hidden h-[76px] w-full bg-white shadow-[0_2px_10px_rgba(15,23,42,0.06)] lg:block"
+      className="hidden h-[76px] w-full bg-white shadow-[0_2px_10px_rgba(15,23,42,0.06)] xl:block"
     >
-      <div className="mx-auto flex h-full w-full max-w-[1440px] items-center px-2 min-[1350px]:px-2 min-[1450px]:px-2">
+      <div className="mx-auto flex h-full w-full max-w-[1440px] items-center px-4">
         {/* Logo */}
         <Link
           href="/"
-          className="flex w-[120px] px-4 shrink-0 items-center min-[1350px]:w-[135px] min-[1450px]:w-[150px]"
+          className="flex h-full w-[150px] shrink-0 items-center px-3"
           aria-label="FOSTIIMA Business School Home"
         >
           <Image
