@@ -8,17 +8,17 @@ export type FounderTrustee = {
 
 export const founderTrustees: FounderTrustee[] = [
   {
-    name: "Jaithirth Rao",
+    name: "Anil Somani",
     role: "Founder Trustee",
-    image: cloudinaryAsset("about/trustees-faculty/trustees-faculty1"),
+    image: cloudinaryAsset("home/faculty/faculty1.webp"),
   },
   {
-    name: "Late Kamal Sharma",
+    name: "Kamal Sharma",
     role: "Founder Trustee",
     image: cloudinaryAsset("about/trustees-faculty/trustees-faculty2"),
   },
   {
-    name: "Anil Somani",
+    name: "Jaithirth Rao",
     role: "Founder Trustee",
     image: cloudinaryAsset("about/trustees-faculty/trustees-faculty3"),
   },
