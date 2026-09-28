@@ -17,7 +17,7 @@ export const campusLifeItems: CampusLifeItem[] = [
     description:
       "Build meaningful connections, collaborate with peers and create lifelong friendships beyond the classroom.",
 
-    image: cloudinaryAsset("home/campuslife/campuslife1"),
+    image: cloudinaryAsset("home/campuslife/campuslife01.jpeg"),
 
     details: [
       "Collaborate with peers across diverse backgrounds.",
@@ -35,7 +35,7 @@ export const campusLifeItems: CampusLifeItem[] = [
     description:
       "Engage in discussions, debates, workshops and activities that encourage curiosity and new perspectives.",
 
-    image: cloudinaryAsset("home/campuslife/campuslife2"),
+    image: cloudinaryAsset("home/campuslife/campuslife02.jpeg"),
 
     details: [
       "Participate in discussions and knowledge-sharing sessions.",
@@ -53,7 +53,7 @@ export const campusLifeItems: CampusLifeItem[] = [
     description:
       "Balance academic life with sports, recreation and activities that encourage teamwork and sportsmanship.",
 
-    image: cloudinaryAsset("home/campuslife/campuslife3"),
+    image: cloudinaryAsset("home/campuslife/campuslife03.jpeg"),
 
     details: [
       "Take part in sports and recreational activities.",
@@ -71,7 +71,7 @@ export const campusLifeItems: CampusLifeItem[] = [
     description:
       "Experience cultural activities, celebrations, industry interactions and memorable campus experiences.",
 
-    image: cloudinaryAsset("home/campuslife/campuslife4"),
+    image: cloudinaryAsset("home/campuslife/campuslife04.jpeg"),
 
     details: [
       "Experience cultural activities and campus celebrations.",
