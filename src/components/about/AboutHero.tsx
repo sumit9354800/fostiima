@@ -1,9 +1,28 @@
 import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
+import { cloudinaryAsset } from "@/lib/cloudinary";
+
+const heroImage = cloudinaryAsset("/banner/about-banner.jpeg");
 
 export default function AboutHero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#071a38] text-white">
+      {/* Background Image */}
+      <div aria-hidden="true" className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt=""
+          aria-hidden="true"
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      {/* Existing Background Overlay */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[#071a38]/70"
+      />
+
       {/* Background Effects */}
       <div
         aria-hidden="true"
@@ -31,7 +50,7 @@ export default function AboutHero() {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
         <div className="max-w-5xl">
           {/* Eyebrow */}
           <div className="flex items-center gap-3">
