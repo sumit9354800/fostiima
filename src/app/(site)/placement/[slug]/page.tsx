@@ -21,11 +21,8 @@ export default async function PlacementDetailPage({
   return (
     <main className="min-h-screen bg-white">
       <section className="px-6 py-16 text-center sm:px-10 lg:px-20">
-        <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#c31e3b]">
-         We are glad 
-        </p>
 
-        <h1 className="mt-4 text-4xl font-bold text-[#061a3a] sm:text-5xl">
+        <h1 className="mt-4 text-4xl font-bold text-[#c31e3b] sm:text-5xl">
           {page.title}
         </h1>
 

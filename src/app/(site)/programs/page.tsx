@@ -208,6 +208,56 @@ const programs: Record<string, ProgramData> = {
 
     semesters: [],
   },
+
+internationalBusiness: {
+  title: "International Business - Specialization",
+  category: "Specialization",
+  duration: "PGDM Specialization",
+  description:
+    "A specialized area of study focused on international trade, global business operations, foreign exchange, logistics and international marketing.",
+  heroImage: cloudinaryAsset("/programs/international-business.png"),
+
+  specialization: {
+    title: "International Business - Specialization",
+    subjects: [
+      "Exim Financing, Documentation & Forex Management",
+      "Foreign Trade & Policy",
+      "Global Services & Supply Management",
+      "International Logistics Management",
+      "International Marketing",
+      "Perspectives in International Business",
+    ],
+  },
+
+  semesters: [],
+},
+
+aiAnalyticsOperations: {
+  title: "AI, Analytics & Operations - Specialization",
+  category: "Specialization",
+  duration: "PGDM Specialization",
+  description:
+    "A specialized area focused on analytics, artificial intelligence, operations management, predictive insights and data-driven business decision-making.",
+  heroImage: cloudinaryAsset("/programs/ai-analytics-operations.png"),
+
+  specialization: {
+    title: "AI, Analytics & Operations - Specialization",
+    subjects: [
+      "TQM, Six Sigma & BPR",
+      "Predictive Analytics",
+      "Big Data Analytics",
+      "Enterprise Resource Planning",
+      "Logistics Management",
+      "Service Operations Management",
+      "Introduction to Artificial Intelligence",
+      "AI in Business and Decision Making",
+      "Ethics and Governance in AI",
+      "Lean Manufacturing, Strategic Sourcing and E Business Operations",
+    ],
+  },
+
+  semesters: [],
+},
 };
 
 export default async function ProgramsPage({

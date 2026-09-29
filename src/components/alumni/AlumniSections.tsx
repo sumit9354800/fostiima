@@ -29,7 +29,7 @@ const alumniSections: AlumniSection[] = [
     description:
       "At FOSTIIMA Business School, we believe an institution’s reputation is defined by the achievements of its alumni. While exceptional faculty and infrastructure lay the foundation, it is the performance, leadership, and global impact of our graduates that elevate our standing alongside top-tier institutions. We cultivate lifelong, mutually beneficial relationships with our alumni network. FOSTIIMA supports graduates through strategic professional networking, continuous access to campus expertise, and exclusive partner benefits. In return, our alumni serve as trusted brand ambassadors, driving our growth, mentorship programs, and institutional prestige.",
 
-    image: cloudinaryAsset(""),
+    image: cloudinaryAsset("/alumni/alumni.jpeg"),
 
     icon: BarChart3,
   },

@@ -13,12 +13,9 @@ type BrochureFormData = {
   email: string;
   phone: string;
 };
+const BROCHURE_URL = "/documents/brochure.pdf";
 
-const BROCHURE_URL = "/brochure.pdf";
-
-export default function BrochureForm({
-  onSuccess,
-}: BrochureFormProps) {
+export default function BrochureForm({ onSuccess }: BrochureFormProps) {
   const [formData, setFormData] = useState<BrochureFormData>({
     fullName: "",
     email: "",
@@ -28,9 +25,7 @@ export default function BrochureForm({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
     setFormData((current) => ({
@@ -39,9 +34,7 @@ export default function BrochureForm({
     }));
   };
 
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     setError("");
@@ -81,8 +74,9 @@ export default function BrochureForm({
       const downloadLink = document.createElement("a");
 
       downloadLink.href = BROCHURE_URL;
-      downloadLink.download =
-        cloudinaryAsset("brochure/FOSTIIMA-Business-School-Brochure.pdf");
+      downloadLink.download = cloudinaryAsset(
+        "brochure/FOSTIIMA-Business-School-Brochure.pdf",
+      );
 
       document.body.appendChild(downloadLink);
       downloadLink.click();
@@ -90,19 +84,14 @@ export default function BrochureForm({
 
       onSuccess?.();
     } catch {
-      setError(
-        "Something went wrong. Please try again.",
-      );
+      setError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-4"
-    >
+    <form onSubmit={handleSubmit} className="space-y-4">
       {/* Full Name */}
       <div>
         <label
@@ -261,10 +250,7 @@ export default function BrochureForm({
       >
         {isSubmitting ? (
           <>
-            <Loader2
-              size={16}
-              className="animate-spin"
-            />
+            <Loader2 size={16} className="animate-spin" />
             Preparing Brochure...
           </>
         ) : (

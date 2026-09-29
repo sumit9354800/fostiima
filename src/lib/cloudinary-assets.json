@@ -1,6 +1,38 @@
 {
   "about": {
     "infrastructures": {
+      "infrastructures01": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/about/infrastructures/infrastructures01",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790669290/fostiima/about/infrastructures/infrastructures01.jpg",
+        "width": 1280,
+        "height": 853
+      },
+      "infrastructures02": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/about/infrastructures/infrastructures02",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790669292/fostiima/about/infrastructures/infrastructures02.jpg",
+        "width": 750,
+        "height": 500
+      },
+      "infrastructures03": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/about/infrastructures/infrastructures03",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790669299/fostiima/about/infrastructures/infrastructures03.jpg",
+        "width": 1001,
+        "height": 637
+      },
+      "infrastructures04": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/about/infrastructures/infrastructures04",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790669302/fostiima/about/infrastructures/infrastructures04.jpg",
+        "width": 1000,
+        "height": 666
+      },
       "infrastructures1": {
         "type": "image",
         "format": "webp",
@@ -174,6 +206,14 @@
     }
   },
   "alumni": {
+    "alumni": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/alumni/alumni",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790669306/fostiima/alumni/alumni.jpg",
+      "width": 1600,
+      "height": 1200
+    },
     "Alumni Committee": {
       "type": "image",
       "format": "jpg",
@@ -229,6 +269,14 @@
       "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790441182/fostiima/alumni/placement.jpg",
       "width": 1600,
       "height": 1200
+    },
+    "smart-campus": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/alumni/smart-campus",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790669310/fostiima/alumni/smart-campus.jpg",
+      "width": 1600,
+      "height": 1066
     },
     "student-interface": {
       "type": "image",
@@ -3304,6 +3352,14 @@
         "height": 1254
       }
     },
+    "sokyp4ercshwkie1ryrw": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/home/sokyp4ercshwkie1ryrw",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790668564/fostiima/home/sokyp4ercshwkie1ryrw.jpg",
+      "width": 1600,
+      "height": 1067
+    },
     "vqgxlkqhtbzrgpb2hfal": {
       "type": "image",
       "format": "jpg",
@@ -3319,6 +3375,14 @@
       "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491769/fostiima/home/ye2cwm9fm7hqdkgjbwgl.jpg",
       "width": 1600,
       "height": 1066
+    },
+    "z97idkm9uo4ipovtxlml": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/home/z97idkm9uo4ipovtxlml",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790668622/fostiima/home/z97idkm9uo4ipovtxlml.jpg",
+      "width": 1042,
+      "height": 432
     },
     "dj7iskvf5po3vwwwg18e": {
       "type": "video",

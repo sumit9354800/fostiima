@@ -98,10 +98,47 @@ export const programDetails: ProgramDetail[] = [
       "Business Intelligence",
     ],
   },
+  {
+    slug: "international-business",
+    title: "International Business - Specialization",
+    category: "Specialization",
+    duration: "PGDM Specialization",
+    imageUrl: "/programs/international-business.png",
+    overview:
+      "A specialized area of management education focused on international business, global trade, international logistics, foreign exchange and international marketing.",
+    highlights: [
+      "Exim Financing, Documentation & Forex Management",
+      "Foreign Trade & Policy",
+      "Global Services & Supply Management",
+      "International Logistics Management",
+      "International Marketing",
+      "Perspectives in International Business",
+    ],
+  },
+
+  {
+    slug: "ai-analytics-operations",
+    title: "AI, Analytics & Operations - Specialization",
+    category: "Specialization",
+    duration: "PGDM Specialization",
+    imageUrl: "/programs/ai-analytics-operations.png",
+    overview:
+      "A specialized area focused on analytics, artificial intelligence, operations management and data-driven business decision-making.",
+    highlights: [
+      "TQM, Six Sigma & BPR",
+      "Predictive Analytics",
+      "Big Data Analytics",
+      "Enterprise Resource Planning",
+      "Logistics Management",
+      "Service Operations Management",
+      "Introduction to Artificial Intelligence",
+      "AI in Business and Decision Making",
+      "Ethics and Governance in AI",
+      "Lean Manufacturing, Strategic Sourcing and E Business Operations",
+    ],
+  },
 ];
 
 export function getProgramBySlug(slug: string) {
-  return programDetails.find(
-    (program) => program.slug === slug
-  );
+  return programDetails.find((program) => program.slug === slug);
 }

@@ -30,7 +30,7 @@ export const placementStats = [
 
 export const placementPages = {
   "placement-rate": {
-    title: "Placement Rate",
+    title: "Our Placements",
     description:
       "FOSTIIMA Business School's placement outcomes and student placement highlights.",
     rowImages: [

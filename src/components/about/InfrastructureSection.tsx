@@ -7,33 +7,13 @@ import { cloudinaryAsset } from "@/lib/cloudinary";
 
 const infrastructureImages = [
 
-  cloudinaryAsset("/about/infrastructures/infrastructures1.webp"),
+  cloudinaryAsset("/about/infrastructures/infrastructures01.jpeg"),
 
-  cloudinaryAsset("/about/infrastructures/infrastructures2.webp"),
+  cloudinaryAsset("/about/infrastructures/infrastructures02.jpeg"),
 
-  cloudinaryAsset("/about/infrastructures/infrastructures3.webp"),
+  cloudinaryAsset("/about/infrastructures/infrastructures03.jpeg"),
 
-  cloudinaryAsset("/about/infrastructures/infrastructures4.webp"),
-
-  cloudinaryAsset("/about/infrastructures/infrastructures5.webp"),
-
-  cloudinaryAsset("/about/infrastructures/infrastructures6.webp"),
-
-  cloudinaryAsset("/about/infrastructures/infrastructures7.webp"),
-
-  cloudinaryAsset("/about/infrastructures/infrastructures8.webp"),
-
-  cloudinaryAsset("/about/infrastructures/infrastructures9.webp"),
-
-  cloudinaryAsset("/about/infrastructures/infrastructures10.webp"),
-
-  cloudinaryAsset("/about/infrastructures/infrastructures11.webp"),
-
-  cloudinaryAsset("/about/infrastructures/infrastructures12.webp"),
-
-  cloudinaryAsset("/about/infrastructures/infrastructures13.webp"),
-
-  cloudinaryAsset("/about/infrastructures/infrastructures14.webp"),
+  cloudinaryAsset("/about/infrastructures/infrastructures04.jpeg"),
 
 ];
 

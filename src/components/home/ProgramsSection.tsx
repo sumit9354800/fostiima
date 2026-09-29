@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useRef } from "react";
@@ -20,6 +19,8 @@ type ProgramsSectionProps = {
   programs: Program[];
 };
 
+
+
 const getProgramKey = (title: string) => {
   switch (title) {
     case "PGDM":
@@ -36,6 +37,12 @@ const getProgramKey = (title: string) => {
 
     case "PGDM (Business Analytics)":
       return "businessAnalytics";
+
+    case "International Business - Specialization":
+      return "internationalBusiness";
+
+    case "AI, Analytics & Operations - Specialization":
+      return "aiAnalyticsOperations";
 
     default:
       return "pgdm";
