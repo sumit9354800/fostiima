@@ -1,23 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/",
-        has: [
-          {
-            type: "query",
-            key: "source",
-            value: "(.+)",
-          },
-        ],
-        destination: "/admissions?source=:source",
-        permanent: false,
-      },
-    ];
-  },
-
   images: {
     remotePatterns: [
       {
@@ -25,6 +8,16 @@ const nextConfig: NextConfig = {
         hostname: "res.cloudinary.com",
       },
     ],
+  },
+
+  async redirects() {
+    return [
+      {
+        source: "/ag-landing-page",
+        destination: "https://fostiima.org/ag-landing-page",
+        permanent: false,
+      },
+    ];
   },
 };
 
