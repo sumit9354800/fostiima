@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import BlogHero from "@/components/blog/BlogHero";
 import BlogGrid from "@/components/blog/BlogGrid";
-import { getPublishedBlogs } from "@/data/blog/blogs";
+import { getPublishedBlogs } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "Blog | FOSTIIMA Business School",
@@ -24,7 +24,7 @@ export default async function BlogPage() {
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-[#e5b83f]" />
 
-            <p className="text-md font-bold uppercase tracking-[0.22em] text-[#e5b83f] sm:text-sm">
+            <p className="text-md font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
               Latest Articles
             </p>
           </div>
@@ -34,8 +34,8 @@ export default async function BlogPage() {
           </h2>
 
           <p className="mt-4 text-base leading-7 text-slate-600">
-            Discover perspectives and information from the world of
-            management education.
+            Discover perspectives and information from the world
+            of management education.
           </p>
         </div>
 

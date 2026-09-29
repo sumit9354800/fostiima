@@ -1,53 +1,81 @@
-import type { BlogBlock } from "@/types/blog";
+import type { BlogContentBlock } from "@/types/blog";
 
 type BlogContentProps = {
-  content: BlogBlock[];
+  content: BlogContentBlock[];
 };
 
-export default function BlogContent({ content }: BlogContentProps) {
+export default function BlogContent({
+  content,
+}: BlogContentProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 text-[17px] leading-8 text-slate-700">
       {content.map((block, index) => {
         switch (block.type) {
+          case "heading": {
+            const HeadingTag =
+              block.level === 4
+                ? "h4"
+                : block.level === 3
+                  ? "h3"
+                  : "h2";
+
+            return (
+              <HeadingTag
+                key={`${block.type}-${index}`}
+                className={
+                  block.level === 2
+                    ? "mt-12 text-2xl font-bold leading-tight text-[#123b79] sm:text-3xl"
+                    : block.level === 3
+                      ? "mt-8 text-xl font-bold leading-tight text-[#123b79] sm:text-2xl"
+                      : "mt-6 text-lg font-bold leading-tight text-[#123b79] sm:text-xl"
+                }
+              >
+                {block.content}
+              </HeadingTag>
+            );
+          }
+
           case "paragraph":
             return (
               <p
-                key={`paragraph-${index}`}
-                className="text-base leading-8 text-slate-700"
+                key={`${block.type}-${index}`}
+                className="whitespace-pre-line"
               >
                 {block.content}
               </p>
             );
 
-          case "heading":
-            if (block.level === 2) {
-              return (
-                <h2
-                  key={`heading-${index}`}
-                  className="pt-4 text-2xl font-bold leading-tight text-[#c31e3b] sm:text-3xl"
-                >
-                  {block.content}
-                </h2>
-              );
-            }
-
+          case "image":
             return (
-              <h3
-                key={`heading-${index}`}
-                className="pt-2 text-xl font-bold leading-tight text-slate-900 sm:text-2xl"
+              <figure
+                key={`${block.type}-${index}`}
+                className="my-10 overflow-hidden"
               >
-                {block.content}
-              </h3>
+                <img
+                  src={block.src}
+                  alt={block.alt}
+                  loading="lazy"
+                  className="h-auto w-full rounded-xl object-cover"
+                />
+
+                {block.caption && (
+                  <figcaption className="mt-3 text-center text-sm leading-6 text-slate-500">
+                    {block.caption}
+                  </figcaption>
+                )}
+              </figure>
             );
 
           case "list":
             return (
               <ul
-                key={`list-${index}`}
-                className="list-disc space-y-2 pl-6 text-base leading-7 text-slate-700"
+                key={`${block.type}-${index}`}
+                className="list-disc space-y-3 pl-6"
               >
                 {block.items.map((item, itemIndex) => (
-                  <li key={`list-item-${index}-${itemIndex}`}>{item}</li>
+                  <li key={`${index}-${itemIndex}`}>
+                    {item}
+                  </li>
                 ))}
               </ul>
             );
@@ -55,33 +83,35 @@ export default function BlogContent({ content }: BlogContentProps) {
           case "table":
             return (
               <div
-                key={`table-${index}`}
-                className="my-6 overflow-x-auto rounded-xl border border-slate-200"
+                key={`${block.type}-${index}`}
+                className="my-10 overflow-x-auto rounded-xl border border-slate-200"
               >
-                <table className="min-w-full border-collapse bg-white text-left text-sm">
-                  <thead className="bg-[#0b3b91] text-white">
-                    <tr>
-                      {block.headers.map((header, headerIndex) => (
-                        <th
-                          key={`header-${index}-${headerIndex}`}
-                          className="border-b border-white/20 px-4 py-3 font-semibold"
-                        >
-                          {header}
-                        </th>
-                      ))}
+                <table className="w-full min-w-[600px] border-collapse text-left">
+                  <thead>
+                    <tr className="bg-[#061a3a] text-white">
+                      {block.headers.map(
+                        (header, headerIndex) => (
+                          <th
+                            key={headerIndex}
+                            className="border border-[#1d3559] px-4 py-3 text-sm font-bold"
+                          >
+                            {header}
+                          </th>
+                        ),
+                      )}
                     </tr>
                   </thead>
 
                   <tbody>
                     {block.rows.map((row, rowIndex) => (
                       <tr
-                        key={`row-${index}-${rowIndex}`}
-                        className="border-b border-slate-100 last:border-b-0"
+                        key={rowIndex}
+                        className="even:bg-slate-50"
                       >
                         {row.map((cell, cellIndex) => (
                           <td
-                            key={`cell-${index}-${rowIndex}-${cellIndex}`}
-                            className="px-4 py-3 align-top leading-6 text-slate-700"
+                            key={cellIndex}
+                            className="border border-slate-200 px-4 py-3 text-sm leading-6 text-slate-700"
                           >
                             {cell}
                           </td>
@@ -91,23 +121,6 @@ export default function BlogContent({ content }: BlogContentProps) {
                   </tbody>
                 </table>
               </div>
-            );
-
-          case "image":
-            return (
-              <figure key={`image-${index}`} className="my-8">
-                <img
-                  src={block.src}
-                  alt={block.alt}
-                  className="h-auto w-full rounded-2xl object-cover"
-                />
-
-                {block.caption && (
-                  <figcaption className="mt-2 text-center text-sm text-slate-500">
-                    {block.caption}
-                  </figcaption>
-                )}
-              </figure>
             );
 
           default:

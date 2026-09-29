@@ -1,9 +1,8 @@
-
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import BlogContent from "@/components/blog/BlogContent";
-import { getBlogBySlug } from "@/data/blog/blogs";
+import { getBlogBySlug } from "@/lib/queries";
 
 type BlogDetailPageProps = {
   params: Promise<{
@@ -11,7 +10,6 @@ type BlogDetailPageProps = {
   }>;
 };
 
-// Blog data is coming from MySQL/Prisma CMS
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
@@ -24,8 +22,6 @@ export async function generateMetadata({
   if (!blog) {
     return {
       title: "Blog Not Found | FOSTIIMA Business School",
-      description:
-        "The requested blog could not be found.",
     };
   }
 
@@ -49,9 +45,7 @@ export default async function BlogDetailPage({
 
   return (
     <main className="min-h-screen bg-[#f8fafc]">
-      {/* Hero */}
       <section className="relative overflow-hidden bg-[#061a3a]">
-        {/* Subtle Background Grid */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-[0.08]"
@@ -62,20 +56,13 @@ export default async function BlogDetailPage({
           }}
         />
 
-        {/* Subtle Ambient Glow */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#c31e3b]/10 blur-[120px]"
         />
 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-48 left-1/3 h-[420px] w-[420px] rounded-full bg-[#183f78]/20 blur-[100px]"
-        />
-
         <div className="relative mx-auto max-w-5xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
           <div className="max-w-4xl">
-            {/* Category + Date */}
             <div className="mb-6 flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 bg-[#e5b83f]" />
@@ -92,38 +79,52 @@ export default async function BlogDetailPage({
                     className="h-1 w-1 rounded-full bg-[#c31e3b]"
                   />
 
-                  <span className="text-sm font-medium text-[#b8c5d8]">
-                    {blog.publishedAt}
-                  </span>
+                  <time
+                    dateTime={blog.publishedAt}
+                    className="text-sm font-medium text-[#b8c5d8]"
+                  >
+                    {new Date(
+                      blog.publishedAt,
+                    ).toLocaleDateString("en-IN", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </time>
                 </>
               )}
             </div>
 
-            {/* Title */}
             <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
               {blog.title}
             </h1>
 
-            {/* Excerpt */}
             <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8c5d8] sm:text-lg">
               {blog.excerpt}
             </p>
 
-            {/* Author */}
             <p className="mt-7 text-sm font-semibold text-white">
               By{" "}
               <span className="text-[#e5b83f]">
                 {blog.author}
               </span>
             </p>
-
-            {/* Accent Line */}
-            <div className="mt-10 h-px w-full max-w-3xl bg-[#1d3559]" />
           </div>
         </div>
       </section>
 
-      {/* Article */}
+      {blog.coverImage && (
+        <section className="mx-auto max-w-5xl px-6 pt-10 sm:px-8 lg:px-10">
+          <div className="overflow-hidden border border-[#dbe3ee] bg-white">
+            <img
+              src={blog.coverImage}
+              alt={blog.coverImageAlt}
+              className="h-auto max-h-[560px] w-full object-cover"
+            />
+          </div>
+        </section>
+      )}
+
       <section className="mx-auto max-w-5xl px-6 py-12 sm:px-8 sm:py-16 lg:px-10">
         <article className="border border-[#dbe3ee] bg-white p-6 shadow-sm sm:p-8 lg:p-10">
           <BlogContent content={blog.content} />
