@@ -1,8 +1,9 @@
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import BlogContent from "@/components/blog/BlogContent";
-import { getBlogBySlug, getPublishedBlogs } from "@/data/blog/blogs";
+import { getBlogBySlug } from "@/data/blog/blogs";
 
 type BlogDetailPageProps = {
   params: Promise<{
@@ -10,21 +11,21 @@ type BlogDetailPageProps = {
   }>;
 };
 
-export function generateStaticParams() {
-  return getPublishedBlogs().map((blog) => ({
-    slug: blog.slug,
-  }));
-}
+// Blog data is coming from MySQL/Prisma CMS
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
 }: BlogDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const blog = getBlogBySlug(slug);
+
+  const blog = await getBlogBySlug(slug);
 
   if (!blog) {
     return {
       title: "Blog Not Found | FOSTIIMA Business School",
+      description:
+        "The requested blog could not be found.",
     };
   }
 
@@ -39,7 +40,8 @@ export default async function BlogDetailPage({
   params,
 }: BlogDetailPageProps) {
   const { slug } = await params;
-  const blog = getBlogBySlug(slug);
+
+  const blog = await getBlogBySlug(slug);
 
   if (!blog) {
     notFound();

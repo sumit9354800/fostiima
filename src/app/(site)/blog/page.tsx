@@ -10,8 +10,10 @@ export const metadata: Metadata = {
     "Explore articles, insights and updates from FOSTIIMA Business School.",
 };
 
-export default function BlogPage() {
-  const blogs = getPublishedBlogs();
+export const dynamic = "force-dynamic";
+
+export default async function BlogPage() {
+  const blogs = await getPublishedBlogs();
 
   return (
     <main className="min-h-screen bg-[#f8fafc]">
@@ -22,7 +24,7 @@ export default function BlogPage() {
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-[#e5b83f]" />
 
-            <p className="text-md font-bold uppercase tracking-[0.22em] text-[#e5b83f]">
+            <p className="text-md font-bold uppercase tracking-[0.22em] text-[#e5b83f] sm:text-sm">
               Latest Articles
             </p>
           </div>

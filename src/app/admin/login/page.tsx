@@ -5,7 +5,7 @@ import { LockKeyhole, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 import { authClient } from "@/lib/auth-client";
-
+    
 export default function AdminLoginPage() {
   const router = useRouter();
 

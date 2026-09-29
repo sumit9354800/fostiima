@@ -17,7 +17,11 @@ export const auth = betterAuth({
     admin(),
   ],
 
+  baseURL: process.env.BETTER_AUTH_URL,
+
   trustedOrigins: [
-    process.env.BETTER_AUTH_URL ?? "http://localhost:3000",
+    "http://localhost:3000",
+    "https://www.fostiima.org",
+    "https://fostiima.org",
   ],
 });
