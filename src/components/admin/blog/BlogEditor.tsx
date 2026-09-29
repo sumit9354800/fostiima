@@ -12,13 +12,22 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-type BlockType = "heading" | "paragraph";
+type BlockType = "heading" | "paragraph" | "image" | "table";
+
+type TableData = {
+  headers: string[];
+  rows: string[][];
+};
 
 type BlogBlock = {
   id: string;
   type: BlockType;
   content: string;
   level?: 2 | 3;
+  src?: string;
+  alt?: string;
+  caption?: string;
+  table?: TableData;
 };
 
 type FormState = {
@@ -67,11 +76,26 @@ const EMPTY_FORM: FormState = {
   metaDescription: "",
   keywords: "",
 };
-
-const EMPTY_BLOCK = (): BlogBlock => ({
+const EMPTY_BLOCK = (type: BlockType = "paragraph"): BlogBlock => ({
   id: crypto.randomUUID(),
-  type: "paragraph",
+  type,
   content: "",
+  ...(type === "heading" ? { level: 2 } : {}),
+  ...(type === "image"
+    ? {
+        src: "",
+        alt: "",
+        caption: "",
+      }
+    : {}),
+  ...(type === "table"
+    ? {
+        table: {
+          headers: ["Column 1", "Column 2"],
+          rows: [["", ""]],
+        },
+      }
+    : {}),
 });
 
 function slugify(value: string) {
@@ -111,9 +135,7 @@ export default function BlogEditor({
   });
 
   const [blocks, setBlocks] = useState<BlogBlock[]>(
-    initialData?.blocks?.length
-      ? initialData.blocks
-      : [EMPTY_BLOCK()],
+    initialData?.blocks?.length ? initialData.blocks : [EMPTY_BLOCK()],
   );
 
   const [saving, setSaving] = useState(false);
@@ -134,10 +156,7 @@ export default function BlogEditor({
       ...previous,
       title: value,
 
-      slug:
-        mode === "create"
-          ? slugify(value)
-          : previous.slug,
+      slug: mode === "create" ? slugify(value) : previous.slug,
     }));
   };
 
@@ -159,17 +178,145 @@ export default function BlogEditor({
   };
 
   const addBlock = (type: BlockType) => {
-    setBlocks((previous) => [
-      ...previous,
-      {
-        ...EMPTY_BLOCK(),
-        type,
-        level:
-          type === "heading"
-            ? 2
-            : undefined,
-      },
-    ]);
+    setBlocks((previous) => [...previous, EMPTY_BLOCK(type)]);
+  };
+
+  const updateTableCell = (
+    blockId: string,
+    rowIndex: number,
+    columnIndex: number,
+    value: string,
+  ) => {
+    setBlocks((previous) =>
+      previous.map((block) => {
+        if (block.id !== blockId || block.type !== "table" || !block.table) {
+          return block;
+        }
+
+        const rows = block.table.rows.map((row) => [...row]);
+
+        rows[rowIndex][columnIndex] = value;
+
+        return {
+          ...block,
+          table: {
+            ...block.table,
+            rows,
+          },
+        };
+      }),
+    );
+  };
+
+  const updateTableHeader = (
+    blockId: string,
+    columnIndex: number,
+    value: string,
+  ) => {
+    setBlocks((previous) =>
+      previous.map((block) => {
+        if (block.id !== blockId || block.type !== "table" || !block.table) {
+          return block;
+        }
+
+        const headers = [...block.table.headers];
+
+        headers[columnIndex] = value;
+
+        return {
+          ...block,
+          table: {
+            ...block.table,
+            headers,
+          },
+        };
+      }),
+    );
+  };
+
+  const addTableColumn = (blockId: string) => {
+    setBlocks((previous) =>
+      previous.map((block) => {
+        if (block.id !== blockId || block.type !== "table" || !block.table) {
+          return block;
+        }
+
+        return {
+          ...block,
+          table: {
+            headers: [
+              ...block.table.headers,
+              `Column ${block.table.headers.length + 1}`,
+            ],
+            rows: block.table.rows.map((row) => [...row, ""]),
+          },
+        };
+      }),
+    );
+  };
+
+  const addTableRow = (blockId: string) => {
+    setBlocks((previous) =>
+      previous.map((block) => {
+        if (block.id !== blockId || block.type !== "table" || !block.table) {
+          return block;
+        }
+
+        return {
+          ...block,
+          table: {
+            ...block.table,
+            rows: [...block.table.rows, block.table.headers.map(() => "")],
+          },
+        };
+      }),
+    );
+  };
+
+  const removeTableColumn = (blockId: string) => {
+    setBlocks((previous) =>
+      previous.map((block) => {
+        if (
+          block.id !== blockId ||
+          block.type !== "table" ||
+          !block.table ||
+          block.table.headers.length <= 1
+        ) {
+          return block;
+        }
+
+        return {
+          ...block,
+          table: {
+            headers: block.table.headers.slice(0, -1),
+            rows: block.table.rows.map((row) => row.slice(0, -1)),
+          },
+        };
+      }),
+    );
+  };
+
+  const removeTableRow = (blockId: string, rowIndex: number) => {
+    setBlocks((previous) =>
+      previous.map((block) => {
+        if (
+          block.id !== blockId ||
+          block.type !== "table" ||
+          !block.table ||
+          block.table.rows.length <= 1
+        ) {
+          return block;
+        }
+
+        return {
+          ...block,
+          table: {
+            ...block.table,
+            rows: block.table.rows.filter((_, index) => index !== rowIndex),
+          },
+        };
+      }),
+    );
   };
 
   const removeBlock = (id: string) => {
@@ -178,35 +325,21 @@ export default function BlogEditor({
         return previous;
       }
 
-      return previous.filter(
-        (block) => block.id !== id,
-      );
+      return previous.filter((block) => block.id !== id);
     });
   };
 
-  const moveBlock = (
-    index: number,
-    direction: "up" | "down",
-  ) => {
+  const moveBlock = (index: number, direction: "up" | "down") => {
     setBlocks((previous) => {
       const newBlocks = [...previous];
 
-      const targetIndex =
-        direction === "up"
-          ? index - 1
-          : index + 1;
+      const targetIndex = direction === "up" ? index - 1 : index + 1;
 
-      if (
-        targetIndex < 0 ||
-        targetIndex >= newBlocks.length
-      ) {
+      if (targetIndex < 0 || targetIndex >= newBlocks.length) {
         return previous;
       }
 
-      [
-        newBlocks[index],
-        newBlocks[targetIndex],
-      ] = [
+      [newBlocks[index], newBlocks[targetIndex]] = [
         newBlocks[targetIndex],
         newBlocks[index],
       ];
@@ -215,9 +348,7 @@ export default function BlogEditor({
     });
   };
 
-  const uploadCoverImage = async (
-    file: File,
-  ) => {
+  const uploadCoverImage = async (file: File) => {
     if (!file.type.startsWith("image/")) {
       alert("Please select an image file.");
       return;
@@ -229,54 +360,34 @@ export default function BlogEditor({
       const formData = new FormData();
 
       formData.append("file", file);
-      formData.append(
-        "destination",
-        "cloudinary",
-      );
+      formData.append("destination", "cloudinary");
 
-      const response = await fetch(
-        "/api/admin/upload",
-        {
-          method: "POST",
-          body: formData,
-        },
-      );
+      const response = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: formData,
+      });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(
-          data?.error ||
-            "Failed to upload image.",
-        );
+        throw new Error(data?.error || "Failed to upload image.");
       }
 
       if (!data?.url) {
-        throw new Error(
-          "Upload completed but image URL was not returned.",
-        );
+        throw new Error("Upload completed but image URL was not returned.");
       }
 
       updateField("coverImage", data.url);
     } catch (error) {
-      console.error(
-        "[BLOG_IMAGE_UPLOAD]",
-        error,
-      );
+      console.error("[BLOG_IMAGE_UPLOAD]", error);
 
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Failed to upload image.",
-      );
+      alert(error instanceof Error ? error.message : "Failed to upload image.");
     } finally {
       setUploading(false);
     }
   };
 
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (saving || uploading) {
@@ -309,23 +420,49 @@ export default function BlogEditor({
     }
 
     const cleanBlocks = blocks
-      .filter(
-        (block) =>
-          block.content.trim().length > 0,
-      )
+      .filter((block) => {
+        if (block.type === "table") {
+          return Boolean(
+            block.table &&
+            block.table.headers.length > 0 &&
+            block.table.rows.length > 0,
+          );
+        }
+
+        if (block.type === "image") {
+          return Boolean(block.src?.trim());
+        }
+
+        return block.content.trim().length > 0;
+      })
       .map((block) => ({
         type: block.type,
-        content: block.content.trim(),
-        level:
-          block.type === "heading"
-            ? block.level || 2
-            : undefined,
-      }));
 
+        content:
+          block.type === "image"
+            ? block.caption?.trim() || ""
+            : block.type === "table"
+              ? ""
+              : block.content.trim(),
+
+        level: block.type === "heading" ? block.level || 2 : undefined,
+
+        data:
+          block.type === "image"
+            ? {
+                src: block.src?.trim() || "",
+                alt: block.alt?.trim() || form.title.trim(),
+                caption: block.caption?.trim() || "",
+              }
+            : block.type === "table"
+              ? {
+                  headers: block.table?.headers || [],
+                  rows: block.table?.rows || [],
+                }
+              : undefined,
+      }));
     if (!cleanBlocks.length) {
-      alert(
-        "Please add at least one content block.",
-      );
+      alert("Please add at least one content block.");
       return;
     }
 
@@ -338,19 +475,13 @@ export default function BlogEditor({
         excerpt: form.excerpt.trim(),
         category: form.category.trim(),
         coverImage: form.coverImage.trim(),
-        coverImageAlt:
-          form.coverImageAlt.trim() ||
-          form.title.trim(),
-        author:
-          form.author.trim() ||
-          "FOSTIIMA Business School",
+        coverImageAlt: form.coverImageAlt.trim() || form.title.trim(),
+        author: form.author.trim() || "FOSTIIMA Business School",
         status: form.status,
 
-        metaTitle:
-          form.metaTitle.trim() || null,
+        metaTitle: form.metaTitle.trim() || null,
 
-        metaDescription:
-          form.metaDescription.trim() || null,
+        metaDescription: form.metaDescription.trim() || null,
 
         keywords: form.keywords
           .split(",")
@@ -361,15 +492,10 @@ export default function BlogEditor({
       };
 
       const url =
-        mode === "create"
-          ? "/api/admin/blog"
-          : `/api/admin/blog/${blogId}`;
+        mode === "create" ? "/api/admin/blog" : `/api/admin/blog/${blogId}`;
 
       const response = await fetch(url, {
-        method:
-          mode === "create"
-            ? "POST"
-            : "PATCH",
+        method: mode === "create" ? "POST" : "PATCH",
 
         headers: {
           "Content-Type": "application/json",
@@ -381,25 +507,15 @@ export default function BlogEditor({
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(
-          data?.error ||
-            "Failed to save blog.",
-        );
+        throw new Error(data?.error || "Failed to save blog.");
       }
 
       router.push("/admin/blog");
       router.refresh();
     } catch (error) {
-      console.error(
-        "[BLOG_SAVE]",
-        error,
-      );
+      console.error("[BLOG_SAVE]", error);
 
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Failed to save blog.",
-      );
+      alert(error instanceof Error ? error.message : "Failed to save blog.");
     } finally {
       setSaving(false);
     }
@@ -425,9 +541,7 @@ export default function BlogEditor({
             </p>
 
             <h1 className="mt-1 text-3xl font-bold text-[#0b2145]">
-              {mode === "create"
-                ? "Create New Blog"
-                : "Edit Blog"}
+              {mode === "create" ? "Create New Blog" : "Edit Blog"}
             </h1>
           </div>
 
@@ -439,10 +553,7 @@ export default function BlogEditor({
           >
             {saving ? (
               <>
-                <Loader2
-                  size={17}
-                  className="animate-spin"
-                />
+                <Loader2 size={17} className="animate-spin" />
                 Saving...
               </>
             ) : (
@@ -465,8 +576,7 @@ export default function BlogEditor({
               </h2>
 
               <p className="mt-1 text-sm text-slate-500">
-                Main information displayed on
-                the blog.
+                Main information displayed on the blog.
               </p>
             </div>
 
@@ -478,11 +588,7 @@ export default function BlogEditor({
 
                 <input
                   value={form.title}
-                  onChange={(event) =>
-                    handleTitleChange(
-                      event.target.value,
-                    )
-                  }
+                  onChange={(event) => handleTitleChange(event.target.value)}
                   placeholder="Best PGDM Colleges in Delhi NCR"
                   className="h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm text-slate-800 outline-none transition focus:border-[#123b79]"
                 />
@@ -497,12 +603,7 @@ export default function BlogEditor({
                   <input
                     value={form.slug}
                     onChange={(event) =>
-                      updateField(
-                        "slug",
-                        slugify(
-                          event.target.value,
-                        ),
-                      )
+                      updateField("slug", slugify(event.target.value))
                     }
                     placeholder="best-pgdm-colleges-in-delhi-ncr"
                     className="h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm text-slate-800 outline-none focus:border-[#123b79]"
@@ -521,10 +622,7 @@ export default function BlogEditor({
                   <input
                     value={form.category}
                     onChange={(event) =>
-                      updateField(
-                        "category",
-                        event.target.value,
-                      )
+                      updateField("category", event.target.value)
                     }
                     placeholder="PGDM"
                     className="h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm text-slate-800 outline-none focus:border-[#123b79]"
@@ -540,10 +638,7 @@ export default function BlogEditor({
                 <textarea
                   value={form.excerpt}
                   onChange={(event) =>
-                    updateField(
-                      "excerpt",
-                      event.target.value,
-                    )
+                    updateField("excerpt", event.target.value)
                   }
                   rows={4}
                   placeholder="Short description of the article..."
@@ -560,10 +655,7 @@ export default function BlogEditor({
                   <input
                     value={form.author}
                     onChange={(event) =>
-                      updateField(
-                        "author",
-                        event.target.value,
-                      )
+                      updateField("author", event.target.value)
                     }
                     className="h-12 w-full rounded-lg border border-slate-200 px-4 text-sm outline-none focus:border-[#123b79]"
                   />
@@ -579,20 +671,14 @@ export default function BlogEditor({
                     onChange={(event) =>
                       updateField(
                         "status",
-                        event.target.value as
-                          | "draft"
-                          | "published",
+                        event.target.value as "draft" | "published",
                       )
                     }
                     className="h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm outline-none focus:border-[#123b79]"
                   >
-                    <option value="draft">
-                      Draft
-                    </option>
+                    <option value="draft">Draft</option>
 
-                    <option value="published">
-                      Published
-                    </option>
+                    <option value="published">Published</option>
                   </select>
                 </div>
               </div>
@@ -603,13 +689,10 @@ export default function BlogEditor({
 
           <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
             <div className="mb-6">
-              <h2 className="text-lg font-bold text-[#0b2145]">
-                Cover Image
-              </h2>
+              <h2 className="text-lg font-bold text-[#0b2145]">Cover Image</h2>
 
               <p className="mt-1 text-sm text-slate-500">
-                Upload the featured image for
-                this article.
+                Upload the featured image for this article.
               </p>
             </div>
 
@@ -622,10 +705,7 @@ export default function BlogEditor({
                 <input
                   value={form.coverImage}
                   onChange={(event) =>
-                    updateField(
-                      "coverImage",
-                      event.target.value,
-                    )
+                    updateField("coverImage", event.target.value)
                   }
                   placeholder="https://res.cloudinary.com/..."
                   className="h-12 w-full rounded-lg border border-slate-200 px-4 text-sm outline-none focus:border-[#123b79]"
@@ -634,17 +714,12 @@ export default function BlogEditor({
                 <div className="mt-4">
                   <label className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-[#123b79] hover:text-[#123b79]">
                     {uploading ? (
-                      <Loader2
-                        size={17}
-                        className="animate-spin"
-                      />
+                      <Loader2 size={17} className="animate-spin" />
                     ) : (
                       <ImagePlus size={17} />
                     )}
 
-                    {uploading
-                      ? "Uploading..."
-                      : "Upload Image"}
+                    {uploading ? "Uploading..." : "Upload Image"}
 
                     <input
                       type="file"
@@ -652,17 +727,13 @@ export default function BlogEditor({
                       className="hidden"
                       disabled={uploading}
                       onChange={(event) => {
-                        const file =
-                          event.target.files?.[0];
+                        const file = event.target.files?.[0];
 
                         if (file) {
-                          uploadCoverImage(
-                            file,
-                          );
+                          uploadCoverImage(file);
                         }
 
-                        event.target.value =
-                          "";
+                        event.target.value = "";
                       }}
                     />
                   </label>
@@ -676,10 +747,7 @@ export default function BlogEditor({
                   <input
                     value={form.coverImageAlt}
                     onChange={(event) =>
-                      updateField(
-                        "coverImageAlt",
-                        event.target.value,
-                      )
+                      updateField("coverImageAlt", event.target.value)
                     }
                     placeholder="Descriptive alt text"
                     className="h-12 w-full rounded-lg border border-slate-200 px-4 text-sm outline-none focus:border-[#123b79]"
@@ -691,19 +759,14 @@ export default function BlogEditor({
                 {form.coverImage ? (
                   <img
                     src={form.coverImage}
-                    alt={
-                      form.coverImageAlt ||
-                      form.title
-                    }
+                    alt={form.coverImageAlt || form.title}
                     className="aspect-video h-full w-full object-cover"
                   />
                 ) : (
                   <div className="flex aspect-video flex-col items-center justify-center text-slate-400">
                     <ImagePlus size={32} />
 
-                    <span className="mt-2 text-xs">
-                      No image selected
-                    </span>
+                    <span className="mt-2 text-xs">No image selected</span>
                   </div>
                 )}
               </div>
@@ -720,17 +783,14 @@ export default function BlogEditor({
                 </h2>
 
                 <p className="mt-1 text-sm text-slate-500">
-                  Build your article using
-                  headings and paragraphs.
+                  Build your article using headings and paragraphs.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 <button
                   type="button"
-                  onClick={() =>
-                    addBlock("heading")
-                  }
+                  onClick={() => addBlock("heading")}
                   className="inline-flex items-center gap-2 rounded-lg border border-[#123b79]/20 bg-[#123b79]/5 px-3 py-2 text-xs font-bold text-[#123b79]"
                 >
                   <Plus size={15} />
@@ -739,13 +799,20 @@ export default function BlogEditor({
 
                 <button
                   type="button"
-                  onClick={() =>
-                    addBlock("paragraph")
-                  }
+                  onClick={() => addBlock("paragraph")}
                   className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-600"
                 >
                   <Plus size={15} />
                   Paragraph
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => addBlock("table")}
+                  className="inline-flex items-center gap-2 rounded-lg border border-[#c31e3b]/20 bg-[#c31e3b]/5 px-3 py-2 text-xs font-bold text-[#c31e3b]"
+                >
+                  <Plus size={15} />
+                  Table
                 </button>
               </div>
             </div>
@@ -758,18 +825,11 @@ export default function BlogEditor({
                 >
                   <div className="mb-3 flex items-center justify-between gap-3">
                     <div className="flex items-center gap-2">
-                      <GripVertical
-                        size={17}
-                        className="text-slate-400"
-                      />
+                      <GripVertical size={17} className="text-slate-400" />
 
                       <span className="text-xs font-bold uppercase tracking-wide text-slate-500">
-                        {block.type ===
-                        "heading"
-                          ? `Heading ${
-                              block.level ||
-                              2
-                            }`
+                        {block.type === "heading"
+                          ? `Heading ${block.level || 2}`
                           : "Paragraph"}
                       </span>
                     </div>
@@ -778,12 +838,7 @@ export default function BlogEditor({
                       <button
                         type="button"
                         disabled={index === 0}
-                        onClick={() =>
-                          moveBlock(
-                            index,
-                            "up",
-                          )
-                        }
+                        onClick={() => moveBlock(index, "up")}
                         className="rounded-md px-2 py-1 text-xs text-slate-500 hover:bg-white disabled:opacity-30"
                       >
                         ↑
@@ -791,16 +846,8 @@ export default function BlogEditor({
 
                       <button
                         type="button"
-                        disabled={
-                          index ===
-                          blocks.length - 1
-                        }
-                        onClick={() =>
-                          moveBlock(
-                            index,
-                            "down",
-                          )
-                        }
+                        disabled={index === blocks.length - 1}
+                        onClick={() => moveBlock(index, "down")}
                         className="rounded-md px-2 py-1 text-xs text-slate-500 hover:bg-white disabled:opacity-30"
                       >
                         ↓
@@ -808,77 +855,149 @@ export default function BlogEditor({
 
                       <button
                         type="button"
-                        onClick={() =>
-                          removeBlock(
-                            block.id,
-                          )
-                        }
+                        onClick={() => removeBlock(block.id)}
                         className="ml-1 rounded-md p-2 text-red-500 transition hover:bg-red-50"
                         title="Delete block"
                       >
-                        <Trash2
-                          size={16}
-                        />
+                        <Trash2 size={16} />
                       </button>
                     </div>
                   </div>
 
-                  {block.type ===
-                    "heading" && (
+                  {block.type === "heading" && (
                     <select
-                      value={
-                        block.level || 2
-                      }
+                      value={block.level || 2}
                       onChange={(event) =>
                         updateBlock(
                           block.id,
                           "level",
-                          Number(
-                            event.target
-                              .value,
-                          ),
+                          Number(event.target.value),
                         )
                       }
                       className="mb-3 h-10 rounded-lg border border-slate-200 bg-white px-3 text-sm outline-none focus:border-[#123b79]"
                     >
-                      <option value={2}>
-                        H2
-                      </option>
+                      <option value={2}>H2</option>
 
-                      <option value={3}>
-                        H3
-                      </option>
+                      <option value={3}>H3</option>
                     </select>
                   )}
 
                   <textarea
                     value={block.content}
                     onChange={(event) =>
-                      updateBlock(
-                        block.id,
-                        "content",
-                        event.target.value,
-                      )
+                      updateBlock(block.id, "content", event.target.value)
                     }
-                    rows={
-                      block.type ===
-                      "heading"
-                        ? 2
-                        : 6
-                    }
+                    rows={block.type === "heading" ? 2 : 6}
                     placeholder={
-                      block.type ===
-                      "heading"
+                      block.type === "heading"
                         ? "Enter heading..."
                         : "Write paragraph..."
                     }
                     className={`w-full resize-y rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm leading-7 text-slate-800 outline-none focus:border-[#123b79] ${
-                      block.type ===
-                      "heading"
-                        ? "font-semibold"
-                        : ""
+                      block.type === "heading" ? "font-semibold" : ""
                     }`}
                   />
+                  {block.type === "table" && block.table && (
+                    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white">
+                      <div className="overflow-x-auto">
+                        <table className="w-full min-w-[650px] border-collapse">
+                          <thead>
+                            <tr>
+                              {block.table.headers.map(
+                                (header, columnIndex) => (
+                                  <th
+                                    key={`header-${columnIndex}`}
+                                    className="border border-slate-200 bg-[#0b2145] p-2"
+                                  >
+                                    <input
+                                      value={header}
+                                      onChange={(event) =>
+                                        updateTableHeader(
+                                          block.id,
+                                          columnIndex,
+                                          event.target.value,
+                                        )
+                                      }
+                                      className="w-full rounded border border-white/20 bg-transparent px-2 py-2 text-sm font-semibold text-white outline-none placeholder:text-white/50"
+                                      placeholder={`Column ${columnIndex + 1}`}
+                                    />
+                                  </th>
+                                ),
+                              )}
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            {block.table.rows.map((row, rowIndex) => (
+                              <tr key={`row-${rowIndex}`}>
+                                {row.map((cell, columnIndex) => (
+                                  <td
+                                    key={`cell-${rowIndex}-${columnIndex}`}
+                                    className="border border-slate-200 p-2"
+                                  >
+                                    <input
+                                      value={cell}
+                                      onChange={(event) =>
+                                        updateTableCell(
+                                          block.id,
+                                          rowIndex,
+                                          columnIndex,
+                                          event.target.value,
+                                        )
+                                      }
+                                      className="w-full rounded border border-slate-200 px-2 py-2 text-sm text-slate-700 outline-none focus:border-[#123b79]"
+                                      placeholder="Enter value..."
+                                    />
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 border-t border-slate-200 bg-slate-50 p-3">
+                        <button
+                          type="button"
+                          onClick={() => addTableRow(block.id)}
+                          className="rounded-lg bg-[#123b79] px-3 py-2 text-xs font-bold text-white transition hover:bg-[#0b2c5c]"
+                        >
+                          + Add Row
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => addTableColumn(block.id)}
+                          className="rounded-lg bg-[#123b79] px-3 py-2 text-xs font-bold text-white transition hover:bg-[#0b2c5c]"
+                        >
+                          + Add Column
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() =>
+                            removeTableRow(
+                              block.id,
+                              block.table!.rows.length - 1,
+                            )
+                          }
+                          disabled={block.table.rows.length <= 1}
+                          className="rounded-lg border border-red-200 bg-white px-3 py-2 text-xs font-bold text-red-600 transition hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-40"
+                        >
+                          − Remove Row
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => removeTableColumn(block.id)}
+                          disabled={block.table.headers.length <= 1}
+                          className="rounded-lg border border-red-200 bg-white px-3 py-2 text-xs font-bold text-red-600 transition hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-40"
+                        >
+                          − Remove Column
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -888,13 +1007,10 @@ export default function BlogEditor({
 
           <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
             <div className="mb-6">
-              <h2 className="text-lg font-bold text-[#0b2145]">
-                SEO Settings
-              </h2>
+              <h2 className="text-lg font-bold text-[#0b2145]">SEO Settings</h2>
 
               <p className="mt-1 text-sm text-slate-500">
-                Search engine metadata for this
-                blog.
+                Search engine metadata for this blog.
               </p>
             </div>
 
@@ -907,10 +1023,7 @@ export default function BlogEditor({
                 <input
                   value={form.metaTitle}
                   onChange={(event) =>
-                    updateField(
-                      "metaTitle",
-                      event.target.value,
-                    )
+                    updateField("metaTitle", event.target.value)
                   }
                   placeholder="SEO title"
                   className="h-12 w-full rounded-lg border border-slate-200 px-4 text-sm outline-none focus:border-[#123b79]"
@@ -923,14 +1036,9 @@ export default function BlogEditor({
                 </label>
 
                 <textarea
-                  value={
-                    form.metaDescription
-                  }
+                  value={form.metaDescription}
                   onChange={(event) =>
-                    updateField(
-                      "metaDescription",
-                      event.target.value,
-                    )
+                    updateField("metaDescription", event.target.value)
                   }
                   rows={4}
                   placeholder="SEO description..."
@@ -946,10 +1054,7 @@ export default function BlogEditor({
                 <input
                   value={form.keywords}
                   onChange={(event) =>
-                    updateField(
-                      "keywords",
-                      event.target.value,
-                    )
+                    updateField("keywords", event.target.value)
                   }
                   placeholder="PGDM, Delhi NCR, management education"
                   className="h-12 w-full rounded-lg border border-slate-200 px-4 text-sm outline-none focus:border-[#123b79]"
@@ -977,16 +1082,9 @@ export default function BlogEditor({
               disabled={saving || uploading}
               className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-[#123b79] px-6 text-sm font-bold text-white disabled:opacity-60"
             >
-              {saving && (
-                <Loader2
-                  size={16}
-                  className="animate-spin"
-                />
-              )}
+              {saving && <Loader2 size={16} className="animate-spin" />}
 
-              {saving
-                ? "Saving..."
-                : "Save Blog"}
+              {saving ? "Saving..." : "Save Blog"}
             </button>
           </div>
         </form>

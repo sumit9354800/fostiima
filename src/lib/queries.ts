@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import type { BlogPost } from "@/types/blog";
-import { mapDbBlogPost } from "./mapper";
+import { mapDbBlogPost } from "./blog/mapper";
 
 const blogInclude = {
   blocks: {

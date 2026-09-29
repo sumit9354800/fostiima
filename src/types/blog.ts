@@ -34,14 +34,8 @@ export type BlogContentBlock =
   | BlogListBlock
   | BlogTableBlock;
 
-export type BlogSeo = {
-  metaTitle: string;
-  metaDescription: string;
-  keywords: string[];
-};
-
 export type BlogPost = {
-  id?: string;
+  id: string;
   slug: string;
   title: string;
   excerpt: string;
@@ -49,8 +43,14 @@ export type BlogPost = {
   coverImage: string;
   coverImageAlt: string;
   author: string;
-  publishedAt: string | null;
+  publishedAt: string;
   status: "draft" | "published";
+
   content: BlogContentBlock[];
-  seo: BlogSeo;
+
+  seo: {
+    metaTitle: string;
+    metaDescription: string;
+    keywords: string[];
+  };
 };
