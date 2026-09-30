@@ -12,6 +12,7 @@ import {
   BriefcaseBusiness,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AGLandingPage() {
   const [source, setSource] = useState("");
@@ -24,12 +25,10 @@ export default function AGLandingPage() {
   }, []);
 
   const scrollToForm = () => {
-    document
-      .getElementById("application-form")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    document.getElementById("application-form")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (
@@ -47,15 +46,14 @@ export default function AGLandingPage() {
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center">
-            <div className="text-xl font-black tracking-tight text-[#123b79]">
-              FOSTIIMA
-            </div>
-
-            <div className="ml-2 hidden border-l border-slate-300 pl-2 text-[10px] font-semibold leading-tight text-slate-500 sm:block">
-              BUSINESS
-              <br />
-              SCHOOL
-            </div>
+            <Image
+              src="/logo.jpeg"
+              alt="FOSTIIMA Business School"
+              width={170}
+              height={50}
+              className="h-auto w-full object-contain"
+              priority
+            />
           </Link>
 
           <nav className="hidden items-center gap-7 md:flex">
@@ -144,25 +142,13 @@ export default function AGLandingPage() {
             </div>
 
             <div className="mt-10 grid max-w-xl grid-cols-2 gap-4 sm:grid-cols-4">
-              <HeroStat
-                icon={GraduationCap}
-                text="Industry Focused"
-              />
+              <HeroStat icon={GraduationCap} text="Industry Focused" />
 
-              <HeroStat
-                icon={Users}
-                text="Expert Faculty"
-              />
+              <HeroStat icon={Users} text="Expert Faculty" />
 
-              <HeroStat
-                icon={Trophy}
-                text="Career Driven"
-              />
+              <HeroStat icon={Trophy} text="Career Driven" />
 
-              <HeroStat
-                icon={BriefcaseBusiness}
-                text="Placement Focus"
-              />
+              <HeroStat icon={BriefcaseBusiness} text="Placement Focus" />
             </div>
           </div>
 
@@ -196,10 +182,7 @@ export default function AGLandingPage() {
       {/* =========================================
           ABOUT
       ========================================== */}
-      <section
-        id="about"
-        className="bg-white py-16 sm:py-20"
-      >
+      <section id="about" className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
@@ -220,9 +203,9 @@ export default function AGLandingPage() {
             </p>
 
             <p>
-              The learning experience combines academic understanding,
-              practical business perspectives, professional development and
-              opportunities to engage with the corporate world.
+              The learning experience combines academic understanding, practical
+              business perspectives, professional development and opportunities
+              to engage with the corporate world.
             </p>
           </div>
         </div>
@@ -231,10 +214,7 @@ export default function AGLandingPage() {
       {/* =========================================
           WHY FOSTIIMA
       ========================================== */}
-      <section
-        id="why-fostiima"
-        className="bg-slate-50 py-16 sm:py-20"
-      >
+      <section id="why-fostiima" className="bg-slate-50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
@@ -289,10 +269,7 @@ export default function AGLandingPage() {
       {/* =========================================
           PROGRAMME
       ========================================== */}
-      <section
-        id="programme"
-        className="bg-white py-16 sm:py-20"
-      >
+      <section id="programme" className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
             <div>
@@ -351,10 +328,7 @@ export default function AGLandingPage() {
       {/* =========================================
           PLACEMENTS
       ========================================== */}
-      <section
-        id="placements"
-        className="bg-[#071d3b] py-16 sm:py-20"
-      >
+      <section id="placements" className="bg-[#071d3b] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 text-white sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
@@ -373,25 +347,13 @@ export default function AGLandingPage() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <DarkStat
-                title="Corporate"
-                subtitle="Exposure"
-              />
+              <DarkStat title="Corporate" subtitle="Exposure" />
 
-              <DarkStat
-                title="Career"
-                subtitle="Development"
-              />
+              <DarkStat title="Career" subtitle="Development" />
 
-              <DarkStat
-                title="Industry"
-                subtitle="Interaction"
-              />
+              <DarkStat title="Industry" subtitle="Interaction" />
 
-              <DarkStat
-                title="Professional"
-                subtitle="Skills"
-              />
+              <DarkStat title="Professional" subtitle="Skills" />
             </div>
           </div>
         </div>
@@ -407,8 +369,8 @@ export default function AGLandingPage() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/85 sm:text-base">
-            Connect with FOSTIIMA Business School and explore your
-            opportunities in management education.
+            Connect with FOSTIIMA Business School and explore your opportunities
+            in management education.
           </p>
 
           <button
@@ -427,9 +389,7 @@ export default function AGLandingPage() {
       ========================================== */}
       <footer className="bg-[#04152d] py-8 text-center text-sm text-slate-400">
         <div className="mx-auto max-w-7xl px-4">
-          <p className="font-bold text-white">
-            FOSTIIMA Business School
-          </p>
+          <p className="font-bold text-white">FOSTIIMA Business School</p>
 
           <p className="mt-2">
             © {new Date().getFullYear()} FOSTIIMA Business School. All rights
@@ -483,9 +443,7 @@ function ApplyFormWidget() {
     script.onload = initializeWidget;
 
     script.onerror = () => {
-      console.error(
-        "Failed to load FOSTIIMA application form widget.",
-      );
+      console.error("Failed to load FOSTIIMA application form widget.");
     };
 
     document.body.appendChild(script);
@@ -575,10 +533,7 @@ function ApplyFormWidget() {
         }
       `}</style>
 
-      <div
-        id="ee-form-7"
-        className="w-full"
-      />
+      <div id="ee-form-7" className="w-full" />
     </>
   );
 }
@@ -596,10 +551,7 @@ function HeroStat({
 }) {
   return (
     <div className="flex items-center gap-2 text-xs font-semibold text-slate-300">
-      <Icon
-        size={17}
-        className="text-[#e9c94b]"
-      />
+      <Icon size={17} className="text-[#e9c94b]" />
 
       <span>{text}</span>
     </div>
@@ -625,13 +577,9 @@ function FeatureCard({
         <Icon size={20} />
       </div>
 
-      <h3 className="mt-5 text-base font-bold text-[#123b79]">
-        {title}
-      </h3>
+      <h3 className="mt-5 text-base font-bold text-[#123b79]">{title}</h3>
 
-      <p className="mt-2 text-sm leading-6 text-slate-500">
-        {description}
-      </p>
+      <p className="mt-2 text-sm leading-6 text-slate-500">{description}</p>
     </article>
   );
 }
@@ -640,22 +588,12 @@ function FeatureCard({
    DARK STAT
 ========================================= */
 
-function DarkStat({
-  title,
-  subtitle,
-}: {
-  title: string;
-  subtitle: string;
-}) {
+function DarkStat({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <div className="rounded-xl border border-white/10 bg-white/5 p-5">
-      <p className="text-xl font-black text-[#e9c94b]">
-        {title}
-      </p>
+      <p className="text-xl font-black text-[#e9c94b]">{title}</p>
 
-      <p className="mt-1 text-sm text-slate-300">
-        {subtitle}
-      </p>
+      <p className="mt-1 text-sm text-slate-300">{subtitle}</p>
     </div>
   );
 }
