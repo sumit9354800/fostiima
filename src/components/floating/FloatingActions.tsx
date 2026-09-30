@@ -1,11 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { Download, FileText } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Download, FileText, PhoneCall, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-
-import ApplyFormModal from "@/components/admissions/ApplyFormModal";
-import BrochureFormModal from "@/components/admissions/BrochureFormModal";
 
 const WHATSAPP_NUMBER = "917678389436";
 
@@ -16,15 +13,48 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
   WHATSAPP_MESSAGE,
 )}`;
 
-export default function FloatingActions() {
-  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+const CALLBACK_SCRIPT =
+  "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-5/widget.js";
 
-  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
+const BROCHURE_SCRIPT =
+  "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-6/widget.js";
+
+type PopupType = "callback" | "brochure" | null;
+
+export default function FloatingActions() {
+  const [activePopup, setActivePopup] = useState<PopupType>(null);
+
+  const scrollToApplyForm = () => {
+    const formSection = document.getElementById("apply-form");
+
+    if (!formSection) {
+      console.error("Scroll target not found: #apply-form");
+      return;
+    }
+
+    formSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  useEffect(() => {
+    if (!activePopup) {
+      document.body.style.overflow = "";
+      return;
+    }
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [activePopup]);
 
   return (
     <>
       {/* =========================================
-          BROCHURE / APPLY / WHATSAPP
+          FLOATING ACTIONS
       ========================================== */}
 
       <div
@@ -45,11 +75,13 @@ export default function FloatingActions() {
           sm:right-5
         "
       >
-        {/* BROCHURE */}
+        {/* =========================================
+            DOWNLOAD BROCHURE
+        ========================================== */}
 
         <button
           type="button"
-          onClick={() => setIsBrochureModalOpen(true)}
+          onClick={() => setActivePopup("brochure")}
           className="
             group
             flex
@@ -100,11 +132,13 @@ export default function FloatingActions() {
           </span>
         </button>
 
-        {/* APPLY */}
+        {/* =========================================
+            APPLY
+        ========================================== */}
 
         <button
           type="button"
-          onClick={() => setIsApplyModalOpen(true)}
+          onClick={scrollToApplyForm}
           className="
             group
             flex
@@ -154,7 +188,68 @@ export default function FloatingActions() {
           </span>
         </button>
 
-        {/* WHATSAPP */}
+        {/* =========================================
+            REQUEST A CALLBACK
+        ========================================== */}
+
+        <button
+          type="button"
+          onClick={() => setActivePopup("callback")}
+          className="
+            group
+            flex
+            h-12
+            w-12
+            flex-col
+            items-center
+            justify-center
+            gap-0.5
+            border-b
+            border-slate-200
+            bg-white
+            text-[#152d58]
+            transition-all
+            duration-300
+            hover:bg-[#c31e3b]
+            hover:text-white
+            focus:outline-none
+            focus:ring-2
+            focus:ring-[#c31e3b]
+            focus:ring-inset
+            sm:h-14
+            sm:w-14
+          "
+          aria-label="Request a Call Back"
+          title="Request a Call Back"
+        >
+          <PhoneCall
+            size={17}
+            strokeWidth={2}
+            className="
+              transition-transform
+              duration-200
+              group-hover:-translate-y-0.5
+            "
+          />
+
+          <span
+            className="
+              text-[7px]
+              font-bold
+              uppercase
+              leading-tight
+              tracking-tight
+              text-center
+              sm:text-[8px]
+            "
+          >
+            Callback
+          </span>
+        </button>
+
+        {/* =========================================
+            WHATSAPP
+        ========================================== */}
 
         <a
           href={WHATSAPP_URL}
@@ -210,18 +305,188 @@ export default function FloatingActions() {
       </div>
 
       {/* =========================================
-          MODALS
+          POPUPS
       ========================================== */}
 
-      <ApplyFormModal
-        isOpen={isApplyModalOpen}
-        onClose={() => setIsApplyModalOpen(false)}
-      />
+      {activePopup === "callback" && (
+        <ExtraaEdgePopup
+          title="Request a Call Back"
+          scriptUrl={CALLBACK_SCRIPT}
+          containerId="ee-form-5"
+          onClose={() => setActivePopup(null)}
+        />
+      )}
 
-      <BrochureFormModal
-        isOpen={isBrochureModalOpen}
-        onClose={() => setIsBrochureModalOpen(false)}
-      />
+      {activePopup === "brochure" && (
+        <ExtraaEdgePopup
+          title="Download Brochure"
+          scriptUrl={BROCHURE_SCRIPT}
+          containerId="ee-form-6"
+          onClose={() => setActivePopup(null)}
+        />
+      )}
     </>
+  );
+}
+
+/* =========================================
+   EXTRAAEDGE POPUP
+========================================= */
+
+type ExtraaEdgePopupProps = {
+  title: string;
+  scriptUrl: string;
+  containerId: "ee-form-5" | "ee-form-6";
+  onClose: () => void;
+};
+
+function ExtraaEdgePopup({
+  title,
+  scriptUrl,
+  containerId,
+  onClose,
+}: ExtraaEdgePopupProps) {
+  useEffect(() => {
+    const initializeWidget = () => {
+      window.dispatchEvent(new Event("DOMContentLoaded"));
+    };
+
+    const existingScript = document.querySelector(
+      `script[src="${scriptUrl}"]`,
+    );
+
+    if (existingScript) {
+      initializeWidget();
+      return;
+    }
+
+    const script = document.createElement("script");
+
+    script.src = scriptUrl;
+    script.type = "text/javascript";
+    script.async = true;
+
+    script.onload = initializeWidget;
+
+    script.onerror = () => {
+      console.error(`Failed to load ExtraaEdge widget: ${scriptUrl}`);
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      // Keep external ExtraaEdge script loaded.
+    };
+  }, [scriptUrl]);
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="
+        fixed
+        inset-0
+        z-[100]
+        flex
+        items-center
+        justify-center
+        bg-black/60
+        p-4
+        backdrop-blur-sm
+      "
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) {
+          onClose();
+        }
+      }}
+    >
+      <div
+        className="
+          relative
+          max-h-[90vh]
+          w-full
+          max-w-[520px]
+          overflow-hidden
+          rounded-2xl
+          bg-white
+          shadow-[0_25px_80px_rgba(0,0,0,0.25)]
+        "
+      >
+        {/* Header */}
+
+        <div
+          className="
+            flex
+            items-center
+            justify-between
+            border-b
+            border-slate-200
+            bg-[#123b79]
+            px-5
+            py-4
+          "
+        >
+          <h2 className="text-base font-bold text-white sm:text-lg">
+            {title}
+          </h2>
+
+          <button
+            type="button"
+            onClick={onClose}
+            className="
+              flex
+              h-9
+              w-9
+              items-center
+              justify-center
+              rounded-full
+              bg-white/10
+              text-white
+              transition
+              hover:bg-white/20
+              focus:outline-none
+              focus:ring-2
+              focus:ring-white/60
+            "
+            aria-label={`Close ${title}`}
+            title="Close"
+          >
+            <X size={18} strokeWidth={2} />
+          </button>
+        </div>
+
+        {/* ExtraaEdge Form */}
+
+        <div
+          className="
+            max-h-[calc(90vh-73px)]
+            overflow-y-auto
+            bg-white
+            p-3
+            sm:p-5
+          "
+        >
+          <div
+            id={containerId}
+            className="w-full"
+          />
+        </div>
+      </div>
+    </div>
   );
 }

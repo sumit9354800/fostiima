@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { prisma } from "@/lib/prisma";
+import ApplyFormWidget from "../admissions/ApplyForm";
 
 const ICONS = {
   Award,
@@ -68,7 +69,17 @@ export default async function AboutSection() {
       className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 xl:gap-16">
+
+        {/* =========================================
+            ABOUT + APPLICATION FORM
+        ========================================== */}
+
+        <div
+          id="apply-form"
+          className="grid scroll-mt-24 items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 xl:gap-16"
+        >
+          {/* LEFT — ABOUT CONTENT */}
+
           <div className="max-w-xl">
             <p className="mb-4 text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b] sm:text-sm">
               {about.eyebrow}
@@ -90,20 +101,36 @@ export default async function AboutSection() {
               })()}
             </h2>
 
-            <div className="mt-7 space-y-5 text-[15px] text-justify leading-7 text-slate-600 sm:text-base">
+            <div className="mt-7 space-y-5 text-justify text-[15px] leading-7 text-slate-600 sm:text-base">
               <p>{about.description1}</p>
 
-              {about.description2 && <p>{about.description2}</p>}
+              {about.description2 && (
+                <p>{about.description2}</p>
+              )}
             </div>
           </div>
 
+          {/* RIGHT — EXTRAAEDGE APPLICATION FORM */}
+
+          <div className="w-full">
+            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_10px_30px_rgba(18,59,121,0.08)]">
+              <ApplyFormWidget />
+            </div>
+          </div>
+        </div>
+
+        {/* =========================================
+            HIGHLIGHTS
+        ========================================== */}
+
+        <div className="mt-12 border-t border-slate-100 pt-10 sm:mt-14 sm:pt-12">
           <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
             {about.highlights.map((item, index) => {
               const Icon =
                 ICONS[item.icon as keyof typeof ICONS] ?? Building2;
 
-              // 0 = Yellow, 1 = Blue, 2 = Red, then repeat
-              const color = ICON_COLORS[index % ICON_COLORS.length];
+              const color =
+                ICON_COLORS[index % ICON_COLORS.length];
 
               return (
                 <article
