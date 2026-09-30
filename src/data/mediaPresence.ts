@@ -37,7 +37,7 @@ export const mediaPresenceData: MediaPresenceItem[] = [
     logo: cloudinaryAsset("/home/media-presence/media-presence4.webp"),
     title:
       "FOSTIIMA Business School Hosts MARGDARSHAK 3.0, Celebrating HR Excellence",
-    href: "https://www.business-standard.com/content/press-releases-ani/fostiima-business-school-hosts-margdarshak-3-0-celebrating-hr-excellence-with-dr-shashi-tharoor-124121800719_1.html",
+    href: "https://www.business-standard.com/content/press-releases-ani/fostiima-business-School-hosts-margdarshak-3-0-celebrating-hr-excellence-with-dr-shashi-tharoor-124121800719_1.html",
   },
   {
     id: "hindustan-times",

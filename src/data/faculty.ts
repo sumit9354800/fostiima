@@ -131,7 +131,7 @@ export const facultyData: Faculty[] = [
   },
   {
     slug: "sc-bansal",
-    name: "Mr. SC Bansal",
+    name: "SC Bansal",
     image: cloudinaryAsset("/home/faculty/faculty015.png"),
     qualification: "30+ YEARS INDUSTRY EXPERIENCE” “Teaching, Research",
     experience: "30+ years of experience",
@@ -349,7 +349,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Dhananjay Kumar",
     image: cloudinaryAsset("/home/faculty/faculty041.jpeg"),
     qualification: "MBA/PGDM, B.Tech",
-    experience: "15 yrs",
+    experience: "15+ yrs",
     domain: "Digital Marketing, Analytics, Business Strategy",
   },
   {

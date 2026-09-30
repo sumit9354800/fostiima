@@ -10,8 +10,8 @@ export const chatbotFaqs: ChatbotFaq[] = [
     id: "about-fostiima",
     question: "What is FOSTIIMA Business School?",
     answer:
-      "FOSTIIMA Business School is a management education institution founded by Friends of the class of PGP Seventy Three of IIM Ahmedabad. The school focuses on interactive, experiential and industry-oriented management education.",
-    keywords: ["about", "fostiima", "business school", "college"],
+      "FOSTIIMA Business School is a management education institution founded by Friends of the class of PGP Seventy Three of IIM Ahmedabad. The School focuses on interactive, experiential and industry-oriented management education.",
+    keywords: ["about", "fostiima", "business School", "college"],
   },
   {
     id: "pgdm",
@@ -52,7 +52,7 @@ export const chatbotFaqs: ChatbotFaq[] = [
     id: "documents",
     question: "Which documents are required?",
     answer:
-      "The supplied admission requirements include photocopies of transcripts and certificates/mark sheets reflecting graduation and school levels, one self-attested passport-size photograph on the form, two extra photographs, and photocopies of CAT/XAT/CMAT/FEAT score sheets.",
+      "The supplied admission requirements include photocopies of transcripts and certificates/mark sheets reflecting graduation and School levels, one self-attested passport-size photograph on the form, two extra photographs, and photocopies of CAT/XAT/CMAT/FEAT score sheets.",
     keywords: ["documents", "transcript", "marksheet", "photograph", "certificate"],
   },
   {
@@ -80,14 +80,14 @@ export const chatbotFaqs: ChatbotFaq[] = [
     id: "work-experience",
     question: "Does work experience matter?",
     answer:
-      "Yes. The supplied admission information says relevant supervisory work experience receives due weight because the school values experiential learning, leadership potential and a diverse class profile.",
+      "Yes. The supplied admission information says relevant supervisory work experience receives due weight because the School values experiential learning, leadership potential and a diverse class profile.",
     keywords: ["work experience", "experience", "job", "supervisory"],
   },
   {
     id: "curriculum",
     question: "What is the curriculum like?",
     answer:
-      "The curriculum is described as contemporary and industry-aligned. It is designed with inputs from academicians, industry experts and leading global business schools, includes emerging areas and is reviewed periodically.",
+      "The curriculum is described as contemporary and industry-aligned. It is designed with inputs from academicians, industry experts and leading global business Schools, includes emerging areas and is reviewed periodically.",
     keywords: ["curriculum", "syllabus", "academic", "industry", "learning"],
   },
   {

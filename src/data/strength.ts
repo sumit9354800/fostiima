@@ -80,7 +80,7 @@ export const strengthData: StrengthData = {
       id: "top-20",
       title: "Amongst Top 20 B-Schools in India",
       description:
-        "Recognised amongst top 20 B-schools in India in terms of education and placements.",
+        "Recognised amongst top 20 B-Schools in India in terms of education and placements.",
     },
     {
       id: "aicte-pgdm",

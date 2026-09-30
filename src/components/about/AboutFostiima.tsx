@@ -12,7 +12,7 @@ const advantages = [
     number: "01",
     title: "Founders Educated at IIM Ahmedabad",
     description:
-      "FOSTIIMA&apos;s founding team comes from IIM Ahmedabad, bringing its educational experience, institutional philosophy and quality standards into the foundation of the school.",
+      "FOSTIIMA&apos;s founding team comes from IIM Ahmedabad, bringing its educational experience, institutional philosophy and quality standards into the foundation of the School.",
     icon: GraduationCap,
   },
   {

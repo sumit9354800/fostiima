@@ -26,7 +26,7 @@ export const faqData: FAQ[] = [
     category: "Placements",
     question: "What is the average CTC for last years?",
     answer:
-      "Average CTC is ₹11.15 lacs and Median Salary is ₹11.60 lacs per annum.",
+      "Average CTC is ₹11.20 lacs and Median Salary is ₹11.60 lacs per annum.",
   },
   {
     id: "q4-other-branch",

@@ -131,7 +131,7 @@ export const socialLinks = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/school/fostiima-business-school",
+    href: "https://www.linkedin.com/School/fostiima-business-School",
   },
   {
     label: "YouTube",

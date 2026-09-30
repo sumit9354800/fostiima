@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "FOSTIIMA Business School",
     "FOSTIIMA",
     "FOSTIIMA Business School Delhi",
-    "business school Delhi",
+    "business School Delhi",
     "PGDM college Delhi",
     "PGDM colleges in Delhi NCR",
     "best PGDM colleges in Delhi NCR",

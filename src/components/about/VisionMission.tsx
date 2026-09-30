@@ -61,7 +61,7 @@ const peoPoints = [
     number: "03",
     title: "IIM–IIT Network",
     description:
-      "The founders and core faculty focus on future challenges and leverage the IIM–IIT network to obtain the very best faculty and guest speakers.",
+      "The founders and core faculty focus on future challenges and leverage the IIM–IIT network to engage faculty and guest speakers.",
   },
   {
     number: "04",
@@ -301,7 +301,7 @@ export default function VisionMission() {
                     Preparing Students for the Changing Business World
                   </h3>
 
-                  <p className="mt-4 text-sm leading-7 text-white/65">
+                  <p className="mt-4 text-lg leading-7 text-white/65">
                     Success of our students is critical to our founder
                     trustees. FOSTIIMA&apos;s approach connects management
                     education with changing markets, core competencies,
@@ -367,7 +367,7 @@ export default function VisionMission() {
                 From Vision to Leadership
               </p>
 
-              <p className="mt-2 text-sm leading-7 text-slate-600">
+              <p className="mt-2 text-md leading-7 text-slate-600">
                 FOSTIIMA&apos;s vision and mission are supported by its
                 founders, faculty and educational ecosystem with a focus on
                 developing capable, confident and future-ready managers.

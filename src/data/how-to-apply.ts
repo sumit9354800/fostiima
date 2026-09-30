@@ -60,7 +60,7 @@ export const howToApplyData: HowToApplyData = {
       id: "academic-transcripts",
       title: "Academic Transcripts",
       description:
-        "Photocopies of transcripts (Certificates & Mark Sheets that reflect graduations and school levels).",
+        "Photocopies of transcripts (Certificates & Mark Sheets that reflect graduations and School levels).",
     },
     {
       id: "photographs",

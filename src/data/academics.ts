@@ -23,7 +23,7 @@ export const academicsData: AcademicsData = {
   title: "Academics",
 
   intro:
-    "Management education at FOSTIIMA focuses on teaching key business concepts while simultaneously developing the analytical skills of the students. It is therefore imperative that the FOSTIIMA course curriculum is contemporary and in tune with the needs of the industry. Accordingly, FOSTIIMA curriculum has been designed by the Dean and the faculty after taking inputs from eminent academicians, industry experts and some leading global B-Schools. Care has been exercised to encapsulate knowledge inputs in all new and emerging areas in the current global economic scenario. The curriculum is reviewed periodically so that it maintains its cutting edge relevance to the industry.",
+    "Management education at FOSTIIMA focuses on teaching key business concepts while simultaneously developing the analytical skills of the students. It is therefore imperative that the FOSTIIMA course curriculum is contemporary and in tune with the needs of the industry. Accordingly, FOSTIIMA curriculum has been designed after taking inputs from eminent academicians, industry experts and some leading global B-Schools. Care has been exercised to encapsulate knowledge inputs in all new and emerging areas in the current global economic scenario. The curriculum is reviewed periodically so that it maintains its cutting edge relevance to the industry.",
 
   focus: [
     {
@@ -58,10 +58,10 @@ export const academicsData: AcademicsData = {
 
   highlights: [
     {
-      id: "top-b-schools",
+      id: "top-b-Schools",
       title: "Amongst Top 20 B-Schools in India",
       description:
-        "Amongst top 20 B-schools in India in terms of Education & Placements.",
+        "Amongst top 20 B-Schools in India in terms of Education & Placements.",
       icon: "award",
     },
     {
@@ -82,7 +82,7 @@ export const academicsData: AcademicsData = {
       id: "infrastructure",
       title: "State of Art Infrastructure",
       description:
-        "World Class State of Art Infrastructure.",
+        "World Class “State-of-the-Art-Infrastructure”",
       icon: "building-2",
     },
     {

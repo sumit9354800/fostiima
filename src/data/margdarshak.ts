@@ -279,7 +279,7 @@ export const margdarshakEditions: EditionData[] = [
 
       "Ms Shivani Sanwal, Director, Governance Risk & Compliance Services, M/s KPMG explained the entire process clearly spelling out the role of the Advisory Council and the Jury.",
 
-      "The Chief Guest Jyotiraditya M. Scindia complimented the Chairman for the journey the latter had undertaken in setting up FOSTIIMA. Such institutes, Mr Scindia added, were always based on bonds and kinship. They were a unique coupling between an age-old institute and a newly spawned school.",
+      "The Chief Guest Jyotiraditya M. Scindia complimented the Chairman for the journey the latter had undertaken in setting up FOSTIIMA. Such institutes, Mr Scindia added, were always based on bonds and kinship. They were a unique coupling between an age-old institute and a newly spawned School.",
 
       'Giving the role of the HR luminaries a national perspective Mr Scindia added "India\'s time has come. There is no power in the world can deny our place in the comity of nations." The awardees and their work have not only impacted individual lives but in a way it is changing the nation. The only way that we can keep empowering life is through developing Human Resources through innovative ideas. HR is the soul of any organization and it helps the organization to stay balanced and perform better.',
 
@@ -461,7 +461,7 @@ export const margdarshakEditions: EditionData[] = [
 
       "Dr Tharoor recalled the tireless efforts of Dr Vikram Sarabhai, the leader of India's space program who pioneered management education in the country and whose visionary leadership inspired many to achieve heights of excellence in their fields. Dr Tharoor particularly lauded the action of the Director of IIMA, Prof Ravi Mathai, who voluntary stepped down stating that the Institute needed another direction for which another suitable person should occupy the office of the Director. \"We don't see much of that today\" Dr Tharoor remarked.",
 
-      "Dr Tharoor shared the evolution of business education as it evolved from USA which saw the sprouting of several business schools and how the trend came to India. Dr Tharoor was categorical in stating that it would be very short sighted to view IIMs as imparting management education. In fact, they prepare you for life. It's quite commonplace to see so many graduates taking to careers vastly different from management education.",
+      "Dr Tharoor shared the evolution of business education as it evolved from USA which saw the sprouting of several business Schools and how the trend came to India. Dr Tharoor was categorical in stating that it would be very short sighted to view IIMs as imparting management education. In fact, they prepare you for life. It's quite commonplace to see so many graduates taking to careers vastly different from management education.",
     ],
 
     sections: [
