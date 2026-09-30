@@ -1,1 +1,20 @@
 <iframe src="https://www.markaible.com/kiosk?agent=6a9fa7d1dab71eb81cbeb108&orb=orb&bg=%23f4f1fb&bg_opacity=1" allow="microphone" style="border:0; width:100%; height:100%;" title="Talk to us"></iframe>
+
+
+## Error Type
+Console Error
+
+## Error Message
+DEV comment: URL parameter `source` is missing
+
+Next.js version: 16.3.3 (Turbopack)
+
+[browser] DEV comment: URL parameter `source` is missing 
+    at HiddenInput.html (https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/ee-form-widget/js/eeFormWidget.min.js:1:198497)
+    at <unknown> (https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/ee-form-widget/js/eeFormWidget.min.js:1:174012)
+    at <unknown> (https://eemiscellanous.azureedge.net/ee-form-widget/js/lodash.4.17.15.min.js:46:78)
+    at An.forIn (https://eemiscellanous.azureedge.net/ee-form-widget/js/lodash.4.17.15.min.js:112:88)
+    at eeFormWidget.renderForm (https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/ee-form-widget/js/eeFormWidget.min.js:1:172627)
+    at <unknown> (https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/ee-form-widget/js/eeFormWidget.min.js:1:159333)
+    at a.onload (https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/ee-form-widget/js/eeFormWidget.min.js:1:253835) (https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/ee-form-widget/js/eeFormWidget.min.js:1:198497)
+ GET /pgdm-admission 200 in 101ms (next.js: 66ms, application-code: 35ms)

@@ -13,7 +13,7 @@ export const placementStats = [
     label: "Highest Package",
   },
   {
-    value: "₹11.8 LPA",
+    value: "₹11.20 LPA",
     label: "Average Package",
   },
   {

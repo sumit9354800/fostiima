@@ -79,8 +79,7 @@ export const howToApplyData: HowToApplyData = {
   submission: {
     title: "Submission of Application",
     paragraphs: [
-      "Hand over the Application Form in person or fill and submit it online.",
-      "The documents listed above may be uploaded online or submitted at the time of the Personal Interview if invited.",
+      "Hand over the Application Form in person or fill and submit it online with the documents listed above.",
     ],
   },
 

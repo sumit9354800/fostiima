@@ -40,7 +40,7 @@ const stats = [
     icon: TrendingUp,
   },
   {
-    value: "₹11.8 LPA",
+    value: "₹11.20 LPA",
     label: "Average Package",
     icon: Medal,
   },

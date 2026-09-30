@@ -7,7 +7,7 @@ import { facultyData } from "@/data/faculty";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
 export const metadata: Metadata = {
-  title: "Core Faculties | FOSTIIMA Business School",
+  title: "Core Faculty | FOSTIIMA Business School",
   description:
     "Meet the experienced core faculty members of FOSTIIMA Business School.",
 };
@@ -74,7 +74,7 @@ export default function FacultiesPage() {
 
             {/* Heading */}
             <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Core <span className="text-[#c31e3b]">Faculties</span>
+              Core <span className="text-[#c31e3b]">Faculty</span>
             </h1>
 
             {/* Description */}

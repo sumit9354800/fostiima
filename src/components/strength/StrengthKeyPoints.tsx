@@ -104,7 +104,7 @@ export default function StrengthKeyPoints() {
             <div className="shrink-0">
               <div className="border border-white/10 bg-white/5 px-6 py-4 text-center">
                 <p className="text-2xl font-bold text-[#f4c542]">
-                  ₹11.15 LPA+
+                  ₹11.20 LPA+
                 </p>
 
                 <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-white/45">
