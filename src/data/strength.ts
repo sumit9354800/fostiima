@@ -116,7 +116,7 @@ export const strengthData: StrengthData = {
       id: "placements",
       title: "Strong Placement Outcomes",
       description:
-        "PGDM batch of 2023 - 25 averaging placements above ₹11.15 lakhs per annum.",
+        "PGDM batch of 2023 - 25 averaging placements above ₹11.20 lakhs per annum.",
     },
     {
       id: "iim-faculty",

@@ -75,7 +75,7 @@ export const academicsData: AcademicsData = {
       id: "delhi-ncr",
       title: "Top Ranked in Delhi NCR",
       description:
-        "Consistently top ranked Business school in Delhi NCR.",
+        "Consistently top ranked Business School in Delhi NCR.",
       icon: "building-2",
     },
     {
@@ -103,7 +103,7 @@ export const academicsData: AcademicsData = {
       id: "placements",
       title: "Strong Placement Performance",
       description:
-        "PGDM batch of 2023–25 averaging placements above 11.15 lakhs per annum.",
+        "PGDM batch of 2023–25 averaging placements above ₹11.20 lakhs per annum.",
       icon: "line-chart",
     },
     {

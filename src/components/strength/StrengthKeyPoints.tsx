@@ -97,7 +97,7 @@ export default function StrengthKeyPoints() {
               </p>
 
               <p className="mt-2 text-sm text-white/60">
-                Average placements above ₹11.15 lakhs per annum.
+                Average placements above ₹11.20 lakhs per annum.
               </p>
             </div>
 

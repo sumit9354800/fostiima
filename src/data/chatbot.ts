@@ -108,7 +108,7 @@ export const chatbotFaqs: ChatbotFaq[] = [
     id: "placements",
     question: "What does FOSTIIMA say about placements?",
     answer:
-      "The supplied Strength content states that the PGDM batch of 2023–25 averaged placements above ₹11.15 lakhs per annum. It also describes placement support through the pan IIT-IIM global network and a placement cell headed by IIMA alumni.",
+      "The supplied Strength content states that the PGDM batch of 2023–25 averaged placements above ₹11.20 lakhs per annum. It also describes placement support through the pan IIT-IIM global network and a placement cell headed by IIMA alumni.",
     keywords: ["placement", "placements", "salary", "package", "recruitment"],
   },
   {
