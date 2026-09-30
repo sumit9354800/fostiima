@@ -1190,6 +1190,69 @@
         "height": 3712
       }
     },
+    "olympians": {
+      "olympians1": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/olympians/olympians1",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790772087/fostiima/conclave/olympians/olympians1.jpg",
+        "width": 1079,
+        "height": 938
+      },
+      "olympians2": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/olympians/olympians2",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790772088/fostiima/conclave/olympians/olympians2.jpg",
+        "width": 1280,
+        "height": 960
+      },
+      "olympians3": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/olympians/olympians3",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790772090/fostiima/conclave/olympians/olympians3.jpg",
+        "width": 1280,
+        "height": 960
+      },
+      "olympians4": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/olympians/olympians4",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790772093/fostiima/conclave/olympians/olympians4.jpg",
+        "width": 812,
+        "height": 1600
+      },
+      "olympians6": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/olympians/olympians6",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790772095/fostiima/conclave/olympians/olympians6.jpg",
+        "width": 1080,
+        "height": 1920
+      },
+      "olympians7": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/olympians/olympians7",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790772097/fostiima/conclave/olympians/olympians7.jpg",
+        "width": 1024,
+        "height": 1600
+      },
+      "olympians8": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/conclave/olympians/olympians8",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790772099/fostiima/conclave/olympians/olympians8.jpg",
+        "width": 1280,
+        "height": 1280
+      },
+      "olympians5.pdf": {
+        "type": "raw",
+        "publicId": "fostiima/conclave/olympians/olympians5.pdf",
+        "url": "https://res.cloudinary.com/mhchxtpl/raw/upload/v1790772094/fostiima/conclave/olympians/olympians5.pdf"
+      }
+    },
     "s jaishankar": {
       "type": "image",
       "format": "jpg",
@@ -2697,6 +2760,14 @@
       }
     },
     "faculty": {
+      "faculty0030": {
+        "type": "image",
+        "format": "jpg",
+        "publicId": "fostiima/home/faculty/faculty0030",
+        "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790772162/fostiima/home/faculty/faculty0030.jpg",
+        "width": 1029,
+        "height": 1280
+      },
       "faculty014": {
         "type": "image",
         "format": "png",
@@ -3367,6 +3438,14 @@
       "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491789/fostiima/home/vqgxlkqhtbzrgpb2hfal.jpg",
       "width": 1600,
       "height": 1066
+    },
+    "xjqlfvvii05fqwlr9aws": {
+      "type": "image",
+      "format": "jpg",
+      "publicId": "fostiima/home/xjqlfvvii05fqwlr9aws",
+      "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790677303/fostiima/home/xjqlfvvii05fqwlr9aws.jpg",
+      "width": 1600,
+      "height": 1067
     },
     "ye2cwm9fm7hqdkgjbwgl": {
       "type": "image",
@@ -5226,6 +5305,14 @@
         "height": 574
       }
     }
+  },
+  "og-image": {
+    "type": "image",
+    "format": "jpg",
+    "publicId": "fostiima/og-image",
+    "url": "https://res.cloudinary.com/mhchxtpl/image/upload/v1790772165/fostiima/og-image.jpg",
+    "width": 1280,
+    "height": 853
   },
   "placement": {
     "col1": {

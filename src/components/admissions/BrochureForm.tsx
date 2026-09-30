@@ -74,9 +74,7 @@ export default function BrochureForm({ onSuccess }: BrochureFormProps) {
       const downloadLink = document.createElement("a");
 
       downloadLink.href = BROCHURE_URL;
-      downloadLink.download = cloudinaryAsset(
-        "brochure/FOSTIIMA-Business-School-Brochure.pdf",
-      );
+      downloadLink.download = "brochure/FOSTIIMA-Business-School-Brochure.pdf";
 
       document.body.appendChild(downloadLink);
       downloadLink.click();

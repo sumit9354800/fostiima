@@ -10,15 +10,15 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  async redirects() {
-    return [
-      {
-        source: "/ag-landing-page",
-        destination: "https://fostiima.org/ag-landing-page",
-        permanent: false,
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/ag-landing-page",
+  //       destination: "https://fostiima.org/ag-landing-page",
+  //       permanent: false,
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;
