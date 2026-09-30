@@ -271,7 +271,17 @@ export const conclaveEvents: ConclaveEvent[] = [
     content: "Olympians Manu Bhaker. At Fostiima Business School, Delhi.",
     bgImage: "",
 
-    images: [],
+    images: [
+      cloudinaryAsset("/conclave/olympians/olympians1.jpeg"),
+      cloudinaryAsset("/conclave/olympians/olympians2.jpeg"),
+      // cloudinaryAsset("/conclave/olympians/olympians3.jpeg"),
+      
+      cloudinaryAsset("/conclave/olympians/olympians4.jpeg"),
+      // cloudinaryAsset("/conclave/olympians/olympians5.jpeg"),
+      cloudinaryAsset("/conclave/olympians/olympians6.jpeg"),
+      cloudinaryAsset("/conclave/olympians/olympians7.jpeg"),
+      cloudinaryAsset("/conclave/olympians/olympians8.jpeg"),
+    ],
     href: "/conclave-conference/olympians-manu-bhaker",
     featured: false,
     status: "published",
