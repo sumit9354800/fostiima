@@ -5,6 +5,7 @@ import sharp from "sharp";
 const PUBLIC_DIR = join(process.cwd(), "public");
 
 // 2 MB
+
 const MAX_SIZE = 2 * 1024 * 1024;
 
 const IMAGE_EXTENSIONS = new Set([
