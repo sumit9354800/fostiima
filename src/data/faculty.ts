@@ -20,7 +20,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Anil Somani",
     image: cloudinaryAsset("/home/faculty/faculty1.webp"),
     qualification: "50+ YEARS INDUSTRY EXPERIENCE” “Automobiles, Tourism, Pharmaceuticals",
-    experience: "50+ yrs",
+    experience: "50+ years",
     domain: "Automobiles & Tourism",
   },
   {
@@ -28,7 +28,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Sunil Kala",
     image: cloudinaryAsset("/home/faculty/faculty2.webp"),
     qualification: "50+ YEARS INDUSTRY EXPERIENCE” “Investment Banking, Capital Markets",
-    experience: "50+ yrs",
+    experience: "50+ years",
     domain: "IT Management, Investment Banking, Capital Markets",
   },
   {
@@ -36,7 +36,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Rajeeva Kansal",
     image: cloudinaryAsset("/home/faculty/faculty3.webp"),
     qualification: "48+ YEARS INDUSTRY EXPERIENCE” “Industrial Products, Consultancy",
-    experience: "48 yrs",
+    experience: "48 years",
     domain: "Strategy & HR",
   },
   {
@@ -52,7 +52,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Gautam Kaul",
     image: cloudinaryAsset("/home/faculty/faculty5.webp"),
     qualification: "MBA-IIMA, B.Tech.-IIT Delhi",
-    experience: "45+ yrs",
+    experience: "45+ years",
     domain: "FMCG, Beverages, Tobacco, Academics",
   },
   {
@@ -60,7 +60,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Vinod Kaul",
     image: cloudinaryAsset("/home/faculty/faculty6.webp"),
     qualification: "50+ YEARS INDUSTRY EXPERIENCE” “Fashion, Retail, Consultancy",
-    experience: "50+ yrs",
+    experience: "50+ years",
     domain: "Fashion, Consultancy",
   },
   {
@@ -68,7 +68,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Hitesh Manocha",
     image: cloudinaryAsset("/home/faculty/faculty7.webp"),
     qualification: "MBA-IIM A, B.Tech - DTU",
-    experience: "25+ yrs",
+    experience: "25+ years",
     domain: "Info Tech, Telecom and Office Automation",
   },
   {
@@ -76,7 +76,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Rakesh Kumar",
     image: cloudinaryAsset("/home/faculty/faculty8.webp"),
     qualification: "38+ YEARS INDUSTRY EXPERIENCE” “Supply Chain, Solar Photovoltaic Products",
-    experience: "38+ yrs",
+    experience: "38+ years",
     domain: "Supply Chain Management",
   },
   {
@@ -109,7 +109,7 @@ export const facultyData: Faculty[] = [
     name: "Ms. Nadira Chaturvedi",
     image: cloudinaryAsset("/home/faculty/faculty12.webp"),
     qualification: "48+ YEARS INDUSTRY EXPERIENCE” “Automotive, Fashion Garments",
-    experience: "48+ yrs",
+    experience: "48+ years",
     domain: "Auto Ancillary, Plastic Products, Fashion",
   },
 
@@ -118,7 +118,7 @@ export const facultyData: Faculty[] = [
   //   name: "Mr. SL Ganapathi",
   //   image: cloudinaryAsset(""),
   //   qualification: "MBA-IIM A, BE",
-  //   experience: "45+ yrs",
+  //   experience: "45+ years",
   //   domain: "Logistics & Supply Chain",
   // },
   {
@@ -126,7 +126,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Arun Sahay",
     image: cloudinaryAsset("/home/faculty/faculty014.png"),
     qualification: "49+ YEARS INDUSTRY EXPERIENCE” “Consumer Durables, Building Products, Pharmaceuticals",
-    experience: "49+ yrs",
+    experience: "49+ years",
     domain: "Consumer Durables",
   },
   {
@@ -142,7 +142,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Jayant Bose",
     image: cloudinaryAsset("/home/faculty/faculty016.png"),
     qualification: "40+ YEARS INDUSTRY EXPERIENCE” “Advertising, FMCG",
-    experience: "40+ yrs",
+    experience: "40+ years",
     domain: "Advertising, FMCG",
   },
   {
@@ -168,7 +168,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Ferzand",
     image: cloudinaryAsset("/home/faculty/faculty019.jpeg"),
     qualification: "PGDM - IIM-A, B.Tech",
-    experience: "9+ yrs",
+    experience: "9+ years",
     domain: "Analyst, Data Finance",
   },
   // {
@@ -210,7 +210,7 @@ export const facultyData: Faculty[] = [
     name: "Dr. Sharad Kumar",
     image: cloudinaryAsset("/home/faculty/faculty025.png"),
     qualification: "CFE (Texas), CrFA (UK), ACIS (UK), CIQA, LLB, LLM, Ph.D.",
-    experience: "32+ yrs",
+    experience: "32+ years",
     domain: "",
   },
   {
@@ -235,7 +235,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Atul Mehta",
     image: cloudinaryAsset("/home/faculty/faculty029.png"),
     qualification: "MBA (IIM-A), BE",
-    experience: "13 yrs",
+    experience: "13 years",
     domain: "Consulting (MNC), Financial Services",
   },
   {
@@ -285,7 +285,7 @@ export const facultyData: Faculty[] = [
     name: "Ms. Ridhi Sehgal",
     image: cloudinaryAsset("/home/faculty/faculty036.png"),
     qualification: "PGDPM - NIPM-Kolkata",
-    experience: "10+ yrs",
+    experience: "10+ years",
     domain: "Civil",
   },
   {
@@ -317,7 +317,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Dhananjay Kumar",
     image: cloudinaryAsset("/home/faculty/faculty041.jpeg"),
     qualification: "MBA/PGDM, B.Tech",
-    experience: "15+ yrs",
+    experience: "15+ years",
     domain: "Digital Marketing, Analytics, Business Strategy",
   },
   {
@@ -325,7 +325,7 @@ export const facultyData: Faculty[] = [
     name: "Ms. Mohini Deshwal",
     image: cloudinaryAsset("/home/faculty/faculty042.jpeg"),
     qualification: "PGDM (Symbiosis), B.Com (DU)",
-    experience: "10+ yrs",
+    experience: "10+ years",
     domain: "Information Technology, Management",
   },
   {
