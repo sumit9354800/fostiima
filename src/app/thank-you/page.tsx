@@ -73,7 +73,7 @@ export default function ThankYouPage() {
 
           {/* Return Button */}
           <Link
-            href="/ag-landing-page"
+            href="/pgdm-admission"
             className="mt-8 inline-flex items-center justify-center gap-2 rounded-lg bg-[#c31e3b] px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#a91731]"
           >
             <ArrowLeft size={17} />
