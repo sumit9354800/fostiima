@@ -289,14 +289,6 @@ export const facultyData: Faculty[] = [
     domain: "Civil",
   },
   {
-    slug: "ms-muskaan-s",
-    name: "Ms. Muskaan. S",
-    image: cloudinaryAsset("/home/faculty/faculty37.webp"),
-    qualification: "MBA, BBA - Symbiosis International University",
-    experience: "5+ yrs",
-    domain: "",
-  },
-  {
     slug: "ms-dishi-s",
     name: "Ms. Dishi S",
     image: cloudinaryAsset("/home/faculty/faculty038.png"),
