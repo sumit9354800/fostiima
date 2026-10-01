@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Download, FileText, PhoneCall, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { usePathname, useRouter } from "next/navigation";
 
 const WHATSAPP_NUMBER = "917678389436";
 
@@ -24,19 +25,69 @@ type PopupType = "callback" | "brochure" | null;
 export default function FloatingActions() {
   const [activePopup, setActivePopup] = useState<PopupType>(null);
 
-  const scrollToApplyForm = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const goToApplyForm = () => {
     const formSection = document.getElementById("apply-form");
 
-    if (!formSection) {
-      console.error("Scroll target not found: #apply-form");
+    /*
+     * If the Apply form exists on the current page,
+     * smoothly scroll to it.
+     */
+    if (formSection) {
+      formSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
       return;
     }
 
-    formSection.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    /*
+     * If the Apply form does not exist on the current page,
+     * navigate to the homepage with the #apply-form hash.
+     */
+    router.push("/#apply-form");
   };
+
+  /*
+   * When coming from another page to:
+   *
+   * /
+   * #apply-form
+   *
+   * Next.js navigates to the homepage first.
+   * After the homepage is mounted, find the section
+   * and scroll to it.
+   */
+  useEffect(() => {
+    if (pathname !== "/") return;
+
+    const hash = window.location.hash;
+
+    if (hash !== "#apply-form") return;
+
+    const scrollToForm = () => {
+      const formSection = document.getElementById("apply-form");
+
+      if (!formSection) return;
+
+      formSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+
+    /*
+     * Wait for the homepage content to be rendered.
+     */
+    const timer = window.setTimeout(scrollToForm, 100);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     if (!activePopup) {
@@ -138,7 +189,7 @@ export default function FloatingActions() {
 
         <button
           type="button"
-          onClick={scrollToApplyForm}
+          onClick={goToApplyForm}
           className="
             group
             flex
@@ -234,12 +285,12 @@ export default function FloatingActions() {
 
           <span
             className="
+              text-center
               text-[7px]
               font-bold
               uppercase
               leading-tight
               tracking-tight
-              text-center
               sm:text-[8px]
             "
           >
@@ -331,7 +382,7 @@ export default function FloatingActions() {
 
 /* =========================================
    EXTRAAEDGE POPUP
-========================================= */
+========================================== */
 
 type ExtraaEdgePopupProps = {
   title: string;
@@ -481,10 +532,7 @@ function ExtraaEdgePopup({
             sm:p-5
           "
         >
-          <div
-            id={containerId}
-            className="w-full"
-          />
+          <div id={containerId} className="w-full" />
         </div>
       </div>
     </div>
