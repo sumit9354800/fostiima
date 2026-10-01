@@ -93,8 +93,8 @@ export const facultyData: Faculty[] = [
     image: cloudinaryAsset("/home/faculty/faculty10.webp"),
     qualification:
       "52+ YEARS of INDUSTRY EXPERIENCE” ",
-    experience: "52+ YEARS INDUSTRY EXPERIENCE",
-    domain: "“International Business, Supply Chain, Teaching”g",
+    experience: "55+ YEARS of INDUSTRY EXPERIENCE",
+    domain: "International Business, Supply Chain, Teaching",
   },
   {
     slug: "gita-ms-agrawal",
@@ -127,21 +127,21 @@ export const facultyData: Faculty[] = [
     image: cloudinaryAsset("/home/faculty/faculty014.png"),
     qualification: "49+ YEARS INDUSTRY EXPERIENCE",
     experience: "49+ years",
-    domain: "Consumer Durables",
+    domain: "Consumer Durables, Building Products, Pharmaceuticals",
   },
   {
     slug: "sc-bansal",
     name: "SC Bansal",
     image: cloudinaryAsset("/home/faculty/faculty015.png"),
-    qualification: "30+ YEARS INDUSTRY EXPERIENCE” “Teaching, Research",
+    qualification: "30+ YEARS INDUSTRY EXPERIENCE",
     experience: "30+ years of experience",
-    domain: "Teaching and Research",
+    domain: "Teaching, Research",
   },
   {
     slug: "jayant-bose",
     name: "Mr. Jayant Bose",
     image: cloudinaryAsset("/home/faculty/faculty016.png"),
-    qualification: "40+ YEARS INDUSTRY EXPERIENCE” “Advertising, FMCG",
+    qualification: "40 YEARS INDUSTRY EXPERIENCE",
     experience: "40+ years",
     domain: "Advertising, FMCG",
   },
@@ -150,9 +150,9 @@ export const facultyData: Faculty[] = [
     name: "Mr. Vivek Kumar",
     image: cloudinaryAsset("/home/faculty/faculty017.png"),
     qualification:
-      "55+ YEARS of INDUSTRY EXPERIENCE” “Supply Chain, FMCD, Consultancy, Teaching",
+      "55+ YEARS of INDUSTRY EXPERIENCE” ",
     experience: "55+ YEARS industry experience",
-    domain: "",
+    domain: "Supply Chain, FMCD, Consultancy, Teaching",
   },
   {
     slug: "ritika-arora",

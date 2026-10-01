@@ -1,0 +1,89 @@
+"use client";
+
+import { useEffect } from "react";
+
+const WIDGET_SCRIPT =
+  "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-4/widget.js";
+
+export default function ApplyForm4Widget() {
+  useEffect(() => {
+    const initializeWidget = () => {
+      /*
+       * ExtraaEdge widget ko initialize karne ke liye
+       * DOMContentLoaded event trigger kar rahe hain.
+       */
+      window.dispatchEvent(new Event("DOMContentLoaded"));
+    };
+
+    const existingScript = document.querySelector(
+      `script[src="${WIDGET_SCRIPT}"]`,
+    );
+
+    /*
+     * Agar script already loaded hai,
+     * to dobara script inject nahi karenge.
+     */
+    if (existingScript) {
+      initializeWidget();
+      return;
+    }
+
+    const script = document.createElement("script");
+
+    script.src = WIDGET_SCRIPT;
+    script.type = "text/javascript";
+    script.async = true;
+
+    script.onload = initializeWidget;
+
+    script.onerror = () => {
+      console.error(
+        "Failed to load FOSTIIMA Form 4 application widget.",
+      );
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      /*
+       * Script ko remove nahi karna.
+       * Widget ko page par loaded rehne denge.
+       */
+    };
+  }, []);
+
+  return (
+    <>
+      <style jsx global>{`
+        #ee-form-4 {
+          width: 100% !important;
+          min-height: 0 !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: hidden !important;
+        }
+
+        #ee-form-4 iframe {
+          display: block !important;
+          width: 100% !important;
+          border: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        #ee-form-4 > div {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          overflow: hidden !important;
+        }
+      `}</style>
+
+      <div
+        id="ee-form-4"
+        className="w-full"
+      />
+    </>
+  );
+}

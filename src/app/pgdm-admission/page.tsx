@@ -1,6 +1,6 @@
 import Script from "next/script";
 import Link from "next/link";
-import ApplyForm from "@/components/admissions/ApplyForm";
+import ApplyForm4Widget from "@/components/forms/ApplyForm4Widget";
 
 const highlights = [
   "2 Year Full-Time PGDM Program",
@@ -147,11 +147,11 @@ export default function PGDMAdmissionPage() {
           </div>
 
           {/* Form Card */}
-          <div
+          {/* <div
             id="application-form"
             className="scroll-mt-28 rounded-2xl bg-white p-5 shadow-[0_25px_80px_rgba(0,0,0,0.25)] sm:p-7"
-          >
-            <div className="mb-5">
+          > */}
+            {/* <div className="mb-5">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
                 Admissions Open
               </p>
@@ -164,10 +164,10 @@ export default function PGDMAdmissionPage() {
                 Fill in your details and our admissions team will get in touch
                 with you.
               </p>
-            </div>
+            </div> */}
 
-            <ApplyForm />
-          </div>
+            <ApplyForm4Widget />
+          {/* </div> */}
         </div>
       </section>
 
