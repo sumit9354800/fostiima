@@ -38,31 +38,15 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
       {
         id: "industry-wise",
         title: "Industry Wise",
-        data: [
-          {
-            id: "advertising",
-            category: "Advertising",
-            percentage: 15,
-          },
-          {
-            id: "consulting",
-            category: "Consulting",
-            percentage: 8,
-          },
-          {
-            id: "logistics",
-            category: "Logistics",
-            percentage: 33,
-          },
-          {
+        data: [          {
             id: "bfsi",
             category: "BFSI",
             percentage: 5,
           },
           {
-            id: "real-estate",
-            category: "Real Estate",
-            percentage: 11,
+            id: "consulting",
+            category: "Consulting",
+            percentage: 8,
           },
           {
             id: "fmcg",
@@ -75,15 +59,39 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
             percentage: 12,
           },
           {
+            id: "real-estate",
+            category: "Real Estate",
+            percentage: 11,
+          },
+          {
+            id: "logistics",
+            category: "Logistics",
+            percentage: 33,
+          },
+          {
             id: "e-commerce",
             category: "E Commerce",
             percentage: 3,
+          },
+
+          {
+            id: "advertising",
+            category: "Advertising",
+            percentage: 15,
           },
           {
             id: "ed-tech",
             category: "Ed Tech",
             percentage: 1,
-          },
+          }
+
+
+
+
+
+
+
+
         ],
       },
       {
@@ -132,18 +140,23 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
     highlights:
       "Some of the most reputed companies visit FOSTIIMA for selection of students. The recruiters are from diverse sectors such as Banking and Finance, Consulting, FMCG etc. Some of the well-known names include- ICICI Bank, Axis Bank, Kotak Bank, ICICI Prudential, ICICI Prudential AMC, IDFC Bank, RBL Bank, Deloitte, BlackRock, Wipro, Protiviti, Hansa Research, TCS, Mondelez, ITC, Nestle, JK Tyre, Asian Paints, MRF Tyres, Berger Paints, Prism Johnsons Cement and many more…",
 
-    students: [
-      {
-        id: "naman-bhambri",
-        name: "NAMAN BHAMBRI",
-        role: "Deputy Manager, ICICI Bank PPO",
-        image: cloudinaryAsset("/final-placement/student1/std1.webp"),
+    students: [      {
+        id: "aman-sachdeva",
+        name: "AMAN SACHDEVA",
+        role: "Management Trainee, Black Rock",
+        image: cloudinaryAsset("/final-placement/student1/std21.webp"),
       },
       {
-        id: "vikas-kumar-singh",
-        name: "VIKAS KUMAR SINGH",
-        role: "Executive Trainee, HDFC Life",
-        image: cloudinaryAsset("/final-placement/student1/std2.webp"),
+        id: "gurleen-kaur-chauhan",
+        name: "GURLEEN KAUR CHAUHAN",
+        role: "Management Trainee, Black Rock",
+        image: cloudinaryAsset("/final-placement/student1/std41.webp"),
+      },
+      {
+        id: "aditya-krishna-dwivedi",
+        name: "ADITYA KRISHNA DWIVEDI",
+        role: "Management Trainee, Black rock",
+        image: cloudinaryAsset("/final-placement/student1/std47.webp"),
       },
       {
         id: "vanshika-jain",
@@ -152,10 +165,95 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student1/std3.webp"),
       },
       {
+        id: "divyam-agarwal",
+        name: "DIVYAM AGARWAL",
+        role: "Executive Trainee, Interocean",
+        image: cloudinaryAsset("/final-placement/student1/std42.webp"),
+      },
+
+      {
+        id: "naman-bhambri",
+        name: "NAMAN BHAMBRI",
+        role: "Deputy Manager, ICICI Bank PPO",
+        image: cloudinaryAsset("/final-placement/student1/std1.webp"),
+      },
+      {
+        id: "manya-khare",
+        name: "MANYA KHARE",
+        role: "Deputy Manager, ICICI Bank PPO",
+        image: cloudinaryAsset("/final-placement/student1/std15.webp"),
+      },
+      {
         id: "saurav-bisht",
         name: "SOURAV BISHT",
         role: "Management Trainee, ICICI Securities",
         image: cloudinaryAsset("/final-placement/student1/std4.webp"),
+      },
+      {
+        id: "harshit-maurya",
+        name: "HARSHIT MAURYA",
+        role: "Management Trainee, ICICI Life",
+        image: cloudinaryAsset("/final-placement/student1/std18.webp"),
+      },
+      {
+        id: "vishwajeet-yadav",
+        name: "VISHWAJEET YADAV",
+        role: "Management Trainee, ICICI Life",
+        image: cloudinaryAsset("/final-placement/student1/std22.webp"),
+      },
+      {
+        id: "mitali-sapra",
+        name: "MITALI SAPRA",
+        role: "Deputy Manager, Kotak Bank",
+        image: cloudinaryAsset("/final-placement/student1/std13.webp"),
+      },
+      {
+        id: "rashmeet-kaur",
+        name: "RASHMEET KAUR",
+        role: "Deputy Manager, Kotak",
+        image: cloudinaryAsset("/final-placement/student1/std32.webp"),
+      },
+      {
+        id: "priyanshi-garg",
+        name: "PRIYANSHI GARG",
+        role: "Deputy Manager, Kotak Bank",
+        image: cloudinaryAsset("/final-placement/student1/std34.webp"),
+      },
+      {
+        id: "amrit-kaur",
+        name: "AMRIT KAUR",
+        role: "Deputy Manager, Kotak Bank",
+        image: cloudinaryAsset("/final-placement/student1/std45.webp"),
+      },
+      {
+        id: "anmol-dwivedi",
+        name: "ANMOL DWIVEDI",
+        role: "Deputy Manager, Axis Bank",
+        image: cloudinaryAsset("/final-placement/student1/std19.webp"),
+      },
+      {
+        id: "manisha-agrawal",
+        name: "MANISHA AGRAWAL",
+        role: "Deputy Manager, Axis Bank",
+        image: cloudinaryAsset("/final-placement/student1/std39.webp"),
+      },
+      {
+        id: "akanksha-singh",
+        name: "AKANKSHA SINGH",
+        role: "Deputy Manager, Axis Bank",
+        image: cloudinaryAsset("/final-placement/student1/std46.webp"),
+      },
+      {
+        id: "vikas-kumar-singh",
+        name: "VIKAS KUMAR SINGH",
+        role: "Executive Trainee, HDFC Life",
+        image: cloudinaryAsset("/final-placement/student1/std2.webp"),
+      },
+      {
+        id: "dushyant-yadav",
+        name: "DUSHYANT YADAV",
+        role: "Personal Banker, HDFC Bank",
+        image: cloudinaryAsset("/final-placement/student1/std8.webp"),
       },
       {
         id: "prince-maggon",
@@ -164,10 +262,10 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student1/std5.webp"),
       },
       {
-        id: "prakhar-mangla",
-        name: "Prakhar Mangla",
-        role: "Manager, Aditya Birla Capital",
-        image: cloudinaryAsset("/final-placement/student1/std6.webp"),
+        id: "rinki-pandey",
+        name: "RINKI PANDEY",
+        role: "Management Trainee, WIPRO",
+        image: cloudinaryAsset("/final-placement/student1/std31.webp"),
       },
       {
         id: "piyush-kaushik",
@@ -176,10 +274,28 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student1/std7.webp"),
       },
       {
-        id: "dushyant-yadav",
-        name: "DUSHYANT YADAV",
-        role: "Personal Banker, HDFC Bank",
-        image: cloudinaryAsset("/final-placement/student1/std8.webp"),
+        id: "shreya-srivastava",
+        name: "SHREYA SRIVASTAVA",
+        role: "Management Trainee, HCL",
+        image: cloudinaryAsset("/final-placement/student1/std28.webp"),
+      },
+      {
+        id: "shweta-gupta",
+        name: "SHWETA GUPTA",
+        role: "Sales Trainee, ITC Foods",
+        image: cloudinaryAsset("/final-placement/student1/std26.webp"),
+      },
+      {
+        id: "sanskar-gupta",
+        name: "SANSKAR GUPTA",
+        role: "TSE, Asian Paints",
+        image: cloudinaryAsset("/final-placement/student1/std29.webp"),
+      },
+      {
+        id: "prakhar-mangla",
+        name: "Prakhar Mangla",
+        role: "Manager, Aditya Birla Capital",
+        image: cloudinaryAsset("/final-placement/student1/std6.webp"),
       },
       {
         id: "nitin-kaushik",
@@ -206,22 +322,10 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student1/std12.webp"),
       },
       {
-        id: "mitali-sapra",
-        name: "MITALI SAPRA",
-        role: "Deputy Manager, Kotak Bank",
-        image: cloudinaryAsset("/final-placement/student1/std13.webp"),
-      },
-      {
         id: "meghna-motwani",
         name: "MEGHNA MOTWANI",
         role: "Section Sales Manager, Khimji Ramdas",
         image: cloudinaryAsset("/final-placement/student1/std14.webp"),
-      },
-      {
-        id: "manya-khare",
-        name: "MANYA KHARE",
-        role: "Deputy Manager, ICICI Bank PPO",
-        image: cloudinaryAsset("/final-placement/student1/std15.webp"),
       },
       {
         id: "manisha-bhateja",
@@ -236,34 +340,10 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student1/std17.webp"),
       },
       {
-        id: "harshit-maurya",
-        name: "HARSHIT MAURYA",
-        role: "Management Trainee, ICICI Life",
-        image: cloudinaryAsset("/final-placement/student1/std18.webp"),
-      },
-      {
-        id: "anmol-dwivedi",
-        name: "ANMOL DWIVEDI",
-        role: "Deputy Manager, Axis Bank",
-        image: cloudinaryAsset("/final-placement/student1/std19.webp"),
-      },
-      {
         id: "anamika-verma",
         name: "ANAMIKA VERMA",
         role: "Executive Trainee, Interocean",
         image: cloudinaryAsset("/final-placement/student1/std20.webp"),
-      },
-      {
-        id: "aman-sachdeva",
-        name: "AMAN SACHDEVA",
-        role: "Management Trainee, Black Rock",
-        image: cloudinaryAsset("/final-placement/student1/std21.webp"),
-      },
-      {
-        id: "vishwajeet-yadav",
-        name: "VISHWAJEET YADAV",
-        role: "Management Trainee, ICICI Life",
-        image: cloudinaryAsset("/final-placement/student1/std22.webp"),
       },
       {
         id: "varshika-kushwaha",
@@ -284,58 +364,16 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student1/std25.webp"),
       },
       {
-        id: "shweta-gupta",
-        name: "SHWETA GUPTA",
-        role: "Sales Trainee, ITC Foods",
-        image: cloudinaryAsset("/final-placement/student1/std26.webp"),
-      },
-      {
         id: "shruti-garg",
         name: "SHRUTI GARG",
         role: "Executive Trainee, RBL",
         image: cloudinaryAsset("/final-placement/student1/std27.webp"),
       },
       {
-        id: "shreya-srivastava",
-        name: "SHREYA SRIVASTAVA",
-        role: "Management Trainee, HCL",
-        image: cloudinaryAsset("/final-placement/student1/std28.webp"),
-      },
-      {
-        id: "sanskar-gupta",
-        name: "SANSKAR GUPTA",
-        role: "TSE, Asian Paints",
-        image: cloudinaryAsset("/final-placement/student1/std29.webp"),
-      },
-      {
         id: "sameer-kedia",
         name: "SAMEER KEDIA",
         role: "Executive Trainee, Hindware",
         image: cloudinaryAsset("/final-placement/student1/std30.webp"),
-      },
-      {
-        id: "rinki-pandey",
-        name: "RINKI PANDEY",
-        role: "Management Trainee, WIPRO",
-        image: cloudinaryAsset("/final-placement/student1/std31.webp"),
-      },
-      {
-        id: "rashmeet-kaur",
-        name: "RASHMEET KAUR",
-        role: "Deputy Manager, Kotak",
-        image: cloudinaryAsset("/final-placement/student1/std32.webp"),
-      },
-      // {
-      //   id: "rahul-goel",
-      //   name: "RAHUL GOEL",
-      //   role: "Finance Analyst, JLL",
-      //   image: cloudinaryAsset("/final-placement/student1/std33.webp"),
-      // },
-      {
-        id: "priyanshi-garg",
-        name: "PRIYANSHI GARG",
-        role: "Deputy Manager, Kotak Bank",
-        image: cloudinaryAsset("/final-placement/student1/std34.webp"),
       },
       {
         id: "pooja-gupta",
@@ -362,58 +400,10 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student1/std38.webp"),
       },
       {
-        id: "manisha-agrawal",
-        name: "MANISHA AGRAWAL",
-        role: "Deputy Manager, Axis Bank",
-        image: cloudinaryAsset("/final-placement/student1/std39.webp"),
-      },
-      {
         id: "kashish-gupta",
         name: "KASHISH GUPTA",
         role: "Executive Trainee, Hindware",
         image: cloudinaryAsset("/final-placement/student1/std40.webp"),
-      },
-      {
-        id: "gurleen-kaur-chauhan",
-        name: "GURLEEN KAUR CHAUHAN",
-        role: "Management Trainee, Black Rock",
-        image: cloudinaryAsset("/final-placement/student1/std41.webp"),
-      },
-      {
-        id: "divyam-agarwal",
-        name: "DIVYAM AGARWAL",
-        role: "Executive Trainee, Interocean",
-        image: cloudinaryAsset("/final-placement/student1/std42.webp"),
-      },
-      // {
-      //   id: "biswadip-dey",
-      //   name: "BISWADIP DEY",
-      //   role: "ASA, Deloitte",
-      //   image: cloudinaryAsset("/final-placement/student1/std43.webp"),
-      // },
-      // {
-      //   id: "aryan-sangal",
-      //   name: "ARYAN SANGAL",
-      //   role: "TSE, Asian Paints",
-      //   image: cloudinaryAsset("/final-placement/student1/std44.webp"),
-      // },
-      {
-        id: "amrit-kaur",
-        name: "AMRIT KAUR",
-        role: "Deputy Manager, Kotak Bank",
-        image: cloudinaryAsset("/final-placement/student1/std45.webp"),
-      },
-      {
-        id: "akanksha-singh",
-        name: "AKANKSHA SINGH",
-        role: "Deputy Manager, Axis Bank",
-        image: cloudinaryAsset("/final-placement/student1/std46.webp"),
-      },
-      {
-        id: "aditya-krishna-dwivedi",
-        name: "ADITYA KRISHNA DWIVEDI",
-        role: "Management Trainee, Black rock",
-        image: cloudinaryAsset("/final-placement/student1/std47.webp"),
       },
       {
         id: "abhishek-srivastava",
@@ -432,7 +422,71 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         name: "AASTHA GUPTA",
         role: "Management Trainee, Ecom Express",
         image: cloudinaryAsset("/final-placement/student1/std50.webp"),
-      },
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // {
+      //   id: "rahul-goel",
+      //   name: "RAHUL GOEL",
+      //   role: "Finance Analyst, JLL",
+      //   image: cloudinaryAsset("/final-placement/student1/std33.webp"),
+      // },
+
+
+
+
+
+
+
+
+
+      // {
+      //   id: "biswadip-dey",
+      //   name: "BISWADIP DEY",
+      //   role: "ASA, Deloitte",
+      //   image: cloudinaryAsset("/final-placement/student1/std43.webp"),
+      // },
+      // {
+      //   id: "aryan-sangal",
+      //   name: "ARYAN SANGAL",
+      //   role: "TSE, Asian Paints",
+      //   image: cloudinaryAsset("/final-placement/student1/std44.webp"),
+      // },
+
+
+
+
+
+
     ],
   },
 
@@ -445,31 +499,15 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
       {
         id: "industry-wise",
         title: "Industry Wise",
-        data: [
-          {
-            id: "advertising",
-            category: "Advertising",
-            percentage: 15,
-          },
-          {
-            id: "consulting",
-            category: "Consulting",
-            percentage: 8,
-          },
-          {
-            id: "logistics",
-            category: "Logistics",
-            percentage: 33,
-          },
-          {
+        data: [          {
             id: "bfsi",
             category: "BFSI",
             percentage: 5,
           },
           {
-            id: "real-estate",
-            category: "Real Estate",
-            percentage: 11,
+            id: "consulting",
+            category: "Consulting",
+            percentage: 8,
           },
           {
             id: "fmcg",
@@ -482,15 +520,39 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
             percentage: 12,
           },
           {
+            id: "real-estate",
+            category: "Real Estate",
+            percentage: 11,
+          },
+          {
+            id: "logistics",
+            category: "Logistics",
+            percentage: 33,
+          },
+          {
             id: "e-commerce",
             category: "E Commerce",
             percentage: 3,
+          },
+
+          {
+            id: "advertising",
+            category: "Advertising",
+            percentage: 15,
           },
           {
             id: "ed-tech",
             category: "Ed Tech",
             percentage: 1,
-          },
+          }
+
+
+
+
+
+
+
+
         ],
       },
       {
@@ -553,46 +615,10 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student2/std2.webp"),
       },
       {
-        id: "vidushi-sahai",
-        name: "Vidushi Sahai",
-        role: "Analyst, Deloitte",
-        image: cloudinaryAsset("/final-placement/student2/std3.webp"),
-      },
-      {
-        id: "vanshika-mittal",
-        name: "Vanshika Mittal",
-        role: "Deputy Manager, ICICI PPO",
-        image: cloudinaryAsset("/final-placement/student2/std4.webp"),
-      },
-      {
-        id: "vanshika-gupta",
-        name: "Vanshika Gupta",
-        role: "Managment Trainee, ICICI Prudential",
-        image: cloudinaryAsset("/final-placement/student2/std5.webp"),
-      },
-      {
         id: "utkarsh-pandey",
         name: "Utkarsh Pandey",
         role: "Deputy Manager, ICICI Bank",
         image: cloudinaryAsset("/final-placement/student2/std6.webp"),
-      },
-      {
-        id: "tushar-rana",
-        name: "Tushar Rana",
-        role: "Analyst, Deloitte",
-        image: cloudinaryAsset("/final-placement/student2/std7.webp"),
-      },
-      {
-        id: "swati-vishwakarma",
-        name: "Swati Vishwakarma",
-        role: "Deputy Manager, ICICI PPO",
-        image: cloudinaryAsset("/final-placement/student2/std8.webp"),
-      },
-      {
-        id: "somiya-gupta",
-        name: "Somiya Gupta",
-        role: "Analyst, Deloitte",
-        image: cloudinaryAsset("/final-placement/student2/std9.webp"),
       },
       {
         id: "ruchi-jha",
@@ -613,64 +639,10 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student2/std12.webp"),
       },
       {
-        id: "ravi-mohan-trivedi",
-        name: "Ravi Mohan Trivedi",
-        role: "Prime RM, Kotak",
-        image: cloudinaryAsset("/final-placement/student2/std13.webp"),
-      },
-      {
-        id: "rati-rastogi",
-        name: "Rati Rastogi",
-        role: "Commercial RM- CE, Kotak",
-        image: cloudinaryAsset("/final-placement/student2/std14.webp"),
-      },
-      {
-        id: "raman-sharma",
-        name: "Raman Sharma",
-        role: "Management Trainee, Black Rock",
-        image: cloudinaryAsset("/final-placement/student2/std15.webp"),
-      },
-      {
-        id: "radhika-goyal",
-        name: "Radhika Goyal",
-        role: "Relationship Manager, Axis Bank",
-        image: cloudinaryAsset("/final-placement/student2/std16.webp"),
-      },
-      {
         id: "prashant-shokeen",
         name: "Prashant Shokeen",
         role: "Deputy Manager, ICICI Bank",
         image: cloudinaryAsset("/final-placement/student2/std17.webp"),
-      },
-      {
-        id: "pradeep-prakash-singh",
-        name: "Pradeep Prakash Singh",
-        role: "Managment Trainee, ICICI Prudential",
-        image: cloudinaryAsset("/final-placement/student2/std18.webp"),
-      },
-      {
-        id: "pooja-ahuja",
-        name: "Pooja Ahuja",
-        role: "Management Trainee, Wipro",
-        image: cloudinaryAsset("/final-placement/student2/std19.webp"),
-      },
-      {
-        id: "payal-mundra",
-        name: "Payal Mundra",
-        role: "Relationship Manager, Axis Bank",
-        image: cloudinaryAsset("/final-placement/student2/std20.webp"),
-      },
-      {
-        id: "payal-dixit",
-        name: "Payal Dixit",
-        role: "Deputy Manager, ICICI PPO",
-        image: cloudinaryAsset("/final-placement/student2/std21.webp"),
-      },
-      {
-        id: "pragati-kumari",
-        name: "Pargati Kumari",
-        role: "Asst. Operation Manager, IDFC BANK",
-        image: cloudinaryAsset("/final-placement/student2/std22.webp"),
       },
       {
         id: "nitish-kumar",
@@ -679,16 +651,40 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student2/std23.webp"),
       },
       {
-        id: "neha-shivhare",
-        name: "Neha Shivhare",
-        role: "BRM, Kotak",
-        image: cloudinaryAsset("/final-placement/student2/std24.webp"),
+        id: "anshika-singh",
+        name: "Anshika Singh",
+        role: "Deputy Manager, ICICI Bank",
+        image: cloudinaryAsset("/final-placement/student2/std46.webp"),
       },
       {
-        id: "neha-kalra",
-        name: "Neha Kalra",
-        role: "Relationship Manager, Axis Bank",
-        image: cloudinaryAsset("/final-placement/student2/std25.webp"),
+        id: "ambika-jindal",
+        name: "Ambika Jindal",
+        role: "Deputy Manager, ICICI Bank",
+        image: cloudinaryAsset("/final-placement/student2/std48.webp"),
+      },
+      {
+        id: "akshay-bhargava",
+        name: "Akshay Bhargava",
+        role: "Deputy Manager, ICICI Bank",
+        image: cloudinaryAsset("/final-placement/student2/std49.webp"),
+      },
+      {
+        id: "vidushi-sahai",
+        name: "Vidushi Sahai",
+        role: "Analyst, Deloitte",
+        image: cloudinaryAsset("/final-placement/student2/std3.webp"),
+      },
+      {
+        id: "tushar-rana",
+        name: "Tushar Rana",
+        role: "Analyst, Deloitte",
+        image: cloudinaryAsset("/final-placement/student2/std7.webp"),
+      },
+      {
+        id: "somiya-gupta",
+        name: "Somiya Gupta",
+        role: "Analyst, Deloitte",
+        image: cloudinaryAsset("/final-placement/student2/std9.webp"),
       },
       {
         id: "mohit-goyal",
@@ -701,6 +697,60 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         name: "Mihir Singh",
         role: "Analyst, Deloitte",
         image: cloudinaryAsset("/final-placement/student2/std27.webp"),
+      },
+      {
+        id: "aranshi-mahur",
+        name: "Aranshi Mahur",
+        role: "Analyst, Deloitte",
+        image: cloudinaryAsset("/final-placement/student2/std44.webp"),
+      },
+      {
+        id: "anupriya-kesharwani",
+        name: "Anupriya Kesharwani",
+        role: "Analyst, Deloitte",
+        image: cloudinaryAsset("/final-placement/student2/std45.webp"),
+      },
+      {
+        id: "raman-sharma",
+        name: "Raman Sharma",
+        role: "Management Trainee, Black Rock",
+        image: cloudinaryAsset("/final-placement/student2/std15.webp"),
+      },
+      {
+        id: "kanika-bedi",
+        name: "Kanika Bedi",
+        role: "Management Trainee, Black Rock",
+        image: cloudinaryAsset("/final-placement/student2/std31.webp"),
+      },
+      {
+        id: "chahat-goyal",
+        name: "Chahat Goyal",
+        role: "Management Trainee, Black Rock",
+        image: cloudinaryAsset("/final-placement/student2/std42.webp"),
+      },
+      {
+        id: "ankit-tiwary",
+        name: "Ankit Tiwary",
+        role: "Management Trainee, Black Rock",
+        image: cloudinaryAsset("/final-placement/student2/std47.webp"),
+      },
+      {
+        id: "ravi-mohan-trivedi",
+        name: "Ravi Mohan Trivedi",
+        role: "Prime RM, Kotak",
+        image: cloudinaryAsset("/final-placement/student2/std13.webp"),
+      },
+      {
+        id: "rati-rastogi",
+        name: "Rati Rastogi",
+        role: "Commercial RM- CE, Kotak",
+        image: cloudinaryAsset("/final-placement/student2/std14.webp"),
+      },
+      {
+        id: "neha-shivhare",
+        name: "Neha Shivhare",
+        role: "BRM, Kotak",
+        image: cloudinaryAsset("/final-placement/student2/std24.webp"),
       },
       {
         id: "mayur-gupta",
@@ -721,16 +771,52 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student2/std30.webp"),
       },
       {
-        id: "kanika-bedi",
-        name: "Kanika Bedi",
-        role: "Management Trainee, Black Rock",
-        image: cloudinaryAsset("/final-placement/student2/std31.webp"),
+        id: "gulshan-jain",
+        name: "Gulshan Jain",
+        role: "BRM - Working capital, Kotak",
+        image: cloudinaryAsset("/final-placement/student2/std34.webp"),
       },
       {
-        id: "himanshu-raghav",
-        name: "Himanshu Raghav",
-        role: "Deputy Manager, ICICI PPO",
-        image: cloudinaryAsset("/final-placement/student2/std32.webp"),
+        id: "durgesh-panwar",
+        name: "Durgesh Panwar",
+        role: "RM - Secured Mortage, Kotak",
+        image: cloudinaryAsset("/final-placement/student2/std36.webp"),
+      },
+      {
+        id: "chandan-kesri",
+        name: "Chandan Keshari",
+        role: "Commercial RM-Agri business group, Kotak",
+        image: cloudinaryAsset("/final-placement/student2/std41.webp"),
+      },
+      {
+        id: "radhika-goyal",
+        name: "Radhika Goyal",
+        role: "Relationship Manager, Axis Bank",
+        image: cloudinaryAsset("/final-placement/student2/std16.webp"),
+      },
+      {
+        id: "payal-mundra",
+        name: "Payal Mundra",
+        role: "Relationship Manager, Axis Bank",
+        image: cloudinaryAsset("/final-placement/student2/std20.webp"),
+      },
+      {
+        id: "neha-kalra",
+        name: "Neha Kalra",
+        role: "Relationship Manager, Axis Bank",
+        image: cloudinaryAsset("/final-placement/student2/std25.webp"),
+      },
+      {
+        id: "vanshika-gupta",
+        name: "Vanshika Gupta",
+        role: "Managment Trainee, ICICI Prudential",
+        image: cloudinaryAsset("/final-placement/student2/std5.webp"),
+      },
+      {
+        id: "pradeep-prakash-singh",
+        name: "Pradeep Prakash Singh",
+        role: "Managment Trainee, ICICI Prudential",
+        image: cloudinaryAsset("/final-placement/student2/std18.webp"),
       },
       {
         id: "guriender-kumar",
@@ -739,22 +825,58 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student2/std33.webp"),
       },
       {
-        id: "gulshan-jain",
-        name: "Gulshan Jain",
-        role: "BRM - Working capital, Kotak",
-        image: cloudinaryAsset("/final-placement/student2/std34.webp"),
-      },
-      {
         id: "eisha-jaiswal",
         name: "Eisha Jaiswal",
         role: "Managment Trainee, ICICI Prudential",
         image: cloudinaryAsset("/final-placement/student2/std35.webp"),
       },
       {
-        id: "durgesh-panwar",
-        name: "Durgesh Panwar",
-        role: "RM - Secured Mortage, Kotak",
-        image: cloudinaryAsset("/final-placement/student2/std36.webp"),
+        id: "diksha-sharma",
+        name: "Diksha Sharma",
+        role: "Managment Trainee, ICICI Prudential",
+        image: cloudinaryAsset("/final-placement/student2/std39.webp"),
+      },
+      {
+        id: "akansha-yadav",
+        name: "Akansha Yadav",
+        role: "Managment Trainee, ICICI Prudential",
+        image: cloudinaryAsset("/final-placement/student2/std50.webp"),
+      },
+      {
+        id: "pooja-ahuja",
+        name: "Pooja Ahuja",
+        role: "Management Trainee, Wipro",
+        image: cloudinaryAsset("/final-placement/student2/std19.webp"),
+      },
+      {
+        id: "vanshika-mittal",
+        name: "Vanshika Mittal",
+        role: "Deputy Manager, ICICI PPO",
+        image: cloudinaryAsset("/final-placement/student2/std4.webp"),
+      },
+      {
+        id: "swati-vishwakarma",
+        name: "Swati Vishwakarma",
+        role: "Deputy Manager, ICICI PPO",
+        image: cloudinaryAsset("/final-placement/student2/std8.webp"),
+      },
+      {
+        id: "payal-dixit",
+        name: "Payal Dixit",
+        role: "Deputy Manager, ICICI PPO",
+        image: cloudinaryAsset("/final-placement/student2/std21.webp"),
+      },
+      {
+        id: "pragati-kumari",
+        name: "Pargati Kumari",
+        role: "Asst. Operation Manager, IDFC BANK",
+        image: cloudinaryAsset("/final-placement/student2/std22.webp"),
+      },
+      {
+        id: "himanshu-raghav",
+        name: "Himanshu Raghav",
+        role: "Deputy Manager, ICICI PPO",
+        image: cloudinaryAsset("/final-placement/student2/std32.webp"),
       },
       {
         id: "divya-patel",
@@ -769,77 +891,66 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student2/std38.webp"),
       },
       {
-        id: "diksha-sharma",
-        name: "Diksha Sharma",
-        role: "Managment Trainee, ICICI Prudential",
-        image: cloudinaryAsset("/final-placement/student2/std39.webp"),
-      },
-      {
         id: "deepak-tomar",
         name: "Deepak Tomar",
         role: "Assitant Store Manager, ABFRL",
         image: cloudinaryAsset("/final-placement/student2/std40.webp"),
       },
       {
-        id: "chandan-kesri",
-        name: "Chandan Keshari",
-        role: "Commercial RM-Agri business group, Kotak",
-        image: cloudinaryAsset("/final-placement/student2/std41.webp"),
-      },
-      {
-        id: "chahat-goyal",
-        name: "Chahat Goyal",
-        role: "Management Trainee, Black Rock",
-        image: cloudinaryAsset("/final-placement/student2/std42.webp"),
-      },
-      {
         id: "anushka-gupta",
         name: "Anushka Gupta",
         role: "Analyst, Acuity Knowledge Partners",
         image: cloudinaryAsset("/final-placement/student2/std43.webp"),
-      },
-      {
-        id: "aranshi-mahur",
-        name: "Aranshi Mahur",
-        role: "Analyst, Deloitte",
-        image: cloudinaryAsset("/final-placement/student2/std44.webp"),
-      },
-      {
-        id: "anupriya-kesharwani",
-        name: "Anupriya Kesharwani",
-        role: "Analyst, Deloitte",
-        image: cloudinaryAsset("/final-placement/student2/std45.webp"),
-      },
-      {
-        id: "anshika-singh",
-        name: "Anshika Singh",
-        role: "Deputy Manager, ICICI Bank",
-        image: cloudinaryAsset("/final-placement/student2/std46.webp"),
-      },
-      {
-        id: "ankit-tiwary",
-        name: "Ankit Tiwary",
-        role: "Management Trainee, Black Rock",
-        image: cloudinaryAsset("/final-placement/student2/std47.webp"),
-      },
-      {
-        id: "ambika-jindal",
-        name: "Ambika Jindal",
-        role: "Deputy Manager, ICICI Bank",
-        image: cloudinaryAsset("/final-placement/student2/std48.webp"),
-      },
-      {
-        id: "akshay-bhargava",
-        name: "Akshay Bhargava",
-        role: "Deputy Manager, ICICI Bank",
-        image: cloudinaryAsset("/final-placement/student2/std49.webp"),
-      },
-      {
-        id: "akansha-yadav",
-        name: "Akansha Yadav",
-        role: "Managment Trainee, ICICI Prudential",
-        image: cloudinaryAsset("/final-placement/student2/std50.webp"),
-      },
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       // {
       //   id: "adarsh-sharma",
       //   name: "Adarsh Sharma",
@@ -873,20 +984,30 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
       {
         id: "industry-wise",
         title: "Industry Wise Percentage",
-        data: [
+        data: [          {
+            id: "bfsi",
+            category: "BFSI",
+            percentage: 44,
+          },
+
           {
             id: "consulting",
             category: "Consulting",
             percentage: 29,
           },
           {
-            id: "bfsi",
-            category: "BFSI",
-            percentage: 44,
-          },
-          {
             id: "fmcg",
             category: "FMCG",
+            percentage: 6,
+          },
+          {
+            id: "product-manufacturing",
+            category: "Product Manufacturing",
+            percentage: 5,
+          },
+          {
+            id: "retail-marketing",
+            category: "Retail Marketing",
             percentage: 6,
           },
           {
@@ -898,17 +1019,13 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
             id: "real-estate",
             category: "Real Estate",
             percentage: 3,
-          },
-          {
-            id: "retail-marketing",
-            category: "Retail Marketing",
-            percentage: 6,
-          },
-          {
-            id: "product-manufacturing",
-            category: "Product Manufacturing",
-            percentage: 5,
-          },
+          }
+
+
+
+
+
+
         ],
       },
       {
@@ -966,46 +1083,10 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student3/std2.webp"),
       },
       {
-        id: "vidushi-sahai",
-        name: "Vidushi Sahai",
-        role: "Analyst, Deloitte",
-        image: cloudinaryAsset("/final-placement/student3/std3.webp"),
-      },
-      {
-        id: "vanshika-mittal",
-        name: "Vanshika Mittal",
-        role: "Deputy Manager, ICICI PPO",
-        image: cloudinaryAsset("/final-placement/student3/std4.webp"),
-      },
-      {
-        id: "vanshika-gupta",
-        name: "Vanshika Gupta",
-        role: "Managment Trainee, ICICI Prudential",
-        image: cloudinaryAsset("/final-placement/student3/std5.webp"),
-      },
-      {
         id: "utkarsh-pandey",
         name: "Utkarsh Pandey",
         role: "Deputy Manager, ICICI Bank",
         image: cloudinaryAsset("/final-placement/student3/std6.webp"),
-      },
-      {
-        id: "tushar-rana",
-        name: "Tushar Rana",
-        role: "Analyst, Deloitte",
-        image: cloudinaryAsset("/final-placement/student3/std7.webp"),
-      },
-      {
-        id: "swati-vishwakarma",
-        name: "Swati Vishwakarma",
-        role: "Deputy Manager, ICICI PPO",
-        image: cloudinaryAsset("/final-placement/student3/std8.webp"),
-      },
-      {
-        id: "somiya-gupta",
-        name: "Somiya Gupta",
-        role: "Analyst, Deloitte",
-        image: cloudinaryAsset("/final-placement/student3/std9.webp"),
       },
       {
         id: "ruchi-jha",
@@ -1026,64 +1107,10 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student3/std12.webp"),
       },
       {
-        id: "ravi-mohan-trivedi",
-        name: "Ravi Mohan Trivedi",
-        role: "Prime RM, Kotak",
-        image: cloudinaryAsset("/final-placement/student3/std13.webp"),
-      },
-      {
-        id: "rati-rastogi",
-        name: "Rati Rastogi",
-        role: "Commercial RM- CE, Kotak",
-        image: cloudinaryAsset("/final-placement/student3/std14.webp"),
-      },
-      {
-        id: "raman-sharma",
-        name: "Raman Sharma",
-        role: "Management Trainee, Black Rock",
-        image: cloudinaryAsset("/final-placement/student3/std15.webp"),
-      },
-      {
-        id: "radhika-goyal",
-        name: "Radhika Goyal",
-        role: "Relationship Manager, Axis Bank",
-        image: cloudinaryAsset("/final-placement/student3/std16.webp"),
-      },
-      {
         id: "prashant-shokeen",
         name: "Prashant Shokeen",
         role: "Deputy Manager, ICICI Bank",
         image: cloudinaryAsset("/final-placement/student3/std17.webp"),
-      },
-      {
-        id: "pradeep-prakash-singh",
-        name: "Pradeep Prakash Singh",
-        role: "Managment Trainee, ICICI Prudential",
-        image: cloudinaryAsset("/final-placement/student3/std18.webp"),
-      },
-      {
-        id: "pooja-ahuja",
-        name: "Pooja Ahuja",
-        role: "Management Trainee, Wipro",
-        image: cloudinaryAsset("/final-placement/student3/std19.webp"),
-      },
-      {
-        id: "payal-mundra",
-        name: "Payal Mundra",
-        role: "Relationship Manager, Axis Bank",
-        image: cloudinaryAsset("/final-placement/student3/std20.webp"),
-      },
-      {
-        id: "payal-dixit",
-        name: "Payal Dixit",
-        role: "Deputy Manager, ICICI PPO",
-        image: cloudinaryAsset("/final-placement/student3/std21.webp"),
-      },
-      {
-        id: "pragati-kumari",
-        name: "Pargati Kumari",
-        role: "Asst. Operation Manager, IDFC BANK",
-        image: cloudinaryAsset("/final-placement/student3/std22.webp"),
       },
       {
         id: "nitish-kumar",
@@ -1092,16 +1119,40 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student3/std23.webp"),
       },
       {
-        id: "neha-shivhare",
-        name: "Neha Shivhare",
-        role: "BRM, Kotak",
-        image: cloudinaryAsset("/final-placement/student3/std24.webp"),
+        id: "anshika-singh",
+        name: "Anshika Singh",
+        role: "Deputy Manager, ICICI Bank",
+        image: cloudinaryAsset("/final-placement/student3/std46.webp"),
       },
       {
-        id: "neha-kalra",
-        name: "Neha Kalra",
-        role: "Relationship Manager, Axis Bank",
-        image: cloudinaryAsset("/final-placement/student3/std25.webp"),
+        id: "ambika-jindal",
+        name: "Ambika Jindal",
+        role: "Deputy Manager, ICICI Bank",
+        image: cloudinaryAsset("/final-placement/student3/std48.webp"),
+      },
+      {
+        id: "akshay-bhargava",
+        name: "Akshay Bhargava",
+        role: "Deputy Manager, ICICI Bank",
+        image: cloudinaryAsset("/final-placement/student3/std49.webp"),
+      },
+      {
+        id: "vidushi-sahai",
+        name: "Vidushi Sahai",
+        role: "Analyst, Deloitte",
+        image: cloudinaryAsset("/final-placement/student3/std3.webp"),
+      },
+      {
+        id: "tushar-rana",
+        name: "Tushar Rana",
+        role: "Analyst, Deloitte",
+        image: cloudinaryAsset("/final-placement/student3/std7.webp"),
+      },
+      {
+        id: "somiya-gupta",
+        name: "Somiya Gupta",
+        role: "Analyst, Deloitte",
+        image: cloudinaryAsset("/final-placement/student3/std9.webp"),
       },
       {
         id: "mohit-goyal",
@@ -1114,6 +1165,60 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         name: "Mihir Singh",
         role: "Analyst, Deloitte",
         image: cloudinaryAsset("/final-placement/student3/std27.webp"),
+      },
+      {
+        id: "aranshi-mahur",
+        name: "Aranshi Mahur",
+        role: "Analyst, Deloitte",
+        image: cloudinaryAsset("/final-placement/student3/std44.webp"),
+      },
+      {
+        id: "anupriya-kesharwani",
+        name: "Anupriya Kesharwani",
+        role: "Analyst, Deloitte",
+        image: cloudinaryAsset("/final-placement/student3/std45.webp"),
+      },
+      {
+        id: "raman-sharma",
+        name: "Raman Sharma",
+        role: "Management Trainee, Black Rock",
+        image: cloudinaryAsset("/final-placement/student3/std15.webp"),
+      },
+      {
+        id: "kanika-bedi",
+        name: "Kanika Bedi",
+        role: "Management Trainee, Black Rock",
+        image: cloudinaryAsset("/final-placement/student3/std31.webp"),
+      },
+      {
+        id: "chahat-goyal",
+        name: "Chahat Goyal",
+        role: "Management Trainee, Black Rock",
+        image: cloudinaryAsset("/final-placement/student3/std42.webp"),
+      },
+      {
+        id: "ankit-tiwary",
+        name: "Ankit Tiwary",
+        role: "Management Trainee, Black Rock",
+        image: cloudinaryAsset("/final-placement/student3/std47.webp"),
+      },
+      {
+        id: "ravi-mohan-trivedi",
+        name: "Ravi Mohan Trivedi",
+        role: "Prime RM, Kotak",
+        image: cloudinaryAsset("/final-placement/student3/std13.webp"),
+      },
+      {
+        id: "rati-rastogi",
+        name: "Rati Rastogi",
+        role: "Commercial RM- CE, Kotak",
+        image: cloudinaryAsset("/final-placement/student3/std14.webp"),
+      },
+      {
+        id: "neha-shivhare",
+        name: "Neha Shivhare",
+        role: "BRM, Kotak",
+        image: cloudinaryAsset("/final-placement/student3/std24.webp"),
       },
       {
         id: "mayur-gupta",
@@ -1134,16 +1239,52 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student3/std30.webp"),
       },
       {
-        id: "kanika-bedi",
-        name: "Kanika Bedi",
-        role: "Management Trainee, Black Rock",
-        image: cloudinaryAsset("/final-placement/student3/std31.webp"),
+        id: "gulshan-jain",
+        name: "Gulshan Jain",
+        role: "BRM - Working capital, Kotak",
+        image: cloudinaryAsset("/final-placement/student3/std34.webp"),
       },
       {
-        id: "himanshu-raghav",
-        name: "Himanshu Raghav",
-        role: "Deputy Manager, ICICI PPO",
-        image: cloudinaryAsset("/final-placement/student3/std32.webp"),
+        id: "durgesh-panwar",
+        name: "Durgesh Panwar",
+        role: "RM - Secured Mortage, Kotak",
+        image: cloudinaryAsset("/final-placement/student3/std36.webp"),
+      },
+      {
+        id: "chandan-kesri",
+        name: "Chandan Keshari",
+        role: "Commercial RM-Agri business group, Kotak",
+        image: cloudinaryAsset("/final-placement/student3/std41.webp"),
+      },
+      {
+        id: "radhika-goyal",
+        name: "Radhika Goyal",
+        role: "Relationship Manager, Axis Bank",
+        image: cloudinaryAsset("/final-placement/student3/std16.webp"),
+      },
+      {
+        id: "payal-mundra",
+        name: "Payal Mundra",
+        role: "Relationship Manager, Axis Bank",
+        image: cloudinaryAsset("/final-placement/student3/std20.webp"),
+      },
+      {
+        id: "neha-kalra",
+        name: "Neha Kalra",
+        role: "Relationship Manager, Axis Bank",
+        image: cloudinaryAsset("/final-placement/student3/std25.webp"),
+      },
+      {
+        id: "vanshika-gupta",
+        name: "Vanshika Gupta",
+        role: "Managment Trainee, ICICI Prudential",
+        image: cloudinaryAsset("/final-placement/student3/std5.webp"),
+      },
+      {
+        id: "pradeep-prakash-singh",
+        name: "Pradeep Prakash Singh",
+        role: "Managment Trainee, ICICI Prudential",
+        image: cloudinaryAsset("/final-placement/student3/std18.webp"),
       },
       {
         id: "guriender-kumar",
@@ -1152,22 +1293,58 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student3/std33.webp"),
       },
       {
-        id: "gulshan-jain",
-        name: "Gulshan Jain",
-        role: "BRM - Working capital, Kotak",
-        image: cloudinaryAsset("/final-placement/student3/std34.webp"),
-      },
-      {
         id: "eisha-jaiswal",
         name: "Eisha Jaiswal",
         role: "Managment Trainee, ICICI Prudential",
         image: cloudinaryAsset("/final-placement/student3/std35.webp"),
       },
       {
-        id: "durgesh-panwar",
-        name: "Durgesh Panwar",
-        role: "RM - Secured Mortage, Kotak",
-        image: cloudinaryAsset("/final-placement/student3/std36.webp"),
+        id: "diksha-sharma",
+        name: "Diksha Sharma",
+        role: "Managment Trainee, ICICI Prudential",
+        image: cloudinaryAsset("/final-placement/student3/std39.webp"),
+      },
+      {
+        id: "akansha-yadav",
+        name: "Akansha Yadav",
+        role: "Managment Trainee, ICICI Prudential",
+        image: cloudinaryAsset("/final-placement/student3/std50.webp"),
+      },
+      {
+        id: "pooja-ahuja",
+        name: "Pooja Ahuja",
+        role: "Management Trainee, Wipro",
+        image: cloudinaryAsset("/final-placement/student3/std19.webp"),
+      },
+      {
+        id: "vanshika-mittal",
+        name: "Vanshika Mittal",
+        role: "Deputy Manager, ICICI PPO",
+        image: cloudinaryAsset("/final-placement/student3/std4.webp"),
+      },
+      {
+        id: "swati-vishwakarma",
+        name: "Swati Vishwakarma",
+        role: "Deputy Manager, ICICI PPO",
+        image: cloudinaryAsset("/final-placement/student3/std8.webp"),
+      },
+      {
+        id: "payal-dixit",
+        name: "Payal Dixit",
+        role: "Deputy Manager, ICICI PPO",
+        image: cloudinaryAsset("/final-placement/student3/std21.webp"),
+      },
+      {
+        id: "pragati-kumari",
+        name: "Pargati Kumari",
+        role: "Asst. Operation Manager, IDFC BANK",
+        image: cloudinaryAsset("/final-placement/student3/std22.webp"),
+      },
+      {
+        id: "himanshu-raghav",
+        name: "Himanshu Raghav",
+        role: "Deputy Manager, ICICI PPO",
+        image: cloudinaryAsset("/final-placement/student3/std32.webp"),
       },
       {
         id: "divya-patel",
@@ -1182,77 +1359,18 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         image: cloudinaryAsset("/final-placement/student3/std38.webp"),
       },
       {
-        id: "diksha-sharma",
-        name: "Diksha Sharma",
-        role: "Managment Trainee, ICICI Prudential",
-        image: cloudinaryAsset("/final-placement/student3/std39.webp"),
-      },
-      {
         id: "deepak-tomar",
         name: "Deepak Tomar",
         role: "Assitant Store Manager, ABFRL",
         image: cloudinaryAsset("/final-placement/student3/std40.webp"),
       },
       {
-        id: "chandan-kesri",
-        name: "Chandan Keshari",
-        role: "Commercial RM-Agri business group, Kotak",
-        image: cloudinaryAsset("/final-placement/student3/std41.webp"),
-      },
-      {
-        id: "chahat-goyal",
-        name: "Chahat Goyal",
-        role: "Management Trainee, Black Rock",
-        image: cloudinaryAsset("/final-placement/student3/std42.webp"),
-      },
-      {
         id: "anushka-gupta",
         name: "Anushka Gupta",
         role: "Analyst, Acuity Knowledge Partners",
         image: cloudinaryAsset("/final-placement/student3/std43.webp"),
-      },
-      {
-        id: "aranshi-mahur",
-        name: "Aranshi Mahur",
-        role: "Analyst, Deloitte",
-        image: cloudinaryAsset("/final-placement/student3/std44.webp"),
-      },
-      {
-        id: "anupriya-kesharwani",
-        name: "Anupriya Kesharwani",
-        role: "Analyst, Deloitte",
-        image: cloudinaryAsset("/final-placement/student3/std45.webp"),
-      },
-      {
-        id: "anshika-singh",
-        name: "Anshika Singh",
-        role: "Deputy Manager, ICICI Bank",
-        image: cloudinaryAsset("/final-placement/student3/std46.webp"),
-      },
-      {
-        id: "ankit-tiwary",
-        name: "Ankit Tiwary",
-        role: "Management Trainee, Black Rock",
-        image: cloudinaryAsset("/final-placement/student3/std47.webp"),
-      },
-      {
-        id: "ambika-jindal",
-        name: "Ambika Jindal",
-        role: "Deputy Manager, ICICI Bank",
-        image: cloudinaryAsset("/final-placement/student3/std48.webp"),
-      },
-      {
-        id: "akshay-bhargava",
-        name: "Akshay Bhargava",
-        role: "Deputy Manager, ICICI Bank",
-        image: cloudinaryAsset("/final-placement/student3/std49.webp"),
-      },
-      {
-        id: "akansha-yadav",
-        name: "Akansha Yadav",
-        role: "Managment Trainee, ICICI Prudential",
-        image: cloudinaryAsset("/final-placement/student3/std50.webp"),
-      },
+      }
+
       // {
       //   id: "adarsh-sharma",
       //   name: "Adarsh Sharma",
@@ -1286,11 +1404,10 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
       {
         id: "industry-wise",
         title: "Industry wise placement 2019-21",
-        data: [
-          {
-            id: "edutech",
-            category: "EDUTECH",
-            percentage: 13,
+        data: [          {
+            id: "bfsi",
+            category: "BFSI",
+            percentage: 20,
           },
           {
             id: "consulting-research",
@@ -1298,9 +1415,9 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
             percentage: 30,
           },
           {
-            id: "ecommerce",
-            category: "ECOMMERCE",
-            percentage: 10,
+            id: "it",
+            category: "IT",
+            percentage: 8,
           },
           {
             id: "fmcg",
@@ -1308,13 +1425,13 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
             percentage: 7,
           },
           {
-            id: "it",
-            category: "IT",
-            percentage: 8,
+            id: "ecommerce",
+            category: "ECOMMERCE",
+            percentage: 10,
           },
           {
-            id: "real-estate",
-            category: "REAL ESTATE",
+            id: "retail",
+            category: "RETAIL",
             percentage: 3,
           },
           {
@@ -1323,15 +1440,24 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
             percentage: 6,
           },
           {
-            id: "retail",
-            category: "RETAIL",
+            id: "real-estate",
+            category: "REAL ESTATE",
             percentage: 3,
           },
+
           {
-            id: "bfsi",
-            category: "BFSI",
-            percentage: 20,
-          },
+            id: "edutech",
+            category: "EDUTECH",
+            percentage: 13,
+          }
+
+
+
+
+
+
+
+
         ],
       },
       {
@@ -1392,7 +1518,8 @@ export const finalPlacementBatches: FinalPlacementBatch[] = [
         name: "Smriti Nanda",
         role: "Kotak bank, HR Management Trainee",
         image: cloudinaryAsset("/final-placement/student4/std2.webp"),
-      },
+      }
+
     ],
   },
 ];

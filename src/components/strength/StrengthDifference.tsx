@@ -84,7 +84,7 @@ export default function StrengthDifference() {
             </p>
 
             <p className="mt-5 text-[15px] leading-7 text-slate-600">
-              Through the FOSTIIMA programme, students are enabled to interact
+              Through the FOSTIIMA Program, students are enabled to interact
               with industry veterans who bring cross-functional and
               cross-industry experience into the learning environment.
             </p>

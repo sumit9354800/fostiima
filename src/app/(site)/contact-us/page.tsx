@@ -6,7 +6,7 @@ import ContactForm from "@/components/forms/ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us | FOSTIIMA Business School",
   description:
-    "Contact FOSTIIMA Business School for admissions and programme enquiries.",
+    "Contact FOSTIIMA Business School for admissions and Program enquiries.",
 };
 
 export default function ContactUsPage() {
@@ -25,7 +25,7 @@ export default function ContactUsPage() {
         <div className="mx-auto max-w-7xl">
           <div className="border-l-4 border-[#e5b83f] bg-[#f8fafc] px-5 py-4">
             <p className="text-sm leading-6 text-slate-600">
-              For official admission confirmation and programme-specific
+              For official admission confirmation and Program-specific
               information, please contact FOSTIIMA Admissions directly.
             </p>
           </div>

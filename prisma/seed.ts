@@ -36,7 +36,7 @@ const blogs = [
     title:
       "Best PGDM Colleges in Delhi NCR | PGDM Institute in Delhi NCR",
     excerpt:
-      "Explore PGDM colleges in Delhi NCR, the PGDM programme, its benefits and the admission process.",
+      "Explore PGDM colleges in Delhi NCR, the PGDM Program, its benefits and the admission process.",
     category: "PGDM",
     coverImage: "",
     coverImageAlt: "Best PGDM Colleges in Delhi NCR",
@@ -51,7 +51,7 @@ const blogs = [
       "best PGDM colleges in Delhi NCR",
       "PGDM Institute in Delhi NCR",
       "PGDM colleges in Delhi",
-      "PGDM programme",
+      "PGDM Program",
     ],
     blocks: [
       {
@@ -62,32 +62,32 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "A good management programme should provide students with conceptual knowledge as well as practical exposure. FOSTIIMA focuses on creating an environment where students can understand management concepts and relate them to practical business situations.",
+          "A good management Program should provide students with conceptual knowledge as well as practical exposure. FOSTIIMA focuses on creating an environment where students can understand management concepts and relate them to practical business situations.",
       },
       {
         type: "heading",
         level: 2,
-        content: "Who Should Pursue the PGDM Programme?",
+        content: "Who Should Pursue the PGDM Program?",
       },
       {
         type: "paragraph",
         content:
-          "PGDM courses are designed for students who want to develop their understanding of business and management. The programme provides exposure to areas such as Finance, Marketing, Human Resources, Operations, Analytics and other management functions.",
+          "PGDM courses are designed for students who want to develop their understanding of business and management. The Program provides exposure to areas such as Finance, Marketing, Human Resources, Operations, Analytics and other management functions.",
       },
       {
         type: "paragraph",
         content:
-          "Students who want to develop managerial capabilities, analytical thinking, leadership skills and professional knowledge can consider pursuing a PGDM programme.",
+          "Students who want to develop managerial capabilities, analytical thinking, leadership skills and professional knowledge can consider pursuing a PGDM Program.",
       },
       {
         type: "heading",
         level: 2,
-        content: "Benefits Of Studying PGDM Programme",
+        content: "Benefits Of Studying PGDM Program",
       },
       {
         type: "paragraph",
         content:
-          "A PGDM programme helps students develop professional knowledge while providing exposure to practical aspects of management and business.",
+          "A PGDM Program helps students develop professional knowledge while providing exposure to practical aspects of management and business.",
       },
       {
         type: "heading",
@@ -97,7 +97,7 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "The PGDM programme helps students improve their understanding of business concepts and develop skills required to work effectively in professional environments.",
+          "The PGDM Program helps students improve their understanding of business concepts and develop skills required to work effectively in professional environments.",
       },
       {
         type: "heading",
@@ -117,7 +117,7 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "A management programme can provide students with an understanding of different business environments and global management practices.",
+          "A management Program can provide students with an understanding of different business environments and global management practices.",
       },
       {
         type: "heading",
@@ -142,7 +142,7 @@ const blogs = [
       {
         type: "heading",
         level: 2,
-        content: "Admission Process For The PGDM Programme",
+        content: "Admission Process For The PGDM Program",
       },
       {
         type: "paragraph",
@@ -157,7 +157,7 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "Students should check the eligibility requirements of the programme before applying.",
+          "Students should check the eligibility requirements of the Program before applying.",
       },
       {
         type: "heading",
@@ -209,7 +209,7 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "An MBA or Master of Business Administration is a postgraduate management programme that allows students to develop knowledge and skills in different areas of business.",
+          "An MBA or Master of Business Administration is a postgraduate management Program that allows students to develop knowledge and skills in different areas of business.",
       },
       {
         type: "heading",
@@ -522,7 +522,7 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "Master of Business Administration is a postgraduate programme designed to provide students with knowledge of business management and different functional areas of an organisation.",
+          "Master of Business Administration is a postgraduate Program designed to provide students with knowledge of business management and different functional areas of an organisation.",
       },
       {
         type: "paragraph",
@@ -657,7 +657,7 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "The programme focuses on developing students beyond academics through practical learning and professional development.",
+          "The Program focuses on developing students beyond academics through practical learning and professional development.",
       },
       {
         type: "heading",
@@ -667,7 +667,7 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "The programme provides exposure to entrepreneurship and business development concepts.",
+          "The Program provides exposure to entrepreneurship and business development concepts.",
       },
       {
         type: "heading",
@@ -677,7 +677,7 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "The programme provides management education while considering the overall value of professional development.",
+          "The Program provides management education while considering the overall value of professional development.",
       },
       {
         type: "heading",
@@ -707,7 +707,7 @@ const blogs = [
     title:
       "Best PGDM Colleges in Delhi NCR | PGDM Institute in Delhi NCR",
     excerpt:
-      "Explore PGDM colleges in Delhi NCR, the PGDM programme, its benefits and the admission process.",
+      "Explore PGDM colleges in Delhi NCR, the PGDM Program, its benefits and the admission process.",
     category: "PGDM",
     coverImage: "",
     coverImageAlt: "Best PGDM Colleges in Delhi NCR",
@@ -732,17 +732,17 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "A good management programme should provide students with conceptual knowledge as well as practical exposure. FOSTIIMA focuses on creating an environment where students can understand management concepts and relate them to practical business situations.",
+          "A good management Program should provide students with conceptual knowledge as well as practical exposure. FOSTIIMA focuses on creating an environment where students can understand management concepts and relate them to practical business situations.",
       },
       {
         type: "heading",
         level: 2,
-        content: "Who Should Pursue the PGDM Programme?",
+        content: "Who Should Pursue the PGDM Program?",
       },
       {
         type: "paragraph",
         content:
-          "PGDM courses are designed for students who want to develop their understanding of business and management. The programme provides exposure to areas such as Finance, Marketing, Human Resources, Operations, Analytics and other management functions.",
+          "PGDM courses are designed for students who want to develop their understanding of business and management. The Program provides exposure to areas such as Finance, Marketing, Human Resources, Operations, Analytics and other management functions.",
       },
     ],
   },
@@ -799,7 +799,7 @@ const blogs = [
         type: "list",
         items: [
           "Birla Institute of Management Technology",
-          "Fostiima Business School",
+          "FOSTIIMA Business School",
           "Jagannath Institute of Management",
           "New Delhi Institute of Management",
           "Guru Gobind Singh Indraprastha University",
@@ -836,7 +836,7 @@ const blogs = [
             "Various MBA/PGDM specializations offered",
           ],
           [
-            "Fostiima Business School",
+            "FOSTIIMA Business School",
             "70-90",
             "Various MBA/PGDM specializations offered",
           ],
@@ -881,7 +881,7 @@ const blogs = [
             "Marketing Management, Finance Management, Human Resource Management, Operations Management, Information Technology Management, International Business, Business Analytics and other management areas",
           ],
           [
-            "Fostiima Business School",
+            "FOSTIIMA Business School",
             "Finance, Marketing, Human Resources, Information Technology, Operations Management, Retailing Management, Consumer Marketing, Sales Management, Business Analytics and related areas",
           ],
           [
@@ -1017,7 +1017,7 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "The program not only offered participants knowledge and skills, but it also trained them in building strong teams and developing a team performance system. The programme methods included case studies, role-playing, close group analyses, psychometric assessments, and practical learning projects, which were combined with lecture sessions.",
+          "The program not only offered participants knowledge and skills, but it also trained them in building strong teams and developing a team performance system. The Program methods included case studies, role-playing, close group analyses, psychometric assessments, and practical learning projects, which were combined with lecture sessions.",
       },
       {
         type: "paragraph",
@@ -1032,7 +1032,7 @@ const blogs = [
       {
         type: "paragraph",
         content:
-          "Reflecting on the Management Development Programme organized by FOSTIIMA Business School, Prof. Samir Bhatia, Corporate Trainer & Entrepreneur, expressed his appreciation for being part of the enlightening and interactive sessions. He highlighted the value of effective team management and how team management strengthens the foundation of an organisation, encourages creativity, increases productivity and helps achieve shared objectives.",
+          "Reflecting on the Management Development Program organized by FOSTIIMA Business School, Prof. Samir Bhatia, Corporate Trainer & Entrepreneur, expressed his appreciation for being part of the enlightening and interactive sessions. He highlighted the value of effective team management and how team management strengthens the foundation of an organisation, encourages creativity, increases productivity and helps achieve shared objectives.",
       },
     ],
   },

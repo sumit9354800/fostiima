@@ -219,15 +219,15 @@ export default function PGDMAdmissionPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
-              PGDM Programme
+              PGDM Program
             </p>
 
             <h2 className="mt-2 font-serif text-3xl font-bold leading-tight text-[#123b79] sm:text-4xl">
-              A Management Programme Designed for Tomorrow&apos;s Business
+              A Management Program Designed for Tomorrow&apos;s Business
             </h2>
 
             <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-base">
-              FOSTIIMA&apos;s PGDM programme combines management fundamentals,
+              FOSTIIMA&apos;s PGDM Program combines management fundamentals,
               analytical capabilities, practical exposure and professional
               development to prepare students for modern business challenges.
             </p>
@@ -244,13 +244,13 @@ export default function PGDMAdmissionPage() {
             <div className="rounded-2xl bg-[#071a38] p-6 text-white">
               <p className="text-3xl font-bold">2</p>
               <p className="mt-2 text-sm text-white/65">
-                Year Full-Time Programme
+                Year Full-Time Program
               </p>
             </div>
 
             <div className="rounded-2xl bg-[#c31e3b] p-6 text-white">
               <p className="text-3xl font-bold">AICTE</p>
-              <p className="mt-2 text-sm text-white/75">Approved Programme</p>
+              <p className="mt-2 text-sm text-white/75">Approved Program</p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-[#f8faff] p-6">
@@ -282,7 +282,7 @@ export default function PGDMAdmissionPage() {
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/65 sm:text-base">
             Take the next step towards building your career with the FOSTIIMA
-            PGDM programme.
+            PGDM Program.
           </p>
 
           <a

@@ -182,7 +182,7 @@ export const facultyData: Faculty[] = [
   // },
   {
     slug: "brig-ajay-mehta",
-    name: "Mr. Brig. Ajay Mehta",
+    name: "Brig. Ajay Mehta",
     image: cloudinaryAsset("/home/faculty/faculty021.jpeg"),
     qualification: "Ph.D. (Management), Management Studies (MMS)",
     experience: "35+ years in Indian Army and 13 years teaching experience",
@@ -204,14 +204,6 @@ export const facultyData: Faculty[] = [
     qualification: "Ph.D + M.Phil + MBA + BBA",
     experience: "22+ years 3 months",
     domain: "HR & Management",
-  },
-  {
-    slug: "gurbir-singh-khera",
-    name: "Dr. Gurbir Singh Khera",
-    image: cloudinaryAsset("/home/faculty/faculty24.webp"),
-    qualification: "CFA, EPM (Cornell), IIMK, Ph.D.",
-    experience: "28+ yrs",
-    domain: "",
   },
   {
     slug: "sharad-kumar",
@@ -236,14 +228,6 @@ export const facultyData: Faculty[] = [
     image: cloudinaryAsset("/home/faculty/faculty027.png"),
     qualification: "PGDRM (IRMA), 1988",
     experience: "22+ years",
-    domain: "",
-  },
-  {
-    slug: "suman-sarkar",
-    name: "Mr. Suman Sarkar",
-    image: cloudinaryAsset("/home/faculty/faculty28.webp"),
-    qualification: "(EMIT), IIFT New Delhi, PGDBM IMM Kolkata, B.A. Economics",
-    experience: "",
     domain: "",
   },
   {
@@ -281,19 +265,11 @@ export const facultyData: Faculty[] = [
   },
   {
     slug: "preeti-taneja",
-    name: "Ms. Preeti Taneja",
+    name: "Dr. Preeti Taneja",
     image: cloudinaryAsset("/home/faculty/faculty033.png"),
     qualification:
       "B.Com (H), M.Com, PGDM, MBA Finance, UGC NET, PhD Pursuing (AMU)",
     experience: "18 years",
-    domain: "",
-  },
-  {
-    slug: "kamana-malik",
-    name: "Ms. Kamana Malik",
-    image: cloudinaryAsset("/home/faculty/faculty34.webp"),
-    qualification: "B.Com, M.Com, Data Science from IBM, B.Ed.",
-    experience: "10+ years",
     domain: "",
   },
   {
@@ -306,7 +282,7 @@ export const facultyData: Faculty[] = [
   },
   {
     slug: "ms-ridhi-sehgal",
-    name: "Ms. RIDHI SEHGAL",
+    name: "Ms. Ridhi Sehgal",
     image: cloudinaryAsset("/home/faculty/faculty036.png"),
     qualification: "PGDPM - NIPM-Kolkata",
     experience: "10+ yrs",

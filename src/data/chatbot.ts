@@ -15,10 +15,10 @@ export const chatbotFaqs: ChatbotFaq[] = [
   },
   {
     id: "pgdm",
-    question: "What PGDM programme does FOSTIIMA offer?",
+    question: "What PGDM Program does FOSTIIMA offer?",
     answer:
-      "FOSTIIMA offers a two-year full-time PGDM programme approved by AICTE (Ministry of HRD).",
-    keywords: ["pgdm", "mba", "course", "program", "programme"],
+      "FOSTIIMA offers a Two-year full-time PGDM Program approved by AICTE (Ministry of HRD).",
+    keywords: ["pgdm", "mba", "course", "program", "Program"],
   },
   {
     id: "eligibility",

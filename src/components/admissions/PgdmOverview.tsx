@@ -20,7 +20,7 @@ export default function PgdmOverview({
 
             <div>
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
-                Programme
+                Program
               </span>
 
               <h2 className="mt-2 text-2xl font-bold text-[#102a56] sm:text-3xl">
@@ -42,7 +42,7 @@ export default function PgdmOverview({
 
           <div className="mt-7 flex items-center gap-2 border-t border-slate-100 pt-5 text-md font-semibold text-[#102a56]">
             <BookOpenCheck className="h-4 w-4 text-[#c31e3b]" />
-            Two-year full-time PGDM programme
+            Two-year full-time PGDM Program
           </div>
         </div>
       </div>

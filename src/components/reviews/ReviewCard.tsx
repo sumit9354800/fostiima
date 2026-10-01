@@ -47,7 +47,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
         </p>
 
         <p className="mt-1 text-md text-slate-500">
-          {review.programme} • {review.batch}
+          {review.Program} • {review.batch}
         </p>
       </div>
     </article>

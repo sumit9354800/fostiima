@@ -52,7 +52,7 @@ export default function ContactHero() {
         </h1>
 
         <p className="mt-5 max-w-2xl text-base leading-7 text-[#b8c5d8] sm:text-lg">
-          Connect with FOSTIIMA Business School for admissions and programme
+          Connect with FOSTIIMA Business School for admissions and Program
           enquiries.
         </p>
       </div>

@@ -68,9 +68,9 @@ export const conclaveEvents: ConclaveEvent[] = [
     month: "MAR",
     year: "2026",
     date: "11 March 2026",
-    location: "At Fostiima Business School",
+    location: "At FOSTIIMA Business School",
     excerpt: "FOSTIIMA Convocation 2026",
-    content: "FOSTIIMA Convocation 2026 at Fostiima Business School.",
+    content: "FOSTIIMA Convocation 2026 at FOSTIIMA Business School.",
     bgImage: "",
 
     images: [
@@ -110,9 +110,9 @@ export const conclaveEvents: ConclaveEvent[] = [
     month: "FEB",
     year: "2026",
     date: "14 February 2026",
-    location: "Fostiima Business School",
+    location: "FOSTIIMA Business School",
     excerpt: "RESPONSIBLE AI SUMMIT 2026",
-    content: "RESPONSIBLE AI SUMMIT 2026 at Fostiima Business School.",
+    content: "RESPONSIBLE AI SUMMIT 2026 at FOSTIIMA Business School.",
     bgImage: cloudinaryAsset("/conclave/AI-Conclave-2026/AI1.JPG"),
     images: [
       cloudinaryAsset("/conclave/AI-Conclave-2026/AI1.JPG"),
@@ -266,9 +266,9 @@ export const conclaveEvents: ConclaveEvent[] = [
     month: "SEP",
     year: "2024",
     date: "11 September 2024",
-    location: "At Fostiima Business School, Delhi",
+    location: "At FOSTIIMA Business School, Delhi",
     excerpt: "Olympians Manu Bhaker.",
-    content: "Olympians Manu Bhaker. At Fostiima Business School, Delhi.",
+    content: "Olympians Manu Bhaker. At FOSTIIMA Business School, Delhi.",
     bgImage: "",
 
     images: [
@@ -295,9 +295,9 @@ export const conclaveEvents: ConclaveEvent[] = [
     month: "JUN",
     year: "2024",
     date: "28 June 2024",
-    location: "At Fostiima Business School",
+    location: "At FOSTIIMA Business School",
     excerpt: "HR Round Table 2024",
-    content: "HR Round Table 2024 at Fostiima Business School.",
+    content: "HR Round Table 2024 at FOSTIIMA Business School.",
     video: [
       "https://www.youtube-nocookie.com/embed/anidmyGO8TI",
       "https://www.youtube-nocookie.com/embed/v2csvRiB7QQ",

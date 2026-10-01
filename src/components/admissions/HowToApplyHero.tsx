@@ -77,7 +77,7 @@ export default function HowToApplyHero() {
           {/* Description */}
           <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8c5d8] sm:text-lg">
             Everything you need to know about applying to the FOSTIIMA
-            Business School PGDM programme.
+            Business School PGDM Program.
           </p>
 
           {/* CTA */}

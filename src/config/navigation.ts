@@ -23,7 +23,7 @@ export const navigationItems: NavigationItem[] = [
         href: "/about-us",
       },
       {
-        label: "About Fostiima",
+        label: "About FOSTIIMA",
         href: "/about-us#about-fostiima",
       },
       {

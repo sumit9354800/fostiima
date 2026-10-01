@@ -37,7 +37,7 @@ export default function AGLandingPage() {
           TOP BAR
       ========================================== */}
       <div className="bg-[#071d3b] px-4 py-2 text-center text-xs font-medium text-white sm:text-sm">
-        Admissions Open — PGDM Programme
+        Admissions Open — PGDM Program
       </div>
 
       {/* =========================================
@@ -65,10 +65,10 @@ export default function AGLandingPage() {
             </a>
 
             <a
-              href="#programme"
+              href="#Program"
               className="text-sm font-semibold text-slate-600 transition hover:text-[#c31e3b]"
             >
-              Programme
+              Program
             </a>
 
             <a
@@ -134,10 +134,10 @@ export default function AGLandingPage() {
               </button>
 
               <a
-                href="#programme"
+                href="#Program"
                 className="inline-flex items-center justify-center rounded-lg border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10"
               >
-                Explore Programme
+                Explore Program
               </a>
             </div>
 
@@ -267,14 +267,14 @@ export default function AGLandingPage() {
       </section>
 
       {/* =========================================
-          PROGRAMME
+          Program
       ========================================== */}
-      <section id="programme" className="bg-white py-16 sm:py-20">
+      <section id="Program" className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
-                Programme
+                Program
               </p>
 
               <h2 className="mt-3 text-3xl font-black text-[#123b79] sm:text-4xl">
@@ -282,7 +282,7 @@ export default function AGLandingPage() {
               </h2>
 
               <p className="mt-5 text-[15px] leading-7 text-slate-600">
-                A comprehensive management programme designed to develop
+                A comprehensive management Program designed to develop
                 business understanding, analytical thinking, leadership
                 capabilities and professional skills.
               </p>

@@ -86,7 +86,7 @@ export const adminModules = [
   },
   {
     title: "Academic Content",
-    description: "Manage academic and programme-related content.",
+    description: "Manage academic and Program-related content.",
     href: "/admin/academics",
     icon: School,
   },

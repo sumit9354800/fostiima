@@ -15,7 +15,7 @@ export default function NIRFIntake() {
               <thead>
                 <tr className="bg-[#061a3a] text-white">
                   <th className="px-5 py-4 font-semibold">
-                    Programme
+                    Program
                   </th>
 
                   {[

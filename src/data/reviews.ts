@@ -1,7 +1,7 @@
 export type Review = {
   id: string;
   name: string;
-  programme: string;
+  Program: string;
   batch: string;
   rating: number;
   review: string;
@@ -12,7 +12,7 @@ export const reviews: Review[] = [
   {
     id: "review-1",
     name: "Student Review",
-    programme: "PGDM",
+    Program: "PGDM",
     batch: "2023 - 2025",
     rating: 5,
     review:
@@ -21,7 +21,7 @@ export const reviews: Review[] = [
   {
     id: "review-2",
     name: "Student Review",
-    programme: "PGDM",
+    Program: "PGDM",
     batch: "2023 - 2025",
     rating: 5,
     review:
@@ -30,7 +30,7 @@ export const reviews: Review[] = [
   {
     id: "review-3",
     name: "Student Review",
-    programme: "PGDM",
+    Program: "PGDM",
     batch: "2022 - 2024",
     rating: 5,
     review:
