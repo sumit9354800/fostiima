@@ -100,20 +100,44 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        {/* =====================================================
+            GOOGLE ADS TAG — AW-11476359647
+        ====================================================== */}
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-11476359647"
           strategy="afterInteractive"
         />
 
-        <Script id="google-ads-gtag" strategy="afterInteractive">
+        <Script id="google-ads-gtag-11476359647" strategy="afterInteractive">
           {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-    gtag('config', 'AW-11476359647');
-  `}
+            gtag('config', 'AW-11476359647');
+          `}
         </Script>
+
+        {/* =====================================================
+            GOOGLE ADS TAG — AW-18383056369
+        ====================================================== */}
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18383056369"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads-gtag-18383056369" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18383056369');
+          `}
+        </Script>
+
         {children}
       </body>
     </html>
