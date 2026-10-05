@@ -84,7 +84,7 @@ export const facultyData: Faculty[] = [
     name: "Ms. Shailaja Manocha",
     image: cloudinaryAsset("/home/faculty/faculty9.webp"),
     qualification: "PGDBM (1988-1990) from IMT Ghaziabad",
-    experience: "20+ YEARS of INDUSTRY EXPERIENCE",
+    experience: "20+ years",
     domain: "Teaching",
   },
   {
@@ -93,16 +93,16 @@ export const facultyData: Faculty[] = [
     image: cloudinaryAsset("/home/faculty/faculty10.webp"),
     qualification:
       "52+ YEARS of INDUSTRY EXPERIENCE” ",
-    experience: "55+ YEARS of INDUSTRY EXPERIENCE",
+    experience: "52+",
     domain: "International Business, Supply Chain, Teaching",
   },
   {
     slug: "gita-ms-agrawal",
     name: "Ms. Gita Agrawal",
     image: cloudinaryAsset("/home/faculty/faculty11.webp"),
-    qualification: "Advertising",
-    experience: "28 years",
-    domain: "QSR”",
+    qualification: "28 Advertising",
+    experience: "28+ years",
+    domain: "QSR",
   },
   {
     slug: "nadira-chaturvedi",
@@ -134,7 +134,7 @@ export const facultyData: Faculty[] = [
     name: "SC Bansal",
     image: cloudinaryAsset("/home/faculty/faculty015.png"),
     qualification: "30+ YEARS INDUSTRY EXPERIENCE",
-    experience: "30+ years of experience",
+    experience: "30+ years",
     domain: "Teaching, Research",
   },
   {
@@ -151,7 +151,7 @@ export const facultyData: Faculty[] = [
     image: cloudinaryAsset("/home/faculty/faculty017.png"),
     qualification:
       "55+ YEARS of INDUSTRY EXPERIENCE” ",
-    experience: "55+ YEARS industry experience",
+    experience: "55+ YEARS",
     domain: "Supply Chain, FMCD, Consultancy, Teaching",
   },
   {
@@ -185,8 +185,8 @@ export const facultyData: Faculty[] = [
     name: "Brig. Ajay Mehta",
     image: cloudinaryAsset("/home/faculty/faculty021.jpeg"),
     qualification: "Ph.D. (Management), Management Studies (MMS)",
-    experience: "35+ years in Indian Army and 13 years teaching experience",
-    domain: "",
+    experience: "35+ years",
+    domain: "in Indian Army and 13 years teaching experience",
   },
   {
     slug: "ajit-gupta",
@@ -251,7 +251,7 @@ export const facultyData: Faculty[] = [
     name: "Ms. Harman Mangat",
     image: cloudinaryAsset("/home/faculty/faculty031.png"),
     qualification: "BCA, MBA (Marketing & IT), PGDITM, PhD Pursuing",
-    experience: "23 years",
+    experience: "23+ years",
     domain: "Digital Marketing",
   },
   {
@@ -269,7 +269,7 @@ export const facultyData: Faculty[] = [
     image: cloudinaryAsset("/home/faculty/faculty033.png"),
     qualification:
       "B.Com (H), M.Com, PGDM, MBA Finance, UGC NET, PhD Pursuing (AMU)",
-    experience: "18 years",
+    experience: "18+ years",
     domain: "",
   },
   {
