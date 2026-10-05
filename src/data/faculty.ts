@@ -141,7 +141,7 @@ export const facultyData: Faculty[] = [
     slug: "jayant-bose",
     name: "Mr. Jayant Bose",
     image: cloudinaryAsset("/home/faculty/faculty016.png"),
-    qualification: "40 YEARS INDUSTRY EXPERIENCE",
+    qualification: "40+ YEARS INDUSTRY EXPERIENCE",
     experience: "40+ years",
     domain: "Advertising, FMCG",
   },
@@ -151,7 +151,7 @@ export const facultyData: Faculty[] = [
     image: cloudinaryAsset("/home/faculty/faculty017.png"),
     qualification:
       "55+ YEARS of INDUSTRY EXPERIENCE” ",
-    experience: "55+ YEARS",
+    experience: "55+ years",
     domain: "Supply Chain, FMCD, Consultancy, Teaching",
   },
   {
