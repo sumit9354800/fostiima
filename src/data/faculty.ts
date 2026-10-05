@@ -202,7 +202,7 @@ export const facultyData: Faculty[] = [
     name: "Dr. Ruchika Yadav",
     image: cloudinaryAsset("/home/faculty/faculty023.png"),
     qualification: "Ph.D + M.Phil + MBA + BBA",
-    experience: "22+ years 3 months",
+    experience: "22+ years",
     domain: "HR & Management",
   },
   {
@@ -260,7 +260,7 @@ export const facultyData: Faculty[] = [
     image: cloudinaryAsset("/home/faculty/faculty032.png"),
     qualification:
       "B.Com (H), M.Com, PGDM, MBA Finance, UGC NET, PhD Pursuing (AMU)",
-    experience: "18 years",
+    experience: "18+ years",
     domain: "",
   },
   {
