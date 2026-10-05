@@ -92,8 +92,8 @@ export const facultyData: Faculty[] = [
     name: "Dr. Vikram Tyagi",
     image: cloudinaryAsset("/home/faculty/faculty10.webp"),
     qualification:
-      "52+ YEARS of INDUSTRY EXPERIENCE” ",
-    experience: "52+",
+      "55+ YEARS of INDUSTRY EXPERIENCE” ",
+    experience: "55+",
     domain: "International Business, Supply Chain, Teaching",
   },
   {
