@@ -92,17 +92,17 @@ export const facultyData: Faculty[] = [
     name: "Dr. Vikram Tyagi",
     image: cloudinaryAsset("/home/faculty/faculty10.webp"),
     qualification:
-      "55+ YEARS of INDUSTRY EXPERIENCE” ",
-    experience: "55+",
+      "52+ YEARS of INDUSTRY EXPERIENCE” ",
+    experience: "52+",
     domain: "International Business, Supply Chain, Teaching",
   },
   {
     slug: "gita-ms-agrawal",
-    name: "Ms. Gita Agrawal",
+    name: "Ms. Gita Agarwal",
     image: cloudinaryAsset("/home/faculty/faculty11.webp"),
     qualification: "28 Advertising",
     experience: "28+ years",
-    domain: "QSR",
+    domain: "Advertising, QSR",
   },
   {
     slug: "nadira-chaturvedi",
