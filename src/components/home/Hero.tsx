@@ -14,7 +14,7 @@ export default async function Hero() {
     },
   });
 
-  const heroVideo = hero?.videoUrl || DEFAULT_HERO_VIDEO;
+  const heroVideo = hero?.videoUrl || DEFAULT_HERO_VIDEO
 
   return (
     <section className="relative w-full overflow-hidden bg-[#071a35]">
