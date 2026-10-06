@@ -169,7 +169,8 @@ export const facultyData: Faculty[] = [
     image: cloudinaryAsset("/home/faculty/faculty019.jpeg"),
     qualification: "PGDM - IIM-A, B.Tech",
     experience: "9+ years",
-    domain: "Analyst, Data Finance",
+    domain: "Analyst, Data Finance", 
+    
   },
   // {
   //   slug: "prashant-k-chaudhary",
