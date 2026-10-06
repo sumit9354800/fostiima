@@ -29,7 +29,56 @@ export const feeStructureData: FeeStructureData = {
 
   totalFee: "Rs. 11,95,000/-",
 
-  installments: [],
+  installments: [
+    {
+      id: "registration",
+      name: "Registration Fee",
+      amount: "Rs. 75,000/-",
+      due: "Payable immediately on receipt of Offer Letter",
+    },
+    {
+      id: "first",
+      name: "First Installment",
+      amount: "Rs. 2,50,000/-",
+      due: "Payable within 30 days of Registration",
+    },
+    {
+      id: "second",
+      name: "Second Installment",
+      amount: "Rs. 3,00,000/-",
+      due: "Payable by or before 14.08.2027",
+    },
+    {
+      id: "third",
+      name: "Third Installment",
+      amount: "Rs. 2,25,000/-",
+      due: "Payable on or before 15.01.2028",
+    },
+    {
+      id: "fourth",
+      name: "Fourth Installment",
+      amount: "Rs. 1,25,000/-",
+      due: "Payable on or before 01.04.2028",
+    },
+    {
+      id: "fifth",
+      name: "Fifth Installment",
+      amount: "Rs. 1,20,000/-",
+      due: "Payable on or before 14.06.2028",
+    },
+    {
+      id: "sixth",
+      name: "Sixth Installment",
+      amount: "Rs. 1,00,000/-",
+      due: "Payable on or before 01.08.2028",
+    },
+    {
+      id: "total",
+      name: "Total Fee for PGDM Admissions 2027-29",
+      amount: "Rs. 11,95,000/-",
+      due: "",
+    },
+  ],
 
   selectGroup: {
     totalFee: "Rs. 12,75,000/-",

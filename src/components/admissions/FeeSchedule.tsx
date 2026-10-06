@@ -64,7 +64,7 @@ export default function FeeSchedule({
                             : "text-slate-700"
                         }`}
                       >
-                        {index + 1}. {installment.name}
+                        {/* {index + 1}. {installment.name} */}
                       </p>
                     </div>
                   </div>
