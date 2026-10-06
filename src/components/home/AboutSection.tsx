@@ -8,7 +8,6 @@ import {
 } from "lucide-react";
 
 import { prisma } from "@/lib/prisma";
-import ApplyFormWidget from "../admissions/ApplyForm";
 
 const ICONS = {
   Award,
@@ -71,7 +70,7 @@ export default async function AboutSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* =========================================
-            ABOUT + APPLICATION FORM
+            ABOUT + HIGHLIGHTS
         ========================================== */}
 
         <div
@@ -110,59 +109,50 @@ export default async function AboutSection() {
             </div>
           </div>
 
-          {/* RIGHT — EXTRAAEDGE APPLICATION FORM */}
+          {/* RIGHT — HIGHLIGHTS */}
 
           <div className="w-full">
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_10px_30px_rgba(18,59,121,0.08)]">
-              <ApplyFormWidget />
+            <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-2 lg:gap-4">
+              {about.highlights.map((item, index) => {
+                const Icon =
+                  ICONS[item.icon as keyof typeof ICONS] ?? Building2;
+
+                const color =
+                  ICON_COLORS[index % ICON_COLORS.length];
+
+                return (
+                  <article
+                    key={item.id}
+                    className="group rounded-xl border border-slate-200 bg-[#fbfcff] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d9e2f0] hover:shadow-[0_10px_25px_rgba(18,59,121,0.07)]"
+                  >
+                    <div className="flex flex-col gap-3">
+                      <div
+                        className={`flex h-10 w-10 items-center justify-center rounded-lg border ${color.border} ${color.background} ${color.text}`}
+                      >
+                        <Icon
+                          size={19}
+                          strokeWidth={1.8}
+                          aria-hidden="true"
+                        />
+                      </div>
+
+                      <div>
+                        <h3 className="text-[15px] font-bold leading-5 text-[#123b79]">
+                          {item.title}
+                        </h3>
+
+                        <p className="mt-1.5 text-[12px] leading-5 text-slate-500">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </div>
 
-        {/* =========================================
-            HIGHLIGHTS
-        ========================================== */}
-
-        <div className="mt-12 border-t border-slate-100 pt-10 sm:mt-14 sm:pt-12">
-          <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
-            {about.highlights.map((item, index) => {
-              const Icon =
-                ICONS[item.icon as keyof typeof ICONS] ?? Building2;
-
-              const color =
-                ICON_COLORS[index % ICON_COLORS.length];
-
-              return (
-                <article
-                  key={item.id}
-                  className="group rounded-xl border border-slate-200 bg-[#fbfcff] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d9e2f0] hover:shadow-[0_10px_25px_rgba(18,59,121,0.07)]"
-                >
-                  <div className="flex flex-col gap-3">
-                    <div
-                      className={`flex h-10 w-10 items-center justify-center rounded-lg border ${color.border} ${color.background} ${color.text}`}
-                    >
-                      <Icon
-                        size={19}
-                        strokeWidth={1.8}
-                        aria-hidden="true"
-                      />
-                    </div>
-
-                    <div>
-                      <h3 className="text-[15px] font-bold leading-5 text-[#123b79]">
-                        {item.title}
-                      </h3>
-
-                      <p className="mt-1.5 text-[12px] leading-5 text-slate-500">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
       </div>
     </section>
   );
