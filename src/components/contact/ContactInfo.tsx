@@ -16,8 +16,14 @@ const contactItems = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91-7678389436",
-    href: "tel:+917678389436",
+    value: "+91-76783 91245",
+    href: "tel:+917678391245",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "011-46126000",
+    href: "tel:011-46126000",
   },
 ];
 

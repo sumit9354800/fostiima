@@ -20,10 +20,10 @@ const adapter = new PrismaMariaDb({
   password: decodeURIComponent(parsedDatabaseUrl.password),
   database: parsedDatabaseUrl.pathname.replace(/^\//, ""),
 
-  // Keep this low for serverless/Vercel
-  connectionLimit: 2,
+  // Allow parallel homepage queries.
+  connectionLimit: 10,
 
-  // Optional: don't wait too long for a connection
+  // Don't wait indefinitely for a database connection.
   connectTimeout: 10000,
 });
 

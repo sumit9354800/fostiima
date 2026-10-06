@@ -358,7 +358,7 @@ export default function MobileMenu() {
                   hover:text-[#c31e3b]
                 "
               >
-                +91-7678389436
+                +91-76783 91245
               </a>
 
               <p className="text-md font-medium text-slate-700">

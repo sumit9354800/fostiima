@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { Download, FileText, PhoneCall, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import { usePathname, useRouter } from "next/navigation";
 
 const WHATSAPP_NUMBER = "917678389436";
 
@@ -14,80 +14,19 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
   WHATSAPP_MESSAGE,
 )}`;
 
+const APPLY_SCRIPT =
+  "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-2/widget.js";
+
 const CALLBACK_SCRIPT =
   "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-5/widget.js";
 
 const BROCHURE_SCRIPT =
   "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-6/widget.js";
 
-type PopupType = "callback" | "brochure" | null;
+type PopupType = "apply" | "callback" | "brochure" | null;
 
 export default function FloatingActions() {
   const [activePopup, setActivePopup] = useState<PopupType>(null);
-
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const goToApplyForm = () => {
-    const formSection = document.getElementById("apply-form");
-
-    /*
-     * If the Apply form exists on the current page,
-     * smoothly scroll to it.
-     */
-    if (formSection) {
-      formSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-
-      return;
-    }
-
-    /*
-     * If the Apply form does not exist on the current page,
-     * navigate to the homepage with the #apply-form hash.
-     */
-    router.push("/#apply-form");
-  };
-
-  /*
-   * When coming from another page to:
-   *
-   * /
-   * #apply-form
-   *
-   * Next.js navigates to the homepage first.
-   * After the homepage is mounted, find the section
-   * and scroll to it.
-   */
-  useEffect(() => {
-    if (pathname !== "/") return;
-
-    const hash = window.location.hash;
-
-    if (hash !== "#apply-form") return;
-
-    const scrollToForm = () => {
-      const formSection = document.getElementById("apply-form");
-
-      if (!formSection) return;
-
-      formSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    };
-
-    /*
-     * Wait for the homepage content to be rendered.
-     */
-    const timer = window.setTimeout(scrollToForm, 100);
-
-    return () => {
-      window.clearTimeout(timer);
-    };
-  }, [pathname]);
 
   useEffect(() => {
     if (!activePopup) {
@@ -101,6 +40,16 @@ export default function FloatingActions() {
       document.body.style.overflow = "";
     };
   }, [activePopup]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setActivePopup("apply");
+    }, 5000);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <>
@@ -189,7 +138,7 @@ export default function FloatingActions() {
 
         <button
           type="button"
-          onClick={goToApplyForm}
+          onClick={() => setActivePopup("apply")}
           className="
             group
             flex
@@ -359,6 +308,15 @@ export default function FloatingActions() {
           POPUPS
       ========================================== */}
 
+      {activePopup === "apply" && (
+        <ExtraaEdgePopup
+          title="Apply Online"
+          scriptUrl={APPLY_SCRIPT}
+          containerId="ee-form-2"
+          onClose={() => setActivePopup(null)}
+        />
+      )}
+
       {activePopup === "callback" && (
         <ExtraaEdgePopup
           title="Request a Call Back"
@@ -387,7 +345,7 @@ export default function FloatingActions() {
 type ExtraaEdgePopupProps = {
   title: string;
   scriptUrl: string;
-  containerId: "ee-form-5" | "ee-form-6";
+  containerId: "ee-form-2" | "ee-form-5" | "ee-form-6";
   onClose: () => void;
 };
 
@@ -402,9 +360,7 @@ function ExtraaEdgePopup({
       window.dispatchEvent(new Event("DOMContentLoaded"));
     };
 
-    const existingScript = document.querySelector(
-      `script[src="${scriptUrl}"]`,
-    );
+    const existingScript = document.querySelector(`script[src="${scriptUrl}"]`);
 
     if (existingScript) {
       initializeWidget();
@@ -445,96 +401,129 @@ function ExtraaEdgePopup({
   }, [onClose]);
 
   return (
-    <div
-      className="
-        fixed
-        inset-0
-        z-[100]
-        flex
-        items-center
-        justify-center
-        bg-black/60
-        p-4
-        backdrop-blur-sm
-      "
-      role="dialog"
-      aria-modal="true"
-      aria-label={title}
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) {
-          onClose();
-        }
-      }}
-    >
+    <>
+      {/* Form 2 popup sizing */}
+      {containerId === "ee-form-2" && (
+        <style jsx global>{`
+          #ee-form-2 {
+            width: 100% !important;
+            min-height: 0 !important;
+            height: auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+          }
+
+          #ee-form-2 iframe {
+            display: block !important;
+            width: 100% !important;
+            height: 430px !important;
+            min-height: 430px !important;
+            max-height: 430px !important;
+            border: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+
+          #ee-form-2 > div {
+            width: 100% !important;
+            max-height: 430px !important;
+            overflow: hidden !important;
+          }
+        `}</style>
+      )}
+
       <div
         className="
-          relative
-          max-h-[90vh]
-          w-full
-          max-w-[520px]
-          overflow-hidden
-          rounded-2xl
-          bg-white
-          shadow-[0_25px_80px_rgba(0,0,0,0.25)]
+          fixed
+          inset-0
+          z-[100]
+          flex
+          items-center
+          justify-center
+          bg-black/60
+          p-4
+          backdrop-blur-sm
         "
+        role="dialog"
+        aria-modal="true"
+        aria-label={title}
+        onMouseDown={(event) => {
+          if (event.target === event.currentTarget) {
+            onClose();
+          }
+        }}
       >
-        {/* Header */}
-
         <div
           className="
-            flex
-            items-center
-            justify-between
-            border-b
-            border-slate-200
-            bg-[#123b79]
-            px-5
-            py-4
+            relative
+            max-h-[90vh]
+            w-full
+            max-w-[520px]
+            overflow-hidden
+            rounded-2xl
+            bg-white
+            shadow-[0_25px_80px_rgba(0,0,0,0.25)]
           "
         >
-          <h2 className="text-base font-bold text-white sm:text-lg">
-            {title}
-          </h2>
+          {/* Header */}
 
-          <button
-            type="button"
-            onClick={onClose}
+          <div
             className="
               flex
-              h-9
-              w-9
               items-center
-              justify-center
-              rounded-full
-              bg-white/10
-              text-white
-              transition
-              hover:bg-white/20
-              focus:outline-none
-              focus:ring-2
-              focus:ring-white/60
+              justify-between
+              border-b
+              border-slate-200
+              bg-[#123b79]
+              px-5
+              py-4
             "
-            aria-label={`Close ${title}`}
-            title="Close"
           >
-            <X size={18} strokeWidth={2} />
-          </button>
-        </div>
+            <h2 className="text-base font-bold text-white sm:text-lg">
+              {title}
+            </h2>
 
-        {/* ExtraaEdge Form */}
+            <button
+              type="button"
+              onClick={onClose}
+              className="
+                flex
+                h-9
+                w-9
+                items-center
+                justify-center
+                rounded-full
+                bg-white/10
+                text-white
+                transition
+                hover:bg-white/20
+                focus:outline-none
+                focus:ring-2
+                focus:ring-white/60
+              "
+              aria-label={`Close ${title}`}
+              title="Close"
+            >
+              <X size={18} strokeWidth={2} />
+            </button>
+          </div>
 
-        <div
-          className="
-            max-h-[calc(90vh-73px)]
-            overflow-y-auto
-            bg-white
-            p-3
-            sm:p-5
-          "
-        >
-          <div id={containerId} className="w-full" />
+          {/* ExtraaEdge Form */}
+
+          <div
+            className="
+              max-h-[calc(90vh-73px)]
+              overflow-y-auto
+              bg-white
+              p-3
+              sm:p-5
+            "
+          >
+            <div id={containerId} className="w-full" />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

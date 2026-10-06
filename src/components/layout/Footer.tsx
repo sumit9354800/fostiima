@@ -133,7 +133,15 @@ export default function Footer() {
               >
                 <Phone className="h-4 w-4 text-[#eab308]" />
 
-                <span>+91-7678389436</span>
+                <span>+91-76783 91245</span>
+              </a>
+              <a
+                href="tel:011-46126000"
+                className="flex items-center gap-3 text-sm text-white/65 transition-colors hover:text-white"
+              >
+                <Phone className="h-4 w-4 text-[#eab308]" />
+
+                <span>011-46126000</span>
               </a>
 
               {/* Email */}
