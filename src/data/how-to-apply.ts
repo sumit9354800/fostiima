@@ -79,7 +79,7 @@ export const howToApplyData: HowToApplyData = {
   submission: {
     title: "Submission of Application",
     paragraphs: [
-      "Hand over the Application Form in person or fill and submit it online.",
+      "Hand over the Application Form in person or fill and submit it online with the documents listed above.",
     ],
   },
 
