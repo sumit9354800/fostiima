@@ -160,7 +160,7 @@ export const facultyData: Faculty[] = [
     image: cloudinaryAsset("/home/faculty/faculty018.png"),
     qualification:
       "B Tech (JNU, Delhi), Diploma in Advanced Computing (CDAC, Pune), Diploma in Management",
-    experience: "",
+    experience: "20+",
     domain: "",
   },
   {
