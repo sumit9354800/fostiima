@@ -135,6 +135,7 @@ export default function FloatingActions() {
         {/* =========================================
             APPLY
         ========================================== */}
+        
 
         <button
           type="button"
@@ -177,7 +178,7 @@ export default function FloatingActions() {
 
           <span
             className="
-              text-[7px]
+              text-[7px] 
               font-bold
               uppercase
               tracking-tight
