@@ -36,14 +36,14 @@ export const facultyData: Faculty[] = [
     name: "Mr. Rajeeva Kansal",
     image: cloudinaryAsset("/home/faculty/faculty3.webp"),
     qualification: "48+ YEARS INDUSTRY EXPERIENCE",
-    experience: "48 years",
+    experience: "48+ years",
     domain: "Industrial Products, Consultancy",
   },
   {
     slug: "dr-aditya-vij",
     name: "Dr. Aditya Vij",
     image: cloudinaryAsset("/home/faculty/faculty04.png"),
-    qualification: "30 YEARS INDUSTRY EXPERIENCE",
+    qualification: "30+ YEARS INDUSTRY EXPERIENCE",
     experience: "30+ years",
     domain: "Fashion Garments, Sourcing, Teaching",
   },
@@ -170,7 +170,7 @@ export const facultyData: Faculty[] = [
     qualification: "PGDM - IIM-A, B.Tech",
     experience: "9+ years",
     domain: "Analyst, Data Finance", 
-    
+
   },
   // {
   //   slug: "prashant-k-chaudhary",
@@ -236,7 +236,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Atul Mehta",
     image: cloudinaryAsset("/home/faculty/faculty029.png"),
     qualification: "MBA (IIM-A), BE",
-    experience: "13 years",
+    experience: "13+ years",
     domain: "Consulting (MNC), Financial Services",
   },
   {
@@ -244,7 +244,7 @@ export const facultyData: Faculty[] = [
     name: "Mr. Amit Grover",
     image: cloudinaryAsset("/home/faculty/faculty0030.jpeg"),
     qualification: "M.Com, B.Com (H)",
-    experience: "12 years",
+    experience: "12+ years",
     domain: "",
   },
   {
@@ -334,7 +334,7 @@ export const facultyData: Faculty[] = [
     name: "Mohammad Maroof",
     image: cloudinaryAsset("/home/faculty/faculty043.jpeg"),
     qualification: "B.Com (Hons), MBA Jamia Millia Islamia, New Delhi",
-    experience: "18 years",
+    experience: "18+ years",
     domain: "",
   },
 ];
