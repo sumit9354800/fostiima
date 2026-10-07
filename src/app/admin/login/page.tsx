@@ -60,7 +60,7 @@ export default function AdminLoginPage() {
           </h1>
 
           <p className="mt-3 text-sm leading-6 text-slate-500">
-            Sign in to manage the FOSTIIMA website.
+            Sign in to manage the FOSTIIMA website. 
           </p>
 
           <form
