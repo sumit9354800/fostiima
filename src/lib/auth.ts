@@ -13,15 +13,21 @@ export const auth = betterAuth({
     enabled: true,
   },
 
-  plugins: [
-    admin(),
-  ],
+  plugins: [admin()],
 
-  baseURL: process.env.BETTER_AUTH_URL,
+  baseURL: {
+    allowedHosts: [
+      "fostiima.org",
+      "www.fostiima.org",
+      "*.vercel.app",
+    ],
+    protocol: "https",
+    fallback: "https://fostiima.org",
+  },
 
   trustedOrigins: [
     "http://localhost:3000",
-    "https://www.fostiima.org",
     "https://fostiima.org",
+    "https://www.fostiima.org",
   ],
 });
