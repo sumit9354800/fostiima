@@ -6,7 +6,6 @@ type BlogContentProps = {
 
 /**
  * Escapes plain text before it is rendered as HTML.
- * This keeps old blog paragraphs containing "<" or ">" working correctly.
  */
 function escapeHtml(value: string) {
   return value
@@ -18,15 +17,16 @@ function escapeHtml(value: string) {
 }
 
 /**
- * Converts a saved paragraph into safe HTML.
+ * Converts saved paragraph HTML into safe HTML.
  *
- * The admin paragraph editor can save:
- *
- * <a href="https://example.com">some text</a>
- * <br />
- * <strong>bold</strong>
- *
- * Only the tags and attributes that the blog editor supports are allowed.
+ * Supported:
+ * - <a>
+ * - <br>
+ * - <strong>
+ * - <b>
+ * - <em>
+ * - <i>
+ * - <u>
  */
 function sanitizeParagraphHtml(value: string) {
   if (!value) {
@@ -39,19 +39,12 @@ function sanitizeParagraphHtml(value: string) {
     return "";
   }
 
-  /*
-   * Old blog content is plain text.
-   *
-   * If there is no supported HTML tag, treat the entire value as plain text.
-   * This prevents normal text such as:
-   *
-   * 10 < 20
-   *
-   * from accidentally being interpreted as HTML.
-   */
   const containsSupportedHtml =
     /<\/?(a|br|strong|b|em|i|u)\b/i.test(trimmed);
 
+  /*
+   * Old blogs can contain plain text.
+   */
   if (!containsSupportedHtml) {
     return escapeHtml(value).replace(/\r?\n/g, "<br />");
   }
@@ -59,10 +52,7 @@ function sanitizeParagraphHtml(value: string) {
   let html = value;
 
   /*
-   * Remove dangerous / unsupported tags.
-   *
-   * We only need these tags because those are the tags supported
-   * by the paragraph editor.
+   * Remove unsupported HTML tags.
    */
   html = html.replace(
     /<(?!\/?(?:a|br|strong|b|em|i|u)\b)[^>]*>/gi,
@@ -70,7 +60,7 @@ function sanitizeParagraphHtml(value: string) {
   );
 
   /*
-   * Remove every attribute from formatting tags.
+   * Remove attributes from formatting tags.
    */
   html = html.replace(
     /<(strong|b|em|i|u)(?:\s[^>]*)?>/gi,
@@ -78,20 +68,12 @@ function sanitizeParagraphHtml(value: string) {
   );
 
   /*
-   * Normalize <br> variations.
+   * Normalize <br>.
    */
   html = html.replace(/<br\s*\/?>/gi, "<br />");
 
   /*
-   * Sanitize <a> tags.
-   *
-   * Allowed:
-   * - https://
-   * - http://
-   * - mailto:
-   * - tel:
-   * - /internal/path
-   * - #anchor
+   * Sanitize links.
    */
   html = html.replace(
     /<a\b([^>]*)>([\s\S]*?)<\/a>/gi,
@@ -121,10 +103,7 @@ function sanitizeParagraphHtml(value: string) {
   );
 
   /*
-   * Remove any remaining attributes from <a> tags.
-   *
-   * This makes sure things such as onclick, style, onmouseover etc.
-   * cannot survive into the final HTML.
+   * Remove any remaining attributes from links.
    */
   html = html.replace(
     /<a\b[^>]*href="([^"]*)"[^>]*>/gi,
@@ -139,9 +118,12 @@ function sanitizeParagraphHtml(value: string) {
   html = html.replace(/<br\s+[^>]*>/gi, "<br />");
 
   /*
-   * Normalize supported formatting tags one final time.
+   * Normalize formatting tags.
    */
-  html = html.replace(/<(strong|b|em|i|u)\s+[^>]*>/gi, "<$1>");
+  html = html.replace(
+    /<(strong|b|em|i|u)\s+[^>]*>/gi,
+    "<$1>",
+  );
 
   return html;
 }
@@ -189,7 +171,7 @@ export default function BlogContent({
             return (
               <p
                 key={index}
-                className="text-base leading-8 text-[#30415f]"
+                className="blog-content-paragraph text-base leading-8 text-[#30415f]"
                 dangerouslySetInnerHTML={{
                   __html: sanitizeParagraphHtml(block.content),
                 }}
@@ -234,14 +216,16 @@ export default function BlogContent({
                 <table className="w-full min-w-[640px] border-collapse overflow-hidden rounded-xl border border-[#dbe3ee]">
                   <thead>
                     <tr className="bg-[#061a3a]">
-                      {block.headers.map((header, headerIndex) => (
-                        <th
-                          key={headerIndex}
-                          className="border border-[#183f78] px-5 py-4 text-left text-sm font-bold text-white"
-                        >
-                          {header}
-                        </th>
-                      ))}
+                      {block.headers.map(
+                        (header, headerIndex) => (
+                          <th
+                            key={headerIndex}
+                            className="border border-[#183f78] px-5 py-4 text-left text-sm font-bold text-white"
+                          >
+                            {header}
+                          </th>
+                        ),
+                      )}
                     </tr>
                   </thead>
 
