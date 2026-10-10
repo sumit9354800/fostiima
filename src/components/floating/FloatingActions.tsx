@@ -1,9 +1,8 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
-
 import { Download, FileText, PhoneCall, X } from "lucide-react";
-
 import { FaWhatsapp } from "react-icons/fa";
 
 const WHATSAPP_NUMBER = "917678389436";
@@ -11,18 +10,18 @@ const WHATSAPP_NUMBER = "917678389436";
 const WHATSAPP_MESSAGE =
   "Hello FOSTIIMA Business School, I would like to know more about the PGDM/MBA programmes.";
 
-const WHATSAPP_URL = `https\://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE,
 )}`;
 
 const APPLY_SCRIPT =
-  "https\://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-2/widget.js";
+  "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-2/widget.js";
 
 const CALLBACK_SCRIPT =
-  "https\://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-5/widget.js";
+  "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-5/widget.js";
 
 const BROCHURE_SCRIPT =
-  "https\://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-6/widget.js";
+  "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-6/widget.js";
 
 type PopupType = "apply" | "callback" | "brochure" | null;
 
@@ -32,7 +31,6 @@ export default function FloatingActions() {
   useEffect(() => {
     if (!activePopup) {
       document.body.style.overflow = "";
-
       return;
     }
 
@@ -56,41 +54,26 @@ export default function FloatingActions() {
   return (
     <>
       {/* FLOATING ACTIONS */}
-
       <div
         className="
-
           fixed right-4 top-1/2 z-[80]
-
           flex -translate-y-1/2 flex-col
-
           overflow-hidden rounded-xl border border-slate-200
-
           bg-white shadow-[0_8px_30px_rgba(21,45,88,0.16)]
-
           sm:right-5
-
         "
       >
         {/* DOWNLOAD BROCHURE */}
-
         <button
           type="button"
           onClick={() => setActivePopup("brochure")}
           className="
-
             group flex h-12 w-12 flex-col items-center justify-center
-
             gap-0.5 border-b border-slate-200 bg-white
-
             text-[#152d58] transition-all duration-300
-
             hover:bg-[#c31e3b] hover:text-white
-
             focus:outline-none focus:ring-2 focus:ring-inset
-
             focus:ring-[#c31e3b] sm:h-14 sm:w-14
-
           "
           aria-label="Download Brochure"
           title="Download Brochure"
@@ -100,29 +83,21 @@ export default function FloatingActions() {
             strokeWidth={2}
             className="transition-transform duration-200 group-hover:-translate-y-0.5"
           />
-
           <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
             Brochure
           </span>
         </button>
 
         {/* APPLY ONLINE */}
-
         <button
           type="button"
           onClick={() => setActivePopup("apply")}
           className="
-
             group flex h-12 w-12 flex-col items-center justify-center
-
             gap-0.5 border-b border-slate-200 bg-[#c31e3b]
-
             text-white transition-all duration-300 hover:bg-[#a91731]
-
             focus:outline-none focus:ring-2 focus:ring-inset
-
             focus:ring-[#c31e3b] sm:h-14 sm:w-14
-
           "
           aria-label="Apply Online"
           title="Apply Online"
@@ -132,65 +107,47 @@ export default function FloatingActions() {
             strokeWidth={2}
             className="transition-transform duration-200 group-hover:-translate-y-0.5"
           />
-
           <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
             Apply
           </span>
         </button>
 
         {/* REQUEST CALLBACK */}
-
         <button
           type="button"
           onClick={() => setActivePopup("callback")}
           className="
-
             group flex h-12 w-12 flex-col items-center justify-center
-
             gap-0.5 border-b border-slate-200 bg-white
-
             text-[#152d58] transition-all duration-300
-
             hover:bg-[#c31e3b] hover:text-white
-
             focus:outline-none focus:ring-2 focus:ring-inset
-
             focus:ring-[#c31e3b] sm:h-14 sm:w-14
-
           "
           aria-label="Request a Call Back"
           title="Request a Call Back"
         >
-          
           <PhoneCall
             size={17}
             strokeWidth={2}
             className="transition-transform duration-200 group-hover:-translate-y-0.5"
           />
-
           <span className="text-center text-[7px] font-bold uppercase leading-tight tracking-tight sm:text-[8px]">
             Callback
           </span>
         </button>
 
         {/* WHATSAPP */}
-
         <a
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="
-
             group flex h-12 w-12 flex-col items-center justify-center
-
             gap-0.5 bg-white text-[#25D366]
-
             transition-all duration-300 hover:bg-[#25D366] hover:text-white
-
             focus:outline-none focus:ring-2 focus:ring-inset
-
             focus:ring-[#25D366] sm:h-14 sm:w-14
-
           "
           aria-label="Contact FOSTIIMA on WhatsApp"
           title="WhatsApp"
@@ -200,7 +157,6 @@ export default function FloatingActions() {
             aria-hidden="true"
             className="transition-transform duration-200 group-hover:scale-110"
           />
-
           <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
             WhatsApp
           </span>
@@ -208,7 +164,6 @@ export default function FloatingActions() {
       </div>
 
       {/* POPUPS */}
-
       {activePopup === "apply" && (
         <ExtraaEdgePopup
           title="Apply Online"
@@ -243,84 +198,18 @@ export default function FloatingActions() {
 
 type ExtraaEdgePopupProps = {
   title: string;
-
   scriptUrl: string;
-
   containerId: "ee-form-2" | "ee-form-5" | "ee-form-6";
-
   onClose: () => void;
 };
 
 function ExtraaEdgePopup({
   title,
-
   scriptUrl,
-
   containerId,
-
   onClose,
 }: ExtraaEdgePopupProps) {
   useEffect(() => {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    let submitAttempted = false;
-    let conversionSent = false;
-
-    const handleSubmit = () => {
-      submitAttempted = true;
-    };
-
-    const handleClick = (event: MouseEvent) => {
-      if (!(event.target instanceof Element)) return;
-      if (event.target.closest('button[type="submit"], input[type="submit"]')) {
-        submitAttempted = true;
-      }
-    };
-
-    container.addEventListener("submit", handleSubmit, true);
-    container.addEventListener("click", handleClick, true);
-
-    const successMessages = [
-      "submitted successfully",
-      "successfully submitted",
-      "thank you for your enquiry",
-      "thank you for contacting us",
-      "application submitted",
-      "form submitted successfully",
-    ];
-
-    const observer = new MutationObserver(() => {
-      if (!submitAttempted || conversionSent) return;
-      const message = (container.innerText || "").toLowerCase();
-      if (!successMessages.some((text) => message.includes(text))) return;
-
-      const gtag = (
-        window as Window & {
-          gtag?: (...args: unknown[]) => void;
-        }
-      ).gtag;
-
-      if (typeof gtag !== "function") {
-        console.warn("Google Ads gtag is not available.");
-        return;
-      }
-
-      conversionSent = true;
-      gtag("event", "conversion", {
-        send_to: "AW-18383056369/QQL4CJKM644dEPHb3L1E",
-        value: 1.0,
-        currency: "INR",
-      });
-      console.log(`Google Ads conversion sent: ${containerId}`);
-    });
-
-    observer.observe(container, {
-      childList: true,
-      subtree: true,
-      characterData: true,
-    });
-
     const initializeWidget = () => {
       window.dispatchEvent(new Event("DOMContentLoaded"));
     };
@@ -331,24 +220,21 @@ function ExtraaEdgePopup({
 
     if (existingScript) {
       initializeWidget();
-    } else {
-      const script = document.createElement("script");
-      script.src = scriptUrl;
-      script.type = "text/javascript";
-      script.async = true;
-      script.onload = initializeWidget;
-      script.onerror = () => {
-        console.error(`Failed to load ExtraaEdge widget: ${scriptUrl}`);
-      };
-      document.body.appendChild(script);
+      return;
     }
 
-    return () => {
-      observer.disconnect();
-      container.removeEventListener("submit", handleSubmit, true);
-      container.removeEventListener("click", handleClick, true);
+    const script = document.createElement("script");
+    script.src = scriptUrl;
+    script.type = "text/javascript";
+    script.async = true;
+    script.onload = initializeWidget;
+
+    script.onerror = () => {
+      console.error(`Failed to load ExtraaEdge widget: ${scriptUrl}`);
     };
-  }, [containerId, scriptUrl]);
+
+    document.body.appendChild(script);
+  }, [scriptUrl]);
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -368,43 +254,29 @@ function ExtraaEdgePopup({
     <>
       {containerId === "ee-form-2" && (
         <style jsx global>{`
-          \#ee-form-2 {
+          #ee-form-2 {
             width: 100% !important;
-
             min-height: 0 !important;
-
             height: auto !important;
-
             margin: 0 !important;
-
             padding: 0 !important;
-
             overflow: hidden !important;
           }
 
-          \#ee-form-2 iframe {
+          #ee-form-2 iframe {
             display: block !important;
-
             width: 100% !important;
-
             height: 430px !important;
-
             min-height: 430px !important;
-
             max-height: 430px !important;
-
             border: 0 !important;
-
             margin: 0 !important;
-
             padding: 0 !important;
           }
 
-          \#ee-form-2 > div {
+          #ee-form-2 > div {
             width: 100% !important;
-
             max-height: 430px !important;
-
             overflow: hidden !important;
           }
         `}</style>
@@ -412,11 +284,8 @@ function ExtraaEdgePopup({
 
       <div
         className="
-
           fixed inset-0 z-[100] flex items-center justify-center
-
           bg-black/60 p-4 backdrop-blur-sm
-
         "
         role="dialog"
         aria-modal="true"
@@ -429,22 +298,15 @@ function ExtraaEdgePopup({
       >
         <div
           className="
-
             relative max-h-[90vh] w-full max-w-[520px]
-
             overflow-hidden rounded-2xl bg-white
-
             shadow-[0_25px_80px_rgba(0,0,0,0.25)]
-
           "
         >
           <div
             className="
-
               flex items-center justify-between border-b
-
               border-slate-200 bg-[#123b79] px-5 py-4
-
             "
           >
             <h2 className="text-base font-bold text-white sm:text-lg">
@@ -455,13 +317,9 @@ function ExtraaEdgePopup({
               type="button"
               onClick={onClose}
               className="
-
                 flex h-9 w-9 items-center justify-center rounded-full
-
                 bg-white/10 text-white transition hover:bg-white/20
-
                 focus:outline-none focus:ring-2 focus:ring-white/60
-
               "
               aria-label={`Close ${title}`}
               title="Close"
@@ -472,11 +330,8 @@ function ExtraaEdgePopup({
 
           <div
             className="
-
               max-h-[calc(90vh-73px)] overflow-y-auto bg-white
-
               p-3 sm:p-5
-
             "
           >
             <div id={containerId} className="w-full" />
