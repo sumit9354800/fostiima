@@ -282,9 +282,9 @@ export default function AGLandingPage() {
               </h2>
 
               <p className="mt-5 text-[15px] leading-7 text-slate-600">
-                A comprehensive management Program designed to develop
-                business understanding, analytical thinking, leadership
-                capabilities and professional skills.
+                A comprehensive management Program designed to develop business
+                understanding, analytical thinking, leadership capabilities and
+                professional skills.
               </p>
 
               <button
@@ -421,6 +421,76 @@ function ApplyFormWidget() {
     const WIDGET_SCRIPT =
       "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-7/widget.js";
 
+    const container = document.getElementById("ee-form-7");
+    if (!container) return;
+
+    let submitAttempted = false;
+    let conversionSent = false;
+
+    const handleSubmit = () => {
+      submitAttempted = true;
+    };
+
+    // Detect submission attempts inside the embedded form.
+    container.addEventListener("submit", handleSubmit, true);
+
+    container.addEventListener(
+      "click",
+      (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        const button = target.closest(
+          'button[type="submit"], input[type="submit"]',
+        );
+
+        if (button) submitAttempted = true;
+      },
+      true,
+    );
+
+    const successObserver = new MutationObserver(() => {
+      if (!submitAttempted || conversionSent) return;
+
+      const text = container.innerText.toLowerCase();
+
+      const successMessages = [
+        "submitted successfully",
+        "successfully submitted",
+        "thank you for your enquiry",
+        "thank you for contacting us",
+        "application submitted",
+        "form submitted successfully",
+      ];
+
+      const successDetected = successMessages.some((message) =>
+        text.includes(message),
+      );
+
+      if (!successDetected) return;
+
+      if (typeof window.gtag !== "function") {
+        console.warn("Google Ads gtag is not available.");
+        return;
+      }
+
+      conversionSent = true;
+
+      window.gtag("event", "conversion", {
+        send_to: "AW-18383056369/QQL4CJKM644dEPHb3L1E",
+        value: 1.0,
+        currency: "INR",
+      });
+
+      console.log("Google Ads lead conversion sent.");
+    });
+
+    successObserver.observe(container, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+
     const initializeWidget = () => {
       window.dispatchEvent(new Event("DOMContentLoaded"));
     };
@@ -431,25 +501,22 @@ function ApplyFormWidget() {
 
     if (existingScript) {
       initializeWidget();
-      return;
+    } else {
+      const script = document.createElement("script");
+      script.src = WIDGET_SCRIPT;
+      script.type = "text/javascript";
+      script.async = true;
+      script.onload = initializeWidget;
+      script.onerror = () => {
+        console.error("Failed to load FOSTIIMA application form widget.");
+      };
+
+      document.body.appendChild(script);
     }
 
-    const script = document.createElement("script");
-
-    script.src = WIDGET_SCRIPT;
-    script.type = "text/javascript";
-    script.async = true;
-
-    script.onload = initializeWidget;
-
-    script.onerror = () => {
-      console.error("Failed to load FOSTIIMA application form widget.");
-    };
-
-    document.body.appendChild(script);
-
     return () => {
-      // Keep the widget script loaded.
+      successObserver.disconnect();
+      container.removeEventListener("submit", handleSubmit, true);
     };
   }, []);
 

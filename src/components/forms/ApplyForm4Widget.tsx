@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect } from "react";
@@ -11,6 +10,76 @@ export default function ApplyForm4Widget() {
     const container = document.getElementById("ee-form-4");
 
     if (!container) return;
+
+    let submitAttempted = false;
+    let conversionSent = false;
+
+    const handleSubmit = () => {
+      submitAttempted = true;
+    };
+
+    container.addEventListener("submit", handleSubmit, true);
+
+    container.addEventListener(
+      "click",
+      (event) => {
+        const target = event.target;
+
+        if (!(target instanceof Element)) return;
+
+        const button = target.closest(
+          'button[type="submit"], input[type="submit"]',
+        );
+
+        if (button) submitAttempted = true;
+      },
+      true,
+    );
+
+    const successObserver = new MutationObserver(() => {
+      if (!submitAttempted || conversionSent) return;
+
+      const text = container.innerText.toLowerCase();
+
+      const successMessages = [
+        "submitted successfully",
+        "successfully submitted",
+        "thank you for your enquiry",
+        "thank you for contacting us",
+        "application submitted",
+        "form submitted successfully",
+      ];
+
+      const successDetected = successMessages.some((message) =>
+        text.includes(message),
+      );
+
+      if (!successDetected) return;
+
+      if (typeof window.gtag !== "function") {
+        console.warn("Google Ads gtag is not available.");
+        return;
+      }
+
+      conversionSent = true;
+
+      window.gtag("event", "conversion", {
+        send_to: "AW-18383056369/QQL4CJKM644dEPHb3L1E",
+        value: 1.0,
+        currency: "INR",
+      });
+
+      console.log("Google Ads Form 4 conversion sent.");
+    });
+
+    successObserver.observe(container, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+
+    const WIDGET_SCRIPT =
+      "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-4/widget.js";
 
     const initializeWidget = () => {
       window.dispatchEvent(new Event("DOMContentLoaded"));
@@ -31,13 +100,16 @@ export default function ApplyForm4Widget() {
       script.onload = initializeWidget;
 
       script.onerror = () => {
-        console.error(
-          "Failed to load FOSTIIMA Form 4 application widget.",
-        );
+        console.error("Failed to load FOSTIIMA Form 4 application widget.");
       };
 
       document.body.appendChild(script);
     }
+
+    return () => {
+      successObserver.disconnect();
+      container.removeEventListener("submit", handleSubmit, true);
+    };
   }, []);
 
   return (
