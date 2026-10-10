@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   ArrowLeft,
@@ -17,7 +16,8 @@ import {
 import { useState } from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import Link from "@tiptap/extension-link";
+import NextLink from "next/link";
+import TiptapLink from "@tiptap/extension-link";
 
 type BlockType = "heading" | "paragraph" | "image" | "table";
 
@@ -114,7 +114,6 @@ function slugify(value: string) {
     .replace(/-+/g, "-");
 }
 
-
 /** Rich-text editor for article heading/paragraph blocks. Content is stored as HTML. */
 function RichTextBlockEditor({
   value,
@@ -136,7 +135,7 @@ function RichTextBlockEditor({
         orderedList: false,
         horizontalRule: false,
       }),
-      Link.configure({
+      TiptapLink.configure({
         openOnClick: false,
         autolink: true,
         linkOnPaste: true,
@@ -150,7 +149,8 @@ function RichTextBlockEditor({
     content: value || "",
     editorProps: {
       attributes: {
-        class: "min-h-[130px] w-full px-4 py-3 text-sm leading-7 text-slate-800 outline-none",
+        class:
+          "min-h-[130px] w-full px-4 py-3 text-sm leading-7 text-slate-800 outline-none",
         "data-placeholder": placeholder,
       },
     },
@@ -160,38 +160,81 @@ function RichTextBlockEditor({
   const addLink = () => {
     if (!editor) return;
     const previousUrl = editor.getAttributes("link").href as string | undefined;
-    const enteredUrl = window.prompt("Link URL (https://...)", previousUrl || "https://");
+    const enteredUrl = window.prompt(
+      "Link URL (https://...)",
+      previousUrl || "https://",
+    );
     if (enteredUrl === null) return;
     const href = enteredUrl.trim();
     if (!href) {
       editor.chain().focus().extendMarkRange("link").unsetLink().run();
       return;
     }
-    const safeUrl = /^(https?:\/\/|mailto:|tel:)/i.test(href) ? href : `https://${href}`;
-    editor.chain().focus().extendMarkRange("link").setLink({ href: safeUrl }).run();
+    const safeUrl = /^(https?:\/\/|mailto:|tel:)/i.test(href)
+      ? href
+      : `https://${href}`;
+    editor
+      .chain()
+      .focus()
+      .extendMarkRange("link")
+      .setLink({ href: safeUrl })
+      .run();
   };
 
-  const toolbarButton = "inline-flex h-9 items-center justify-center gap-1.5 rounded-md border border-slate-200 bg-white px-3 text-xs font-semibold text-slate-600 transition hover:border-[#123b79] hover:text-[#123b79] disabled:cursor-not-allowed disabled:opacity-40";
+  const toolbarButton =
+    "inline-flex h-9 items-center justify-center gap-1.5 rounded-md border border-slate-200 bg-white px-3 text-xs font-semibold text-slate-600 transition hover:border-[#123b79] hover:text-[#123b79] disabled:cursor-not-allowed disabled:opacity-40";
 
   return (
     <div className="overflow-hidden rounded-lg border border-slate-200 bg-white focus-within:border-[#123b79]">
       <div className="flex flex-wrap gap-2 border-b border-slate-200 bg-slate-50 p-2">
-        <button type="button" disabled={!editor} onMouseDown={(event) => event.preventDefault()} onClick={() => editor?.chain().focus().toggleBold().run()} className={`${toolbarButton} ${editor?.isActive("bold") ? "border-[#123b79] bg-[#123b79]/5 text-[#123b79]" : ""}`} title="Bold">
+        <button
+          type="button"
+          disabled={!editor}
+          onMouseDown={(event) => event.preventDefault()}
+          onClick={() => editor?.chain().focus().toggleBold().run()}
+          className={`${toolbarButton} ${editor?.isActive("bold") ? "border-[#123b79] bg-[#123b79]/5 text-[#123b79]" : ""}`}
+          title="Bold"
+        >
           <Bold size={15} /> Bold
         </button>
-        <button type="button" disabled={!editor} onMouseDown={(event) => event.preventDefault()} onClick={() => editor?.chain().focus().toggleItalic().run()} className={`${toolbarButton} ${editor?.isActive("italic") ? "border-[#123b79] bg-[#123b79]/5 text-[#123b79]" : ""}`} title="Italic">
+        <button
+          type="button"
+          disabled={!editor}
+          onMouseDown={(event) => event.preventDefault()}
+          onClick={() => editor?.chain().focus().toggleItalic().run()}
+          className={`${toolbarButton} ${editor?.isActive("italic") ? "border-[#123b79] bg-[#123b79]/5 text-[#123b79]" : ""}`}
+          title="Italic"
+        >
           <Italic size={15} /> Italic
         </button>
-        <button type="button" disabled={!editor} onMouseDown={(event) => event.preventDefault()} onClick={addLink} className={`${toolbarButton} ${editor?.isActive("link") ? "border-[#123b79] bg-[#123b79]/5 text-[#123b79]" : ""}`} title="Select text first, then add a link">
+        <button
+          type="button"
+          disabled={!editor}
+          onMouseDown={(event) => event.preventDefault()}
+          onClick={addLink}
+          className={`${toolbarButton} ${editor?.isActive("link") ? "border-[#123b79] bg-[#123b79]/5 text-[#123b79]" : ""}`}
+          title="Select text first, then add a link"
+        >
           <Link2 size={15} /> Add Link
         </button>
-        <button type="button" disabled={!editor || !editor.isActive("link")} onMouseDown={(event) => event.preventDefault()} onClick={() => editor?.chain().focus().extendMarkRange("link").unsetLink().run()} className={toolbarButton} title="Remove link">
+        <button
+          type="button"
+          disabled={!editor || !editor.isActive("link")}
+          onMouseDown={(event) => event.preventDefault()}
+          onClick={() =>
+            editor?.chain().focus().extendMarkRange("link").unsetLink().run()
+          }
+          className={toolbarButton}
+          title="Remove link"
+        >
           <Unlink size={15} /> Remove Link
         </button>
       </div>
       <EditorContent editor={editor} />
       <style jsx global>{`
-        .tiptap p { margin: 0; }
+        .tiptap p {
+          margin: 0;
+        }
         .tiptap p.is-editor-empty:first-child::before {
           color: #94a3b8;
           content: attr(data-placeholder);
@@ -199,7 +242,11 @@ function RichTextBlockEditor({
           height: 0;
           pointer-events: none;
         }
-        .tiptap a { color: #123b79; text-decoration: underline; text-underline-offset: 2px; }
+        .tiptap a {
+          color: #123b79;
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
       `}</style>
       <div className="border-t border-slate-100 px-4 py-2 text-[11px] text-slate-400">
         Text ko select karein, phir Add Link par click karke URL enter karein.
@@ -534,7 +581,12 @@ export default function BlogEditor({
           return Boolean(block.src?.trim());
         }
 
-        return block.content.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim().length > 0;
+        return (
+          block.content
+            .replace(/<[^>]*>/g, "")
+            .replace(/&nbsp;/g, " ")
+            .trim().length > 0
+        );
       })
       .map((block) => ({
         type: block.type,
@@ -629,13 +681,13 @@ export default function BlogEditor({
 
         <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <Link
+            <NextLink
               href="/admin/blog"
               className="mb-3 inline-flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-[#123b79]"
             >
               <ArrowLeft size={16} />
               Back to Blogs
-            </Link>
+            </NextLink>
 
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
               Blog Management
@@ -986,7 +1038,9 @@ export default function BlogEditor({
                   {(block.type === "heading" || block.type === "paragraph") && (
                     <RichTextBlockEditor
                       value={block.content}
-                      onChange={(value) => updateBlock(block.id, "content", value)}
+                      onChange={(value) =>
+                        updateBlock(block.id, "content", value)
+                      }
                       placeholder={
                         block.type === "heading"
                           ? "Enter heading..."
@@ -1167,12 +1221,12 @@ export default function BlogEditor({
           {/* Bottom save */}
 
           <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-            <Link
+            <NextLink
               href="/admin/blog"
               className="inline-flex h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-600"
             >
               Cancel
-            </Link>
+            </NextLink>
 
             <button
               type="submit"
