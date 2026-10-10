@@ -1,343 +1,290 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Download, FileText, PhoneCall, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WHATSAPP_NUMBER = "917678389436";
+const WHATSAPP_MESSAGE = "Hello FOSTIIMA Business School, I would like to know more about the PGDM/MBA programmes.";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
-const WHATSAPP_MESSAGE =
-  "Hello FOSTIIMA Business School, I would like to know more about the PGDM/MBA programmes.";
+type PopupType = "apply" | "callback" | "brochure";
 
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  WHATSAPP_MESSAGE,
-)}`;
+type FormConfig = {
+  title: string;
+  containerId: string;
+  scriptUrl: string;
+};
 
-const APPLY_SCRIPT =
-  "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-2/widget.js";
+const FORMS: Record<PopupType, FormConfig> = {
+  apply: {
+    title: "Apply Online",
+    containerId: "ee-form-2",
+    scriptUrl: "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-2/widget.js",
+  },
+  callback: {
+    title: "Request a Call Back",
+    containerId: "ee-form-5",
+    scriptUrl: "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-5/widget.js",
+  },
+  brochure: {
+    title: "Download Brochure",
+    containerId: "ee-form-6",
+    scriptUrl: "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-6/widget.js",
+  },
+};
 
-const CALLBACK_SCRIPT =
-  "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-5/widget.js";
+declare global {
+  interface Window {
+    jQuery?: unknown;
+    $?: unknown;
+  }
+}
 
-const BROCHURE_SCRIPT =
-  "https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/fbscrm/ee-form-widget/form-6/widget.js";
+let jqueryLoading: Promise<void> | null = null;
+const loadedWidgetScripts = new Set<string>();
+const widgetLoading = new Map<string, Promise<void>>();
 
-type PopupType = "apply" | "callback" | "brochure" | null;
+function ensureJQuery(): Promise<void> {
+  if (typeof window === "undefined") {
+    return Promise.reject(new Error("Browser environment required."));
+  }
 
-export default function FloatingActions() {
-  const [activePopup, setActivePopup] = useState<PopupType>(null);
+  if (window.jQuery && window.$) {
+    return Promise.resolve();
+  }
 
-  useEffect(() => {
-    if (!activePopup) {
-      document.body.style.overflow = "";
+  if (jqueryLoading) return jqueryLoading;
+
+  jqueryLoading = new Promise<void>((resolve, reject) => {
+    const existing = document.querySelector<HTMLScriptElement>("[data-fostiima-jquery]");
+
+    const checkLoaded = () => {
+      if (window.jQuery && window.$) resolve();
+      else reject(new Error("jQuery loaded, but the $ global is unavailable."));
+    };
+
+    if (existing) {
+      if (existing.dataset.loaded === "true") {
+        checkLoaded();
+      } else {
+        existing.addEventListener("load", checkLoaded, { once: true });
+        existing.addEventListener("error", () => reject(new Error("jQuery failed to load.")), { once: true });
+      }
       return;
     }
 
+    const script = document.createElement("script");
+    script.src = "https://code.jquery.com/jquery-3.7.1.min.js";
+    script.async = true;
+    script.dataset.fostiimaJquery = "true";
+    script.onload = () => {
+      script.dataset.loaded = "true";
+      checkLoaded();
+    };
+    script.onerror = () => reject(new Error("Could not load jQuery."));
+    document.head.appendChild(script);
+  }).catch((error) => {
+    jqueryLoading = null;
+    throw error;
+  });
+
+  return jqueryLoading;
+}
+
+function ensureWidgetScript(url: string): Promise<void> {
+  if (loadedWidgetScripts.has(url)) return Promise.resolve();
+
+  const pending = widgetLoading.get(url);
+  if (pending) return pending;
+
+  const promise = new Promise<void>((resolve, reject) => {
+    const existing = Array.from(document.querySelectorAll<HTMLScriptElement>("script[src]")).find((script) => script.src === url);
+
+    if (existing) {
+      existing.addEventListener("load", () => {
+        loadedWidgetScripts.add(url);
+        resolve();
+      }, { once: true });
+
+      existing.addEventListener("error", () => reject(new Error(`Widget failed to load: ${url}`)), { once: true });
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = url;
+    script.async = true;
+    script.onload = () => {
+      loadedWidgetScripts.add(url);
+      resolve();
+    };
+    script.onerror = () => reject(new Error(`Widget failed to load: ${url}`));
+    document.head.appendChild(script);
+  });
+
+  widgetLoading.set(url, promise);
+  promise.catch(() => widgetLoading.delete(url));
+
+  return promise;
+}
+
+async function initializeForm(config: FormConfig, isCancelled: () => boolean): Promise<void> {
+  await ensureJQuery();
+  if (isCancelled()) return;
+
+  const container = document.getElementById(config.containerId);
+  if (!container) throw new Error(`Missing form container: ${config.containerId}`);
+
+  await ensureWidgetScript(config.scriptUrl);
+  if (isCancelled() || !container.isConnected) return;
+
+  // Retains the initialization pattern used by the existing Form 4 integration.
+  window.dispatchEvent(new Event("DOMContentLoaded"));
+
+  await new Promise<void>((resolve, reject) => {
+    const hasContent = () => container.childElementCount > 0 || Boolean(container.querySelector("iframe, form"));
+
+    if (hasContent()) {
+      resolve();
+      return;
+    }
+
+    const observer = new MutationObserver(() => {
+      if (isCancelled()) {
+        observer.disconnect();
+        window.clearTimeout(timeout);
+        resolve();
+        return;
+      }
+
+      if (hasContent()) {
+        observer.disconnect();
+        window.clearTimeout(timeout);
+        resolve();
+      }
+    });
+
+    const timeout = window.setTimeout(() => {
+      observer.disconnect();
+      if (isCancelled()) resolve();
+      else reject(new Error(`Form did not appear inside #${config.containerId}.`));
+    }, 15000);
+
+    observer.observe(container, { childList: true, subtree: true });
+  });
+}
+
+export default function FloatingActions() {
+  const [activePopup, setActivePopup] = useState<PopupType | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!activePopup) return;
+
+    const oldOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActivePopup(null);
+    };
+
+    document.addEventListener("keydown", handleKey);
+
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = oldOverflow;
+      document.removeEventListener("keydown", handleKey);
     };
   }, [activePopup]);
 
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      setActivePopup("apply");
-    }, 5000);
+  const config = activePopup ? FORMS[activePopup] : null;
 
-    return () => {
-      window.clearTimeout(timer);
-    };
-  }, []);
+  const actionClass = "flex h-14 w-14 flex-col items-center justify-center gap-1 border-b border-slate-200 text-[8px] font-bold uppercase transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#c31e3b]";
 
   return (
     <>
-      {/* FLOATING ACTIONS */}
-      <div
-        className="
-          fixed right-4 top-1/2 z-[80]
-          flex -translate-y-1/2 flex-col
-          overflow-hidden rounded-xl border border-slate-200
-          bg-white shadow-[0_8px_30px_rgba(21,45,88,0.16)]
-          sm:right-5
-        "
-      >
-        {/* DOWNLOAD BROCHURE */}
-        <button
-          type="button"
-          onClick={() => setActivePopup("brochure")}
-          className="
-            group flex h-12 w-12 flex-col items-center justify-center
-            gap-0.5 border-b border-slate-200 bg-white
-            text-[#152d58] transition-all duration-300
-            hover:bg-[#c31e3b] hover:text-white
-            focus:outline-none focus:ring-2 focus:ring-inset
-            focus:ring-[#c31e3b] sm:h-14 sm:w-14
-          "
-          aria-label="Download Brochure"
-          title="Download Brochure"
-        >
-          <Download
-            size={17}
-            strokeWidth={2}
-            className="transition-transform duration-200 group-hover:-translate-y-0.5"
-          />
-          <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
-            Brochure
-          </span>
+      <div className="fixed right-3 top-1/2 z-[80] flex -translate-y-1/2 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg sm:right-5">
+        <button type="button" onClick={() => setActivePopup("brochure")} className={`${actionClass} bg-white text-[#152d58] hover:bg-[#c31e3b] hover:text-white`} aria-label="Download Brochure">
+          <Download size={18} />
+          Brochure
         </button>
-
-        {/* APPLY ONLINE */}
-        <button
-          type="button"
-          onClick={() => setActivePopup("apply")}
-          className="
-            group flex h-12 w-12 flex-col items-center justify-center
-            gap-0.5 border-b border-slate-200 bg-[#c31e3b]
-            text-white transition-all duration-300 hover:bg-[#a91731]
-            focus:outline-none focus:ring-2 focus:ring-inset
-            focus:ring-[#c31e3b] sm:h-14 sm:w-14
-          "
-          aria-label="Apply Online"
-          title="Apply Online"
-        >
-          <FileText
-            size={17}
-            strokeWidth={2}
-            className="transition-transform duration-200 group-hover:-translate-y-0.5"
-          />
-          <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
-            Apply
-          </span>
+        <button type="button" onClick={() => setActivePopup("apply")} className={`${actionClass} bg-[#c31e3b] text-white hover:bg-[#a91731]`} aria-label="Apply Online">
+          <FileText size={18} />
+          Apply
         </button>
-
-        {/* REQUEST CALLBACK */}
-        <button
-          type="button"
-          onClick={() => setActivePopup("callback")}
-          className="
-            group flex h-12 w-12 flex-col items-center justify-center
-            gap-0.5 border-b border-slate-200 bg-white
-            text-[#152d58] transition-all duration-300
-            hover:bg-[#c31e3b] hover:text-white
-            focus:outline-none focus:ring-2 focus:ring-inset
-            focus:ring-[#c31e3b] sm:h-14 sm:w-14
-          "
-          aria-label="Request a Call Back"
-          title="Request a Call Back"
-        >
-          <PhoneCall
-            size={17}
-            strokeWidth={2}
-            className="transition-transform duration-200 group-hover:-translate-y-0.5"
-          />
-          <span className="text-center text-[7px] font-bold uppercase leading-tight tracking-tight sm:text-[8px]">
-            Callback
-          </span>
+        <button type="button" onClick={() => setActivePopup("callback")} className={`${actionClass} bg-white text-[#152d58] hover:bg-[#c31e3b] hover:text-white`} aria-label="Request a Call Back">
+          <PhoneCall size={18} />
+          Callback
         </button>
-
-        {/* WHATSAPP */}
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            group flex h-12 w-12 flex-col items-center justify-center
-            gap-0.5 bg-white text-[#25D366]
-            transition-all duration-300 hover:bg-[#25D366] hover:text-white
-            focus:outline-none focus:ring-2 focus:ring-inset
-            focus:ring-[#25D366] sm:h-14 sm:w-14
-          "
-          aria-label="Contact FOSTIIMA on WhatsApp"
-          title="WhatsApp"
-        >
-          <FaWhatsapp
-            size={21}
-            aria-hidden="true"
-            className="transition-transform duration-200 group-hover:scale-110"
-          />
-          <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
-            WhatsApp
-          </span>
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={`${actionClass} border-0 bg-white text-[#25D366] hover:bg-[#25D366] hover:text-white`} aria-label="Contact us on WhatsApp">
+          <FaWhatsapp size={20} />
+          WhatsApp
         </a>
       </div>
 
-      {/* POPUPS */}
-      {activePopup === "apply" && (
-        <ExtraaEdgePopup
-          title="Apply Online"
-          scriptUrl={APPLY_SCRIPT}
-          containerId="ee-form-2"
-          onClose={() => setActivePopup(null)}
-        />
-      )}
-
-      {activePopup === "callback" && (
-        <ExtraaEdgePopup
-          title="Request a Call Back"
-          scriptUrl={CALLBACK_SCRIPT}
-          containerId="ee-form-5"
-          onClose={() => setActivePopup(null)}
-        />
-      )}
-
-      {activePopup === "brochure" && (
-        <ExtraaEdgePopup
-          title="Download Brochure"
-          scriptUrl={BROCHURE_SCRIPT}
-          containerId="ee-form-6"
-          onClose={() => setActivePopup(null)}
-        />
+      {mounted && config && createPortal(
+        <ExtraaEdgePopup key={config.containerId} config={config} onClose={() => setActivePopup(null)} />,
+        document.body,
       )}
     </>
   );
 }
 
-/* EXTRAAEDGE POPUP */
-
-type ExtraaEdgePopupProps = {
-  title: string;
-  scriptUrl: string;
-  containerId: "ee-form-2" | "ee-form-5" | "ee-form-6";
-  onClose: () => void;
-};
-
-function ExtraaEdgePopup({
-  title,
-  scriptUrl,
-  containerId,
-  onClose,
-}: ExtraaEdgePopupProps) {
-  useEffect(() => {
-    const initializeWidget = () => {
-      window.dispatchEvent(new Event("DOMContentLoaded"));
-    };
-
-    const existingScript = document.querySelector<HTMLScriptElement>(
-      `script[src="${scriptUrl}"]`,
-    );
-
-    if (existingScript) {
-      initializeWidget();
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.src = scriptUrl;
-    script.type = "text/javascript";
-    script.async = true;
-    script.onload = initializeWidget;
-
-    script.onerror = () => {
-      console.error(`Failed to load ExtraaEdge widget: ${scriptUrl}`);
-    };
-
-    document.body.appendChild(script);
-  }, [scriptUrl]);
+function ExtraaEdgePopup({ config, onClose }: { config: FormConfig; onClose: () => void }) {
+  const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
 
   useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        onClose();
-      }
-    };
+    let cancelled = false;
 
-    document.addEventListener("keydown", handleEscape);
+    initializeForm(config, () => cancelled)
+      .then(() => {
+        if (!cancelled) setStatus("ready");
+      })
+      .catch((error: unknown) => {
+        if (cancelled) return;
+        console.error("ExtraaEdge form initialization failed:", error);
+        setStatus("error");
+      });
 
     return () => {
-      document.removeEventListener("keydown", handleEscape);
+      cancelled = true;
+      const container = document.getElementById(config.containerId);
+      container?.replaceChildren();
     };
-  }, [onClose]);
+  }, [config]);
 
   return (
-    <>
-      {containerId === "ee-form-2" && (
-        <style jsx global>{`
-          #ee-form-2 {
-            width: 100% !important;
-            min-height: 0 !important;
-            height: auto !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            overflow: hidden !important;
-          }
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-y-auto bg-black/65 p-3 backdrop-blur-sm sm:p-5" role="dialog" aria-modal="true" aria-label={config.title} onMouseDown={(event) => {
+      if (event.target === event.currentTarget) onClose();
+    }}>
+      <div className="my-auto flex max-h-[92dvh] w-full max-w-[520px] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl">
+        <div className="flex shrink-0 items-center justify-between bg-[#123b79] px-5 py-4">
+          <h2 className="text-lg font-bold text-white">{config.title}</h2>
+          <button type="button" onClick={onClose} className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20" aria-label="Close popup">
+            <X size={20} />
+          </button>
+        </div>
 
-          #ee-form-2 iframe {
-            display: block !important;
-            width: 100% !important;
-            height: 430px !important;
-            min-height: 430px !important;
-            max-height: 430px !important;
-            border: 0 !important;
-            margin: 0 !important;
-            padding: 0 !important;
-          }
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-white p-3 sm:p-5">
+          {status === "loading" && <p className="py-8 text-center text-sm text-slate-500">Loading form...</p>}
 
-          #ee-form-2 > div {
-            width: 100% !important;
-            max-height: 430px !important;
-            overflow: hidden !important;
-          }
-        `}</style>
-      )}
+          {status === "error" && (
+            <div className="py-8 text-center">
+              <p className="font-semibold text-slate-800">Form load nahi ho paya.</p>
+              <p className="mt-2 text-sm text-slate-500">ExtraaEdge widget ya network connection check karein.</p>
+              <button type="button" onClick={onClose} className="mt-4 rounded-lg bg-[#123b79] px-4 py-2 font-semibold text-white">Close</button>
+            </div>
+          )}
 
-      <div
-        className="
-          fixed inset-0 z-[100] flex items-center justify-center
-          bg-black/60 p-4 backdrop-blur-sm
-        "
-        role="dialog"
-        aria-modal="true"
-        aria-label={title}
-        onMouseDown={(event) => {
-          if (event.target === event.currentTarget) {
-            onClose();
-          }
-        }}
-      >
-        <div
-          className="
-            relative max-h-[90vh] w-full max-w-[520px]
-            overflow-hidden rounded-2xl bg-white
-            shadow-[0_25px_80px_rgba(0,0,0,0.25)]
-          "
-        >
-          <div
-            className="
-              flex items-center justify-between border-b
-              border-slate-200 bg-[#123b79] px-5 py-4
-            "
-          >
-            <h2 className="text-base font-bold text-white sm:text-lg">
-              {title}
-            </h2>
-
-            <button
-              type="button"
-              onClick={onClose}
-              className="
-                flex h-9 w-9 items-center justify-center rounded-full
-                bg-white/10 text-white transition hover:bg-white/20
-                focus:outline-none focus:ring-2 focus:ring-white/60
-              "
-              aria-label={`Close ${title}`}
-              title="Close"
-            >
-              <X size={18} strokeWidth={2} />
-            </button>
-          </div>
-
-          <div
-            className="
-              max-h-[calc(90vh-73px)] overflow-y-auto bg-white
-              p-3 sm:p-5
-            "
-          >
-            <div id={containerId} className="w-full" />
-          </div>
+          <div id={config.containerId} className="w-full min-w-0" style={{ display: status === "error" ? "none" : "block" }} />
         </div>
       </div>
-    </>
+    </div>
   );
 }
