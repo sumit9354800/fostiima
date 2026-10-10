@@ -164,26 +164,33 @@
 }
 
 
-#ee-form-4 {
+#ee-form-2,
+#ee-form-5,
+#ee-form-6 {
   width: 100% !important;
-  min-height: 0 !important;
-  height: auto !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+#ee-form-2 {
+  min-height: 0 !important;
+  height: auto !important;
   overflow: hidden !important;
 }
 
-#ee-form-4 iframe {
+#ee-form-2 iframe {
   display: block !important;
   width: 100% !important;
+  height: 430px !important;
+  min-height: 430px !important;
+  max-height: 430px !important;
   border: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-#ee-form-4 > div {
+#ee-form-2 > div {
   width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
+  max-height: 430px !important;
   overflow: hidden !important;
 }

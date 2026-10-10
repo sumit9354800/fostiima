@@ -59,7 +59,7 @@ export const mediaPresenceData: MediaPresenceItem[] = [
     id: "nav-bharat",
     publication: "Nav Bharat Times",
     logo: cloudinaryAsset(
-      "https://fostiima.org/uploaded_files/thumb_cache/thumb_180_120_nav-bharat.jpg"
+      "https://static.langimg.com/thumb/119164302/navbharat-times.jpg?width=366&resizemode=4"
     ),
     title:
       "MBA या PGDM के बाद मिलेगी तगड़ी सैलरी वाली नौकरी? बस अपना लें ये 7 एक्सपर्ट टिप्स",
