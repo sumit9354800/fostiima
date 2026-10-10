@@ -1,7 +1,7 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
-
 import { Download, FileText, PhoneCall, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -53,58 +53,27 @@ export default function FloatingActions() {
 
   return (
     <>
-      {/* =========================================
-          FLOATING ACTIONS
-      ========================================== */}
-
+      {/* FLOATING ACTIONS */}
       <div
         className="
-          fixed
-          right-4
-          top-1/2
-          z-[80]
-          flex
-          -translate-y-1/2
-          flex-col
-          overflow-hidden
-          rounded-xl
-          border
-          border-slate-200
-          bg-white
-          shadow-[0_8px_30px_rgba(21,45,88,0.16)]
+          fixed right-4 top-1/2 z-[80]
+          flex -translate-y-1/2 flex-col
+          overflow-hidden rounded-xl border border-slate-200
+          bg-white shadow-[0_8px_30px_rgba(21,45,88,0.16)]
           sm:right-5
         "
       >
-        {/* =========================================
-            DOWNLOAD BROCHURE
-        ========================================== */}
-
+        {/* DOWNLOAD BROCHURE */}
         <button
           type="button"
           onClick={() => setActivePopup("brochure")}
           className="
-            group
-            flex
-            h-12
-            w-12
-            flex-col
-            items-center
-            justify-center
-            gap-0.5
-            border-b
-            border-slate-200
-            bg-white
-            text-[#152d58]
-            transition-all
-            duration-300
-            hover:bg-[#c31e3b]
-            hover:text-white
-            focus:outline-none
-            focus:ring-2
-            focus:ring-[#c31e3b]
-            focus:ring-inset
-            sm:h-14
-            sm:w-14
+            group flex h-12 w-12 flex-col items-center justify-center
+            gap-0.5 border-b border-slate-200 bg-white
+            text-[#152d58] transition-all duration-300
+            hover:bg-[#c31e3b] hover:text-white
+            focus:outline-none focus:ring-2 focus:ring-inset
+            focus:ring-[#c31e3b] sm:h-14 sm:w-14
           "
           aria-label="Download Brochure"
           title="Download Brochure"
@@ -112,58 +81,23 @@ export default function FloatingActions() {
           <Download
             size={17}
             strokeWidth={2}
-            className="
-              transition-transform
-              duration-200
-              group-hover:-translate-y-0.5
-            "
+            className="transition-transform duration-200 group-hover:-translate-y-0.5"
           />
-
-          <span
-            className="
-              text-[7px]
-              font-bold
-              uppercase
-              tracking-tight
-              sm:text-[8px]
-            "
-          >
+          <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
             Brochure
           </span>
         </button>
 
-        {/* =========================================
-            APPLY
-        ========================================== */}
-
-
-
-
+        {/* APPLY ONLINE */}
         <button
           type="button"
           onClick={() => setActivePopup("apply")}
           className="
-            group
-            flex
-            h-12
-            w-12
-            flex-col
-            items-center
-            justify-center
-            gap-0.5
-            border-b
-            border-slate-200
-            bg-[#c31e3b]
-            text-white
-            transition-all
-            duration-300
-            hover:bg-[#a91731]
-            focus:outline-none
-            focus:ring-2
-            focus:ring-[#c31e3b]
-            focus:ring-inset
-            sm:h-14
-            sm:w-14
+            group flex h-12 w-12 flex-col items-center justify-center
+            gap-0.5 border-b border-slate-200 bg-[#c31e3b]
+            text-white transition-all duration-300 hover:bg-[#a91731]
+            focus:outline-none focus:ring-2 focus:ring-inset
+            focus:ring-[#c31e3b] sm:h-14 sm:w-14
           "
           aria-label="Apply Online"
           title="Apply Online"
@@ -171,56 +105,24 @@ export default function FloatingActions() {
           <FileText
             size={17}
             strokeWidth={2}
-            className="
-              transition-transform
-              duration-200
-              group-hover:-translate-y-0.5
-            "
+            className="transition-transform duration-200 group-hover:-translate-y-0.5"
           />
-
-          <span
-            className="
-              text-[7px] 
-              font-bold
-              uppercase
-              tracking-tight
-              sm:text-[8px]
-            "
-          >
+          <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
             Apply
           </span>
         </button>
 
-        {/* =========================================
-            REQUEST A CALLBACK
-        ========================================== */}
-
+        {/* REQUEST CALLBACK */}
         <button
           type="button"
           onClick={() => setActivePopup("callback")}
           className="
-            group
-            flex
-            h-12
-            w-12
-            flex-col
-            items-center
-            justify-center
-            gap-0.5
-            border-b
-            border-slate-200
-            bg-white
-            text-[#152d58]
-            transition-all
-            duration-300
-            hover:bg-[#c31e3b]
-            hover:text-white
-            focus:outline-none
-            focus:ring-2
-            focus:ring-[#c31e3b]
-            focus:ring-inset
-            sm:h-14
-            sm:w-14
+            group flex h-12 w-12 flex-col items-center justify-center
+            gap-0.5 border-b border-slate-200 bg-white
+            text-[#152d58] transition-all duration-300
+            hover:bg-[#c31e3b] hover:text-white
+            focus:outline-none focus:ring-2 focus:ring-inset
+            focus:ring-[#c31e3b] sm:h-14 sm:w-14
           "
           aria-label="Request a Call Back"
           title="Request a Call Back"
@@ -228,57 +130,24 @@ export default function FloatingActions() {
           <PhoneCall
             size={17}
             strokeWidth={2}
-            className="
-              transition-transform
-              duration-200
-              group-hover:-translate-y-0.5
-            "
+            className="transition-transform duration-200 group-hover:-translate-y-0.5"
           />
-
-          <span
-            className="
-              text-center
-              text-[7px]
-              font-bold
-              uppercase
-              leading-tight
-              tracking-tight
-              sm:text-[8px]
-            "
-          >
+          <span className="text-center text-[7px] font-bold uppercase leading-tight tracking-tight sm:text-[8px]">
             Callback
           </span>
         </button>
 
-        {/* =========================================
-            WHATSAPP
-        ========================================== */}
-
+        {/* WHATSAPP */}
         <a
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="
-            group
-            flex
-            h-12
-            w-12
-            flex-col
-            items-center
-            justify-center
-            gap-0.5
-            bg-white
-            text-[#25D366]
-            transition-all
-            duration-300
-            hover:bg-[#25D366]
-            hover:text-white
-            focus:outline-none
-            focus:ring-2
-            focus:ring-[#25D366]
-            focus:ring-inset
-            sm:h-14
-            sm:w-14
+            group flex h-12 w-12 flex-col items-center justify-center
+            gap-0.5 bg-white text-[#25D366]
+            transition-all duration-300 hover:bg-[#25D366] hover:text-white
+            focus:outline-none focus:ring-2 focus:ring-inset
+            focus:ring-[#25D366] sm:h-14 sm:w-14
           "
           aria-label="Contact FOSTIIMA on WhatsApp"
           title="WhatsApp"
@@ -286,31 +155,15 @@ export default function FloatingActions() {
           <FaWhatsapp
             size={21}
             aria-hidden="true"
-            className="
-              transition-transform
-              duration-200
-              group-hover:scale-110
-            "
+            className="transition-transform duration-200 group-hover:scale-110"
           />
-
-          <span
-            className="
-              text-[7px]
-              font-bold
-              uppercase
-              tracking-tight
-              sm:text-[8px]
-            "
-          >
+          <span className="text-[7px] font-bold uppercase tracking-tight sm:text-[8px]">
             WhatsApp
           </span>
         </a>
       </div>
 
-      {/* =========================================
-          POPUPS
-      ========================================== */}
-
+      {/* POPUPS */}
       {activePopup === "apply" && (
         <ExtraaEdgePopup
           title="Apply Online"
@@ -341,9 +194,7 @@ export default function FloatingActions() {
   );
 }
 
-/* =========================================
-   EXTRAAEDGE POPUP
-========================================== */
+/* EXTRAAEDGE POPUP */
 
 type ExtraaEdgePopupProps = {
   title: string;
@@ -363,7 +214,9 @@ function ExtraaEdgePopup({
       window.dispatchEvent(new Event("DOMContentLoaded"));
     };
 
-    const existingScript = document.querySelector(`script[src="${scriptUrl}"]`);
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      `script[src="${scriptUrl}"]`,
+    );
 
     if (existingScript) {
       initializeWidget();
@@ -371,11 +224,9 @@ function ExtraaEdgePopup({
     }
 
     const script = document.createElement("script");
-
     script.src = scriptUrl;
     script.type = "text/javascript";
     script.async = true;
-
     script.onload = initializeWidget;
 
     script.onerror = () => {
@@ -383,10 +234,6 @@ function ExtraaEdgePopup({
     };
 
     document.body.appendChild(script);
-
-    return () => {
-      // Keep external ExtraaEdge script loaded.
-    };
   }, [scriptUrl]);
 
   useEffect(() => {
@@ -405,7 +252,6 @@ function ExtraaEdgePopup({
 
   return (
     <>
-      {/* Form 2 popup sizing */}
       {containerId === "ee-form-2" && (
         <style jsx global>{`
           #ee-form-2 {
@@ -438,15 +284,8 @@ function ExtraaEdgePopup({
 
       <div
         className="
-          fixed
-          inset-0
-          z-[100]
-          flex
-          items-center
-          justify-center
-          bg-black/60
-          p-4
-          backdrop-blur-sm
+          fixed inset-0 z-[100] flex items-center justify-center
+          bg-black/60 p-4 backdrop-blur-sm
         "
         role="dialog"
         aria-modal="true"
@@ -459,28 +298,15 @@ function ExtraaEdgePopup({
       >
         <div
           className="
-            relative
-            max-h-[90vh]
-            w-full
-            max-w-[520px]
-            overflow-hidden
-            rounded-2xl
-            bg-white
+            relative max-h-[90vh] w-full max-w-[520px]
+            overflow-hidden rounded-2xl bg-white
             shadow-[0_25px_80px_rgba(0,0,0,0.25)]
           "
         >
-          {/* Header */}
-
           <div
             className="
-              flex
-              items-center
-              justify-between
-              border-b
-              border-slate-200
-              bg-[#123b79]
-              px-5
-              py-4
+              flex items-center justify-between border-b
+              border-slate-200 bg-[#123b79] px-5 py-4
             "
           >
             <h2 className="text-base font-bold text-white sm:text-lg">
@@ -491,19 +317,9 @@ function ExtraaEdgePopup({
               type="button"
               onClick={onClose}
               className="
-                flex
-                h-9
-                w-9
-                items-center
-                justify-center
-                rounded-full
-                bg-white/10
-                text-white
-                transition
-                hover:bg-white/20
-                focus:outline-none
-                focus:ring-2
-                focus:ring-white/60
+                flex h-9 w-9 items-center justify-center rounded-full
+                bg-white/10 text-white transition hover:bg-white/20
+                focus:outline-none focus:ring-2 focus:ring-white/60
               "
               aria-label={`Close ${title}`}
               title="Close"
@@ -512,15 +328,10 @@ function ExtraaEdgePopup({
             </button>
           </div>
 
-          {/* ExtraaEdge Form */}
-
           <div
             className="
-              max-h-[calc(90vh-73px)]
-              overflow-y-auto
-              bg-white
-              p-3
-              sm:p-5
+              max-h-[calc(90vh-73px)] overflow-y-auto bg-white
+              p-3 sm:p-5
             "
           >
             <div id={containerId} className="w-full" />

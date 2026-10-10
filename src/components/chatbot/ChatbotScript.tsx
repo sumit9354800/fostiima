@@ -1,66 +1,58 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { MessageCircle, Mic, X } from "lucide-react";
 
 type BotType = "chatbot" | "voice" | null;
 
-/* =========================================================
-   EXTRAEDGE
-========================================================= */
-
 const EXTRAEDGE_SCRIPT =
   "https://extraaedgeresources.blob.core.windows.net/documents/fbscrm/Chatbot/js/chat.js";
 
-/* =========================================================
-   LOAD SCRIPT
-========================================================= */
+const CHATBOT_ICON = "/chat-icon.jpeg";
 
-function loadScript(
-  src: string,
-  attributes: Record<string, string> = {},
-) {
-  return new Promise<HTMLScriptElement>(
-    (resolve, reject) => {
-      const existing =
-        document.querySelector<HTMLScriptElement>(
-          `script[src="${src}"]`,
-        );
+function loadScript(src: string): Promise<HTMLScriptElement> {
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector<HTMLScriptElement>(
+      `script[src="${src}"]`,
+    );
 
-      if (existing) {
+    if (existing) {
+      if (existing.dataset.loaded === "true") {
         resolve(existing);
         return;
       }
 
-      const script =
-        document.createElement("script");
+      existing.addEventListener("load", () => resolve(existing), {
+        once: true,
+      });
 
-      script.src = src;
-      script.async = true;
-
-      Object.entries(attributes).forEach(
-        ([key, value]) => {
-          script.setAttribute(key, value);
-        },
+      existing.addEventListener(
+        "error",
+        () => reject(new Error(`Failed to load script: ${src}`)),
+        { once: true },
       );
 
-      script.onload = () => resolve(script);
+      return;
+    }
 
-      script.onerror = () =>
-        reject(
-          new Error(
-            `Failed to load script: ${src}`,
-          ),
-        );
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
 
-      document.body.appendChild(script);
-    },
-  );
+    script.onload = () => {
+      script.dataset.loaded = "true";
+      resolve(script);
+    };
+
+    script.onerror = () => {
+      reject(new Error(`Failed to load script: ${src}`));
+    };
+
+    document.body.appendChild(script);
+  });
 }
-
-/* =========================================================
-   EXTRAEDGE
-========================================================= */
 
 function hideThirdPartyLaunchers() {
   const selectors = [
@@ -70,17 +62,15 @@ function hideThirdPartyLaunchers() {
   ];
 
   selectors.forEach((selector) => {
-    document
-      .querySelectorAll<HTMLElement>(selector)
-      .forEach((element) => {
-        element.style.display = "none";
-        element.style.visibility = "hidden";
-        element.style.pointerEvents = "none";
-      });
+    document.querySelectorAll<HTMLElement>(selector).forEach((element) => {
+      element.style.display = "none";
+      element.style.visibility = "hidden";
+      element.style.pointerEvents = "none";
+    });
   });
 }
 
-function findExtraEdgeLauncher() {
+function findExtraEdgeLauncher(): HTMLElement | null {
   const selectors = [
     "#__eechatIcon",
     "#eeChatIndicator",
@@ -88,10 +78,7 @@ function findExtraEdgeLauncher() {
   ];
 
   for (const selector of selectors) {
-    const element =
-      document.querySelector<HTMLElement>(
-        selector,
-      );
+    const element = document.querySelector<HTMLElement>(selector);
 
     if (element) {
       return element;
@@ -101,128 +88,69 @@ function findExtraEdgeLauncher() {
   return null;
 }
 
-/* =========================================================
-   COMPONENT
-========================================================= */
-
 export default function ChatbotScript() {
-  const [menuOpen, setMenuOpen] =
-    useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeBot, setActiveBot] = useState<BotType>(null);
+  const [extraEdgeReady, setExtraEdgeReady] = useState(false);
 
-  const [activeBot, setActiveBot] =
-    useState<BotType>(null);
-
-  const [extraEdgeReady, setExtraEdgeReady] =
-    useState(false);
-
-  /* =======================================================
-     LOAD EXTRAEDGE
-  ======================================================= */
-
+  // Load ExtraaEdge chatbot script.
   useEffect(() => {
     let mounted = true;
+    let attempts = 0;
+    let retryTimer: number | undefined;
 
-    const initializeExtraEdge =
-      async () => {
-        try {
-          await loadScript(
-            EXTRAEDGE_SCRIPT,
-          );
+    const initializeExtraEdge = async () => {
+      try {
+        await loadScript(EXTRAEDGE_SCRIPT);
 
-          if (!mounted) {
+        if (!mounted) return;
+
+        const waitForLauncher = () => {
+          if (!mounted) return;
+
+          const launcher = findExtraEdgeLauncher();
+
+          if (launcher) {
+            hideThirdPartyLaunchers();
+            setExtraEdgeReady(true);
             return;
           }
 
-          const waitForLauncher = () => {
-            const launcher =
-              findExtraEdgeLauncher();
+          attempts += 1;
 
-            if (launcher) {
-              hideThirdPartyLaunchers();
-
-              setExtraEdgeReady(true);
-
-              return;
-            }
-
-            window.setTimeout(
-              waitForLauncher,
-              300,
+          if (attempts < 40) {
+            retryTimer = window.setTimeout(waitForLauncher, 300);
+          } else {
+            console.warn(
+              "ExtraaEdge chatbot launcher was not found. Check the widget configuration.",
             );
-          };
+          }
+        };
 
-          waitForLauncher();
-        } catch (error) {
-          console.error(
-            "ExtraaEdge chatbot failed to load:",
-            error,
-          );
-        }
-      };
+        waitForLauncher();
+      } catch (error) {
+        console.error("ExtraaEdge chatbot failed to load:", error);
+      }
+    };
 
-    initializeExtraEdge();
+    void initializeExtraEdge();
 
     return () => {
       mounted = false;
+
+      if (retryTimer !== undefined) {
+        window.clearTimeout(retryTimer);
+      }
     };
   }, []);
 
-  /* =======================================================
-     OPEN SELECTED CHATBOT
-  ======================================================= */
-
+  // Keep the original ExtraaEdge launcher hidden.
   useEffect(() => {
-    if (!activeBot) {
+    hideThirdPartyLaunchers();
+
+    const observer = new MutationObserver(() => {
       hideThirdPartyLaunchers();
-      return;
-    }
-
-    hideThirdPartyLaunchers();
-
-    /* =====================================================
-       EXTRAEDGE CHATBOT
-    ===================================================== */
-
-    if (activeBot === "chatbot") {
-      const launcher =
-        findExtraEdgeLauncher();
-
-      if (launcher) {
-        launcher.click();
-      } else if (extraEdgeReady) {
-        window.setTimeout(() => {
-          const retryLauncher =
-            findExtraEdgeLauncher();
-
-          if (retryLauncher) {
-            retryLauncher.click();
-          }
-        }, 500);
-      }
-
-      return;
-    }
-
-    /*
-      Voice chatbot is now handled directly
-      through the Markaible iframe below.
-    */
-  }, [
-    activeBot,
-    extraEdgeReady,
-  ]);
-
-  /* =======================================================
-     HIDE ORIGINAL EXTRAEDGE LAUNCHER
-  ======================================================= */
-
-  useEffect(() => {
-    hideThirdPartyLaunchers();
-
-    const observer =
-      new MutationObserver(() => {
-        hideThirdPartyLaunchers();
-      });
+    });
 
     observer.observe(document.body, {
       childList: true,
@@ -234,42 +162,82 @@ export default function ChatbotScript() {
     };
   }, []);
 
-  /* =======================================================
-     CLOSE
-  ======================================================= */
+  // Open the selected chatbot.
+  useEffect(() => {
+    if (activeBot !== "chatbot") return;
+
+    let cancelled = false;
+    let attempts = 0;
+    let retryTimer: number | undefined;
+
+    const openExtraEdgeChatbot = () => {
+      if (cancelled) return;
+
+      const launcher = findExtraEdgeLauncher();
+
+      if (launcher) {
+        // Temporarily make the original launcher clickable.
+        launcher.style.display = "block";
+        launcher.style.visibility = "visible";
+        launcher.style.pointerEvents = "auto";
+        launcher.click();
+
+        // Hide the original launcher again after opening.
+        window.setTimeout(() => {
+          hideThirdPartyLaunchers();
+        }, 100);
+
+        return;
+      }
+
+      attempts += 1;
+
+      if (attempts < 15) {
+        retryTimer = window.setTimeout(openExtraEdgeChatbot, 300);
+      } else {
+        console.error(
+          "Unable to open ExtraaEdge chatbot. Check its launcher selector or vendor API.",
+        );
+      }
+    };
+
+    if (extraEdgeReady) {
+      openExtraEdgeChatbot();
+    }
+
+    return () => {
+      cancelled = true;
+
+      if (retryTimer !== undefined) {
+        window.clearTimeout(retryTimer);
+      }
+    };
+  }, [activeBot, extraEdgeReady]);
 
   const closeAll = () => {
     setActiveBot(null);
     setMenuOpen(false);
-
     hideThirdPartyLaunchers();
   };
 
-  /* =======================================================
-     OPEN BOT
-  ======================================================= */
-
-  const openBot = (
-    bot: Exclude<BotType, null>,
-  ) => {
+  const openBot = (bot: Exclude<BotType, null>) => {
     setMenuOpen(false);
     setActiveBot(bot);
-
     hideThirdPartyLaunchers();
   };
-
-  /* =======================================================
-     UI
-  ======================================================= */
 
   return (
     <>
-      {/* =================================================
-          MARKAIBLE VOICE CHATBOT
-      ================================================= */}
-
+      {/* Voice chatbot */}
       {activeBot === "voice" && (
-        <div className="fixed inset-0 z-[99998] bg-black/20">
+        <div
+          className="fixed inset-0 z-[99998] bg-black/20"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              closeAll();
+            }
+          }}
+        >
           <div
             className="
               absolute bottom-24 right-3
@@ -277,9 +245,7 @@ export default function ChatbotScript() {
               w-[calc(100vw-24px)]
               overflow-hidden rounded-2xl
               bg-white shadow-2xl
-              sm:right-5
-              sm:h-[600px]
-              sm:w-[400px]
+              sm:right-5 sm:h-[600px] sm:w-[400px]
             "
           >
             <iframe
@@ -292,14 +258,9 @@ export default function ChatbotScript() {
         </div>
       )}
 
-      {/* =================================================
-          OPTIONS MENU
-      ================================================= */}
-
+      {/* Chatbot selection menu */}
       {menuOpen && !activeBot && (
         <div className="fixed bottom-24 right-5 z-[99999] w-[260px] overflow-hidden rounded-2xl bg-white shadow-2xl">
-          {/* Header */}
-
           <div className="flex items-center justify-between bg-[#061a3a] px-4 py-3 text-white">
             <span className="text-sm font-semibold">
               FOSTIIMA Assistant
@@ -307,9 +268,7 @@ export default function ChatbotScript() {
 
             <button
               type="button"
-              onClick={() =>
-                setMenuOpen(false)
-              }
+              onClick={() => setMenuOpen(false)}
               aria-label="Close assistant menu"
               className="rounded-md p-1 transition hover:bg-white/10"
             >
@@ -318,55 +277,48 @@ export default function ChatbotScript() {
           </div>
 
           <div className="space-y-2 p-3">
-            {/* =================================================
-                CHATBOT
-            ================================================= */}
-
+            {/* Text chatbot */}
             <button
               type="button"
-              onClick={() =>
-                openBot("chatbot")
-              }
-              className="flex w-full items-center gap-3 rounded-xl border border-slate-200 p-3 text-left transition hover:bg-slate-50"
+              onClick={() => openBot("chatbot")}
+              className="
+                flex w-full items-center gap-3 rounded-xl
+                border border-slate-200 p-3 text-left
+                transition hover:bg-slate-50
+              "
             >
               <MessageCircle
                 size={22}
-                className="text-[#061a3a]"
+                className="shrink-0 text-[#061a3a]"
               />
 
               <div>
                 <p className="text-sm font-medium text-slate-900">
                   Chatbot
                 </p>
-
-                <p className="text-md text-slate-500">
+                <p className="text-sm text-slate-500">
                   Chat with FOSTIIMA
                 </p>
               </div>
             </button>
 
-            {/* =================================================
-                VOICE CHATBOT
-            ================================================= */}
-
+            {/* Voice chatbot */}
             <button
               type="button"
-              onClick={() =>
-                openBot("voice")
-              }
-              className="flex w-full items-center gap-3 rounded-xl border border-slate-200 p-3 text-left transition hover:bg-slate-50"
+              onClick={() => openBot("voice")}
+              className="
+                flex w-full items-center gap-3 rounded-xl
+                border border-slate-200 p-3 text-left
+                transition hover:bg-slate-50
+              "
             >
-              <Mic
-                size={22}
-                className="text-[#061a3a]"
-              />
+              <Mic size={22} className="shrink-0 text-[#061a3a]" />
 
               <div>
                 <p className="text-sm font-medium text-slate-900">
                   Voice Chatbot
                 </p>
-
-                <p className="text-md text-slate-500">
+                <p className="text-sm text-slate-500">
                   Talk with FOSTIIMA
                 </p>
               </div>
@@ -375,10 +327,7 @@ export default function ChatbotScript() {
         </div>
       )}
 
-      {/* =================================================
-          MAIN FLOATING BUTTON
-      ================================================= */}
-
+      {/* Main floating image button */}
       <button
         type="button"
         onClick={() => {
@@ -387,17 +336,34 @@ export default function ChatbotScript() {
             return;
           }
 
-          setMenuOpen(
-            (previous) => !previous,
-          );
+          setMenuOpen((previous) => !previous);
         }}
-        aria-label="Toggle FOSTIIMA assistant"
-        className="fixed bottom-5 right-5 z-[99999] flex h-14 w-14 items-center justify-center rounded-full bg-[#e5b83f] text-[#061a3a] shadow-xl transition hover:scale-105"
+        aria-label={
+          activeBot
+            ? "Close FOSTIIMA assistant"
+            : "Open FOSTIIMA assistant"
+        }
+        aria-expanded={menuOpen || Boolean(activeBot)}
+        className="
+          fixed bottom-5 right-5 z-[99999]
+          flex h-14 w-14 items-center justify-center
+          overflow-hidden rounded-full border border-slate-200
+          bg-white shadow-xl transition
+          hover:scale-105
+          focus:outline-none focus:ring-2 focus:ring-[#123b79]
+        "
       >
         {menuOpen || activeBot ? (
-          <X size={26} />
+          <X size={26} className="text-[#061a3a]" />
         ) : (
-          <MessageCircle size={26} />
+          <Image
+            src={CHATBOT_ICON}
+            alt="FOSTIIMA Chatbot"
+            width={56}
+            height={56}
+            priority
+            className="h-full w-full rounded-full object-cover"
+          />
         )}
       </button>
     </>

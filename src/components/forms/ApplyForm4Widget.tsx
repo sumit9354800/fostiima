@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect } from "react";
@@ -7,49 +8,36 @@ const WIDGET_SCRIPT =
 
 export default function ApplyForm4Widget() {
   useEffect(() => {
+    const container = document.getElementById("ee-form-4");
+
+    if (!container) return;
+
     const initializeWidget = () => {
-      /*
-       * ExtraaEdge widget ko initialize karne ke liye
-       * DOMContentLoaded event trigger kar rahe hain.
-       */
       window.dispatchEvent(new Event("DOMContentLoaded"));
     };
 
-    const existingScript = document.querySelector(
+    const existingScript = document.querySelector<HTMLScriptElement>(
       `script[src="${WIDGET_SCRIPT}"]`,
     );
 
-    /*
-     * Agar script already loaded hai,
-     * to dobara script inject nahi karenge.
-     */
     if (existingScript) {
       initializeWidget();
-      return;
+    } else {
+      const script = document.createElement("script");
+
+      script.src = WIDGET_SCRIPT;
+      script.type = "text/javascript";
+      script.async = true;
+      script.onload = initializeWidget;
+
+      script.onerror = () => {
+        console.error(
+          "Failed to load FOSTIIMA Form 4 application widget.",
+        );
+      };
+
+      document.body.appendChild(script);
     }
-
-    const script = document.createElement("script");
-
-    script.src = WIDGET_SCRIPT;
-    script.type = "text/javascript";
-    script.async = true;
-
-    script.onload = initializeWidget;
-
-    script.onerror = () => {
-      console.error(
-        "Failed to load FOSTIIMA Form 4 application widget.",
-      );
-    };
-
-    document.body.appendChild(script);
-
-    return () => {
-      /*
-       * Script ko remove nahi karna.
-       * Widget ko page par loaded rehne denge.
-       */
-    };
   }, []);
 
   return (
@@ -80,10 +68,7 @@ export default function ApplyForm4Widget() {
         }
       `}</style>
 
-      <div
-        id="ee-form-4"
-        className="w-full"
-      />
+      <div id="ee-form-4" className="w-full" />
     </>
   );
 }

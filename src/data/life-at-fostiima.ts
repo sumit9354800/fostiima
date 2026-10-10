@@ -1046,85 +1046,85 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
         images: [
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09401 (2).jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600294/fostiima/life-at-fostiima/cultural-events/Milan/DSC09401%202.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09407 (2).jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600299/fostiima/life-at-fostiima/cultural-events/Milan/DSC09407%202.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09418 (2).jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600304/fostiima/life-at-fostiima/cultural-events/Milan/DSC09418%202.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09419 (2).jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600308/fostiima/life-at-fostiima/cultural-events/Milan/DSC09419%202.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09422 (2).jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600314/fostiima/life-at-fostiima/cultural-events/Milan/DSC09422%202.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09430 (2).jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600319/fostiima/life-at-fostiima/cultural-events/Milan/DSC09430%202.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09432.jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600323/fostiima/life-at-fostiima/cultural-events/Milan/DSC09432.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09436 (2).jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600328/fostiima/life-at-fostiima/cultural-events/Milan/DSC09436%202.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09437 (2).jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600333/fostiima/life-at-fostiima/cultural-events/Milan/DSC09437%202.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09440 (2).jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600337/fostiima/life-at-fostiima/cultural-events/Milan/DSC09440%202.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09445 (2).jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600342/fostiima/life-at-fostiima/cultural-events/Milan/DSC09445%202.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09448.jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600346/fostiima/life-at-fostiima/cultural-events/Milan/DSC09448.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/DSC09451.jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600351/fostiima/life-at-fostiima/cultural-events/Milan/DSC09451.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/milan/IMG_9448.jpg",
+              "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600356/fostiima/life-at-fostiima/cultural-events/Milan/IMG_9448.jpg",
             ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },

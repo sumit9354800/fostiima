@@ -38,7 +38,6 @@ export const metadata: Metadata = {
 
   creator: "FOSTIIMA Business School",
   publisher: "FOSTIIMA Business School",
-
   applicationName: "FOSTIIMA Business School",
 
   formatDetection: {
@@ -100,40 +99,32 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* =====================================================
-            GOOGLE ADS TAG — AW-11476359647
-        ====================================================== */}
-
+        {/* Google Ads — Account 1 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-11476359647"
           strategy="afterInteractive"
         />
 
-        <Script id="google-ads-gtag-11476359647" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'AW-11476359647');
-          `}
-        </Script>
-
-        {/* =====================================================
-            GOOGLE ADS TAG — AW-18383056369
-        ====================================================== */}
-
+        {/* Google Ads — Account 2 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18383056369"
           strategy="afterInteractive"
         />
 
-        <Script id="google-ads-gtag-18383056369" strategy="afterInteractive">
+        {/* Initialize Google tag once and configure both IDs */}
+        <Script id="google-ads-initialization" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+
+            function gtag() {
+              window.dataLayer.push(arguments);
+            }
+
+            window.gtag = gtag;
+
             gtag('js', new Date());
 
+            gtag('config', 'AW-11476359647');
             gtag('config', 'AW-18383056369');
           `}
         </Script>
