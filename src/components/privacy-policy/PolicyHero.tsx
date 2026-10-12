@@ -10,12 +10,12 @@ export default function BlogHero() {
         aria-hidden="true"
         className="absolute inset-0"
       >
-        <img
+        {/* <img
           src={heroImage}
           alt=""
           aria-hidden="true"
           className="h-full w-full object-cover"
-        />
+        /> */}
       </div>
 
       {/* Dark Overlay */}
@@ -56,7 +56,7 @@ export default function BlogHero() {
           </div>
 
           <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-7xl">
-            FOSTIIMA <span className="text-[#c31e3b]">Privacy Policy</span>
+            Privacy <span className="text-[#c31e3b]"> Policy</span>
           </h1>
 
           <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8c5d8] sm:text-lg">
