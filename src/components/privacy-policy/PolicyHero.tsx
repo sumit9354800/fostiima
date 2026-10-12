@@ -1,6 +1,6 @@
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/blog-hero.webp");
+const heroImage = cloudinaryAsset("");
 
 export default function BlogHero() {
   return (
@@ -56,7 +56,7 @@ export default function BlogHero() {
           </div>
 
           <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-7xl">
-            FOSTIIMA <span className="text-[#c31e3b]">Blog</span>
+            FOSTIIMA <span className="text-[#c31e3b]">Privacy Policy</span>
           </h1>
 
           <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8c5d8] sm:text-lg">
