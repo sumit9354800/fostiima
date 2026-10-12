@@ -143,6 +143,6 @@ export const socialLinks = [
   },
   {
     label: "WhatsApp",
-    href: "https://wa.me/917678389436",
+    href: "https://wa.me/917678391245",
   },
 ];

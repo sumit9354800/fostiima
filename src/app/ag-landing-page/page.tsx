@@ -402,7 +402,7 @@ export default function AGLandingPage() {
           MOBILE CALL BUTTON
       ========================================== */}
       <a
-        href="tel:+917678389436"
+        href="tel:+917678391245"
         className="fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#c31e3b] text-white shadow-xl md:hidden"
         aria-label="Call FOSTIIMA"
       >

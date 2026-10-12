@@ -128,7 +128,7 @@ export default function Footer() {
 
               {/* Phone */}
               <a
-                href="tel:+917678389436"
+                href="tel:+917678391245"
                 className="flex items-center gap-3 text-sm text-white/65 transition-colors hover:text-white"
               >
                 <Phone className="h-4 w-4 text-[#eab308]" />

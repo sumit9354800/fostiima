@@ -347,7 +347,7 @@ export default function MobileMenu() {
               </a>
 
               <a
-                href="tel:+917678389436"
+                href="tel:+917678391245"
                 onClick={closeMenu}
                 className="
                   block
