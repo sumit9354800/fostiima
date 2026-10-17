@@ -106,21 +106,21 @@ export async function POST(request: Request) {
       fileSize: file.size,
     });
   } catch (error) {
+    const err = error as NodeJS.ErrnoException;
+
+    // Log detailed diagnostics on the server.
     console.error("[ADMIN_LOCAL_UPLOAD_FAILURE]", {
-      error,
-      cwd: process.cwd(),
-      uploadDirectory: path.join(process.cwd(), "public", "uploads"),
+      code: err?.code ?? "UNKNOWN",
+      syscall: err?.syscall ?? "UNKNOWN",
+      message: err?.message ?? "Unknown upload error",
     });
 
-    const errorCode =
-      typeof error === "object" && error !== null && "code" in error
-        ? String(error.code)
-        : "UNKNOWN";
-
+    // Return only safe diagnostic details to the admin browser.
     return NextResponse.json(
       {
         error: "Unable to save uploaded file.",
-        code: errorCode,
+        code: err?.code ?? "UNKNOWN",
+        operation: err?.syscall ?? "UNKNOWN",
       },
       { status: 500 },
     );
