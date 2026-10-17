@@ -502,30 +502,53 @@ export default function BlogEditor({
       return;
     }
 
+    if (file.size > 100 * 1024 * 1024) {
+      alert("Image size cannot exceed 100MB.");
+      return;
+    }
+
     try {
       setUploading(true);
 
-      const formData = new FormData();
-
-      formData.append("file", file);
-      formData.append("destination", "cloudinary");
-
-      const response = await fetch("/api/admin/upload", {
+      // Step 1: Authenticate admin and request a short-lived token.
+      const tokenResponse = await fetch("/api/admin/upload-token", {
         method: "POST",
-        body: formData,
+        credentials: "same-origin",
+        headers: { Accept: "application/json" },
+        cache: "no-store",
       });
 
-      const data = await response.json();
+      const tokenData = await tokenResponse.json();
 
-      if (!response.ok) {
-        throw new Error(data?.error || "Failed to upload image.");
+      if (!tokenResponse.ok || typeof tokenData.token !== "string") {
+        throw new Error(tokenData.error || "Unable to authorize image upload.");
       }
 
-      if (!data?.url) {
-        throw new Error("Upload completed but image URL was not returned.");
+      // Step 2: Upload directly to Hostinger.
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const uploadResponse = await fetch(
+        "https://media.fostiima.org/upload.php",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${tokenData.token}`,
+          },
+          body: formData,
+          mode: "cors",
+        },
+      );
+
+      const uploadData = await uploadResponse.json();
+
+      if (!uploadResponse.ok || typeof uploadData.url !== "string") {
+        throw new Error(
+          uploadData.error || "Hostinger did not return an image URL.",
+        );
       }
 
-      updateField("coverImage", data.url);
+      updateField("coverImage", uploadData.url);
     } catch (error) {
       console.error("[BLOG_IMAGE_UPLOAD]", error);
 
