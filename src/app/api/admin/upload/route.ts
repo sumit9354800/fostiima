@@ -11,7 +11,10 @@ export const runtime = "nodejs";
 const MAX_FILE_SIZE = 100 * 1024 * 1024;
 
 // Extensions are selected from the verified MIME type, not the uploaded filename.
-const ALLOWED_TYPES: Record<string, { extension: string; folder: "images" | "videos" }> = {
+const ALLOWED_TYPES: Record<
+  string,
+  { extension: string; folder: "images" | "videos" }
+> = {
   "image/jpeg": { extension: "jpg", folder: "images" },
   "image/png": { extension: "png", folder: "images" },
   "image/webp": { extension: "webp", folder: "images" },
@@ -26,11 +29,7 @@ async function requireAdmin() {
     headers: await headers(),
   });
 
-  if (
-    !session?.user ||
-    session.user.role !== "admin" ||
-    session.user.banned
-  ) {
+  if (!session?.user || session.user.role !== "admin" || session.user.banned) {
     return null;
   }
 
@@ -49,28 +48,45 @@ export async function POST(request: Request) {
     const file = formData.get("file");
 
     if (!(file instanceof File)) {
-      return NextResponse.json({ error: "No file was provided." }, { status: 400 });
+      return NextResponse.json(
+        { error: "No file was provided." },
+        { status: 400 },
+      );
     }
 
     const fileType = ALLOWED_TYPES[file.type];
     if (!fileType) {
       return NextResponse.json(
-        { error: "Unsupported file type. Upload JPG, PNG, WebP, GIF, MP4, WebM, or MOV files." },
+        {
+          error:
+            "Unsupported file type. Upload JPG, PNG, WebP, GIF, MP4, WebM, or MOV files.",
+        },
         { status: 415 },
       );
     }
 
     if (file.size === 0) {
-      return NextResponse.json({ error: "The selected file is empty." }, { status: 400 });
+      return NextResponse.json(
+        { error: "The selected file is empty." },
+        { status: 400 },
+      );
     }
 
     if (file.size > MAX_FILE_SIZE) {
-      return NextResponse.json({ error: "File size cannot exceed 100MB." }, { status: 413 });
+      return NextResponse.json(
+        { error: "File size cannot exceed 100MB." },
+        { status: 413 },
+      );
     }
 
     // Save directly into the project's public directory so Next.js serves the file
     // at the returned root-relative URL. A UUID prevents name collisions/path traversal.
-    const uploadDirectory = path.join(process.cwd(), "public", "uploads", fileType.folder);
+    const uploadDirectory = path.join(
+      process.cwd(),
+      "public",
+      "uploads",
+      fileType.folder,
+    );
     await mkdir(uploadDirectory, { recursive: true });
 
     const fileName = `${Date.now()}-${randomUUID()}.${fileType.extension}`;
@@ -90,10 +106,22 @@ export async function POST(request: Request) {
       fileSize: file.size,
     });
   } catch (error) {
-    console.error("Admin local upload error:", error);
+    console.error("[ADMIN_LOCAL_UPLOAD_FAILURE]", {
+      error,
+      cwd: process.cwd(),
+      uploadDirectory: path.join(process.cwd(), "public", "uploads"),
+    });
+
+    const errorCode =
+      typeof error === "object" && error !== null && "code" in error
+        ? String(error.code)
+        : "UNKNOWN";
 
     return NextResponse.json(
-      { error: "Unable to save the file to public/uploads. Check server write permissions and available disk space." },
+      {
+        error: "Unable to save uploaded file.",
+        code: errorCode,
+      },
       { status: 500 },
     );
   }
