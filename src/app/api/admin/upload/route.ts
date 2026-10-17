@@ -1,21 +1,25 @@
-import { createHash } from "crypto";
+import { randomUUID } from "node:crypto";
+import { mkdir, writeFile } from "node:fs/promises";
+import path from "node:path";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
 import { auth } from "@/lib/auth";
 
+export const runtime = "nodejs";
+
 const MAX_FILE_SIZE = 100 * 1024 * 1024;
 
-const ALLOWED_TYPES = new Set([
-  "image/jpeg",
-  "image/png",
-  "image/webp",
-  "image/svg+xml",
-  "image/gif",
-  "video/mp4",
-  "video/webm",
-  "video/quicktime",
-]);
+// Extensions are selected from the verified MIME type, not the uploaded filename.
+const ALLOWED_TYPES: Record<string, { extension: string; folder: "images" | "videos" }> = {
+  "image/jpeg": { extension: "jpg", folder: "images" },
+  "image/png": { extension: "png", folder: "images" },
+  "image/webp": { extension: "webp", folder: "images" },
+  "image/gif": { extension: "gif", folder: "images" },
+  "video/mp4": { extension: "mp4", folder: "videos" },
+  "video/webm": { extension: "webm", folder: "videos" },
+  "video/quicktime": { extension: "mov", folder: "videos" },
+};
 
 async function requireAdmin() {
   const session = await auth.api.getSession({
@@ -33,137 +37,64 @@ async function requireAdmin() {
   return session;
 }
 
-async function uploadToCloudinary(file: File) {
-  const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
-  const apiKey = process.env.CLOUDINARY_API_KEY;
-  const apiSecret = process.env.CLOUDINARY_API_SECRET;
-
-  if (!cloudName || !apiKey || !apiSecret) {
-    throw new Error(
-      "Cloudinary environment variables are not configured.",
-    );
-  }
-
-  const timestamp = Math.floor(Date.now() / 1000);
-
-  const folder = "fostiima/home";
-
-  const signatureBase =
-    `folder=${folder}&timestamp=${timestamp}${apiSecret}`;
-
-  const signature = createHash("sha1")
-    .update(signatureBase)
-    .digest("hex");
-
-  const formData = new FormData();
-
-  formData.append("file", file);
-  formData.append("api_key", apiKey);
-  formData.append("timestamp", String(timestamp));
-  formData.append("folder", folder);
-  formData.append("signature", signature);
-
-  const resourceType = file.type.startsWith("video/")
-    ? "video"
-    : "image";
-
-  const response = await fetch(
-    `https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`,
-    {
-      method: "POST",
-      body: formData,
-    },
-  );
-
-  const data = await response.json();
-
-  if (!response.ok || !data.secure_url) {
-    console.error("Cloudinary upload error:", data);
-
-    throw new Error(
-      data?.error?.message ??
-        "Cloudinary upload failed.",
-    );
-  }
-
-  return data.secure_url as string;
-}
-
 export async function POST(request: Request) {
   const session = await requireAdmin();
 
   if (!session) {
-    return NextResponse.json(
-      {
-        error: "Unauthorized",
-      },
-      {
-        status: 401,
-      },
-    );
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   try {
     const formData = await request.formData();
-
     const file = formData.get("file");
 
     if (!(file instanceof File)) {
+      return NextResponse.json({ error: "No file was provided." }, { status: 400 });
+    }
+
+    const fileType = ALLOWED_TYPES[file.type];
+    if (!fileType) {
       return NextResponse.json(
-        {
-          error: "No file was provided.",
-        },
-        {
-          status: 400,
-        },
+        { error: "Unsupported file type. Upload JPG, PNG, WebP, GIF, MP4, WebM, or MOV files." },
+        { status: 415 },
       );
     }
 
-    if (!ALLOWED_TYPES.has(file.type)) {
-      return NextResponse.json(
-        {
-          error: "This file type is not supported.",
-        },
-        {
-          status: 400,
-        },
-      );
+    if (file.size === 0) {
+      return NextResponse.json({ error: "The selected file is empty." }, { status: 400 });
     }
 
     if (file.size > MAX_FILE_SIZE) {
-      return NextResponse.json(
-        {
-          error: "File size cannot exceed 100MB.",
-        },
-        {
-          status: 400,
-        },
-      );
+      return NextResponse.json({ error: "File size cannot exceed 100MB." }, { status: 413 });
     }
 
-    const url = await uploadToCloudinary(file);
+    // Save directly into the project's public directory so Next.js serves the file
+    // at the returned root-relative URL. A UUID prevents name collisions/path traversal.
+    const uploadDirectory = path.join(process.cwd(), "public", "uploads", fileType.folder);
+    await mkdir(uploadDirectory, { recursive: true });
+
+    const fileName = `${Date.now()}-${randomUUID()}.${fileType.extension}`;
+    const absolutePath = path.join(uploadDirectory, fileName);
+    const buffer = Buffer.from(await file.arrayBuffer());
+    await writeFile(absolutePath, buffer, { flag: "wx" });
+
+    const url = `/uploads/${fileType.folder}/${fileName}`;
 
     return NextResponse.json({
       success: true,
       url,
-      destination: "cloudinary",
-      fileName: file.name,
+      destination: "public",
+      fileName,
+      originalFileName: file.name,
       fileType: file.type,
       fileSize: file.size,
     });
   } catch (error) {
-    console.error("Admin upload error:", error);
+    console.error("Admin local upload error:", error);
 
     return NextResponse.json(
-      {
-        error:
-          error instanceof Error
-            ? error.message
-            : "Unable to upload file.",
-      },
-      {
-        status: 500,
-      },
+      { error: "Unable to save the file to public/uploads. Check server write permissions and available disk space." },
+      { status: 500 },
     );
   }
 }
