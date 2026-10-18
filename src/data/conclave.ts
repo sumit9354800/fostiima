@@ -272,15 +272,12 @@ export const conclaveEvents: ConclaveEvent[] = [
     bgImage: "",
 
     images: [
-      "/conclave/olympians/olympians1.jpeg",
-      "/conclave/olympians/olympians2.jpeg",
-      // "/conclave/olympians/olympians3.jpeg",
-      
-      "/conclave/olympians/olympians4.jpeg",
-      // "/conclave/olympians/olympians5.jpeg",
-      "/conclave/olympians/olympians6.jpeg",
-      "/conclave/olympians/olympians7.jpeg",
-      "/conclave/olympians/olympians8.jpeg",
+      // "/conclave/olympians/olympians1.jpeg",
+      // "/conclave/olympians/olympians2.jpeg",
+      // "/conclave/olympians/olympians4.jpeg",
+      // "/conclave/olympians/olympians6.jpeg",
+      // "/conclave/olympians/olympians7.jpeg",
+      // "/conclave/olympians/olympians8.jpeg",
     ],
     href: "/conclave-conference/olympians-manu-bhaker",
     featured: false,
