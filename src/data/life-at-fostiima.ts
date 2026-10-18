@@ -492,7 +492,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
       },
       {
         src: 
-          "/life-at-fostiima/team-building-camp/team-building-camp6.webp",
+          "/life-at-fostiima/team-building-camp/team-building-camp6.jpeg",
         alt: "Team Building Camp at FOSTIIMA - 6",
       },
     ],
