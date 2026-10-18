@@ -41,8 +41,8 @@ export const placementPages = {
       "/placement/col5.jpeg",
     ],
     fullImages: [
-      "/placement/placement1.webp",
-      "/placement/placement2.webp",
+      "/placement/placement1.jpg",
+      "/placement/placement2.jpg",
     ],
   },
 
@@ -52,8 +52,8 @@ export const placementPages = {
       "Companies and recruiters associated with FOSTIIMA's placement opportunities.",
     rowImages: [],
     fullImages: [
-      "/placement/company1.webp",
-      "/placement/company2.webp",
+      "/placement/company1.jpg",
+      "/placement/company2.jpg",
     ],
   },
 } as const;

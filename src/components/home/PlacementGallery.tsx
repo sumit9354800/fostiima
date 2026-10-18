@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { cloudinaryAsset } from "@/lib/cloudinary";
 
 const placementImages = [
   "/home/imagesection/1.jpeg",
