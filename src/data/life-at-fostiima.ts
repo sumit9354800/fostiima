@@ -842,47 +842,47 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
         images: [
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day1.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day1.jpeg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpeg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day3.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day3.jpeg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day4.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day4.jpeg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day5.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day5.jpeg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day6.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day6.jpeg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day7.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day7.jpeg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day8.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day8.jpeg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day9.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day9.jpeg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
