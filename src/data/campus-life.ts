@@ -18,7 +18,7 @@ export const campusLifeItems: CampusLifeItem[] = [
     description:
       "Build meaningful connections, collaborate with peers and create lifelong friendships beyond the classroom.",
 
-    image: cloudinaryAsset("home/campuslife/campuslife01.jpeg"),
+    image: "home/campuslife/campuslife01.jpeg",
 
     href: "/alumni",
 
@@ -38,7 +38,7 @@ export const campusLifeItems: CampusLifeItem[] = [
     description:
       "Engage in discussions, debates, workshops and activities that encourage curiosity and new perspectives.",
 
-    image: cloudinaryAsset("home/campuslife/campuslife02.jpeg"),
+    image: "home/campuslife/campuslife02.jpeg",
 
     href: "/life-at-fostiima/brain-storming",
 
@@ -58,7 +58,7 @@ export const campusLifeItems: CampusLifeItem[] = [
     description:
       "Balance academic life with sports, recreation and activities that encourage teamwork and sportsmanship.",
 
-    image: cloudinaryAsset("home/campuslife/campuslife03.jpeg"),
+    image: "home/campuslife/campuslife03.jpeg",
 
     href: "/life-at-fostiima/sports-and-fitness",
 
@@ -78,7 +78,7 @@ export const campusLifeItems: CampusLifeItem[] = [
     description:
       "Experience cultural activities, celebrations, industry interactions and memorable campus experiences.",
 
-    image: cloudinaryAsset("home/campuslife/campuslife04.jpeg"),
+    image: "home/campuslife/campuslife04.jpeg",
 
     href: "/life-at-fostiima/cultural-events",
 

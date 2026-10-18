@@ -18,7 +18,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-anil-somani",
     name: "Mr. Anil Somani",
-    image: cloudinaryAsset("/home/faculty/faculty1.webp"),
+    image: "/home/faculty/faculty1.webp",
     qualification: "50+ YEARS INDUSTRY EXPERIENCE",
     experience: "50+ years",
     domain: "Automobiles, Tourism, Pharmaceuticals",
@@ -26,7 +26,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-sunil-kala",
     name: "Mr. Sunil Kala",
-    image: cloudinaryAsset("/home/faculty/faculty2.webp"),
+    image: "/home/faculty/faculty2.webp",
     qualification: "50+ YEARS INDUSTRY EXPERIENCE",
     experience: "50+ years",
     domain: "Investment Banking, Capital Markets",
@@ -34,7 +34,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-rajeeva-kansal",
     name: "Mr. Rajeeva Kansal",
-    image: cloudinaryAsset("/home/faculty/faculty3.webp"),
+    image: "/home/faculty/faculty3.webp",
     qualification: "48+ YEARS INDUSTRY EXPERIENCE",
     experience: "48+ years",
     domain: "Industrial Products, Consultancy",
@@ -42,7 +42,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "dr-aditya-vij",
     name: "Dr. Aditya Vij",
-    image: cloudinaryAsset("/home/faculty/faculty04.png"),
+    image: "/home/faculty/faculty04.png",
     qualification: "30+ YEARS INDUSTRY EXPERIENCE",
     experience: "30+ years",
     domain: "Fashion Garments, Sourcing, Teaching",
@@ -50,7 +50,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-gautam-kaul",
     name: "Mr. Gautam Kaul",
-    image: cloudinaryAsset("/home/faculty/faculty5.webp"),
+    image: "/home/faculty/faculty5.webp",
     qualification: "MBA-IIMA, B.Tech.-IIT Delhi",
     experience: "45+ years",
     domain: "FMCG, Beverages, Tobacco, Academics",
@@ -58,7 +58,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-vinod-kaul",
     name: "Mr. Vinod Kaul",
-    image: cloudinaryAsset("/home/faculty/faculty6.webp"),
+    image: "/home/faculty/faculty6.webp",
     qualification: "50+ YEARS INDUSTRY EXPERIENCE” ",
     experience: "50+ years",
     domain: "“Fashion, Retail, Consultancy",
@@ -66,7 +66,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-hitesh-manocha",
     name: "Mr. Hitesh Manocha",
-    image: cloudinaryAsset("/home/faculty/faculty7.webp"),
+    image: "/home/faculty/faculty7.webp",
     qualification: "MBA-IIM A, B.Tech - DTU",
     experience: "25+ years",
     domain: "Info Tech, Telecom and Office Automation",
@@ -74,7 +74,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "rakesh-kumar",
     name: "Mr. Rakesh Kumar",
-    image: cloudinaryAsset("/home/faculty/faculty8.webp"),
+    image: "/home/faculty/faculty8.webp",
     qualification: "38+ YEARS INDUSTRY EXPERIENCE” ",
     experience: "38+ years",
     domain: "Supply Chain, Solar Photovoltaic Products",
@@ -82,7 +82,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "shailaja-manocha",
     name: "Ms. Shailaja Manocha",
-    image: cloudinaryAsset("/home/faculty/faculty9.webp"),
+    image: "/home/faculty/faculty9.webp",
     qualification: "PGDBM (1988-1990) from IMT Ghaziabad",
     experience: "20+ years",
     domain: "Teaching",
@@ -90,7 +90,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "vikram-tyagi",
     name: "Dr. Vikram Tyagi",
-    image: cloudinaryAsset("/home/faculty/faculty10.webp"),
+    image: "/home/faculty/faculty10.webp",
     qualification:
       "52+ YEARS of INDUSTRY EXPERIENCE” ",
     experience: "52+",
@@ -99,7 +99,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "gita-ms-agrawal",
     name: "Ms. Gita Agarwal",
-    image: cloudinaryAsset("/home/faculty/faculty11.webp"),
+    image: "/home/faculty/faculty11.webp",
     qualification: "28 Advertising",
     experience: "28+ years",
     domain: "Advertising, QSR",
@@ -107,7 +107,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "nadira-chaturvedi",
     name: "Ms. Nadira Chaturvedi",
-    image: cloudinaryAsset("/home/faculty/faculty12.webp"),
+    image: "/home/faculty/faculty12.webp",
     qualification: "48+ YEARS INDUSTRY EXPERIENCE",
     experience: "48+ years",
     domain: "Automotive, Fashion Garments",
@@ -116,7 +116,7 @@ export const facultyData: Faculty[] = [
   // {
   //   slug: "mr-sl-ganapathi",
   //   name: "Mr. SL Ganapathi",
-  //   image: cloudinaryAsset(""),
+  //   image: ""),
   //   qualification: "MBA-IIM A, BE",
   //   experience: "45+ years",
   //   domain: "Logistics & Supply Chain",
@@ -124,7 +124,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "arun-sahay",
     name: "Mr. Arun Sahay",
-    image: cloudinaryAsset("/home/faculty/faculty014.png"),
+    image: "/home/faculty/faculty014.png",
     qualification: "49+ YEARS INDUSTRY EXPERIENCE",
     experience: "49+ years",
     domain: "Consumer Durables, Building Products, Pharmaceuticals",
@@ -132,7 +132,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "sc-bansal",
     name: "SC Bansal",
-    image: cloudinaryAsset("/home/faculty/faculty015.png"),
+    image: "/home/faculty/faculty015.png",
     qualification: "30+ YEARS INDUSTRY EXPERIENCE",
     experience: "30+ years",
     domain: "Teaching, Research",
@@ -140,7 +140,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "jayant-bose",
     name: "Mr. Jayant Bose",
-    image: cloudinaryAsset("/home/faculty/faculty016.png"),
+    image: "/home/faculty/faculty016.png",
     qualification: "40+ YEARS INDUSTRY EXPERIENCE",
     experience: "40+ years",
     domain: "Advertising, FMCG",
@@ -148,7 +148,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "vivek-kumar",
     name: "Mr. Vivek Kumar",
-    image: cloudinaryAsset("/home/faculty/faculty017.png"),
+    image: "/home/faculty/faculty017.png",
     qualification:
       "55+ YEARS of INDUSTRY EXPERIENCE” ",
     experience: "55+ years",
@@ -157,7 +157,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ritika-arora",
     name: "Dr. Ritika Arora",
-    image: cloudinaryAsset("/home/faculty/faculty018.png"),
+    image: "/home/faculty/faculty018.png",
     qualification:
       "B Tech (JNU, Delhi), Diploma in Advanced Computing (CDAC, Pune), Diploma in Management",
     experience: "20+ years",
@@ -166,7 +166,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ferzand",
     name: "Mr. Ferzand",
-    image: cloudinaryAsset("/home/faculty/faculty019.jpeg"),
+    image: "/home/faculty/faculty019.jpeg",
     qualification: "PGDM - IIM-A, B.Tech",
     experience: "9+ years",
     domain: "Analyst, Data Finance", 
@@ -175,7 +175,7 @@ export const facultyData: Faculty[] = [
   // {
   //   slug: "prashant-k-chaudhary",
   //   name: "Dr. Prashant K. Chaudhary",
-  //   image: cloudinaryAsset("/home/faculty/faculty120.webp"),
+  //   image: "/home/faculty/faculty120.webp",
   //   qualification:
   //     "PhD (MDI Gurgaon), M Tech (IIT Kanpur), MBA (FMS, Delhi University)",
   //   experience: "39 years",
@@ -184,7 +184,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "brig-ajay-mehta",
     name: "Brig. Ajay Mehta",
-    image: cloudinaryAsset("/home/faculty/faculty021.jpeg"),
+    image: "/home/faculty/faculty021.jpeg",
     qualification: "Ph.D. (Management), Management Studies (MMS)",
     experience: "35+ years",
     domain: "in Indian Army and 13 years teaching experience",
@@ -192,7 +192,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ajit-gupta",
     name: "Dr. Ajit Gupta",
-    image: cloudinaryAsset("/home/faculty/faculty22.webp"),
+    image: "/home/faculty/faculty22.webp",
     qualification:
       "Ph.D. from IIM Lucknow, MBA from Northeastern University, Boston, USA, PGDM from IIM Ahmedabad",
     experience: "",
@@ -201,7 +201,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ruchika-yadav",
     name: "Dr. Ruchika Yadav",
-    image: cloudinaryAsset("/home/faculty/faculty023.png"),
+    image: "/home/faculty/faculty023.png",
     qualification: "Ph.D + M.Phil + MBA + BBA",
     experience: "22+ years",
     domain: "HR & Management",
@@ -209,7 +209,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "sharad-kumar",
     name: "Dr. Sharad Kumar",
-    image: cloudinaryAsset("/home/faculty/faculty025.png"),
+    image: "/home/faculty/faculty025.png",
     qualification: "CFE (Texas), CrFA (UK), ACIS (UK), CIQA, LLB, LLM, Ph.D.",
     experience: "32+ years",
     domain: "",
@@ -217,7 +217,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "pulak-palit",
     name: "Mr. Pulak Palit",
-    image: cloudinaryAsset("/home/faculty/faculty026.png"),
+    image: "/home/faculty/faculty026.png",
     qualification:
       "MBA (Marketing), Professional Diploma in Software Technology, NIIT",
     experience: "30+ years",
@@ -226,7 +226,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "sanjay-chandwani",
     name: "Mr. Sanjay Chandwani",
-    image: cloudinaryAsset("/home/faculty/faculty027.png"),
+    image: "/home/faculty/faculty027.png",
     qualification: "PGDRM (IRMA), 1988",
     experience: "22+ years",
     domain: "",
@@ -234,7 +234,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "atul-mehta",
     name: "Mr. Atul Mehta",
-    image: cloudinaryAsset("/home/faculty/faculty029.png"),
+    image: "/home/faculty/faculty029.png",
     qualification: "MBA (IIM-A), BE",
     experience: "13+ years",
     domain: "Consulting (MNC), Financial Services",
@@ -242,7 +242,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "amit-grover",
     name: "Mr. Amit Grover",
-    image: cloudinaryAsset("/home/faculty/faculty0030.jpeg"),
+    image: "/home/faculty/faculty0030.jpeg",
     qualification: "M.Com, B.Com (H)",
     experience: "12+ years",
     domain: "",
@@ -250,7 +250,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "harman-mangat",
     name: "Ms. Harman Mangat",
-    image: cloudinaryAsset("/home/faculty/faculty031.png"),
+    image: "/home/faculty/faculty031.png",
     qualification: "BCA, MBA (Marketing & IT), PGDITM, PhD Pursuing",
     experience: "23+ years",
     domain: "Digital Marketing",
@@ -258,7 +258,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "sameer-kathuria",
     name: "Mr. Sameer Kathuria",
-    image: cloudinaryAsset("/home/faculty/faculty032.png"),
+    image: "/home/faculty/faculty032.png",
     qualification:
       "B.Com (H), M.Com, PGDM, MBA Finance, UGC NET, PhD Pursuing (AMU)",
     experience: "18+ years",
@@ -267,7 +267,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "preeti-taneja",
     name: "Dr. Preeti Taneja",
-    image: cloudinaryAsset("/home/faculty/faculty033.png"),
+    image: "/home/faculty/faculty033.png",
     qualification:
       "B.Com (H), M.Com, PGDM, MBA Finance, UGC NET, PhD Pursuing (AMU)",
     experience: "18+ years",
@@ -276,7 +276,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "nimisha-srivastava",
     name: "Ms. Nimisha Srivastava",
-    image: cloudinaryAsset("/home/faculty/faculty035.png"),
+    image: "/home/faculty/faculty035.png",
     qualification: "M.Com, MBA (Marketing & HR), UGC NET",
     experience: "",
     domain: "Marketing, Consumer Behaviour, Legal Aspects",
@@ -284,7 +284,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ms-ridhi-sehgal",
     name: "Ms. Ridhi Sehgal",
-    image: cloudinaryAsset("/home/faculty/faculty036.png"),
+    image: "/home/faculty/faculty036.png",
     qualification: "PGDPM - NIPM-Kolkata",
     experience: "10+ years",
     domain: "Civil",
@@ -292,7 +292,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ms-dishi-s",
     name: "Ms. Dishi S",
-    image: cloudinaryAsset("/home/faculty/faculty038.png"),
+    image: "/home/faculty/faculty038.png",
     qualification: "MBA, IMT Dubai",
     experience: "10+ years",
     domain: "Banking, Financial Management",
@@ -300,7 +300,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "dr-tanuj-jain",
     name: "Dr. Tanuj Jain",
-    image: cloudinaryAsset("/home/faculty/faculty039.png"),
+    image: "/home/faculty/faculty039.png",
     qualification: "PhD. Library Science",
     experience: "10+ years",
     domain: "Library and Information Science",
@@ -308,7 +308,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-shagun-s",
     name: "Mr. Shagun. S",
-    image: cloudinaryAsset("/home/faculty/faculty040.png"),
+    image: "/home/faculty/faculty040.png",
     qualification: "MBA",
     experience: "20+ years",
     domain: "Sales & Marketing, Business Growth",
@@ -316,7 +316,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-dhananjay-kumar",
     name: "Mr. Dhananjay Kumar",
-    image: cloudinaryAsset("/home/faculty/faculty041.jpeg"),
+    image: "/home/faculty/faculty041.jpeg",
     qualification: "MBA/PGDM, B.Tech",
     experience: "15+ years",
     domain: "Digital Marketing, Analytics, Business Strategy",
@@ -324,7 +324,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ms-mohini-deshwal",
     name: "Ms. Mohini Deshwal",
-    image: cloudinaryAsset("/home/faculty/faculty042.jpeg"),
+    image: "/home/faculty/faculty042.jpeg",
     qualification: "PGDM (Symbiosis), B.Com (DU)",
     experience: "10+ years",
     domain: "Information Technology, Management",
@@ -332,7 +332,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mohammad-maroof",
     name: "Mohammad Maroof",
-    image: cloudinaryAsset("/home/faculty/faculty043.jpeg"),
+    image: "/home/faculty/faculty043.jpeg",
     qualification: "B.Com (Hons), MBA Jamia Millia Islamia, New Delhi",
     experience: "18+ years",
     domain: "",

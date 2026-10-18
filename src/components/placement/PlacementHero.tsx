@@ -4,7 +4,7 @@ import { useState } from "react";
 import { BriefcaseBusiness } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/placement-banner.webp");
+const heroImage = "/banner/placement-banner.webp";
 
 export default function PlacementHero() {
   const [imageError, setImageError] = useState(false);

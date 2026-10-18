@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import { academicsData } from "@/data/academics";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/programs/pgdm.png");
+const heroImage = "/programs/pgdm.png";
 
 export default function AcademicsHero() {
   return (

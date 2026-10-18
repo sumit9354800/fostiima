@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Meet the experienced core faculty members of FOSTIIMA Business School.",
 };
 
-const heroImage = cloudinaryAsset("/banner/faculties-banner.webp");
+const heroImage = "/banner/faculties-banner.webp";
 
 export default function FacultiesPage() {
   return (

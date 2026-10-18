@@ -1,7 +1,7 @@
 
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/margdarshak-banner.webp");
+const heroImage = "/banner/margdarshak-banner.webp";
 
 export default function MargdarshakHero() {
   const hasBackgroundImage = Boolean(heroImage);

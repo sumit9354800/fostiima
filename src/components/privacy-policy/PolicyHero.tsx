@@ -1,6 +1,6 @@
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("");
+const heroImage = "";
 
 export default function BlogHero() {
   return (

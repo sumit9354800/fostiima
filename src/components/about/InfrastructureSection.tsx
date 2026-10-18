@@ -7,13 +7,13 @@ import { cloudinaryAsset } from "@/lib/cloudinary";
 
 const infrastructureImages = [
 
-  cloudinaryAsset("/about/infrastructures/infrastructures01.jpeg"),
+  "/about/infrastructures/infrastructures01.jpeg",
 
-  cloudinaryAsset("/about/infrastructures/infrastructures02.jpeg"),
+  "/about/infrastructures/infrastructures02.jpeg",
 
-  cloudinaryAsset("/about/infrastructures/infrastructures03.jpeg"),
+  "/about/infrastructures/infrastructures03.jpeg",
 
-  cloudinaryAsset("/about/infrastructures/infrastructures04.jpeg"),
+  "/about/infrastructures/infrastructures04.jpeg",
 
 ];
 

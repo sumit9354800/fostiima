@@ -17,11 +17,11 @@ export const accreditations: Accreditation[] = [
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 28.03.2025",
 
-    logo: cloudinaryAsset("/badge/badge1.webp"),
+    logo: "/badge/badge1.webp",
 
     image: [
-      cloudinaryAsset("/awards-accreditation/nba/NBA1.jpg"),
-      cloudinaryAsset("/awards-accreditation/nba/NBA2.jpg"),
+      "/awards-accreditation/nba/NBA1.jpg",
+      "/awards-accreditation/nba/NBA2.jpg",
     ],
   },
 
@@ -32,11 +32,11 @@ export const accreditations: Accreditation[] = [
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2026-27",
 
-    logo: cloudinaryAsset("/badge/badge2.webp"),
+    logo: "/badge/badge2.webp",
 
    image: [
-      cloudinaryAsset("/awards-accreditation/acte/2026-27-1.webp"),
-      cloudinaryAsset("/awards-accreditation/acte/2026-27-2.webp"),
+      "/awards-accreditation/acte/2026-27-1.webp",
+      "/awards-accreditation/acte/2026-27-2.webp",
     ],
   },
 
@@ -47,7 +47,7 @@ export const accreditations: Accreditation[] = [
     description:
       "Online application of the Institution submitted for Extension of Approval for the Academic Year 2025-26",
 
-    logo: cloudinaryAsset("/badge/badge3.webp"),
+    logo: "/badge/badge3.webp",
 
     image: [],
   },

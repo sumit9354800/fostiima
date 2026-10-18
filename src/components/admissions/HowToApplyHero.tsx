@@ -2,7 +2,7 @@
 import { ArrowDown, ClipboardCheck } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/how-to-apply-banner.webp");
+const heroImage = "/banner/how-to-apply-banner.webp";
 
 export default function HowToApplyHero() {
   return (

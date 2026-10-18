@@ -2,7 +2,7 @@
 import { BriefcaseBusiness } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/hr-policy-banner.webp");
+const heroImage = "/banner/hr-policy-banner.webp";
 
 export default function HRPolicyHero() {
   return (

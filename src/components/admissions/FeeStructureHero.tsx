@@ -7,7 +7,7 @@ type FeeStructureHeroProps = {
   totalFee: string;
 };
 
-const heroImage = cloudinaryAsset("/banner/fee-structure-banner.webp");
+const heroImage = "/banner/fee-structure-banner.webp";
 
 export default function FeeStructureHero({
   title,

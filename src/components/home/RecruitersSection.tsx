@@ -6,7 +6,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo1.webp"),
+    src: "/home/company-logo/company-logo1.webp",
 
     alt: "Recruiter",
 
@@ -14,7 +14,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo2.webp"),
+    src: "/home/company-logo/company-logo2.webp",
 
     alt: "Recruiter",
 
@@ -22,7 +22,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo3.webp"),
+    src: "/home/company-logo/company-logo3.webp",
 
     alt: "Recruiter",
 
@@ -30,7 +30,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo4.webp"),
+    src: "/home/company-logo/company-logo4.webp",
 
     alt: "Recruiter",
 
@@ -38,7 +38,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo5.webp"),
+    src: "/home/company-logo/company-logo5.webp",
 
     alt: "Recruiter",
 
@@ -46,7 +46,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo6.webp"),
+    src: "/home/company-logo/company-logo6.webp",
 
     alt: "Recruiter",
 
@@ -54,7 +54,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo7.webp"),
+    src: "/home/company-logo/company-logo7.webp",
 
     alt: "Recruiter",
 
@@ -62,7 +62,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo8.webp"),
+    src: "/home/company-logo/company-logo8.webp",
 
     alt: "Recruiter",
 
@@ -70,7 +70,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo9.webp"),
+    src: "/home/company-logo/company-logo9.webp",
 
     alt: "Recruiter",
 
@@ -78,7 +78,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo10.webp"),
+    src: "/home/company-logo/company-logo10.webp",
 
     alt: "Recruiter",
 
@@ -86,7 +86,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo11.webp"),
+    src: "/home/company-logo/company-logo11.webp",
 
     alt: "Recruiter",
 
@@ -94,7 +94,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo12.webp"),
+    src: "/home/company-logo/company-logo12.webp",
 
     alt: "Recruiter",
 
@@ -102,7 +102,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo13.webp"),
+    src: "/home/company-logo/company-logo13.webp",
 
     alt: "Recruiter",
 
@@ -110,7 +110,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo14.webp"),
+    src: "/home/company-logo/company-logo14.webp",
 
     alt: "Recruiter",
 
@@ -118,7 +118,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo15.webp"),
+    src: "/home/company-logo/company-logo15.webp",
 
     alt: "Recruiter",
 
@@ -126,7 +126,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo16.webp"),
+    src: "/home/company-logo/company-logo16.webp",
 
     alt: "Recruiter",
 
@@ -134,7 +134,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo17.webp"),
+    src: "/home/company-logo/company-logo17.webp",
 
     alt: "Recruiter",
 
@@ -142,7 +142,7 @@ const recruiterLogos = [
 
   {
 
-    src: cloudinaryAsset("/home/company-logo/company-logo18.webp"),
+    src: "/home/company-logo/company-logo18.webp",
 
     alt: "Recruiter",
 

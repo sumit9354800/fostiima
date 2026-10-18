@@ -3,9 +3,9 @@ import Image from "next/image";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
 const placementImages = [
-  cloudinaryAsset("/home/imagesection/1.jpeg"),
-  cloudinaryAsset("/home/imagesection/2.jpeg"),
-  cloudinaryAsset("/home/imagesection/3.jpeg"),
+  "/home/imagesection/1.jpeg",
+  "/home/imagesection/2.jpeg",
+  "/home/imagesection/3.jpeg",
 ];
 export default function PlacementGallery() {
   if (placementImages.length === 0) return null;

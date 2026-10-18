@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, Sparkles } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/strength-banner.webp");
+const heroImage = "/banner/strength-banner.webp";
 
 export default function StrengthHero() {
   return (

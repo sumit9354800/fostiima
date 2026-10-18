@@ -4,7 +4,7 @@ const recognitions = [
 
   {
 
-    src: cloudinaryAsset("/badge/badge1.webp"),
+    src: "/badge/badge1.webp",
 
     alt: "National board or accredition",
 
@@ -12,7 +12,7 @@ const recognitions = [
 
   {
 
-    src: cloudinaryAsset("/badge/badge2.webp"),
+    src: "/badge/badge2.webp",
 
     alt: "Association of Indian Universities recognition",
 
@@ -20,7 +20,7 @@ const recognitions = [
 
   {
 
-    src: cloudinaryAsset("/badge/badge3.webp"),
+    src: "/badge/badge3.webp",
 
     alt: "AICTE approval",
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { BarChart3 } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/nirf-banner.webp");
+const heroImage = "/banner/nirf-banner.webp";
 
 export default function NIRFHero() {
   const [imageError, setImageError] = useState(false);

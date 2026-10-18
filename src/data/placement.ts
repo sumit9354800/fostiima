@@ -34,15 +34,15 @@ export const placementPages = {
     description:
       "FOSTIIMA Business School's placement outcomes and student placement highlights.",
     rowImages: [
-      cloudinaryAsset("/placement/col1.jpeg"),
-      cloudinaryAsset("/placement/col2.jpeg"),
-      cloudinaryAsset("/placement/col3.jpeg"),
-      cloudinaryAsset("/placement/col4.jpeg"),
-      cloudinaryAsset("/placement/col55.jpeg"),
+      "/placement/col1.jpeg",
+      "/placement/col2.jpeg",
+      "/placement/col3.jpeg",
+      "/placement/col4.jpeg",
+      "/placement/col55.jpeg",
     ],
     fullImages: [
-      cloudinaryAsset("/placement/placement1.webp"),
-      cloudinaryAsset("/placement/placement2.webp"),
+      "/placement/placement1.webp",
+      "/placement/placement2.webp",
     ],
   },
 
@@ -52,8 +52,8 @@ export const placementPages = {
       "Companies and recruiters associated with FOSTIIMA's placement opportunities.",
     rowImages: [],
     fullImages: [
-      cloudinaryAsset("/placement/company1.webp"),
-      cloudinaryAsset("/placement/company2.webp"),
+      "/placement/company1.webp",
+      "/placement/company2.webp",
     ],
   },
 } as const;

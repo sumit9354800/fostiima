@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ShieldCheck } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/grievance-banner.webp");
+const heroImage = "/banner/grievance-banner.webp";
 
 export default function GrievanceHero() {
   const [imageError, setImageError] = useState(false);

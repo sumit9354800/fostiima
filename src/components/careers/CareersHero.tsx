@@ -2,7 +2,7 @@
 import { BriefcaseBusiness } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/careers-banner.webp");
+const heroImage = "/banner/careers-banner.webp";
 
 export default function CareersHero() {
   return (

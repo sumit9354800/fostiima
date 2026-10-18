@@ -1,6 +1,6 @@
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = cloudinaryAsset("/banner/contact-banner.webp");
+const heroImage = "/banner/contact-banner.webp";
 
 export default function ContactHero() {
   return (

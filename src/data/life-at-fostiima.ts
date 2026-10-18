@@ -29,7 +29,7 @@ export type LifeAtFostiimaSection = {
 
 export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
   {
-    src: cloudinaryAsset("/life-at-fostiima/2.jpeg"),
+    src: "/life-at-fostiima/2.jpeg",
 
     alt: "Academic Excellence at FOSTIIMA",
 
@@ -54,7 +54,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: cloudinaryAsset("/life-at-fostiima/1.jpeg"),
+            src: "/life-at-fostiima/1.jpeg",
             alt: "Industry-aligned curriculum at FOSTIIMA",
           },
         ],
@@ -67,7 +67,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: cloudinaryAsset("/life-at-fostiima/2.jpeg"),
+            src: "/life-at-fostiima/2.jpeg",
             alt: "FOSTIIMA faculty",
           },
         ],
@@ -80,7 +80,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: cloudinaryAsset("/life-at-fostiima/3.jpeg"),
+            src: "/life-at-fostiima/3.jpeg",
             alt: "Practical learning at FOSTIIMA",
           },
         ],
@@ -93,7 +93,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: cloudinaryAsset("/life-at-fostiima/4.jpeg"),
+            src: "/life-at-fostiima/4.jpeg",
             alt: "Global exposure and research at FOSTIIMA",
           },
         ],
@@ -106,7 +106,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: cloudinaryAsset("/life-at-fostiima/5.jpeg"),
+            src: "/life-at-fostiima/5.jpeg",
             alt: "Professional skill development at FOSTIIMA",
           },
         ],
@@ -119,7 +119,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: cloudinaryAsset("/life-at-fostiima/6.jpeg"),
+            src: "/life-at-fostiima/6.jpeg",
             alt: "Academic infrastructure at FOSTIIMA",
           },
         ],
@@ -128,9 +128,8 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
   },
 
   {
-    src: cloudinaryAsset(
+    src: 
       "/life-at-fostiima/brain-storming/brainstorming1.jpeg",
-    ),
 
     alt: "Brain Storming at FOSTIIMA",
 
@@ -147,21 +146,18 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
     images: [
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/brain-storming/brainstorming1.jpeg",
-        ),
         alt: "Brain Storming at FOSTIIMA",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/brain-storming/brainstorming2.jpeg",
-        ),
         alt: "Brain Storming activity at FOSTIIMA",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/brain-storming/brainstorming3.jpeg",
-        ),
         alt: "Brain Storming session at FOSTIIMA",
       },
     ],
@@ -170,9 +166,8 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
   },
 
   {
-    src: cloudinaryAsset(
+    src: 
       "/life-at-fostiima/business-exposure-tips/dubai/dubai1.jpg",
-    ),
 
     alt: "Global Immersion Trips",
 
@@ -190,95 +185,80 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
     images: [
       // Dubai
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/dubai/dubai1.jpg",
-        ),
         alt: "Business exposure in Dubai - 1",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/dubai/dubai2.jpg",
-        ),
         alt: "Business exposure in Dubai - 2",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/dubai/dubai3.jpg",
-        ),
         alt: "Business exposure in Dubai - 3",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/dubai/dubai4.jpg",
-        ),
         alt: "Business exposure in Dubai - 4",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/dubai/dubai6.jpg",
-        ),
         alt: "Business exposure in Dubai - 6",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/dubai/dubai7.jpg",
-        ),
         alt: "Business exposure in Dubai - 7",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/dubai/dubai8.jpg",
-        ),
         alt: "Business exposure in Dubai - 8",
       },
 
       // Malaysia
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/malaysia/malaysia1.jpeg",
-        ),
         alt: "Business exposure in Malaysia - 1",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/malaysia/malaysia2.jpeg",
-        ),
         alt: "Business exposure in Malaysia - 2",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/malaysia/malaysia3.jpeg",
-        ),
         alt: "Business exposure in Malaysia - 3",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/malaysia/malaysia4.jpeg",
-        ),
         alt: "Business exposure in Malaysia - 4",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/malaysia/malaysia5.jpeg",
-        ),
         alt: "Business exposure in Malaysia - 5",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/malaysia/malaysia6.jpeg",
-        ),
         alt: "Business exposure in Malaysia - 6",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/malaysia/malaysia7.jpeg",
-        ),
         alt: "Business exposure in Malaysia - 7",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/business-exposure-tips/malaysia/malaysia8.jpeg",
-        ),
         alt: "Business exposure in Malaysia - 8",
       },
     ],
@@ -287,9 +267,8 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
   },
 
   {
-    src: cloudinaryAsset(
-      "/life-at-fostiima/corporate-talk/corporate-talk1.JPG",
-    ),
+    src: 
+      "/life-at-fostiima/corporate-talk/corporate-talk1.jpg",
 
     alt: "Corporate Talk at FOSTIIMA",
 
@@ -306,63 +285,53 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
     images: [
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/corporate-talk/corporate-talk1.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/corporate-talk/corporate-talk1.jpg",
         alt: "Corporate Talk at FOSTIIMA - 1",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/corporate-talk/corporate-talk2.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/corporate-talk/corporate-talk2.jpg",
         alt: "Corporate Talk at FOSTIIMA - 2",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/corporate-talk/corporate-talk3.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/corporate-talk/corporate-talk3.jpg",
         alt: "Corporate Talk at FOSTIIMA - 3",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/corporate-talk/corporate-talk4.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/corporate-talk/corporate-talk4.jpg",
         alt: "Corporate Talk at FOSTIIMA - 4",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/corporate-talk/corporate-talk5.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/corporate-talk/corporate-talk5.jpg",
         alt: "Corporate Talk at FOSTIIMA - 5",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/corporate-talk/corporate-talk6.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/corporate-talk/corporate-talk6.jpg",
         alt: "Corporate Talk at FOSTIIMA - 6",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/corporate-talk/corporate-talk7.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/corporate-talk/corporate-talk7.jpg",
         alt: "Corporate Talk at FOSTIIMA - 7",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/corporate-talk/corporate-talk8.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/corporate-talk/corporate-talk8.jpg",
         alt: "Corporate Talk at FOSTIIMA - 8",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/corporate-talk/corporate-talk9.JPeG",
-        ),
+        src: 
+          "/life-at-fostiima/corporate-talk/corporate-talk9.jpeg",
         alt: "Corporate Talk at FOSTIIMA - 9",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/corporate-talk/corporate-talk10.JPeG",
-        ),
+        src: 
+          "/life-at-fostiima/corporate-talk/corporate-talk10.jpeg",
         alt: "Corporate Talk at FOSTIIMA - 10",
       },
     ],
@@ -371,7 +340,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
   },
 
   {
-    src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport17.JPG"),
+    src: "/life-at-fostiima/sports-and-fitness/sport17.JPG",
 
     alt: "Sports and Fitness at FOSTIIMA",
 
@@ -388,105 +357,94 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
     images: [
       {
-        src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport1.JPG"),
+        src: "/life-at-fostiima/sports-and-fitness/sport1.JPG",
         alt: "Sports and Fitness at FOSTIIMA - 1",
       },
       {
-        src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport2.JPG"),
+        src: "/life-at-fostiima/sports-and-fitness/sport2.JPG",
         alt: "Sports and Fitness at FOSTIIMA - 2",
       },
       {
-        src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport3.JPG"),
+        src: "/life-at-fostiima/sports-and-fitness/sport3.JPG",
         alt: "Sports and Fitness at FOSTIIMA - 3",
       },
       {
-        src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport4.JPG"),
+        src: "/life-at-fostiima/sports-and-fitness/sport4.JPG",
         alt: "Sports and Fitness at FOSTIIMA - 4",
       },
       {
-        src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport5.JPG"),
+        src: "/life-at-fostiima/sports-and-fitness/sport5.JPG",
         alt: "Sports and Fitness at FOSTIIMA - 5",
       },
       {
-        src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport6.JPG"),
+        src: "/life-at-fostiima/sports-and-fitness/sport6.JPG",
         alt: "Sports and Fitness at FOSTIIMA - 6",
       },
       {
-        src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport7.JPG"),
+        src: "/life-at-fostiima/sports-and-fitness/sport7.JPG",
         alt: "Sports and Fitness at FOSTIIMA - 7",
       },
       {
-        src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport8.JPG"),
+        src: "/life-at-fostiima/sports-and-fitness/sport8.JPG",
         alt: "Sports and Fitness at FOSTIIMA - 8",
       },
       {
-        src: cloudinaryAsset("/life-at-fostiima/sports-and-fitness/sport9.JPG"),
+        src: "/life-at-fostiima/sports-and-fitness/sport9.JPG",
         alt: "Sports and Fitness at FOSTIIMA - 9",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport10.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport10.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 10",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport11.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport11.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 11",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport12.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport12.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 12",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport13.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport13.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 13",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport14.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport14.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 14",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport15.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport15.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 15",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport16.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport16.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 16",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport17.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport17.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 17",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport18.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport18.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 18",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport19.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport19.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 19",
       },
       {
-        src: cloudinaryAsset(
-          "/life-at-fostiima/sports-and-fitness/sport20.JPG",
-        ),
+        src: 
+          "/life-at-fostiima/sports-and-fitness/sport20.jpg",
         alt: "Sports and Fitness at FOSTIIMA - 20",
       },
     ],
@@ -495,9 +453,8 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
   },
 
   {
-    src: cloudinaryAsset(
+    src: 
       "/life-at-fostiima/team-building-camp/team-building-camp2.jpeg",
-    ),
 
     alt: "Team Building Camp at FOSTIIMA",
 
@@ -514,39 +471,33 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
     images: [
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/team-building-camp/team-building-camp1.jpeg",
-        ),
         alt: "Team Building Camp at FOSTIIMA - 1",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/team-building-camp/team-building-camp2.jpeg",
-        ),
         alt: "Team Building Camp at FOSTIIMA - 2",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/team-building-camp/team-building-camp3.jpeg",
-        ),
         alt: "Team Building Camp at FOSTIIMA - 3",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/team-building-camp/team-building-camp4.jpeg",
-        ),
         alt: "Team Building Camp at FOSTIIMA - 4",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/team-building-camp/team-building-camp5.jpeg",
-        ),
         alt: "Team Building Camp at FOSTIIMA - 5",
       },
       {
-        src: cloudinaryAsset(
+        src: 
           "/life-at-fostiima/team-building-camp/team-building-camp6.webp",
-        ),
         alt: "Team Building Camp at FOSTIIMA - 6",
       },
     ],
@@ -555,9 +506,8 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
   },
 
   {
-    src: cloudinaryAsset(
+    src: 
       "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpg",
-    ),
 
     alt: "Cultural Events at FOSTIIMA",
 
@@ -581,39 +531,33 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           "A vibrant celebration promoting Indian culture, traditions, creativity and entrepreneurship through student participation and cultural activities.",
         images: [
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela1.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela2.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela3.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela4.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela5.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela6.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
@@ -627,63 +571,53 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           "A festive celebration filled with lights, cultural activities, student participation and the spirit of togetherness.",
         images: [
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/diwali/diwali1.jpg",
-            ),
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/diwali/diwali2.jpg",
-            ),
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/diwali/diwali3.jpg",
-            ),
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/diwali/diwali04.jpg",
-            ),
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/diwali/diwali5.jpg",
-            ),
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/diwali/diwali6.jpg",
-            ),
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/diwali/diwali7.jpg",
-            ),
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/diwali/diwali8.jpg",
-            ),
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/diwali/diwali9.jpg",
-            ),
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/diwali/diwali10.jpg",
-            ),
             alt: "diwali Mela at FOSTIIMA - 1",
           },
         ],
@@ -697,93 +631,78 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           "A welcoming celebration designed to introduce new students to the FOSTIIMA community through engaging activities and memorable experiences.",
         images: [
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day1.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day2.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day3.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day4.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day9.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day10.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day11.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day12.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day13.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day14.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day15.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day16.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day17.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day18.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day19.jpg",
-            ),
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
         ],
@@ -797,147 +716,123 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           "An engaging platform encouraging interaction, ideas, discussion and learning through student-driven activities and experiences.",
         images: [
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6105.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6105.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6107.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6107.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6108.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6108.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6113.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6113.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6114.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6114.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6120.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6120.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6126.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6126.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6138.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6138.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6146.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6146.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6156.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6156.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6162.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6162.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6163.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6163.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6180.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6180.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6181.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6181.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6184.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6184.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6188.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6188.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6218.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6218.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6249.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6249.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6285.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6285.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6286.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6286.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6343.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6343.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6387.JPG",
-            ),
+            src: 
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6387.jpg",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
@@ -951,87 +846,73 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           "A special occasion celebrating the dedication, guidance and contribution of faculty members through student-led activities and expressions of gratitude.",
         images: [
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day1.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day3.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day4.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day5.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day6.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day7.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day8.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day9.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day10.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day11.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day12.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day13.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/teacher_day/teacher_day14.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
@@ -1045,87 +926,73 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           "A memorable gathering that brings students and the FOSTIIMA community together through interaction, celebration and shared experiences.",
         images: [
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600294/fostiima/life-at-fostiima/cultural-events/Milan/DSC09401%202.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600299/fostiima/life-at-fostiima/cultural-events/Milan/DSC09407%202.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600304/fostiima/life-at-fostiima/cultural-events/Milan/DSC09418%202.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600308/fostiima/life-at-fostiima/cultural-events/Milan/DSC09419%202.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600314/fostiima/life-at-fostiima/cultural-events/Milan/DSC09422%202.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600319/fostiima/life-at-fostiima/cultural-events/Milan/DSC09430%202.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600323/fostiima/life-at-fostiima/cultural-events/Milan/DSC09432.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600328/fostiima/life-at-fostiima/cultural-events/Milan/DSC09436%202.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600333/fostiima/life-at-fostiima/cultural-events/Milan/DSC09437%202.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600337/fostiima/life-at-fostiima/cultural-events/Milan/DSC09440%202.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600342/fostiima/life-at-fostiima/cultural-events/Milan/DSC09445%202.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600346/fostiima/life-at-fostiima/cultural-events/Milan/DSC09448.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600351/fostiima/life-at-fostiima/cultural-events/Milan/DSC09451.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "https://res.cloudinary.com/mhchxtpl/image/upload/v1790600356/fostiima/life-at-fostiima/cultural-events/Milan/IMG_9448.jpg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
@@ -1139,27 +1006,23 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           "A creative and engaging event showcasing marketing ideas, student creativity, communication skills and practical business learning.",
         images: [
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/marketing/marketing1.jpeg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/marketing/marketing2.jpeg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/marketing/marketing3.jpeg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
-            src: cloudinaryAsset(
+            src: 
               "/life-at-fostiima/cultural-events/marketing/marketing4.jpeg",
-            ),
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],

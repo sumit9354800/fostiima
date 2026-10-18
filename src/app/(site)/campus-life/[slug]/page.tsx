@@ -55,7 +55,7 @@ export default async function CampusLifeDetailPage({
     notFound();
   }
 
-  const heroImage = cloudinaryAsset("/banner/campus-life-banner.webp");
+  const heroImage = "/banner/campus-life-banner.webp";
 
   return (
     <main className="min-h-screen bg-white">

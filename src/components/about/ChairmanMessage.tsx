@@ -81,7 +81,7 @@ export default function ChairmanMessage() {
               {/* Chairman Image */}
               <div className="relative flex flex-1 items-end justify-center overflow-hidden px-8 pt-10">
                 <Image
-                  src={cloudinaryAsset("/home/faculty/faculty1.webp")}
+                  src={"/home/faculty/faculty1.webp"}
                   alt="Anil Somani - Founder and Executive Chairman of FOSTIIMA Business School"
                   width={281}
                   height={281}
@@ -126,9 +126,9 @@ export default function ChairmanMessage() {
                 <p>
                   Anil Somani is a Chemical Engineer from IIT Bombay and
                   completed his PGDBA from IIM Ahmedabad in 1973. His academic
-                  journey combines two of India&apos;s leading institutions
-                  and forms an important part of the foundation behind his
-                  approach to management education.
+                  journey combines two of India&apos;s leading institutions and
+                  forms an important part of the foundation behind his approach
+                  to management education.
                 </p>
 
                 <p>
@@ -142,9 +142,9 @@ export default function ChairmanMessage() {
                 <p>
                   He has also served as Vice-President of the MP Chambers of
                   Commerce &amp; Industries and participated in several trade
-                  delegations on critical economic issues. From 1992 to 2001,
-                  he served on the Board of Governors of the Indian Institute
-                  of Tourism and Travel Management.
+                  delegations on critical economic issues. From 1992 to 2001, he
+                  served on the Board of Governors of the Indian Institute of
+                  Tourism and Travel Management.
                 </p>
               </div>
             </div>
@@ -154,8 +154,7 @@ export default function ChairmanMessage() {
               <p className="text-sm font-medium leading-7 text-[#172f59]">
                 FOSTIIMA&apos;s institutional vision places strong emphasis on
                 quality management education, experienced leadership and
-                preparing students for the challenges of the professional
-                world.
+                preparing students for the challenges of the professional world.
               </p>
             </div>
           </div>
@@ -200,7 +199,6 @@ export default function ChairmanMessage() {
             className="group inline-flex items-center gap-2 text-sm font-semibold text-[#123b79] transition-colors hover:text-[#c31e3b]"
           >
             View Chairman Profile
-
             <ArrowRight
               size={16}
               aria-hidden="true"
