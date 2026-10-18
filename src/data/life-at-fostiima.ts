@@ -502,7 +502,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
   {
     src: 
-      "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpg",
+      "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpeg",
 
     alt: "Cultural Events at FOSTIIMA",
 
