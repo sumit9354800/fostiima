@@ -1,20 +1,30 @@
+
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { facultyData } from "@/data/faculty";
-
-const homepageFaculty = facultyData.slice(0, 4);
+import { prisma } from "@/lib/prisma";
 
 function truncateWords(text: string, limit = 30) {
   const words = text.trim().split(/\s+/);
 
-  if (words.length <= limit) {
+  if (!text.trim() || words.length <= limit) {
     return text;
   }
 
   return `${words.slice(0, limit).join(" ")}...`;
 }
 
-export default function FacultySection() {
+export default async function FacultySection() {
+  const homepageFaculty = await prisma.faculty.findMany({
+    orderBy: {
+      createdAt: "asc",
+    },
+    take: 4,
+  });
+
+  if (homepageFaculty.length === 0) {
+    return null;
+  }
+
   return (
     <section className="relative overflow-hidden bg-[#f8faff] py-14 sm:py-16">
       <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#dbeafe]/50 blur-3xl" />
@@ -29,7 +39,9 @@ export default function FacultySection() {
 
             <h2 className="text-2xl font-bold tracking-tight text-[#102a56] sm:text-3xl lg:text-4xl">
               Learn From Experienced{" "}
-              <span className="text-[#c31e3b]">Industry Leaders</span>
+              <span className="text-[#c31e3b]">
+                Industry Leaders
+              </span>
             </h2>
 
             <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
@@ -48,11 +60,11 @@ export default function FacultySection() {
           </Link>
         </div>
 
-        {/* Faculty cards */}
+        {/* Exactly four faculty cards */}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {homepageFaculty.map((faculty) => (
             <Link
-              key={faculty.slug}
+              key={faculty.id}
               href={`/faculties/${faculty.slug}`}
               className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
@@ -61,6 +73,7 @@ export default function FacultySection() {
                 <img
                   src={faculty.image}
                   alt={faculty.name}
+                  loading="lazy"
                   className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
 
@@ -103,7 +116,7 @@ export default function FacultySection() {
           ))}
         </div>
 
-        {/* Mobile / bottom CTA */}
+        {/* Mobile CTA */}
         <div className="mt-7 flex justify-center lg:hidden">
           <Link
             href="/faculties"

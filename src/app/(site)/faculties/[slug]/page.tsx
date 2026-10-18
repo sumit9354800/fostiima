@@ -1,9 +1,14 @@
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BriefcaseBusiness, GraduationCap } from "lucide-react";
+import {
+  ArrowLeft,
+  BriefcaseBusiness,
+  GraduationCap,
+} from "lucide-react";
 
-import { facultyData } from "@/data/faculty";
+import { prisma } from "@/lib/prisma";
 
 type FacultyPageProps = {
   params: Promise<{
@@ -11,18 +16,16 @@ type FacultyPageProps = {
   }>;
 };
 
-export function generateStaticParams() {
-  return facultyData.map((faculty) => ({
-    slug: faculty.slug,
-  }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
 }: FacultyPageProps): Promise<Metadata> {
   const { slug } = await params;
 
-  const faculty = facultyData.find((item) => item.slug === slug);
+  const faculty = await prisma.faculty.findUnique({
+    where: { slug },
+  });
 
   if (!faculty) {
     return {
@@ -36,10 +39,14 @@ export async function generateMetadata({
   };
 }
 
-export default async function FacultyDetailPage({ params }: FacultyPageProps) {
+export default async function FacultyDetailPage({
+  params,
+}: FacultyPageProps) {
   const { slug } = await params;
 
-  const faculty = facultyData.find((item) => item.slug === slug);
+  const faculty = await prisma.faculty.findUnique({
+    where: { slug },
+  });
 
   if (!faculty) {
     notFound();
@@ -105,6 +112,7 @@ export default async function FacultyDetailPage({ params }: FacultyPageProps) {
               <p className="mt-5 max-w-2xl text-base leading-7 text-white/75">
                 {faculty.qualification}
               </p>
+
               <p className="mt-5 max-w-2xl text-base leading-7 text-white/75">
                 {faculty.domain}
               </p>
@@ -117,9 +125,13 @@ export default async function FacultyDetailPage({ params }: FacultyPageProps) {
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-5 md:grid-cols-2">
+            {/* Qualification */}
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#dbeafe] text-[#1555a5]">
-                <GraduationCap aria-hidden="true" className="h-5 w-5" />
+                <GraduationCap
+                  aria-hidden="true"
+                  className="h-5 w-5"
+                />
               </div>
 
               <h2 className="mt-5 text-lg font-bold text-[#102a56]">
@@ -131,9 +143,13 @@ export default async function FacultyDetailPage({ params }: FacultyPageProps) {
               </p>
             </div>
 
+            {/* Experience */}
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#fee2e2] text-[#c31e3b]">
-                <BriefcaseBusiness aria-hidden="true" className="h-5 w-5" />
+                <BriefcaseBusiness
+                  aria-hidden="true"
+                  className="h-5 w-5"
+                />
               </div>
 
               <h2 className="mt-5 text-lg font-bold text-[#102a56]">
@@ -146,6 +162,7 @@ export default async function FacultyDetailPage({ params }: FacultyPageProps) {
             </div>
           </div>
 
+          {/* Domain */}
           <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <span className="text-md font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
               Industry Domain / Fields
