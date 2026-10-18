@@ -582,7 +582,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali04.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali_4.jpg",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
