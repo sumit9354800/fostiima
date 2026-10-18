@@ -32,7 +32,7 @@ export function cloudinaryAsset(path: string): string {
 if (isObject(current) && typeof current.url === "string") {
   return current.url.replace(
     "/image/upload/",
-    "/image/upload/f_auto,q_auto/"
+    "/image/upload/"
   );
 }
 
