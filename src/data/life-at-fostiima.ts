@@ -637,7 +637,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day3.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day_3.jpg",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
