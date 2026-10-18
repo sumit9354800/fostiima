@@ -1,31 +1,19 @@
 import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
-import { cloudinaryAsset } from "@/lib/cloudinary";
 
 const heroImagePath = "/banner/about-banner.jpeg";
 
 export default function AboutHero() {
-  let heroImage: string | null = null;
 
-  try {
-    const image = cloudinaryAsset(heroImagePath);
-
-    // Only use the image if cloudinaryAsset returns a valid URL.
-    if (image && image !== heroImagePath) {
-      heroImage = image;
-    }
-  } catch {
-    heroImage = null;
-  }
 
   return (
     <section className="relative isolate overflow-hidden bg-[#071a38] text-white">
       {/* Background Image — only rendered when available */}
-      {heroImage && (
+
         <>
           <div aria-hidden="true" className="absolute inset-0">
             <img
-              src={heroImage}
+              src={heroImagePath}
               alt="FOSTIIMA Business School campus"
               className="h-full w-full object-cover"
             />
@@ -37,8 +25,6 @@ export default function AboutHero() {
             className="absolute inset-0 bg-[#071a38]/70"
           />
         </>
-      )}
-
       {/* Background Effects */}
       <div
         aria-hidden="true"

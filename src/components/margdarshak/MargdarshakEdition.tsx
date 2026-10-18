@@ -124,7 +124,7 @@ export default function MargdarshakEdition({
               </div>
             )}
 
-            {section.images && (
+            {/* {section.images && (
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {section.images.map(
                   (image) => (
@@ -145,7 +145,7 @@ export default function MargdarshakEdition({
                   ),
                 )}
               </div>
-            )}
+            )} */}
           </section>
         ))}
       </div>
