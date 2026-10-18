@@ -3,17 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Maximize2, X } from "lucide-react";
-import { cloudinaryAsset } from "@/lib/cloudinary";
 
 const infrastructureImages = [
 
-  "/about/infrastructures/infrastructures01.jpeg",
+  "/about/infrastructures/infrastructures_01.webp",
 
-  "/about/infrastructures/infrastructures02.jpeg",
+  "/about/infrastructures/infrastructures_02.webp",
 
-  "/about/infrastructures/infrastructures03.jpeg",
+  "/about/infrastructures/infrastructures_03.webp",
 
-  "/about/infrastructures/infrastructures04.jpeg",
+  "/about/infrastructures/infrastructures_04.webp",
 
 ];
 

@@ -8,30 +8,30 @@ export type FounderTrustee = {
 export const founderTrustees: FounderTrustee[] = [
   {
     name: "Anil Somani",
-    image: "home/faculty/faculty1.webp",
+    image: "about/trustees-faculty/trustees_faculty1.webp",
   },
   {
     name: "Kamal Sharma",
-    image: "about/trustees-faculty/trustees-faculty2",
+    image: "about/trustees-faculty/trustees_faculty2.webp",
   },
   {
     name: "Jaithirth Rao",
-    image: "about/trustees-faculty/trustees-faculty3",
+    image: "about/trustees-faculty/trustees_faculty3.webp",
   },
   {
     name: "Sunil Kala",
-    image: "home/faculty/faculty2.webp",
+    image: "about/trustees-faculty/trustees_faculty4.webp",
   },
   {
     name: "Rajesh Kaura",
-    image: "about/trustees-faculty/trustees-faculty5",
+    image: "about/trustees-faculty/trustees_faculty5.webp",
   },
   {
     name: "T L Palani Kumar",
-    image: "about/trustees-faculty/trustees-faculty6",
+    image: "about/trustees-faculty/trustees_faculty6.webp",
   },
   {
     name: "Rajan Shangi",
-    image: "about/trustees-faculty/trustees-faculty7",
+    image: "about/trustees-faculty/trustees_faculty7.webp",
   },
 ];
