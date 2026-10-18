@@ -721,27 +721,24 @@ export default function BlogEditor({
       }
 
       // Step 2: Upload directly to Hostinger.
+
       const formData = new FormData();
       formData.append("file", file);
 
-      const uploadResponse = await fetch(
-        "https://media.fostiima.org/upload.php",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${tokenData.token}`,
-          },
-          body: formData,
-          mode: "cors",
-        },
-      );
+      const uploadResponse = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: formData,
+        credentials: "same-origin",
+      });
 
       const uploadData = await uploadResponse.json();
 
-      if (!uploadResponse.ok || typeof uploadData.url !== "string") {
-        throw new Error(
-          uploadData.error || "Hostinger did not return an image URL.",
-        );
+      if (!uploadResponse.ok) {
+        throw new Error(uploadData?.error || "Failed to upload image.");
+      }
+
+      if (!uploadData?.url) {
+        throw new Error("Upload completed but image URL was not returned.");
       }
 
       updateField("coverImage", uploadData.url);
