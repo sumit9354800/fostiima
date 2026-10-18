@@ -14,12 +14,12 @@ import {
 } from "lucide-react";
 
 const homeSections = [
-  {
-    title: "Hero",
-    description: "Manage the homepage hero video and primary presentation.",
-    href: "/admin/home/hero",
-    icon: PlaySquare,
-  },
+  // {
+  //   title: "Hero",
+  //   description: "Manage the homepage hero video and primary presentation.",
+  //   href: "/admin/home/hero",
+  //   icon: PlaySquare,
+  // },
   {
     title: "Stats",
     description: "Manage homepage statistics and key institutional figures.",
