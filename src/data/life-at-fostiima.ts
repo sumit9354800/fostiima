@@ -214,11 +214,6 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
           "/life-at-fostiima/business-exposure-tips/dubai/dubai7.jpg",
         alt: "Business exposure in Dubai - 7",
       },
-      {
-        src: 
-          "/life-at-fostiima/business-exposure-tips/dubai/dubai8.jpg",
-        alt: "Business exposure in Dubai - 8",
-      },
 
       // Malaysia
       {
@@ -268,7 +263,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
   {
     src: 
-      "/life-at-fostiima/corporate-talk/corporate-talk1.jpg",
+      "/life-at-fostiima/corporate-talk/corporate-talk1.jpeg",
 
     alt: "Corporate Talk at FOSTIIMA",
 
@@ -286,7 +281,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
     images: [
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk1.jpg",
+          "/life-at-fostiima/corporate-talk/corporate-talk1.jpeg",
         alt: "Corporate Talk at FOSTIIMA - 1",
       },
       {
@@ -301,7 +296,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk4.jpg",
+          "/life-at-fostiima/corporate-talk/corporate-talk4.jpeg",
         alt: "Corporate Talk at FOSTIIMA - 4",
       },
       {
@@ -326,12 +321,12 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk9.jpeg",
+          "/life-at-fostiima/corporate-talk/corporate-talk9.jpg",
         alt: "Corporate Talk at FOSTIIMA - 9",
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk10.jpeg",
+          "/life-at-fostiima/corporate-talk/corporate-talk10.jpg",
         alt: "Corporate Talk at FOSTIIMA - 10",
       },
     ],
