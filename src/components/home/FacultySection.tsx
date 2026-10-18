@@ -1,7 +1,8 @@
 
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { prisma } from "@/lib/prisma";
+// import { prisma } from "@/lib/prisma";
+import { facultyData } from "@/data/faculty";
 
 function truncateWords(text: string, limit = 30) {
   const words = text.trim().split(/\s+/);
@@ -14,12 +15,27 @@ function truncateWords(text: string, limit = 30) {
 }
 
 export default async function FacultySection() {
-  const homepageFaculty = await prisma.faculty.findMany({
-    orderBy: {
-      createdAt: "asc",
-    },
-    take: 4,
-  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let homepageFaculty: any[] = [];
+
+  // try {
+  //   homepageFaculty = await prisma.faculty.findMany({
+  //     orderBy: {
+  //       createdAt: "asc",
+  //     },
+  //     take: 4,
+  //   });
+  // } catch (error) {
+  //   console.error(
+  //     "[FacultySection] Failed to fetch faculty from Prisma:",
+  //     error
+  //   );
+  // }
+
+  // Fall back to static faculty data if Prisma returns no records or fails.
+  if (homepageFaculty.length === 0) {
+    homepageFaculty = facultyData.slice(0, 4);
+  }
 
   if (homepageFaculty.length === 0) {
     return null;
@@ -60,11 +76,11 @@ export default async function FacultySection() {
           </Link>
         </div>
 
-        {/* Exactly four faculty cards */}
+        {/* Faculty Cards */}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {homepageFaculty.map((faculty) => (
             <Link
-              key={faculty.id}
+              key={faculty.id ?? faculty.slug}
               href={`/faculties/${faculty.slug}`}
               className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
@@ -80,7 +96,7 @@ export default async function FacultySection() {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071a38]/90 via-transparent to-transparent" />
 
-                {/* Open icon */}
+                {/* Open Icon */}
                 <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-[#102a56] opacity-0 shadow-md transition-all duration-300 group-hover:opacity-100">
                   <ArrowUpRight className="h-4 w-4" />
                 </div>
@@ -95,7 +111,7 @@ export default async function FacultySection() {
                 </div>
               </div>
 
-              {/* Short information */}
+              {/* Short Information */}
               <div className="p-5">
                 <p className="text-md font-semibold uppercase tracking-wide text-[#c31e3b]">
                   {faculty.experience} Industry Experience
@@ -103,7 +119,7 @@ export default async function FacultySection() {
 
                 <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
                   {truncateWords(
-                    `${faculty.qualification}. Industry Domain/Fields: ${faculty.domain}`,
+                    `${faculty.qualification}. Industry Domain/Fields: ${faculty.domain}`
                   )}
                 </p>
 

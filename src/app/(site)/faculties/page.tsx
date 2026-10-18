@@ -2,8 +2,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { facultyData } from "@/data/faculty";
 
-import { prisma } from "@/lib/prisma";
+// import { prisma } from "@/lib/prisma";
+
 
 export const metadata: Metadata = {
   title: "Core Faculty | FOSTIIMA Business School",
@@ -16,11 +18,11 @@ export const dynamic = "force-dynamic";
 const heroImage = "/banner/faculties-banner.webp";
 
 export default async function FacultiesPage() {
-  const facultyData = await prisma.faculty.findMany({
-    orderBy: {
-      createdAt: "asc",
-    },
-  });
+  // const facultyData = await prisma.faculty.findMany({
+  //   orderBy: {
+  //     createdAt: "asc",
+  //   },
+  // });
 
   return (
     <main className="min-h-screen bg-[#f8fafc]">
@@ -116,7 +118,7 @@ export default async function FacultiesPage() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {facultyData.map((faculty) => (
                 <Link
-                  key={faculty.id}
+                  key={faculty.slug}
                   href={`/faculties/${faculty.slug}`}
                   className="group flex h-full flex-col overflow-hidden border border-[#dbe3ee] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[#c31e3b]/30 hover:shadow-[0_18px_45px_rgba(6,26,58,0.10)]"
                 >
