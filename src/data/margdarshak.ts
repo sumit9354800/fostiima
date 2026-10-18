@@ -103,6 +103,7 @@ const margdarshak2Images: ImageItem[] = [
   "/margdarshak/margdarshak2/margdarshak19.webp",
   "/margdarshak/margdarshak2/margdarshak20.webp",
   "/margdarshak/margdarshak2/margdarshak21.webp",
+  
 ].map((src, index) => ({
   src,
   alt: `Margdarshak 3 event photograph - margdarshak${index + 1}.webp`,

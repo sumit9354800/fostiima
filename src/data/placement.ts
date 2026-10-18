@@ -38,7 +38,7 @@ export const placementPages = {
       "/placement/col2.jpeg",
       "/placement/col3.jpeg",
       "/placement/col4.jpeg",
-      "/placement/col55.jpeg",
+      "/placement/col5.jpeg",
     ],
     fullImages: [
       "/placement/placement1.webp",
