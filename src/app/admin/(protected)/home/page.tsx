@@ -7,6 +7,7 @@ import {
   Building2,
   Clapperboard,
   GraduationCap,
+  HelpCircle,
   ImageIcon,
   LayoutDashboard,
   PlaySquare,
@@ -40,7 +41,8 @@ const homeSections = [
   },
   {
     title: "Placement Videos",
-    description: "Manage placement-related YouTube videos shown on the homepage.",
+    description:
+      "Manage placement-related YouTube videos shown on the homepage.",
     href: "/admin/home/placement-videos",
     icon: Clapperboard,
   },
@@ -73,6 +75,12 @@ const homeSections = [
     description: "Manage recruiter logos displayed on the homepage.",
     href: "/admin/home/recruiters",
     icon: Users,
+  },
+  {
+    title: "FAQs",
+    description: "Manage frequently asked questions displayed on the homepage.",
+    href: "/admin/faqs",
+    icon: HelpCircle,
   },
 ];
 

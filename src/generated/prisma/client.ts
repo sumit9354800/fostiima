@@ -201,3 +201,8 @@ export type HomeCampusLife = Prisma.HomeCampusLifeModel
  * 
  */
 export type HomeRecognition = Prisma.HomeRecognitionModel
+/**
+ * Model Faq
+ * 
+ */
+export type Faq = Prisma.FaqModel
