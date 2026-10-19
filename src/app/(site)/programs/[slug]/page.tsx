@@ -1,6 +1,11 @@
+import { getHomeContent } from "@/lib/admin/home";
 import { ArrowLeft, CalendarDays } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+const programsData = await getHomeContent();
+
+const programsImage = programsData.programs;
 
 type ProgramData = {
   title: string;
@@ -29,7 +34,7 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A comprehensive two-year full-time management program designed to build strong business knowledge, analytical capabilities, leadership skills and industry readiness.",
-    heroImage: "//res.cloudinary.com/mhchxtpl/image/upload/v1790491769/fostiima/home/ye2cwm9fm7hqdkgjbwgl.jpg",
+    heroImage: `${programsImage}`,
     semesters: [
       {
         title: "Semester I",
@@ -117,7 +122,8 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program focused on developing expertise in marketing, customer understanding, brand management, digital marketing and strategic decision-making.",
-    heroImage:"https://res.cloudinary.com/mhchxtpl/image/upload/v1790491789/fostiima/home/vqgxlkqhtbzrgpb2hfal.jpg",
+    heroImage:
+      "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491789/fostiima/home/vqgxlkqhtbzrgpb2hfal.jpg",
 
     specialization: {
       title: "Marketing Specialization",
@@ -144,7 +150,8 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program designed to develop financial management, analytical and strategic decision-making capabilities for modern business environments.",
-    heroImage: "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491806/fostiima/home/lxmy9tdm5evdqcq1r9tq.jpg",
+    heroImage:
+      "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491806/fostiima/home/lxmy9tdm5evdqcq1r9tq.jpg",
     specialization: {
       title: "Finance Specialization",
       subjects: [
@@ -166,7 +173,8 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program focused on human capital, leadership, employee relations, organizational development and modern HR practices.",
-    heroImage: "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491875/fostiima/home/hryuwr13bilpg5zrfc8k.jpg",
+    heroImage:
+      "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491875/fostiima/home/hryuwr13bilpg5zrfc8k.jpg",
 
     specialization: {
       title: "HR - Specialization",
@@ -193,7 +201,8 @@ const programs: Record<string, ProgramData> = {
     duration: "2 Year Full-Time Program",
     description:
       "A management program focused on developing business analytics, data-driven decision-making, analytical thinking and modern business management capabilities.",
-    heroImage: "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491888/fostiima/home/avn8ek1fcvyt6esfcydv.jpg",
+    heroImage:
+      "https://res.cloudinary.com/mhchxtpl/image/upload/v1790491888/fostiima/home/avn8ek1fcvyt6esfcydv.jpg",
 
     specialization: {
       title: "International Business - Specialization",
@@ -209,55 +218,57 @@ const programs: Record<string, ProgramData> = {
     semesters: [],
   },
 
-internationalBusiness: {
-  title: "International Business - Specialization",
-  category: "Specialization",
-  duration: "PGDM Specialization",
-  description:
-    "A specialized area of study focused on international trade, global business operations, foreign exchange, logistics and international marketing.",
-  heroImage: "https://res.cloudinary.com/mhchxtpl/image/upload/v1790668564/fostiima/home/sokyp4ercshwkie1ryrw.jpg",
-
-  specialization: {
+  internationalBusiness: {
     title: "International Business - Specialization",
-    subjects: [
-      "Exim Financing, Documentation & Forex Management",
-      "Foreign Trade & Policy",
-      "Global Services & Supply Management",
-      "International Logistics Management",
-      "International Marketing",
-      "Perspectives in International Business",
-    ],
+    category: "Specialization",
+    duration: "PGDM Specialization",
+    description:
+      "A specialized area of study focused on international trade, global business operations, foreign exchange, logistics and international marketing.",
+    heroImage:
+      "https://res.cloudinary.com/mhchxtpl/image/upload/v1790668564/fostiima/home/sokyp4ercshwkie1ryrw.jpg",
+
+    specialization: {
+      title: "International Business - Specialization",
+      subjects: [
+        "Exim Financing, Documentation & Forex Management",
+        "Foreign Trade & Policy",
+        "Global Services & Supply Management",
+        "International Logistics Management",
+        "International Marketing",
+        "Perspectives in International Business",
+      ],
+    },
+
+    semesters: [],
   },
 
-  semesters: [],
-},
-
-aiAnalyticsOperations: {
-  title: "AI, Analytics & Operations - Specialization",
-  category: "Specialization",
-  duration: "PGDM Specialization",
-  description:
-    "A specialized area focused on analytics, artificial intelligence, operations management, predictive insights and data-driven business decision-making.",
-  heroImage: "https://res.cloudinary.com/mhchxtpl/image/upload/v1790668622/fostiima/home/z97idkm9uo4ipovtxlml.jpg",
-
-  specialization: {
+  aiAnalyticsOperations: {
     title: "AI, Analytics & Operations - Specialization",
-    subjects: [
-      "TQM, Six Sigma & BPR",
-      "Predictive Analytics",
-      "Big Data Analytics",
-      "Enterprise Resource Planning",
-      "Logistics Management",
-      "Service Operations Management",
-      "Introduction to Artificial Intelligence",
-      "AI in Business and Decision Making",
-      "Ethics and Governance in AI",
-      "Lean Manufacturing, Strategic Sourcing and E Business Operations",
-    ],
-  },
+    category: "Specialization",
+    duration: "PGDM Specialization",
+    description:
+      "A specialized area focused on analytics, artificial intelligence, operations management, predictive insights and data-driven business decision-making.",
+    heroImage:
+      "https://res.cloudinary.com/mhchxtpl/image/upload/v1790668622/fostiima/home/z97idkm9uo4ipovtxlml.jpg",
 
-  semesters: [],
-},
+    specialization: {
+      title: "AI, Analytics & Operations - Specialization",
+      subjects: [
+        "TQM, Six Sigma & BPR",
+        "Predictive Analytics",
+        "Big Data Analytics",
+        "Enterprise Resource Planning",
+        "Logistics Management",
+        "Service Operations Management",
+        "Introduction to Artificial Intelligence",
+        "AI in Business and Decision Making",
+        "Ethics and Governance in AI",
+        "Lean Manufacturing, Strategic Sourcing and E Business Operations",
+      ],
+    },
+
+    semesters: [],
+  },
 };
 
 export default async function ProgramDetailPage({
