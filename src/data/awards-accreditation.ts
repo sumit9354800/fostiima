@@ -20,8 +20,8 @@ export const accreditations: Accreditation[] = [
     logo: "/badge/badge1.webp",
 
     image: [
-      "/awards-accreditation/nba/NBA1.jpg",
-      "/awards-accreditation/nba/NBA2.jpg",
+      "/awards-accreditation/nba/NBA1.webp",
+      "/awards-accreditation/nba/NBA2.webp",
     ],
   },
 
