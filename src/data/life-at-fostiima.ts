@@ -54,7 +54,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: "/life-at-fostiima/1.jpeg",
+            src: "/life-at-fostiima/1.webp",
             alt: "Industry-aligned curriculum at FOSTIIMA",
           },
         ],
@@ -67,7 +67,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: "/life-at-fostiima/2.jpeg",
+            src: "/life-at-fostiima/2.webp",
             alt: "FOSTIIMA faculty",
           },
         ],
@@ -80,7 +80,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: "/life-at-fostiima/3.jpeg",
+            src: "/life-at-fostiima/3.webp",
             alt: "Practical learning at FOSTIIMA",
           },
         ],
@@ -93,7 +93,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: "/life-at-fostiima/4.jpeg",
+            src: "/life-at-fostiima/4.webp",
             alt: "Global exposure and research at FOSTIIMA",
           },
         ],
@@ -106,7 +106,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: "/life-at-fostiima/5.jpeg",
+            src: "/life-at-fostiima/5.webp",
             alt: "Professional skill development at FOSTIIMA",
           },
         ],
@@ -119,7 +119,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
         images: [
           {
-            src: "/life-at-fostiima/6.jpeg",
+            src: "/life-at-fostiima/6.webp",
             alt: "Academic infrastructure at FOSTIIMA",
           },
         ],

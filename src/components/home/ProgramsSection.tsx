@@ -19,9 +19,7 @@ type ProgramsSectionProps = {
   programs: Program[];
 };
 
-
-
-const getProgramKey = (title: string) => {
+const getProgramSlug = (title: string) => {
   switch (title) {
     case "PGDM":
       return "pgdm";
@@ -36,13 +34,13 @@ const getProgramKey = (title: string) => {
       return "hr";
 
     case "PGDM (Business Analytics)":
-      return "businessAnalytics";
+      return "business-analytics";
 
     case "International Business - Specialization":
-      return "internationalBusiness";
+      return "international-business";
 
     case "AI, Analytics & Operations - Specialization":
-      return "aiAnalyticsOperations";
+      return "ai-analytics-operations";
 
     default:
       return "pgdm";
@@ -116,8 +114,8 @@ export default function ProgramsSection({ programs }: ProgramsSectionProps) {
           className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {programs.map((program) => {
-            const programQuery = getProgramKey(program.title);
-            const programHref = `/programs?program=${programQuery}`;
+            const programSlug = getProgramSlug(program.title);
+            const programHref = `/programs/${programSlug}`;
 
             return (
               <Link
