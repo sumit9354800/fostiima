@@ -2,9 +2,9 @@ import Image from "next/image";
 
 
 const placementImages = [
-  "/home/imagesection/1.jpeg",
-  "/home/imagesection/2.jpeg",
-  "/home/imagesection/3.jpeg",
+  "/home/imagesection/1.webp",
+  "/home/imagesection/2.webp",
+  "/home/imagesection/3.webp",
 ];
 export default function PlacementGallery() {
   if (placementImages.length === 0) return null;

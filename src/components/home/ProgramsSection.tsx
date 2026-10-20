@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRef } from "react";
@@ -19,41 +20,27 @@ type ProgramsSectionProps = {
   programs: Program[];
 };
 
-const getProgramSlug = (title: string) => {
-  switch (title) {
-    case "PGDM":
-      return "pgdm";
-
-    case "PGDM (Marketing)":
-      return "marketing";
-
-    case "PGDM (Finance)":
-      return "finance";
-
-    case "PGDM (HR)":
-      return "hr";
-
-    case "PGDM (Business Analytics)":
-      return "business-analytics";
-
-    case "International Business - Specialization":
-      return "international-business";
-
-    case "AI, Analytics & Operations - Specialization":
-      return "ai-analytics-operations";
-
-    default:
-      return "pgdm";
-  }
+const programSlugMap: Record<string, string> = {
+  PGDM: "pgdm",
+  "PGDM (Marketing)": "pgdm-marketing",
+  "PGDM (Finance)": "pgdm-finance",
+  "PGDM (HR)": "pgdm-human-resource-management",
+  "PGDM (Business Analytics)": "business-analytics",
+  "International Business - Specialization": "international-business",
+  "AI, Analytics & Operations - Specialization": "ai-analytics-operations",
 };
 
-export default function ProgramsSection({ programs }: ProgramsSectionProps) {
+function getProgramSlug(title: string): string {
+  return programSlugMap[title] ?? "pgdm";
+}
+
+export default function ProgramsSection({
+  programs,
+}: ProgramsSectionProps) {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const scrollCarousel = (direction: "left" | "right") => {
-    if (!carouselRef.current) {
-      return;
-    }
+    if (!carouselRef.current) return;
 
     const scrollAmount = carouselRef.current.clientWidth * 0.82;
 
@@ -63,9 +50,7 @@ export default function ProgramsSection({ programs }: ProgramsSectionProps) {
     });
   };
 
-  if (!programs.length) {
-    return null;
-  }
+  if (!programs.length) return null;
 
   return (
     <section className="overflow-hidden bg-[#f8faff] py-16 sm:py-20 lg:py-24">
@@ -78,7 +63,9 @@ export default function ProgramsSection({ programs }: ProgramsSectionProps) {
 
           <h2 className="mt-2 font-serif text-4xl font-bold leading-tight text-[#123b79] sm:text-5xl">
             Industry-aligned Programs{" "}
-            <span className="text-[#c31e3b]">Built for Your Future</span>
+            <span className="text-[#c31e3b]">
+              Built for Your Future
+            </span>
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base">
@@ -87,7 +74,7 @@ export default function ProgramsSection({ programs }: ProgramsSectionProps) {
           </p>
         </div>
 
-        {/* Carousel Header */}
+        {/* Carousel Controls */}
         <div className="mt-9 flex items-center justify-end gap-2">
           <button
             type="button"
@@ -108,22 +95,21 @@ export default function ProgramsSection({ programs }: ProgramsSectionProps) {
           </button>
         </div>
 
-        {/* Programs */}
+        {/* Program Cards */}
         <div
           ref={carouselRef}
           className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {programs.map((program) => {
-            const programSlug = getProgramSlug(program.title);
-            const programHref = `/programs/${programSlug}`;
+            const slug = getProgramSlug(program.title);
+            const href = `/programs/${slug}`;
 
             return (
               <Link
                 key={program.id}
-                href={programHref}
+                href={href}
                 className="group min-w-[82%] snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_25px_rgba(18,59,121,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(18,59,121,0.12)] sm:min-w-[47%] lg:min-w-[calc(25%-12px)]"
               >
-                {/* Image */}
                 <div className="relative aspect-[1.65/1] overflow-hidden">
                   <img
                     src={program.imageUrl}
@@ -135,7 +121,6 @@ export default function ProgramsSection({ programs }: ProgramsSectionProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071a35]/60 via-transparent to-transparent" />
                 </div>
 
-                {/* Content */}
                 <div className="p-4 sm:p-5">
                   <h3 className="text-lg font-bold text-[#123b79]">
                     {program.title}

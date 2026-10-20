@@ -12,7 +12,7 @@ const highlights = [
 
     image:
 
-      "/home/campus/campus01.jpeg",
+      "/home/campus/campus01.webp",
 
     href: "/life-at-fostiima",
 
@@ -30,7 +30,7 @@ const highlights = [
 
     image:
 
-      "/home/campus/campus02.jpeg",
+      "/home/campus/campus02.webp",
 
     href: "/placement",
 

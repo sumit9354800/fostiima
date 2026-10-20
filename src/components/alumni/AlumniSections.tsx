@@ -1,7 +1,5 @@
 "use client";
 
-import { cloudinaryAsset } from "@/lib/cloudinary";
-import { useState } from "react";
 import {
   BarChart3,
   BriefcaseBusiness,

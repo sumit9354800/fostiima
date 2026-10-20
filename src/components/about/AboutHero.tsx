@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
 
-const heroImagePath = "/banner/about-banner.jpeg";
+const heroImagePath = "/banner/about-banner.webp";
 
 export default function AboutHero() {
 
