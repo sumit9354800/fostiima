@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.fostiima.org/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/YvzuWIMhzXU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Student Placement Experience</video:title>
+      <video:description>FOSTIIMA Business School offers industry-focused PGDM and management education with strong emphasis on business knowledge, leadership, analytical skills, and career readiness.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/YvzuWIMhzXU?enablejsapi=1</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/4_0P8WzR1XQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Student Placement Journey</video:title>
+      <video:description>FOSTIIMA Business School offers industry-focused PGDM and management education with strong emphasis on business knowledge, leadership, analytical skills, and career readiness.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/4_0P8WzR1XQ?enablejsapi=1</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/JX07Iia1kog/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Student Placement Experience</video:title>
+      <video:description>FOSTIIMA Business School offers industry-focused PGDM and management education with strong emphasis on business knowledge, leadership, analytical skills, and career readiness.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/JX07Iia1kog?enablejsapi=1</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/2QJHftGnUuw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Placement Success Story</video:title>
+      <video:description>FOSTIIMA Business School offers industry-focused PGDM and management education with strong emphasis on business knowledge, leadership, analytical skills, and career readiness.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/2QJHftGnUuw?enablejsapi=1</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/UzfKJDCp-qM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Student Placement Experience</video:title>
+      <video:description>FOSTIIMA Business School offers industry-focused PGDM and management education with strong emphasis on business knowledge, leadership, analytical skills, and career readiness.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/UzfKJDCp-qM?enablejsapi=1</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/xAqYHZS164w/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Student Placement Experience</video:title>
+      <video:description>FOSTIIMA Business School offers industry-focused PGDM and management education with strong emphasis on business knowledge, leadership, analytical skills, and career readiness.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/xAqYHZS164w?enablejsapi=1</video:player_loc>
+    </video:video>
+  </url>
+</urlset>
