@@ -429,7 +429,8 @@ export const ModelName = {
   HomeAward: 'HomeAward',
   HomeCampusLife: 'HomeCampusLife',
   HomeRecognition: 'HomeRecognition',
-  Faq: 'Faq'
+  Faq: 'Faq',
+  AdmissionEnquiry: 'AdmissionEnquiry'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -445,7 +446,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "faculty" | "blogPost" | "blogBlock" | "blogKeyword" | "conclaveEvent" | "finalPlacementBatch" | "finalPlacementChart" | "finalPlacementProfile" | "finalPlacementStudent" | "summerInternshipBatch" | "summerInternshipProfile" | "careerOpening" | "fAQ" | "review" | "mediaPresence" | "homeHero" | "homeStat" | "homeRecruiter" | "homeAbout" | "homeAboutHighlight" | "homePlacementVideo" | "homeCampusHighlight" | "homeProgram" | "programSemester" | "programSubject" | "homeAward" | "homeCampusLife" | "homeRecognition" | "faq"
+    modelProps: "user" | "session" | "account" | "verification" | "faculty" | "blogPost" | "blogBlock" | "blogKeyword" | "conclaveEvent" | "finalPlacementBatch" | "finalPlacementChart" | "finalPlacementProfile" | "finalPlacementStudent" | "summerInternshipBatch" | "summerInternshipProfile" | "careerOpening" | "fAQ" | "review" | "mediaPresence" | "homeHero" | "homeStat" | "homeRecruiter" | "homeAbout" | "homeAboutHighlight" | "homePlacementVideo" | "homeCampusHighlight" | "homeProgram" | "programSemester" | "programSubject" | "homeAward" | "homeCampusLife" | "homeRecognition" | "faq" | "admissionEnquiry"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2627,6 +2628,72 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    AdmissionEnquiry: {
+      payload: Prisma.$AdmissionEnquiryPayload<ExtArgs>
+      fields: Prisma.AdmissionEnquiryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AdmissionEnquiryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionEnquiryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AdmissionEnquiryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionEnquiryPayload>
+        }
+        findFirst: {
+          args: Prisma.AdmissionEnquiryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionEnquiryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AdmissionEnquiryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionEnquiryPayload>
+        }
+        findMany: {
+          args: Prisma.AdmissionEnquiryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionEnquiryPayload>[]
+        }
+        create: {
+          args: Prisma.AdmissionEnquiryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionEnquiryPayload>
+        }
+        createMany: {
+          args: Prisma.AdmissionEnquiryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.AdmissionEnquiryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionEnquiryPayload>
+        }
+        update: {
+          args: Prisma.AdmissionEnquiryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionEnquiryPayload>
+        }
+        deleteMany: {
+          args: Prisma.AdmissionEnquiryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AdmissionEnquiryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.AdmissionEnquiryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionEnquiryPayload>
+        }
+        aggregate: {
+          args: Prisma.AdmissionEnquiryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAdmissionEnquiry>
+        }
+        groupBy: {
+          args: Prisma.AdmissionEnquiryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AdmissionEnquiryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AdmissionEnquiryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AdmissionEnquiryCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -3133,6 +3200,27 @@ export const FaqScalarFieldEnum = {
 export type FaqScalarFieldEnum = (typeof FaqScalarFieldEnum)[keyof typeof FaqScalarFieldEnum]
 
 
+export const AdmissionEnquiryScalarFieldEnum = {
+  id: 'id',
+  fullName: 'fullName',
+  mobile: 'mobile',
+  email: 'email',
+  state: 'state',
+  city: 'city',
+  course: 'course',
+  remarks: 'remarks',
+  consent: 'consent',
+  source: 'source',
+  status: 'status',
+  emailSent: 'emailSent',
+  emailError: 'emailError',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AdmissionEnquiryScalarFieldEnum = (typeof AdmissionEnquiryScalarFieldEnum)[keyof typeof AdmissionEnquiryScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -3510,6 +3598,23 @@ export const FaqOrderByRelevanceFieldEnum = {
 export type FaqOrderByRelevanceFieldEnum = (typeof FaqOrderByRelevanceFieldEnum)[keyof typeof FaqOrderByRelevanceFieldEnum]
 
 
+export const AdmissionEnquiryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  fullName: 'fullName',
+  mobile: 'mobile',
+  email: 'email',
+  state: 'state',
+  city: 'city',
+  course: 'course',
+  remarks: 'remarks',
+  source: 'source',
+  status: 'status',
+  emailError: 'emailError'
+} as const
+
+export type AdmissionEnquiryOrderByRelevanceFieldEnum = (typeof AdmissionEnquiryOrderByRelevanceFieldEnum)[keyof typeof AdmissionEnquiryOrderByRelevanceFieldEnum]
+
+
 
 /**
  * Field references
@@ -3748,6 +3853,7 @@ export type GlobalOmitConfig = {
   homeCampusLife?: Prisma.HomeCampusLifeOmit
   homeRecognition?: Prisma.HomeRecognitionOmit
   faq?: Prisma.FaqOmit
+  admissionEnquiry?: Prisma.AdmissionEnquiryOmit
 }
 
 /* Types for Logging */

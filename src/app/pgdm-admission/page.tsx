@@ -1,6 +1,6 @@
-import Script from "next/script";
+
 import Link from "next/link";
-import ApplyForm4Widget from "@/components/forms/ApplyForm4Widget";
+import AdmissionEnquiryForm from "@/components/forms/AdmissionEnquiryForm";
 
 const highlights = [
   "2 Year Full-Time PGDM Program",
@@ -14,17 +14,9 @@ const highlights = [
 export default function PGDMAdmissionPage() {
   return (
     <main className="min-h-screen bg-white text-[#071a38]">
-      {/* =====================================================
-          EXTRAaEDGE FORM SCRIPT
-      ====================================================== */}
-
-      {/* =====================================================
-          NAVBAR
-      ====================================================== */}
-
+      {/* NAVBAR */}
       <header className="sticky top-0 z-[100] border-b border-slate-200 bg-white">
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
-          {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
               src="/logo.jpeg"
@@ -33,7 +25,6 @@ export default function PGDMAdmissionPage() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden items-center gap-7 md:flex">
             <Link
               href="/"
@@ -71,25 +62,21 @@ export default function PGDMAdmissionPage() {
             </a>
           </nav>
 
-          {/* Mobile CTA */}
           <a
             href="#application-form"
-            className="rounded-full bg-[#c31e3b] px-4 py-2 text-xs font-bold text-white md:hidden"
+            className="rounded-full bg-[#c31e3b] px-4 py-2 text-xs font-bold text-white transition hover:bg-[#a91731] md:hidden"
           >
             Apply Now
           </a>
         </div>
       </header>
 
-      {/* =====================================================
-          HERO
-      ====================================================== */}
-
+      {/* HERO */}
       <section className="relative overflow-hidden bg-[#071a38]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#071a38] via-[#0b2d5d] to-[#123b79]" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
-          {/* Hero Content */}
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
+          {/* HERO CONTENT */}
           <div className="text-white">
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-[#f4c542] sm:text-sm">
               FOSTIIMA Business School
@@ -97,7 +84,9 @@ export default function PGDMAdmissionPage() {
 
             <h1 className="max-w-3xl font-serif text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
               PGDM Admissions
-              <span className="block text-[#e62b4d]">Build Your Future</span>
+              <span className="block text-[#e62b4d]">
+                Build Your Future
+              </span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/75 sm:text-lg">
@@ -122,8 +111,8 @@ export default function PGDMAdmissionPage() {
               </Link>
             </div>
 
-            {/* Quick Stats */}
-            <div className="mt-10 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
+            {/* QUICK STATS */}
+            <div className="mt-10 grid max-w-xl grid-cols-2 gap-4 sm:grid-cols-4">
               <div className="border-l border-white/20 pl-3">
                 <p className="text-2xl font-bold">2</p>
                 <p className="text-xs text-white/60">Years</p>
@@ -144,37 +133,28 @@ export default function PGDMAdmissionPage() {
                 <p className="text-xs text-white/60">Full-Time</p>
               </div>
             </div>
+
+            <div className="mt-8 flex flex-wrap gap-2">
+              <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/80">
+                Industry-Aligned Learning
+              </span>
+              <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/80">
+                Leadership Development
+              </span>
+            </div>
           </div>
 
-          {/* Form Card */}
+          {/* CUSTOM ADMISSION FORM */}
           <div
             id="application-form"
-            className="scroll-mt-28 rounded-2xl bg-white p-5 shadow-[0_25px_80px_rgba(0,0,0,0.25)] sm:p-7"
+            className="scroll-mt-28 rounded-2xl"
           >
-            <div className="mb-5">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
-                Admissions Open
-              </p>
-
-              <h2 className="mt-1 text-2xl font-bold text-[#071a38] sm:text-3xl">
-                Apply for PGDM
-              </h2>
-
-              <p className="mt-2 text-sm leading-6 text-slate-500">
-                Fill in your details and our admissions team will get in touch
-                with you.
-              </p>
-            </div>
-
-            <ApplyForm4Widget />
+            <AdmissionEnquiryForm />
           </div>
         </div>
       </section>
 
-      {/* =====================================================
-          WHY FOSTIIMA
-      ====================================================== */}
-
+      {/* WHY FOSTIIMA */}
       <section className="bg-[#f8faff] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -196,7 +176,7 @@ export default function PGDMAdmissionPage() {
             {highlights.map((item, index) => (
               <div
                 key={item}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#c31e3b]/10 text-sm font-bold text-[#c31e3b]">
                   {String(index + 1).padStart(2, "0")}
@@ -211,10 +191,7 @@ export default function PGDMAdmissionPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          PROGRAM OVERVIEW
-      ====================================================== */}
-
+      {/* PROGRAM OVERVIEW */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -270,10 +247,7 @@ export default function PGDMAdmissionPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          FINAL CTA
-      ====================================================== */}
-
+      {/* FINAL CTA */}
       <section className="bg-[#071a38] py-14">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
           <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl">
@@ -294,10 +268,7 @@ export default function PGDMAdmissionPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          FOOTER
-      ====================================================== */}
-
+      {/* FOOTER */}
       <footer className="bg-[#041126] py-6 text-center text-xs text-white/50">
         © {new Date().getFullYear()} FOSTIIMA Business School. All Rights
         Reserved.

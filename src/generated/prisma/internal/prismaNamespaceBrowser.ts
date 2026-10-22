@@ -83,7 +83,8 @@ export const ModelName = {
   HomeAward: 'HomeAward',
   HomeCampusLife: 'HomeCampusLife',
   HomeRecognition: 'HomeRecognition',
-  Faq: 'Faq'
+  Faq: 'Faq',
+  AdmissionEnquiry: 'AdmissionEnquiry'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -569,6 +570,27 @@ export const FaqScalarFieldEnum = {
 export type FaqScalarFieldEnum = (typeof FaqScalarFieldEnum)[keyof typeof FaqScalarFieldEnum]
 
 
+export const AdmissionEnquiryScalarFieldEnum = {
+  id: 'id',
+  fullName: 'fullName',
+  mobile: 'mobile',
+  email: 'email',
+  state: 'state',
+  city: 'city',
+  course: 'course',
+  remarks: 'remarks',
+  consent: 'consent',
+  source: 'source',
+  status: 'status',
+  emailSent: 'emailSent',
+  emailError: 'emailError',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AdmissionEnquiryScalarFieldEnum = (typeof AdmissionEnquiryScalarFieldEnum)[keyof typeof AdmissionEnquiryScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -944,4 +966,21 @@ export const FaqOrderByRelevanceFieldEnum = {
 } as const
 
 export type FaqOrderByRelevanceFieldEnum = (typeof FaqOrderByRelevanceFieldEnum)[keyof typeof FaqOrderByRelevanceFieldEnum]
+
+
+export const AdmissionEnquiryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  fullName: 'fullName',
+  mobile: 'mobile',
+  email: 'email',
+  state: 'state',
+  city: 'city',
+  course: 'course',
+  remarks: 'remarks',
+  source: 'source',
+  status: 'status',
+  emailError: 'emailError'
+} as const
+
+export type AdmissionEnquiryOrderByRelevanceFieldEnum = (typeof AdmissionEnquiryOrderByRelevanceFieldEnum)[keyof typeof AdmissionEnquiryOrderByRelevanceFieldEnum]
 

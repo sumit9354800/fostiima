@@ -182,3 +182,8 @@ export type HomeRecognition = Prisma.HomeRecognitionModel
  * 
  */
 export type Faq = Prisma.FaqModel
+/**
+ * Model AdmissionEnquiry
+ * 
+ */
+export type AdmissionEnquiry = Prisma.AdmissionEnquiryModel

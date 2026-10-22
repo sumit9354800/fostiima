@@ -149,8 +149,8 @@ export const adminNavigation = [
     icon: BookOpen,
   },
   {
-    label: "Enquiries",
-    href: "/admin/enquiries",
-    icon: MessageSquare,
+    label: "Admission Enquiries",
+    href: "/admin/admission-enquiries",
+    icon: GraduationCap,
   },
 ] as const;
