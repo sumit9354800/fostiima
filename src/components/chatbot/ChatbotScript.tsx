@@ -10,7 +10,7 @@ type BotType = "chatbot" | "voice" | null;
 const EXTRAEDGE_SCRIPT =
   "https://extraaedgeresources.blob.core.windows.net/documents/fbscrm/Chatbot/js/chat.js";
 
-const CHATBOT_ICON = "/chat-icon.jpeg";
+const CHATBOT_ICON = "/chat-icon.webp";
 
 function loadScript(src: string): Promise<HTMLScriptElement> {
   return new Promise((resolve, reject) => {

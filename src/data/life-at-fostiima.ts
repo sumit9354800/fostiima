@@ -29,7 +29,7 @@ export type LifeAtFostiimaSection = {
 
 export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
   {
-    src: "/life-at-fostiima/2.jpeg",
+    src: "/life-at-fostiima/2.webp",
 
     alt: "Academic Excellence at FOSTIIMA",
 
@@ -129,7 +129,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
   {
     src: 
-      "/life-at-fostiima/brain-storming/brainstorming1.jpeg",
+      "/life-at-fostiima/brain-storming/brainstorming1.webp",
 
     alt: "Brain Storming at FOSTIIMA",
 
@@ -147,17 +147,17 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
     images: [
       {
         src: 
-          "/life-at-fostiima/brain-storming/brainstorming1.jpeg",
+          "/life-at-fostiima/brain-storming/brainstorming1.webp",
         alt: "Brain Storming at FOSTIIMA",
       },
       {
         src: 
-          "/life-at-fostiima/brain-storming/brainstorming2.jpeg",
+          "/life-at-fostiima/brain-storming/brainstorming2.webp",
         alt: "Brain Storming activity at FOSTIIMA",
       },
       {
         src: 
-          "/life-at-fostiima/brain-storming/brainstorming3.jpeg",
+          "/life-at-fostiima/brain-storming/brainstorming3.webp",
         alt: "Brain Storming session at FOSTIIMA",
       },
     ],
@@ -167,7 +167,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
   {
     src: 
-      "/life-at-fostiima/business-exposure-tips/dubai/dubai1.jpg",
+      "/life-at-fostiima/business-exposure-tips/dubai/dubai1.webp",
 
     alt: "Global Immersion Trips",
 
@@ -186,74 +186,74 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
       // Dubai
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/dubai/dubai1.jpg",
+          "/life-at-fostiima/business-exposure-tips/dubai/dubai1.webp",
         alt: "Business exposure in Dubai - 1",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/dubai/dubai2.jpg",
+          "/life-at-fostiima/business-exposure-tips/dubai/dubai2.webp",
         alt: "Business exposure in Dubai - 2",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/dubai/dubai3.jpg",
+          "/life-at-fostiima/business-exposure-tips/dubai/dubai3.webp",
         alt: "Business exposure in Dubai - 3",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/dubai/dubai4.jpg",
+          "/life-at-fostiima/business-exposure-tips/dubai/dubai4.webp",
         alt: "Business exposure in Dubai - 4",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/dubai/dubai6.jpg",
+          "/life-at-fostiima/business-exposure-tips/dubai/dubai6.webp",
         alt: "Business exposure in Dubai - 6",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/dubai/dubai7.jpg",
+          "/life-at-fostiima/business-exposure-tips/dubai/dubai7.webp",
         alt: "Business exposure in Dubai - 7",
       },
 
       // Malaysia
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia1.jpeg",
+          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia1.webp",
         alt: "Business exposure in Malaysia - 1",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia2.jpeg",
+          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia2.webp",
         alt: "Business exposure in Malaysia - 2",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia3.jpeg",
+          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia3.webp",
         alt: "Business exposure in Malaysia - 3",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia4.jpeg",
+          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia4.webp",
         alt: "Business exposure in Malaysia - 4",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia5.jpeg",
+          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia5.webp",
         alt: "Business exposure in Malaysia - 5",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia6.jpeg",
+          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia6.webp",
         alt: "Business exposure in Malaysia - 6",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia7.jpeg",
+          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia7.webp",
         alt: "Business exposure in Malaysia - 7",
       },
       {
         src: 
-          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia8.jpeg",
+          "/life-at-fostiima/business-exposure-tips/malaysia/malaysia8.webp",
         alt: "Business exposure in Malaysia - 8",
       },
     ],
@@ -263,7 +263,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
   {
     src: 
-      "/life-at-fostiima/corporate-talk/corporate-talk1.jpeg",
+      "/life-at-fostiima/corporate-talk/corporate-talk1.webp",
 
     alt: "Corporate Talk at FOSTIIMA",
 
@@ -281,52 +281,52 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
     images: [
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk1.jpeg",
+          "/life-at-fostiima/corporate-talk/corporate-talk1.webp",
         alt: "Corporate Talk at FOSTIIMA - 1",
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk2.jpg",
+          "/life-at-fostiima/corporate-talk/corporate-talk2.webp",
         alt: "Corporate Talk at FOSTIIMA - 2",
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk3.jpg",
+          "/life-at-fostiima/corporate-talk/corporate-talk3.webp",
         alt: "Corporate Talk at FOSTIIMA - 3",
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk4.jpeg",
+          "/life-at-fostiima/corporate-talk/corporate-talk4.webp",
         alt: "Corporate Talk at FOSTIIMA - 4",
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk5.jpg",
+          "/life-at-fostiima/corporate-talk/corporate-talk5.webp",
         alt: "Corporate Talk at FOSTIIMA - 5",
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk6.jpg",
+          "/life-at-fostiima/corporate-talk/corporate-talk6.webp",
         alt: "Corporate Talk at FOSTIIMA - 6",
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk7.jpg",
+          "/life-at-fostiima/corporate-talk/corporate-talk7.webp",
         alt: "Corporate Talk at FOSTIIMA - 7",
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk8.jpg",
+          "/life-at-fostiima/corporate-talk/corporate-talk8.webp",
         alt: "Corporate Talk at FOSTIIMA - 8",
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk9.jpg",
+          "/life-at-fostiima/corporate-talk/corporate-talk9.webp",
         alt: "Corporate Talk at FOSTIIMA - 9",
       },
       {
         src: 
-          "/life-at-fostiima/corporate-talk/corporate-talk10.jpg",
+          "/life-at-fostiima/corporate-talk/corporate-talk10.webp",
         alt: "Corporate Talk at FOSTIIMA - 10",
       },
     ],
@@ -335,7 +335,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
   },
 
   {
-    src: "/life-at-fostiima/sports-and-fitness/sport17.JPG",
+    src: "/life-at-fostiima/sports-and-fitness/sport17.webp",
 
     alt: "Sports and Fitness at FOSTIIMA",
 
@@ -352,94 +352,94 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
     images: [
       {
-        src: "/life-at-fostiima/sports-and-fitness/sport1.JPG",
+        src: "/life-at-fostiima/sports-and-fitness/sport1.webp",
         alt: "Sports and Fitness at FOSTIIMA - 1",
       },
       {
-        src: "/life-at-fostiima/sports-and-fitness/sport2.JPG",
+        src: "/life-at-fostiima/sports-and-fitness/sport2.webp",
         alt: "Sports and Fitness at FOSTIIMA - 2",
       },
       {
-        src: "/life-at-fostiima/sports-and-fitness/sport3.JPG",
+        src: "/life-at-fostiima/sports-and-fitness/sport3.webp",
         alt: "Sports and Fitness at FOSTIIMA - 3",
       },
       {
-        src: "/life-at-fostiima/sports-and-fitness/sport4.JPG",
+        src: "/life-at-fostiima/sports-and-fitness/sport4.webp",
         alt: "Sports and Fitness at FOSTIIMA - 4",
       },
       {
-        src: "/life-at-fostiima/sports-and-fitness/sport5.JPG",
+        src: "/life-at-fostiima/sports-and-fitness/sport5.webp",
         alt: "Sports and Fitness at FOSTIIMA - 5",
       },
       {
-        src: "/life-at-fostiima/sports-and-fitness/sport6.JPG",
+        src: "/life-at-fostiima/sports-and-fitness/sport6.webp",
         alt: "Sports and Fitness at FOSTIIMA - 6",
       },
       {
-        src: "/life-at-fostiima/sports-and-fitness/sport7.JPG",
+        src: "/life-at-fostiima/sports-and-fitness/sport7.webp",
         alt: "Sports and Fitness at FOSTIIMA - 7",
       },
       {
-        src: "/life-at-fostiima/sports-and-fitness/sport8.JPG",
+        src: "/life-at-fostiima/sports-and-fitness/sport8.webp",
         alt: "Sports and Fitness at FOSTIIMA - 8",
       },
       {
-        src: "/life-at-fostiima/sports-and-fitness/sport9.JPG",
+        src: "/life-at-fostiima/sports-and-fitness/sport9.webp",
         alt: "Sports and Fitness at FOSTIIMA - 9",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport10.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport10.webp",
         alt: "Sports and Fitness at FOSTIIMA - 10",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport11.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport11.webp",
         alt: "Sports and Fitness at FOSTIIMA - 11",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport12.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport12.webp",
         alt: "Sports and Fitness at FOSTIIMA - 12",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport13.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport13.webp",
         alt: "Sports and Fitness at FOSTIIMA - 13",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport14.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport14.webp",
         alt: "Sports and Fitness at FOSTIIMA - 14",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport15.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport15.webp",
         alt: "Sports and Fitness at FOSTIIMA - 15",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport16.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport16.webp",
         alt: "Sports and Fitness at FOSTIIMA - 16",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport17.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport17.webp",
         alt: "Sports and Fitness at FOSTIIMA - 17",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport18.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport18.webp",
         alt: "Sports and Fitness at FOSTIIMA - 18",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport19.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport19.webp",
         alt: "Sports and Fitness at FOSTIIMA - 19",
       },
       {
         src: 
-          "/life-at-fostiima/sports-and-fitness/sport20.jpg",
+          "/life-at-fostiima/sports-and-fitness/sport20.webp",
         alt: "Sports and Fitness at FOSTIIMA - 20",
       },
     ],
@@ -449,7 +449,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
   {
     src: 
-      "/life-at-fostiima/team-building-camp/team-building-camp2.jpeg",
+      "/life-at-fostiima/team-building-camp/team-building-camp2.webp",
 
     alt: "Team Building Camp at FOSTIIMA",
 
@@ -467,32 +467,32 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
     images: [
       {
         src: 
-          "/life-at-fostiima/team-building-camp/team-building-camp1.jpeg",
+          "/life-at-fostiima/team-building-camp/team-building-camp1.webp",
         alt: "Team Building Camp at FOSTIIMA - 1",
       },
       {
         src: 
-          "/life-at-fostiima/team-building-camp/team-building-camp2.jpeg",
+          "/life-at-fostiima/team-building-camp/team-building-camp2.webp",
         alt: "Team Building Camp at FOSTIIMA - 2",
       },
       {
         src: 
-          "/life-at-fostiima/team-building-camp/team-building-camp3.jpeg",
+          "/life-at-fostiima/team-building-camp/team-building-camp3.webp",
         alt: "Team Building Camp at FOSTIIMA - 3",
       },
       {
         src: 
-          "/life-at-fostiima/team-building-camp/team-building-camp4.jpeg",
+          "/life-at-fostiima/team-building-camp/team-building-camp4.webp",
         alt: "Team Building Camp at FOSTIIMA - 4",
       },
       {
         src: 
-          "/life-at-fostiima/team-building-camp/team-building-camp5.jpeg",
+          "/life-at-fostiima/team-building-camp/team-building-camp5.webp",
         alt: "Team Building Camp at FOSTIIMA - 5",
       },
       {
         src: 
-          "/life-at-fostiima/team-building-camp/team-building-camp6.jpeg",
+          "/life-at-fostiima/team-building-camp/team-building-camp6.webp",
         alt: "Team Building Camp at FOSTIIMA - 6",
       },
     ],
@@ -502,7 +502,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
 
   {
     src: 
-      "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpeg",
+      "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.webp",
 
     alt: "Cultural Events at FOSTIIMA",
 
@@ -527,32 +527,32 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
         images: [
           {
             src: 
-              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela1.jpg",
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela1.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela2.jpg",
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela2.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela3.jpg",
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela3.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela4.jpg",
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela4.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela5.jpg",
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela5.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela6.jpg",
+              "/life-at-fostiima/cultural-events/swadeshi-mela/swadeshi-mela6.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
@@ -567,52 +567,52 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
         images: [
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali1.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali1.webp",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali2.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali2.webp",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali3.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali3.webp",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali_4.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali_4.webp",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali5.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali5.webp",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali6.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali6.webp",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali7.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali7.webp",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali8.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali8.webp",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali9.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali9.webp",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/diwali/diwali10.jpg",
+              "/life-at-fostiima/cultural-events/diwali/diwali10.webp",
             alt: "diwali Mela at FOSTIIMA - 1",
           },
         ],
@@ -627,77 +627,77 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
         images: [
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day1.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day1.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day2.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day2.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day_3.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day_3.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day4.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day4.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day9.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day9.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day10.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day10.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day11.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day11.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day12.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day12.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day13.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day13.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day14.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day14.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day15.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day15.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day16.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day16.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day17.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day17.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day18.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day18.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day19.jpg",
+              "/life-at-fostiima/cultural-events/aagaman-day/aagaman-day19.webp",
             alt: "Aagaman Day at FOSTIIMA - 1",
           },
         ],
@@ -712,122 +712,122 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
         images: [
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6105.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6105.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6107.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6107.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6108.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6108.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6113.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6113.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6114.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6114.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6120.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6120.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6126.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6126.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6138.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6138.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6146.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6146.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6156.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6156.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6162.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6162.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6163.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6163.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6180.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6180.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6181.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6181.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6184.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6184.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6188.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6188.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6218.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6218.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6104.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6249.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6249.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6285.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6285.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6286.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6286.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6343.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6343.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6387.jpg",
+              "/life-at-fostiima/cultural-events/vitt-manthan/IMG_6387.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
@@ -842,72 +842,72 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
         images: [
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day1.jpeg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day1.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.jpeg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day2.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day3.jpeg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day3.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day4.jpeg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day4.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day5.jpeg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day5.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day6.jpeg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day6.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day7.jpeg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day7.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day8.jpeg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day8.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day9.jpeg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day9.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day10.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day10.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day11.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day11.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day12.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day12.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day13.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day13.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/teacher_day/teacher_day14.jpg",
+              "/life-at-fostiima/cultural-events/teacher_day/teacher_day14.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
@@ -922,72 +922,72 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
         images: [
           {
             src: 
-              "/life-at-fostiima/cultural-events/milan/milan1.jpg",
+              "/life-at-fostiima/cultural-events/milan/milan1.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-             "/life-at-fostiima/cultural-events/milan/milan2.jpg",
+             "/life-at-fostiima/cultural-events/milan/milan2.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/milan/milan3.jpg",
+              "/life-at-fostiima/cultural-events/milan/milan3.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-             "/life-at-fostiima/cultural-events/milan/milan4.jpg",
+             "/life-at-fostiima/cultural-events/milan/milan4.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/milan/milan5.jpg",
+              "/life-at-fostiima/cultural-events/milan/milan5.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-             "/life-at-fostiima/cultural-events/milan/milan6.jpg",
+             "/life-at-fostiima/cultural-events/milan/milan6.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-             "/life-at-fostiima/cultural-events/milan/milan7.jpg",
+             "/life-at-fostiima/cultural-events/milan/milan7.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-             "/life-at-fostiima/cultural-events/milan/milan8.jpg",
+             "/life-at-fostiima/cultural-events/milan/milan8.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/milan/milan9.jpg",
+              "/life-at-fostiima/cultural-events/milan/milan9.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-             "/life-at-fostiima/cultural-events/milan/milan10.jpg",
+             "/life-at-fostiima/cultural-events/milan/milan10.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/milan/milan11.jpg",
+              "/life-at-fostiima/cultural-events/milan/milan11.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-             "/life-at-fostiima/cultural-events/milan/milan12.jpg",
+             "/life-at-fostiima/cultural-events/milan/milan12.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/milan/milan13.jpg",
+              "/life-at-fostiima/cultural-events/milan/milan13.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/milan/milan14.jpg",
+              "/life-at-fostiima/cultural-events/milan/milan14.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
@@ -1002,22 +1002,22 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
         images: [
           {
             src: 
-              "/life-at-fostiima/cultural-events/marketing/marketing1.jpeg",
+              "/life-at-fostiima/cultural-events/marketing/marketing1.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/marketing/marketing2.jpeg",
+              "/life-at-fostiima/cultural-events/marketing/marketing2.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/marketing/marketing3.jpeg",
+              "/life-at-fostiima/cultural-events/marketing/marketing3.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
           {
             src: 
-              "/life-at-fostiima/cultural-events/marketing/marketing4.jpeg",
+              "/life-at-fostiima/cultural-events/marketing/marketing4.webp",
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
