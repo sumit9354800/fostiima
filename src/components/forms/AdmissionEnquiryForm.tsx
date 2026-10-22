@@ -18,6 +18,16 @@ const API_BASE = "https://countriesnow.space/api/v0.1";
 // Cache city lists so revisiting a state does not require another request.
 const cityCache = new Map<string, string[]>();
 
+// Simple visual CAPTCHA. For strong bot protection, also validate a server-side
+// CAPTCHA token (for example, Cloudflare Turnstile) inside the API route.
+function generateCaptcha(length = 5) {
+  const characters = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  return Array.from(
+    { length },
+    () => characters[Math.floor(Math.random() * characters.length)],
+  ).join("");
+}
+
 const inputClass =
   "w-full rounded-lg border border-slate-200 bg-white px-3.5 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-[#123B79] focus:ring-2 focus:ring-[#123B79]/10 disabled:cursor-not-allowed disabled:bg-slate-100";
 
@@ -60,6 +70,8 @@ export default function AdmissionEnquiryForm() {
   const [locationError, setLocationError] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
+  const [captchaCode, setCaptchaCode] = useState(() => generateCaptcha());
+  const [captchaInput, setCaptchaInput] = useState("");
 
   // States are local, so they are available immediately.
   const states: readonly string[] = INDIAN_STATES;
@@ -176,6 +188,13 @@ export default function AdmissionEnquiryForm() {
       return;
     }
 
+    if (captchaInput.trim().toUpperCase() !== captchaCode) {
+      setMessage("The verification code is incorrect. Please try again.");
+      setCaptchaInput("");
+      setCaptchaCode(generateCaptcha());
+      return;
+    }
+
     if (!values.consent) {
       setMessage("Please accept the communication consent to continue.");
       return;
@@ -218,6 +237,8 @@ export default function AdmissionEnquiryForm() {
       setValues(initialValues);
       setCities([]);
       setLocationError("");
+      setCaptchaInput("");
+      setCaptchaCode(generateCaptcha());
 
       const gtag = (
         window as Window & {
@@ -467,6 +488,61 @@ export default function AdmissionEnquiryForm() {
             rows={3}
             disabled={loading}
           />
+        </div>
+
+        <div>
+          <label className={labelClass} htmlFor="admission-captcha">
+            Enter Code <span className="text-[#C31E3B]">*</span>
+          </label>
+
+          <div className="grid grid-cols-[1fr_1fr_auto] items-stretch gap-2">
+            <div
+              aria-label={`Verification code: ${captchaCode}`}
+              className="flex min-h-11 select-none items-center justify-center rounded-lg border border-dashed border-slate-300 bg-slate-50 px-3 font-mono text-lg font-extrabold tracking-[0.3em] text-[#123B79]"
+            >
+              {captchaCode}
+            </div>
+
+            <input
+              id="admission-captcha"
+              name="captcha"
+              type="text"
+              autoComplete="off"
+              autoCapitalize="characters"
+              spellCheck={false}
+              className={inputClass}
+              placeholder="Enter code"
+              value={captchaInput}
+              onChange={(event) =>
+                setCaptchaInput(
+                  event.target.value.replace(/[^a-zA-Z0-9]/g, "").slice(0, 5),
+                )
+              }
+              maxLength={5}
+              required
+              disabled={loading}
+              aria-describedby="admission-captcha-help"
+            />
+
+            <button
+              type="button"
+              onClick={() => {
+                setCaptchaCode(generateCaptcha());
+                setCaptchaInput("");
+                setMessage("");
+                setSuccess(false);
+              }}
+              disabled={loading}
+              className="flex min-h-11 items-center justify-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 text-xs font-semibold text-slate-700 transition hover:border-[#C31E3B] hover:text-[#C31E3B] disabled:opacity-60"
+              aria-label="Generate a new verification code"
+              title="Refresh verification code"
+            >
+              <RefreshCw size={15} />
+            </button>
+          </div>
+          <p id="admission-captcha-help" className="mt-1.5 text-xs text-slate-500">
+            Type the 5-character code shown. Use refresh if it is difficult to read.
+          </p>
         </div>
 
         <label className="flex cursor-pointer items-start gap-2.5 pt-1">

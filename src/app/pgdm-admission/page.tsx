@@ -1,6 +1,17 @@
 
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 import AdmissionEnquiryForm from "@/components/forms/AdmissionEnquiryForm";
+import {
+  Menu,
+  X,
+  ArrowRight,
+  GraduationCap,
+  BookOpen,
+  BriefcaseBusiness,
+  ShieldCheck,
+} from "lucide-react";
 
 const highlights = [
   "2 Year Full-Time PGDM Program",
@@ -11,80 +22,157 @@ const highlights = [
   "Leadership & Professional Development",
 ];
 
+const navigation = [
+  { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about-us" },
+  { label: "PGDM Program", href: "#programs" },
+  { label: "Why FOSTIIMA", href: "#why-fostiima" },
+];
+
 export default function PGDMAdmissionPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    setMobileMenuOpen(false);
+
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <main className="min-h-screen bg-white text-[#071a38]">
-      {/* NAVBAR */}
-      <header className="sticky top-0 z-[100] border-b border-slate-200 bg-white">
-        <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center">
+      {/* STICKY LANDING PAGE NAVBAR */}
+      <header className="sticky top-0 z-[100] border-b border-slate-200/80 bg-white/95 shadow-sm backdrop-blur-xl">
+        <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+          {/* BRAND LOGO */}
+          <button
+            type="button"
+            onClick={() => scrollToSection("home")}
+            aria-label="Go to landing page home"
+            className="flex shrink-0 items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c31e3b]"
+          >
             <img
               src="/logo.jpeg"
               alt="FOSTIIMA Business School"
-              className="h-11 w-auto object-contain"
+              className="h-10 w-auto object-contain sm:h-12"
             />
-          </Link>
+          </button>
 
-          <nav className="hidden items-center gap-7 md:flex">
-            <Link
-              href="/"
-              className="text-sm font-semibold text-[#071a38] transition hover:text-[#c31e3b]"
-            >
-              Home
-            </Link>
-
-            <Link
-              href="/about-us"
-              className="text-sm font-semibold text-[#071a38] transition hover:text-[#c31e3b]"
-            >
-              About Us
-            </Link>
-
-            <Link
-              href="/programs?program=pgdm"
-              className="text-sm font-semibold text-[#071a38] transition hover:text-[#c31e3b]"
-            >
-              PGDM
-            </Link>
-
-            <Link
-              href="/contact-us"
-              className="text-sm font-semibold text-[#071a38] transition hover:text-[#c31e3b]"
-            >
-              Admissions
-            </Link>
-
-            <a
-              href="#application-form"
-              className="rounded-full bg-[#c31e3b] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#a91731]"
-            >
-              Apply Now
-            </a>
+          {/* DESKTOP NAVIGATION */}
+          <nav
+            aria-label="Main navigation"
+            className="hidden items-center gap-5 lg:flex xl:gap-7"
+          >
+            {navigation.map((item) => (
+              <button
+                key={item.href}
+                type="button"
+                onClick={() =>
+                  scrollToSection(item.href.replace("#", ""))
+                }
+                className="whitespace-nowrap text-sm font-semibold text-[#071a38] transition-colors hover:text-[#c31e3b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c31e3b]"
+              >
+                {item.label}
+              </button>
+            ))}
           </nav>
 
-          <a
-            href="#application-form"
-            className="rounded-full bg-[#c31e3b] px-4 py-2 text-xs font-bold text-white transition hover:bg-[#a91731] md:hidden"
+          {/* DESKTOP CTA */}
+          <button
+            type="button"
+            onClick={() => scrollToSection("application-form")}
+            className="hidden shrink-0 items-center gap-2 rounded-full bg-[#c31e3b] px-5 py-3 text-sm font-bold text-white shadow-md shadow-[#c31e3b]/15 transition duration-200 hover:-translate-y-0.5 hover:bg-[#a91731] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c31e3b] focus-visible:ring-offset-2 lg:inline-flex"
           >
             Apply Now
-          </a>
+            <ArrowRight className="h-4 w-4" />
+          </button>
+
+          {/* MOBILE CTA + MENU */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              type="button"
+              onClick={() => scrollToSection("application-form")}
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#c31e3b] px-4 py-2.5 text-xs font-bold text-white transition hover:bg-[#a91731] sm:text-sm"
+            >
+              Apply Now
+              <ArrowRight className="h-3.5 w-3.5" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="pgdm-mobile-navigation"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-[#071a38] transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c31e3b]"
+            >
+              {mobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* MOBILE DROPDOWN */}
+        {mobileMenuOpen && (
+          <nav
+            id="pgdm-mobile-navigation"
+            aria-label="Mobile navigation"
+            className="border-t border-slate-100 bg-white px-4 pb-5 pt-3 shadow-lg lg:hidden"
+          >
+            <div className="mx-auto max-w-7xl space-y-1">
+              {navigation.map((item) => (
+                <button
+                  key={item.href}
+                  type="button"
+                  onClick={() =>
+                    scrollToSection(item.href.replace("#", ""))
+                  }
+                  className="flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-left text-sm font-semibold text-[#071a38] transition hover:bg-red-50 hover:text-[#c31e3b]"
+                >
+                  {item.label}
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              ))}
+
+              <button
+                type="button"
+                onClick={() => scrollToSection("application-form")}
+                className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-[#c31e3b] px-4 py-3.5 text-sm font-bold text-white transition hover:bg-[#a91731]"
+              >
+                Start Your Application
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          </nav>
+        )}
       </header>
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#071a38]">
+      <section
+        id="home"
+        className="scroll-mt-24 relative overflow-hidden bg-[#071a38]"
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-[#071a38] via-[#0b2d5d] to-[#123b79]" />
+
+        <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#c31e3b]/15 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
           {/* HERO CONTENT */}
           <div className="text-white">
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-[#f4c542] sm:text-sm">
+            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#f4c542] sm:text-sm">
+              <GraduationCap className="h-4 w-4" />
               FOSTIIMA Business School
             </p>
 
             <h1 className="max-w-3xl font-serif text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
               PGDM Admissions
-              <span className="block text-[#e62b4d]">
+              <span className="mt-2 block text-[#e62b4d]">
                 Build Your Future
               </span>
             </h1>
@@ -96,23 +184,26 @@ export default function PGDMAdmissionPage() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#application-form"
-                className="inline-flex items-center justify-center rounded-full bg-[#c31e3b] px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#a91731]"
+              <button
+                type="button"
+                onClick={() => scrollToSection("application-form")}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#c31e3b] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[#a91731]"
               >
                 Apply Now
-              </a>
+                <ArrowRight className="h-4 w-4" />
+              </button>
 
-              <Link
-                href="/programs?program=pgdm"
+              <button
+                type="button"
+                onClick={() => scrollToSection("programs")}
                 className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20"
               >
                 Explore PGDM
-              </Link>
+              </button>
             </div>
 
             {/* QUICK STATS */}
-            <div className="mt-10 grid max-w-xl grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="mt-10 grid max-w-xl grid-cols-2 gap-5 sm:grid-cols-4">
               <div className="border-l border-white/20 pl-3">
                 <p className="text-2xl font-bold">2</p>
                 <p className="text-xs text-white/60">Years</p>
@@ -144,7 +235,7 @@ export default function PGDMAdmissionPage() {
             </div>
           </div>
 
-          {/* CUSTOM ADMISSION FORM */}
+          {/* ADMISSION FORM */}
           <div
             id="application-form"
             className="scroll-mt-28 rounded-2xl"
@@ -155,7 +246,10 @@ export default function PGDMAdmissionPage() {
       </section>
 
       {/* WHY FOSTIIMA */}
-      <section className="bg-[#f8faff] py-16 sm:py-20">
+      <section
+        id="why-fostiima"
+        className="scroll-mt-24 bg-[#f8faff] py-16 sm:py-20"
+      >
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
@@ -191,9 +285,15 @@ export default function PGDMAdmissionPage() {
         </div>
       </section>
 
-      {/* PROGRAM OVERVIEW */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
+      {/* ABOUT / PROGRAM OVERVIEW */}
+      <section
+        id="about-us"
+        className="scroll-mt-24 bg-white py-16 sm:py-20"
+      >
+        <div
+          id="programs"
+          className="mx-auto grid max-w-7xl scroll-mt-24 gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:px-8"
+        >
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
               PGDM Program
@@ -209,16 +309,19 @@ export default function PGDMAdmissionPage() {
               development to prepare students for modern business challenges.
             </p>
 
-            <a
-              href="#application-form"
-              className="mt-7 inline-flex rounded-full bg-[#c31e3b] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#a91731]"
+            <button
+              type="button"
+              onClick={() => scrollToSection("application-form")}
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#c31e3b] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#a91731]"
             >
               Start Your Application
-            </a>
+              <ArrowRight className="h-4 w-4" />
+            </button>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-2xl bg-[#071a38] p-6 text-white">
+              <BookOpen className="mb-4 h-6 w-6 text-white/70" />
               <p className="text-3xl font-bold">2</p>
               <p className="mt-2 text-sm text-white/65">
                 Year Full-Time Program
@@ -226,11 +329,13 @@ export default function PGDMAdmissionPage() {
             </div>
 
             <div className="rounded-2xl bg-[#c31e3b] p-6 text-white">
+              <ShieldCheck className="mb-4 h-6 w-6 text-white/80" />
               <p className="text-3xl font-bold">AICTE</p>
               <p className="mt-2 text-sm text-white/75">Approved Program</p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-[#f8faff] p-6">
+              <GraduationCap className="mb-4 h-6 w-6 text-[#123b79]" />
               <p className="text-3xl font-bold text-[#123b79]">360°</p>
               <p className="mt-2 text-sm text-slate-500">
                 Professional Development
@@ -238,6 +343,7 @@ export default function PGDMAdmissionPage() {
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-[#f8faff] p-6">
+              <BriefcaseBusiness className="mb-4 h-6 w-6 text-[#123b79]" />
               <p className="text-3xl font-bold text-[#123b79]">PGDM</p>
               <p className="mt-2 text-sm text-slate-500">
                 Industry-Aligned Learning
@@ -250,7 +356,11 @@ export default function PGDMAdmissionPage() {
       {/* FINAL CTA */}
       <section className="bg-[#071a38] py-14">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
-          <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#f4c542]">
+            Your Next Chapter Starts Here
+          </p>
+
+          <h2 className="mt-3 font-serif text-3xl font-bold text-white sm:text-4xl">
             Ready to Begin Your Management Journey?
           </h2>
 
@@ -259,12 +369,14 @@ export default function PGDMAdmissionPage() {
             PGDM Program.
           </p>
 
-          <a
-            href="#application-form"
-            className="mt-7 inline-flex rounded-full bg-[#c31e3b] px-8 py-3.5 text-sm font-bold text-white transition hover:bg-[#a91731]"
+          <button
+            type="button"
+            onClick={() => scrollToSection("application-form")}
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#c31e3b] px-8 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#a91731]"
           >
             Apply for PGDM
-          </a>
+            <ArrowRight className="h-4 w-4" />
+          </button>
         </div>
       </section>
 
