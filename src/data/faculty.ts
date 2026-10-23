@@ -278,7 +278,7 @@ export const facultyData: Faculty[] = [
     image: "/home/faculty/ms-ridhi-sehgal.webp",
     qualification: "PGDPM - NIPM-Kolkata",
     experience: "10+ years",
-    domain: "Civil",
+    domain: "Public Relations,Customer Acqisition and Engagement",
   },
   {
     slug: "ms-dishi-s",
