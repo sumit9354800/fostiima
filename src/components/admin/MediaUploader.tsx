@@ -1,4 +1,3 @@
-
 "use client";
 
 import { upload } from "@vercel/blob/client";
@@ -21,6 +20,13 @@ type MediaUploaderProps = {
 
 const DEFAULT_ACCEPT =
   "image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/quicktime";
+
+const IMAGE_TYPES = new Set([
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+  "image/gif",
+]);
 
 const VIDEO_TYPES = new Set([
   "video/mp4",
@@ -62,24 +68,42 @@ export default function MediaUploader({
   async function handleFileChange(
     event: React.ChangeEvent<HTMLInputElement>,
   ) {
-    const file = event.target.files?.[0];
+    const input = event.currentTarget;
+    const file = input.files?.[0];
+
     if (!file) return;
 
     setError("");
     setUploaded(false);
     setProgress(0);
 
-    if (file.size > maxSizeMB * 1024 * 1024) {
-      setError(`File size cannot exceed ${maxSizeMB} MB.`);
-      event.target.value = "";
+    const isImage = IMAGE_TYPES.has(file.type);
+    const isVideo = VIDEO_TYPES.has(file.type);
+
+    if (!isImage && !isVideo) {
+      setError("Choose a supported image or video file.");
+      input.value = "";
       return;
     }
 
-    const isVideo = VIDEO_TYPES.has(file.type);
+    if (file.size > maxSizeMB * 1024 * 1024) {
+      setError(`File size cannot exceed ${maxSizeMB} MB.`);
+      input.value = "";
+      return;
+    }
 
-    if (isVideo && !/\.(mp4|webm|mov)$/i.test(file.name)) {
+    if (isImage && file.size > 4 * 1024 * 1024) {
+      setError("Blog images must not exceed 4 MB.");
+      input.value = "";
+      return;
+    }
+
+    if (
+      isVideo &&
+      !/\.(mp4|webm|mov)$/i.test(file.name)
+    ) {
       setError("Please select an MP4, WebM, or MOV video.");
-      event.target.value = "";
+      input.value = "";
       return;
     }
 
@@ -88,10 +112,60 @@ export default function MediaUploader({
 
       let url: string;
 
-      if (isVideo) {
-        // Videos upload directly from the browser to Vercel Blob.
-        // The Next.js API only authorizes the upload.
-        const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "-");
+      if (isImage) {
+        // Blog images use the dedicated Blob API.
+        // The general upload endpoint remains unchanged.
+        const formData = new FormData();
+        formData.append("file", file);
+
+        const response = await fetch(
+          "/api/admin/blog/image-upload",
+          {
+            method: "POST",
+            body: formData,
+            credentials: "same-origin",
+          },
+        );
+
+        const contentType =
+          response.headers.get("content-type") || "";
+
+        if (!contentType.includes("application/json")) {
+          const responseText = await response.text();
+
+          console.error("[BLOG_IMAGE_UPLOAD_NON_JSON]", {
+            status: response.status,
+            url: response.url,
+            response: responseText.slice(0, 500),
+          });
+
+          throw new Error(
+            `Image upload returned an unexpected response (HTTP ${response.status}). Check the API route and server logs.`,
+          );
+        }
+
+        const data = await response.json();
+
+        if (!response.ok || !data?.success) {
+          throw new Error(
+            data?.error || "Unable to upload blog image.",
+          );
+        }
+
+        if (typeof data.url !== "string" || !data.url) {
+          throw new Error(
+            "The image upload API did not return a URL.",
+          );
+        }
+
+        url = data.url;
+        setProgress(100);
+      } else {
+        // Keep the existing direct-to-Blob video flow.
+        const safeName = file.name.replace(
+          /[^a-zA-Z0-9._-]/g,
+          "-",
+        );
 
         const blob = await upload(
           `videos/${safeName}`,
@@ -107,29 +181,6 @@ export default function MediaUploader({
         );
 
         url = blob.url;
-      } else {
-        // Keep the existing working image upload route unchanged.
-        const formData = new FormData();
-        formData.append("file", file);
-
-        const response = await fetch("/api/admin/upload", {
-          method: "POST",
-          body: formData,
-          credentials: "same-origin",
-        });
-
-        const data = await response.json();
-
-        if (!response.ok) {
-          throw new Error(data.error ?? "Unable to upload image.");
-        }
-
-        if (!data?.url) {
-          throw new Error("The server did not return an image URL.");
-        }
-
-        url = data.url;
-        setProgress(100);
       }
 
       onChange(url);
@@ -198,7 +249,9 @@ export default function MediaUploader({
             <input
               type="text"
               value={value}
-              onChange={(event) => handleUrlChange(event.target.value)}
+              onChange={(event) =>
+                handleUrlChange(event.target.value)
+              }
               placeholder="https://..."
               className="w-full border border-[#dbe3ee] bg-white py-3 pl-10 pr-4 text-sm text-[#061a3a] outline-none focus:border-[#061a3a]"
             />
@@ -221,7 +274,8 @@ export default function MediaUploader({
               </p>
 
               <p className="mt-1 text-sm text-slate-300">
-                Videos upload directly to storage. Images use the existing upload API.
+                Blog images use the dedicated image API.
+                Videos retain their direct-upload flow.
               </p>
             </div>
           </div>
@@ -258,7 +312,8 @@ export default function MediaUploader({
               </p>
 
               <p className="mt-1 text-sm text-slate-400">
-                JPG, PNG, WebP, GIF, MP4, WebM, MOV · Maximum {maxSizeMB} MB
+                JPG, PNG, WebP, GIF, MP4, WebM, MOV · Maximum{" "}
+                {maxSizeMB} MB
               </p>
             </label>
 
@@ -300,7 +355,9 @@ export default function MediaUploader({
 
       {value && (
         <div className="mt-4 border border-[#dbe3ee] bg-[#f8fafc] p-3">
-          <p className="break-all text-sm text-slate-500">{value}</p>
+          <p className="break-all text-sm text-slate-500">
+            {value}
+          </p>
         </div>
       )}
 

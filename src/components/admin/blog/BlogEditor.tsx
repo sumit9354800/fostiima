@@ -698,53 +698,57 @@ export default function BlogEditor({
       return;
     }
 
-    if (file.size > 100 * 1024 * 1024) {
-      alert("Image size cannot exceed 100MB.");
+    // Blog images are uploaded through the dedicated blog-image endpoint.
+    // Keep this limit aligned with src/app/api/admin/image-upload/route.ts.
+    const maxImageSize = 4 * 1024 * 1024;
+    if (file.size > maxImageSize) {
+      alert("Blog image size cannot exceed 4MB. Please choose a smaller image.");
       return;
     }
 
     try {
       setUploading(true);
 
-      // Step 1: Authenticate admin and request a short-lived token.
-      const tokenResponse = await fetch("/api/admin/upload-token", {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch("/api/admin/image-upload", {
         method: "POST",
+        body: formData,
         credentials: "same-origin",
         headers: { Accept: "application/json" },
         cache: "no-store",
       });
 
-      const tokenData = await tokenResponse.json();
+      // Avoid JSON parsing errors when Next.js returns an HTML 404/500 page.
+      const contentType = response.headers.get("content-type") || "";
+      let data: { success?: boolean; url?: string; error?: string } = {};
 
-      if (!tokenResponse.ok || typeof tokenData.token !== "string") {
-        throw new Error(tokenData.error || "Unable to authorize image upload.");
+      if (contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        const responseText = await response.text();
+        console.error("[BLOG_IMAGE_UPLOAD_NON_JSON_RESPONSE]", {
+          status: response.status,
+          contentType,
+          responsePreview: responseText.slice(0, 300),
+        });
+        throw new Error(
+          `Image upload endpoint returned a non-JSON response (HTTP ${response.status}). Check that src/app/api/admin/image-upload/route.ts exists and the dev server has restarted.`,
+        );
       }
 
-      // Step 2: Upload directly to Hostinger.
-
-      const formData = new FormData();
-      formData.append("file", file);
-
-      const uploadResponse = await fetch("/api/admin/upload", {
-        method: "POST",
-        body: formData,
-        credentials: "same-origin",
-      });
-
-      const uploadData = await uploadResponse.json();
-
-      if (!uploadResponse.ok) {
-        throw new Error(uploadData?.error || "Failed to upload image.");
+      if (!response.ok || data.success === false) {
+        throw new Error(data.error || `Image upload failed (HTTP ${response.status}).`);
       }
 
-      if (!uploadData?.url) {
-        throw new Error("Upload completed but image URL was not returned.");
+      if (typeof data.url !== "string" || !data.url.trim()) {
+        throw new Error("Upload response did not include an image URL.");
       }
 
-      updateField("coverImage", uploadData.url);
+      updateField("coverImage", data.url);
     } catch (error) {
       console.error("[BLOG_IMAGE_UPLOAD]", error);
-
       alert(error instanceof Error ? error.message : "Failed to upload image.");
     } finally {
       setUploading(false);
