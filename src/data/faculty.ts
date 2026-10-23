@@ -304,14 +304,14 @@ export const facultyData: Faculty[] = [
     experience: "20+ years",
     domain: "Sales & Marketing, Business Growth",
   },
-  // {
-  //   slug: "mr-dhananjay-kumar",
-  //   name: "Mr. Dhananjay Kumar",
-  //   image: "/home/faculty/faculty041.webp",
-  //   qualification: "MBA/PGDM, B.Tech",
-  //   experience: "15+ years",
-  //   domain: "Digital Marketing, Analytics, Business Strategy",
-  // },
+  {
+    slug: "mr-dhananjay-kumar",
+    name: "Mr. Dhananjay Kumar",
+    image: "/home/faculty/mr-dhananjay-kumar.webp",
+    qualification: "MBA/PGDM, B.Tech",
+    experience: "15+ years",
+    domain: "Digital Marketing, Analytics, Business Strategy",
+  },
   {
     slug: "ms-mohini-deshwal",
     name: "Ms. Mohini Deshwal",
