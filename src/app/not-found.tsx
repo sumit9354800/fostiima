@@ -1,26 +1,16 @@
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ProgramsSection from "@/components/home/ProgramsSection";
 import MediaPresenceSection from "@/components/home/MediaPresenceSection";
 import SiteSearch from "@/components/common/SiteSearch";
-import { prisma } from "@/lib/prisma";
 
-export const dynamic = "force-dynamic";
-
-export default async function NotFound() {
-  const programs = await prisma.homeProgram.findMany({
-    where: { isActive: true },
-    orderBy: { sortOrder: "asc" },
-  });
-
+export default function NotFound() {
   return (
     <>
       <Header />
 
       <main className="bg-white">
-        {/* 404 Not Found Section */}
-        <section className="px-5 pb-4 pt-12 text-center sm:pt-16">
+        <section className="px-5 pb-10 pt-12 text-center sm:pt-16">
           <div className="mx-auto max-w-3xl">
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
               Error 404
@@ -44,13 +34,7 @@ export default async function NotFound() {
           </div>
         </section>
 
-        {/* Search Bar */}
         <SiteSearch />
-
-        {/* Existing Programs Section */}
-        <ProgramsSection programs={programs} />
-
-        {/* Existing Media / News Section */}
         <MediaPresenceSection />
       </main>
 
