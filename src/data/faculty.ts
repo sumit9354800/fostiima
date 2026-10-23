@@ -299,7 +299,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "mr-shagun-s",
     name: "Mr. Shagun. S",
-    image: "/home/faculty/mr-shagun-s.webp",
+    image: "/home/faculty/mr-shagun-s1.webp",
     qualification: "MBA",
     experience: "20+ years",
     domain: "Sales & Marketing, Business Growth",
