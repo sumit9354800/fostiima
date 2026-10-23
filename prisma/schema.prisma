@@ -530,3 +530,22 @@ model AdmissionEnquiry {
   @@index([email])
   @@map("admission_enquiry")
 }
+
+
+model ContactEnquiry {
+  id        String   @id @default(cuid())
+  name      String   @db.VarChar(150)
+  email     String   @db.VarChar(254)
+  phone     String   @db.VarChar(30)
+  subject   String   @db.VarChar(200)
+  message   String   @db.Text
+  status    String   @default("NEW") @db.VarChar(30)
+  emailSent Boolean  @default(false)
+  emailError String? @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, createdAt])
+  @@index([email])
+  @@map("contact_enquiry")
+}

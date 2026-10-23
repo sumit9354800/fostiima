@@ -430,7 +430,8 @@ export const ModelName = {
   HomeCampusLife: 'HomeCampusLife',
   HomeRecognition: 'HomeRecognition',
   Faq: 'Faq',
-  AdmissionEnquiry: 'AdmissionEnquiry'
+  AdmissionEnquiry: 'AdmissionEnquiry',
+  ContactEnquiry: 'ContactEnquiry'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -446,7 +447,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "faculty" | "blogPost" | "blogBlock" | "blogKeyword" | "conclaveEvent" | "finalPlacementBatch" | "finalPlacementChart" | "finalPlacementProfile" | "finalPlacementStudent" | "summerInternshipBatch" | "summerInternshipProfile" | "careerOpening" | "fAQ" | "review" | "mediaPresence" | "homeHero" | "homeStat" | "homeRecruiter" | "homeAbout" | "homeAboutHighlight" | "homePlacementVideo" | "homeCampusHighlight" | "homeProgram" | "programSemester" | "programSubject" | "homeAward" | "homeCampusLife" | "homeRecognition" | "faq" | "admissionEnquiry"
+    modelProps: "user" | "session" | "account" | "verification" | "faculty" | "blogPost" | "blogBlock" | "blogKeyword" | "conclaveEvent" | "finalPlacementBatch" | "finalPlacementChart" | "finalPlacementProfile" | "finalPlacementStudent" | "summerInternshipBatch" | "summerInternshipProfile" | "careerOpening" | "fAQ" | "review" | "mediaPresence" | "homeHero" | "homeStat" | "homeRecruiter" | "homeAbout" | "homeAboutHighlight" | "homePlacementVideo" | "homeCampusHighlight" | "homeProgram" | "programSemester" | "programSubject" | "homeAward" | "homeCampusLife" | "homeRecognition" | "faq" | "admissionEnquiry" | "contactEnquiry"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2694,6 +2695,72 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ContactEnquiry: {
+      payload: Prisma.$ContactEnquiryPayload<ExtArgs>
+      fields: Prisma.ContactEnquiryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ContactEnquiryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactEnquiryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ContactEnquiryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactEnquiryPayload>
+        }
+        findFirst: {
+          args: Prisma.ContactEnquiryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactEnquiryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ContactEnquiryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactEnquiryPayload>
+        }
+        findMany: {
+          args: Prisma.ContactEnquiryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactEnquiryPayload>[]
+        }
+        create: {
+          args: Prisma.ContactEnquiryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactEnquiryPayload>
+        }
+        createMany: {
+          args: Prisma.ContactEnquiryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.ContactEnquiryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactEnquiryPayload>
+        }
+        update: {
+          args: Prisma.ContactEnquiryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactEnquiryPayload>
+        }
+        deleteMany: {
+          args: Prisma.ContactEnquiryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ContactEnquiryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.ContactEnquiryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactEnquiryPayload>
+        }
+        aggregate: {
+          args: Prisma.ContactEnquiryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateContactEnquiry>
+        }
+        groupBy: {
+          args: Prisma.ContactEnquiryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ContactEnquiryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ContactEnquiryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ContactEnquiryCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -3221,6 +3288,23 @@ export const AdmissionEnquiryScalarFieldEnum = {
 export type AdmissionEnquiryScalarFieldEnum = (typeof AdmissionEnquiryScalarFieldEnum)[keyof typeof AdmissionEnquiryScalarFieldEnum]
 
 
+export const ContactEnquiryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  subject: 'subject',
+  message: 'message',
+  status: 'status',
+  emailSent: 'emailSent',
+  emailError: 'emailError',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ContactEnquiryScalarFieldEnum = (typeof ContactEnquiryScalarFieldEnum)[keyof typeof ContactEnquiryScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -3615,6 +3699,20 @@ export const AdmissionEnquiryOrderByRelevanceFieldEnum = {
 export type AdmissionEnquiryOrderByRelevanceFieldEnum = (typeof AdmissionEnquiryOrderByRelevanceFieldEnum)[keyof typeof AdmissionEnquiryOrderByRelevanceFieldEnum]
 
 
+export const ContactEnquiryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  subject: 'subject',
+  message: 'message',
+  status: 'status',
+  emailError: 'emailError'
+} as const
+
+export type ContactEnquiryOrderByRelevanceFieldEnum = (typeof ContactEnquiryOrderByRelevanceFieldEnum)[keyof typeof ContactEnquiryOrderByRelevanceFieldEnum]
+
+
 
 /**
  * Field references
@@ -3854,6 +3952,7 @@ export type GlobalOmitConfig = {
   homeRecognition?: Prisma.HomeRecognitionOmit
   faq?: Prisma.FaqOmit
   admissionEnquiry?: Prisma.AdmissionEnquiryOmit
+  contactEnquiry?: Prisma.ContactEnquiryOmit
 }
 
 /* Types for Logging */

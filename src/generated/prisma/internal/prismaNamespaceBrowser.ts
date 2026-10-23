@@ -84,7 +84,8 @@ export const ModelName = {
   HomeCampusLife: 'HomeCampusLife',
   HomeRecognition: 'HomeRecognition',
   Faq: 'Faq',
-  AdmissionEnquiry: 'AdmissionEnquiry'
+  AdmissionEnquiry: 'AdmissionEnquiry',
+  ContactEnquiry: 'ContactEnquiry'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -591,6 +592,23 @@ export const AdmissionEnquiryScalarFieldEnum = {
 export type AdmissionEnquiryScalarFieldEnum = (typeof AdmissionEnquiryScalarFieldEnum)[keyof typeof AdmissionEnquiryScalarFieldEnum]
 
 
+export const ContactEnquiryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  subject: 'subject',
+  message: 'message',
+  status: 'status',
+  emailSent: 'emailSent',
+  emailError: 'emailError',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ContactEnquiryScalarFieldEnum = (typeof ContactEnquiryScalarFieldEnum)[keyof typeof ContactEnquiryScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -983,4 +1001,18 @@ export const AdmissionEnquiryOrderByRelevanceFieldEnum = {
 } as const
 
 export type AdmissionEnquiryOrderByRelevanceFieldEnum = (typeof AdmissionEnquiryOrderByRelevanceFieldEnum)[keyof typeof AdmissionEnquiryOrderByRelevanceFieldEnum]
+
+
+export const ContactEnquiryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  subject: 'subject',
+  message: 'message',
+  status: 'status',
+  emailError: 'emailError'
+} as const
+
+export type ContactEnquiryOrderByRelevanceFieldEnum = (typeof ContactEnquiryOrderByRelevanceFieldEnum)[keyof typeof ContactEnquiryOrderByRelevanceFieldEnum]
 

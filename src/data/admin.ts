@@ -12,6 +12,7 @@ import {
   Presentation,
   School,
   Users,
+  MessageSquareText
 } from "lucide-react";
 
 export const adminModules = [
@@ -152,5 +153,10 @@ export const adminNavigation = [
     label: "Admission Enquiries",
     href: "/admin/admission-enquiries",
     icon: GraduationCap,
+  },
+  {
+    label: "Contact Messages",
+    href: "/admin/contact-messages",
+    icon: MessageSquareText,
   },
 ] as const;

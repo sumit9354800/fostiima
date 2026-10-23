@@ -211,3 +211,8 @@ export type Faq = Prisma.FaqModel
  * 
  */
 export type AdmissionEnquiry = Prisma.AdmissionEnquiryModel
+/**
+ * Model ContactEnquiry
+ * 
+ */
+export type ContactEnquiry = Prisma.ContactEnquiryModel
