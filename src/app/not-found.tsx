@@ -1,16 +1,27 @@
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ProgramsSection from "@/components/home/ProgramsSection";
 import MediaPresenceSection from "@/components/home/MediaPresenceSection";
 import SiteSearch from "@/components/common/SiteSearch";
+import { getHomeContent } from "@/lib/admin/home";
 
-export default function NotFound() {
+export default async function NotFound() {
+  let programs = [];
+
+  try {
+    const homeContent = await getHomeContent();
+    programs = homeContent.programs;
+  } catch (error) {
+    console.error("Failed to load programs on 404 page:", error);
+  }
+
   return (
     <>
       <Header />
 
       <main className="bg-white">
-        <section className="px-5 pb-10 pt-12 text-center sm:pt-16">
+        <section className="px-5 pb-4 pt-12 text-center sm:pt-16">
           <div className="mx-auto max-w-3xl">
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#c31e3b]">
               Error 404
@@ -35,6 +46,7 @@ export default function NotFound() {
         </section>
 
         <SiteSearch />
+        <ProgramsSection programs={programs} />
         <MediaPresenceSection />
       </main>
 
