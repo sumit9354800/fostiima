@@ -160,8 +160,8 @@ export const facultyData: Faculty[] = [
     image: "/home/faculty/ritika-arora.webp",
     qualification:
       "B Tech (JNU, Delhi), Diploma in Advanced Computing (CDAC, Pune), Diploma in Management",
-    experience: "20+ years",
-    domain: "",
+    experience: "18+ years",
+    domain: "Financial Market, Corporate Trainer",
   },
   {
     slug: "ferzand",
