@@ -183,7 +183,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "ajit-gupta",
     name: "Dr. Ajit Gupta",
-    image: "/home/faculty/ajit-gupta.webp",
+    image: "/home/faculty/ajit-gupta1.webp",
     qualification:
       "Ph.D. from IIM Lucknow, MBA from Northeastern University, Boston, USA, PGDM from IIM Ahmedabad",
     experience: "",
