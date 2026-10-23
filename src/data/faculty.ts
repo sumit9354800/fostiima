@@ -187,7 +187,7 @@ export const facultyData: Faculty[] = [
     qualification:
       "Ph.D. from IIM Lucknow, MBA from Northeastern University, Boston, USA, PGDM from IIM Ahmedabad",
     experience: "",
-    domain: "",
+    domain: "Ph.D. from IIM Lucknow, MBA from Northeastern University, Boston, USA, PGDM from IIM Ahmedabad",
   },
   {
     slug: "ruchika-yadav",
