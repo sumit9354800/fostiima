@@ -291,7 +291,7 @@ export const facultyData: Faculty[] = [
   {
     slug: "dr-tanuj-jain",
     name: "Dr. Tanuj Jain",
-    image: "/home/faculty/dr-tanuj-jain.webp",
+    image: "/home/faculty/tanuj-jain.webp",
     qualification: "PhD. Library Science",
     experience: "10+ years",
     domain: "Library and Information Science",
