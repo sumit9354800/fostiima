@@ -4,10 +4,15 @@ import Footer from "@/components/layout/Footer";
 import ProgramsSection from "@/components/home/ProgramsSection";
 import MediaPresenceSection from "@/components/home/MediaPresenceSection";
 import SiteSearch from "@/components/common/SiteSearch";
-import { getHomeContent } from "@/lib/admin/home";
+import { prisma } from "@/lib/prisma";
+
+export const dynamic = "force-dynamic";
 
 export default async function NotFound() {
-  const { programs } = await getHomeContent();
+  const programs = await prisma.homeProgram.findMany({
+    where: { isActive: true },
+    orderBy: { sortOrder: "asc" },
+  });
 
   return (
     <>
