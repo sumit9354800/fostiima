@@ -4,6 +4,21 @@ import Link from "next/link";
 
 import {
   ArrowLeft,
+  CornerDownLeft,
+  AlignCenter,
+  AlignLeft,
+  AlignRight,
+  Bold,
+  Highlighter,
+  Italic,
+  List,
+  ListOrdered,
+  Quote,
+  Redo2,
+  RemoveFormatting,
+  Strikethrough,
+  Underline,
+  Undo2,
   GripVertical,
   ImagePlus,
   Link2,
@@ -13,7 +28,7 @@ import {
   Unlink2,
 } from "lucide-react";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 type BlockType = "heading" | "paragraph" | "image" | "table";
@@ -183,7 +198,7 @@ function normalizeParagraphHtml(value: string) {
   // Old paragraphs are plain text. Escape them before putting them inside
   // contentEditable. New paragraphs can contain the saved <a> tags.
   if (!/<[a-z][\s\S]*>/i.test(value)) {
-    return escapeHtml(value).replace(/\n/g, "<br />");
+    return escapeHtml(value);
   }
 
   return value;
@@ -197,7 +212,20 @@ function sanitizeParagraphHtml(value: string) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(value, "text/html");
 
-  const allowedTags = new Set(["A", "BR", "STRONG", "B", "EM", "I", "U"]);
+  // Convert legacy browser FONT nodes to SPAN so text colours survive sanitizing.
+  for (const font of Array.from(doc.body.querySelectorAll("font"))) {
+    const span = doc.createElement("span");
+    const color = font.getAttribute("color");
+    if (color && /^#[0-9a-f]{3,8}$/i.test(color)) span.style.color = color;
+    span.innerHTML = font.innerHTML;
+    font.replaceWith(span);
+  }
+
+  const allowedTags = new Set([
+    "A", "BR", "P", "DIV", "H2", "H3", "H4", "STRONG", "B",
+    "EM", "I", "U", "S", "STRIKE", "UL", "OL", "LI", "BLOCKQUOTE",
+    "SPAN", "SUB", "SUP", "HR", "CODE", "PRE",
+  ]);
 
   for (const element of Array.from(doc.body.querySelectorAll("*"))) {
     if (!allowedTags.has(element.tagName)) {
@@ -219,12 +247,31 @@ function sanitizeParagraphHtml(value: string) {
     }
 
     for (const attribute of Array.from(element.attributes)) {
-      if (
-        element.tagName !== "A" ||
-        !["href", "target", "rel"].includes(attribute.name)
-      ) {
-        element.removeAttribute(attribute.name);
+      if (element.tagName === "A" && ["href", "target", "rel"].includes(attribute.name)) {
+        continue;
       }
+
+      if (element.tagName === "SPAN" && attribute.name === "style") {
+        const safeStyles = (element.getAttribute("style") || "")
+          .split(";")
+          .map((rule) => rule.trim())
+          .filter((rule) => /^(color|background-color|text-align|font-size):\s*[#(),.%\w\s-]+$/i.test(rule))
+          .join("; ");
+        if (safeStyles) element.setAttribute("style", safeStyles);
+        else element.removeAttribute("style");
+        continue;
+      }
+
+      if (element.tagName === "P" || element.tagName === "DIV" || /^H[234]$/.test(element.tagName)) {
+        if (attribute.name === "style") {
+          const alignment = (element.getAttribute("style") || "").match(/text-align:\s*(left|center|right|justify)/i)?.[0];
+          if (alignment) element.setAttribute("style", alignment);
+          else element.removeAttribute("style");
+          continue;
+        }
+      }
+
+      element.removeAttribute(attribute.name);
     }
   }
 
@@ -239,176 +286,228 @@ function ParagraphEditor({
   onChange: (value: string) => void;
 }) {
   const editorRef = useRef<HTMLDivElement>(null);
+  const savedRangeRef = useRef<Range | null>(null);
   const [linkUrl, setLinkUrl] = useState("");
   const [showLinkInput, setShowLinkInput] = useState(false);
+  const [wordCount, setWordCount] = useState(0);
+
+  // Do not replace the editable DOM on every keystroke: doing so resets the caret
+  // and makes selecting/formatting text frustrating. Sync only external changes.
+  useEffect(() => {
+    const editor = editorRef.current;
+    if (!editor || document.activeElement === editor) return;
+    const normalized = normalizeParagraphHtml(value);
+    if (editor.innerHTML !== normalized) editor.innerHTML = normalized;
+    setWordCount((editor.innerText || "").trim().split(/\s+/).filter(Boolean).length);
+  }, [value]);
+
+  const saveSelection = () => {
+    const selection = window.getSelection();
+    if (!selection || selection.rangeCount === 0) return;
+    const range = selection.getRangeAt(0);
+    if (editorRef.current?.contains(range.commonAncestorContainer)) {
+      savedRangeRef.current = range.cloneRange();
+    }
+  };
+
+  const restoreSelection = () => {
+    const editor = editorRef.current;
+    if (!editor) return false;
+    editor.focus();
+    const selection = window.getSelection();
+    if (!selection || !savedRangeRef.current) return false;
+    try {
+      selection.removeAllRanges();
+      selection.addRange(savedRangeRef.current);
+      return true;
+    } catch {
+      return false;
+    }
+  };
 
   const emitChange = () => {
-    if (!editorRef.current) {
-      return;
+    if (!editorRef.current) return;
+    const html = sanitizeParagraphHtml(editorRef.current.innerHTML);
+    onChange(html);
+    setWordCount((editorRef.current.innerText || "").trim().split(/\s+/).filter(Boolean).length);
+    saveSelection();
+  };
+
+  const runCommand = (command: string, commandValue?: string) => {
+    restoreSelection();
+    document.execCommand(command, false, commandValue);
+    emitChange();
+  };
+
+  const insertManualLineBreak = () => {
+    const editor = editorRef.current;
+    if (!editor) return;
+
+    const restored = restoreSelection();
+    if (!restored) {
+      editor.focus();
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(editor);
+      range.collapse(false);
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+      savedRangeRef.current = range.cloneRange();
     }
 
-    onChange(sanitizeParagraphHtml(editorRef.current.innerHTML));
+    document.execCommand("insertHTML", false, "<br>");
+    emitChange();
+    saveSelection();
+  };
+
+  const keepSelection = (event: React.MouseEvent<HTMLElement>) => {
+    saveSelection();
+    event.preventDefault();
   };
 
   const openLinkInput = (event: React.MouseEvent<HTMLButtonElement>) => {
-    // Prevent the toolbar button from destroying the selected text.
     event.preventDefault();
-
+    saveSelection();
     const selection = window.getSelection();
-
-    if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
-      alert("Please select the paragraph text you want to make a link.");
+    if (!selection || selection.rangeCount === 0 || selection.isCollapsed || !selection.toString().trim()) {
+      alert("Pehle editor mein jis text ko link banana hai use select karein.");
       return;
     }
-
-    const selectedText = selection.toString().trim();
-
-    if (!selectedText) {
-      alert("Please select the paragraph text you want to make a link.");
-      return;
-    }
-
-    const selectedAnchor = selection.anchorNode?.parentElement?.closest("a");
-
-    setLinkUrl(selectedAnchor?.getAttribute("href") || "");
+    const anchor = selection.anchorNode?.parentElement?.closest("a");
+    setLinkUrl(anchor?.getAttribute("href") || "");
     setShowLinkInput(true);
   };
 
   const applyLink = () => {
     const url = linkUrl.trim();
-
     if (!url) {
       alert("Please enter a URL.");
       return;
     }
-
-    const safeUrl = /^(https?:|mailto:|tel:|\/|#)/i.test(url)
-      ? url
-      : `https://${url}`;
-
-    const selection = window.getSelection();
-
-    if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
-      alert("Please select the paragraph text first.");
+    const safeUrl = /^(https?:|mailto:|tel:|\/|#)/i.test(url) ? url : `https://${url}`;
+    if (!restoreSelection()) {
+      alert("Link lagane ke liye pehle editor mein text select karein.");
       return;
     }
-
-    editorRef.current?.focus();
     document.execCommand("createLink", false, safeUrl);
-
-    if (editorRef.current) {
-      for (const anchor of Array.from(
-        editorRef.current.querySelectorAll("a"),
-      )) {
-        const href = anchor.getAttribute("href") || "";
-
-        if (/^(https?:|mailto:|tel:|\/|#)/i.test(href)) {
-          anchor.setAttribute("target", "_blank");
-          anchor.setAttribute("rel", "noopener noreferrer");
-        } else {
-          anchor.replaceWith(document.createTextNode(anchor.textContent || ""));
-        }
-      }
-    }
-
+    // Add safe target attributes; the sanitizer strips all other attributes.
+    editorRef.current?.querySelectorAll("a").forEach((anchor) => {
+      anchor.setAttribute("target", "_blank");
+      anchor.setAttribute("rel", "noopener noreferrer");
+    });
     emitChange();
     setShowLinkInput(false);
     setLinkUrl("");
   };
 
-  const removeLink = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-
-    const selection = window.getSelection();
-
-    if (!selection || selection.rangeCount === 0) {
-      return;
-    }
-
-    editorRef.current?.focus();
-    document.execCommand("unlink", false);
-    emitChange();
-  };
+  const toolbarButton = (label: string, icon: React.ReactNode, command: string, commandValue?: string) => (
+    <button
+      key={label}
+      type="button"
+      title={label}
+      aria-label={label}
+      onMouseDown={keepSelection}
+      onClick={() => runCommand(command, commandValue)}
+      className="inline-flex h-9 min-w-9 items-center justify-center gap-1 rounded-md border border-slate-200 bg-white px-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-[#123b79] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+    >{icon}</button>
+  );
 
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white">
-      <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 bg-slate-50 p-2">
-        <button
-          type="button"
-          onMouseDown={openLinkInput}
-          className="inline-flex items-center gap-1.5 rounded-md border border-[#123b79]/20 bg-white px-2.5 py-1.5 text-xs font-bold text-[#123b79] transition hover:bg-[#123b79]/5"
-          title="Select text and add a link"
-        >
-          <Link2 size={14} />
-          Add Link
-        </button>
-
-        <button
-          type="button"
-          onMouseDown={removeLink}
-          className="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-bold text-slate-600 transition hover:bg-slate-100"
-          title="Remove link from selected text"
-        >
-          <Unlink2 size={14} />
-          Remove Link
-        </button>
-
-        {showLinkInput && (
-          <div className="flex min-w-[280px] flex-1 flex-wrap items-center gap-2">
-            <input
-              type="url"
-              value={linkUrl}
-              onChange={(event) => setLinkUrl(event.target.value)}
-              onKeyDown={(event) => {
-                if (event.key === "Enter") {
-                  event.preventDefault();
-                  applyLink();
-                }
-
-                if (event.key === "Escape") {
-                  setShowLinkInput(false);
-                  setLinkUrl("");
-                }
-              }}
-              placeholder="https://example.com"
-              autoFocus
-              className="h-9 min-w-[220px] flex-1 rounded-md border border-slate-200 bg-white px-3 text-xs text-slate-700 outline-none focus:border-[#123b79]"
-            />
-
-            <button
-              type="button"
-              onMouseDown={(event) => event.preventDefault()}
-              onClick={applyLink}
-              className="h-9 rounded-md bg-[#123b79] px-3 text-xs font-bold text-white transition hover:bg-[#0b2c5c]"
-            >
-              Apply
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                setShowLinkInput(false);
-                setLinkUrl("");
-              }}
-              className="h-9 rounded-md border border-slate-200 bg-white px-3 text-xs font-bold text-slate-600 transition hover:bg-slate-100"
-            >
-              Cancel
-            </button>
-          </div>
-        )}
+    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+      <div className="flex flex-wrap items-center gap-1.5 border-b border-slate-200 bg-slate-50 p-2">
+        <select aria-label="Text style" defaultValue="P" onMouseDown={keepSelection}
+          onChange={(e) => { runCommand("formatBlock", e.target.value); e.currentTarget.blur(); }}
+          className="h-9 max-w-full rounded-md border border-slate-200 bg-white px-2 text-sm text-slate-700">
+          <option value="P">Normal text</option><option value="H2">Heading 2</option>
+          <option value="H3">Heading 3</option><option value="H4">Heading 4</option>
+          <option value="BLOCKQUOTE">Quote</option><option value="PRE">Code block</option>
+        </select>
+        <select aria-label="Font size" defaultValue="3" onMouseDown={keepSelection}
+          onChange={(e) => { runCommand("fontSize", e.target.value); e.currentTarget.blur(); }}
+          className="h-9 rounded-md border border-slate-200 bg-white px-2 text-sm text-slate-700">
+          <option value="1">10px</option><option value="2">13px</option><option value="3">16px</option>
+          <option value="4">18px</option><option value="5">24px</option><option value="6">32px</option><option value="7">48px</option>
+        </select>
+        {toolbarButton("Bold (⌘/Ctrl+B)", <Bold size={16}/>, "bold")}
+        {toolbarButton("Italic (⌘/Ctrl+I)", <Italic size={16}/>, "italic")}
+        {toolbarButton("Underline (⌘/Ctrl+U)", <Underline size={16}/>, "underline")}
+        {toolbarButton("Strikethrough", <Strikethrough size={16}/>, "strikeThrough")}
+        {toolbarButton("Bulleted list", <List size={16}/>, "insertUnorderedList")}
+        {toolbarButton("Numbered list", <ListOrdered size={16}/>, "insertOrderedList")}
+        {toolbarButton("Align left", <AlignLeft size={16}/>, "justifyLeft")}
+        {toolbarButton("Align center", <AlignCenter size={16}/>, "justifyCenter")}
+        {toolbarButton("Align right", <AlignRight size={16}/>, "justifyRight")}
+        {toolbarButton("Justify", <AlignCenter size={16}/>, "justifyFull")}
+        {toolbarButton("Quote", <Quote size={16}/>, "formatBlock", "BLOCKQUOTE")}
+        {toolbarButton("Undo", <Undo2 size={16}/>, "undo")}
+        {toolbarButton("Redo", <Redo2 size={16}/>, "redo")}
+        {toolbarButton("Clear formatting", <RemoveFormatting size={16}/>, "removeFormat")}
+        <label title="Text color" className="flex h-9 cursor-pointer items-center gap-1 rounded-md border border-slate-200 bg-white px-2 text-xs text-slate-700">
+          <span className="font-bold">A</span><input aria-label="Text color" type="color" defaultValue="#1e293b" className="h-5 w-5 cursor-pointer border-0 bg-transparent p-0"
+            onMouseDown={saveSelection} onChange={(e) => runCommand("foreColor", e.target.value)} />
+        </label>
+        <label title="Highlight color" className="flex h-9 cursor-pointer items-center gap-1 rounded-md border border-slate-200 bg-white px-2 text-xs text-slate-700">
+          <Highlighter size={15}/><input aria-label="Highlight color" type="color" defaultValue="#fff176" className="h-5 w-5 cursor-pointer border-0 bg-transparent p-0"
+            onMouseDown={saveSelection} onChange={(e) => runCommand("hiliteColor", e.target.value)} />
+        </label>
+        <button type="button" onMouseDown={openLinkInput} className="inline-flex h-9 items-center gap-1 rounded-md border border-slate-200 bg-white px-2 text-xs font-semibold text-[#123b79] hover:bg-blue-50"><Link2 size={14}/> Add link</button>
+        <button type="button" onMouseDown={(e) => { e.preventDefault(); saveSelection(); runCommand("unlink"); }} className="inline-flex h-9 items-center gap-1 rounded-md border border-slate-200 bg-white px-2 text-xs font-semibold text-slate-600 hover:bg-slate-100"><Unlink2 size={14}/> Remove link</button>
+        <button type="button" title="Insert manual line break" aria-label="Insert manual line break" onMouseDown={(e) => { e.preventDefault(); saveSelection(); }} onClick={insertManualLineBreak} className="inline-flex h-9 items-center gap-1 rounded-md border border-slate-200 bg-white px-2 text-xs font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-[#123b79]"><CornerDownLeft size={14}/> Line Break</button>
+        {showLinkInput && <div className="flex w-full flex-wrap gap-2 pt-2">
+          <input type="url" value={linkUrl} onChange={(e) => setLinkUrl(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); applyLink(); } if (e.key === "Escape") setShowLinkInput(false); }} placeholder="https://example.com" className="h-9 min-w-[220px] flex-1 rounded-md border border-slate-200 px-3 text-sm" />
+          <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={applyLink} className="rounded-md bg-[#123b79] px-3 text-sm font-bold text-white">Apply link</button>
+          <button type="button" onClick={() => { setShowLinkInput(false); setLinkUrl(""); }} className="rounded-md border px-3 text-sm">Cancel</button>
+        </div>}
       </div>
-
       <div
         ref={editorRef}
         contentEditable
         suppressContentEditableWarning
+        role="textbox"
+        aria-label="Blog article text editor"
+        aria-multiline="true"
+        spellCheck
         onInput={emitChange}
-        dangerouslySetInnerHTML={{
-          __html: normalizeParagraphHtml(value),
+        onPaste={(event) => {
+          event.preventDefault();
+          const plainText = event.clipboardData.getData("text/plain");
+          // Paste plain text only, without copied HTML or automatic <br> tags.
+          document.execCommand("insertText", false, plainText);
+          emitChange();
         }}
-        data-placeholder="Write paragraph..."
-        className="min-h-[150px] w-full whitespace-pre-wrap px-4 py-3 text-sm leading-7 text-slate-800 outline-none empty:before:text-slate-400 empty:before:content-[attr(data-placeholder)]"
+        onKeyUp={saveSelection}
+        onMouseUp={saveSelection}
+        onKeyDown={(event) => {
+          const mod = event.metaKey || event.ctrlKey;
+          if (mod && event.key.toLowerCase() === "b") {
+            event.preventDefault();
+            runCommand("bold");
+            return;
+          }
+          if (mod && event.key.toLowerCase() === "i") {
+            event.preventDefault();
+            runCommand("italic");
+            return;
+          }
+          if (mod && event.key.toLowerCase() === "u") {
+            event.preventDefault();
+            runCommand("underline");
+            return;
+          }
+          // Keep Enter from generating browser-specific <div>/<p>/<br> markup.
+          if (event.key === "Enter" && !event.shiftKey) {
+            event.preventDefault();
+            document.execCommand("insertText", false, "\n");
+            emitChange();
+          }
+        }}
+        data-placeholder="Start writing your article here..."
+        className="min-h-[240px] w-full whitespace-pre-wrap px-4 py-4 text-sm leading-7 text-slate-800 outline-none empty:before:text-slate-400 empty:before:content-[attr(data-placeholder)] [&_h2]:my-3 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:my-2 [&_h3]:text-xl [&_h3]:font-bold [&_h4]:my-2 [&_h4]:text-lg [&_h4]:font-semibold [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_blockquote]:my-3 [&_blockquote]:border-l-4 [&_blockquote]:border-slate-300 [&_blockquote]:pl-4 [&_blockquote]:italic [&_pre]:overflow-x-auto [&_pre]:rounded [&_pre]:bg-slate-100 [&_pre]:p-3 [&_code]:font-mono [&_a]:text-blue-700 [&_a]:underline"
       />
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 bg-slate-50 px-3 py-2 text-xs text-slate-500">
+        <span>Tip: paste uses plain text. Use Line Break to insert a manual break. Shortcuts: Ctrl/⌘ + B, I, U.</span>
+        <span>{wordCount} words</span>
+      </div>
     </div>
   );
 }
@@ -1207,6 +1306,14 @@ export default function BlogEditor({
                   <Plus size={15} />
                   Table
                 </button>
+                <button
+                  type="button"
+                  onClick={() => addBlock("image")}
+                  className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-bold text-emerald-700"
+                >
+                  <ImagePlus size={15} />
+                  Image
+                </button>
               </div>
             </div>
 
@@ -1297,6 +1404,21 @@ export default function BlogEditor({
                       className="w-full resize-y rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold leading-7 text-slate-800 outline-none focus:border-[#123b79]"
                     />
                   ) : null}
+                  {block.type === "image" && (
+                    <div className="grid gap-3 rounded-lg border border-slate-200 bg-white p-3 md:grid-cols-[1fr_220px]">
+                      <div className="space-y-3">
+                        <label className="block text-xs font-semibold text-slate-600">Image URL</label>
+                        <input value={block.src || ""} onChange={(event) => updateBlock(block.id, "src", event.target.value)} placeholder="https://... or uploaded image URL" className="h-10 w-full rounded-md border border-slate-200 px-3 text-sm outline-none focus:border-[#123b79]" />
+                        <label className="block text-xs font-semibold text-slate-600">Alt text (accessibility + SEO)</label>
+                        <input value={block.alt || ""} onChange={(event) => updateBlock(block.id, "alt", event.target.value)} placeholder="Describe this image" className="h-10 w-full rounded-md border border-slate-200 px-3 text-sm outline-none focus:border-[#123b79]" />
+                        <label className="block text-xs font-semibold text-slate-600">Caption (optional)</label>
+                        <input value={block.caption || ""} onChange={(event) => updateBlock(block.id, "caption", event.target.value)} placeholder="Image caption" className="h-10 w-full rounded-md border border-slate-200 px-3 text-sm outline-none focus:border-[#123b79]" />
+                      </div>
+                      <div className="flex min-h-32 items-center justify-center overflow-hidden rounded-md bg-slate-100">
+                        {block.src ? <img src={block.src} alt={block.alt || "Blog image preview"} className="max-h-48 w-full object-contain" /> : <div className="p-4 text-center text-xs text-slate-400"><ImagePlus size={24} className="mx-auto mb-2" />Paste an image URL to preview</div>}
+                      </div>
+                    </div>
+                  )}
                   {block.type === "table" && block.table && (
                     <div className="overflow-hidden rounded-lg border border-slate-200 bg-white">
                       <div className="overflow-x-auto">

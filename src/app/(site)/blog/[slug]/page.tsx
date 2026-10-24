@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import BlogContent from "@/components/blog/BlogContent";
 import { getBlogBySlug } from "@/lib/queries";
+import Link from "next/link";
 
 type BlogDetailPageProps = {
   params: Promise<{
@@ -125,10 +126,37 @@ export default async function BlogDetailPage({
         </section>
       )}
 
-      <section className="mx-auto max-w-5xl px-6 py-12 sm:px-8 sm:py-16 lg:px-10">
-        <article className="border border-[#dbe3ee] bg-white p-6 shadow-sm sm:p-8 lg:p-10">
-          <BlogContent content={blog.content} />
+      {/* Blog Content — Updated alignment and spacing */}
+      <section className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+        <article
+          aria-label={blog.title}
+          className="w-full min-w-0 border border-[#dbe3ee] bg-white p-5 shadow-[0_8px_35px_rgba(6,26,58,0.04)] sm:p-8 md:p-10 lg:p-12"
+        >
+          <div className="w-full min-w-0 text-justify [overflow-wrap:anywhere] [&_p]:my-5 [&_p]:text-base [&_p]:leading-8 [&_p]:text-slate-700 [&_h2]:mb-5 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:leading-tight [&_h2]:text-[#20477f] [&_h3]:mb-4 [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:leading-snug [&_h3]:text-[#20477f] [&_ul]:my-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_ol]:my-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6 [&_li]:pl-1 [&_li]:leading-8 [&_img]:my-8 [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-lg [&_blockquote]:my-8 [&_blockquote]:border-l-4 [&_blockquote]:border-[#c31e3b] [&_blockquote]:pl-5 [&_blockquote]:italic [&_a]:font-medium [&_a]:text-[#c31e3b] [&_a]:underline [&_strong]:font-bold">
+            <BlogContent content={blog.content} />
+          </div>
         </article>
+
+        {/* Back to Blog */}
+        <div className="mt-8 flex flex-col gap-4 border border-[#e2e8f0] bg-white p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+          <div>
+            <p className="font-semibold text-[#061a3a]">
+              Want to read more?
+            </p>
+
+            <p className="mt-1 text-sm leading-6 text-slate-500">
+              Explore more insights from FOSTIIMA Business School.
+            </p>
+          </div>
+
+          <Link
+            href="/blog"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 bg-[#c31e3b] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#a91932] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c31e3b] focus-visible:ring-offset-2"
+          >
+            Explore All Blogs
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
       </section>
     </main>
   );

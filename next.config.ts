@@ -1,3 +1,4 @@
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -5,20 +6,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "res.cloudinary.com",
+        hostname: "bdaddtyz0jzeqxij.public.blob.vercel-storage.com",
+        pathname: "/**",
       },
     ],
   },
-
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: "/ag-landing-page",
-  //       destination: "https://fostiima.org/ag-landing-page",
-  //       permanent: false,
-  //     },
-  //   ];
-  // },
 };
 
 export default nextConfig;

@@ -17,6 +17,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@prisma/adapter-mariadb": "^7.10.0",
     "@prisma/client": "^7.10.0",
+    "@tinymce/tinymce-react": "^6.3.1",
     "@tiptap/extension-link": "^3.31.4",
     "@tiptap/pm": "^3.31.4",
     "@tiptap/react": "^3.31.4",

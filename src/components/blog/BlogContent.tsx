@@ -1,3 +1,4 @@
+
 import type { BlogPost } from "@/types/blog";
 
 type BlogContentProps = {
@@ -5,7 +6,7 @@ type BlogContentProps = {
 };
 
 /**
- * Escapes plain text before it is rendered as HTML.
+ * Escape plain text before rendering it as HTML.
  */
 function escapeHtml(value: string) {
   return value
@@ -17,7 +18,7 @@ function escapeHtml(value: string) {
 }
 
 /**
- * Converts saved paragraph HTML into safe HTML.
+ * Sanitize saved paragraph HTML.
  *
  * Supported:
  * - <a>
@@ -29,52 +30,37 @@ function escapeHtml(value: string) {
  * - <u>
  */
 function sanitizeParagraphHtml(value: string) {
-  if (!value) {
-    return "";
-  }
+  if (!value) return "";
 
   const trimmed = value.trim();
 
-  if (!trimmed) {
-    return "";
-  }
+  if (!trimmed) return "";
 
   const containsSupportedHtml =
     /<\/?(a|br|strong|b|em|i|u)\b/i.test(trimmed);
 
-  /*
-   * Old blogs can contain plain text.
-   */
   if (!containsSupportedHtml) {
     return escapeHtml(value).replace(/\r?\n/g, "<br />");
   }
 
   let html = value;
 
-  /*
-   * Remove unsupported HTML tags.
-   */
+  // Remove unsupported HTML tags.
   html = html.replace(
     /<(?!\/?(?:a|br|strong|b|em|i|u)\b)[^>]*>/gi,
     "",
   );
 
-  /*
-   * Remove attributes from formatting tags.
-   */
+  // Remove attributes from formatting tags.
   html = html.replace(
     /<(strong|b|em|i|u)(?:\s[^>]*)?>/gi,
     "<$1>",
   );
 
-  /*
-   * Normalize <br>.
-   */
+  // Normalize line breaks.
   html = html.replace(/<br\s*\/?>/gi, "<br />");
 
-  /*
-   * Sanitize links.
-   */
+  // Sanitize links.
   html = html.replace(
     /<a\b([^>]*)>([\s\S]*?)<\/a>/gi,
     (_match, attributes: string, innerText: string) => {
@@ -90,36 +76,28 @@ function sanitizeParagraphHtml(value: string) {
       ).trim();
 
       const isSafeHref =
-        /^(https?:|mailto:|tel:|\/|#)/i.test(href);
+        /^(https?:\/\/|mailto:|tel:|\/|#)/i.test(href) &&
+        !/^\/\//.test(href);
 
       if (!isSafeHref) {
         return innerText;
       }
 
-      const escapedHref = escapeHtml(href);
-
-      return `<a href="${escapedHref}" target="_blank" rel="noopener noreferrer">${innerText}</a>`;
+      return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${innerText}</a>`;
     },
   );
 
-  /*
-   * Remove any remaining attributes from links.
-   */
+  // Remove any remaining attributes from links.
   html = html.replace(
     /<a\b[^>]*href="([^"]*)"[^>]*>/gi,
-    (_match, href: string) => {
-      return `<a href="${href}" target="_blank" rel="noopener noreferrer">`;
-    },
+    (_match, href: string) =>
+      `<a href="${href}" target="_blank" rel="noopener noreferrer">`,
   );
 
-  /*
-   * Remove attributes from <br>.
-   */
+  // Remove attributes from line breaks.
   html = html.replace(/<br\s+[^>]*>/gi, "<br />");
 
-  /*
-   * Normalize formatting tags.
-   */
+  // Normalize formatting tags.
   html = html.replace(
     /<(strong|b|em|i|u)\s+[^>]*>/gi,
     "<$1>",
@@ -132,7 +110,7 @@ export default function BlogContent({
   content,
 }: BlogContentProps) {
   return (
-    <div className="space-y-8">
+    <div className="w-full min-w-0 space-y-0">
       {content.map((block, index) => {
         switch (block.type) {
           case "heading":
@@ -140,7 +118,7 @@ export default function BlogContent({
               return (
                 <h2
                   key={index}
-                  className="mt-10 text-3xl font-bold leading-tight text-[#183f78]"
+                  className="mb-4 mt-9 text-2xl font-bold leading-tight text-[#183f78] first:mt-0 sm:text-3xl"
                 >
                   {block.content}
                 </h2>
@@ -151,7 +129,7 @@ export default function BlogContent({
               return (
                 <h3
                   key={index}
-                  className="mt-8 text-2xl font-bold leading-tight text-[#183f78]"
+                  className="mb-3 mt-7 text-xl font-bold leading-snug text-[#183f78] sm:text-2xl"
                 >
                   {block.content}
                 </h3>
@@ -161,7 +139,7 @@ export default function BlogContent({
             return (
               <h4
                 key={index}
-                className="mt-6 text-xl font-bold text-[#183f78]"
+                className="mb-3 mt-6 text-lg font-bold leading-snug text-[#183f78] sm:text-xl"
               >
                 {block.content}
               </h4>
@@ -171,7 +149,7 @@ export default function BlogContent({
             return (
               <p
                 key={index}
-                className="blog-content-paragraph text-base leading-8 text-[#30415f]"
+                className="blog-content-paragraph mb-5 text-justify text-base leading-7 text-[#30415f] [overflow-wrap:anywhere] sm:mb-6 sm:leading-8"
                 dangerouslySetInnerHTML={{
                   __html: sanitizeParagraphHtml(block.content),
                 }}
@@ -180,15 +158,16 @@ export default function BlogContent({
 
           case "image":
             return (
-              <figure key={index} className="my-10">
+              <figure key={index} className="my-7 w-full sm:my-9">
                 <img
                   src={block.src}
                   alt={block.alt}
-                  className="h-auto w-full"
+                  loading="lazy"
+                  className="block h-auto max-h-[560px] w-full rounded-lg object-contain"
                 />
 
                 {block.caption && (
-                  <figcaption className="mt-3 text-center text-sm text-slate-500">
+                  <figcaption className="mt-3 text-center text-sm leading-6 text-slate-500">
                     {block.caption}
                   </figcaption>
                 )}
@@ -199,10 +178,15 @@ export default function BlogContent({
             return (
               <ul
                 key={index}
-                className="list-disc space-y-2 pl-6 text-base leading-8 text-[#30415f]"
+                className="mb-6 mt-3 list-disc space-y-2 pl-6 text-base leading-7 text-[#30415f] sm:leading-8"
               >
                 {block.items.map((item, itemIndex) => (
-                  <li key={itemIndex}>{item}</li>
+                  <li
+                    key={itemIndex}
+                    className="pl-1 [overflow-wrap:anywhere]"
+                  >
+                    {item}
+                  </li>
                 ))}
               </ul>
             );
@@ -211,21 +195,19 @@ export default function BlogContent({
             return (
               <div
                 key={index}
-                className="my-10 w-full overflow-x-auto"
+                className="my-7 w-full max-w-full overflow-x-auto sm:my-9"
               >
-                <table className="w-full min-w-[640px] border-collapse overflow-hidden rounded-xl border border-[#dbe3ee]">
+                <table className="w-full min-w-[600px] border-collapse border border-[#dbe3ee]">
                   <thead>
                     <tr className="bg-[#061a3a]">
-                      {block.headers.map(
-                        (header, headerIndex) => (
-                          <th
-                            key={headerIndex}
-                            className="border border-[#183f78] px-5 py-4 text-left text-sm font-bold text-white"
-                          >
-                            {header}
-                          </th>
-                        ),
-                      )}
+                      {block.headers.map((header, headerIndex) => (
+                        <th
+                          key={headerIndex}
+                          className="border border-[#183f78] px-4 py-3 text-left text-sm font-bold text-white sm:px-5 sm:py-4"
+                        >
+                          {header}
+                        </th>
+                      ))}
                     </tr>
                   </thead>
 
@@ -239,16 +221,14 @@ export default function BlogContent({
                             : "bg-[#f8fafc]"
                         }
                       >
-                        {block.headers.map(
-                          (_, columnIndex) => (
-                            <td
-                              key={columnIndex}
-                              className="border border-[#dbe3ee] px-5 py-4 text-sm leading-6 text-[#30415f]"
-                            >
-                              {row[columnIndex] ?? ""}
-                            </td>
-                          ),
-                        )}
+                        {block.headers.map((_, columnIndex) => (
+                          <td
+                            key={columnIndex}
+                            className="border border-[#dbe3ee] px-4 py-3 text-sm leading-6 text-[#30415f] sm:px-5 sm:py-4"
+                          >
+                            {row[columnIndex] ?? ""}
+                          </td>
+                        ))}
                       </tr>
                     ))}
                   </tbody>
