@@ -1,21 +1,10 @@
-
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ProgramsSection from "@/components/home/ProgramsSection";
 import MediaPresenceSection from "@/components/home/MediaPresenceSection";
 import SiteSearch from "@/components/common/SiteSearch";
-import { getHomeContent } from "@/lib/admin/home";
+import Header from "@/components/layout/Header";
+import ProgramsSection from "@/components/home/ProgramsSection";
 
-export default async function NotFound() {
-  let programs = [];
-
-  try {
-    const homeContent = await getHomeContent();
-    programs = homeContent.programs;
-  } catch (error) {
-    console.error("Failed to load programs on 404 page:", error);
-  }
-
+export default function NotFound() {
   return (
     <>
       <Header />
@@ -33,8 +22,8 @@ export default async function NotFound() {
 
             <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-600 sm:text-base">
               Oops! The page you&apos;re looking for may have been moved,
-              removed, or doesn&apos;t exist. Search below to find what
-              you need.
+              removed, or doesn&apos;t exist. Search below to find what you
+              need.
             </p>
 
             <div className="mx-auto mt-5 flex items-center justify-center gap-2 text-sm text-gray-500">
@@ -45,8 +34,8 @@ export default async function NotFound() {
           </div>
         </section>
 
+        <ProgramsSection />
         <SiteSearch />
-        <ProgramsSection programs={programs} />
         <MediaPresenceSection />
       </main>
 

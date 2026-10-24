@@ -5,39 +5,13 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-type Program = {
-  id: string;
-  title: string;
-  category: string;
-  duration: string;
-  imageUrl: string;
-  href: string;
-  sortOrder: number;
-  isActive: boolean;
-};
+import { getHomePrograms } from "@/data/programs";
 
-type ProgramsSectionProps = {
-  programs: Program[];
-};
-
-const programSlugMap: Record<string, string> = {
-  PGDM: "pgdm",
-  "PGDM (Marketing)": "pgdm-marketing",
-  "PGDM (Finance)": "pgdm-finance",
-  "PGDM (HR)": "pgdm-human-resource-management",
-  "PGDM (Business Analytics)": "business-analytics",
-  "International Business - Specialization": "international-business",
-  "AI, Analytics & Operations - Specialization": "ai-analytics-operations",
-};
-
-function getProgramSlug(title: string): string {
-  return programSlugMap[title] ?? "pgdm";
-}
-
-export default function ProgramsSection({
-  programs,
-}: ProgramsSectionProps) {
+export default function ProgramsSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
+
+  // Static data — no database request required.
+  const programs = getHomePrograms();
 
   const scrollCarousel = (direction: "left" | "right") => {
     if (!carouselRef.current) return;
@@ -100,52 +74,47 @@ export default function ProgramsSection({
           ref={carouselRef}
           className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {programs.map((program) => {
-            const slug = getProgramSlug(program.title);
-            const href = `/programs/${slug}`;
+          {programs.map((program) => (
+            <Link
+              key={program.slug}
+              href={`/programs/${program.slug}`}
+              className="group min-w-[82%] snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_25px_rgba(18,59,121,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(18,59,121,0.12)] sm:min-w-[47%] lg:min-w-[calc(25%-12px)]"
+            >
+              <div className="relative aspect-[1.65/1] overflow-hidden">
+                <img
+                  src={program.imageUrl}
+                  alt={program.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
 
-            return (
-              <Link
-                key={program.id}
-                href={href}
-                className="group min-w-[82%] snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_25px_rgba(18,59,121,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(18,59,121,0.12)] sm:min-w-[47%] lg:min-w-[calc(25%-12px)]"
-              >
-                <div className="relative aspect-[1.65/1] overflow-hidden">
-                  <img
-                    src={program.imageUrl}
-                    alt={program.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071a35]/60 via-transparent to-transparent" />
+              </div>
+
+              <div className="p-4 sm:p-5">
+                <h3 className="text-lg font-bold text-[#123b79]">
+                  {program.title}
+                </h3>
+
+                <p className="mt-1 text-md font-medium text-slate-400">
+                  {program.category}
+                </p>
+
+                <p className="mt-1 text-md text-slate-500">
+                  {program.duration}
+                </p>
+
+                <span className="mt-4 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em] text-[#c31e3b] transition-transform duration-300 group-hover:translate-x-1">
+                  Know More
+                  <ArrowRight
+                    size={13}
+                    className="ml-1.5"
+                    aria-hidden="true"
                   />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#071a35]/60 via-transparent to-transparent" />
-                </div>
-
-                <div className="p-4 sm:p-5">
-                  <h3 className="text-lg font-bold text-[#123b79]">
-                    {program.title}
-                  </h3>
-
-                  <p className="mt-1 text-md font-medium text-slate-400">
-                    {program.category}
-                  </p>
-
-                  <p className="mt-1 text-md text-slate-500">
-                    {program.duration}
-                  </p>
-
-                  <span className="mt-4 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em] text-[#c31e3b] transition-transform duration-300 group-hover:translate-x-1">
-                    Know More
-                    <ArrowRight
-                      size={13}
-                      className="ml-1.5"
-                      aria-hidden="true"
-                    />
-                  </span>
-                </div>
-              </Link>
-            );
-          })}
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

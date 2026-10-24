@@ -1,9 +1,9 @@
-
 /* eslint-disable react-hooks/set-state-in-effect */
 
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   CheckCircle2,
@@ -62,6 +62,7 @@ const initialValues: FormValues = {
 };
 
 export default function AdmissionEnquiryForm() {
+  const router = useRouter();
   const [values, setValues] = useState<FormValues>(initialValues);
   const [cities, setCities] = useState<string[]>([]);
   const [citiesLoading, setCitiesLoading] = useState(false);
@@ -70,7 +71,7 @@ export default function AdmissionEnquiryForm() {
   const [locationError, setLocationError] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
-  const [captchaCode, setCaptchaCode] = useState(() => generateCaptcha());
+ const [captchaCode, setCaptchaCode] = useState(() => generateCaptcha());
   const [captchaInput, setCaptchaInput] = useState("");
 
   // States are local, so they are available immediately.
@@ -102,20 +103,17 @@ export default function AdmissionEnquiryForm() {
       setLocationError("");
 
       try {
-        const response = await fetch(
-          `${API_BASE}/countries/state/cities`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              country: "India",
-              state: selectedState,
-            }),
-            signal: controller.signal,
+        const response = await fetch(`${API_BASE}/countries/state/cities`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
           },
-        );
+          body: JSON.stringify({
+            country: "India",
+            state: selectedState,
+          }),
+          signal: controller.signal,
+        });
 
         if (!response.ok) {
           throw new Error("Unable to load cities.");
@@ -224,39 +222,42 @@ export default function AdmissionEnquiryForm() {
 
       if (!response.ok) {
         throw new Error(
-          result.error ||
-            "Unable to submit your enquiry. Please try again.",
+          result.error || "Unable to submit your enquiry. Please try again.",
         );
       }
 
-      setSuccess(true);
-      setMessage(
-        result.message ||
-          "Thank you! Your enquiry has been submitted successfully.",
-      );
       setValues(initialValues);
       setCities([]);
       setLocationError("");
       setCaptchaInput("");
       setCaptchaCode(generateCaptcha());
 
-      const gtag = (
+
+      if (typeof (
         window as Window & {
           gtag?: (
             command: string,
             eventName: string,
-            parameters?: Record<string, string | number>,
+            parameters?: Record<string, string | number>
           ) => void;
         }
-      ).gtag;
-
-      if (typeof gtag === "function") {
-        gtag("event", "conversion", {
+      ).gtag === "function") {
+        (
+          window as Window & {
+            gtag?: (
+              command: string,
+              eventName: string,
+              parameters?: Record<string, string | number>
+            ) => void;
+          }
+        ).gtag("event", "conversion", {
           send_to: "AW-18383056369/QQL4CJKM644dEPHb3L1E",
           value: 1,
           currency: "INR",
         });
       }
+
+      router.push("/thank-you");
     } catch (error) {
       setMessage(
         error instanceof Error
@@ -304,9 +305,7 @@ export default function AdmissionEnquiryForm() {
             className={inputClass}
             placeholder="Enter your full name"
             value={values.fullName}
-            onChange={(event) =>
-              updateField("fullName", event.target.value)
-            }
+            onChange={(event) => updateField("fullName", event.target.value)}
             maxLength={100}
             required
             disabled={loading}
@@ -540,8 +539,12 @@ export default function AdmissionEnquiryForm() {
               <RefreshCw size={15} />
             </button>
           </div>
-          <p id="admission-captcha-help" className="mt-1.5 text-xs text-slate-500">
-            Type the 5-character code shown. Use refresh if it is difficult to read.
+          <p
+            id="admission-captcha-help"
+            className="mt-1.5 text-xs text-slate-500"
+          >
+            Type the 5-character code shown. Use refresh if it is difficult to
+            read.
           </p>
         </div>
 
