@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { campusLifeItems } from "@/data/campus-life";
-import { cloudinaryAsset } from "@/lib/cloudinary";
+import { getCanonicalUrl } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{
@@ -20,7 +20,6 @@ export function generateStaticParams() {
     slug: item.slug,
   }));
 }
-
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
@@ -33,12 +32,36 @@ export async function generateMetadata({
   if (!item) {
     return {
       title: "Campus Life | FOSTIIMA Business School",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
+
+  const canonicalUrl = getCanonicalUrl(`/campus-life/${item.slug}`);
 
   return {
     title: `${item.title} | FOSTIIMA Business School`,
     description: item.description,
+
+    alternates: {
+      canonical: canonicalUrl,
+    },
+
+    openGraph: {
+      type: "website",
+      url: canonicalUrl,
+      title: `${item.title} | FOSTIIMA Business School`,
+      description: item.description,
+      siteName: "FOSTIIMA Business School",
+      images: [
+        {
+          url: item.image,
+          alt: item.title,
+        },
+      ],
+    },
   };
 }
 

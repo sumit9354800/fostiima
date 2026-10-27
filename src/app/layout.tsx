@@ -1,9 +1,8 @@
-
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
 
-const SITE_URL = "https://fostiima.org";
+const SITE_URL = "https://www.fostiima.org";
 const GTM_ID = "GTM-5V6T54N";
 
 export const metadata: Metadata = {
@@ -42,12 +41,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
 
-  alternates: { canonical: SITE_URL },
+  // Global canonical is intentionally omitted here.
+  // Set a self-referencing canonical in each page's metadata.
 
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: SITE_URL,
     siteName: "FOSTIIMA Business School",
     title: "FOSTIIMA Business School | PGDM & Management Education",
     description:
@@ -93,11 +92,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Tag Manager */}
-        <Script
-          id="google-tag-manager"
-          strategy="beforeInteractive"
-        >
+        <Script id="google-tag-manager" strategy="beforeInteractive">
           {`
             (function(w,d,s,l,i){
               w[l]=w[l]||[];
@@ -114,7 +109,6 @@ export default function RootLayout({
       </head>
 
       <body>
-        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}

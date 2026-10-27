@@ -2,6 +2,46 @@ import { placementPages } from "@/data/placement";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  if (!(slug in placementPages)) {
+    return {
+      title: "Page Not Found | FOSTIIMA Business School",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const page = placementPages[slug as PlacementSlug];
+  const canonicalUrl = getCanonicalUrl(`/placement/${slug}`);
+
+  return {
+    title: `${page.title} | FOSTIIMA Business School`,
+    description: page.description,
+
+    alternates: {
+      canonical: canonicalUrl,
+    },
+
+    openGraph: {
+      type: "website",
+      url: canonicalUrl,
+      title: `${page.title} | FOSTIIMA Business School`,
+      description: page.description,
+      siteName: "FOSTIIMA Business School",
+    },
+  };
+}
 
 type PlacementSlug = keyof typeof placementPages;
 
@@ -21,7 +61,6 @@ export default async function PlacementDetailPage({
   return (
     <main className="min-h-screen bg-white">
       <section className="px-6 py-16 text-center sm:px-10 lg:px-20">
-
         <h1 className="mt-4 text-4xl font-bold text-[#c31e3b] sm:text-5xl">
           {page.title}
         </h1>

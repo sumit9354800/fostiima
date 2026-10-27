@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactInfo from "@/components/contact/ContactInfo";
 import ContactForm from "@/components/forms/ContactForm";
+import { getCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact Us | FOSTIIMA Business School",
-  description:
-    "Contact FOSTIIMA Business School for admissions and Program enquiries.",
+  alternates: {
+    canonical: getCanonicalUrl("/contact-us"),
+  },
 };
-
 export default function ContactUsPage() {
   return (
     <>

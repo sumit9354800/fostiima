@@ -7,11 +7,25 @@ import FeeSchedule from "@/components/admissions/FeeSchedule";
 import FeeStructureHero from "@/components/admissions/FeeStructureHero";
 import SelectGroup from "@/components/admissions/SelectGroup";
 import { feeStructureData } from "@/data/fee-structure";
+import { getCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Fee Structure | FOSTIIMA Business School",
   description:
     "Explore the fee structure, installment schedule, Select Group eligibility, fee inclusions, cutting edge courses and certification details for FOSTIIMA Business School PGDM Admissions 2026-28.",
+
+  alternates: {
+    canonical: getCanonicalUrl("/fee-structure"),
+  },
+
+  openGraph: {
+    type: "website",
+    url: getCanonicalUrl("/fee-structure"),
+    title: "Fee Structure | FOSTIIMA Business School",
+    description:
+      "Explore the fee structure, installment schedule, Select Group eligibility, fee inclusions, cutting edge courses and certification details for FOSTIIMA Business School PGDM Admissions 2026-28.",
+    siteName: "FOSTIIMA Business School",
+  },
 };
 
 export default function FeeStructurePage() {
@@ -28,11 +42,7 @@ export default function FeeStructurePage() {
 
   return (
     <main className="bg-white">
-      <FeeStructureHero
-        title={title}
-        program={program}
-        totalFee={totalFee}
-      />
+      <FeeStructureHero title={title} program={program} totalFee={totalFee} />
 
       <FeeSchedule installments={installments} />
 

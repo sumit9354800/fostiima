@@ -3,11 +3,25 @@ import type { Metadata } from "next";
 import BlogHero from "@/components/blog/BlogHero";
 import BlogGrid from "@/components/blog/BlogGrid";
 import { getPublishedBlogs } from "@/lib/queries";
+import { getCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Blog | FOSTIIMA Business School",
   description:
     "Explore articles, insights and updates from FOSTIIMA Business School.",
+
+  alternates: {
+    canonical: getCanonicalUrl("/blog"),
+  },
+
+  openGraph: {
+    type: "website",
+    url: getCanonicalUrl("/blog"),
+    title: "Blog | FOSTIIMA Business School",
+    description:
+      "Explore articles, insights and updates from FOSTIIMA Business School.",
+    siteName: "FOSTIIMA Business School",
+  },
 };
 
 export const dynamic = "force-dynamic";

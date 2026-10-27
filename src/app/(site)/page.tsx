@@ -17,10 +17,31 @@ import LeadershipMessage from "@/components/home/LeadershipMessage";
 
 import { getHomeContent } from "@/lib/admin/home";
 import PlacementGallery from "@/components/home/PlacementGallery";
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "FOSTIIMA Business School | Top PGDM Institute in Delhi",
+  description:
+    "Discover FOSTIIMA Business School, its PGDM programs, placements, faculty, campus life, recruiters and academic excellence in Delhi.",
+
+  alternates: {
+    canonical: getCanonicalUrl("/"),
+  },
+
+  openGraph: {
+    type: "website",
+    url: getCanonicalUrl("/"),
+    title: "FOSTIIMA Business School | Top PGDM Institute in Delhi",
+    description:
+      "Discover FOSTIIMA Business School, its PGDM programs, placements, faculty, campus life, recruiters and academic excellence in Delhi.",
+    siteName: "FOSTIIMA Business School",
+  },
+};
 
 export default async function HomePage() {
   const { stats, placementVideos } = await getHomeContent();
-  
+
   const videos = placementVideos.map((video) => ({
     id: video.id,
     title: video.title,

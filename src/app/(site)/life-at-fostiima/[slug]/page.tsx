@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
+import { getCanonicalUrl } from "@/lib/seo";
 
 import { lifeAtFostiimaSections } from "@/data/life-at-fostiima";
 
@@ -28,15 +29,32 @@ export async function generateMetadata({
   if (!section) {
     return {
       title: "Page Not Found | FOSTIIMA Business School",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
+
+  const canonicalUrl = getCanonicalUrl(`/life-at-fostiima/${section.slug}`);
 
   return {
     title: `${section.title} | FOSTIIMA Business School`,
     description: section.description,
+
+    alternates: {
+      canonical: canonicalUrl,
+    },
+
+    openGraph: {
+      type: "website",
+      url: canonicalUrl,
+      title: `${section.title} | FOSTIIMA Business School`,
+      description: section.description,
+      siteName: "FOSTIIMA Business School",
+    },
   };
 }
-
 export default async function LifeAtFostiimaDetailPage({ params }: PageProps) {
   const { slug } = await params;
 

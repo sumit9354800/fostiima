@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Images } from "lucide-react";
 import { notFound } from "next/navigation";
+import { getCanonicalUrl } from "@/lib/seo";
 
 import { lifeAtFostiimaSections } from "@/data/life-at-fostiima";
 
@@ -64,13 +65,34 @@ export async function generateMetadata({
   if (!event) {
     return {
       title: "Event Not Found | FOSTIIMA Business School",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
+
+  const canonicalUrl = getCanonicalUrl(
+    `/life-at-fostiima/cultural-events/${event.slug}`,
+  );
 
   return {
     title: `${event.title} | Cultural Events | FOSTIIMA Business School`,
     description:
       event.description ?? `${event.title} at FOSTIIMA Business School.`,
+
+    alternates: {
+      canonical: canonicalUrl,
+    },
+
+    openGraph: {
+      type: "website",
+      url: canonicalUrl,
+      title: `${event.title} | Cultural Events | FOSTIIMA Business School`,
+      description:
+        event.description ?? `${event.title} at FOSTIIMA Business School.`,
+      siteName: "FOSTIIMA Business School",
+    },
   };
 }
 

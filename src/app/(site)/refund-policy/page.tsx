@@ -1,4 +1,25 @@
 import { RefundPolicyContent } from "@/components/refund-policy/RefundPolicyContent";
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "Refund Policy & Cancellation Policy | FOSTIIMA Business School",
+  description:
+    "Information regarding admission withdrawal and refund requests.",
+
+  alternates: {
+    canonical: getCanonicalUrl("/refund-policy"),
+  },
+
+  openGraph: {
+    type: "website",
+    url: getCanonicalUrl("/refund-policy"),
+    title: "Refund Policy & Cancellation Policy | FOSTIIMA Business School",
+    description:
+      "Information regarding admission withdrawal and refund requests.",
+    siteName: "FOSTIIMA Business School",
+  },
+};
 
 export default function RefundPolicyPage() {
   return (

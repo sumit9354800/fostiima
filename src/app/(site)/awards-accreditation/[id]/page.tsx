@@ -1,10 +1,10 @@
-
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { accreditations } from "@/data/awards-accreditation";
+import { getCanonicalUrl } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{
@@ -23,30 +23,40 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { id } = await params;
 
-  const item = accreditations.find(
-    (accreditation) => accreditation.id === id
-  );
+  const item = accreditations.find((accreditation) => accreditation.id === id);
 
   if (!item) {
     return {
       title: "Approval Not Found | FOSTIIMA Business School",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
   return {
     title: `${item.title} ${item.year} | FOSTIIMA Business School`,
     description: item.description,
+
+    alternates: {
+      canonical: getCanonicalUrl(`/awards-accreditation/${item.id}`),
+    },
+
+    openGraph: {
+      type: "website",
+      url: getCanonicalUrl(`/awards-accreditation/${item.id}`),
+      title: `${item.title} ${item.year} | FOSTIIMA Business School`,
+      description: item.description,
+      siteName: "FOSTIIMA Business School",
+    },
   };
 }
 
-export default async function AccreditationDetailPage({
-  params,
-}: PageProps) {
+export default async function AccreditationDetailPage({ params }: PageProps) {
   const { id } = await params;
 
-  const item = accreditations.find(
-    (accreditation) => accreditation.id === id
-  );
+  const item = accreditations.find((accreditation) => accreditation.id === id);
 
   if (!item) {
     notFound();
@@ -125,9 +135,7 @@ export default async function AccreditationDetailPage({
                 >
                   <img
                     src={image}
-                    alt={`${item.title} ${item.year} - Document ${
-                      index + 1
-                    }`}
+                    alt={`${item.title} ${item.year} - Document ${index + 1}`}
                     className="
                       block
                       h-auto

@@ -3,11 +3,12 @@ import type { Metadata } from "next";
 import { ArrowLeft, CalendarDays } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
+import { getCanonicalUrl } from "@/lib/seo";
 import {
   programDetails,
   getProgramBySlug,
 } from "@/data/programs";
+
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -43,7 +44,7 @@ export async function generateMetadata({
     title: `${program.title} | FOSTIIMA Business School`,
     description: program.description,
     alternates: {
-      canonical: `/programs/${program.slug}`,
+       canonical: getCanonicalUrl(`/programs/${program.slug}`),
     },
     openGraph: {
       title: `${program.title} | FOSTIIMA Business School`,

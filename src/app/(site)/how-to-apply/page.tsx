@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 
 import AdmissionProcess from "@/components/admissions/AdmissionProcess";
@@ -8,11 +9,25 @@ import HowToApplyHero from "@/components/admissions/HowToApplyHero";
 import PgdmOverview from "@/components/admissions/PgdmOverview";
 import WorkExperience from "@/components/admissions/WorkExperience";
 import { howToApplyData } from "@/data/how-to-apply";
+import { getCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "How to Apply | FOSTIIMA Business School",
   description:
     "Learn about the application requirements, admission process, PGDM eligibility, work experience criteria and FEAT at FOSTIIMA Business School.",
+
+  alternates: {
+    canonical: getCanonicalUrl("/how-to-apply"),
+  },
+
+  openGraph: {
+    type: "website",
+    url: getCanonicalUrl("/how-to-apply"),
+    title: "How to Apply | FOSTIIMA Business School",
+    description:
+      "Learn about the application requirements, admission process, PGDM eligibility, work experience criteria and FEAT at FOSTIIMA Business School.",
+    siteName: "FOSTIIMA Business School",
+  },
 };
 
 export default function HowToApplyPage() {

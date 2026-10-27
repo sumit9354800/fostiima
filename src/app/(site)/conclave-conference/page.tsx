@@ -1,13 +1,28 @@
+
 import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
 
 import EventCard from "@/components/conclave/EventCard";
 import { getPublishedConclaveEvents } from "@/data/conclave";
+import { getCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Conclave & Conference | FOSTIIMA Business School",
   description:
     "Explore conferences, summits, conclaves and industry events at FOSTIIMA Business School.",
+
+  alternates: {
+    canonical: getCanonicalUrl("/conclave-conference"),
+  },
+
+  openGraph: {
+    type: "website",
+    url: getCanonicalUrl("/conclave-conference"),
+    title: "Conclave & Conference | FOSTIIMA Business School",
+    description:
+      "Explore conferences, summits, conclaves and industry events at FOSTIIMA Business School.",
+    siteName: "FOSTIIMA Business School",
+  },
 };
 
 export default function ConclaveConferencePage() {
@@ -17,7 +32,6 @@ export default function ConclaveConferencePage() {
     <main className="min-h-screen bg-[#f8fafc]">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#061a3a]">
-        {/* Background Grid */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-[0.08]"
@@ -28,7 +42,6 @@ export default function ConclaveConferencePage() {
           }}
         />
 
-        {/* Subtle Ambient Glow */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#c31e3b]/10 blur-[120px]"
@@ -41,7 +54,6 @@ export default function ConclaveConferencePage() {
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
           <div className="max-w-4xl">
-            {/* Eyebrow */}
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-10 bg-[#e5b83f]" />
 
@@ -51,19 +63,16 @@ export default function ConclaveConferencePage() {
               </span>
             </div>
 
-            {/* Heading */}
             <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
               Ideas That{" "}
               <span className="text-[#c31e3b]">Shape Tomorrow</span>
             </h1>
 
-            {/* Description */}
             <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8c5d8] sm:text-lg">
               Explore our conferences, summits and industry conversations that
               bring together leaders, experts and ideas shaping the future.
             </p>
 
-            {/* Accent Line */}
             <div className="mt-10 h-px w-full max-w-3xl bg-[#1d3559]" />
           </div>
         </div>
@@ -72,7 +81,6 @@ export default function ConclaveConferencePage() {
       {/* Events */}
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          {/* Section Heading */}
           <div className="mb-10 max-w-3xl">
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-8 bg-[#e5b83f]" />
@@ -92,7 +100,6 @@ export default function ConclaveConferencePage() {
             </p>
           </div>
 
-          {/* Events Grid */}
           {events.length > 0 ? (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {events.map((event) => (

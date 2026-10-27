@@ -1,5 +1,25 @@
-import { cloudinaryAsset } from "@/lib/cloudinary";
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import { FileText, ExternalLink } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Balance Sheets | FOSTIIMA Business School",
+  description:
+    "View the available financial year balance sheets of FOSTIIMA Business School.",
+
+  alternates: {
+    canonical: getCanonicalUrl("/balance-sheets"),
+  },
+
+  openGraph: {
+    type: "website",
+    url: getCanonicalUrl("/balance-sheets"),
+    title: "Balance Sheets | FOSTIIMA Business School",
+    description:
+      "View the available financial year balance sheets of FOSTIIMA Business School.",
+    siteName: "FOSTIIMA Business School",
+  },
+};
 
 const balanceSheets = [
   {

@@ -11,11 +11,25 @@ import NIRFEDP from "@/components/nirf/NIRFEDP";
 import NIRFPwDFacilities from "@/components/nirf/NIRFPwDFacilities";
 import NIRFFaculty from "@/components/nirf/NIRFFaculty";
 import NIRFIntake from "@/components/nirf/ NIRFIntake";
+import { getCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "NIRF 2026 | FOSTIIMA Business School",
   description:
     "View submitted NIRF 2026 institute data for FOSTIIMA Business School, including intake, student strength, placement, financial resources, research and faculty details.",
+
+  alternates: {
+    canonical: getCanonicalUrl("/nirf"),
+  },
+
+  openGraph: {
+    type: "website",
+    url: getCanonicalUrl("/nirf"),
+    title: "NIRF 2026 | FOSTIIMA Business School",
+    description:
+      "View submitted NIRF 2026 institute data for FOSTIIMA Business School, including intake, student strength, placement, financial resources, research and faculty details.",
+    siteName: "FOSTIIMA Business School",
+  },
 };
 
 export default function NIRFPage() {
