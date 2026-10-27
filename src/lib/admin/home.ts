@@ -12,6 +12,8 @@ export async function getHomeContent() {
     orderBy: { sortOrder: "asc" },
   });
 
+
+  
   const recognitions = await prisma.homeRecognition.findMany({
     where: { isActive: true },
     orderBy: { sortOrder: "asc" },
