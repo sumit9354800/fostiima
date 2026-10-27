@@ -10,7 +10,8 @@
     "admin:create": "tsx scripts/create-admin.ts",
     "compress:images": "node scripts/compress-images.js",
     "cloudinary:upload": "node scripts/upload-public-to-cloudinary.js",
-    "cloudinary:sync": "node scripts/list-cloudinary-assets.js"
+    "cloudinary:sync": "node scripts/list-cloudinary-assets.js",
+    "prebuild": "node scripts/test-db-connection.mjs"
   },
   "dependencies": {
     "@better-auth/prisma-adapter": "^1.7.4",
