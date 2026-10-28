@@ -16,7 +16,6 @@ import FAQSection from "@/components/home/FAQSection";
 import MediaPresenceSection from "@/components/home/MediaPresenceSection";
 import PlacementVideos from "@/components/home/PlacementVideos";
 import LeadershipMessage from "@/components/home/LeadershipMessage";
-
 import { getHomeContent } from "@/lib/admin/home";
 import PlacementGallery from "@/components/home/PlacementGallery";
 import type { Metadata } from "next";

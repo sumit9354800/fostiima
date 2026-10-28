@@ -1,3 +1,4 @@
+
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
@@ -10,6 +11,13 @@ type RouteContext = {
   }>;
 };
 
+type IncomingBlock = {
+  type?: string;
+  content?: string;
+  level?: number;
+  data?: unknown;
+};
+
 async function requireSession() {
   const session = await auth.api.getSession({
     headers: await headers(),
@@ -20,6 +28,23 @@ async function requireSession() {
   }
 
   return session;
+}
+
+function serializeBlockData(block: IncomingBlock): string | null {
+  if (block.type === "heading") {
+    return JSON.stringify({
+      level: block.level || 2,
+    });
+  }
+
+  if (block.data === undefined || block.data === null) {
+    return null;
+  }
+
+  // Save table/image objects as JSON instead of discarding them.
+  return typeof block.data === "string"
+    ? block.data
+    : JSON.stringify(block.data);
 }
 
 export async function GET(
@@ -39,9 +64,7 @@ export async function GET(
     const { id } = await params;
 
     const blog = await prisma.blogPost.findUnique({
-      where: {
-        id,
-      },
+      where: { id },
       include: {
         blocks: {
           orderBy: {
@@ -59,9 +82,7 @@ export async function GET(
       );
     }
 
-    return NextResponse.json({
-      blog,
-    });
+    return NextResponse.json({ blog });
   } catch (error) {
     console.error("[ADMIN_BLOG_GET_ONE]", error);
 
@@ -119,12 +140,22 @@ export async function PATCH(
       );
     }
 
+    const existingBlog = await prisma.blogPost.findUnique({
+      where: { id },
+      select: { id: true },
+    });
+
+    if (!existingBlog) {
+      return NextResponse.json(
+        { error: "Blog not found." },
+        { status: 404 },
+      );
+    }
+
     const existingSlug = await prisma.blogPost.findFirst({
       where: {
         slug: slug.trim(),
-        NOT: {
-          id,
-        },
+        NOT: { id },
       },
     });
 
@@ -140,121 +171,74 @@ export async function PATCH(
         ? BlogStatus.published
         : BlogStatus.draft;
 
-    const blog = await prisma.$transaction(
-      async (tx) => {
-        await tx.blogBlock.deleteMany({
-          where: {
-            postId: id,
+    const blog = await prisma.$transaction(async (tx) => {
+      await tx.blogBlock.deleteMany({
+        where: { postId: id },
+      });
+
+      await tx.blogKeyword.deleteMany({
+        where: { postId: id },
+      });
+
+      return tx.blogPost.update({
+        where: { id },
+
+        data: {
+          title: title.trim(),
+          slug: slug.trim(),
+          excerpt: excerpt?.trim() || "",
+          category: category?.trim() || "",
+          coverImage: coverImage?.trim() || "",
+          coverImageAlt: coverImageAlt?.trim() || title.trim(),
+          author: author?.trim() || "FOSTIIMA Business School",
+
+          publishedAt:
+            blogStatus === BlogStatus.published
+              ? publishedAt
+                ? new Date(publishedAt)
+                : new Date()
+              : null,
+
+          status: blogStatus,
+          metaTitle: metaTitle?.trim() || null,
+          metaDescription: metaDescription?.trim() || null,
+
+          blocks: {
+            create: Array.isArray(blocks)
+              ? blocks.map((block: IncomingBlock, index: number) => ({
+                  type: block.type || "paragraph",
+                  position: index,
+                  content: block.content?.trim() || "",
+                  data: serializeBlockData(block),
+                }))
+              : [],
           },
-        });
 
-        await tx.blogKeyword.deleteMany({
-          where: {
-            postId: id,
-          },
-        });
-
-        return tx.blogPost.update({
-          where: {
-            id,
-          },
-
-          data: {
-            title: title.trim(),
-            slug: slug.trim(),
-            excerpt: excerpt?.trim() || "",
-            category: category?.trim() || "",
-            coverImage: coverImage?.trim() || "",
-            coverImageAlt:
-              coverImageAlt?.trim() ||
-              title.trim(),
-            author:
-              author?.trim() ||
-              "FOSTIIMA Business School",
-
-            publishedAt:
-              blogStatus === BlogStatus.published
-                ? publishedAt
-                  ? new Date(publishedAt)
-                  : new Date()
-                : null,
-
-            status: blogStatus,
-
-            metaTitle:
-              metaTitle?.trim() || null,
-
-            metaDescription:
-              metaDescription?.trim() || null,
-
-            blocks: {
-              create: Array.isArray(blocks)
-                ? blocks.map(
-                    (
-                      block: {
-                        type?: string;
-                        content?: string;
-                        level?: number;
-                      },
-                      index: number,
-                    ) => ({
-                      type:
-                        block.type ||
-                        "paragraph",
-
-                      position: index,
-
-                      content:
-                        block.content?.trim() ||
-                        "",
-
-                      data:
-                        block.type ===
-                        "heading"
-                          ? JSON.stringify({
-                              level:
-                                block.level ||
-                                2,
-                            })
-                          : null,
-                    }),
+          blogKeywords: {
+            create: Array.isArray(keywords)
+              ? keywords
+                  .filter(
+                    (keyword: unknown): keyword is string =>
+                      typeof keyword === "string" &&
+                      keyword.trim().length > 0,
                   )
-                : [],
-            },
+                  .map((keyword: string) => ({
+                    keyword: keyword.trim(),
+                  }))
+              : [],
+          },
+        },
 
-            blogKeywords: {
-              create: Array.isArray(
-                keywords,
-              )
-                ? keywords
-                    .filter(
-                      (
-                        keyword: unknown,
-                      ): keyword is string =>
-                        typeof keyword ===
-                          "string" &&
-                        keyword.trim()
-                          .length > 0,
-                    )
-                    .map((keyword) => ({
-                      keyword:
-                        keyword.trim(),
-                    }))
-                : [],
+        include: {
+          blocks: {
+            orderBy: {
+              position: "asc",
             },
           },
-
-          include: {
-            blocks: {
-              orderBy: {
-                position: "asc",
-              },
-            },
-            blogKeywords: true,
-          },
-        });
-      },
-    );
+          blogKeywords: true,
+        },
+      });
+    });
 
     return NextResponse.json({
       message: "Blog updated successfully.",
@@ -286,12 +270,9 @@ export async function DELETE(
 
     const { id } = await params;
 
-    const existingBlog =
-      await prisma.blogPost.findUnique({
-        where: {
-          id,
-        },
-      });
+    const existingBlog = await prisma.blogPost.findUnique({
+      where: { id },
+    });
 
     if (!existingBlog) {
       return NextResponse.json(
@@ -301,9 +282,7 @@ export async function DELETE(
     }
 
     await prisma.blogPost.delete({
-      where: {
-        id,
-      },
+      where: { id },
     });
 
     return NextResponse.json({

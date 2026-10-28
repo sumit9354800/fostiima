@@ -61,18 +61,6 @@ model Account {
   @@map("account")
 }
 
-model Verification {
-  id         String   @id
-  identifier String   @db.Text
-  value      String   @db.Text
-  expiresAt  DateTime
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-
-  @@index([identifier(length: 191)])
-  @@map("verification")
-}
-
 model Faculty {
   id            String   @id @default(cuid())
   slug          String   @unique
@@ -137,161 +125,6 @@ model BlogKeyword {
   @@map("blog_keyword")
 }
 
-model ConclaveEvent {
-  id         String        @id @default(cuid())
-  slug       String        @unique
-  title      String
-  day        String
-  month      String
-  year       String
-  date       String
-  location   String        @db.Text
-  excerpt    String        @db.Text
-  content    String        @db.LongText
-  coverImage String        @db.Text
-  featured   Boolean       @default(false)
-  status     ContentStatus @default(published)
-  createdAt  DateTime      @default(now())
-  updatedAt  DateTime      @updatedAt
-
-  @@index([status])
-  @@index([featured])
-  @@index([year])
-  @@map("conclave_event")
-}
-
-model FinalPlacementBatch {
-  id         String                  @id @default(cuid())
-  batch      String                  @unique
-  title      String
-  highlights String                  @db.LongText
-  createdAt  DateTime                @default(now())
-  updatedAt  DateTime                @updatedAt
-  charts     FinalPlacementChart[]
-  students   FinalPlacementStudent[]
-
-  @@map("final_placement_batch")
-}
-
-model FinalPlacementChart {
-  id       String                  @id @default(cuid())
-  batchId  String
-  title    String
-  position Int                     @default(0)
-  batch    FinalPlacementBatch     @relation(fields: [batchId], references: [id], onDelete: Cascade)
-  data     FinalPlacementProfile[]
-
-  @@index([batchId, position])
-  @@map("final_placement_chart")
-}
-
-model FinalPlacementProfile {
-  id         String              @id @default(cuid())
-  chartId    String
-  category   String
-  percentage Float
-  position   Int                 @default(0)
-  chart      FinalPlacementChart @relation(fields: [chartId], references: [id], onDelete: Cascade)
-
-  @@index([chartId, position])
-  @@map("final_placement_profile")
-}
-
-model FinalPlacementStudent {
-  id       String              @id @default(cuid())
-  batchId  String
-  name     String
-  role     String
-  image    String              @db.Text
-  position Int                 @default(0)
-  batch    FinalPlacementBatch @relation(fields: [batchId], references: [id], onDelete: Cascade)
-
-  @@index([batchId, position])
-  @@map("final_placement_student")
-}
-
-model SummerInternshipBatch {
-  id         String                    @id @default(cuid())
-  batch      String                    @unique
-  title      String
-  highlights String                    @db.LongText
-  createdAt  DateTime                  @default(now())
-  updatedAt  DateTime                  @updatedAt
-  profiles   SummerInternshipProfile[]
-
-  @@map("summer_internship_batch")
-}
-
-model SummerInternshipProfile {
-  id             String                @id @default(cuid())
-  batchId        String
-  specialization String
-  percentage     Float
-  position       Int                   @default(0)
-  batch          SummerInternshipBatch @relation(fields: [batchId], references: [id], onDelete: Cascade)
-
-  @@index([batchId, position])
-  @@map("summer_internship_profile")
-}
-
-model CareerOpening {
-  id           String   @id @default(cuid())
-  title        String
-  department   String
-  location     String
-  description  String   @db.LongText
-  requirements String?  @db.LongText
-  isActive     Boolean  @default(true)
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-
-  @@index([isActive])
-  @@map("career_opening")
-}
-
-model FAQ {
-  id        String   @id @default(cuid())
-  question  String   @db.Text
-  answer    String   @db.LongText
-  position  Int      @default(0)
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([isActive, position])
-  @@map("faq")
-}
-
-model Review {
-  id        String   @id @default(cuid())
-  name      String
-  role      String?
-  content   String   @db.LongText
-  image     String?  @db.Text
-  rating    Int?
-  isActive  Boolean  @default(true)
-  position  Int      @default(0)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([isActive, position])
-  @@map("review")
-}
-
-model MediaPresence {
-  id        String   @id @default(cuid())
-  title     String
-  source    String
-  url       String   @db.Text
-  image     String?  @db.Text
-  position  Int      @default(0)
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([isActive, position])
-  @@map("media_presence")
-}
 
 model HomeHero {
   id        String   @id @default(cuid())
@@ -317,18 +150,6 @@ model HomeStat {
   @@map("home_stat")
 }
 
-model HomeRecruiter {
-  id        String   @id @default(cuid())
-  imageUrl  String
-  alt       String
-  sortOrder Int      @default(0)
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([sortOrder])
-  @@map("home_recruiter")
-}
 
 model HomeAbout {
   id           String               @id @default(cuid())
@@ -375,21 +196,6 @@ model HomePlacementVideo {
   @@map("home_placement_video")
 }
 
-model HomeCampusHighlight {
-  id          String   @id @default(cuid())
-  title       String
-  description String   @db.Text
-  imageUrl    String
-  href        String
-  eyebrow     String
-  sortOrder   Int      @default(0)
-  isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@index([sortOrder])
-  @@map("home_campus_highlight")
-}
 
 model HomeProgram {
   id        String            @id @default(cuid())
@@ -406,79 +212,6 @@ model HomeProgram {
 
   @@index([sortOrder])
   @@map("home_program")
-}
-
-model ProgramSemester {
-  id        String           @id @default(cuid())
-  programId String
-  title     String
-  sortOrder Int              @default(0)
-  createdAt DateTime         @default(now())
-  updatedAt DateTime         @updatedAt
-  program   HomeProgram      @relation(fields: [programId], references: [id], onDelete: Cascade)
-  subjects  ProgramSubject[]
-
-  @@index([programId, sortOrder])
-  @@map("program_semester")
-}
-
-model ProgramSubject {
-  id         String          @id @default(cuid())
-  semesterId String
-  name       String
-  code       String?
-  credits    String?
-  sortOrder  Int             @default(0)
-  createdAt  DateTime        @default(now())
-  updatedAt  DateTime        @updatedAt
-  semester   ProgramSemester @relation(fields: [semesterId], references: [id], onDelete: Cascade)
-
-  @@index([semesterId, sortOrder])
-  @@map("program_subject")
-}
-
-model HomeAward {
-  id          String   @id @default(cuid())
-  title       String
-  description String   @db.Text
-  icon        String
-  accent      String
-  sortOrder   Int      @default(0)
-  isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@index([sortOrder])
-  @@map("home_award")
-}
-
-model HomeCampusLife {
-  id          String   @id @default(cuid())
-  title       String
-  description String   @db.Text
-  icon        String
-  imageUrl    String
-  sortOrder   Int      @default(0)
-  isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@index([sortOrder])
-  @@map("home_campus_life")
-}
-
-model HomeRecognition {
-  id        String   @id @default(cuid())
-  title     String
-  imageUrl  String
-  alt       String
-  linkUrl   String?
-  sortOrder Int      @default(0)
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([isActive, sortOrder])
 }
 
 enum BlogStatus {

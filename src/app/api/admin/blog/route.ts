@@ -1,8 +1,16 @@
+
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { BlogStatus } from "@/generated/prisma/client";
+
+type IncomingBlock = {
+  type?: string;
+  content?: string;
+  level?: number;
+  data?: unknown;
+};
 
 async function requireSession() {
   const session = await auth.api.getSession({
@@ -14,6 +22,23 @@ async function requireSession() {
   }
 
   return session;
+}
+
+function serializeBlockData(block: IncomingBlock): string | null {
+  if (block.type === "heading") {
+    return JSON.stringify({
+      level: block.level || 2,
+    });
+  }
+
+  if (block.data === undefined || block.data === null) {
+    return null;
+  }
+
+  // Preserve table/image data and any other structured block data.
+  return typeof block.data === "string"
+    ? block.data
+    : JSON.stringify(block.data);
 }
 
 export async function GET() {
@@ -41,9 +66,7 @@ export async function GET() {
       },
     });
 
-    return NextResponse.json({
-      blogs,
-    });
+    return NextResponse.json({ blogs });
   } catch (error) {
     console.error("[ADMIN_BLOG_GET]", error);
 
@@ -136,42 +159,28 @@ export async function POST(request: Request) {
         excerpt: excerpt.trim(),
         category: category.trim(),
         coverImage: coverImage?.trim() || "",
-        coverImageAlt:
-          coverImageAlt?.trim() || title.trim(),
+        coverImageAlt: coverImageAlt?.trim() || title.trim(),
         author: author?.trim() || "FOSTIIMA Business School",
+
         publishedAt:
           blogStatus === BlogStatus.published
             ? publishedAt
               ? new Date(publishedAt)
               : new Date()
             : null,
+
         status: blogStatus,
         metaTitle: metaTitle?.trim() || null,
-        metaDescription:
-          metaDescription?.trim() || null,
+        metaDescription: metaDescription?.trim() || null,
 
         blocks: {
           create: Array.isArray(blocks)
-            ? blocks.map(
-                (
-                  block: {
-                    type?: string;
-                    content?: string;
-                    level?: number;
-                  },
-                  index: number,
-                ) => ({
-                  type: block.type || "paragraph",
-                  position: index,
-                  content: block.content?.trim() || "",
-                  data:
-                    block.type === "heading"
-                      ? JSON.stringify({
-                          level: block.level || 2,
-                        })
-                      : null,
-                }),
-              )
+            ? blocks.map((block: IncomingBlock, index: number) => ({
+                type: block.type || "paragraph",
+                position: index,
+                content: block.content?.trim() || "",
+                data: serializeBlockData(block),
+              }))
             : [],
         },
 
@@ -183,7 +192,7 @@ export async function POST(request: Request) {
                     typeof keyword === "string" &&
                     keyword.trim().length > 0,
                 )
-                .map((keyword) => ({
+                .map((keyword: string) => ({
                   keyword: keyword.trim(),
                 }))
             : [],
