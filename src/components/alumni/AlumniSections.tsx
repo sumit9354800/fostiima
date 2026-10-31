@@ -10,6 +10,7 @@ import {
   Users,
   Trophy,
 } from "lucide-react";
+import Link from "next/link";
 
 type AlumniSection = {
   id: string;
@@ -20,7 +21,7 @@ type AlumniSection = {
 };
 const alumniSections: AlumniSection[] = [
   {
-    id: "finance-committee",
+    id: "alumni-relations",
 
     title: "Alumni Relations",
 
@@ -177,7 +178,7 @@ export default function AlumniSections() {
         {/* Quick Navigation */}
         <div className="mb-16 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-5">
           {alumniSections.map((item) => (
-            <a
+            <Link
               key={item.id}
               href={`#${item.id}`}
               className="
@@ -197,7 +198,7 @@ export default function AlumniSections() {
               "
             >
               {item.title}
-            </a>
+            </Link>
           ))}
         </div>
 

@@ -9,6 +9,7 @@ export default function NotFound() {
     <>
       <Header />
 
+
       <main className="bg-white">
         <section className="px-5 pb-4 pt-12 text-center sm:pt-16">
           <div className="mx-auto max-w-3xl">
@@ -34,8 +35,9 @@ export default function NotFound() {
           </div>
         </section>
 
-        <ProgramsSection />
+
         <SiteSearch />
+        <ProgramsSection />
         <MediaPresenceSection />
       </main>
 
