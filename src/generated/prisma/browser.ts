@@ -33,11 +33,6 @@ export type Session = Prisma.SessionModel
  */
 export type Account = Prisma.AccountModel
 /**
- * Model Verification
- * 
- */
-export type Verification = Prisma.VerificationModel
-/**
  * Model Faculty
  * 
  */
@@ -58,61 +53,6 @@ export type BlogBlock = Prisma.BlogBlockModel
  */
 export type BlogKeyword = Prisma.BlogKeywordModel
 /**
- * Model ConclaveEvent
- * 
- */
-export type ConclaveEvent = Prisma.ConclaveEventModel
-/**
- * Model FinalPlacementBatch
- * 
- */
-export type FinalPlacementBatch = Prisma.FinalPlacementBatchModel
-/**
- * Model FinalPlacementChart
- * 
- */
-export type FinalPlacementChart = Prisma.FinalPlacementChartModel
-/**
- * Model FinalPlacementProfile
- * 
- */
-export type FinalPlacementProfile = Prisma.FinalPlacementProfileModel
-/**
- * Model FinalPlacementStudent
- * 
- */
-export type FinalPlacementStudent = Prisma.FinalPlacementStudentModel
-/**
- * Model SummerInternshipBatch
- * 
- */
-export type SummerInternshipBatch = Prisma.SummerInternshipBatchModel
-/**
- * Model SummerInternshipProfile
- * 
- */
-export type SummerInternshipProfile = Prisma.SummerInternshipProfileModel
-/**
- * Model CareerOpening
- * 
- */
-export type CareerOpening = Prisma.CareerOpeningModel
-/**
- * Model FAQ
- * 
- */
-export type FAQ = Prisma.FAQModel
-/**
- * Model Review
- * 
- */
-export type Review = Prisma.ReviewModel
-/**
- * Model MediaPresence
- * 
- */
-export type MediaPresence = Prisma.MediaPresenceModel
-/**
  * Model HomeHero
  * 
  */
@@ -122,11 +62,6 @@ export type HomeHero = Prisma.HomeHeroModel
  * 
  */
 export type HomeStat = Prisma.HomeStatModel
-/**
- * Model HomeRecruiter
- * 
- */
-export type HomeRecruiter = Prisma.HomeRecruiterModel
 /**
  * Model HomeAbout
  * 
@@ -143,11 +78,6 @@ export type HomeAboutHighlight = Prisma.HomeAboutHighlightModel
  */
 export type HomePlacementVideo = Prisma.HomePlacementVideoModel
 /**
- * Model HomeCampusHighlight
- * 
- */
-export type HomeCampusHighlight = Prisma.HomeCampusHighlightModel
-/**
  * Model HomeProgram
  * 
  */
@@ -157,26 +87,6 @@ export type HomeProgram = Prisma.HomeProgramModel
  * 
  */
 export type ProgramSemester = Prisma.ProgramSemesterModel
-/**
- * Model ProgramSubject
- * 
- */
-export type ProgramSubject = Prisma.ProgramSubjectModel
-/**
- * Model HomeAward
- * 
- */
-export type HomeAward = Prisma.HomeAwardModel
-/**
- * Model HomeCampusLife
- * 
- */
-export type HomeCampusLife = Prisma.HomeCampusLifeModel
-/**
- * Model HomeRecognition
- * 
- */
-export type HomeRecognition = Prisma.HomeRecognitionModel
 /**
  * Model Faq
  * 

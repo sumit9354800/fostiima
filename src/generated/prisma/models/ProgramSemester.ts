@@ -225,7 +225,6 @@ export type ProgramSemesterWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"ProgramSemester"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"ProgramSemester"> | Date | string
   program?: Prisma.XOR<Prisma.HomeProgramScalarRelationFilter, Prisma.HomeProgramWhereInput>
-  subjects?: Prisma.ProgramSubjectListRelationFilter
 }
 
 export type ProgramSemesterOrderByWithRelationInput = {
@@ -236,7 +235,6 @@ export type ProgramSemesterOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   program?: Prisma.HomeProgramOrderByWithRelationInput
-  subjects?: Prisma.ProgramSubjectOrderByRelationAggregateInput
   _relevance?: Prisma.ProgramSemesterOrderByRelevanceInput
 }
 
@@ -251,7 +249,6 @@ export type ProgramSemesterWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"ProgramSemester"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"ProgramSemester"> | Date | string
   program?: Prisma.XOR<Prisma.HomeProgramScalarRelationFilter, Prisma.HomeProgramWhereInput>
-  subjects?: Prisma.ProgramSubjectListRelationFilter
 }, "id">
 
 export type ProgramSemesterOrderByWithAggregationInput = {
@@ -287,7 +284,6 @@ export type ProgramSemesterCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   program: Prisma.HomeProgramCreateNestedOneWithoutSemestersInput
-  subjects?: Prisma.ProgramSubjectCreateNestedManyWithoutSemesterInput
 }
 
 export type ProgramSemesterUncheckedCreateInput = {
@@ -297,7 +293,6 @@ export type ProgramSemesterUncheckedCreateInput = {
   sortOrder?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  subjects?: Prisma.ProgramSubjectUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type ProgramSemesterUpdateInput = {
@@ -307,7 +302,6 @@ export type ProgramSemesterUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   program?: Prisma.HomeProgramUpdateOneRequiredWithoutSemestersNestedInput
-  subjects?: Prisma.ProgramSubjectUpdateManyWithoutSemesterNestedInput
 }
 
 export type ProgramSemesterUncheckedUpdateInput = {
@@ -317,7 +311,6 @@ export type ProgramSemesterUncheckedUpdateInput = {
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  subjects?: Prisma.ProgramSubjectUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type ProgramSemesterCreateManyInput = {
@@ -397,11 +390,6 @@ export type ProgramSemesterSumOrderByAggregateInput = {
   sortOrder?: Prisma.SortOrder
 }
 
-export type ProgramSemesterScalarRelationFilter = {
-  is?: Prisma.ProgramSemesterWhereInput
-  isNot?: Prisma.ProgramSemesterWhereInput
-}
-
 export type ProgramSemesterCreateNestedManyWithoutProgramInput = {
   create?: Prisma.XOR<Prisma.ProgramSemesterCreateWithoutProgramInput, Prisma.ProgramSemesterUncheckedCreateWithoutProgramInput> | Prisma.ProgramSemesterCreateWithoutProgramInput[] | Prisma.ProgramSemesterUncheckedCreateWithoutProgramInput[]
   connectOrCreate?: Prisma.ProgramSemesterCreateOrConnectWithoutProgramInput | Prisma.ProgramSemesterCreateOrConnectWithoutProgramInput[]
@@ -444,27 +432,12 @@ export type ProgramSemesterUncheckedUpdateManyWithoutProgramNestedInput = {
   deleteMany?: Prisma.ProgramSemesterScalarWhereInput | Prisma.ProgramSemesterScalarWhereInput[]
 }
 
-export type ProgramSemesterCreateNestedOneWithoutSubjectsInput = {
-  create?: Prisma.XOR<Prisma.ProgramSemesterCreateWithoutSubjectsInput, Prisma.ProgramSemesterUncheckedCreateWithoutSubjectsInput>
-  connectOrCreate?: Prisma.ProgramSemesterCreateOrConnectWithoutSubjectsInput
-  connect?: Prisma.ProgramSemesterWhereUniqueInput
-}
-
-export type ProgramSemesterUpdateOneRequiredWithoutSubjectsNestedInput = {
-  create?: Prisma.XOR<Prisma.ProgramSemesterCreateWithoutSubjectsInput, Prisma.ProgramSemesterUncheckedCreateWithoutSubjectsInput>
-  connectOrCreate?: Prisma.ProgramSemesterCreateOrConnectWithoutSubjectsInput
-  upsert?: Prisma.ProgramSemesterUpsertWithoutSubjectsInput
-  connect?: Prisma.ProgramSemesterWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.ProgramSemesterUpdateToOneWithWhereWithoutSubjectsInput, Prisma.ProgramSemesterUpdateWithoutSubjectsInput>, Prisma.ProgramSemesterUncheckedUpdateWithoutSubjectsInput>
-}
-
 export type ProgramSemesterCreateWithoutProgramInput = {
   id?: string
   title: string
   sortOrder?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  subjects?: Prisma.ProgramSubjectCreateNestedManyWithoutSemesterInput
 }
 
 export type ProgramSemesterUncheckedCreateWithoutProgramInput = {
@@ -473,7 +446,6 @@ export type ProgramSemesterUncheckedCreateWithoutProgramInput = {
   sortOrder?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  subjects?: Prisma.ProgramSubjectUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type ProgramSemesterCreateOrConnectWithoutProgramInput = {
@@ -514,58 +486,6 @@ export type ProgramSemesterScalarWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"ProgramSemester"> | Date | string
 }
 
-export type ProgramSemesterCreateWithoutSubjectsInput = {
-  id?: string
-  title: string
-  sortOrder?: number
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  program: Prisma.HomeProgramCreateNestedOneWithoutSemestersInput
-}
-
-export type ProgramSemesterUncheckedCreateWithoutSubjectsInput = {
-  id?: string
-  programId: string
-  title: string
-  sortOrder?: number
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type ProgramSemesterCreateOrConnectWithoutSubjectsInput = {
-  where: Prisma.ProgramSemesterWhereUniqueInput
-  create: Prisma.XOR<Prisma.ProgramSemesterCreateWithoutSubjectsInput, Prisma.ProgramSemesterUncheckedCreateWithoutSubjectsInput>
-}
-
-export type ProgramSemesterUpsertWithoutSubjectsInput = {
-  update: Prisma.XOR<Prisma.ProgramSemesterUpdateWithoutSubjectsInput, Prisma.ProgramSemesterUncheckedUpdateWithoutSubjectsInput>
-  create: Prisma.XOR<Prisma.ProgramSemesterCreateWithoutSubjectsInput, Prisma.ProgramSemesterUncheckedCreateWithoutSubjectsInput>
-  where?: Prisma.ProgramSemesterWhereInput
-}
-
-export type ProgramSemesterUpdateToOneWithWhereWithoutSubjectsInput = {
-  where?: Prisma.ProgramSemesterWhereInput
-  data: Prisma.XOR<Prisma.ProgramSemesterUpdateWithoutSubjectsInput, Prisma.ProgramSemesterUncheckedUpdateWithoutSubjectsInput>
-}
-
-export type ProgramSemesterUpdateWithoutSubjectsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  title?: Prisma.StringFieldUpdateOperationsInput | string
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  program?: Prisma.HomeProgramUpdateOneRequiredWithoutSemestersNestedInput
-}
-
-export type ProgramSemesterUncheckedUpdateWithoutSubjectsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  programId?: Prisma.StringFieldUpdateOperationsInput | string
-  title?: Prisma.StringFieldUpdateOperationsInput | string
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
 export type ProgramSemesterCreateManyProgramInput = {
   id?: string
   title: string
@@ -580,7 +500,6 @@ export type ProgramSemesterUpdateWithoutProgramInput = {
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  subjects?: Prisma.ProgramSubjectUpdateManyWithoutSemesterNestedInput
 }
 
 export type ProgramSemesterUncheckedUpdateWithoutProgramInput = {
@@ -589,7 +508,6 @@ export type ProgramSemesterUncheckedUpdateWithoutProgramInput = {
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  subjects?: Prisma.ProgramSubjectUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type ProgramSemesterUncheckedUpdateManyWithoutProgramInput = {
@@ -601,35 +519,6 @@ export type ProgramSemesterUncheckedUpdateManyWithoutProgramInput = {
 }
 
 
-/**
- * Count Type ProgramSemesterCountOutputType
- */
-
-export type ProgramSemesterCountOutputType = {
-  subjects: number
-}
-
-export type ProgramSemesterCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  subjects?: boolean | ProgramSemesterCountOutputTypeCountSubjectsArgs
-}
-
-/**
- * ProgramSemesterCountOutputType without action
- */
-export type ProgramSemesterCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the ProgramSemesterCountOutputType
-   */
-  select?: Prisma.ProgramSemesterCountOutputTypeSelect<ExtArgs> | null
-}
-
-/**
- * ProgramSemesterCountOutputType without action
- */
-export type ProgramSemesterCountOutputTypeCountSubjectsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ProgramSubjectWhereInput
-}
-
 
 export type ProgramSemesterSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -639,8 +528,6 @@ export type ProgramSemesterSelect<ExtArgs extends runtime.Types.Extensions.Inter
   createdAt?: boolean
   updatedAt?: boolean
   program?: boolean | Prisma.HomeProgramDefaultArgs<ExtArgs>
-  subjects?: boolean | Prisma.ProgramSemester$subjectsArgs<ExtArgs>
-  _count?: boolean | Prisma.ProgramSemesterCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["programSemester"]>
 
 
@@ -657,15 +544,12 @@ export type ProgramSemesterSelectScalar = {
 export type ProgramSemesterOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "programId" | "title" | "sortOrder" | "createdAt" | "updatedAt", ExtArgs["result"]["programSemester"]>
 export type ProgramSemesterInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   program?: boolean | Prisma.HomeProgramDefaultArgs<ExtArgs>
-  subjects?: boolean | Prisma.ProgramSemester$subjectsArgs<ExtArgs>
-  _count?: boolean | Prisma.ProgramSemesterCountOutputTypeDefaultArgs<ExtArgs>
 }
 
 export type $ProgramSemesterPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ProgramSemester"
   objects: {
     program: Prisma.$HomeProgramPayload<ExtArgs>
-    subjects: Prisma.$ProgramSubjectPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1015,7 +899,6 @@ readonly fields: ProgramSemesterFieldRefs;
 export interface Prisma__ProgramSemesterClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   program<T extends Prisma.HomeProgramDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.HomeProgramDefaultArgs<ExtArgs>>): Prisma.Prisma__HomeProgramClient<runtime.Types.Result.GetResult<Prisma.$HomeProgramPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  subjects<T extends Prisma.ProgramSemester$subjectsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProgramSemester$subjectsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProgramSubjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1396,30 +1279,6 @@ export type ProgramSemesterDeleteManyArgs<ExtArgs extends runtime.Types.Extensio
    * Limit how many ProgramSemesters to delete.
    */
   limit?: number
-}
-
-/**
- * ProgramSemester.subjects
- */
-export type ProgramSemester$subjectsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the ProgramSubject
-   */
-  select?: Prisma.ProgramSubjectSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the ProgramSubject
-   */
-  omit?: Prisma.ProgramSubjectOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ProgramSubjectInclude<ExtArgs> | null
-  where?: Prisma.ProgramSubjectWhereInput
-  orderBy?: Prisma.ProgramSubjectOrderByWithRelationInput | Prisma.ProgramSubjectOrderByWithRelationInput[]
-  cursor?: Prisma.ProgramSubjectWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ProgramSubjectScalarFieldEnum | Prisma.ProgramSubjectScalarFieldEnum[]
 }
 
 /**
