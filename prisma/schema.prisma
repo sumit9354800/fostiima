@@ -41,6 +41,18 @@ model Session {
   @@map("session")
 }
 
+model Verification {
+  id         String   @id
+  identifier String   @db.VarChar(255)
+  value      String   @db.Text
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime
+
+  @@index([identifier], map: "verification_identifier_idx")
+  @@map("verification")
+}
+
 model Account {
   id                    String    @id
   accountId             String    @db.Text
