@@ -1,58 +1,95 @@
 export type CareerOpening = {
   id: string;
+  badge?: string;
   title: string;
-  description: string;
-  eligibility?: string[];
+  company?: string;
+  location?: string;
+  jobType?: string;
+  qualification?: string;
   experience?: string;
-  preferred?: string;
-  education?: string;
-  email: string;
+  joining?: string;
+  description: string;
   responsibilities?: string[];
+  requirements?: string[];
+  eligibility?: string[];
+  skillsRequired?: string[];
   applicationNote?: string;
+  applyNowText?: string;
+  email: string;
+  contactNumber?: string;
 };
 
 export const careerOpenings: CareerOpening[] = [
   {
-    id: "faculty-positions",
-    title: "Faculty Positions",
+    id: "student-relationship-executive",
+    title: "Student Relationship Executive",
+    company: "Fostiima Business School",
+    location: "Dwarka, New Delhi",
+    jobType: "Full-time",
+    qualification: "Graduate",
+    experience: "Relevant experience required",
+    joining: "Immediate joiner preferred",
     description:
-      "FOSTIIMA Business School is inviting applications for the positions of Assistant Professor, Associate Professor, and Professor for its PGDM program across various specializations.",
-    eligibility: [
-      "Ph.D. is mandatory",
-      "Relevant teaching experience as per the position applied for",
-      "Strong academic background in the respective subject area",
+      "Fostiima Business School is looking for a dynamic and student-focused Student Relationship Executive to manage student queries, support the admission process, and build strong relationships with prospective and enrolled students.",
+    responsibilities: [
+      "Handle student queries and provide admission-related guidance.",
+      "Follow up with prospective students and admission leads.",
+      "Assist students throughout the admission and enrolment process.",
+      "Maintain student records, CRM data, and MIS reports.",
+      "Coordinate with internal teams to ensure smooth operations.",
+      "Build positive relationships and ensure student satisfaction.",
     ],
-    email: "rajeeva.kansal@fostiima.org",
-    applicationNote:
-      "Interested candidates may send their updated CV to the email address above. Applications can also be submitted via post to the mailing address mentioned on our official website. Candidates may also attend a walk-in interview with prior appointment.",
+    requirements: [
+      "Graduate in any discipline.",
+      "Experience in student relations, admissions, counselling, customer service, or a relevant field.",
+      "Excellent communication and interpersonal skills.",
+      "Good coordination, follow-up, and problem-solving abilities.",
+      "Basic knowledge of MS Office and CRM tools.",
+      "Immediate joiners will be preferred.",
+    ],
+    applicationNote: "Interested candidates can share their resumes at:",
+    email: "shila.negi@fostiima.org",
+    contactNumber: "9310403941",
   },
   {
-    id: "placement-officer",
-    title: "Placement Officer",
+    id: "admission-counsellor",
+    badge: "WE ARE HIRING!",
+    title: "Admission Counsellor",
+    company: "Fostiima Business School",
+    location: "Dwarka, New Delhi",
+    jobType: "Full-time",
+    qualification: "Graduate (Any Stream)",
+    experience: "0–6 months or above",
+    joining: "Freshers are also welcome to apply!",
     description:
-      "FOSTIIMA Business School invites applications for the post of Placement Officer.",
-    experience: "1 - 2 Years and above",
-    preferred: "Male Candidate",
-    education: "UG/PG",
-    email: "neetu.sharma@fostiima.org",
+      "We are looking for enthusiastic and motivated Admission Counsellors to join our team.",
+    eligibility: [
+      "Graduate in any stream.",
+      "Minimum 6 months of experience in admissions, counselling, sales, or a related field.",
+      "Freshers are also welcome to apply!",
+    ],
     responsibilities: [
-      "Aggressively contact industries and corporates to develop partnerships for placements for students, interns and short-term projects by doing rigorous telecalling on an everyday basis.",
-      "Create and maintain a database of recruiting industries and organizations and in particular for summer internships.",
-      "Ability to facilitate Industry / Institute Interaction.",
-      "To assist in day-to-day activities of placement.",
-      "To create and maintain a database on alumni and their present position.",
-      "To arrange for interview facilities at the campus.",
-      "Participate in the coordination and organization of on/off-campus recruitments.",
-      "To follow up and collect feedback from industries coming for placement.",
+      "Counsel students regarding courses and admission procedures.",
+      "Handle student enquiries through calls, emails, and walk-ins.",
+      "Explain course details, fees, and eligibility criteria.",
+      "Follow up with prospective students and convert enquiries into admissions.",
+      "Assist students throughout the admission process.",
+    ],
+    skillsRequired: [
+      "Good communication and interpersonal skills.",
+      "Convincing and counselling abilities.",
+      "Positive attitude and willingness to learn.",
+      "Basic computer knowledge.",
     ],
     applicationNote:
-      "Interested candidates may apply to the email address mentioned above.",
+      "Interested candidates can share their updated resumes and apply now!",
+    applyNowText: "Apply Now – Be a part of our team!",
+    email: "shila.negi@fostiima.org",
+    contactNumber: "9310403941",
   },
 ];
 
 export const careerPositions = [
-  "Assistant Professor",
-  "Associate Professor",
-  "Professor",
-  "Placement Officer",
+  "Student Relationship Executive",
+  "Admission Counsellor",
 ];

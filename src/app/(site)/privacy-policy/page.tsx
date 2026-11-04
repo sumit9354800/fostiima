@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import PolicyHero from "@/components/privacy-policy/PolicyHero";
-import LeavePolicy from "@/components/privacy-policy/LeavePolicy";
+import PrivacyPolicyContent from "@/components/privacy-policy/PrivacyPolicyContent";
 import { getCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Policy | FOSTIIMA Business School",
+  title: "Privacy Policy | FOSTIIMA Business School",
   description:
-    "Read the leave policy and employee guidelines of FOSTIIMA Business School.",
+    "Read the Privacy Policy of FOSTIIMA Business School explaining how personal data is collected, used, shared, and protected.",
 
   alternates: {
     canonical: getCanonicalUrl("/privacy-policy"),
@@ -15,18 +15,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: getCanonicalUrl("/privacy-policy"),
-    title: "Policy | FOSTIIMA Business School",
+    title: "Privacy Policy | FOSTIIMA Business School",
     description:
-      "Read the leave policy and employee guidelines of FOSTIIMA Business School.",
+      "Read the Privacy Policy of FOSTIIMA Business School explaining how personal data is collected, used, shared, and protected.",
     siteName: "FOSTIIMA Business School",
   },
 };
 
 export default function PolicyPage() {
   return (
-    <main>
+    <main className="min-h-screen bg-[#f8fafc]">
       <PolicyHero />
-      <LeavePolicy />
+      <PrivacyPolicyContent />
     </main>
   );
 }
