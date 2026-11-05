@@ -267,8 +267,9 @@ model AdmissionEnquiry {
   email      String   @db.VarChar(254)
   state      String   @db.VarChar(100)
   city       String   @db.VarChar(150)
-  course     String   @default("PGDM") @db.VarChar(100)
-  remarks    String?  @db.Text
+  course           String   @default("PGDM") @db.VarChar(100)
+  graduationStatus String?  @db.VarChar(100)
+  remarks          String?  @db.Text
   consent    Boolean  @default(false)
   source     String   @default("FOSTIIMA Website") @db.VarChar(150)
   status     String   @default("NEW") @db.VarChar(30)
@@ -280,6 +281,7 @@ model AdmissionEnquiry {
   @@index([status, createdAt])
   @@index([mobile])
   @@index([email])
+  @@index([graduationStatus])
   @@map("admission_enquiry")
 }
 

@@ -11,10 +11,17 @@ type AdmissionEnquiryBody = {
   state?: unknown;
   city?: unknown;
   course?: unknown;
+  graduationStatus?: unknown;
   remarks?: unknown;
   consent?: unknown;
   source?: unknown;
 };
+
+const ALLOWED_GRADUATION_STATUSES = [
+  "Graduated",
+  "Final Year Student",
+  "12th Pass / Undergrad",
+] as const;
 
 function cleanText(value: unknown, maxLength: number): string {
   if (typeof value !== "string") return "";
@@ -41,6 +48,7 @@ function createAdmissionEmail(data: {
   state: string;
   city: string;
   course: string;
+  graduationStatus: string;
   remarks: string;
 }) {
   const row = (label: string, value: string) => `
@@ -72,6 +80,7 @@ function createAdmissionEmail(data: {
                 ${row("State", data.state)}
                 ${row("City", data.city)}
                 ${row("Course", data.course)}
+                ${row("Graduation Status", data.graduationStatus)}
               </table>
               <div style="margin-top:24px">
                 <p style="font-weight:700;color:#061a3a">Remarks</p>
@@ -107,14 +116,29 @@ export async function POST(request: Request) {
     const state = cleanText(body.state, 100);
     const city = cleanText(body.city, 150);
     const course = cleanText(body.course, 100) || "PGDM";
+    const graduationStatus = cleanText(body.graduationStatus, 100);
     const remarks = cleanText(body.remarks, 5000);
     const source = cleanText(body.source, 150) || "FOSTIIMA Website";
 
-    if (!fullName || !mobile || !email || !state || !city) {
+    if (!fullName || !mobile || !email || !state || !city || !graduationStatus) {
       return NextResponse.json(
         {
           success: false,
           error: "Please complete all required fields.",
+        },
+        { status: 400 },
+      );
+    }
+
+    if (
+      !ALLOWED_GRADUATION_STATUSES.includes(
+        graduationStatus as (typeof ALLOWED_GRADUATION_STATUSES)[number],
+      )
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Please select a valid graduation status.",
         },
         { status: 400 },
       );
@@ -156,6 +180,7 @@ export async function POST(request: Request) {
         state,
         city,
         course,
+        graduationStatus,
         remarks: remarks || null,
         consent: true,
         source,
@@ -210,6 +235,7 @@ export async function POST(request: Request) {
           state,
           city,
           course,
+          graduationStatus,
           remarks,
         }),
       });
