@@ -1,4 +1,3 @@
-
 export const dynamic = "force-dynamic";
 import AboutSection from "@/components/home/AboutSection";
 import CampusHighlights from "@/components/home/CampusHighlights";
@@ -7,6 +6,7 @@ import RecognitionSection from "@/components/home/RecognitionSection";
 import RecruitersSection from "@/components/home/RecruitersSection";
 import StatsBar from "@/components/home/StatsBar";
 import ProgramsSection from "@/components/home/ProgramsSection";
+import StudentAchievementsSection from "@/components/common/StudentAchievementsSection";
 import ConclaveSection from "@/components/conclave/ConclaveSection";
 import AwardsSection from "@/components/home/AwardsSection";
 import CampusLifeSection from "@/components/home/CampusLifeSection";
@@ -67,6 +67,8 @@ export default async function HomePage() {
       <CampusHighlights />
 
       <ProgramsSection />
+
+      <StudentAchievementsSection />
 
       <ConclaveSection />
 
