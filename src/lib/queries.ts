@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 import { prisma } from "@/lib/prisma";
 import type { BlogPost } from "@/types/blog";
 import { mapDbBlogPost } from "./mapper";
@@ -34,23 +36,25 @@ export async function getPublishedBlogs(): Promise<BlogPost[]> {
   return posts.map(mapDbBlogPost);
 }
 
-export async function getBlogBySlug(
-  slug: string,
-): Promise<BlogPost | null> {
-  const post = await prisma.blogPost.findFirst({
-    where: {
-      slug,
-      status: "published",
-    },
-    include: blogInclude,
-  });
+// cache() lasts for one server request, so generateMetadata() and the page share
+// a single lookup and content is never stale between requests.
+export const getBlogBySlug = cache(
+  async (slug: string): Promise<BlogPost | null> => {
+    const post = await prisma.blogPost.findFirst({
+      where: {
+        slug,
+        status: "published",
+      },
+      include: blogInclude,
+    });
 
-  if (!post) {
-    return null;
-  }
+    if (!post) {
+      return null;
+    }
 
-  return mapDbBlogPost(post);
-}
+    return mapDbBlogPost(post);
+  },
+);
 
 export async function getAllAdminBlogs() {
   return prisma.blogPost.findMany({

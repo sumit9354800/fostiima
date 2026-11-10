@@ -192,7 +192,7 @@ export default function ChairmanMessage() {
         {/* Profile Link */}
         <div className="mt-7 flex justify-end">
           <a
-            href="https://www.fostiima.org/aboutus/founder-trustees/anil-somani.php"
+            href="/faculties/mr-anil-somani"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 text-sm font-semibold text-[#123b79] transition-colors hover:text-[#c31e3b]"
