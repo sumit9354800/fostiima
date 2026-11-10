@@ -91,6 +91,11 @@ export async function GET(request: Request) {
                   contains: search,
                 },
               },
+              {
+                graduationStatus: {
+                  contains: search,
+                },
+              },
             ],
           }
         : {}),
@@ -113,6 +118,7 @@ export async function GET(request: Request) {
             state: true,
             city: true,
             course: true,
+            graduationStatus: true,
             remarks: true,
             consent: true,
             source: true,

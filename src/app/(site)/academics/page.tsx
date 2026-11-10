@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import AcademicsHero from "@/components/academics/AcademicsHero";
 import AcademicOverview from "@/components/academics/AcademicOverview";
+import StudentAchievementsSection from "@/components/common/StudentAchievementsSection";
 import AcademicHighlights from "@/components/academics/AcademicHighlights";
 import { getCanonicalUrl } from "@/lib/seo";
 
@@ -20,6 +21,7 @@ export default function AcademicsPage() {
     <main>
       <AcademicsHero />
       <AcademicOverview />
+      <StudentAchievementsSection />
       <AcademicHighlights />
     </main>
   );

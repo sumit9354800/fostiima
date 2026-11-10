@@ -40,6 +40,7 @@ type FormValues = {
   state: string;
   city: string;
   course: string;
+  graduationStatus: string;
   remarks: string;
   consent: boolean;
 };
@@ -57,6 +58,7 @@ const initialValues: FormValues = {
   state: "",
   city: "",
   course: "PGDM",
+  graduationStatus: "",
   remarks: "",
   consent: false,
 };
@@ -200,6 +202,11 @@ export default function AdmissionEnquiryForm() {
 
     if (!values.state || !values.city) {
       setMessage("Please select your state and city.");
+      return;
+    }
+
+    if (!values.graduationStatus) {
+      setMessage("Please select your graduation status.");
       return;
     }
 
@@ -454,21 +461,50 @@ export default function AdmissionEnquiryForm() {
           </p>
         )}
 
-        <div>
-          <label className={labelClass} htmlFor="admission-course">
-            Interested Course <span className="text-[#C31E3B]">*</span>
-          </label>
-          <select
-            id="admission-course"
-            name="course"
-            className={inputClass}
-            value={values.course}
-            onChange={(event) => updateField("course", event.target.value)}
-            required
-            disabled={loading}
-          >
-            <option value="PGDM">PGDM</option>
-          </select>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div>
+            <label className={labelClass} htmlFor="admission-course">
+              Interested Course <span className="text-[#C31E3B]">*</span>
+            </label>
+            <select
+              id="admission-course"
+              name="course"
+              className={inputClass}
+              value={values.course}
+              onChange={(event) => updateField("course", event.target.value)}
+              required
+              disabled={loading}
+            >
+              <option value="PGDM">PGDM</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              className={labelClass}
+              htmlFor="admission-graduation-status"
+            >
+              Graduation Status <span className="text-[#C31E3B]">*</span>
+            </label>
+            <select
+              id="admission-graduation-status"
+              name="graduationStatus"
+              className={inputClass}
+              value={values.graduationStatus}
+              onChange={(event) =>
+                updateField("graduationStatus", event.target.value)
+              }
+              required
+              disabled={loading}
+            >
+              <option value="">Select Graduation Status</option>
+              <option value="Graduated">Graduated</option>
+              <option value="Final Year Student">Final Year Student</option>
+              <option value="12th Pass / Undergrad">
+                12th Pass / Undergrad
+              </option>
+            </select>
+          </div>
         </div>
 
         <div>

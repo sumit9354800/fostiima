@@ -32,6 +32,7 @@ export type AdmissionEnquiryMinAggregateOutputType = {
   state: string | null
   city: string | null
   course: string | null
+  graduationStatus: string | null
   remarks: string | null
   consent: boolean | null
   source: string | null
@@ -50,6 +51,7 @@ export type AdmissionEnquiryMaxAggregateOutputType = {
   state: string | null
   city: string | null
   course: string | null
+  graduationStatus: string | null
   remarks: string | null
   consent: boolean | null
   source: string | null
@@ -68,6 +70,7 @@ export type AdmissionEnquiryCountAggregateOutputType = {
   state: number
   city: number
   course: number
+  graduationStatus: number
   remarks: number
   consent: number
   source: number
@@ -88,6 +91,7 @@ export type AdmissionEnquiryMinAggregateInputType = {
   state?: true
   city?: true
   course?: true
+  graduationStatus?: true
   remarks?: true
   consent?: true
   source?: true
@@ -106,6 +110,7 @@ export type AdmissionEnquiryMaxAggregateInputType = {
   state?: true
   city?: true
   course?: true
+  graduationStatus?: true
   remarks?: true
   consent?: true
   source?: true
@@ -124,6 +129,7 @@ export type AdmissionEnquiryCountAggregateInputType = {
   state?: true
   city?: true
   course?: true
+  graduationStatus?: true
   remarks?: true
   consent?: true
   source?: true
@@ -215,6 +221,7 @@ export type AdmissionEnquiryGroupByOutputType = {
   state: string
   city: string
   course: string
+  graduationStatus: string | null
   remarks: string | null
   consent: boolean
   source: string
@@ -254,6 +261,7 @@ export type AdmissionEnquiryWhereInput = {
   state?: Prisma.StringFilter<"AdmissionEnquiry"> | string
   city?: Prisma.StringFilter<"AdmissionEnquiry"> | string
   course?: Prisma.StringFilter<"AdmissionEnquiry"> | string
+  graduationStatus?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
   remarks?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
   consent?: Prisma.BoolFilter<"AdmissionEnquiry"> | boolean
   source?: Prisma.StringFilter<"AdmissionEnquiry"> | string
@@ -272,6 +280,7 @@ export type AdmissionEnquiryOrderByWithRelationInput = {
   state?: Prisma.SortOrder
   city?: Prisma.SortOrder
   course?: Prisma.SortOrder
+  graduationStatus?: Prisma.SortOrderInput | Prisma.SortOrder
   remarks?: Prisma.SortOrderInput | Prisma.SortOrder
   consent?: Prisma.SortOrder
   source?: Prisma.SortOrder
@@ -294,6 +303,7 @@ export type AdmissionEnquiryWhereUniqueInput = Prisma.AtLeast<{
   state?: Prisma.StringFilter<"AdmissionEnquiry"> | string
   city?: Prisma.StringFilter<"AdmissionEnquiry"> | string
   course?: Prisma.StringFilter<"AdmissionEnquiry"> | string
+  graduationStatus?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
   remarks?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
   consent?: Prisma.BoolFilter<"AdmissionEnquiry"> | boolean
   source?: Prisma.StringFilter<"AdmissionEnquiry"> | string
@@ -312,6 +322,7 @@ export type AdmissionEnquiryOrderByWithAggregationInput = {
   state?: Prisma.SortOrder
   city?: Prisma.SortOrder
   course?: Prisma.SortOrder
+  graduationStatus?: Prisma.SortOrderInput | Prisma.SortOrder
   remarks?: Prisma.SortOrderInput | Prisma.SortOrder
   consent?: Prisma.SortOrder
   source?: Prisma.SortOrder
@@ -336,6 +347,7 @@ export type AdmissionEnquiryScalarWhereWithAggregatesInput = {
   state?: Prisma.StringWithAggregatesFilter<"AdmissionEnquiry"> | string
   city?: Prisma.StringWithAggregatesFilter<"AdmissionEnquiry"> | string
   course?: Prisma.StringWithAggregatesFilter<"AdmissionEnquiry"> | string
+  graduationStatus?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
   remarks?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
   consent?: Prisma.BoolWithAggregatesFilter<"AdmissionEnquiry"> | boolean
   source?: Prisma.StringWithAggregatesFilter<"AdmissionEnquiry"> | string
@@ -354,6 +366,7 @@ export type AdmissionEnquiryCreateInput = {
   state: string
   city: string
   course?: string
+  graduationStatus?: string | null
   remarks?: string | null
   consent?: boolean
   source?: string
@@ -372,6 +385,7 @@ export type AdmissionEnquiryUncheckedCreateInput = {
   state: string
   city: string
   course?: string
+  graduationStatus?: string | null
   remarks?: string | null
   consent?: boolean
   source?: string
@@ -390,6 +404,7 @@ export type AdmissionEnquiryUpdateInput = {
   state?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   course?: Prisma.StringFieldUpdateOperationsInput | string
+  graduationStatus?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   remarks?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   consent?: Prisma.BoolFieldUpdateOperationsInput | boolean
   source?: Prisma.StringFieldUpdateOperationsInput | string
@@ -408,6 +423,7 @@ export type AdmissionEnquiryUncheckedUpdateInput = {
   state?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   course?: Prisma.StringFieldUpdateOperationsInput | string
+  graduationStatus?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   remarks?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   consent?: Prisma.BoolFieldUpdateOperationsInput | boolean
   source?: Prisma.StringFieldUpdateOperationsInput | string
@@ -426,6 +442,7 @@ export type AdmissionEnquiryCreateManyInput = {
   state: string
   city: string
   course?: string
+  graduationStatus?: string | null
   remarks?: string | null
   consent?: boolean
   source?: string
@@ -444,6 +461,7 @@ export type AdmissionEnquiryUpdateManyMutationInput = {
   state?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   course?: Prisma.StringFieldUpdateOperationsInput | string
+  graduationStatus?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   remarks?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   consent?: Prisma.BoolFieldUpdateOperationsInput | boolean
   source?: Prisma.StringFieldUpdateOperationsInput | string
@@ -462,6 +480,7 @@ export type AdmissionEnquiryUncheckedUpdateManyInput = {
   state?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   course?: Prisma.StringFieldUpdateOperationsInput | string
+  graduationStatus?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   remarks?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   consent?: Prisma.BoolFieldUpdateOperationsInput | boolean
   source?: Prisma.StringFieldUpdateOperationsInput | string
@@ -486,6 +505,7 @@ export type AdmissionEnquiryCountOrderByAggregateInput = {
   state?: Prisma.SortOrder
   city?: Prisma.SortOrder
   course?: Prisma.SortOrder
+  graduationStatus?: Prisma.SortOrder
   remarks?: Prisma.SortOrder
   consent?: Prisma.SortOrder
   source?: Prisma.SortOrder
@@ -504,6 +524,7 @@ export type AdmissionEnquiryMaxOrderByAggregateInput = {
   state?: Prisma.SortOrder
   city?: Prisma.SortOrder
   course?: Prisma.SortOrder
+  graduationStatus?: Prisma.SortOrder
   remarks?: Prisma.SortOrder
   consent?: Prisma.SortOrder
   source?: Prisma.SortOrder
@@ -522,6 +543,7 @@ export type AdmissionEnquiryMinOrderByAggregateInput = {
   state?: Prisma.SortOrder
   city?: Prisma.SortOrder
   course?: Prisma.SortOrder
+  graduationStatus?: Prisma.SortOrder
   remarks?: Prisma.SortOrder
   consent?: Prisma.SortOrder
   source?: Prisma.SortOrder
@@ -542,6 +564,7 @@ export type AdmissionEnquirySelect<ExtArgs extends runtime.Types.Extensions.Inte
   state?: boolean
   city?: boolean
   course?: boolean
+  graduationStatus?: boolean
   remarks?: boolean
   consent?: boolean
   source?: boolean
@@ -562,6 +585,7 @@ export type AdmissionEnquirySelectScalar = {
   state?: boolean
   city?: boolean
   course?: boolean
+  graduationStatus?: boolean
   remarks?: boolean
   consent?: boolean
   source?: boolean
@@ -572,7 +596,7 @@ export type AdmissionEnquirySelectScalar = {
   updatedAt?: boolean
 }
 
-export type AdmissionEnquiryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "fullName" | "mobile" | "email" | "state" | "city" | "course" | "remarks" | "consent" | "source" | "status" | "emailSent" | "emailError" | "createdAt" | "updatedAt", ExtArgs["result"]["admissionEnquiry"]>
+export type AdmissionEnquiryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "fullName" | "mobile" | "email" | "state" | "city" | "course" | "graduationStatus" | "remarks" | "consent" | "source" | "status" | "emailSent" | "emailError" | "createdAt" | "updatedAt", ExtArgs["result"]["admissionEnquiry"]>
 
 export type $AdmissionEnquiryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "AdmissionEnquiry"
@@ -585,6 +609,7 @@ export type $AdmissionEnquiryPayload<ExtArgs extends runtime.Types.Extensions.In
     state: string
     city: string
     course: string
+    graduationStatus: string | null
     remarks: string | null
     consent: boolean
     source: string
@@ -969,6 +994,7 @@ export interface AdmissionEnquiryFieldRefs {
   readonly state: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
   readonly city: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
   readonly course: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
+  readonly graduationStatus: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
   readonly remarks: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
   readonly consent: Prisma.FieldRef<"AdmissionEnquiry", 'Boolean'>
   readonly source: Prisma.FieldRef<"AdmissionEnquiry", 'String'>

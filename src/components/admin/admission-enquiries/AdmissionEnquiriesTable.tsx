@@ -30,6 +30,7 @@ type Enquiry = {
   state: string;
   city: string;
   course: string;
+  graduationStatus?: string | null;
   remarks: string | null;
   source: string;
   status: string;
@@ -342,7 +343,7 @@ export default function AdmissionEnquiriesTable() {
                 type="search"
                 value={searchInput}
                 onChange={(event) => setSearchInput(event.target.value)}
-                placeholder="Search name, email, mobile or city"
+                placeholder="Search name, email, mobile, city, or status"
                 className="w-full rounded-xl border border-slate-200 bg-white py-3 pl-10 pr-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-[#123B79] focus:ring-2 focus:ring-[#123B79]/10"
               />
             </div>
@@ -428,6 +429,11 @@ export default function AdmissionEnquiriesTable() {
                         </p>
                         <p className="mt-1 text-xs text-slate-500">
                           {enquiry.course}
+                          {enquiry.graduationStatus && (
+                            <span className="ml-1.5 inline-flex items-center rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-700">
+                              {enquiry.graduationStatus}
+                            </span>
+                          )}
                         </p>
                       </td>
 
@@ -639,6 +645,14 @@ export default function AdmissionEnquiriesTable() {
 
                 <div className="rounded-xl bg-slate-50 p-4">
                   <GraduationCap size={17} className="text-slate-400" />
+                  <p className="mt-3 text-xs text-slate-500">Graduation Status</p>
+                  <p className="mt-1 text-sm font-semibold text-slate-800">
+                    {selected.graduationStatus || "Not specified"}
+                  </p>
+                </div>
+
+                <div className="rounded-xl bg-slate-50 p-4">
+                  <Clock3 size={17} className="text-slate-400" />
                   <p className="mt-3 text-xs text-slate-500">Submitted</p>
                   <p className="mt-1 text-sm font-semibold text-slate-800">
                     {formatDate(selected.createdAt)}

@@ -76,7 +76,7 @@ export const navigationItems: NavigationItem[] = [
       //   ],
       // },
       {
-        label: "Faculties",
+        label: "Faculty",
         href: "/faculties",
       },
     ],
