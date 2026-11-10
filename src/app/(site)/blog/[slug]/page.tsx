@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import BlogContent from "@/components/blog/BlogContent";
 import { getBlogBySlug } from "@/lib/queries";
+import { getCanonicalUrl } from "@/lib/seo";
 import Link from "next/link";
 
 type BlogDetailPageProps = {
@@ -22,14 +23,37 @@ export async function generateMetadata({
 
   if (!blog) {
     return {
-      title: "Blog Not Found | FOSTIIMA Business School",
+      title: "Blog Not Found",
     };
   }
 
+  const canonical = getCanonicalUrl(`/blog/${slug}`);
+  const { metaTitle, metaDescription, keywords } = blog.seo;
+
   return {
-    title: blog.seo.metaTitle,
-    description: blog.seo.metaDescription,
-    keywords: blog.seo.keywords,
+    // The root layout appends the site name, so skip it when already present.
+    title: /\|\s*FOSTIIMA/i.test(metaTitle)
+      ? { absolute: metaTitle }
+      : metaTitle,
+    description: metaDescription,
+    keywords,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      type: "article",
+      locale: "en_IN",
+      url: canonical,
+      title: metaTitle,
+      description: metaDescription,
+      siteName: "FOSTIIMA Business School",
+      images: [
+        {
+          url: blog.coverImage || "/og-image.jpg",
+          alt: blog.coverImageAlt || blog.title,
+        },
+      ],
+    },
   };
 }
 
