@@ -5,7 +5,7 @@ const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
 };
 
-const databaseUrl = process.env.DATABASE_URL;
+const databaseUrl = "mysql://u577678383_fostiima_01:%40Fostiima%5F01@srv1129.hstgr.io:3306/u577678383_fostiima_01";
 
 if (!databaseUrl) {
   throw new Error("DATABASE_URL is not configured.");
