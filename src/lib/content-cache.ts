@@ -28,6 +28,41 @@ export const CONTENT_TAG_BY_MODEL: Partial<Record<string, ContentTag>> = {
   Faq: CONTENT_TAGS.faqs,
 };
 
+// After a read fails, its fallback is served straight away for this long,
+// so a database outage costs one slow request per reader per instance
+// instead of a connection timeout on every page view.
+const FAILED_READ_PAUSE_MS = 30_000;
+const failedUntil = new Map<string, number>();
+
+/**
+ * Runs a cached read and returns `fallback` if it throws. Used for page
+ * sections that can be left out while the database is unavailable. Each
+ * `name` pauses separately, so one failing read never hides another read's
+ * cached data.
+ */
+export async function readOrFallback<T>(
+  name: string,
+  read: () => Promise<T>,
+  fallback: T,
+): Promise<T> {
+  if ((failedUntil.get(name) ?? 0) > Date.now()) {
+    return fallback;
+  }
+
+  try {
+    return await read();
+  } catch (error) {
+    failedUntil.set(name, Date.now() + FAILED_READ_PAUSE_MS);
+    // Log the error type only: driver messages can include connection details.
+    console.error(
+      `${name} unavailable:`,
+      error instanceof Error ? error.name : "unknown error",
+    );
+
+    return fallback;
+  }
+}
+
 export function expireContentTag(tag: ContentTag): void {
   try {
     // Route handlers can't use updateTag(); { expire: 0 } makes the next

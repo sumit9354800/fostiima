@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { getHomeAbout } from "@/lib/admin/home";
+import { readOrFallback } from "@/lib/content-cache";
 
 const ICONS = {
   Award,
@@ -37,17 +38,8 @@ const ICON_COLORS = [
 ] as const;
 
 export default async function AboutSection() {
-  let about: Awaited<ReturnType<typeof getHomeAbout>> = null;
-
-  try {
-    about = await getHomeAbout();
-  } catch (error) {
-    // Leave this section out rather than failing the whole homepage.
-    console.error(
-      "Home about section unavailable:",
-      error instanceof Error ? error.name : "unknown error",
-    );
-  }
+  // Left out, rather than failing the whole homepage, if the database is down.
+  const about = await readOrFallback("Home about section", getHomeAbout, null);
 
   if (!about) {
     return null;

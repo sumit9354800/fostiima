@@ -40,8 +40,11 @@ function createPrismaClient(): PrismaClient {
     connectionLimit: 3,
     minimumIdle: 1,
 
-    // Don't wait indefinitely for a database connection.
+    // Don't wait indefinitely for a database connection. A refused connection
+    // (e.g. the hourly limit) is retried until acquireTimeout, so it is kept
+    // short; queries are quick, so a free connection never takes this long.
     connectTimeout: 10000,
+    acquireTimeout: 5000,
   });
 
   const WRITE_OPERATIONS = new Set([

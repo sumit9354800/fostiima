@@ -17,6 +17,7 @@ import MediaPresenceSection from "@/components/home/MediaPresenceSection";
 import PlacementVideos from "@/components/home/PlacementVideos";
 import LeadershipMessage from "@/components/home/LeadershipMessage";
 import { getHomeContent } from "@/lib/admin/home";
+import { readOrFallback } from "@/lib/content-cache";
 import PlacementGallery from "@/components/home/PlacementGallery";
 import type { Metadata } from "next";
 import { getCanonicalUrl } from "@/lib/seo";
@@ -40,23 +41,14 @@ export const metadata: Metadata = {
   },
 };
 
-async function getHomeContentOrEmpty() {
-  try {
-    return await getHomeContent();
-  } catch (error) {
-    // The rest of the homepage is static, so a database outage only hides
-    // the stats bar and placement videos instead of failing the whole page.
-    console.error(
-      "Home content unavailable:",
-      error instanceof Error ? error.name : "unknown error",
-    );
-
-    return { stats: [], placementVideos: [] };
-  }
-}
-
 export default async function HomePage() {
-  const { stats, placementVideos } = await getHomeContentOrEmpty();
+  // The rest of the homepage is static, so a database outage only hides the
+  // stats bar and placement videos instead of failing the whole page.
+  const { stats, placementVideos } = await readOrFallback(
+    "Home content",
+    getHomeContent,
+    { stats: [], placementVideos: [] },
+  );
 
   const videos = placementVideos.map((video) => ({
     id: video.id,
