@@ -1,3 +1,5 @@
+import { WHATSAPP_URL } from "@/config/contact";
+
 export type FooterLink = {
   label: string;
   href: string;
@@ -123,7 +125,7 @@ export const socialLinks = [
   },
   {
     label: "X",
-    href: "https://twitter.com/fostiima",
+    href: "https://x.com/fostiima",
   },
   {
     label: "Instagram",
@@ -131,18 +133,16 @@ export const socialLinks = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/School/fostiima-business-School",
+    href: "https://www.linkedin.com/school/fostiima-business-school",
   },
   {
     label: "YouTube",
     href: "https://www.youtube.com/channel/UCUxSf6244jQxfPEWWOY628Q",
   },
-  {
-    label: "Pinterest",
-    href: "https://www.pinterest.com/",
-  },
+  // Pinterest removed: it linked to pinterest.com itself, not a FOSTIIMA
+  // profile. Add it back with the real profile URL if one exists.
   {
     label: "WhatsApp",
-    href: "https://wa.me/917678391245",
+    href: WHATSAPP_URL,
   },
 ];

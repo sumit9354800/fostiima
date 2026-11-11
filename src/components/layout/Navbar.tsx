@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,6 +15,7 @@ type DesktopMenuProps = {
 
 function DesktopMenuItem({ item }: DesktopMenuProps) {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   const hasChildren = Boolean(item.children?.length);
 
@@ -41,32 +43,68 @@ function DesktopMenuItem({ item }: DesktopMenuProps) {
     );
   }
 
-  return (
-    <div className="group relative flex h-full shrink-0 items-center">
-      {/* Parent Link */}
-      <Link
-        href={item.href ?? "#"}
-        className={`relative flex h-full shrink-0 items-center gap-0.5 whitespace-nowrap px-2 text-[10px] font-semibold uppercase tracking-[0.02em] transition-colors duration-200 min-[1350px]:gap-1 min-[1350px]:px-2.5 min-[1350px]:text-[11px] min-[1450px]:px-3 min-[1450px]:text-[12px] ${
-          isActive ? "text-[#c31e3b]" : "text-[#172033] hover:text-[#c31e3b]"
+  const parentClassName = `relative flex h-full shrink-0 items-center gap-0.5 whitespace-nowrap px-2 text-[10px] font-semibold uppercase tracking-[0.02em] transition-colors duration-200 min-[1350px]:gap-1 min-[1350px]:px-2.5 min-[1350px]:text-[11px] min-[1450px]:px-3 min-[1450px]:text-[12px] ${
+    isActive ? "text-[#c31e3b]" : "text-[#172033] hover:text-[#c31e3b]"
+  }`;
+
+  const parentContent = (
+    <>
+      {item.label}
+
+      <ChevronDown
+        size={11}
+        strokeWidth={2}
+        className={`transition-transform duration-200 group-hover:rotate-180 min-[1350px]:size-3 min-[1450px]:size-[13px] ${
+          isOpen ? "rotate-180" : ""
         }`}
-        aria-haspopup="menu"
-      >
-        {item.label}
+        aria-hidden="true"
+      />
 
-        <ChevronDown
-          size={11}
-          strokeWidth={2}
-          className="transition-transform duration-200 group-hover:rotate-180 min-[1350px]:size-3 min-[1450px]:size-[13px]"
-          aria-hidden="true"
-        />
+      {isActive && (
+        <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#c31e3b] min-[1350px]:left-2.5 min-[1350px]:right-2.5 min-[1450px]:left-3 min-[1450px]:right-3" />
+      )}
+    </>
+  );
 
-        {isActive && (
-          <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#c31e3b] min-[1350px]:left-2.5 min-[1350px]:right-2.5 min-[1450px]:left-3 min-[1450px]:right-3" />
-        )}
-      </Link>
+  return (
+    <div
+      className="group relative flex h-full shrink-0 items-center"
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setIsOpen(false);
+        }
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          setIsOpen(false);
+        }
+      }}
+    >
+      {/* A parent without its own page is a button, not a link to "#". */}
+      {item.href ? (
+        <Link href={item.href} className={parentClassName}>
+          {parentContent}
+        </Link>
+      ) : (
+        <button
+          type="button"
+          className={parentClassName}
+          aria-haspopup="true"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          {parentContent}
+        </button>
+      )}
 
       {/* First-level dropdown */}
-      <div className="pointer-events-none absolute left-0 top-full z-[100] min-w-[230px] translate-y-2 pt-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 min-[1450px]:min-w-[245px]">
+      <div
+        className={`absolute left-0 top-full z-[100] min-w-[230px] pt-2 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 min-[1450px]:min-w-[245px] ${
+          isOpen
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-2 opacity-0"
+        }`}
+      >
         <div className="overflow-visible border border-slate-200 bg-white py-2 shadow-[0_18px_50px_rgba(15,23,42,0.12)]">
           {item.children?.map((child) => (
             <DesktopSubMenuItem

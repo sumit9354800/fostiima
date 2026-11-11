@@ -1,3 +1,4 @@
+import { ADMISSIONS_PHONE } from "@/config/contact";
 import Link from "next/link";
 import { ArrowUpRight, Clock3, Mail, MapPin, Phone } from "lucide-react";
 
@@ -128,12 +129,12 @@ export default function Footer() {
 
               {/* Phone */}
               <a
-                href="tel:+917678391245"
+                href={ADMISSIONS_PHONE.href}
                 className="flex items-center gap-3 text-sm text-white/65 transition-colors hover:text-white"
               >
                 <Phone className="h-4 w-4 text-[#eab308]" />
 
-                <span>+91-76783 91245</span>
+                <span>{ADMISSIONS_PHONE.display}</span>
               </a>
               <a
                 href="tel:011-46126000"
@@ -204,13 +205,22 @@ export default function Footer() {
                   (link) => link.label === name,
                 )?.href;
 
+                // Only networks with a real profile URL get an icon.
+                if (!socialLink) {
+                  return null;
+                }
+
                 return (
                   <a
                     key={name}
-                    href={socialLink || "#"}
+                    href={socialLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={name}
+                    aria-label={
+                      name === "WhatsApp"
+                        ? "Chat with FOSTIIMA on WhatsApp (opens in a new tab)"
+                        : `FOSTIIMA on ${name} (opens in a new tab)`
+                    }
                     style={
                       {
                         "--brand-color": social.color,

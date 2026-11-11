@@ -20,7 +20,7 @@ export const campusLifeItems: CampusLifeItem[] = [
 
     image: "home/campuslife/campuslife01.webp",
 
-    href: "/alumni",
+    href: "/campus-life/student-community",
 
     details: [
       "Collaborate with peers across diverse backgrounds.",
