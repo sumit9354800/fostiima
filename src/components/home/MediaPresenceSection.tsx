@@ -71,7 +71,7 @@ const mediaPresenceData: MediaPresenceItem[] = [
       "https://static.langimg.com/thumb/119164302/navbharat-times.jpg?width=366&resizemode=4",
     title:
       "MBA या PGDM के बाद मिलेगी तगड़ी सैलरी वाली नौकरी? बस अपना लें ये 7 एक्सपर्ट टिप्स",
-    href: "https://navbharattimes.indiatimes.com/education/expert-advice/top-7-tips-to-get-highest-paying-job-placement-after-mba-and-pgdm/articleshow/111278772.cms#google_vignette",
+    href: "https://navbharattimes.indiatimes.com/education/expert-advice/top-7-tips-to-get-highest-paying-job-placement-after-mba-and-pgdm/articleshow/111278772.cms",
   },
 ];
 

@@ -7,6 +7,7 @@ import {
   getConclaveEventBySlug,
   getPublishedConclaveEvents,
 } from "@/data/conclave";
+import { buildPageMetadata } from "@/lib/seo";
 import Image from "next/image";
 
 type EventDetailPageProps = {
@@ -33,10 +34,13 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: `${event.title} | FOSTIIMA Business School`,
+  return buildPageMetadata({
+    title: event.title,
     description: event.excerpt,
-  };
+    path: `/conclave-conference/${event.slug}`,
+    image: event.bgImage?.trim() || null,
+    imageAlt: event.title,
+  });
 }
 
 export default async function EventDetailPage({

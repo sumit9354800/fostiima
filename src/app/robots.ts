@@ -5,7 +5,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/admin/", "/api/", "/_next/"],
+      // /_next/ must stay crawlable: it serves the CSS, JavaScript and
+      // optimised images Google needs to render and index the pages.
+      disallow: ["/admin/", "/api/"],
     },
 
     sitemap: [

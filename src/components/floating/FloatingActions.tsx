@@ -1,10 +1,11 @@
 "use client";
 
+import { ADMISSIONS_PHONE } from "@/config/contact";
 import { useEffect, useRef, useState } from "react";
 import { Download, FileText, PhoneCall, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-const WHATSAPP_NUMBER = "917678391245";
+const WHATSAPP_NUMBER = ADMISSIONS_PHONE.whatsapp;
 
 const WHATSAPP_MESSAGE =
   "Hello FOSTIIMA Business School, I would like to know more about the PGDM/MBA programmes.";

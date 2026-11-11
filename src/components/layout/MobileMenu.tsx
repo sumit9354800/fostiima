@@ -1,5 +1,6 @@
 "use client";
 
+import { ADMISSIONS_PHONE } from "@/config/contact";
 import { useState } from "react";
 
 import Image from "next/image";
@@ -347,7 +348,7 @@ export default function MobileMenu() {
               </a>
 
               <a
-                href="tel:+917678391245"
+                href={ADMISSIONS_PHONE.href}
                 onClick={closeMenu}
                 className="
                   block
@@ -358,7 +359,7 @@ export default function MobileMenu() {
                   hover:text-[#c31e3b]
                 "
               >
-                +91-76783 91245
+                {ADMISSIONS_PHONE.display}
               </a>
 
               <p className="text-md font-medium text-slate-700">

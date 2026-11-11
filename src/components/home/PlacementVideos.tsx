@@ -436,9 +436,9 @@ export default function PlacementVideos({
             </p>
 
             <h2 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#123b79] sm:text-5xl">
-              PGDM Placement-Batch{" "}
+              PGDM Placement{" "}
               <span className="text-[#c31e3b]">
-              PGDM Placement Batch 2025 - 2027
+                Batch 2025–2027
               </span>
             </h2>
 
