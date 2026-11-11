@@ -7,7 +7,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import { prisma } from "@/lib/prisma";
+import { getHomeAbout } from "@/lib/admin/home";
 
 const ICONS = {
   Award,
@@ -37,26 +37,17 @@ const ICON_COLORS = [
 ] as const;
 
 export default async function AboutSection() {
-  const about = await prisma.homeAbout.findFirst({
-    where: {
-      isActive: true,
-    },
-    include: {
-      highlights: {
-        where: {
-          isActive: true,
-        },
-        orderBy: [
-          {
-            sortOrder: "asc",
-          },
-          {
-            createdAt: "asc",
-          },
-        ],
-      },
-    },
-  });
+  let about: Awaited<ReturnType<typeof getHomeAbout>> = null;
+
+  try {
+    about = await getHomeAbout();
+  } catch (error) {
+    // Leave this section out rather than failing the whole homepage.
+    console.error(
+      "Home about section unavailable:",
+      error instanceof Error ? error.name : "unknown error",
+    );
+  }
 
   if (!about) {
     return null;

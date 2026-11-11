@@ -32,15 +32,53 @@ export async function proxy(request: NextRequest) {
   return checkBlogExists(request, url.pathname.split("/")[2]);
 }
 
+// Published slugs, kept in memory so a blog page view doesn't open a database
+// connection (the hosting MySQL user may open only 500 per hour). A newly
+// published post can 404 for up to this long on an instance that already
+// holds the list.
+const SLUG_LIST_TTL_MS = 60_000;
+
+let publishedSlugs: { slugs: Set<string>; expiresAt: number } | null = null;
+let slugListRequest: Promise<Set<string>> | null = null;
+
+async function loadPublishedSlugs(): Promise<Set<string>> {
+  const posts = await prisma.blogPost.findMany({
+    where: { status: "published" },
+    select: { slug: true },
+  });
+
+  const slugs = new Set(posts.map((post) => post.slug));
+  publishedSlugs = { slugs, expiresAt: Date.now() + SLUG_LIST_TTL_MS };
+
+  return slugs;
+}
+
+async function getPublishedSlugs(): Promise<Set<string>> {
+  if (publishedSlugs && publishedSlugs.expiresAt > Date.now()) {
+    return publishedSlugs.slugs;
+  }
+
+  // Concurrent requests share one query.
+  slugListRequest ??= loadPublishedSlugs().finally(() => {
+    slugListRequest = null;
+  });
+
+  try {
+    return await slugListRequest;
+  } catch (error) {
+    // Keep serving the last known list while the database is unreachable.
+    if (publishedSlugs) {
+      return publishedSlugs.slugs;
+    }
+
+    throw error;
+  }
+}
+
 async function checkBlogExists(request: NextRequest, slug: string) {
 
   try {
-    const post = await prisma.blogPost.findFirst({
-      where: { slug, status: "published" },
-      select: { id: true },
-    });
-
-    if (post) {
+    if ((await getPublishedSlugs()).has(slug)) {
       return NextResponse.next();
     }
   } catch (error) {

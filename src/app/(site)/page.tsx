@@ -40,8 +40,23 @@ export const metadata: Metadata = {
   },
 };
 
+async function getHomeContentOrEmpty() {
+  try {
+    return await getHomeContent();
+  } catch (error) {
+    // The rest of the homepage is static, so a database outage only hides
+    // the stats bar and placement videos instead of failing the whole page.
+    console.error(
+      "Home content unavailable:",
+      error instanceof Error ? error.name : "unknown error",
+    );
+
+    return { stats: [], placementVideos: [] };
+  }
+}
+
 export default async function HomePage() {
-  const { stats, placementVideos } = await getHomeContent();
+  const { stats, placementVideos } = await getHomeContentOrEmpty();
 
   const videos = placementVideos.map((video) => ({
     id: video.id,
