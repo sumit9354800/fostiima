@@ -16,6 +16,8 @@ export default function robots(): MetadataRoute.Robots {
         "/life-at-fostiima.php/nggallery/album/Workshop-on-Self-Awareness/image/self-awarness-3",
         "/life-at-fostiima.php/nggallery/album/lohri-2024/page/2/image/img_8715",
       ],
+      // /_next/ must stay crawlable: it serves the CSS, JavaScript and
+      // optimised images Google needs to render and index the pages.
       disallow: [
         "/admin/",
         "/api/",
@@ -37,6 +39,6 @@ export default function robots(): MetadataRoute.Robots {
       "https://www.fostiima.org/sitemap-index.xml",
       "https://www.fostiima.org/sitemap-videos.xml",
     ],
-     host: "https://www.fostiima.org",
+    host: "https://www.fostiima.org",
   };
 }

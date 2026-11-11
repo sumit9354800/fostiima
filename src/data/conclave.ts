@@ -45,7 +45,7 @@ export const conclaveEvents: ConclaveEvent[] = [
     month: "JAN",
     year: "2027",
     date: "10 January 2027",
-    location: "dates . to be announced",
+    location: "Dates to be announced",
     excerpt: "Mission AI Sashakt Bharat",
     content:
       "Mission AI Sashakt Bharat at PhD Chamber of Commerce, August Kranti Marg, Siri Institutional Area, Hauz Khas, New Delhi, Delhi 110016.",
@@ -166,8 +166,8 @@ export const conclaveEvents: ConclaveEvent[] = [
   },
 
   {
-    id: "margdarshak-awards-Ceremony",
-    slug: "margdarshak-awards-Ceremony",
+    id: "margdarshak-3-award-ceremony",
+    slug: "margdarshak-3-award-ceremony",
     title: "Margdarshak Awards Ceremony-3.0",
     day: "11",
     month: "DEC",
@@ -196,14 +196,14 @@ export const conclaveEvents: ConclaveEvent[] = [
       "/conclave/margdarshak3/Margdarshak3-12.webp",
       "/conclave/margdarshak3/Margdarshak3-13.webp",
     ],
-    href: "/conclave-conference/margdarshak-awards-Ceremony",
+    href: "/conclave-conference/margdarshak-3-award-ceremony",
     featured: false,
     status: "published",
   },
 
   {
-    id: "margdarshak-3",
-    slug: "margdarshak-3",
+    id: "margdarshak-2-award-ceremony",
+    slug: "margdarshak-2-award-ceremony",
     title: "Margdarshak-2.0 Award Ceremony",
     day: "15",
     month: "DEC",
@@ -228,7 +228,7 @@ export const conclaveEvents: ConclaveEvent[] = [
       "/conclave/margdarshak2/Margdarshak2-12.webp",
       "/conclave/margdarshak2/Margdarshak2-13.webp",
     ],
-    href: "/conclave-conference/margdarshak-3",
+    href: "/conclave-conference/margdarshak-2-award-ceremony",
     featured: false,
     status: "published",
   },
@@ -427,8 +427,39 @@ export const conclaveEvents: ConclaveEvent[] = [
   },
 ];
 
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+function getEventTime(event: ConclaveEvent): number {
+  const time = Date.parse(event.date);
+
+  return Number.isNaN(time) ? 0 : time;
+}
+
+/** True from the event day onwards until the day is over. */
+export function isUpcomingEvent(
+  event: ConclaveEvent,
+  now: number = Date.now(),
+): boolean {
+  return getEventTime(event) + DAY_MS > now;
+}
+
+/**
+ * Upcoming events first (soonest first), then past events (most recent
+ * first), whatever order they are listed in above.
+ */
 export function getPublishedConclaveEvents() {
-  return conclaveEvents.filter((event) => event.status === "published");
+  const now = Date.now();
+  const published = conclaveEvents.filter(
+    (event) => event.status === "published",
+  );
+  const upcoming = published
+    .filter((event) => isUpcomingEvent(event, now))
+    .sort((a, b) => getEventTime(a) - getEventTime(b));
+  const past = published
+    .filter((event) => !isUpcomingEvent(event, now))
+    .sort((a, b) => getEventTime(b) - getEventTime(a));
+
+  return [...upcoming, ...past];
 }
 
 export function getFeaturedConclaveEvents() {

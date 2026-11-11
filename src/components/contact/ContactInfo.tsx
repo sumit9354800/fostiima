@@ -1,3 +1,4 @@
+import { ADMISSIONS_PHONE } from "@/config/contact";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -16,8 +17,8 @@ const contactItems = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91-76783 91245",
-    href: "tel:+917678391245",
+    value: ADMISSIONS_PHONE.display,
+    href: ADMISSIONS_PHONE.href,
   },
   {
     icon: Phone,

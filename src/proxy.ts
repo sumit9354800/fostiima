@@ -3,8 +3,9 @@ import { NextResponse, type NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 
 // No route matches this path, so Next.js serves the site's 404 page with a real
-// 404 status. /blog/[slug] can't do this itself: the root loading.tsx starts
-// streaming a 200 before the page's notFound() runs.
+// 404 status. Checking here guarantees that status for missing posts, even if
+// a loading.tsx is added later (it would start streaming a 200 before the
+// page's notFound() runs).
 const UNROUTED_PATH = "/blog/post-unavailable/not-found";
 
 // Retired email/banner campaigns whose homepage URLs Google still crawls

@@ -52,7 +52,7 @@ const programs: Record<ProgramKey, ProgramData> = {
         title: "Semester I",
         subjects: [
           "Accounting For Managers & Financial Reporting",
-          "Aptitude Building Course-5",
+          "Aptitude Building Course - I",
           "Computer Applications in Management",
           "Contemporary Business Review - I",
           "Decision Science",
@@ -91,7 +91,7 @@ const programs: Record<ProgramKey, ProgramData> = {
           "Contemporary Business Review - II",
           "Tableau and Power BI",
           "Managing E-Business",
-          "Digital Marketing - I",
+          "Digital Marketing - II",
           "Business Analytics",
           "Legal Aspects of Business - II",
         ],

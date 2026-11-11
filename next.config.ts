@@ -54,6 +54,18 @@ const LEGACY_REDIRECTS: { source: string; destination: string }[] = [
     source: "/blog/what-is-the-full-form-of-mba-and-benefits-of-mba",
     destination: "/blog/what-is-the-full-form-of-mba-and-benefits-of-mba-",
   },
+  // Margdarshak event slugs renamed to match the edition each page shows
+  // (the old "margdarshak-3" page was the 2.0 ceremony) and to remove the
+  // uppercase "C", which made case-duplicate URLs possible.
+  {
+    source: "/conclave-conference/margdarshak-3",
+    destination: "/conclave-conference/margdarshak-2-award-ceremony",
+  },
+  {
+    source:
+      "/conclave-conference/margdarshak-awards-:ceremony(Ceremony|ceremony)",
+    destination: "/conclave-conference/margdarshak-3-award-ceremony",
+  },
 ];
 // Pages from the old PHP site that Google still crawls (GSC "Look out for
 // previous internal links and remove them", October 2026). Nothing on the site
@@ -134,7 +146,7 @@ const LEGACY_PHP_PAGES: Record<string, string> = {
   "/margdharshak-contact-details.php": "/margdarshak",
   "/margdarshak-1.php": "/margdarshak",
   "/margdarshak-2.php": "/margdarshak",
-  "/margdarshak-3.php": "/conclave-conference/margdarshak-3",
+  "/margdarshak-3.php": "/conclave-conference/margdarshak-3-award-ceremony",
   "/margdarshak-4-upcoming-event.php": "/conclave-conference/margdarshak-4",
 
   // Accreditation and disclosures
@@ -163,6 +175,9 @@ const nextConfig: NextConfig = {
   // runs before Proxy. It is re-declared as the first entry in redirects() below.
   skipTrailingSlashRedirect: true,
   images: {
+    // The default list ends at 3840px, which full-width images without a
+    // "sizes" hint requested on large screens. 2048px covers 1024px CSS at 2x.
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     remotePatterns: [
       {
         protocol: "https",
