@@ -28,33 +28,9 @@ const DIRECT_RESPONSE_PATHS = [
 // trailing slash, so these entries go before the trailing-slash rule.
 const LEGACY_REDIRECTS: { source: string; destination: string }[] = [
   {
-    source:
-      "/life-at-fostiima.php/nggallery/album/freshy-meet-2021-new/page/1/image/45",
-    destination: "/life-at-fostiima",
-  },
-  {
-    source:
-      "/life-at-fostiima.php/nggallery/album/freshy-meet-2021-new/page/1/image/22-1",
-    destination: "/life-at-fostiima",
-  },
-  {
-    source:
-      "/life-at-fostiima.php/nggallery/album/Workshop-on-Self-Awareness/image/self-awarness",
-    destination: "/life-at-fostiima",
-  },
-  {
-    source:
-      "/life-at-fostiima.php/nggallery/album/Workshop-on-Self-Awareness/image/self-awarness-1",
-    destination: "/life-at-fostiima",
-  },
-  {
-    source:
-      "/life-at-fostiima.php/nggallery/album/Workshop-on-Self-Awareness/image/self-awarness-3",
-    destination: "/life-at-fostiima",
-  },
-  {
-    source:
-      "/life-at-fostiima.php/nggallery/album/lohri-2024/page/2/image/img_8715",
+    // Old NextGEN Gallery pages: every album, page and image under the PHP
+    // life-at-fostiima page, plus the page itself.
+    source: "/life-at-fostiima.php/:path*",
     destination: "/life-at-fostiima",
   },
   {
@@ -62,7 +38,119 @@ const LEGACY_REDIRECTS: { source: string; destination: string }[] = [
     source: "/blog/tag/top-mba-college-in-delhi/feed",
     destination: "/life-at-fostiima",
   },
+  {
+    // The post's slug lost the hyphen in "mba-pgdm" when it was migrated.
+    source: "/blog/the-ultimate-guide-to-success-when-seeking-an-mba-pgdm",
+    destination: "/blog/the-ultimate-guide-to-success-when-seeking-an-mbapgdm",
+  },
+  // Stray homepage URLs ("/&", "/$") Google picked up from malformed links.
+  { source: "/&", destination: "/" },
+  { source: "/\\$", destination: "/" },
 ];
+
+// Pages from the old PHP site that Google still crawls (GSC "Look out for
+// previous internal links and remove them", October 2026). Nothing on the site
+// links to them any more, so each is sent to its closest current page.
+const LEGACY_PHP_PAGES: Record<string, string> = {
+  // Home
+  "/index.php": "/",
+  "/faqs.php": "/",
+
+  // About
+  "/aboutus.php": "/about-us",
+  "/about-fbs.php": "/about-us",
+  "/aboutus/message-from-chairman.php": "/about-us",
+  "/aboutus/message-from-director.php": "/about-us",
+  "/aboutus/our-vision.php": "/about-us",
+  "/our-vision.php": "/about-us",
+  "/aboutus/our-objectives.php": "/about-us",
+  "/aboutus/founder-trustees.php": "/about-us",
+  "/aboutus/founder-trustees/anil-somani.php": "/faculties/mr-anil-somani",
+  "/aboutus/founder-trustees/sunil-kala.php": "/faculties/mr-sunil-kala",
+  "/aboutus/founder-trustees/rajesh-kaura.php": "/about-us",
+  "/aboutus/founder-trustees/jaithirth-rao.php": "/about-us",
+  "/aboutus/founder-trustees/kamal-sharma.php": "/about-us",
+  "/aboutus/founder-trustees/t-l-palani-kumar.php": "/about-us",
+  "/committee-members.php": "/about-us",
+  "/advisory-board.php": "/about-us",
+  "/iqac.php": "/about-us",
+  "/fostiima-strength.php": "/fostiima-strength",
+
+  // Academics and programmes
+  "/academics.php": "/academics",
+  "/academics/mba-pgdm-courses.php": "/programs",
+  "/academics/mba-pgdm-courses/course-eligibility.php": "/programs/pgdm",
+  "/academics/mba-pgdm-courses/course-module.php": "/programs/pgdm",
+  "/pgdm-brochure.php": "/programs/pgdm",
+  "/academics/the-pinnacle-hybrid-executive-mba.php": "/programs",
+  "/academics/the-pinnacle-hybrid-executive-mba/the-pinnacle-mba.php":
+    "/programs",
+  "/academics/the-pinnacle-hybrid-executive-mba/the-pinnacle-mba/admission-process.php":
+    "/programs",
+  "/academics/the-pinnacle-hybrid-executive-mba/the-pinnacle-mba/course-module.php":
+    "/programs",
+  "/academics/the-pinnacle-hybrid-executive-mba/the-pinnacle-mba/the-pinnacle-faculty.php":
+    "/faculties",
+
+  // Faculty
+  "/academics/faculty.php": "/faculties",
+  "/academics/faculty/core-faculty.php": "/faculties",
+  "/academics/faculty/visiting-faculty.php": "/faculties",
+  "/academics/faculty/advisory-council.php": "/faculties",
+  "/faculty-innovations-in-teaching.php": "/faculties",
+
+  // Admissions
+  "/admissions.php": "/how-to-apply",
+  "/admissions/how-to-apply.php": "/how-to-apply",
+  "/admission-closed-2022-24.php": "/how-to-apply",
+  "/applicationexecmba.php": "/how-to-apply",
+  "/registration.php": "/how-to-apply",
+  "/pgdm-admission.php": "/pgdm-admission",
+  "/admissions/fee-structure.php": "/fee-structure",
+  "/admissions/student-testimonial.php": "/alumni",
+
+  // Placement
+  "/placement.php": "/placement",
+  "/placement/final-placements/:batch([^/]+)\\.php": "/placement/final-placements",
+  "/placement/summer-internship/:batch([^/]+)\\.php":
+    "/placement/summer-internship",
+
+  // Life at FOSTIIMA
+  "/life-at-fostiima-2.php": "/life-at-fostiima",
+
+  // Events, conclaves and Margdarshak
+  "/news-events.php": "/conclave-conference",
+  "/conferences.php": "/conclave-conference",
+  "/call-for-papers.php": "/conclave-conference",
+  "/ai-conclave-2026.php": "/conclave-conference",
+  "/about-margdarshak.php": "/margdarshak",
+  "/margdharshak-contact-details.php": "/margdarshak",
+  "/margdarshak-1.php": "/margdarshak",
+  "/margdarshak-2.php": "/margdarshak",
+  "/margdarshak-3.php": "/conclave-conference/margdarshak-3",
+  "/margdarshak-4-upcoming-event.php": "/conclave-conference/margdarshak-4",
+
+  // Accreditation and disclosures
+  "/award.php": "/awards-accreditation",
+  "/awards.php": "/awards-accreditation",
+  "/awards-accreditations.php": "/awards-accreditation",
+  "/aicte-approval-2020.php": "/awards-accreditation",
+  "/nirf.php": "/nirf",
+  "/balance-sheet.php": "/balance-sheet",
+  "/hr-policy-2024-25.php": "/hr-policy",
+
+  // Contact, careers and policies
+  "/contact-us.php": "/contact-us",
+  "/careers.php": "/careers",
+  "/grievance-helpline.php": "/grievance-helpline",
+  "/privacy-policy.php": "/privacy-policy",
+  "/terms-conditions.php": "/terms-and-conditions",
+  "/refund-policy-cancellation-policy.php": "/refund-policy",
+};
+
+for (const [source, destination] of Object.entries(LEGACY_PHP_PAGES)) {
+  LEGACY_REDIRECTS.push({ source, destination });
+}
 
 const nextConfig: NextConfig = {
   // Next's built-in "/:path+/" redirect cannot exclude individual paths, and it
