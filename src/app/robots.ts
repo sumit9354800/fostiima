@@ -4,7 +4,18 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
+      allow: [
+        "/",
+        // These old gallery URLs 301 to /life-at-fostiima (next.config.ts), so
+        // they stay crawlable for Google to see the redirect. The longer
+        // Allow rule wins over "Disallow: /*.php".
+        "/life-at-fostiima.php/nggallery/album/freshy-meet-2021-new/page/1/image/45",
+        "/life-at-fostiima.php/nggallery/album/freshy-meet-2021-new/page/1/image/22-1",
+        "/life-at-fostiima.php/nggallery/album/Workshop-on-Self-Awareness/image/self-awarness",
+        "/life-at-fostiima.php/nggallery/album/Workshop-on-Self-Awareness/image/self-awarness-1",
+        "/life-at-fostiima.php/nggallery/album/Workshop-on-Self-Awareness/image/self-awarness-3",
+        "/life-at-fostiima.php/nggallery/album/lohri-2024/page/2/image/img_8715",
+      ],
       disallow: [
         "/admin/",
         "/api/",

@@ -21,33 +21,40 @@ const DIRECT_RESPONSE_PATHS = [
   "blog/tag/best-pgdm-colleges-in-delhi-ncr/feed",
   "blog/tag/mba-institute-in-delhi-ncr/feed",
   "blog/tag/best-pgdm-college-in-delhi-ncr/feed",
+  // GSC sheet: "Keep 404" (also blocked in robots.ts).
+  "blog/the-ultimate-guide-to-success-when-seeking-an-mba-pgdm",
 ];
 
 // Legacy URLs that Google Search Console reports as "Alternate page with proper
 // canonical tag". Each is redirected in a single hop, with or without a
 // trailing slash, so these entries go before the trailing-slash rule.
 const LEGACY_REDIRECTS: { source: string; destination: string }[] = [
-  {
-    // Old NextGEN Gallery pages: every album, page and image under the PHP
-    // life-at-fostiima page, plus the page itself.
-    source: "/life-at-fostiima.php/:path*",
+  // Only these gallery URLs are redirected. Every other
+  // "/life-at-fostiima.php/nggallery/..." URL stays a 404 (GSC sheet: "Keep
+  // 404") and is blocked in robots.ts. Keep this list in sync with the
+  // matching Allow rules there.
+  ...[
+    "freshy-meet-2021-new/page/1/image/45",
+    "freshy-meet-2021-new/page/1/image/22-1",
+    "Workshop-on-Self-Awareness/image/self-awarness",
+    "Workshop-on-Self-Awareness/image/self-awarness-1",
+    "Workshop-on-Self-Awareness/image/self-awarness-3",
+    "lohri-2024/page/2/image/img_8715",
+  ].map((album) => ({
+    source: `/life-at-fostiima.php/nggallery/album/${album}`,
     destination: "/life-at-fostiima",
-  },
+  })),
   {
     // Destination as given in the October GSC sheet.
     source: "/blog/tag/top-mba-college-in-delhi/feed",
     destination: "/life-at-fostiima",
   },
   {
-    // The post's slug lost the hyphen in "mba-pgdm" when it was migrated.
-    source: "/blog/the-ultimate-guide-to-success-when-seeking-an-mba-pgdm",
-    destination: "/blog/the-ultimate-guide-to-success-when-seeking-an-mbapgdm",
+    // "Restore old post": the migrated post's slug ends in a stray hyphen.
+    source: "/blog/what-is-the-full-form-of-mba-and-benefits-of-mba",
+    destination: "/blog/what-is-the-full-form-of-mba-and-benefits-of-mba-",
   },
-  // Stray homepage URLs ("/&", "/$") Google picked up from malformed links.
-  { source: "/&", destination: "/" },
-  { source: "/\\$", destination: "/" },
 ];
-
 // Pages from the old PHP site that Google still crawls (GSC "Look out for
 // previous internal links and remove them", October 2026). Nothing on the site
 // links to them any more, so each is sent to its closest current page.
@@ -62,7 +69,6 @@ const LEGACY_PHP_PAGES: Record<string, string> = {
   "/aboutus/message-from-chairman.php": "/about-us",
   "/aboutus/message-from-director.php": "/about-us",
   "/aboutus/our-vision.php": "/about-us",
-  "/our-vision.php": "/about-us",
   "/aboutus/our-objectives.php": "/about-us",
   "/aboutus/founder-trustees.php": "/about-us",
   "/aboutus/founder-trustees/anil-somani.php": "/faculties/mr-anil-somani",
@@ -116,6 +122,7 @@ const LEGACY_PHP_PAGES: Record<string, string> = {
     "/placement/summer-internship",
 
   // Life at FOSTIIMA
+  "/life-at-fostiima.php": "/life-at-fostiima",
   "/life-at-fostiima-2.php": "/life-at-fostiima",
 
   // Events, conclaves and Margdarshak
@@ -132,7 +139,6 @@ const LEGACY_PHP_PAGES: Record<string, string> = {
 
   // Accreditation and disclosures
   "/award.php": "/awards-accreditation",
-  "/awards.php": "/awards-accreditation",
   "/awards-accreditations.php": "/awards-accreditation",
   "/aicte-approval-2020.php": "/awards-accreditation",
   "/nirf.php": "/nirf",
