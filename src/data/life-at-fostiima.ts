@@ -556,7 +556,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
-        href: "/life-at-fostiima/cultural-events/swadeshi-mela/",
+        href: "/life-at-fostiima/cultural-events/swadeshi-mela",
         slug: "swadeshi-mela",
       },
 
