@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import { ArrowLeft, CalendarDays } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCanonicalUrl } from "@/lib/seo";
@@ -79,18 +80,21 @@ export default async function ProgramDetailPage({
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section
-        className="relative overflow-hidden bg-[#061a3a]"
-        style={
-          heroImage
-            ? {
-                backgroundImage: `url("${heroImage}")`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }
-            : undefined
-        }
-      >
+      <section className="relative overflow-hidden bg-[#061a3a]">
+        {/* The hero image is the page's LCP element. It was a CSS background
+            (cover, centred); as an <img> with the same cover/centre crop it is
+            found in the HTML, preloaded and served at the viewport's size. */}
+        {heroImage && (
+          <Image
+            src={heroImage}
+            alt=""
+            fill
+            sizes="100vw"
+            preload
+            className="pointer-events-none object-cover object-center"
+          />
+        )}
+
         {heroImage && (
           <div className="pointer-events-none absolute inset-0 bg-[#061a3a]/70" />
         )}

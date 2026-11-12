@@ -33,6 +33,29 @@ function getStatIcon(icon: string) {
   return iconMap[icon as keyof typeof iconMap] ?? TrendingUp;
 }
 
+// Same section, grid and cell sizes as StatsBar, without content. Shown while
+// the stats stream in, so the bar keeps its size when they arrive.
+// `count` should match the number of active stats (5 at the time of writing).
+// The cell heights above sm are the rendered heights of the current stats
+// (measured: 101 px per row at sm/md, 126 px at lg, 102 px from xl), where
+// the labels wrap to more than the min-height of the real cells.
+export function StatsBarPlaceholder({ count = 5 }: { count?: number }) {
+  return (
+    <section aria-hidden="true" className="bg-[#0d2d59] text-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 divide-x divide-white/10 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x">
+          {Array.from({ length: count }, (_, index) => (
+            <div
+              key={index}
+              className="flex min-h-[58px] items-center gap-1.5 px-2 py-1.5 sm:min-h-[101px] sm:gap-3 sm:px-5 sm:py-5 lg:min-h-[126px] lg:px-6 xl:min-h-[102px]"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 type StatsBarProps = {
   stats: HomeStat[];
 };

@@ -214,7 +214,7 @@ export default function StudentAchievementsSection({
                 fill
                 sizes="(max-width: 1024px) 85vw, 1200px"
                 className="object-contain"
-                priority
+                preload
               />
             </div>
 

@@ -157,7 +157,9 @@ export default function Navbar() {
             width={170}
             height={50}
             className="h-auto w-full object-contain"
-            priority
+            // Visible at the top but never the LCP element: load right away,
+            // without a <head> preload competing with the page's LCP resource.
+            loading="eager"
           />
         </Link>
 

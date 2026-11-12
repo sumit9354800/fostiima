@@ -56,7 +56,10 @@ export default function PGDMAdmissionPage() {
             <img
               src="/logo.jpeg"
               alt="FOSTIIMA Business School"
-              className="h-10 w-auto object-contain sm:h-12"
+              // Below 360 px the full-size logo plus the mobile "Apply Now"
+              // and menu buttons were 27 px wider than the screen (sideways
+              // scroll). The logo is slightly smaller there only.
+              className="h-8 w-auto object-contain min-[360px]:h-10 sm:h-12"
             />
           </button>
 

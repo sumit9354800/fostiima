@@ -2,7 +2,8 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   ArrowRight,
@@ -12,6 +13,15 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { INDIAN_STATES } from "@/data/indian-states";
+import { normalizeIndianMobile, toIndianE164 } from "@/lib/phone";
+import TurnstileWidget, {
+  TURNSTILE_SITE_KEY,
+  type TurnstileHandle,
+} from "@/components/forms/TurnstileWidget";
+import {
+  captureAttribution,
+  type LeadAttribution,
+} from "@/lib/lead-attribution";
 
 const API_BASE = "https://countriesnow.space/api/v0.1";
 
@@ -27,6 +37,28 @@ function generateCaptcha(length = 5) {
     () => characters[Math.floor(Math.random() * characters.length)],
   ).join("");
 }
+
+// normalizeIndianMobile now lives in src/lib/phone.ts (shared with the API).
+
+/*
+// SHA-256 hash in lowercase hex for Google Enhanced Conversions.
+// Temporarily on hold pending client/legal privacy policy approval.
+async function sha256Hex(value: string): Promise<string> {
+  const normalized = value.trim().toLowerCase();
+  if (!normalized) return "";
+  try {
+    if (typeof window !== "undefined" && window.crypto?.subtle) {
+      const msgBuffer = new TextEncoder().encode(normalized);
+      const hashBuffer = await window.crypto.subtle.digest("SHA-256", msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+    }
+  } catch {
+    // Fallback if subtle crypto is unavailable
+  }
+  return "";
+}
+*/
 
 const inputClass =
   "w-full rounded-lg border border-slate-200 bg-white px-3.5 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-[#123B79] focus:ring-2 focus:ring-[#123B79]/10 disabled:cursor-not-allowed disabled:bg-slate-100";
@@ -75,6 +107,16 @@ export default function AdmissionEnquiryForm() {
   const [success, setSuccess] = useState(false);
  const [captchaCode, setCaptchaCode] = useState(() => generateCaptcha());
   const [captchaInput, setCaptchaInput] = useState("");
+  // Synchronous in-flight guard: `loading` state only blocks a second submit
+  // after a re-render, so two fast clicks could both get through.
+  const submittingRef = useRef(false);
+  const attributionRef = useRef<LeadAttribution | null>(null);
+  const turnstileRef = useRef<TurnstileHandle>(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  useEffect(() => {
+    attributionRef.current = captureAttribution();
+  }, []);
 
   // States are local, so they are available immediately.
   const states: readonly string[] = INDIAN_STATES;
@@ -178,12 +220,13 @@ export default function AdmissionEnquiryForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submittingRef.current) return;
     setMessage("");
     setSuccess(false);
 
-    const cleanedMobile = values.mobile.replace(/\D/g, "");
+    const cleanedMobile = normalizeIndianMobile(values.mobile);
 
-    if (cleanedMobile.length !== 10) {
+    if (!cleanedMobile) {
       setMessage("Please enter a valid 10-digit mobile number.");
       return;
     }
@@ -210,6 +253,13 @@ export default function AdmissionEnquiryForm() {
       return;
     }
 
+    if (TURNSTILE_SITE_KEY && !turnstileToken) {
+      setMessage("Please complete the verification check.");
+      return;
+    }
+
+    submittingRef.current = true;
+    let submitted = false;
     setLoading(true);
 
     try {
@@ -222,6 +272,10 @@ export default function AdmissionEnquiryForm() {
           ...values,
           mobile: cleanedMobile,
           source: "FOSTIIMA Website",
+          ...(attributionRef.current
+            ? { attribution: attributionRef.current }
+            : {}),
+          ...(TURNSTILE_SITE_KEY ? { turnstileToken } : {}),
         }),
       });
 
@@ -233,12 +287,36 @@ export default function AdmissionEnquiryForm() {
         );
       }
 
+      // Stay locked after success: the form is navigating to /thank-you.
+      submitted = true;
+      // Captured before the form reset below. Memory only: never stored,
+      // logged or put in a URL.
+      const leadEmail = values.email.trim().toLowerCase();
+      const leadPhone = toIndianE164(cleanedMobile);
+      const leadCreated = result?.success === true;
       setValues(initialValues);
       setCities([]);
       setLocationError("");
       setCaptchaInput("");
       setCaptchaCode(generateCaptcha());
 
+      // Push lead event to GTM dataLayer, once, only after the API confirmed
+      // the lead was created. Raw email/phone approved by the client
+      // (12 Nov 2026) for the GTM Thank You integration only.
+      try {
+        window.dataLayer = window.dataLayer || [];
+        if (leadCreated) {
+          window.dataLayer.push({
+            event: "generate_lead",
+            user_data: {
+              email: leadEmail,
+              ...(leadPhone ? { phone_number: leadPhone } : {}),
+            },
+          });
+        }
+      } catch {
+        // Ensure dataLayer errors do not block navigation
+      }
 
       if (typeof (
         window as Window & {
@@ -273,6 +351,11 @@ export default function AdmissionEnquiryForm() {
       );
     } finally {
       setLoading(false);
+      if (!submitted) {
+        submittingRef.current = false;
+        // A Turnstile token is single-use: get a fresh one for the retry.
+        turnstileRef.current?.reset();
+      }
     }
   }
 
@@ -337,13 +420,18 @@ export default function AdmissionEnquiryForm() {
                 className="min-w-0 w-full bg-white px-3 py-3 text-sm text-slate-800 outline-none placeholder:text-slate-400"
                 placeholder="10-digit mobile"
                 value={values.mobile}
-                onChange={(event) =>
-                  updateField(
-                    "mobile",
-                    event.target.value.replace(/\D/g, "").slice(0, 10),
-                  )
-                }
-                maxLength={10}
+                onChange={(event) => {
+                  const raw = event.target.value;
+                  const digits = raw.replace(/\D/g, "");
+                  // If user pasted 12 digits starting with 91, extract the 10-digit subscriber number
+                  if (digits.length === 12 && digits.startsWith("91")) {
+                    updateField("mobile", digits.slice(2));
+                    return;
+                  }
+                  // Otherwise retain entered digits up to 15 (preventing silent truncation of invalid lengths)
+                  updateField("mobile", digits.slice(0, 15));
+                }}
+                maxLength={20}
                 required
                 disabled={loading}
               />
@@ -584,6 +672,12 @@ export default function AdmissionEnquiryForm() {
           </p>
         </div>
 
+        <TurnstileWidget
+          ref={turnstileRef}
+          action="admission_enquiry"
+          onToken={setTurnstileToken}
+        />
+
         <label className="flex cursor-pointer items-start gap-2.5 pt-1">
           <input
             type="checkbox"
@@ -641,7 +735,15 @@ export default function AdmissionEnquiryForm() {
         </button>
 
         <p className="text-center text-[11px] leading-5 text-slate-400">
-          Your details will only be used to respond to your admission enquiry.
+          Your details will only be used to respond to your admission enquiry.{" "}
+          <Link
+            href="/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-slate-600"
+          >
+            Privacy Policy
+          </Link>
         </p>
       </form>
     </div>

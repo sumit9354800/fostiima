@@ -109,6 +109,10 @@ export default function Footer() {
               <img
                 src="/logo.jpeg"
                 alt="FOSTIIMA Business School"
+                width={418}
+                height={92}
+                loading="lazy"
+                decoding="async"
                 className="h-auto w-[190px]"
               />
             </div>

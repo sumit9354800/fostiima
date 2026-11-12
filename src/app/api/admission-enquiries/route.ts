@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
+import { isValidIndianMobile } from "@/lib/phone";
+import { resolveLeadSource } from "@/lib/lead-attribution";
+import { isTurnstileEnforced, verifyTurnstile } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
 
@@ -15,6 +18,8 @@ type AdmissionEnquiryBody = {
   remarks?: unknown;
   consent?: unknown;
   source?: unknown;
+  attribution?: unknown;
+  turnstileToken?: unknown;
 };
 
 const ALLOWED_GRADUATION_STATUSES = [
@@ -118,7 +123,9 @@ export async function POST(request: Request) {
     const course = cleanText(body.course, 100) || "PGDM";
     const graduationStatus = cleanText(body.graduationStatus, 100);
     const remarks = cleanText(body.remarks, 5000);
-    const source = cleanText(body.source, 150) || "FOSTIIMA Website";
+    // Allowlisted server-side (lead-attribution.ts). body.source is ignored:
+    // the only legitimate client value was the default label.
+    const source = resolveLeadSource(body);
 
     if (!fullName || !mobile || !email || !state || !city || !graduationStatus) {
       return NextResponse.json(
@@ -144,7 +151,7 @@ export async function POST(request: Request) {
       );
     }
 
-    if (mobile.length !== 10) {
+    if (mobile.length !== 10 || !isValidIndianMobile(mobile)) {
       return NextResponse.json(
         {
           success: false,
@@ -169,6 +176,21 @@ export async function POST(request: Request) {
         },
         { status: 400 },
       );
+    }
+
+    // Bot check before anything is stored or emailed (see lib/turnstile.ts).
+    if (isTurnstileEnforced()) {
+      const remoteIp =
+        request.headers.get("cf-connecting-ip") ||
+        request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+        null;
+      const verification = await verifyTurnstile(body.turnstileToken, remoteIp);
+      if (!verification.ok) {
+        return NextResponse.json(
+          { success: false, error: verification.error },
+          { status: verification.status },
+        );
+      }
     }
 
     // Save first so email issues never cause the enquiry to be lost.

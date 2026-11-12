@@ -18,7 +18,6 @@ const ROUTES = [
   "/blog/best-mba-colleges-accepting-cmat-score-in-delhi",
   "/blog/best-mba-colleges-in-delhi-ncr-comparing-roi-placement-packages-and-fees",
   "/blog/best-pgdm-colleges-in-delhi-ncr",
-  "/blog/best-pgdm-colleges-in-delhi-ncr-2",
   "/blog/cat-score-and-cat-percentile",
   "/blog/collaborative-mastery-interpersonal-skills-team-performance",
   "/blog/difference-between-ugc-and-aicte",

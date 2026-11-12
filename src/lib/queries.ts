@@ -17,12 +17,28 @@ const blogInclude = {
   },
 };
 
+// Listing (/blog): only the fields a blog card shows. Article blocks and
+// keywords aren't loaded here, so `content` and `seo.keywords` are empty on
+// these objects; the article page loads the full post with getBlogBySlug().
 export async function getPublishedBlogs(): Promise<BlogPost[]> {
   const posts = await prisma.blogPost.findMany({
     where: {
       status: "published",
     },
-    include: blogInclude,
+    select: {
+      id: true,
+      slug: true,
+      title: true,
+      excerpt: true,
+      category: true,
+      coverImage: true,
+      coverImageAlt: true,
+      author: true,
+      publishedAt: true,
+      status: true,
+      metaTitle: true,
+      metaDescription: true,
+    },
     orderBy: [
       {
         publishedAt: "desc",
@@ -33,7 +49,9 @@ export async function getPublishedBlogs(): Promise<BlogPost[]> {
     ],
   });
 
-  return posts.map(mapDbBlogPost);
+  return posts.map((post) =>
+    mapDbBlogPost({ ...post, blocks: [], blogKeywords: [] }),
+  );
 }
 
 // cache() lasts for one server request, so generateMetadata() and the page share

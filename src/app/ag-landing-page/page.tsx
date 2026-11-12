@@ -52,7 +52,9 @@ export default function AGLandingPage() {
               width={170}
               height={50}
               className="h-auto w-full object-contain"
-              priority
+              // Header logo, not the LCP element (the hero text is): load
+              // right away without a high-priority <head> preload.
+              loading="eager"
             />
           </Link>
 

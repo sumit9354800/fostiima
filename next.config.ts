@@ -64,6 +64,39 @@ const LEGACY_REDIRECTS: { source: string; destination: string }[] = [
   },
 ];
 
+// Folders in /public that hold images or video, and the media extensions that
+// get the cache policy below (see headers()).
+const PUBLIC_MEDIA_FOLDERS = [
+  "about",
+  "alumni",
+  "awards-accreditation",
+  "badge",
+  "banner",
+  "conclave",
+  "events",
+  "final-placement",
+  "home",
+  "life-at-fostiima",
+  "placement",
+  "student-achievements",
+  "uploads",
+];
+const PUBLIC_MEDIA_EXTENSIONS = [
+  "webp",
+  "png",
+  "jpg",
+  "jpeg",
+  "gif",
+  "avif",
+  "svg",
+  "mp4",
+  "webm",
+  "mov",
+  "MOV",
+];
+const PUBLIC_MEDIA_CACHE_CONTROL =
+  "public, max-age=86400, stale-while-revalidate=604800";
+
 const nextConfig: NextConfig = {
   // Next's built-in "/:path+/" redirect cannot exclude individual paths, and it
   // runs before Proxy. It is re-declared as the first entry in redirects() below.
@@ -114,6 +147,34 @@ const nextConfig: NextConfig = {
         source: "/blog/list-of-mba-specializations-in-india",
         destination: "/blog/mba-specializations-in-india",
         statusCode: PERMANENT_REDIRECT,
+      },
+      {
+        // Duplicate of the complete post (exact match only).
+        source: "/blog/best-pgdm-colleges-in-delhi-ncr-2",
+        destination: "/blog/best-pgdm-colleges-in-delhi-ncr",
+        statusCode: PERMANENT_REDIRECT,
+      },
+    ];
+  },
+  async headers() {
+    // Browser caching for image and video files in /public. Their names are
+    // not content-hashed and a file can be replaced under the same name, so
+    // they are NOT cached as immutable: fresh for 1 day, then served stale for
+    // up to 7 more days while the browser revalidates in the background.
+    // HTML, API routes, PDFs (/documents), sitemaps and root files keep the
+    // default headers; /_next/static and /_next/image are not affected.
+    // Several of these folder names are also page routes (/alumni,
+    // /events/..., /placement/..., /life-at-fostiima, /awards-accreditation),
+    // so the rule only matches paths that end in a media file extension.
+    return [
+      {
+        source: `/:folder(${PUBLIC_MEDIA_FOLDERS.join("|")})/:file(.+\\.(?:${PUBLIC_MEDIA_EXTENSIONS.join("|")}))`,
+        headers: [
+          {
+            key: "Cache-Control",
+            value: PUBLIC_MEDIA_CACHE_CONTROL,
+          },
+        ],
       },
     ];
   },

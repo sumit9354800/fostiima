@@ -1,12 +1,39 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import type { BlogPost } from "@/types/blog";
 
+// Hosts listed in images.remotePatterns (next.config.ts). Covers from any
+// other host are rendered with a plain <img>, exactly as before.
+const OPTIMIZED_COVER_HOSTS = new Set([
+  "bdaddtyz0jzeqxij.public.blob.vercel-storage.com",
+]);
+
+function isOptimizableCover(src: string) {
+  try {
+    const url = new URL(src);
+    return (
+      url.protocol === "https:" &&
+      OPTIMIZED_COVER_HOSTS.has(url.hostname)
+    );
+  } catch {
+    return false;
+  }
+}
+
+// Card width: full width below md, half the grid from md, a third (at most
+// ~384 px inside max-w-7xl) from xl.
+const COVER_SIZES =
+  "(min-width: 1280px) 384px, (min-width: 768px) 50vw, 100vw";
+
 type BlogCardProps = {
   blog: BlogPost;
+  // Cards in the first visible row load their cover immediately; the rest
+  // are lazy-loaded as the reader scrolls towards them.
+  eagerImage?: boolean;
 };
 
-export default function BlogCard({ blog }: BlogCardProps) {
+export default function BlogCard({ blog, eagerImage = false }: BlogCardProps) {
   return (
     <article className="group flex h-full flex-col border border-[#dbe3ee] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[#c31e3b]/30 hover:shadow-[0_18px_45px_rgba(6,26,58,0.10)]">
       {/* Image / Cover */}
@@ -14,10 +41,26 @@ export default function BlogCard({ blog }: BlogCardProps) {
         href={`/blog/${blog.slug}`}
         className="relative block aspect-[16/9] overflow-hidden bg-[#061a3a]"
       >
-        {blog.coverImage ? (
+        {blog.coverImage && isOptimizableCover(blog.coverImage) ? (
+          // Resized, responsive copy of the upload (the originals are up to
+          // 2,048 px wide and ~2 MB); same box, crop and hover zoom.
+          <Image
+            src={blog.coverImage}
+            alt={blog.coverImageAlt}
+            fill
+            sizes={COVER_SIZES}
+            loading={eagerImage ? "eager" : "lazy"}
+            decoding="async"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : blog.coverImage ? (
+          // Hosts not configured for next/image (for example Cloudinary)
+          // keep the original image unchanged.
           <img
             src={blog.coverImage}
             alt={blog.coverImageAlt}
+            loading={eagerImage ? "eager" : "lazy"}
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (

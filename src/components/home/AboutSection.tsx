@@ -7,7 +7,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import { prisma } from "@/lib/prisma";
+import { getHomeAbout } from "@/lib/admin/home";
 
 const ICONS = {
   Award,
@@ -37,26 +37,9 @@ const ICON_COLORS = [
 ] as const;
 
 export default async function AboutSection() {
-  const about = await prisma.homeAbout.findFirst({
-    where: {
-      isActive: true,
-    },
-    include: {
-      highlights: {
-        where: {
-          isActive: true,
-        },
-        orderBy: [
-          {
-            sortOrder: "asc",
-          },
-          {
-            createdAt: "asc",
-          },
-        ],
-      },
-    },
-  });
+  // Shared per-request query; the homepage starts it in parallel with the
+  // stats and placement-video queries.
+  const about = await getHomeAbout();
 
   if (!about) {
     return null;
