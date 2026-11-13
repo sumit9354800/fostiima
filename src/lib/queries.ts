@@ -22,12 +22,9 @@ const blogInclude = {
   },
 };
 
-<<<<<<< HEAD
 // Listing (/blog): only the fields a blog card shows. Article blocks and
 // keywords aren't loaded here, so `content` and `seo.keywords` are empty on
 // these objects; the article page loads the full post with getBlogBySlug().
-export async function getPublishedBlogs(): Promise<BlogPost[]> {
-=======
 // Public blog reads are cached (see src/lib/content-cache.ts); the mapped
 // BlogPost values are plain JSON, so they survive the cache unchanged.
 export const getPublishedBlogs = unstable_cache(
@@ -37,7 +34,6 @@ export const getPublishedBlogs = unstable_cache(
 );
 
 async function loadPublishedBlogs(): Promise<BlogPost[]> {
->>>>>>> 73cbf6437875a2e19de711c90d19704e57d64b4a
   const posts = await prisma.blogPost.findMany({
     where: {
       status: "published",

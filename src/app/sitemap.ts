@@ -1,10 +1,7 @@
 import type { MetadataRoute } from "next";
 
-import { SITE_ROUTES } from "@/config/site-routes";
-
 const BASE_URL = "https://www.fostiima.org";
 
-<<<<<<< HEAD
 // Synced with the supplied FOSTIIMA sitemap (last modified: 2026-10-21).
 // Keep this list updated when pages are added, removed, or renamed.
 const ROUTES = [
@@ -45,9 +42,9 @@ const ROUTES = [
   "/conclave-conference/exit-poll",
   "/conclave-conference/fostiima-convocation-2026",
   "/conclave-conference/hr-round-table-2024",
-  "/conclave-conference/margdarshak-3",
+  "/conclave-conference/margdarshak-2-award-ceremony",
   "/conclave-conference/margdarshak-4",
-  "/conclave-conference/margdarshak-awards-Ceremony",
+  "/conclave-conference/margdarshak-3-award-ceremony",
   "/conclave-conference/mission-ai-sashakt-bharat",
   "/conclave-conference/olympians-manu-bhaker",
   "/conclave-conference/responsible-ai-summit-2026",
@@ -129,11 +126,9 @@ const ROUTES = [
   "/programs/pgdm-human-resource-management",
   "/programs/pgdm-marketing",
   "/refund-policy",
+  "/sitemap",
   "/terms-and-conditions",
 ] as const;
-=======
-const ROUTES = SITE_ROUTES;
->>>>>>> 73cbf6437875a2e19de711c90d19704e57d64b4a
 
 function getPriority(path: string): number {
   if (path === "/") return 1;
