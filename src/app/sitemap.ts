@@ -95,6 +95,7 @@ const ROUTES = [
   "/hr-policy",
   "/life-at-fostiima",
   "/life-at-fostiima/academic-excellence",
+  "/life-at-fostiima/beyond-the-classroom",
   "/life-at-fostiima/brain-storming",
   "/life-at-fostiima/business-exposure-tips",
   "/life-at-fostiima/corporate-talk",

@@ -154,6 +154,16 @@ const nextConfig: NextConfig = {
         destination: "/blog/best-pgdm-colleges-in-delhi-ncr",
         statusCode: PERMANENT_REDIRECT,
       },
+      {
+        source: "/life-at-fostiima/cultural-events/stockify",
+        destination: "/events/stockify",
+        statusCode: PERMANENT_REDIRECT,
+      },
+      {
+        source: "/life-at-fostiima/cultural-events/finquest",
+        destination: "/events/finquest",
+        statusCode: PERMANENT_REDIRECT,
+      },
     ];
   },
   async headers() {
