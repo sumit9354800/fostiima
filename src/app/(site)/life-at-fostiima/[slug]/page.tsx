@@ -14,9 +14,11 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return lifeAtFostiimaSections.map((section) => ({
-    slug: section.slug,
-  }));
+  return lifeAtFostiimaSections
+    .filter((section) => section.slug !== "beyond-the-classroom")
+    .map((section) => ({
+      slug: section.slug,
+    }));
 }
 
 export async function generateMetadata({

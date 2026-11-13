@@ -18,8 +18,9 @@ export default function BlogGrid({ blogs }: BlogGridProps) {
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {blogs.map((blog) => (
-        <BlogCard key={blog.id} blog={blog} />
+      {blogs.map((blog, index) => (
+        // The first row (up to 3 columns on wide screens) loads eagerly.
+        <BlogCard key={blog.id} blog={blog} eagerImage={index < 3} />
       ))}
     </div>
   );

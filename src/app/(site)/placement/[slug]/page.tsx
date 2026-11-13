@@ -107,7 +107,7 @@ export default async function PlacementDetailPage({
                 alt={`${page.title} - ${index + 1}`}
                 width={1920}
                 height={1080}
-                priority={index === 0}
+                preload={index === 0}
                 sizes="100vw"
                 className="block h-auto w-full"
               />

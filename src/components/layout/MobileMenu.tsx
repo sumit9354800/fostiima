@@ -161,7 +161,9 @@ export default function MobileMenu() {
             width={150}
             height={50}
             className="h-auto w-full object-contain"
-            priority
+            // Visible at the top but never the LCP element: load right away,
+            // without a <head> preload competing with the page's LCP resource.
+            loading="eager"
           />
         </Link>
 
@@ -265,7 +267,9 @@ export default function MobileMenu() {
                 width={150}
                 height={50}
                 className="h-auto w-full object-contain"
-                priority
+                // Same file as the header logo above (already loaded); eager
+                // so it is ready the moment the drawer opens.
+                loading="eager"
               />
             </Link>
           </div>

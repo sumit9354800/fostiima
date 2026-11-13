@@ -200,6 +200,40 @@ export default function FloatingActions() {
           max-height: 430px !important;
           overflow: hidden !important;
         }
+
+        /* While a form is still loading its container is empty. Reserve the
+           height the loaded form takes (measured per form and width), so the
+           centred popup doesn't grow and move when the form appears. Once
+           the widget adds the form, :empty no longer matches and the real
+           height applies. */
+        #ee-form-2:empty {
+          min-height: 430px !important;
+        }
+        #ee-form-5:empty {
+          min-height: 331px !important;
+        }
+        #ee-form-6:empty {
+          min-height: 409px !important;
+        }
+        @media (max-width: 359px) {
+          #ee-form-5:empty {
+            min-height: 347px !important;
+          }
+          #ee-form-6:empty {
+            min-height: 425px !important;
+          }
+        }
+        @media (min-width: 640px) {
+          #ee-form-2:empty {
+            min-height: 374px !important;
+          }
+          #ee-form-5:empty {
+            min-height: 307px !important;
+          }
+          #ee-form-6:empty {
+            min-height: 348px !important;
+          }
+        }
       `,
         }}
       />
