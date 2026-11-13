@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import FinalPlacementContent from "@/components/placement/final-placements/FinalPlacementContent";
 import FinalPlacementsHero from "@/components/placement/final-placements/FinalPlacementsHero";
 import { finalPlacementBatches } from "@/data/placement/final-placements";
-import { getCanonicalUrl } from "@/lib/seo";
-export const metadata: Metadata = {
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+const pageMetadata: Metadata = {
   title: "Final Placements | FOSTIIMA Business School",
   description:
     "Explore final placement highlights, placement insights and student outcomes across FOSTIIMA batches.",
@@ -30,3 +30,5 @@ export default function FinalPlacementsPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/placement/final-placements", pageMetadata);

@@ -2,9 +2,9 @@
 import type { Metadata } from "next";
 import CareersHero from "@/components/careers/CareersHero";
 import CareersContent from "@/components/careers/CareersContent";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const pageMetadata: Metadata = {
   title: "Careers | FOSTIIMA Business School",
   description:
     "Explore career opportunities and current openings at FOSTIIMA Business School.",
@@ -31,3 +31,5 @@ export default function CareersPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/careers", pageMetadata);

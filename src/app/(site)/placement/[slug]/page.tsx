@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -25,7 +25,7 @@ export async function generateMetadata({
   const page = placementPages[slug as PlacementSlug];
   const canonicalUrl = getCanonicalUrl(`/placement/${slug}`);
 
-  return {
+  return withPageSeo(`/placement/${slug}`, {
     title: `${page.title} | FOSTIIMA Business School`,
     description: page.description,
 
@@ -40,7 +40,7 @@ export async function generateMetadata({
       description: page.description,
       siteName: "FOSTIIMA Business School",
     },
-  };
+  });
 }
 
 type PlacementSlug = keyof typeof placementPages;

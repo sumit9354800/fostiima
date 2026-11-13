@@ -54,7 +54,7 @@ export default function PGDMAdmissionPage() {
             className="flex shrink-0 items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c31e3b]"
           >
             <img
-              src="/logo.jpeg"
+              src="/logo.webp"
               alt="FOSTIIMA Business School"
               // Below 360 px the full-size logo plus the mobile "Apply Now"
               // and menu buttons were 27 px wider than the screen (sideways

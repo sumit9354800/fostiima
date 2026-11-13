@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 import AccreditationGrid from "@/components/awards-accreditation/AccreditationGrid";
 import AwardsAccreditationHero from "@/components/awards-accreditation/AwardsAccreditationHero";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, withPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = buildPageMetadata({
+const pageMetadata: Metadata = buildPageMetadata({
   title: "Awards & Accreditation",
   description:
     "Explore FOSTIIMA Business School's awards, accreditations and recognitions highlighting its commitment to management education.",
@@ -19,3 +19,5 @@ export default function AwardsAccreditationPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/awards-accreditation", pageMetadata);

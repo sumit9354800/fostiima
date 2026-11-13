@@ -7,9 +7,9 @@ import StrengthFaculty from "@/components/strength/StrengthFaculty";
 import StrengthCurriculum from "@/components/strength/StrengthCurriculum";
 import StrengthCorporateLinkages from "@/components/strength/StrengthCorporateLinkages";
 import StrengthKeyPoints from "@/components/strength/StrengthKeyPoints";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const pageMetadata: Metadata = {
   title: "FOSTIIMA Strength | The FOSTIIMA Difference",
   description:
     "Discover the strengths of FOSTIIMA Business School including IIM graduate faculty, contemporary curriculum, experiential learning and corporate linkages.",
@@ -40,3 +40,5 @@ export default function FostiimaStrengthPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/fostiima-strength", pageMetadata);

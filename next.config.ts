@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+import { GSC_NOV_2026_REDIRECTS } from "./src/config/gsc-redirects-nov-2026";
+
 // Every redirect on the site is a 301. Next's `permanent: true` would send 308.
 const PERMANENT_REDIRECT = 301 as const;
 
@@ -170,6 +172,47 @@ for (const [source, destination] of Object.entries(LEGACY_PHP_PAGES)) {
   LEGACY_REDIRECTS.push({ source, destination });
 }
 
+// Old URLs listed in "GSC issues nov 2026" (src/config/gsc-redirects-nov-2026.ts).
+// One rule per destination holds an exact list of paths as alternatives, so
+// the 374 paths add about 30 rules instead of 748 (Vercel allows at most 1,024
+// redirects). Each path is matched exactly, with or without a trailing slash,
+// and redirected in one hop. Lists are split into chunks to keep every
+// pattern short.
+const GSC_NOV_2026_CHUNK_SIZE = 40;
+
+// Path (with leading "/") to a path-to-regexp pattern. Regex characters are
+// escaped. A space may arrive encoded or not, and "//" is collapsed to "/" by
+// Next.js before redirects run, so both forms are accepted.
+function toExactPathPattern(path: string): string {
+  return path
+    .slice(1)
+    .replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+    .replace(/ /g, "(?: |%20)")
+    .replace(/\/\//g, "/+");
+}
+
+const GSC_NOV_2026_RULES = Object.entries(GSC_NOV_2026_REDIRECTS).flatMap(
+  ([destination, sources]) => {
+    const rules: { source: string; destination: string }[] = [];
+
+    for (let i = 0; i < sources.length; i += GSC_NOV_2026_CHUNK_SIZE) {
+      const pattern = sources
+        .slice(i, i + GSC_NOV_2026_CHUNK_SIZE)
+        .map(toExactPathPattern)
+        .join("|");
+
+      // The named parameter is not used in the destination, so the matched
+      // path is not added to it.
+      rules.push(
+        { source: `/:gscPath(${pattern})`, destination },
+        { source: `/:gscPath(${pattern})/`, destination },
+      );
+    }
+
+    return rules;
+  },
+);
+
 // Folders in /public that hold images or video, and the media extensions that
 // get the cache policy below (see headers()).
 const PUBLIC_MEDIA_FOLDERS = [
@@ -228,6 +271,13 @@ const nextConfig: NextConfig = {
           statusCode: PERMANENT_REDIRECT,
         })),
       ),
+      // Also ahead of the trailing-slash rule, so slashed URLs redirect in
+      // one hop instead of first losing their slash.
+      ...GSC_NOV_2026_RULES.map(({ source, destination }) => ({
+        source,
+        destination,
+        statusCode: PERMANENT_REDIRECT,
+      })),
       {
         // Same segments as the built-in rule, minus the paths above, but 301
         // instead of the built-in 308.

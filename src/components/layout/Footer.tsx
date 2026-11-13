@@ -108,7 +108,7 @@ export default function Footer() {
             {/* Logo */}
             <div className="inline-flex rounded-lg bg-white px-1 py-1">
               <img
-                src="/logo.jpeg"
+                src="/logo.webp"
                 alt="FOSTIIMA Business School"
                 width={418}
                 height={92}

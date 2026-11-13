@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import AlumniSections from "@/components/alumni/AlumniSections";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, withPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = buildPageMetadata({
+const pageMetadata: Metadata = buildPageMetadata({
   title: "Alumni",
   description:
     "Discover the FOSTIIMA Business School alumni community, its professional achievements, career journeys and lasting connections.",
@@ -12,3 +12,5 @@ export const metadata: Metadata = buildPageMetadata({
 export default function AlumniPage() {
   return <AlumniSections />;
 }
+
+export const metadata: Metadata = withPageSeo("/alumni", pageMetadata);

@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import AboutMargdarshak from "@/components/margdarshak/AboutMargdarshak";
 import MargdarshakHero from "@/components/margdarshak/MargdarshakHero";
 import MargdarshakTabs from "@/components/margdarshak/MargdarshakTabs";
-import { getCanonicalUrl } from "@/lib/seo";
-export const metadata: Metadata = {
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+const pageMetadata: Metadata = {
   title: "Margdarshak | FOSTIIMA Business School",
   description:
     "Explore the Margdarshak Awards, their editions, award process, jury panels, advisory councils and winners at FOSTIIMA Business School.",
@@ -34,3 +34,5 @@ export default function MargdarshakPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/margdarshak", pageMetadata);

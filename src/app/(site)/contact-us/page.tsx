@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactInfo from "@/components/contact/ContactInfo";
 import ContactForm from "@/components/forms/ContactForm";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, withPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = buildPageMetadata({
+const pageMetadata: Metadata = buildPageMetadata({
   title: "Contact Us",
   description:
     "Contact FOSTIIMA Business School in Delhi for PGDM admissions, programme details and campus visits. Find our phone, email and address.",
@@ -60,3 +60,5 @@ export default function ContactUsPage() {
     </>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/contact-us", pageMetadata);

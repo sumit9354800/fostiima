@@ -42,3 +42,7 @@ next-env.d.ts
 
 # local audit reports and test evidence (never commit)
 /Performance-Audit/
+
+# client maintenance spreadsheets (kept locally, never commit)
+/GSC issues nov 2026.xlsx
+/Meta Data - Fostiima.xlsx
