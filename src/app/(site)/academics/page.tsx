@@ -4,17 +4,14 @@ import AcademicsHero from "@/components/academics/AcademicsHero";
 import AcademicOverview from "@/components/academics/AcademicOverview";
 import StudentAchievementsSection from "@/components/common/StudentAchievementsSection";
 import AcademicHighlights from "@/components/academics/AcademicHighlights";
-import { getCanonicalUrl } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Academics | FOSTIIMA Business School",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Academics",
   description:
-    "Explore academics at FOSTIIMA Business School, including industry-relevant management education, contemporary curriculum, analytical learning and key academic strengths.",
-
-  alternates: {
-    canonical: getCanonicalUrl("/academics"),
-  },
-};
+    "Explore academics at FOSTIIMA Business School: industry-relevant management education, a contemporary curriculum and analytical learning.",
+  path: "/academics",
+});
 
 export default function AcademicsPage() {
   return (

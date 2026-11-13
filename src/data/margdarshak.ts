@@ -54,7 +54,7 @@ export const margdarshakTabs = [
 export const aboutMargdarshak = {
   title: "About Margdarshak",
   paragraphs: [
-    "We strongly believe that we the founders of FOSTIIMA Business School would not have been what we are today but for the inspirational role played by our IIM-A faculty in shaping our careers and our lives.. If today FOSTIIMSA is playing a role in nation building it is because of them.",
+    "We strongly believe that we the founders of FOSTIIMA Business School would not have been what we are today but for the inspirational role played by our IIM-A faculty in shaping our careers and our lives. If today FOSTIIMA is playing a role in nation building it is because of them.",
 
     "The names and memories of our faculty mentors like Prof Ravi Mathai, Prof Samuel Paul, Dr Kamala Chowdhry Prof Ishwar Dayal,,Prof S K Bhattacharya, Prof Pulin Garg etc. are permanently etched in our minds and several global thought leaders like C K Prahlad, Raghuram Rajan owe their success to their talent being identified, honed and nurtured by these mentors",
 
@@ -150,7 +150,7 @@ export const margdarshakEditions: EditionData[] = [
     title: "ABOUT MARGDARSHAK 1",
 
     paragraphs: [
-      "In keeping with its pioneering spirit, FOSTIIMA gave a new direction to management education the it instituted MARGDARSHAK AWARDS– in the memory of the founding faculty of the Indian Institute of Management, Ahmedabad– for outstanding HR corporate managers. These faculty gave up lucrative assignments in the USA and the industry to foster management education in India. They were visionaries, intellectual giants, teachers of a very tall stature and famous institution builders. If K. V. Kamath, Raghuram Rajan, Chetan Bhagat, A. S. Banga, Harsha Bhogle, Srikant Datar, and many others, are household names today, it is in no small measure due to the efforts of these founding faculty members.",
+      "In keeping with its pioneering spirit, FOSTIIMA gave a new direction to management education when it instituted the MARGDARSHAK AWARDS– in the memory of the founding faculty of the Indian Institute of Management, Ahmedabad– for outstanding HR corporate managers. These faculty gave up lucrative assignments in the USA and the industry to foster management education in India. They were visionaries, intellectual giants, teachers of a very tall stature and famous institution builders. If K. V. Kamath, Raghuram Rajan, Chetan Bhagat, A. S. Banga, Harsha Bhogle, Srikant Datar, and many others, are household names today, it is in no small measure due to the efforts of these founding faculty members.",
 
       "It seemed quite an anomalous situation where the products of an institution attained recognition, but the people who went into making these institutions famous remained in the shadows. We at FOSTIIMA were very well aware that while it is an established practice in the USA to acknowledge the institution builders, such an effort is lacking in India. The constraints of COVID notwithstanding, FOSTIIMA launched its first edition of MARGDARSHAK AWARDS in 2020. The response of the corporate sector was way beyond anything we could have imagined. They resonated so deeply with the industry that we were convinced that MARGDARSHAK AWARDS were an idea whose time had come. We have defined the following categories of awards:",
     ],
@@ -215,7 +215,7 @@ export const margdarshakEditions: EditionData[] = [
             ["Mr T K Srirang", "ICICI Bank", "Director of Year"],
             ["Mr Krish Shankar", "Infosys", "Employee Engagement"],
             ["Mr Yogi Sriram", "L&T", "Hall of Fame"],
-            ["Dr Santrupt Misra", "Birla Cabon", "Hall of Fame"],
+            ["Dr Santrupt Misra", "Birla Carbon", "Hall of Fame"],
             ["Ms Nathan S V", "Deloitte", "Disruptor of Year"],
             ["Mr Rajeev Dubey", "Mahindra & Mahindra", "Hall of Fame"],
             ["Mr Rajesh Dahiya", "Axis Bank", "Transformational Leadership"],
@@ -240,7 +240,7 @@ export const margdarshakEditions: EditionData[] = [
               "Roinet Solutions",
               "Zensor Technologies",
             ],
-            ["TCS", "Oyo", "Nayka", "Policy Bazaar"],
+            ["TCS", "Oyo", "Nykaa", "Policy Bazaar"],
             ["Blackbuck", "Kotak Bank", "AT Foods", "Accenture"],
             ["OTIS", "JSW L&T Nxt", "Birla Carbo", "Macawbery BeeKay P Ltd."],
             [

@@ -7,7 +7,8 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import { prisma } from "@/lib/prisma";
+import { getHomeAbout } from "@/lib/admin/home";
+import { readOrFallback } from "@/lib/content-cache";
 
 const ICONS = {
   Award,
@@ -37,26 +38,8 @@ const ICON_COLORS = [
 ] as const;
 
 export default async function AboutSection() {
-  const about = await prisma.homeAbout.findFirst({
-    where: {
-      isActive: true,
-    },
-    include: {
-      highlights: {
-        where: {
-          isActive: true,
-        },
-        orderBy: [
-          {
-            sortOrder: "asc",
-          },
-          {
-            createdAt: "asc",
-          },
-        ],
-      },
-    },
-  });
+  // Left out, rather than failing the whole homepage, if the database is down.
+  const about = await readOrFallback("Home about section", getHomeAbout, null);
 
   if (!about) {
     return null;

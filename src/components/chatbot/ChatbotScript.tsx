@@ -361,7 +361,9 @@ export default function ChatbotScript() {
             alt="FOSTIIMA Chatbot"
             width={56}
             height={56}
-            priority
+            // Small fixed launcher icon, not the LCP element: eager, but no
+            // high-priority <head> preload on every page.
+            loading="eager"
             className="h-full w-full rounded-full object-cover"
           />
         )}

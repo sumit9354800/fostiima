@@ -102,6 +102,51 @@ export default function PlacementVideos({
   const slideTimeoutRef = useRef<number | null>(null);
 
   /*
+   * The YouTube players (and the iframe API) start loading only when the
+   * section gets close to the viewport. Until then the iframes have no src,
+   * so the homepage doesn't download six players at startup.
+   */
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [playersActivated, setPlayersActivated] =
+    useState(false);
+
+  useEffect(() => {
+    if (playersActivated) {
+      return;
+    }
+
+    const section = sectionRef.current;
+
+    if (
+      !section ||
+      typeof IntersectionObserver === "undefined"
+    ) {
+      setPlayersActivated(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (
+          entries.some(
+            (entry) => entry.isIntersecting,
+          )
+        ) {
+          setPlayersActivated(true);
+          observer.disconnect();
+        }
+      },
+      // Start about one and a half screens ahead so the player is ready
+      // (thumbnail shown) by the time the section scrolls into view.
+      { rootMargin: "150% 0px" },
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, [playersActivated, videos.length]);
+
+  /*
    * IMPORTANT:
    * videos can temporarily be undefined while
    * server/database data is loading.
@@ -132,6 +177,10 @@ export default function PlacementVideos({
       return;
     }
 
+    if (!playersActivated) {
+      return;
+    }
+
     if (window.YT?.Player) {
       return;
     }
@@ -152,7 +201,7 @@ export default function PlacementVideos({
     script.async = true;
 
     document.body.appendChild(script);
-  }, []);
+  }, [playersActivated]);
 
   /*
    * Reset active index when database data changes.
@@ -182,6 +231,11 @@ export default function PlacementVideos({
     }
 
     if (videos.length === 0) {
+      return;
+    }
+
+    // Players attach to iframes that already have their src.
+    if (!playersActivated) {
       return;
     }
 
@@ -266,6 +320,7 @@ export default function PlacementVideos({
     activeIndex,
     videos,
     updateVideoPlayingState,
+    playersActivated,
   ]);
 
   /*
@@ -425,7 +480,10 @@ export default function PlacementVideos({
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#f8faff] py-16 sm:py-20 lg:py-24">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#f8faff] py-16 sm:py-20 lg:py-24"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
 
@@ -436,9 +494,9 @@ export default function PlacementVideos({
             </p>
 
             <h2 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#123b79] sm:text-5xl">
-              PGDM Placement-Batch{" "}
+              PGDM Placement{" "}
               <span className="text-[#c31e3b]">
-              PGDM Placement Batch 2025 - 2027
+                Batch 2025–2027
               </span>
             </h2>
 
@@ -546,7 +604,11 @@ export default function PlacementVideos({
                               index
                             ] = element;
                           }}
-                          src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1`}
+                          src={
+                            playersActivated
+                              ? `https://www.youtube.com/embed/${videoId}?enablejsapi=1`
+                              : undefined
+                          }
                           title={
                             video.title
                           }

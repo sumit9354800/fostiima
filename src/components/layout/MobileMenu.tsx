@@ -1,5 +1,6 @@
 "use client";
 
+import { ADMISSIONS_PHONE } from "@/config/contact";
 import { useState } from "react";
 
 import Image from "next/image";
@@ -160,7 +161,9 @@ export default function MobileMenu() {
             width={150}
             height={50}
             className="h-auto w-full object-contain"
-            priority
+            // Visible at the top but never the LCP element: load right away,
+            // without a <head> preload competing with the page's LCP resource.
+            loading="eager"
           />
         </Link>
 
@@ -264,7 +267,9 @@ export default function MobileMenu() {
                 width={150}
                 height={50}
                 className="h-auto w-full object-contain"
-                priority
+                // Same file as the header logo above (already loaded); eager
+                // so it is ready the moment the drawer opens.
+                loading="eager"
               />
             </Link>
           </div>
@@ -347,7 +352,7 @@ export default function MobileMenu() {
               </a>
 
               <a
-                href="tel:+917678391245"
+                href={ADMISSIONS_PHONE.href}
                 onClick={closeMenu}
                 className="
                   block
@@ -358,7 +363,7 @@ export default function MobileMenu() {
                   hover:text-[#c31e3b]
                 "
               >
-                +91-76783 91245
+                {ADMISSIONS_PHONE.display}
               </a>
 
               <p className="text-md font-medium text-slate-700">

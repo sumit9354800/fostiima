@@ -556,7 +556,7 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
             alt: "Swadeshi Mela at FOSTIIMA - 1",
           },
         ],
-        href: "/life-at-fostiima/cultural-events/swadeshi-mela/",
+        href: "/life-at-fostiima/cultural-events/swadeshi-mela",
         slug: "swadeshi-mela",
       },
 
@@ -1024,6 +1024,86 @@ export const lifeAtFostiimaSections: LifeAtFostiimaSection[] = [
         href: "/life-at-fostiima/cultural-events/marketing-carnival",
         slug: "marketing-carnival",
       },
+
+      {
+        title: "StockiFy",
+        description:
+          "The Finance Committee's premier trading symposium delivering hands-on practical exposure to dynamic financial markets through open-outcry ring trading and custom simulation software.",
+        images: [
+          {
+            src: "/events/stockify/stockify_image_1.webp",
+            alt: "StockiFy Annual Stock Market Simulation at FOSTIIMA - 1",
+          },
+          {
+            src: "/events/stockify/stockify_image_2.webp",
+            alt: "StockiFy Annual Stock Market Simulation at FOSTIIMA - 2",
+          },
+          {
+            src: "/events/stockify/stockify_image_3.webp",
+            alt: "StockiFy Annual Stock Market Simulation at FOSTIIMA - 3",
+          },
+          {
+            src: "/events/stockify/stockify_image_4.webp",
+            alt: "StockiFy Annual Stock Market Simulation at FOSTIIMA - 4",
+          },
+          {
+            src: "/events/stockify/stockify_image_5.webp",
+            alt: "StockiFy Annual Stock Market Simulation at FOSTIIMA - 5",
+          },
+        ],
+        href: "/events/stockify",
+      },
+
+      {
+        title: "FinQuest",
+        description:
+          "The benchmark intellectual assessment for finance enthusiasts testing theoretical foundations, market intelligence, macroeconomic acumen, and corporate awareness.",
+        images: [
+          {
+            src: "/events/finquest/finquest_image_1.webp",
+            alt: "FinQuest Annual Finance Quiz at FOSTIIMA - 1",
+          },
+          {
+            src: "/events/finquest/finquest_image_2.webp",
+            alt: "FinQuest Annual Finance Quiz at FOSTIIMA - 2",
+          },
+          {
+            src: "/events/finquest/finquest_image_3.webp",
+            alt: "FinQuest Annual Finance Quiz at FOSTIIMA - 3",
+          },
+          {
+            src: "/events/finquest/finquest_image_4.webp",
+            alt: "FinQuest Annual Finance Quiz at FOSTIIMA - 4",
+          },
+        ],
+        href: "/events/finquest",
+      },
     ],
+  },
+
+  {
+    src: "/student-achievements/finsights_image_1.webp",
+    alt: "Beyond the Classroom: Student Achievements at FOSTIIMA",
+    title: "Beyond the Classroom",
+    description:
+      "Financial education and student excellence extending beyond lecture halls into competitive national arenas, live market simulations and corporate challenges.",
+    size: "small",
+    href: "/life-at-fostiima/beyond-the-classroom",
+    slug: "beyond-the-classroom",
+    images: [
+      {
+        src: "/student-achievements/finsights_image_1.webp",
+        alt: "Team FinSights Student Delegation",
+      },
+      {
+        src: "/student-achievements/finsights_image_2.webp",
+        alt: "Equity Research & Valuation Track Presentation",
+      },
+      {
+        src: "/student-achievements/finsights_image_3.webp",
+        alt: "National Recognition & Certificate of Excellence",
+      },
+    ],
+    content: [],
   },
 ];

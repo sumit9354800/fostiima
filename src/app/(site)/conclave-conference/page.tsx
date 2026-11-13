@@ -6,6 +6,9 @@ import EventCard from "@/components/conclave/EventCard";
 import { getPublishedConclaveEvents } from "@/data/conclave";
 import { getCanonicalUrl } from "@/lib/seo";
 
+// Rebuilt daily so events move from "Upcoming" to past on their own.
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Conclave & Conference | FOSTIIMA Business School",
   description:

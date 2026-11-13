@@ -274,7 +274,7 @@ export default function InfrastructureSection() {
               fill
               sizes="100vw"
               className="object-contain"
-              priority
+              preload
               unoptimized
             />
           </div>

@@ -49,7 +49,7 @@ export default function Margdarshak4() {
                   alt={image.alt}
                   width={1400}
                   height={900}
-                  priority={index === 0}
+                  preload={index === 0}
                   className="h-auto w-full object-contain"
                 />
               </div>

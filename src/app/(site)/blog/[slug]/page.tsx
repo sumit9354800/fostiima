@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import BlogContent from "@/components/blog/BlogContent";
 import { getBlogBySlug } from "@/lib/queries";
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 type BlogDetailPageProps = {
@@ -26,11 +27,16 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: blog.seo.metaTitle,
-    description: blog.seo.metaDescription,
-    keywords: blog.seo.keywords,
-  };
+  // No meta keywords: search engines ignore the tag and it only exposes the
+  // keywords being targeted. They stay in the CMS for editors.
+  return buildPageMetadata({
+    title: blog.seo.metaTitle || blog.title,
+    description: blog.seo.metaDescription || blog.excerpt,
+    path: `/blog/${blog.slug}`,
+    image: blog.coverImage || null,
+    imageAlt: blog.coverImageAlt || blog.title,
+    type: "article",
+  });
 }
 
 export default async function BlogDetailPage({

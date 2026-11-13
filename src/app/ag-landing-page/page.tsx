@@ -47,12 +47,14 @@ export default function AGLandingPage() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.jpeg"
+              src="/logo.webp"
               alt="FOSTIIMA Business School"
               width={170}
               height={50}
               className="h-auto w-full object-contain"
-              priority
+              // Header logo, not the LCP element (the hero text is): load
+              // right away without a high-priority <head> preload.
+              loading="eager"
             />
           </Link>
 

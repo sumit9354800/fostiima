@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactInfo from "@/components/contact/ContactInfo";
 import ContactForm from "@/components/forms/ContactForm";
-import { getCanonicalUrl } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us | FOSTIIMA Business School",
-  alternates: {
-    canonical: getCanonicalUrl("/contact-us"),
-  },
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "Contact Us",
+  description:
+    "Contact FOSTIIMA Business School in Delhi for PGDM admissions, programme details and campus visits. Find our phone, email and address.",
+  path: "/contact-us",
+});
 export default function ContactUsPage() {
   return (
     <>
