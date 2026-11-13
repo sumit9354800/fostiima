@@ -4,7 +4,7 @@ import { ArrowLeft, CalendarDays } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCanonicalUrl } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import {
   programDetails,
   getProgramBySlug,
@@ -41,28 +41,19 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: `${program.title} | FOSTIIMA Business School`,
+  return buildPageMetadata({
+    // e.g. "PGDM (Finance): 2-Year Full-Time Programme in Delhi" or
+    // "International Business: PGDM Specialisation in Delhi".
+    title: `${program.title.replace(/\s*-\s*Specialization$/i, "")}: ${
+      program.duration.startsWith("2 Year")
+        ? "2-Year Full-Time Programme"
+        : "PGDM Specialisation"
+    } in Delhi`,
     description: program.description,
-    alternates: {
-       canonical: getCanonicalUrl(`/programs/${program.slug}`),
-    },
-    openGraph: {
-      title: `${program.title} | FOSTIIMA Business School`,
-      description: program.description,
-      type: "website",
-      ...(program.heroImage
-        ? {
-            images: [
-              {
-                url: program.heroImage,
-                alt: program.title,
-              },
-            ],
-          }
-        : {}),
-    },
-  };
+    path: `/programs/${program.slug}`,
+    image: program.heroImage || null,
+    imageAlt: program.title,
+  });
 }
 
 export default async function ProgramDetailPage({
@@ -311,7 +302,7 @@ export default async function ProgramDetailPage({
               </p>
 
               <Link
-                href="/contact-us"
+                href="/how-to-apply"
                 className="mt-8 inline-flex items-center bg-[#d61f3c] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#b91934]"
               >
                 Explore Admissions

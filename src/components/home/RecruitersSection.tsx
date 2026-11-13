@@ -8,7 +8,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo1.webp",
 
-    alt: "Recruiter",
+    alt: "Deloitte logo",
 
   },
 
@@ -16,7 +16,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo2.webp",
 
-    alt: "Recruiter",
+    alt: "KPMG logo",
 
   },
 
@@ -24,7 +24,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo3.webp",
 
-    alt: "Recruiter",
+    alt: "Oxane Partners logo",
 
   },
 
@@ -32,7 +32,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo4.webp",
 
-    alt: "Recruiter",
+    alt: "Colgate-Palmolive logo",
 
   },
 
@@ -40,7 +40,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo5.webp",
 
-    alt: "Recruiter",
+    alt: "Mondelēz International logo",
 
   },
 
@@ -48,7 +48,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo6.webp",
 
-    alt: "Recruiter",
+    alt: "Wipro logo",
 
   },
 
@@ -56,7 +56,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo7.webp",
 
-    alt: "Recruiter",
+    alt: "IndiaMART logo",
 
   },
 
@@ -64,7 +64,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo8.webp",
 
-    alt: "Recruiter",
+    alt: "Khimji Ramdas logo",
 
   },
 
@@ -72,7 +72,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo9.webp",
 
-    alt: "Recruiter",
+    alt: "Axis Bank logo",
 
   },
 
@@ -80,7 +80,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo10.webp",
 
-    alt: "Recruiter",
+    alt: "Ecom Express logo",
 
   },
 
@@ -88,7 +88,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo11.webp",
 
-    alt: "Recruiter",
+    alt: "ICICI Bank logo",
 
   },
 
@@ -96,7 +96,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo12.webp",
 
-    alt: "Recruiter",
+    alt: "JK Tyre logo",
 
   },
 
@@ -104,7 +104,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo13.webp",
 
-    alt: "Recruiter",
+    alt: "IndusInd Bank logo",
 
   },
 
@@ -112,7 +112,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo14.webp",
 
-    alt: "Recruiter",
+    alt: "Kotak Mahindra Bank logo",
 
   },
 
@@ -120,7 +120,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo15.webp",
 
-    alt: "Recruiter",
+    alt: "The Times of India logo",
 
   },
 
@@ -128,7 +128,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo16.webp",
 
-    alt: "Recruiter",
+    alt: "Infosys logo",
 
   },
 
@@ -136,7 +136,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo17.webp",
 
-    alt: "Recruiter",
+    alt: "KENT RO logo",
 
   },
 
@@ -144,7 +144,7 @@ const recruiterLogos = [
 
     src: "/home/company-logo/company-logo18.webp",
 
-    alt: "Recruiter",
+    alt: "Tata Chemicals logo",
 
   },
 
@@ -187,6 +187,9 @@ function LogoRow({ logos, direction }: LogoRowProps) {
         {duplicatedLogos.map((logo, index) => (
           <div
             key={`${logo.src}-${index}`}
+            // The second copy only keeps the marquee seamless; screen readers
+            // should hear each recruiter once.
+            aria-hidden={index >= logos.length ? true : undefined}
             className="flex h-[76px] w-[150px] shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white px-5 shadow-[0_4px_18px_rgba(18,59,121,0.04)] transition-all duration-300 hover:border-[#123b79]/30 hover:shadow-[0_8px_25px_rgba(18,59,121,0.08)] sm:h-[82px] sm:w-[170px]"
           >
             <img

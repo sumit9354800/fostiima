@@ -1,5 +1,5 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
-import type { ConclaveEvent } from "@/data/conclave";
+import { isUpcomingEvent, type ConclaveEvent } from "@/data/conclave";
 import Link from "next/link";
 
 type EventCardProps = {
@@ -34,7 +34,12 @@ export default function EventCard({ event }: EventCardProps) {
         {/* Content */}
         <div className="flex min-w-0 flex-1 flex-col p-5 sm:p-6">
           {/* Category */}
-          <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
+          <span className="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#c31e3b]">
+            {isUpcomingEvent(event) && (
+              <span className="rounded-full bg-[#eab308]/15 px-2 py-0.5 text-[#8a6a00]">
+                Upcoming
+              </span>
+            )}
             Conclave / Conference
           </span>
 

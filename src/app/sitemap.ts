@@ -1,7 +1,10 @@
 import type { MetadataRoute } from "next";
 
+import { SITE_ROUTES } from "@/config/site-routes";
+
 const BASE_URL = "https://www.fostiima.org";
 
+<<<<<<< HEAD
 // Synced with the supplied FOSTIIMA sitemap (last modified: 2026-10-21).
 // Keep this list updated when pages are added, removed, or renamed.
 const ROUTES = [
@@ -128,6 +131,9 @@ const ROUTES = [
   "/refund-policy",
   "/terms-and-conditions",
 ] as const;
+=======
+const ROUTES = SITE_ROUTES;
+>>>>>>> 73cbf6437875a2e19de711c90d19704e57d64b4a
 
 function getPriority(path: string): number {
   if (path === "/") return 1;

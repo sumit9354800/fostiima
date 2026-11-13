@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { getHomeAbout } from "@/lib/admin/home";
+import { readOrFallback } from "@/lib/content-cache";
 
 const ICONS = {
   Award,
@@ -37,9 +38,8 @@ const ICON_COLORS = [
 ] as const;
 
 export default async function AboutSection() {
-  // Shared per-request query; the homepage starts it in parallel with the
-  // stats and placement-video queries.
-  const about = await getHomeAbout();
+  // Left out, rather than failing the whole homepage, if the database is down.
+  const about = await readOrFallback("Home about section", getHomeAbout, null);
 
   if (!about) {
     return null;
