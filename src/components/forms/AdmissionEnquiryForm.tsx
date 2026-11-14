@@ -13,15 +13,14 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { INDIAN_STATES } from "@/data/indian-states";
-import { normalizeIndianMobile, toIndianE164 } from "@/lib/phone";
+import { normalizeIndianMobile } from "@/lib/phone";
+import { isConfirmedLeadResponse, pushLeadEvent } from "@/lib/lead-events";
+import { createSubmissionGuard } from "@/lib/submission-guard";
 import TurnstileWidget, {
   TURNSTILE_SITE_KEY,
   type TurnstileHandle,
 } from "@/components/forms/TurnstileWidget";
-import {
-  captureAttribution,
-  type LeadAttribution,
-} from "@/lib/lead-attribution";
+import { captureAttribution, thankYouPath } from "@/lib/lead-attribution";
 
 const API_BASE = "https://countriesnow.space/api/v0.1";
 
@@ -109,14 +108,9 @@ export default function AdmissionEnquiryForm() {
   const [captchaInput, setCaptchaInput] = useState("");
   // Synchronous in-flight guard: `loading` state only blocks a second submit
   // after a re-render, so two fast clicks could both get through.
-  const submittingRef = useRef(false);
-  const attributionRef = useRef<LeadAttribution | null>(null);
+  const [submissionGuard] = useState(createSubmissionGuard);
   const turnstileRef = useRef<TurnstileHandle>(null);
   const [turnstileToken, setTurnstileToken] = useState("");
-
-  useEffect(() => {
-    attributionRef.current = captureAttribution();
-  }, []);
 
   // States are local, so they are available immediately.
   const states: readonly string[] = INDIAN_STATES;
@@ -220,7 +214,7 @@ export default function AdmissionEnquiryForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (submittingRef.current) return;
+    if (submissionGuard.isLocked()) return;
     setMessage("");
     setSuccess(false);
 
@@ -258,9 +252,14 @@ export default function AdmissionEnquiryForm() {
       return;
     }
 
-    submittingRef.current = true;
+    if (!submissionGuard.tryAcquire()) return;
     let submitted = false;
     setLoading(true);
+
+    // Read at submit time (not on mount), so a campaign captured on any
+    // earlier page or after client-side navigation is always included. Raw
+    // values only: the API validates them and derives the lead source.
+    const attribution = captureAttribution();
 
     try {
       const response = await fetch("/api/admission-enquiries", {
@@ -271,17 +270,16 @@ export default function AdmissionEnquiryForm() {
         body: JSON.stringify({
           ...values,
           mobile: cleanedMobile,
-          source: "FOSTIIMA Website",
-          ...(attributionRef.current
-            ? { attribution: attributionRef.current }
-            : {}),
+          ...(attribution ? { attribution } : {}),
           ...(TURNSTILE_SITE_KEY ? { turnstileToken } : {}),
         }),
       });
 
       const result = await response.json().catch(() => ({}));
 
-      if (!response.ok) {
+      // Only a confirmed lead counts: anything else stays on the form with
+      // an error and never reaches the Thank You page or GTM.
+      if (!isConfirmedLeadResponse(response.ok, result)) {
         throw new Error(
           result.error || "Unable to submit your enquiry. Please try again.",
         );
@@ -289,34 +287,16 @@ export default function AdmissionEnquiryForm() {
 
       // Stay locked after success: the form is navigating to /thank-you.
       submitted = true;
-      // Captured before the form reset below. Memory only: never stored,
-      // logged or put in a URL.
-      const leadEmail = values.email.trim().toLowerCase();
-      const leadPhone = toIndianE164(cleanedMobile);
-      const leadCreated = result?.success === true;
       setValues(initialValues);
       setCities([]);
       setLocationError("");
       setCaptchaInput("");
       setCaptchaCode(generateCaptcha());
 
-      // Push lead event to GTM dataLayer, once, only after the API confirmed
-      // the lead was created. Raw email/phone approved by the client
-      // (12 Nov 2026) for the GTM Thank You integration only.
-      try {
-        window.dataLayer = window.dataLayer || [];
-        if (leadCreated) {
-          window.dataLayer.push({
-            event: "generate_lead",
-            user_data: {
-              email: leadEmail,
-              ...(leadPhone ? { phone_number: leadPhone } : {}),
-            },
-          });
-        }
-      } catch {
-        // Ensure dataLayer errors do not block navigation
-      }
+      // One GTM lead event, only after the API confirmed the lead was saved.
+      // No personal data: no email, phone, name or attribution (see
+      // src/lib/lead-events.ts). Never throws, so navigation is not blocked.
+      pushLeadEvent(window, "admission");
 
       if (typeof (
         window as Window & {
@@ -342,7 +322,19 @@ export default function AdmissionEnquiryForm() {
         });
       }
 
-      router.push("/thank-you");
+      // Client requirement (Thank You DataLayer): the submitted email and
+      // phone, pushed once after the API confirmed the enquiry, immediately
+      // before navigating to /thank-you. Values are the ones sent to the API.
+      const submittedEmail = values.email;
+      const submittedPhone = cleanedMobile;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        email: submittedEmail,
+        phone: submittedPhone,
+      });
+
+      // Common Thank You page; carries the UTM parameters only.
+      router.push(thankYouPath(attribution));
     } catch (error) {
       setMessage(
         error instanceof Error
@@ -352,7 +344,7 @@ export default function AdmissionEnquiryForm() {
     } finally {
       setLoading(false);
       if (!submitted) {
-        submittingRef.current = false;
+        submissionGuard.release();
         // A Turnstile token is single-use: get a fresh one for the retry.
         turnstileRef.current?.reset();
       }

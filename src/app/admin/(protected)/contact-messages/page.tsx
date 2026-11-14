@@ -6,8 +6,10 @@ import {
   Archive, Check, ChevronDown, Mail, MailOpen, MessageSquareText,
   RefreshCw, Search, Trash2, Users,
 } from "lucide-react";
+import LeadAttributionPanel from "@/components/admin/LeadAttributionPanel";
+import type { LeadAttributionRecord } from "@/lib/lead-attribution";
 
-type Enquiry = {
+type Enquiry = LeadAttributionRecord & {
   id: string;
   name: string;
   email: string;
@@ -213,6 +215,7 @@ export default function ContactMessagesPage() {
             </div>
             <h3 className="mt-6 text-sm font-bold text-[#061a3a]">Message</h3>
             <p className="mt-2 whitespace-pre-wrap break-words text-sm leading-7 text-slate-600">{selected.message}</p>
+            <div className="mt-6"><LeadAttributionPanel record={selected} /></div>
             <div className="mt-6 flex flex-wrap gap-2">
               <a href={`mailto:${selected.email}?subject=${encodeURIComponent(`Re: ${selected.subject}`)}`} className="inline-flex items-center gap-2 rounded-lg bg-[#061a3a] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#102b50]"><Mail className="h-4 w-4" /> Reply by email</a>
               <button onClick={() => void updateStatus(selected, "REPLIED")} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2.5 text-sm font-semibold text-[#061a3a] hover:bg-slate-50"><Check className="h-4 w-4" /> Mark replied</button>

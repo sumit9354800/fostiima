@@ -4,13 +4,13 @@ import { permanentRedirect } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 
 import { getHomePrograms, getPrograms, type ProgramKey } from "@/data/programs";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, withPageSeo } from "@/lib/seo";
 
 type ProgramsPageProps = {
   searchParams: Promise<{ program?: string | string[] }>;
 };
 
-export const metadata: Metadata = buildPageMetadata({
+const pageMetadata: Metadata = buildPageMetadata({
   title: "PGDM Programmes & Specialisations",
   description:
     "Compare FOSTIIMA Business School's PGDM programmes in Delhi: Marketing, Finance, HR, Business Analytics, International Business and AI & Analytics.",
@@ -90,3 +90,5 @@ export default async function ProgramsPage({
     </main>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/programs", pageMetadata);

@@ -4,12 +4,12 @@ import { CalendarDays } from "lucide-react";
 
 import EventCard from "@/components/conclave/EventCard";
 import { getPublishedConclaveEvents } from "@/data/conclave";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
 
 // Rebuilt daily so events move from "Upcoming" to past on their own.
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+const pageMetadata: Metadata = {
   title: "Conclave & Conference | FOSTIIMA Business School",
   description:
     "Explore conferences, summits, conclaves and industry events at FOSTIIMA Business School.",
@@ -121,3 +121,5 @@ export default function ConclaveConferencePage() {
     </main>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/conclave-conference", pageMetadata);

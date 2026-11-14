@@ -13,7 +13,10 @@ export default function AdminShell({
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="h-screen overflow-hidden bg-[#f8fafc]">
+    // Second safeguard only: tracking is not loaded on Admin routes at all
+    // (see src/lib/tracking-scope.ts). If a session-recording
+    // script were ever present, this tells Clarity to mask all Admin text.
+    <div className="h-screen overflow-hidden bg-[#f8fafc]" data-clarity-mask="true">
       <div className="flex h-full">
         <AdminSidebar
           isOpen={sidebarOpen}

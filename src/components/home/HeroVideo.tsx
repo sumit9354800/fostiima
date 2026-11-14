@@ -31,7 +31,7 @@ const NO_IDLE_CALLBACK_DELAY_MS = 200;
  * poster but no <source> children, so the browser paints the poster without
  * downloading any video data. Once the page has loaded (or after
  * MAX_WAIT_FOR_LOAD_MS) and the main thread is idle, the sources are attached
- * in their original order (WebM, MP4, original MOV). Inserting <source>
+ * in their original order (WebM, then MP4). Inserting <source>
  * children into a media element with no src starts the browser's normal source
  * selection, so exactly one file is fetched, and the autoplay attribute starts
  * playback. The poster stays visible until the first video frame is ready.
@@ -61,6 +61,15 @@ export default function HeroVideo({
         : sources;
 
   useEffect(() => {
+    // Visitors who ask for reduced motion keep the poster: no video is
+    // attached, so nothing is downloaded or played.
+    if (
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
     let started = false;
     let idleId: number | undefined;
     let delayTimer: number | undefined;

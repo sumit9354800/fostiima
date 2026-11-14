@@ -6,9 +6,9 @@ import FoundingVision from "@/components/about/FoundingVision";
 import ObjectivesSection from "@/components/about/ObjectivesSection";
 import InfrastructureSection from "@/components/about/InfrastructureSection";
 import type { Metadata } from "next";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, withPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = buildPageMetadata({
+const pageMetadata: Metadata = buildPageMetadata({
   title: "About Us",
   description:
     "Learn about FOSTIIMA Business School in Delhi: our founders, vision, objectives, chairman's message and campus infrastructure.",
@@ -34,3 +34,5 @@ export default function AboutUsPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/about-us", pageMetadata);

@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { facultyData } from "@/data/faculty";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
 
 // import { prisma } from "@/lib/prisma";
 
-export const metadata: Metadata = {
+const pageMetadata: Metadata = {
   title: "Core Faculty | FOSTIIMA Business School",
   description:
     "Meet the experienced core faculty members of FOSTIIMA Business School.",
@@ -200,3 +200,5 @@ export default async function FacultiesPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/faculties", pageMetadata);

@@ -2,7 +2,11 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
 import { isValidIndianMobile } from "@/lib/phone";
-import { resolveLeadSource } from "@/lib/lead-attribution";
+import {
+  attributionColumns,
+  attributionSummary,
+  resolveLeadAttribution,
+} from "@/lib/lead-attribution";
 import { isTurnstileEnforced, verifyTurnstile } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
@@ -55,6 +59,7 @@ function createAdmissionEmail(data: {
   course: string;
   graduationStatus: string;
   remarks: string;
+  attributionRows: [string, string][];
 }) {
   const row = (label: string, value: string) => `
     <tr>
@@ -91,6 +96,10 @@ function createAdmissionEmail(data: {
                 <p style="font-weight:700;color:#061a3a">Remarks</p>
                 <div style="padding:16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;color:#475569;font-size:14px;line-height:1.7;white-space:pre-wrap">${escapeHtml(data.remarks || "No remarks provided")}</div>
               </div>
+              <p style="margin-top:24px;font-weight:700;color:#061a3a">Lead Attribution</p>
+              <table style="width:100%;border-collapse:collapse">
+                ${data.attributionRows.map(([label, value]) => row(label, value)).join("")}
+              </table>
               <p style="margin-top:24px;color:#94a3b8;font-size:12px">
                 This enquiry was submitted through the FOSTIIMA website.
               </p>
@@ -123,9 +132,11 @@ export async function POST(request: Request) {
     const course = cleanText(body.course, 100) || "PGDM";
     const graduationStatus = cleanText(body.graduationStatus, 100);
     const remarks = cleanText(body.remarks, 5000);
-    // Allowlisted server-side (lead-attribution.ts). body.source is ignored:
-    // the only legitimate client value was the default label.
-    const source = resolveLeadSource(body);
+    // Derived server-side from the validated raw attribution
+    // (lib/lead-attribution.ts). Any client-supplied body.source is ignored.
+    const { attribution, classification, source } = resolveLeadAttribution(
+      body.attribution,
+    );
 
     if (!fullName || !mobile || !email || !state || !city || !graduationStatus) {
       return NextResponse.json(
@@ -206,6 +217,8 @@ export async function POST(request: Request) {
         remarks: remarks || null,
         consent: true,
         source,
+        // Validated raw attribution (all null when none was submitted).
+        ...attributionColumns(attribution),
         status: "NEW",
         emailSent: false,
       },
@@ -259,6 +272,7 @@ export async function POST(request: Request) {
           course,
           graduationStatus,
           remarks,
+          attributionRows: attributionSummary(attribution, classification),
         }),
       });
 

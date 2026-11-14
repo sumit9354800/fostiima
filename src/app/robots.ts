@@ -1,5 +1,21 @@
 import type { MetadataRoute } from "next";
 
+import {
+  GSC_NOV_2026_ALREADY_REDIRECTED,
+  GSC_NOV_2026_REDIRECTS,
+} from "@/config/gsc-redirects-nov-2026";
+
+// Redirected URLs from "GSC issues nov 2026" that "Disallow: /*.php" would
+// block. Google must crawl them to see the 301. "$" ends the match, so only
+// the exact URL (with or without its trailing slash) is allowed: other
+// ".php" and gallery URLs stay blocked.
+const GSC_NOV_2026_ALLOWED = [
+  ...Object.values(GSC_NOV_2026_REDIRECTS).flat(),
+  ...GSC_NOV_2026_ALREADY_REDIRECTED,
+]
+  .filter((path) => path.includes(".php"))
+  .flatMap((path) => [`${path}$`, `${path}/$`]);
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
@@ -15,6 +31,7 @@ export default function robots(): MetadataRoute.Robots {
         "/life-at-fostiima.php/nggallery/album/Workshop-on-Self-Awareness/image/self-awarness-1",
         "/life-at-fostiima.php/nggallery/album/Workshop-on-Self-Awareness/image/self-awarness-3",
         "/life-at-fostiima.php/nggallery/album/lohri-2024/page/2/image/img_8715",
+        ...GSC_NOV_2026_ALLOWED,
       ],
       // /_next/ must stay crawlable: it serves the CSS, JavaScript and
       // optimised images Google needs to render and index the pages.

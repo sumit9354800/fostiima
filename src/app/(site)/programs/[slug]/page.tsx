@@ -4,7 +4,7 @@ import { ArrowLeft, CalendarDays } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, withPageSeo } from "@/lib/seo";
 import {
   programDetails,
   getProgramBySlug,
@@ -41,7 +41,7 @@ export async function generateMetadata({
     };
   }
 
-  return buildPageMetadata({
+  return withPageSeo(`/programs/${program.slug}`, buildPageMetadata({
     // e.g. "PGDM (Finance): 2-Year Full-Time Programme in Delhi" or
     // "International Business: PGDM Specialisation in Delhi".
     title: `${program.title.replace(/\s*-\s*Specialization$/i, "")}: ${
@@ -53,7 +53,7 @@ export async function generateMetadata({
     path: `/programs/${program.slug}`,
     image: program.heroImage || null,
     imageAlt: program.title,
-  });
+  }));
 }
 
 export default async function ProgramDetailPage({

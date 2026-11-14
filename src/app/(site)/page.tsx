@@ -21,9 +21,9 @@ import { readOrFallback } from "@/lib/content-cache";
 import { Suspense } from "react";
 import PlacementGallery from "@/components/home/PlacementGallery";
 import type { Metadata } from "next";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const pageMetadata: Metadata = {
   title: "FOSTIIMA Business School | Top PGDM Institute in Delhi",
   description:
     "Discover FOSTIIMA Business School, its PGDM programs, placements, faculty, campus life, recruiters and academic excellence in Delhi.",
@@ -123,3 +123,5 @@ async function HomeSections() {
     </>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/", pageMetadata);

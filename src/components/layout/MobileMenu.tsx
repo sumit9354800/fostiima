@@ -156,7 +156,7 @@ export default function MobileMenu() {
           aria-label="FOSTIIMA Business School Home"
         >
           <Image
-            src="/logo.jpeg"
+            src="/logo.webp"
             alt="FOSTIIMA Business School"
             width={150}
             height={50}
@@ -262,7 +262,7 @@ export default function MobileMenu() {
               aria-label="FOSTIIMA Business School Home"
             >
               <Image
-                src="/logo.jpeg"
+                src="/logo.webp"
                 alt="FOSTIIMA Business School"
                 width={150}
                 height={50}

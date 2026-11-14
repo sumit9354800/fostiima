@@ -15,6 +15,8 @@ const SITEVERIFY_URL =
 const TIMEOUT_MS = 5000;
 const MAX_TOKEN_LENGTH = 2048;
 export const TURNSTILE_ACTION = "admission_enquiry";
+// Action used by the contact form's widget (src/components/forms/ContactForm.tsx).
+export const CONTACT_TURNSTILE_ACTION = "contact_enquiry";
 
 // Cloudflare error codes caused by our configuration, not by the visitor.
 const CONFIG_ERROR_CODES = ["missing-input-secret", "invalid-input-secret"];
@@ -49,6 +51,9 @@ export async function verifyTurnstile(
   token: unknown,
   remoteIp: string | null,
   fetchImpl: typeof fetch = fetch,
+  // The action the form's widget was rendered with; a token issued for
+  // another form is rejected.
+  expectedAction: string = TURNSTILE_ACTION,
 ): Promise<TurnstileResult> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (!secret) return UNAVAILABLE;
@@ -112,7 +117,7 @@ export async function verifyTurnstile(
     return REJECTED;
   }
 
-  if (typeof data.action === "string" && data.action && data.action !== TURNSTILE_ACTION) {
+  if (typeof data.action === "string" && data.action && data.action !== expectedAction) {
     return REJECTED;
   }
 

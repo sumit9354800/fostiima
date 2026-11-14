@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { accreditations } from "@/data/awards-accreditation";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{
@@ -35,7 +35,7 @@ export async function generateMetadata({
     };
   }
 
-  return {
+  return withPageSeo(`/awards-accreditation/${item.id}`, {
     title: `${item.title} ${item.year} | FOSTIIMA Business School`,
     description: item.description,
 
@@ -50,7 +50,7 @@ export async function generateMetadata({
       description: item.description,
       siteName: "FOSTIIMA Business School",
     },
-  };
+  });
 }
 
 export default async function AccreditationDetailPage({ params }: PageProps) {

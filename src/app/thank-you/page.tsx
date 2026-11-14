@@ -42,7 +42,7 @@ export default function ThankYouPage() {
           </h1>
 
           <p className="mt-4 text-lg font-semibold text-slate-700">
-            Your application has been submitted successfully.
+            Your enquiry has been submitted successfully.
           </p>
 
           <p className="mx-auto mt-3 max-w-lg text-sm leading-7 text-slate-500 sm:text-base">

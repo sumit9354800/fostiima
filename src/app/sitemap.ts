@@ -1,9 +1,18 @@
 import type { MetadataRoute } from "next";
 
+import { readOrFallback } from "@/lib/content-cache";
+import { getPublishedBlogSitemapEntries } from "@/lib/queries";
+
 const BASE_URL = "https://www.fostiima.org";
+
+// Blog posts are read from the CMS (published only), so the sitemap is
+// rebuilt at most this often; admin edits refresh the cached post list.
+export const revalidate = 300;
 
 // Synced with the supplied FOSTIIMA sitemap (last modified: 2026-10-21).
 // Keep this list updated when pages are added, removed, or renamed.
+// Its "/blog/<slug>" entries are only a fallback for when the CMS cannot be
+// read; normally every published post comes from the database.
 const ROUTES = [
   "/",
   "/about-us",
@@ -148,13 +157,35 @@ function getChangeFrequency(path: string): MetadataRoute.Sitemap[number]["change
 }
 
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const isBlogPost = (path: string) => path.startsWith("/blog/");
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date("2026-10-21");
 
-  return ROUTES.map((path) => ({
+  const entry = (path: string, modified: Date) => ({
     url: path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}`,
-    lastModified,
+    lastModified: modified,
     changeFrequency: getChangeFrequency(path),
     priority: getPriority(path),
-  }));
+  });
+
+  const staticEntries = ROUTES.filter((path) => !isBlogPost(path)).map(
+    (path) => entry(path, lastModified),
+  );
+
+  // Published posts only. If the CMS cannot be read, the previous fixed list
+  // is used so the sitemap is never emptier than before.
+  const posts = await readOrFallback(
+    "Sitemap blog posts",
+    getPublishedBlogSitemapEntries,
+    null,
+  );
+
+  const blogEntries = posts
+    ? [...new Map(posts.map((post) => [post.slug, post])).values()].map(
+        (post) => entry(`/blog/${post.slug}`, new Date(post.lastModified)),
+      )
+    : ROUTES.filter(isBlogPost).map((path) => entry(path, lastModified));
+
+  return [...staticEntries, ...blogEntries];
 }

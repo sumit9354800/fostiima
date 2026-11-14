@@ -21,8 +21,10 @@ import {
   AlertCircle,
   ExternalLink,
 } from "lucide-react";
+import LeadAttributionPanel from "@/components/admin/LeadAttributionPanel";
+import type { LeadAttributionRecord } from "@/lib/lead-attribution";
 
-type Enquiry = {
+type Enquiry = LeadAttributionRecord & {
   id: string;
   fullName: string;
   mobile: string;
@@ -669,14 +671,9 @@ export default function AdmissionEnquiriesTable() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <p className="text-xs text-slate-500">Source</p>
-                  <p className="mt-1 text-sm font-medium text-slate-700">
-                    {selected.source}
-                  </p>
-                </div>
+              <LeadAttributionPanel record={selected} />
 
+              <div className="flex flex-wrap items-center justify-end gap-3">
                 <span
                   className={`rounded-full px-3 py-1.5 text-xs font-semibold ring-1 ring-inset ${
                     statusStyles[selected.status] ?? statusStyles.NEW

@@ -36,6 +36,19 @@ export type ContactEnquiryMinAggregateOutputType = {
   emailError: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  source: string | null
+  utmSource: string | null
+  utmMedium: string | null
+  utmCampaign: string | null
+  utmTerm: string | null
+  utmContent: string | null
+  gclid: string | null
+  gbraid: string | null
+  wbraid: string | null
+  fbclid: string | null
+  landingPage: string | null
+  referrer: string | null
+  firstTouchAt: Date | null
 }
 
 export type ContactEnquiryMaxAggregateOutputType = {
@@ -50,6 +63,19 @@ export type ContactEnquiryMaxAggregateOutputType = {
   emailError: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  source: string | null
+  utmSource: string | null
+  utmMedium: string | null
+  utmCampaign: string | null
+  utmTerm: string | null
+  utmContent: string | null
+  gclid: string | null
+  gbraid: string | null
+  wbraid: string | null
+  fbclid: string | null
+  landingPage: string | null
+  referrer: string | null
+  firstTouchAt: Date | null
 }
 
 export type ContactEnquiryCountAggregateOutputType = {
@@ -64,6 +90,19 @@ export type ContactEnquiryCountAggregateOutputType = {
   emailError: number
   createdAt: number
   updatedAt: number
+  source: number
+  utmSource: number
+  utmMedium: number
+  utmCampaign: number
+  utmTerm: number
+  utmContent: number
+  gclid: number
+  gbraid: number
+  wbraid: number
+  fbclid: number
+  landingPage: number
+  referrer: number
+  firstTouchAt: number
   _all: number
 }
 
@@ -80,6 +119,19 @@ export type ContactEnquiryMinAggregateInputType = {
   emailError?: true
   createdAt?: true
   updatedAt?: true
+  source?: true
+  utmSource?: true
+  utmMedium?: true
+  utmCampaign?: true
+  utmTerm?: true
+  utmContent?: true
+  gclid?: true
+  gbraid?: true
+  wbraid?: true
+  fbclid?: true
+  landingPage?: true
+  referrer?: true
+  firstTouchAt?: true
 }
 
 export type ContactEnquiryMaxAggregateInputType = {
@@ -94,6 +146,19 @@ export type ContactEnquiryMaxAggregateInputType = {
   emailError?: true
   createdAt?: true
   updatedAt?: true
+  source?: true
+  utmSource?: true
+  utmMedium?: true
+  utmCampaign?: true
+  utmTerm?: true
+  utmContent?: true
+  gclid?: true
+  gbraid?: true
+  wbraid?: true
+  fbclid?: true
+  landingPage?: true
+  referrer?: true
+  firstTouchAt?: true
 }
 
 export type ContactEnquiryCountAggregateInputType = {
@@ -108,6 +173,19 @@ export type ContactEnquiryCountAggregateInputType = {
   emailError?: true
   createdAt?: true
   updatedAt?: true
+  source?: true
+  utmSource?: true
+  utmMedium?: true
+  utmCampaign?: true
+  utmTerm?: true
+  utmContent?: true
+  gclid?: true
+  gbraid?: true
+  wbraid?: true
+  fbclid?: true
+  landingPage?: true
+  referrer?: true
+  firstTouchAt?: true
   _all?: true
 }
 
@@ -195,6 +273,19 @@ export type ContactEnquiryGroupByOutputType = {
   emailError: string | null
   createdAt: Date
   updatedAt: Date
+  source: string | null
+  utmSource: string | null
+  utmMedium: string | null
+  utmCampaign: string | null
+  utmTerm: string | null
+  utmContent: string | null
+  gclid: string | null
+  gbraid: string | null
+  wbraid: string | null
+  fbclid: string | null
+  landingPage: string | null
+  referrer: string | null
+  firstTouchAt: Date | null
   _count: ContactEnquiryCountAggregateOutputType | null
   _min: ContactEnquiryMinAggregateOutputType | null
   _max: ContactEnquiryMaxAggregateOutputType | null
@@ -230,6 +321,19 @@ export type ContactEnquiryWhereInput = {
   emailError?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
   createdAt?: Prisma.DateTimeFilter<"ContactEnquiry"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"ContactEnquiry"> | Date | string
+  source?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  utmSource?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  utmMedium?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  utmCampaign?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  utmTerm?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  utmContent?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  gclid?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  gbraid?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  wbraid?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  fbclid?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  landingPage?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  referrer?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  firstTouchAt?: Prisma.DateTimeNullableFilter<"ContactEnquiry"> | Date | string | null
 }
 
 export type ContactEnquiryOrderByWithRelationInput = {
@@ -244,6 +348,19 @@ export type ContactEnquiryOrderByWithRelationInput = {
   emailError?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  source?: Prisma.SortOrderInput | Prisma.SortOrder
+  utmSource?: Prisma.SortOrderInput | Prisma.SortOrder
+  utmMedium?: Prisma.SortOrderInput | Prisma.SortOrder
+  utmCampaign?: Prisma.SortOrderInput | Prisma.SortOrder
+  utmTerm?: Prisma.SortOrderInput | Prisma.SortOrder
+  utmContent?: Prisma.SortOrderInput | Prisma.SortOrder
+  gclid?: Prisma.SortOrderInput | Prisma.SortOrder
+  gbraid?: Prisma.SortOrderInput | Prisma.SortOrder
+  wbraid?: Prisma.SortOrderInput | Prisma.SortOrder
+  fbclid?: Prisma.SortOrderInput | Prisma.SortOrder
+  landingPage?: Prisma.SortOrderInput | Prisma.SortOrder
+  referrer?: Prisma.SortOrderInput | Prisma.SortOrder
+  firstTouchAt?: Prisma.SortOrderInput | Prisma.SortOrder
   _relevance?: Prisma.ContactEnquiryOrderByRelevanceInput
 }
 
@@ -262,6 +379,19 @@ export type ContactEnquiryWhereUniqueInput = Prisma.AtLeast<{
   emailError?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
   createdAt?: Prisma.DateTimeFilter<"ContactEnquiry"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"ContactEnquiry"> | Date | string
+  source?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  utmSource?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  utmMedium?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  utmCampaign?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  utmTerm?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  utmContent?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  gclid?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  gbraid?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  wbraid?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  fbclid?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  landingPage?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  referrer?: Prisma.StringNullableFilter<"ContactEnquiry"> | string | null
+  firstTouchAt?: Prisma.DateTimeNullableFilter<"ContactEnquiry"> | Date | string | null
 }, "id">
 
 export type ContactEnquiryOrderByWithAggregationInput = {
@@ -276,6 +406,19 @@ export type ContactEnquiryOrderByWithAggregationInput = {
   emailError?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  source?: Prisma.SortOrderInput | Prisma.SortOrder
+  utmSource?: Prisma.SortOrderInput | Prisma.SortOrder
+  utmMedium?: Prisma.SortOrderInput | Prisma.SortOrder
+  utmCampaign?: Prisma.SortOrderInput | Prisma.SortOrder
+  utmTerm?: Prisma.SortOrderInput | Prisma.SortOrder
+  utmContent?: Prisma.SortOrderInput | Prisma.SortOrder
+  gclid?: Prisma.SortOrderInput | Prisma.SortOrder
+  gbraid?: Prisma.SortOrderInput | Prisma.SortOrder
+  wbraid?: Prisma.SortOrderInput | Prisma.SortOrder
+  fbclid?: Prisma.SortOrderInput | Prisma.SortOrder
+  landingPage?: Prisma.SortOrderInput | Prisma.SortOrder
+  referrer?: Prisma.SortOrderInput | Prisma.SortOrder
+  firstTouchAt?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ContactEnquiryCountOrderByAggregateInput
   _max?: Prisma.ContactEnquiryMaxOrderByAggregateInput
   _min?: Prisma.ContactEnquiryMinOrderByAggregateInput
@@ -296,6 +439,19 @@ export type ContactEnquiryScalarWhereWithAggregatesInput = {
   emailError?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"ContactEnquiry"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"ContactEnquiry"> | Date | string
+  source?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  utmSource?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  utmMedium?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  utmCampaign?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  utmTerm?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  utmContent?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  gclid?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  gbraid?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  wbraid?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  fbclid?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  landingPage?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  referrer?: Prisma.StringNullableWithAggregatesFilter<"ContactEnquiry"> | string | null
+  firstTouchAt?: Prisma.DateTimeNullableWithAggregatesFilter<"ContactEnquiry"> | Date | string | null
 }
 
 export type ContactEnquiryCreateInput = {
@@ -310,6 +466,19 @@ export type ContactEnquiryCreateInput = {
   emailError?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  source?: string | null
+  utmSource?: string | null
+  utmMedium?: string | null
+  utmCampaign?: string | null
+  utmTerm?: string | null
+  utmContent?: string | null
+  gclid?: string | null
+  gbraid?: string | null
+  wbraid?: string | null
+  fbclid?: string | null
+  landingPage?: string | null
+  referrer?: string | null
+  firstTouchAt?: Date | string | null
 }
 
 export type ContactEnquiryUncheckedCreateInput = {
@@ -324,6 +493,19 @@ export type ContactEnquiryUncheckedCreateInput = {
   emailError?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  source?: string | null
+  utmSource?: string | null
+  utmMedium?: string | null
+  utmCampaign?: string | null
+  utmTerm?: string | null
+  utmContent?: string | null
+  gclid?: string | null
+  gbraid?: string | null
+  wbraid?: string | null
+  fbclid?: string | null
+  landingPage?: string | null
+  referrer?: string | null
+  firstTouchAt?: Date | string | null
 }
 
 export type ContactEnquiryUpdateInput = {
@@ -338,6 +520,19 @@ export type ContactEnquiryUpdateInput = {
   emailError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmMedium?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmCampaign?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmTerm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmContent?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fbclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  landingPage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referrer?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstTouchAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type ContactEnquiryUncheckedUpdateInput = {
@@ -352,6 +547,19 @@ export type ContactEnquiryUncheckedUpdateInput = {
   emailError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmMedium?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmCampaign?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmTerm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmContent?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fbclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  landingPage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referrer?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstTouchAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type ContactEnquiryCreateManyInput = {
@@ -366,6 +574,19 @@ export type ContactEnquiryCreateManyInput = {
   emailError?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  source?: string | null
+  utmSource?: string | null
+  utmMedium?: string | null
+  utmCampaign?: string | null
+  utmTerm?: string | null
+  utmContent?: string | null
+  gclid?: string | null
+  gbraid?: string | null
+  wbraid?: string | null
+  fbclid?: string | null
+  landingPage?: string | null
+  referrer?: string | null
+  firstTouchAt?: Date | string | null
 }
 
 export type ContactEnquiryUpdateManyMutationInput = {
@@ -380,6 +601,19 @@ export type ContactEnquiryUpdateManyMutationInput = {
   emailError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmMedium?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmCampaign?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmTerm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmContent?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fbclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  landingPage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referrer?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstTouchAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type ContactEnquiryUncheckedUpdateManyInput = {
@@ -394,6 +628,19 @@ export type ContactEnquiryUncheckedUpdateManyInput = {
   emailError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmMedium?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmCampaign?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmTerm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  utmContent?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fbclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  landingPage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referrer?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstTouchAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type ContactEnquiryOrderByRelevanceInput = {
@@ -414,6 +661,19 @@ export type ContactEnquiryCountOrderByAggregateInput = {
   emailError?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  source?: Prisma.SortOrder
+  utmSource?: Prisma.SortOrder
+  utmMedium?: Prisma.SortOrder
+  utmCampaign?: Prisma.SortOrder
+  utmTerm?: Prisma.SortOrder
+  utmContent?: Prisma.SortOrder
+  gclid?: Prisma.SortOrder
+  gbraid?: Prisma.SortOrder
+  wbraid?: Prisma.SortOrder
+  fbclid?: Prisma.SortOrder
+  landingPage?: Prisma.SortOrder
+  referrer?: Prisma.SortOrder
+  firstTouchAt?: Prisma.SortOrder
 }
 
 export type ContactEnquiryMaxOrderByAggregateInput = {
@@ -428,6 +688,19 @@ export type ContactEnquiryMaxOrderByAggregateInput = {
   emailError?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  source?: Prisma.SortOrder
+  utmSource?: Prisma.SortOrder
+  utmMedium?: Prisma.SortOrder
+  utmCampaign?: Prisma.SortOrder
+  utmTerm?: Prisma.SortOrder
+  utmContent?: Prisma.SortOrder
+  gclid?: Prisma.SortOrder
+  gbraid?: Prisma.SortOrder
+  wbraid?: Prisma.SortOrder
+  fbclid?: Prisma.SortOrder
+  landingPage?: Prisma.SortOrder
+  referrer?: Prisma.SortOrder
+  firstTouchAt?: Prisma.SortOrder
 }
 
 export type ContactEnquiryMinOrderByAggregateInput = {
@@ -442,6 +715,19 @@ export type ContactEnquiryMinOrderByAggregateInput = {
   emailError?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  source?: Prisma.SortOrder
+  utmSource?: Prisma.SortOrder
+  utmMedium?: Prisma.SortOrder
+  utmCampaign?: Prisma.SortOrder
+  utmTerm?: Prisma.SortOrder
+  utmContent?: Prisma.SortOrder
+  gclid?: Prisma.SortOrder
+  gbraid?: Prisma.SortOrder
+  wbraid?: Prisma.SortOrder
+  fbclid?: Prisma.SortOrder
+  landingPage?: Prisma.SortOrder
+  referrer?: Prisma.SortOrder
+  firstTouchAt?: Prisma.SortOrder
 }
 
 
@@ -458,6 +744,19 @@ export type ContactEnquirySelect<ExtArgs extends runtime.Types.Extensions.Intern
   emailError?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  source?: boolean
+  utmSource?: boolean
+  utmMedium?: boolean
+  utmCampaign?: boolean
+  utmTerm?: boolean
+  utmContent?: boolean
+  gclid?: boolean
+  gbraid?: boolean
+  wbraid?: boolean
+  fbclid?: boolean
+  landingPage?: boolean
+  referrer?: boolean
+  firstTouchAt?: boolean
 }, ExtArgs["result"]["contactEnquiry"]>
 
 
@@ -474,9 +773,22 @@ export type ContactEnquirySelectScalar = {
   emailError?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  source?: boolean
+  utmSource?: boolean
+  utmMedium?: boolean
+  utmCampaign?: boolean
+  utmTerm?: boolean
+  utmContent?: boolean
+  gclid?: boolean
+  gbraid?: boolean
+  wbraid?: boolean
+  fbclid?: boolean
+  landingPage?: boolean
+  referrer?: boolean
+  firstTouchAt?: boolean
 }
 
-export type ContactEnquiryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "subject" | "message" | "status" | "emailSent" | "emailError" | "createdAt" | "updatedAt", ExtArgs["result"]["contactEnquiry"]>
+export type ContactEnquiryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "subject" | "message" | "status" | "emailSent" | "emailError" | "createdAt" | "updatedAt" | "source" | "utmSource" | "utmMedium" | "utmCampaign" | "utmTerm" | "utmContent" | "gclid" | "gbraid" | "wbraid" | "fbclid" | "landingPage" | "referrer" | "firstTouchAt", ExtArgs["result"]["contactEnquiry"]>
 
 export type $ContactEnquiryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ContactEnquiry"
@@ -493,6 +805,19 @@ export type $ContactEnquiryPayload<ExtArgs extends runtime.Types.Extensions.Inte
     emailError: string | null
     createdAt: Date
     updatedAt: Date
+    source: string | null
+    utmSource: string | null
+    utmMedium: string | null
+    utmCampaign: string | null
+    utmTerm: string | null
+    utmContent: string | null
+    gclid: string | null
+    gbraid: string | null
+    wbraid: string | null
+    fbclid: string | null
+    landingPage: string | null
+    referrer: string | null
+    firstTouchAt: Date | null
   }, ExtArgs["result"]["contactEnquiry"]>
   composites: {}
 }
@@ -873,6 +1198,19 @@ export interface ContactEnquiryFieldRefs {
   readonly emailError: Prisma.FieldRef<"ContactEnquiry", 'String'>
   readonly createdAt: Prisma.FieldRef<"ContactEnquiry", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"ContactEnquiry", 'DateTime'>
+  readonly source: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly utmSource: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly utmMedium: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly utmCampaign: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly utmTerm: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly utmContent: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly gclid: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly gbraid: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly wbraid: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly fbclid: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly landingPage: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly referrer: Prisma.FieldRef<"ContactEnquiry", 'String'>
+  readonly firstTouchAt: Prisma.FieldRef<"ContactEnquiry", 'DateTime'>
 }
     
 

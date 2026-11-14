@@ -12,12 +12,18 @@ type IncomingBlock = {
   data?: unknown;
 };
 
+// Admins only, like every other /api/admin route: a signed-in session alone
+// is not enough to read drafts or create posts.
 async function requireSession() {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
 
-  if (!session?.user) {
+  if (
+    !session?.user ||
+    session.user.role !== "admin" ||
+    session.user.banned
+  ) {
     return null;
   }
 

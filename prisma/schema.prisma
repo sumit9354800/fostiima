@@ -278,6 +278,23 @@ model AdmissionEnquiry {
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
+  // First-touch lead attribution (src/lib/lead-attribution.ts). Nullable and
+  // additive: rows created before these columns existed keep NULLs and are
+  // shown in Admin as legacy records. `source` above holds the server-derived
+  // label.
+  utmSource    String?   @db.VarChar(150)
+  utmMedium    String?   @db.VarChar(150)
+  utmCampaign  String?   @db.VarChar(150)
+  utmTerm      String?   @db.VarChar(150)
+  utmContent   String?   @db.VarChar(150)
+  gclid        String?   @db.VarChar(300)
+  gbraid       String?   @db.VarChar(300)
+  wbraid       String?   @db.VarChar(300)
+  fbclid       String?   @db.VarChar(300)
+  landingPage  String?   @db.VarChar(300)
+  referrer     String?   @db.VarChar(200)
+  firstTouchAt DateTime?
+
   @@index([status, createdAt])
   @@index([mobile])
   @@index([email])
@@ -297,6 +314,24 @@ model ContactEnquiry {
   emailError String?  @db.Text
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+
+  // Server-derived lead source label. Nullable with no default, so contact
+  // enquiries created before attribution existed are NOT labelled
+  // "FOSTIIMA Website"; Admin shows them as legacy records.
+  source       String?   @db.VarChar(150)
+  // First-touch lead attribution, same columns as AdmissionEnquiry.
+  utmSource    String?   @db.VarChar(150)
+  utmMedium    String?   @db.VarChar(150)
+  utmCampaign  String?   @db.VarChar(150)
+  utmTerm      String?   @db.VarChar(150)
+  utmContent   String?   @db.VarChar(150)
+  gclid        String?   @db.VarChar(300)
+  gbraid       String?   @db.VarChar(300)
+  wbraid       String?   @db.VarChar(300)
+  fbclid       String?   @db.VarChar(300)
+  landingPage  String?   @db.VarChar(300)
+  referrer     String?   @db.VarChar(200)
+  firstTouchAt DateTime?
 
   @@index([status, createdAt])
   @@index([email])

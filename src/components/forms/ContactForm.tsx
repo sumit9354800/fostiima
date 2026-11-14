@@ -1,6 +1,15 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+
+import { captureAttribution, thankYouPath } from "@/lib/lead-attribution";
+import { isConfirmedLeadResponse, pushLeadEvent } from "@/lib/lead-events";
+import { createSubmissionGuard } from "@/lib/submission-guard";
+import TurnstileWidget, {
+  TURNSTILE_SITE_KEY,
+  type TurnstileHandle,
+} from "@/components/forms/TurnstileWidget";
 import {
   CheckCircle2,
   Mail,
@@ -30,9 +39,25 @@ type FormError = {
 } | null;
 
 export default function ContactForm() {
+  const router = useRouter();
+  // Synchronous in-flight guard against double submission (state updates
+  // only take effect after a re-render). Stays set after a success, while the
+  // page navigates to /thank-you.
+  const [submissionGuard] = useState(createSubmissionGuard);
   const [submitted, setSubmitted] = useState(false);
-  const [captchaCode, setCaptchaCode] = useState("F7Km");
+  // Generated in the browser after mount (not a fixed string, and not during
+  // render, which would differ between server and client HTML).
+  const [captchaCode, setCaptchaCode] = useState("");
   const [enteredCode, setEnteredCode] = useState("");
+  // Server-verified Cloudflare Turnstile token (widget shown only when
+  // NEXT_PUBLIC_TURNSTILE_SITE_KEY is set; see src/lib/turnstile.ts).
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<TurnstileHandle>(null);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCaptchaCode(generateCode());
+  }, []);
   const [captchaError, setCaptchaError] = useState("");
 
   const [submissionState, setSubmissionState] =
@@ -49,6 +74,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (submissionGuard.isLocked()) return;
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -173,7 +199,19 @@ export default function ContactForm() {
       return;
     }
 
+    if (TURNSTILE_SITE_KEY && !turnstileToken) {
+      setFormError({
+        field: "captcha",
+        message: "Please complete the verification check.",
+      });
+      return;
+    }
+
+    if (!submissionGuard.tryAcquire()) return;
     setSubmissionState("submitting");
+
+    // Raw first-touch attribution; the API validates and classifies it.
+    const attribution = captureAttribution();
 
     try {
       const response = await fetch("/api/contact", {
@@ -187,6 +225,8 @@ export default function ContactForm() {
           phone,
           subject,
           message,
+          ...(attribution ? { attribution } : {}),
+          ...(TURNSTILE_SITE_KEY ? { turnstileToken } : {}),
         }),
       });
 
@@ -204,13 +244,7 @@ export default function ContactForm() {
         }
       }
 
-      if (
-        !response.ok ||
-        !data ||
-        typeof data !== "object" ||
-        !("success" in data) ||
-        data.success !== true
-      ) {
+      if (!isConfirmedLeadResponse(response.ok, data)) {
         const message =
           data &&
           typeof data === "object" &&
@@ -228,10 +262,23 @@ export default function ContactForm() {
       form.reset();
       setEnteredCode("");
       refreshCaptcha();
+      // A Turnstile token is single-use.
+      turnstileRef.current?.reset();
+
+      // One GTM contact lead event, only after the API confirmed the enquiry
+      // was saved, and before navigating. Its own event name (`contact_lead`),
+      // so no existing `generate_lead` tag starts counting contact enquiries.
+      // No personal data (see src/lib/lead-events.ts); never throws.
+      pushLeadEvent(window, "contact");
+
+      // Common Thank You page, only after the API confirmed the enquiry.
+      router.push(thankYouPath(attribution));
     } catch (error) {
       console.error("Contact enquiry submission failed:", error);
 
+      submissionGuard.release();
       setSubmissionState("error");
+      turnstileRef.current?.reset();
 
       setErrorMessage(
         error instanceof Error
@@ -447,6 +494,12 @@ export default function ContactForm() {
             </p>
           )}
         </div>
+
+        <TurnstileWidget
+          ref={turnstileRef}
+          action="contact_enquiry"
+          onToken={setTurnstileToken}
+        />
 
         {/* Subject */}
         <div>

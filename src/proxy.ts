@@ -16,11 +16,19 @@ function isLegacyCampaign(utmSource: string | null): boolean {
   return source === "time" || source.startsWith("cumulative leads");
 }
 
+// Homepage URLs that "GSC issues nov 2026" asks to 301 to the homepage (rows
+// R119 and R121). Matched exactly, so any other query, including live UTM
+// campaigns, is left alone. Keep in sync with the matcher below.
+const RETIRED_HOME_QUERIES = new Set(["?trk=public_post-text", "?ref=wefind"]);
+
 export async function proxy(request: NextRequest) {
   const url = new URL(request.url);
 
   if (url.pathname === "/") {
-    if (!isLegacyCampaign(url.searchParams.get("utm_source"))) {
+    if (
+      !isLegacyCampaign(url.searchParams.get("utm_source")) &&
+      !RETIRED_HOME_QUERIES.has(url.search)
+    ) {
       return NextResponse.next();
     }
 
@@ -108,6 +116,8 @@ export const config = {
       source: "/",
       has: [{ type: "query", key: "utm_source" }],
     },
+    { source: "/", has: [{ type: "query", key: "trk" }] },
+    { source: "/", has: [{ type: "query", key: "ref" }] },
     {
       source: "/blog/:slug",
       // A listing page prefetches every visible post; each lookup is only

@@ -11,6 +11,9 @@ export const auth = betterAuth({
 
   emailAndPassword: {
     enabled: true,
+    // Accounts are admin-only and created by an existing admin; the public
+    // sign-up endpoint stays closed. Existing users sign in as before.
+    disableSignUp: true,
   },
 
   plugins: [admin()],

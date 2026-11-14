@@ -67,7 +67,8 @@ export default async function AboutSection() {
               {about.eyebrow}
             </p>
 
-            <h2 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#123b79] sm:text-5xl lg:text-[30px]">
+            {/* The homepage's one H1 (the hero above is a video). */}
+            <h1 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#123b79] sm:text-5xl lg:text-[30px]">
               {(() => {
                 const words = about.title.split(" ");
                 const highlightStart = Math.max(words.length - 7, 0);
@@ -81,7 +82,7 @@ export default async function AboutSection() {
                   </>
                 );
               })()}
-            </h2>
+            </h1>
 
             <div className="mt-7 space-y-5 text-justify text-[15px] leading-7 text-slate-600 sm:text-base">
               <p>{about.description1}</p>

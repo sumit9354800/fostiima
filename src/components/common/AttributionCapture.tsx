@@ -5,17 +5,20 @@ import { usePathname } from "next/navigation";
 import { captureAttribution } from "@/lib/lead-attribution";
 
 /**
- * Initializes campaign lead attribution on public pages.
+ * Records first-touch lead attribution (see src/lib/lead-attribution.ts).
  *
- * Runs on initial public landing and subsequent client-side navigation.
- * Allowlisted campaign parameters (e.g. utm_source=chatgpt&utm_medium=paid)
- * are captured into sessionStorage on first touch so attribution is preserved
- * when the visitor navigates internally to an admission enquiry form.
+ * Mounted once in the root layout, so it runs on every public route,
+ * including the standalone landing pages (/pgdm-admission, /ag-landing-page)
+ * and /thank-you, on the first page view and after each client-side
+ * navigation. Admin pages are skipped. Forms read the same record again at
+ * submit time, so there is no ordering dependency between this component and
+ * a form mounting.
  */
 export default function AttributionCapture() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname?.startsWith("/admin")) return;
     captureAttribution();
   }, [pathname]);
 

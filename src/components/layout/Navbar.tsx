@@ -190,7 +190,7 @@ export default function Navbar() {
           aria-label="FOSTIIMA Business School Home"
         >
           <Image
-            src="/logo.jpeg"
+            src="/logo.webp"
             alt="FOSTIIMA Business School"
             width={170}
             height={50}

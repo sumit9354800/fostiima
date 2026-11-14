@@ -7,9 +7,9 @@ import FeeSchedule from "@/components/admissions/FeeSchedule";
 import FeeStructureHero from "@/components/admissions/FeeStructureHero";
 import SelectGroup from "@/components/admissions/SelectGroup";
 import { feeStructureData } from "@/data/fee-structure";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const pageMetadata: Metadata = {
   title: "Fee Structure | FOSTIIMA Business School",
   description:
     "Explore the fee structure, installment schedule, Select Group eligibility, fee inclusions, cutting edge courses and certification details for FOSTIIMA Business School PGDM Admissions 2026-28.",
@@ -60,3 +60,5 @@ export default function FeeStructurePage() {
     </main>
   );
 }
+
+export const metadata: Metadata = withPageSeo("/fee-structure", pageMetadata);

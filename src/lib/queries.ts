@@ -33,6 +33,25 @@ export const getPublishedBlogs = unstable_cache(
   { tags: [CONTENT_TAGS.blog], revalidate: CONTENT_REVALIDATE_SECONDS },
 );
 
+// Sitemap (/sitemap.xml): slug and last-modified date of every published post.
+// Dates are ISO strings because cached results are stored as JSON.
+export const getPublishedBlogSitemapEntries = unstable_cache(
+  async (): Promise<{ slug: string; lastModified: string }[]> => {
+    const posts = await prisma.blogPost.findMany({
+      where: { status: "published" },
+      select: { slug: true, updatedAt: true },
+      orderBy: [{ publishedAt: "desc" }, { createdAt: "desc" }],
+    });
+
+    return posts.map((post) => ({
+      slug: post.slug,
+      lastModified: post.updatedAt.toISOString(),
+    }));
+  },
+  ["published-blog-sitemap"],
+  { tags: [CONTENT_TAGS.blog], revalidate: CONTENT_REVALIDATE_SECONDS },
+);
+
 async function loadPublishedBlogs(): Promise<BlogPost[]> {
   const posts = await prisma.blogPost.findMany({
     where: {

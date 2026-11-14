@@ -2,6 +2,16 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
+import {
+  CONTACT_TURNSTILE_ACTION,
+  isTurnstileEnforced,
+  verifyTurnstile,
+} from "@/lib/turnstile";
+import {
+  attributionColumns,
+  attributionSummary,
+  resolveLeadAttribution,
+} from "@/lib/lead-attribution";
 
 export const runtime = "nodejs";
 
@@ -20,6 +30,7 @@ type ContactFormData = {
   phone: string;
   subject: string;
   message: string;
+  attributionRows: [string, string][];
 };
 
 export async function POST(request: Request) {
@@ -77,10 +88,34 @@ export async function POST(request: Request) {
       );
     }
 
-    // IMPORTANT:
-    // Preserve your existing Enter Code / CAPTCHA verification here.
-    // The verification field and validation logic were not included
-    // in the API code you shared, so they cannot safely be recreated here.
+    // Bot check before anything is stored or emailed. The on-page code is a
+    // browser-only check; this is the server-side one (Cloudflare Turnstile,
+    // enforced once TURNSTILE_SECRET_KEY is set; see src/lib/turnstile.ts).
+    if (isTurnstileEnforced()) {
+      const remoteIp =
+        request.headers.get("cf-connecting-ip") ||
+        request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+        null;
+      const verification = await verifyTurnstile(
+        data.turnstileToken,
+        remoteIp,
+        fetch,
+        CONTACT_TURNSTILE_ACTION,
+      );
+
+      if (!verification.ok) {
+        return NextResponse.json(
+          { success: false, message: verification.error },
+          { status: verification.status },
+        );
+      }
+    }
+
+    // Lead attribution, validated and classified server-side. Any
+    // client-supplied source label is ignored.
+    const { attribution, classification, source } = resolveLeadAttribution(
+      data.attribution,
+    );
 
     // 1. Save enquiry to MySQL first.
     const enquiry = await prisma.contactEnquiry.create({
@@ -90,9 +125,12 @@ export async function POST(request: Request) {
         phone,
         subject,
         message,
+        source,
+        ...attributionColumns(attribution),
         status: "NEW",
         emailSent: false,
       },
+      select: { id: true },
     });
 
     // 2. Send the existing FOSTIIMA email notification.
@@ -120,6 +158,7 @@ export async function POST(request: Request) {
           phone,
           subject,
           message,
+          attributionRows: attributionSummary(attribution, classification),
         }),
       });
 
@@ -216,6 +255,15 @@ function createContactEmail(data: ContactFormData): string {
                 <div style="padding:16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;color:#475569;font-size:14px;line-height:1.7;">
                   ${escapeHtml(data.message).replace(/\n/g, "<br />")}
                 </div>
+              </div>
+
+              <div style="margin-top:28px;">
+                <p style="margin:0 0 10px;color:#061a3a;font-size:14px;font-weight:700;">Lead Attribution</p>
+                <table style="width:100%;border-collapse:collapse;">
+                  ${data.attributionRows
+                    .map(([label, value]) => createEmailRow(label, value || "Not provided"))
+                    .join("")}
+                </table>
               </div>
 
               <div style="margin-top:28px;padding-top:18px;border-top:1px solid #e2e8f0;">
