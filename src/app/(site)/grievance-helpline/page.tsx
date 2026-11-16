@@ -7,6 +7,8 @@ import GrievanceFeedback from "@/components/grievance/GrievanceFeedback";
 import WomanHelpline from "@/components/grievance/WomanHelpline";
 import PsychologicalCounselling from "@/components/grievance/PsychologicalCounselling";
 import { getCanonicalUrl } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 export const metadata: Metadata = {
   title: "Grievance & Helpline | FOSTIIMA Business School",
@@ -30,6 +32,8 @@ export const metadata: Metadata = {
 export default function GrievanceHelplinePage() {
   return (
     <>
+      <JsonLd data={PAGE_STRUCTURED_DATA["/grievance-helpline"]} />
+
       <GrievanceHero />
 
       <GrievanceCommittee />

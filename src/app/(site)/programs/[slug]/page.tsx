@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { buildPageMetadata, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 import {
   programDetails,
   getProgramBySlug,
@@ -70,6 +72,8 @@ export default async function ProgramDetailPage({
 
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={PAGE_STRUCTURED_DATA[`/programs/${program.slug}`]} />
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#061a3a]">
         {/* The hero image is the page's LCP element. It was a CSS background

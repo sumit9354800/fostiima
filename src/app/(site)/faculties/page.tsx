@@ -4,6 +4,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { facultyData } from "@/data/faculty";
 import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 // import { prisma } from "@/lib/prisma";
 
@@ -39,6 +41,8 @@ export default async function FacultiesPage() {
 
   return (
     <main className="min-h-screen bg-[#f8fafc]">
+      <JsonLd data={PAGE_STRUCTURED_DATA["/faculties"]} />
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#061a3a]">
         {heroImage && (

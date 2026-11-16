@@ -41,18 +41,6 @@ export type AdmissionEnquiryMinAggregateOutputType = {
   emailError: string | null
   createdAt: Date | null
   updatedAt: Date | null
-  utmSource: string | null
-  utmMedium: string | null
-  utmCampaign: string | null
-  utmTerm: string | null
-  utmContent: string | null
-  gclid: string | null
-  gbraid: string | null
-  wbraid: string | null
-  fbclid: string | null
-  landingPage: string | null
-  referrer: string | null
-  firstTouchAt: Date | null
 }
 
 export type AdmissionEnquiryMaxAggregateOutputType = {
@@ -72,18 +60,6 @@ export type AdmissionEnquiryMaxAggregateOutputType = {
   emailError: string | null
   createdAt: Date | null
   updatedAt: Date | null
-  utmSource: string | null
-  utmMedium: string | null
-  utmCampaign: string | null
-  utmTerm: string | null
-  utmContent: string | null
-  gclid: string | null
-  gbraid: string | null
-  wbraid: string | null
-  fbclid: string | null
-  landingPage: string | null
-  referrer: string | null
-  firstTouchAt: Date | null
 }
 
 export type AdmissionEnquiryCountAggregateOutputType = {
@@ -103,18 +79,6 @@ export type AdmissionEnquiryCountAggregateOutputType = {
   emailError: number
   createdAt: number
   updatedAt: number
-  utmSource: number
-  utmMedium: number
-  utmCampaign: number
-  utmTerm: number
-  utmContent: number
-  gclid: number
-  gbraid: number
-  wbraid: number
-  fbclid: number
-  landingPage: number
-  referrer: number
-  firstTouchAt: number
   _all: number
 }
 
@@ -136,18 +100,6 @@ export type AdmissionEnquiryMinAggregateInputType = {
   emailError?: true
   createdAt?: true
   updatedAt?: true
-  utmSource?: true
-  utmMedium?: true
-  utmCampaign?: true
-  utmTerm?: true
-  utmContent?: true
-  gclid?: true
-  gbraid?: true
-  wbraid?: true
-  fbclid?: true
-  landingPage?: true
-  referrer?: true
-  firstTouchAt?: true
 }
 
 export type AdmissionEnquiryMaxAggregateInputType = {
@@ -167,18 +119,6 @@ export type AdmissionEnquiryMaxAggregateInputType = {
   emailError?: true
   createdAt?: true
   updatedAt?: true
-  utmSource?: true
-  utmMedium?: true
-  utmCampaign?: true
-  utmTerm?: true
-  utmContent?: true
-  gclid?: true
-  gbraid?: true
-  wbraid?: true
-  fbclid?: true
-  landingPage?: true
-  referrer?: true
-  firstTouchAt?: true
 }
 
 export type AdmissionEnquiryCountAggregateInputType = {
@@ -198,18 +138,6 @@ export type AdmissionEnquiryCountAggregateInputType = {
   emailError?: true
   createdAt?: true
   updatedAt?: true
-  utmSource?: true
-  utmMedium?: true
-  utmCampaign?: true
-  utmTerm?: true
-  utmContent?: true
-  gclid?: true
-  gbraid?: true
-  wbraid?: true
-  fbclid?: true
-  landingPage?: true
-  referrer?: true
-  firstTouchAt?: true
   _all?: true
 }
 
@@ -302,18 +230,6 @@ export type AdmissionEnquiryGroupByOutputType = {
   emailError: string | null
   createdAt: Date
   updatedAt: Date
-  utmSource: string | null
-  utmMedium: string | null
-  utmCampaign: string | null
-  utmTerm: string | null
-  utmContent: string | null
-  gclid: string | null
-  gbraid: string | null
-  wbraid: string | null
-  fbclid: string | null
-  landingPage: string | null
-  referrer: string | null
-  firstTouchAt: Date | null
   _count: AdmissionEnquiryCountAggregateOutputType | null
   _min: AdmissionEnquiryMinAggregateOutputType | null
   _max: AdmissionEnquiryMaxAggregateOutputType | null
@@ -354,18 +270,6 @@ export type AdmissionEnquiryWhereInput = {
   emailError?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
   createdAt?: Prisma.DateTimeFilter<"AdmissionEnquiry"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"AdmissionEnquiry"> | Date | string
-  utmSource?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  utmMedium?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  utmCampaign?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  utmTerm?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  utmContent?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  gclid?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  gbraid?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  wbraid?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  fbclid?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  landingPage?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  referrer?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  firstTouchAt?: Prisma.DateTimeNullableFilter<"AdmissionEnquiry"> | Date | string | null
 }
 
 export type AdmissionEnquiryOrderByWithRelationInput = {
@@ -385,18 +289,6 @@ export type AdmissionEnquiryOrderByWithRelationInput = {
   emailError?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  utmSource?: Prisma.SortOrderInput | Prisma.SortOrder
-  utmMedium?: Prisma.SortOrderInput | Prisma.SortOrder
-  utmCampaign?: Prisma.SortOrderInput | Prisma.SortOrder
-  utmTerm?: Prisma.SortOrderInput | Prisma.SortOrder
-  utmContent?: Prisma.SortOrderInput | Prisma.SortOrder
-  gclid?: Prisma.SortOrderInput | Prisma.SortOrder
-  gbraid?: Prisma.SortOrderInput | Prisma.SortOrder
-  wbraid?: Prisma.SortOrderInput | Prisma.SortOrder
-  fbclid?: Prisma.SortOrderInput | Prisma.SortOrder
-  landingPage?: Prisma.SortOrderInput | Prisma.SortOrder
-  referrer?: Prisma.SortOrderInput | Prisma.SortOrder
-  firstTouchAt?: Prisma.SortOrderInput | Prisma.SortOrder
   _relevance?: Prisma.AdmissionEnquiryOrderByRelevanceInput
 }
 
@@ -420,18 +312,6 @@ export type AdmissionEnquiryWhereUniqueInput = Prisma.AtLeast<{
   emailError?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
   createdAt?: Prisma.DateTimeFilter<"AdmissionEnquiry"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"AdmissionEnquiry"> | Date | string
-  utmSource?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  utmMedium?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  utmCampaign?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  utmTerm?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  utmContent?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  gclid?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  gbraid?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  wbraid?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  fbclid?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  landingPage?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  referrer?: Prisma.StringNullableFilter<"AdmissionEnquiry"> | string | null
-  firstTouchAt?: Prisma.DateTimeNullableFilter<"AdmissionEnquiry"> | Date | string | null
 }, "id">
 
 export type AdmissionEnquiryOrderByWithAggregationInput = {
@@ -451,18 +331,6 @@ export type AdmissionEnquiryOrderByWithAggregationInput = {
   emailError?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  utmSource?: Prisma.SortOrderInput | Prisma.SortOrder
-  utmMedium?: Prisma.SortOrderInput | Prisma.SortOrder
-  utmCampaign?: Prisma.SortOrderInput | Prisma.SortOrder
-  utmTerm?: Prisma.SortOrderInput | Prisma.SortOrder
-  utmContent?: Prisma.SortOrderInput | Prisma.SortOrder
-  gclid?: Prisma.SortOrderInput | Prisma.SortOrder
-  gbraid?: Prisma.SortOrderInput | Prisma.SortOrder
-  wbraid?: Prisma.SortOrderInput | Prisma.SortOrder
-  fbclid?: Prisma.SortOrderInput | Prisma.SortOrder
-  landingPage?: Prisma.SortOrderInput | Prisma.SortOrder
-  referrer?: Prisma.SortOrderInput | Prisma.SortOrder
-  firstTouchAt?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.AdmissionEnquiryCountOrderByAggregateInput
   _max?: Prisma.AdmissionEnquiryMaxOrderByAggregateInput
   _min?: Prisma.AdmissionEnquiryMinOrderByAggregateInput
@@ -488,18 +356,6 @@ export type AdmissionEnquiryScalarWhereWithAggregatesInput = {
   emailError?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"AdmissionEnquiry"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"AdmissionEnquiry"> | Date | string
-  utmSource?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  utmMedium?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  utmCampaign?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  utmTerm?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  utmContent?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  gclid?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  gbraid?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  wbraid?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  fbclid?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  landingPage?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  referrer?: Prisma.StringNullableWithAggregatesFilter<"AdmissionEnquiry"> | string | null
-  firstTouchAt?: Prisma.DateTimeNullableWithAggregatesFilter<"AdmissionEnquiry"> | Date | string | null
 }
 
 export type AdmissionEnquiryCreateInput = {
@@ -519,18 +375,6 @@ export type AdmissionEnquiryCreateInput = {
   emailError?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  utmSource?: string | null
-  utmMedium?: string | null
-  utmCampaign?: string | null
-  utmTerm?: string | null
-  utmContent?: string | null
-  gclid?: string | null
-  gbraid?: string | null
-  wbraid?: string | null
-  fbclid?: string | null
-  landingPage?: string | null
-  referrer?: string | null
-  firstTouchAt?: Date | string | null
 }
 
 export type AdmissionEnquiryUncheckedCreateInput = {
@@ -550,18 +394,6 @@ export type AdmissionEnquiryUncheckedCreateInput = {
   emailError?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  utmSource?: string | null
-  utmMedium?: string | null
-  utmCampaign?: string | null
-  utmTerm?: string | null
-  utmContent?: string | null
-  gclid?: string | null
-  gbraid?: string | null
-  wbraid?: string | null
-  fbclid?: string | null
-  landingPage?: string | null
-  referrer?: string | null
-  firstTouchAt?: Date | string | null
 }
 
 export type AdmissionEnquiryUpdateInput = {
@@ -581,18 +413,6 @@ export type AdmissionEnquiryUpdateInput = {
   emailError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  utmSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmMedium?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmCampaign?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmTerm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmContent?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  wbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fbclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  landingPage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referrer?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firstTouchAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AdmissionEnquiryUncheckedUpdateInput = {
@@ -612,18 +432,6 @@ export type AdmissionEnquiryUncheckedUpdateInput = {
   emailError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  utmSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmMedium?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmCampaign?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmTerm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmContent?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  wbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fbclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  landingPage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referrer?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firstTouchAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AdmissionEnquiryCreateManyInput = {
@@ -643,18 +451,6 @@ export type AdmissionEnquiryCreateManyInput = {
   emailError?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  utmSource?: string | null
-  utmMedium?: string | null
-  utmCampaign?: string | null
-  utmTerm?: string | null
-  utmContent?: string | null
-  gclid?: string | null
-  gbraid?: string | null
-  wbraid?: string | null
-  fbclid?: string | null
-  landingPage?: string | null
-  referrer?: string | null
-  firstTouchAt?: Date | string | null
 }
 
 export type AdmissionEnquiryUpdateManyMutationInput = {
@@ -674,18 +470,6 @@ export type AdmissionEnquiryUpdateManyMutationInput = {
   emailError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  utmSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmMedium?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmCampaign?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmTerm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmContent?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  wbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fbclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  landingPage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referrer?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firstTouchAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AdmissionEnquiryUncheckedUpdateManyInput = {
@@ -705,18 +489,6 @@ export type AdmissionEnquiryUncheckedUpdateManyInput = {
   emailError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  utmSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmMedium?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmCampaign?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmTerm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  utmContent?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  wbraid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fbclid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  landingPage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referrer?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firstTouchAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AdmissionEnquiryOrderByRelevanceInput = {
@@ -742,18 +514,6 @@ export type AdmissionEnquiryCountOrderByAggregateInput = {
   emailError?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  utmSource?: Prisma.SortOrder
-  utmMedium?: Prisma.SortOrder
-  utmCampaign?: Prisma.SortOrder
-  utmTerm?: Prisma.SortOrder
-  utmContent?: Prisma.SortOrder
-  gclid?: Prisma.SortOrder
-  gbraid?: Prisma.SortOrder
-  wbraid?: Prisma.SortOrder
-  fbclid?: Prisma.SortOrder
-  landingPage?: Prisma.SortOrder
-  referrer?: Prisma.SortOrder
-  firstTouchAt?: Prisma.SortOrder
 }
 
 export type AdmissionEnquiryMaxOrderByAggregateInput = {
@@ -773,18 +533,6 @@ export type AdmissionEnquiryMaxOrderByAggregateInput = {
   emailError?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  utmSource?: Prisma.SortOrder
-  utmMedium?: Prisma.SortOrder
-  utmCampaign?: Prisma.SortOrder
-  utmTerm?: Prisma.SortOrder
-  utmContent?: Prisma.SortOrder
-  gclid?: Prisma.SortOrder
-  gbraid?: Prisma.SortOrder
-  wbraid?: Prisma.SortOrder
-  fbclid?: Prisma.SortOrder
-  landingPage?: Prisma.SortOrder
-  referrer?: Prisma.SortOrder
-  firstTouchAt?: Prisma.SortOrder
 }
 
 export type AdmissionEnquiryMinOrderByAggregateInput = {
@@ -804,18 +552,6 @@ export type AdmissionEnquiryMinOrderByAggregateInput = {
   emailError?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  utmSource?: Prisma.SortOrder
-  utmMedium?: Prisma.SortOrder
-  utmCampaign?: Prisma.SortOrder
-  utmTerm?: Prisma.SortOrder
-  utmContent?: Prisma.SortOrder
-  gclid?: Prisma.SortOrder
-  gbraid?: Prisma.SortOrder
-  wbraid?: Prisma.SortOrder
-  fbclid?: Prisma.SortOrder
-  landingPage?: Prisma.SortOrder
-  referrer?: Prisma.SortOrder
-  firstTouchAt?: Prisma.SortOrder
 }
 
 
@@ -837,18 +573,6 @@ export type AdmissionEnquirySelect<ExtArgs extends runtime.Types.Extensions.Inte
   emailError?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  utmSource?: boolean
-  utmMedium?: boolean
-  utmCampaign?: boolean
-  utmTerm?: boolean
-  utmContent?: boolean
-  gclid?: boolean
-  gbraid?: boolean
-  wbraid?: boolean
-  fbclid?: boolean
-  landingPage?: boolean
-  referrer?: boolean
-  firstTouchAt?: boolean
 }, ExtArgs["result"]["admissionEnquiry"]>
 
 
@@ -870,21 +594,9 @@ export type AdmissionEnquirySelectScalar = {
   emailError?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  utmSource?: boolean
-  utmMedium?: boolean
-  utmCampaign?: boolean
-  utmTerm?: boolean
-  utmContent?: boolean
-  gclid?: boolean
-  gbraid?: boolean
-  wbraid?: boolean
-  fbclid?: boolean
-  landingPage?: boolean
-  referrer?: boolean
-  firstTouchAt?: boolean
 }
 
-export type AdmissionEnquiryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "fullName" | "mobile" | "email" | "state" | "city" | "course" | "graduationStatus" | "remarks" | "consent" | "source" | "status" | "emailSent" | "emailError" | "createdAt" | "updatedAt" | "utmSource" | "utmMedium" | "utmCampaign" | "utmTerm" | "utmContent" | "gclid" | "gbraid" | "wbraid" | "fbclid" | "landingPage" | "referrer" | "firstTouchAt", ExtArgs["result"]["admissionEnquiry"]>
+export type AdmissionEnquiryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "fullName" | "mobile" | "email" | "state" | "city" | "course" | "graduationStatus" | "remarks" | "consent" | "source" | "status" | "emailSent" | "emailError" | "createdAt" | "updatedAt", ExtArgs["result"]["admissionEnquiry"]>
 
 export type $AdmissionEnquiryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "AdmissionEnquiry"
@@ -906,18 +618,6 @@ export type $AdmissionEnquiryPayload<ExtArgs extends runtime.Types.Extensions.In
     emailError: string | null
     createdAt: Date
     updatedAt: Date
-    utmSource: string | null
-    utmMedium: string | null
-    utmCampaign: string | null
-    utmTerm: string | null
-    utmContent: string | null
-    gclid: string | null
-    gbraid: string | null
-    wbraid: string | null
-    fbclid: string | null
-    landingPage: string | null
-    referrer: string | null
-    firstTouchAt: Date | null
   }, ExtArgs["result"]["admissionEnquiry"]>
   composites: {}
 }
@@ -1303,18 +1003,6 @@ export interface AdmissionEnquiryFieldRefs {
   readonly emailError: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
   readonly createdAt: Prisma.FieldRef<"AdmissionEnquiry", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"AdmissionEnquiry", 'DateTime'>
-  readonly utmSource: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly utmMedium: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly utmCampaign: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly utmTerm: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly utmContent: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly gclid: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly gbraid: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly wbraid: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly fbclid: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly landingPage: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly referrer: Prisma.FieldRef<"AdmissionEnquiry", 'String'>
-  readonly firstTouchAt: Prisma.FieldRef<"AdmissionEnquiry", 'DateTime'>
 }
     
 

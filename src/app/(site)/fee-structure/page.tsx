@@ -8,6 +8,8 @@ import FeeStructureHero from "@/components/admissions/FeeStructureHero";
 import SelectGroup from "@/components/admissions/SelectGroup";
 import { feeStructureData } from "@/data/fee-structure";
 import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 const pageMetadata: Metadata = {
   title: "Fee Structure | FOSTIIMA Business School",
@@ -42,6 +44,8 @@ export default function FeeStructurePage() {
 
   return (
     <main className="bg-white">
+      <JsonLd data={PAGE_STRUCTURED_DATA["/fee-structure"]} />
+
       <FeeStructureHero title={title} program={program} totalFee={totalFee} />
 
       <FeeSchedule installments={installments} />

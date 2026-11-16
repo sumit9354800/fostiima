@@ -8,6 +8,8 @@ import StrengthCurriculum from "@/components/strength/StrengthCurriculum";
 import StrengthCorporateLinkages from "@/components/strength/StrengthCorporateLinkages";
 import StrengthKeyPoints from "@/components/strength/StrengthKeyPoints";
 import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 const pageMetadata: Metadata = {
   title: "FOSTIIMA Strength | The FOSTIIMA Difference",
@@ -31,6 +33,8 @@ const pageMetadata: Metadata = {
 export default function FostiimaStrengthPage() {
   return (
     <main>
+      <JsonLd data={PAGE_STRUCTURED_DATA["/fostiima-strength"]} />
+
       <StrengthHero />
       <StrengthDifference />
       <StrengthFaculty />

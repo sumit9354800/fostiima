@@ -3,6 +3,8 @@ import FinalPlacementContent from "@/components/placement/final-placements/Final
 import FinalPlacementsHero from "@/components/placement/final-placements/FinalPlacementsHero";
 import { finalPlacementBatches } from "@/data/placement/final-placements";
 import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 const pageMetadata: Metadata = {
   title: "Final Placements | FOSTIIMA Business School",
   description:
@@ -24,6 +26,8 @@ const pageMetadata: Metadata = {
 export default function FinalPlacementsPage() {
   return (
     <main className="bg-white">
+      <JsonLd data={PAGE_STRUCTURED_DATA["/placement/final-placements"]} />
+
       <FinalPlacementsHero />
 
       <FinalPlacementContent batches={finalPlacementBatches} />

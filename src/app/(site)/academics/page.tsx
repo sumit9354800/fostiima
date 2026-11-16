@@ -5,6 +5,8 @@ import AcademicOverview from "@/components/academics/AcademicOverview";
 import StudentAchievementsSection from "@/components/common/StudentAchievementsSection";
 import AcademicHighlights from "@/components/academics/AcademicHighlights";
 import { buildPageMetadata, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 const pageMetadata: Metadata = buildPageMetadata({
   title: "Academics",
@@ -16,6 +18,8 @@ const pageMetadata: Metadata = buildPageMetadata({
 export default function AcademicsPage() {
   return (
     <main>
+      <JsonLd data={PAGE_STRUCTURED_DATA["/academics"]} />
+
       <AcademicsHero />
       <AcademicOverview />
       <StudentAchievementsSection />

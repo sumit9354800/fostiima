@@ -61,15 +61,24 @@ beforeEach(() => {
 const GCLID = "Cj0KCQiA_test-gclid_1234567890";
 const FBCLID = "IwAR0_test-fbclid_1234567890";
 
+// Attribution columns are not in the production database yet (they were
+// removed from prisma/schema.prisma), so no route may write them.
 const ATTRIBUTION_FIELDS = [
   "utmSource", "utmMedium", "utmCampaign", "utmTerm", "utmContent",
   "gclid", "gbraid", "wbraid", "fbclid", "landingPage", "referrer", "firstTouchAt",
 ] as const;
 
-function pickAttribution(data: Row): Row {
-  return Object.fromEntries(
-    ["source", ...ATTRIBUTION_FIELDS].map((field) => [field, data[field]]),
-  );
+// The columns each table has (prisma/schema.prisma). A create may only use these.
+const ADMISSION_COLUMNS = new Set([
+  "fullName", "mobile", "email", "state", "city", "course", "graduationStatus",
+  "remarks", "consent", "source", "status", "emailSent",
+]);
+const CONTACT_COLUMNS = new Set([
+  "name", "email", "phone", "subject", "message", "status", "emailSent",
+]);
+
+function unknownColumns(data: Row, columns: Set<string>): string[] {
+  return Object.keys(data).filter((key) => !columns.has(key));
 }
 
 function post(body: unknown): Request {
@@ -121,7 +130,7 @@ describe("POST /api/admission-enquiries", () => {
     );
   });
 
-  test("persists every attribution column, validated (path/origin only)", async () => {
+  test("full attribution: saves the source label only, never the attribution columns", async () => {
     await admissionRoute.POST(
       post({
         ...admission,
@@ -141,38 +150,26 @@ describe("POST /api/admission-enquiries", () => {
         },
       }),
     );
-    assert.deepEqual(pickAttribution(created[0].data), {
-      source: "Google Ads",
-      utmSource: "Google",
-      utmMedium: "CPC",
-      utmCampaign: "PGDM 2026",
-      utmTerm: "mba delhi",
-      utmContent: "ad_1",
-      gclid: GCLID,
-      gbraid: GCLID,
-      wbraid: GCLID,
-      fbclid: null,
-      landingPage: "/programs/pgdm",
-      referrer: "https://www.google.com",
-      firstTouchAt: new Date("2026-11-10T08:00:00.000Z"),
-    });
-    assert.equal("unknown_field" in created[0].data, false);
+    const data = created[0].data;
+    assert.equal(data.source, "Google Ads");
+    assert.deepEqual(unknownColumns(data, ADMISSION_COLUMNS), []);
+    assert.ok(ATTRIBUTION_FIELDS.every((field) => !(field in data)));
+    assert.equal("unknown_field" in data, false);
   });
 
-  test("no attribution (old browser tab / direct) -> FOSTIIMA Website, all columns null", async () => {
+  test("no attribution (old browser tab / direct) -> FOSTIIMA Website, existing columns only", async () => {
     await admissionRoute.POST(post(admission));
-    const row = pickAttribution(created[0].data);
-    assert.equal(row.source, "FOSTIIMA Website");
-    assert.ok(ATTRIBUTION_FIELDS.every((field) => row[field] === null));
+    assert.equal(created[0].data.source, "FOSTIIMA Website");
+    assert.deepEqual(unknownColumns(created[0].data, ADMISSION_COLUMNS), []);
   });
 
   test("personal data inside attribution is not persisted", async () => {
     await admissionRoute.POST(
       post({ ...admission, attribution: { utm_source: "chatgpt", utm_content: "test.student@example.com", utm_term: "9876543210" } }),
     );
-    assert.equal(created[0].data.utmContent, null);
-    assert.equal(created[0].data.utmTerm, null);
-    assert.equal(created[0].data.source, "ChatGPT");
+    const data = created[0].data;
+    assert.equal(data.source, "ChatGPT");
+    assert.deepEqual(unknownColumns(data, ADMISSION_COLUMNS), []);
   });
 
   test("a forged body.source label is ignored", async () => {
@@ -197,7 +194,7 @@ describe("POST /api/admission-enquiries", () => {
 });
 
 describe("POST /api/contact", () => {
-  test("scenario 18: contact enquiry persists source and every attribution column", async () => {
+  test("scenario 18: contact enquiry with full attribution writes no source or attribution columns", async () => {
     const response = await contactRoute.POST(
       post({
         ...contact,
@@ -218,39 +215,24 @@ describe("POST /api/contact", () => {
     assert.equal(response.status, 200);
     assert.equal(json.success, true);
     assert.equal(created.length, 1);
-    assert.deepEqual(pickAttribution(created[0].data), {
-      source: "Facebook Ads",
-      utmSource: "facebook",
-      utmMedium: "paid",
-      utmCampaign: "pgdm_nov",
-      utmTerm: "mba",
-      utmContent: "carousel_1",
-      gclid: null,
-      gbraid: null,
-      wbraid: null,
-      fbclid: FBCLID,
-      landingPage: "/contact-us",
-      referrer: "https://l.facebook.com",
-      firstTouchAt: new Date("2026-11-10T08:00:00.000Z"),
-    });
+    assert.equal("source" in created[0].data, false);
+    assert.deepEqual(unknownColumns(created[0].data, CONTACT_COLUMNS), []);
   });
 
-  test("contact without attribution: source FOSTIIMA Website, attribution columns null", async () => {
+  test("contact without attribution: existing columns only", async () => {
     await contactRoute.POST(post(contact));
-    const row = pickAttribution(created[0].data);
-    assert.equal(row.source, "FOSTIIMA Website");
-    assert.ok(ATTRIBUTION_FIELDS.every((field) => row[field] === null));
+    assert.deepEqual(unknownColumns(created[0].data, CONTACT_COLUMNS), []);
   });
 
-  test("contact: a forged source label is ignored", async () => {
+  test("contact: a forged source label is never written", async () => {
     await contactRoute.POST(post({ ...contact, source: "Google Ads", attribution: { label: "Google Ads" } }));
-    assert.equal(created[0].data.source, "FOSTIIMA Website");
+    assert.equal("source" in created[0].data, false);
   });
 
   test("malformed attribution never breaks a contact enquiry", async () => {
     const response = await contactRoute.POST(post({ ...contact, attribution: "<script>" }));
     assert.equal((await response.json()).success, true);
-    assert.ok(ATTRIBUTION_FIELDS.every((field) => created[0].data[field] === null));
+    assert.deepEqual(unknownColumns(created[0].data, CONTACT_COLUMNS), []);
   });
 
   test("contact: database failure returns 500 and success:false", async () => {

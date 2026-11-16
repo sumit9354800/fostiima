@@ -5,6 +5,8 @@ import { ArrowRight } from "lucide-react";
 
 import { getHomePrograms, getPrograms, type ProgramKey } from "@/data/programs";
 import { buildPageMetadata, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 type ProgramsPageProps = {
   searchParams: Promise<{ program?: string | string[] }>;
@@ -34,6 +36,8 @@ export default async function ProgramsPage({
 
   return (
     <main className="min-h-screen bg-[#f8fafc]">
+      <JsonLd data={PAGE_STRUCTURED_DATA["/programs"]} />
+
       <section className="bg-[#061a3a] px-6 py-16 text-white sm:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#e5b83f]">

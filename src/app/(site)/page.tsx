@@ -22,6 +22,8 @@ import { Suspense } from "react";
 import PlacementGallery from "@/components/home/PlacementGallery";
 import type { Metadata } from "next";
 import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 const pageMetadata: Metadata = {
   title: "FOSTIIMA Business School | Top PGDM Institute in Delhi",
@@ -48,6 +50,8 @@ const pageMetadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={PAGE_STRUCTURED_DATA["/"]} />
+
       <Hero />
 
       <Suspense fallback={<HomeSectionsFallback />}>

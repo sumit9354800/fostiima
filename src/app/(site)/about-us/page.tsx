@@ -7,6 +7,8 @@ import ObjectivesSection from "@/components/about/ObjectivesSection";
 import InfrastructureSection from "@/components/about/InfrastructureSection";
 import type { Metadata } from "next";
 import { buildPageMetadata, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 const pageMetadata: Metadata = buildPageMetadata({
   title: "About Us",
@@ -18,6 +20,8 @@ const pageMetadata: Metadata = buildPageMetadata({
 export default function AboutUsPage() {
   return (
     <main>
+      <JsonLd data={PAGE_STRUCTURED_DATA["/about-us"]} />
+
       <AboutHero />
 
       <AboutFostiima />

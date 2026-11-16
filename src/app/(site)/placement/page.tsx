@@ -6,6 +6,8 @@ import PlacementAdvantage from "@/components/placement/PlacementAdvantage";
 import PlacementCorporate from "@/components/placement/PlacementCorporate";
 import PlacementCTA from "@/components/placement/PlacementCTA";
 import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 const pageMetadata: Metadata = {
   title: "Placement | FOSTIIMA Business School",
@@ -29,6 +31,8 @@ const pageMetadata: Metadata = {
 export default function PlacementPage() {
   return (
     <>
+      <JsonLd data={PAGE_STRUCTURED_DATA["/placement"]} />
+
       <PlacementHero />
 
       <PlacementSnapshot />

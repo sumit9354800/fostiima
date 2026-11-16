@@ -10,6 +10,8 @@ import PgdmOverview from "@/components/admissions/PgdmOverview";
 import WorkExperience from "@/components/admissions/WorkExperience";
 import { howToApplyData } from "@/data/how-to-apply";
 import { getCanonicalUrl } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 export const metadata: Metadata = {
   title: "How to Apply | FOSTIIMA Business School",
@@ -43,6 +45,8 @@ export default function HowToApplyPage() {
 
   return (
     <main className="bg-white">
+      <JsonLd data={PAGE_STRUCTURED_DATA["/how-to-apply"]} />
+
       <HowToApplyHero />
 
       <ApplicationRequirements

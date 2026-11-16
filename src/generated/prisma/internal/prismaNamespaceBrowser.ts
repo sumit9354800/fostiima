@@ -334,19 +334,7 @@ export const AdmissionEnquiryScalarFieldEnum = {
   emailSent: 'emailSent',
   emailError: 'emailError',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  utmSource: 'utmSource',
-  utmMedium: 'utmMedium',
-  utmCampaign: 'utmCampaign',
-  utmTerm: 'utmTerm',
-  utmContent: 'utmContent',
-  gclid: 'gclid',
-  gbraid: 'gbraid',
-  wbraid: 'wbraid',
-  fbclid: 'fbclid',
-  landingPage: 'landingPage',
-  referrer: 'referrer',
-  firstTouchAt: 'firstTouchAt'
+  updatedAt: 'updatedAt'
 } as const
 
 export type AdmissionEnquiryScalarFieldEnum = (typeof AdmissionEnquiryScalarFieldEnum)[keyof typeof AdmissionEnquiryScalarFieldEnum]
@@ -363,20 +351,7 @@ export const ContactEnquiryScalarFieldEnum = {
   emailSent: 'emailSent',
   emailError: 'emailError',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  source: 'source',
-  utmSource: 'utmSource',
-  utmMedium: 'utmMedium',
-  utmCampaign: 'utmCampaign',
-  utmTerm: 'utmTerm',
-  utmContent: 'utmContent',
-  gclid: 'gclid',
-  gbraid: 'gbraid',
-  wbraid: 'wbraid',
-  fbclid: 'fbclid',
-  landingPage: 'landingPage',
-  referrer: 'referrer',
-  firstTouchAt: 'firstTouchAt'
+  updatedAt: 'updatedAt'
 } as const
 
 export type ContactEnquiryScalarFieldEnum = (typeof ContactEnquiryScalarFieldEnum)[keyof typeof ContactEnquiryScalarFieldEnum]
@@ -588,18 +563,7 @@ export const AdmissionEnquiryOrderByRelevanceFieldEnum = {
   remarks: 'remarks',
   source: 'source',
   status: 'status',
-  emailError: 'emailError',
-  utmSource: 'utmSource',
-  utmMedium: 'utmMedium',
-  utmCampaign: 'utmCampaign',
-  utmTerm: 'utmTerm',
-  utmContent: 'utmContent',
-  gclid: 'gclid',
-  gbraid: 'gbraid',
-  wbraid: 'wbraid',
-  fbclid: 'fbclid',
-  landingPage: 'landingPage',
-  referrer: 'referrer'
+  emailError: 'emailError'
 } as const
 
 export type AdmissionEnquiryOrderByRelevanceFieldEnum = (typeof AdmissionEnquiryOrderByRelevanceFieldEnum)[keyof typeof AdmissionEnquiryOrderByRelevanceFieldEnum]
@@ -613,19 +577,7 @@ export const ContactEnquiryOrderByRelevanceFieldEnum = {
   subject: 'subject',
   message: 'message',
   status: 'status',
-  emailError: 'emailError',
-  source: 'source',
-  utmSource: 'utmSource',
-  utmMedium: 'utmMedium',
-  utmCampaign: 'utmCampaign',
-  utmTerm: 'utmTerm',
-  utmContent: 'utmContent',
-  gclid: 'gclid',
-  gbraid: 'gbraid',
-  wbraid: 'wbraid',
-  fbclid: 'fbclid',
-  landingPage: 'landingPage',
-  referrer: 'referrer'
+  emailError: 'emailError'
 } as const
 
 export type ContactEnquiryOrderByRelevanceFieldEnum = (typeof ContactEnquiryOrderByRelevanceFieldEnum)[keyof typeof ContactEnquiryOrderByRelevanceFieldEnum]

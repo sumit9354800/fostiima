@@ -4,6 +4,8 @@ import AboutMargdarshak from "@/components/margdarshak/AboutMargdarshak";
 import MargdarshakHero from "@/components/margdarshak/MargdarshakHero";
 import MargdarshakTabs from "@/components/margdarshak/MargdarshakTabs";
 import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 const pageMetadata: Metadata = {
   title: "Margdarshak | FOSTIIMA Business School",
   description:
@@ -26,6 +28,8 @@ const pageMetadata: Metadata = {
 export default function MargdarshakPage() {
   return (
     <main>
+      <JsonLd data={PAGE_STRUCTURED_DATA["/margdarshak"]} />
+
       <MargdarshakHero />
 
       <AboutMargdarshak />

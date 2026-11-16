@@ -1,4 +1,4 @@
-// Admin API tests: authentication/authorization and attribution fields.
+// Admin API tests: authentication/authorization and the selected lead fields.
 // Run: npm test (needs --experimental-test-module-mocks, set in package.json).
 //
 // Isolated: Better Auth and next/headers are replaced with module mocks, and
@@ -10,9 +10,13 @@ import assert from "node:assert/strict";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
-import { describeLeadAttribution, LEGACY_ATTRIBUTION_LABEL } from "../src/lib/lead-attribution";
-
 delete process.env.DATABASE_URL;
+
+// Not in the production database yet (removed from prisma/schema.prisma).
+const ATTRIBUTION_FIELDS = [
+  "utmSource", "utmMedium", "utmCampaign", "utmTerm", "utmContent",
+  "gclid", "gbraid", "wbraid", "fbclid", "landingPage", "referrer", "firstTouchAt",
+];
 
 type Session = { user: { role?: string | null; banned?: boolean | null } } | null;
 let currentSession: Session = null;
@@ -32,19 +36,13 @@ const LEGACY_ADMISSION = {
   source: "FOSTIIMA Website",
   status: "NEW",
   createdAt: new Date("2026-11-01T10:00:00Z"),
-  utmSource: null, utmMedium: null, utmCampaign: null, utmTerm: null, utmContent: null,
-  gclid: null, gbraid: null, wbraid: null, fbclid: null,
-  landingPage: null, referrer: null, firstTouchAt: null,
 };
 
 const NEW_ADMISSION = {
   ...LEGACY_ADMISSION,
   id: "new-1",
   source: "ChatGPT",
-  utmSource: "chatgpt.com",
-  utmMedium: "paid",
-  landingPage: "/pgdm-admission",
-  firstTouchAt: new Date("2026-11-14T09:00:00Z"),
+  createdAt: new Date("2026-11-14T09:00:00Z"),
 };
 
 let lastAdmissionSelect: Record<string, unknown> | undefined;
@@ -121,18 +119,16 @@ describe("Admin authentication", () => {
   });
 });
 
-describe("Admin attribution data", () => {
+describe("Admin lead data", () => {
   beforeEach(() => {
     currentSession = { user: { role: "admin" } };
   });
 
-  test("admission list selects every attribution column", async () => {
+  test("admission list selects source and no attribution column", async () => {
     await admissionAdmin.GET(listRequest());
-    for (const field of [
-      "source", "utmSource", "utmMedium", "utmCampaign", "utmTerm", "utmContent",
-      "gclid", "gbraid", "wbraid", "fbclid", "landingPage", "referrer", "firstTouchAt",
-    ]) {
-      assert.equal(lastAdmissionSelect?.[field], true, field);
+    assert.equal(lastAdmissionSelect?.source, true);
+    for (const field of ATTRIBUTION_FIELDS) {
+      assert.equal(lastAdmissionSelect?.[field], undefined, field);
     }
   });
 
@@ -151,29 +147,23 @@ describe("Admin attribution data", () => {
     assert.equal(invalid.status, 400);
   });
 
-  test("API output feeds the panel: new lead shows its label, legacy lead is not reclassified", async () => {
+  test("admission list returns each stored source label unchanged", async () => {
     const json = await (await admissionAdmin.GET(listRequest())).json();
-    const [fresh, legacy] = json.enquiries.map(describeLeadAttribution);
-
-    assert.equal(fresh.legacy, false);
-    assert.equal(fresh.sourceLabel, "ChatGPT");
-    assert.equal(fresh.firstTouchAt, "2026-11-14T09:00:00.000Z");
-
-    assert.equal(legacy.legacy, true);
-    assert.equal(legacy.sourceLabel, LEGACY_ATTRIBUTION_LABEL);
-    assert.equal(legacy.storedSource, "FOSTIIMA Website");
+    assert.deepEqual(
+      json.enquiries.map((row: { source: string }) => row.source),
+      ["ChatGPT", "FOSTIIMA Website"],
+    );
   });
 
-  test("contact list returns attribution columns; legacy rows have null source", async () => {
+  test("contact list returns the stored rows", async () => {
     contactRows = [
-      { id: "c-new", source: "Google Ads", gclid: "Cj0KCQiA_test-gclid_1234567890", landingPage: "/contact-us", firstTouchAt: "2026-11-14T09:00:00.000Z" },
-      { id: "c-old", source: null, landingPage: null, firstTouchAt: null },
+      { id: "c-new", name: "New Contact", status: "NEW" },
+      { id: "c-old", name: "Old Contact", status: "REPLIED" },
     ];
     const json = await (await contactAdmin.GET()).json();
-    const [fresh, legacy] = json.enquiries.map(describeLeadAttribution);
-    assert.equal(fresh.sourceLabel, "Google Ads");
-    assert.equal(fresh.rows.find((row: { label: string }) => row.label === "Click IDs")?.value, "gclid: Cj0KCQiA_test-gclid_1234567890");
-    assert.equal(legacy.sourceLabel, LEGACY_ATTRIBUTION_LABEL);
-    assert.equal(legacy.storedSource, null);
+    assert.deepEqual(
+      json.enquiries.map((row: { id: string }) => row.id),
+      ["c-new", "c-old"],
+    );
   });
 });

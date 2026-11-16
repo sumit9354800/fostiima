@@ -3,6 +3,8 @@ import ContactHero from "@/components/contact/ContactHero";
 import ContactInfo from "@/components/contact/ContactInfo";
 import ContactForm from "@/components/forms/ContactForm";
 import { buildPageMetadata, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 const pageMetadata: Metadata = buildPageMetadata({
   title: "Contact Us",
@@ -13,6 +15,8 @@ const pageMetadata: Metadata = buildPageMetadata({
 export default function ContactUsPage() {
   return (
     <>
+      <JsonLd data={PAGE_STRUCTURED_DATA["/contact-us"]} />
+
       <ContactHero />
 
       <main className="bg-[#f8fafc] px-6 py-16 sm:px-8 lg:px-12 lg:py-20">

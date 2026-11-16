@@ -5,6 +5,8 @@ import { CalendarDays } from "lucide-react";
 import EventCard from "@/components/conclave/EventCard";
 import { getPublishedConclaveEvents } from "@/data/conclave";
 import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 // Rebuilt daily so events move from "Upcoming" to past on their own.
 export const revalidate = 86400;
@@ -33,6 +35,8 @@ export default function ConclaveConferencePage() {
 
   return (
     <main className="min-h-screen bg-[#f8fafc]">
+      <JsonLd data={PAGE_STRUCTURED_DATA["/conclave-conference"]} />
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#061a3a]">
         <div

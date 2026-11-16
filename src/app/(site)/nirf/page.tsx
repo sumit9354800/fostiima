@@ -12,6 +12,8 @@ import NIRFPwDFacilities from "@/components/nirf/NIRFPwDFacilities";
 import NIRFFaculty from "@/components/nirf/NIRFFaculty";
 import NIRFIntake from "@/components/nirf/ NIRFIntake";
 import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 const pageMetadata: Metadata = {
   title: "NIRF 2026 | FOSTIIMA Business School",
@@ -35,6 +37,8 @@ const pageMetadata: Metadata = {
 export default function NIRFPage() {
   return (
     <>
+      <JsonLd data={PAGE_STRUCTURED_DATA["/nirf"]} />
+
       <NIRFHero />
 
       <NIRFOverview />

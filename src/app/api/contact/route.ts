@@ -8,7 +8,6 @@ import {
   verifyTurnstile,
 } from "@/lib/turnstile";
 import {
-  attributionColumns,
   attributionSummary,
   resolveLeadAttribution,
 } from "@/lib/lead-attribution";
@@ -111,9 +110,11 @@ export async function POST(request: Request) {
       }
     }
 
-    // Lead attribution, validated and classified server-side. Any
-    // client-supplied source label is ignored.
-    const { attribution, classification, source } = resolveLeadAttribution(
+    // Lead attribution, validated and classified server-side, for the
+    // notification email only: contact_enquiry has no source or attribution
+    // columns in the production database yet. Any client-supplied source
+    // label is ignored.
+    const { attribution, classification } = resolveLeadAttribution(
       data.attribution,
     );
 
@@ -125,8 +126,6 @@ export async function POST(request: Request) {
         phone,
         subject,
         message,
-        source,
-        ...attributionColumns(attribution),
         status: "NEW",
         emailSent: false,
       },

@@ -5,6 +5,8 @@ import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
 import { CampusGallerySection } from "@/components/life-at-fostiima/CampusGallerySection";
 import { LifeAtFostiimaCTA } from "@/components/life-at-fostiima/LifeAtFostiimaCTA";
 import { LifeAtFostiimaHero } from "@/components/life-at-fostiima/LifeAtFostiimaHero";
+import JsonLd from "@/components/seo/JsonLd";
+import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
 const pageMetadata: Metadata = {
   title: "Life at FOSTIIMA | FOSTIIMA Business School",
@@ -28,6 +30,8 @@ const pageMetadata: Metadata = {
 export default function LifeAtFostiimaPage() {
   return (
     <main className="min-h-screen bg-[#f8fafc]">
+      <JsonLd data={PAGE_STRUCTURED_DATA["/life-at-fostiima"]} />
+
       <LifeAtFostiimaHero />
       <CampusGallerySection />
       <LifeAtFostiimaCTA />

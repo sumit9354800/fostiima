@@ -3,7 +3,6 @@ import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
 import { isValidIndianMobile } from "@/lib/phone";
 import {
-  attributionColumns,
   attributionSummary,
   resolveLeadAttribution,
 } from "@/lib/lead-attribution";
@@ -216,9 +215,9 @@ export async function POST(request: Request) {
         graduationStatus,
         remarks: remarks || null,
         consent: true,
+        // Server-derived label. The raw attribution columns are not in the
+        // production database yet; the details still go in the email below.
         source,
-        // Validated raw attribution (all null when none was submitted).
-        ...attributionColumns(attribution),
         status: "NEW",
         emailSent: false,
       },
