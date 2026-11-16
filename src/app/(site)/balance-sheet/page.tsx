@@ -8,12 +8,12 @@ export const metadata: Metadata = {
     "View the available financial year balance sheets of FOSTIIMA Business School.",
 
   alternates: {
-    canonical: getCanonicalUrl("/balance-sheets"),
+    canonical: getCanonicalUrl("/balance-sheet"),
   },
 
   openGraph: {
     type: "website",
-    url: getCanonicalUrl("/balance-sheets"),
+    url: getCanonicalUrl("/balance-sheet"),
     title: "Balance Sheets | FOSTIIMA Business School",
     description:
       "View the available financial year balance sheets of FOSTIIMA Business School.",

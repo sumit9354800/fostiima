@@ -9,11 +9,11 @@ import HowToApplyHero from "@/components/admissions/HowToApplyHero";
 import PgdmOverview from "@/components/admissions/PgdmOverview";
 import WorkExperience from "@/components/admissions/WorkExperience";
 import { howToApplyData } from "@/data/how-to-apply";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, withPageSeo } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import { PAGE_STRUCTURED_DATA } from "@/config/structured-data";
 
-export const metadata: Metadata = {
+const pageMetadata: Metadata = {
   title: "How to Apply | FOSTIIMA Business School",
   description:
     "Learn about the application requirements, admission process, PGDM eligibility, work experience criteria and FEAT at FOSTIIMA Business School.",
@@ -31,6 +31,8 @@ export const metadata: Metadata = {
     siteName: "FOSTIIMA Business School",
   },
 };
+
+export const metadata: Metadata = withPageSeo("/how-to-apply", pageMetadata);
 
 export default function HowToApplyPage() {
   const {

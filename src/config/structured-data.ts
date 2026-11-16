@@ -4,6 +4,10 @@
 // the public site layout, src/app/(site)/layout.tsx. Items marked HELD conflict
 // with the site's content and are left out until the client confirms them.
 
+import { careerOpenings } from "@/data/careers";
+import { facultyData } from "@/data/faculty";
+import { HOMEPAGE_FAQS } from "@/data/homepage-faqs";
+
 export type JsonLdObject = Readonly<Record<string, unknown>>;
 
 /** EducationalOrganization and WebSite: rendered once, on every public page. */
@@ -43,9 +47,6 @@ export const SITEWIDE_STRUCTURED_DATA: readonly JsonLdObject[] = [
 
 /** Page-level JSON-LD keyed by page path (as used for canonicals). */
 export const PAGE_STRUCTURED_DATA: Readonly<Record<string, readonly JsonLdObject[]>> = {
-  // HELD: FAQPage. Its six questions and answers are reworded versions of
-  // the FAQs the homepage shows (loaded from the database by /api/faqs), and
-  // FAQ markup must match the visible text. Awaiting client choice of wording.
   "/": [
     {
       "@context": "https://schema.org",
@@ -60,6 +61,26 @@ export const PAGE_STRUCTURED_DATA: Readonly<Record<string, readonly JsonLdObject
         "@id": "https://www.fostiima.org/#organization"
       },
       "inLanguage": "en-IN"
+    },
+    // FAQPage: built from the list the homepage FAQ section renders
+    // (src/data/homepage-faqs.ts), the approved wording from the schema
+    // document, so the markup always matches the visible questions.
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://www.fostiima.org/#faq",
+      "url": "https://www.fostiima.org/",
+      "isPartOf": {
+        "@id": "https://www.fostiima.org/#website"
+      },
+      "mainEntity": HOMEPAGE_FAQS.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
     }
   ],
   "/about-us": [
@@ -722,8 +743,9 @@ export const PAGE_STRUCTURED_DATA: Readonly<Record<string, readonly JsonLdObject
       ]
     }
   ],
-  // HELD: ItemList "numberOfItems": 39. The list supplied has 37 names and
-  // the page shows 37 faculty (src/data/faculty.ts).
+  // Faculty list built from the faculty the page shows (src/data/faculty.ts),
+  // the client's source of truth: 37 today. The document's
+  // "numberOfItems": 39 is not used.
   "/faculties": [
     {
       "@context": "https://schema.org",
@@ -744,194 +766,13 @@ export const PAGE_STRUCTURED_DATA: Readonly<Record<string, readonly JsonLdObject
           "@id": "https://www.fostiima.org/faculties#faculty-list",
           "name": "Core Faculty at FOSTIIMA Business School",
           "description": "A list of experienced academicians and industry professionals associated with FOSTIIMA Business School.",
+          "numberOfItems": facultyData.length,
           "itemListOrder": "https://schema.org/ItemListUnordered",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Mr. Anil Somani"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Mr. Sunil Kala"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Mr. Rajeeva Kansal"
-            },
-            {
-              "@type": "ListItem",
-              "position": 4,
-              "name": "Dr. Aditya Vij"
-            },
-            {
-              "@type": "ListItem",
-              "position": 5,
-              "name": "Mr. Gautam Kaul"
-            },
-            {
-              "@type": "ListItem",
-              "position": 6,
-              "name": "Mr. Vinod Kaul"
-            },
-            {
-              "@type": "ListItem",
-              "position": 7,
-              "name": "Mr. Hitesh Manocha"
-            },
-            {
-              "@type": "ListItem",
-              "position": 8,
-              "name": "Mr. Rakesh Kumar"
-            },
-            {
-              "@type": "ListItem",
-              "position": 9,
-              "name": "Ms. Shailaja Manocha"
-            },
-            {
-              "@type": "ListItem",
-              "position": 10,
-              "name": "Dr. Vikram Tyagi"
-            },
-            {
-              "@type": "ListItem",
-              "position": 11,
-              "name": "Ms. Gita Agarwal"
-            },
-            {
-              "@type": "ListItem",
-              "position": 12,
-              "name": "Ms. Nadira Chaturvedi"
-            },
-            {
-              "@type": "ListItem",
-              "position": 13,
-              "name": "Mr. Arun Sahay"
-            },
-            {
-              "@type": "ListItem",
-              "position": 14,
-              "name": "SC Bansal"
-            },
-            {
-              "@type": "ListItem",
-              "position": 15,
-              "name": "Mr. Jayant Bose"
-            },
-            {
-              "@type": "ListItem",
-              "position": 16,
-              "name": "Mr. Vivek Kumar"
-            },
-            {
-              "@type": "ListItem",
-              "position": 17,
-              "name": "Dr. Ritika Arora"
-            },
-            {
-              "@type": "ListItem",
-              "position": 18,
-              "name": "Mr. Ferzand"
-            },
-            {
-              "@type": "ListItem",
-              "position": 19,
-              "name": "Brig. Ajay Mehta"
-            },
-            {
-              "@type": "ListItem",
-              "position": 20,
-              "name": "Dr. Ajit Gupta"
-            },
-            {
-              "@type": "ListItem",
-              "position": 21,
-              "name": "Dr. Ruchika Yadav"
-            },
-            {
-              "@type": "ListItem",
-              "position": 22,
-              "name": "Dr. Sharad Kumar"
-            },
-            {
-              "@type": "ListItem",
-              "position": 23,
-              "name": "Mr. Pulak Palit"
-            },
-            {
-              "@type": "ListItem",
-              "position": 24,
-              "name": "Mr. Sanjay Chandwani"
-            },
-            {
-              "@type": "ListItem",
-              "position": 25,
-              "name": "Mr. Atul Mehta"
-            },
-            {
-              "@type": "ListItem",
-              "position": 26,
-              "name": "Mr. Amit Grover"
-            },
-            {
-              "@type": "ListItem",
-              "position": 27,
-              "name": "Ms. Harman Mangat"
-            },
-            {
-              "@type": "ListItem",
-              "position": 28,
-              "name": "Mr. Sameer Kathuria"
-            },
-            {
-              "@type": "ListItem",
-              "position": 29,
-              "name": "Dr. Preeti Taneja"
-            },
-            {
-              "@type": "ListItem",
-              "position": 30,
-              "name": "Ms. Nimisha Srivastava"
-            },
-            {
-              "@type": "ListItem",
-              "position": 31,
-              "name": "Ms. Ridhi Sehgal"
-            },
-            {
-              "@type": "ListItem",
-              "position": 32,
-              "name": "Ms. Dishi S"
-            },
-            {
-              "@type": "ListItem",
-              "position": 33,
-              "name": "Dr. Tanuj Jain"
-            },
-            {
-              "@type": "ListItem",
-              "position": 34,
-              "name": "Mr. Shagun S"
-            },
-            {
-              "@type": "ListItem",
-              "position": 35,
-              "name": "Mr. Dhananjay Kumar"
-            },
-            {
-              "@type": "ListItem",
-              "position": 36,
-              "name": "Ms. Mohini Deshwal"
-            },
-            {
-              "@type": "ListItem",
-              "position": 37,
-              "name": "Mohammad Maroof"
-            }
-          ]
+          "itemListElement": facultyData.map((faculty, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "name": faculty.name
+          }))
         },
         {
           "@type": "BreadcrumbList",
@@ -1694,10 +1535,11 @@ export const PAGE_STRUCTURED_DATA: Readonly<Record<string, readonly JsonLdObject
       ]
     }
   ],
-  // HELD: ItemList of openings and the CollectionPage "description". Both
-  // name Assistant Professor, Associate Professor, Professor and Placement
-  // Officer; the page lists Student Relationship Executive and Admission
-  // Counsellor (src/data/careers.ts).
+  // Openings list built from the openings the page shows (src/data/careers.ts),
+  // the client's source of truth. The document's roles (Assistant/Associate
+  // Professor, Professor, Placement Officer) and its CollectionPage
+  // "description" naming them are not used. No JobPosting markup: the page
+  // gives no posting or closing dates, which JobPosting needs.
   "/careers": [
     {
       "@context": "https://schema.org",
@@ -1712,6 +1554,23 @@ export const PAGE_STRUCTURED_DATA: Readonly<Record<string, readonly JsonLdObject
           },
           "inLanguage": "en-IN"
         },
+        ...(careerOpenings.length > 0
+          ? [
+              {
+                "@type": "ItemList",
+                "@id": "https://www.fostiima.org/careers#job-opportunities",
+                "name": "Career Opportunities at FOSTIIMA Business School",
+                "itemListOrder": "https://schema.org/ItemListUnordered",
+                "numberOfItems": careerOpenings.length,
+                "itemListElement": careerOpenings.map((opening, index) => ({
+                  "@type": "ListItem",
+                  "position": index + 1,
+                  "name": opening.title,
+                  "description": opening.description
+                }))
+              }
+            ]
+          : []),
         {
           "@type": "BreadcrumbList",
           "@id": "https://www.fostiima.org/careers#breadcrumb",

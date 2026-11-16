@@ -1,67 +1,17 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-type FAQ = {
-  id: string;
-  question: string;
-  answer: string;
-  category: string;
-};
+import { HOMEPAGE_FAQS } from "@/data/homepage-faqs";
 
-const HOMEPAGE_FAQ_LIMIT = 6;
-
+// The approved homepage FAQs (src/data/homepage-faqs.ts), the same list the
+// FAQPage JSON-LD is built from, so they are in the server-rendered HTML and
+// always match the structured data. Admin FAQ edits do not change this list.
 export default function FAQSection() {
-  const [faqs, setFaqs] = useState<FAQ[]>([]);
+  const faqs = HOMEPAGE_FAQS;
   const [openId, setOpenId] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    async function loadFAQs() {
-      try {
-        setLoading(true);
-        setHasError(false);
-
-        const response = await fetch("/api/faqs", {
-          method: "GET",
-          cache: "no-store",
-          signal: controller.signal,
-        });
-
-        if (!response.ok) {
-          throw new Error(`FAQ API failed: ${response.status}`);
-        }
-
-        const result = await response.json();
-
-        if (!result.success || !Array.isArray(result.data)) {
-          throw new Error("Invalid FAQ API response");
-        }
-
-        setFaqs(result.data.slice(0, HOMEPAGE_FAQ_LIMIT));
-      } catch (error) {
-        if (error instanceof Error && error.name === "AbortError") {
-          return;
-        }
-
-        console.error("Failed to load FAQs from database:", error);
-        setHasError(true);
-      } finally {
-        if (!controller.signal.aborted) {
-          setLoading(false);
-        }
-      }
-    }
-
-    void loadFAQs();
-
-    return () => controller.abort();
-  }, []);
 
   function toggleFAQ(id: string) {
     setOpenId((current) => (current === id ? null : id));
@@ -89,20 +39,7 @@ export default function FAQSection() {
           </p>
         </div>
 
-        {loading ? (
-          <p className="py-10 text-center text-sm text-slate-500">
-            Loading frequently asked questions...
-          </p>
-        ) : hasError ? (
-          <p className="py-10 text-center text-sm text-red-600">
-            FAQs could not be loaded right now. Please try again later.
-          </p>
-        ) : faqs.length === 0 ? (
-          <p className="py-10 text-center text-sm text-slate-500">
-            No FAQs are currently available.
-          </p>
-        ) : (
-          <div className="space-y-3">
+        <div className="space-y-3">
             {faqs.map((faq) => {
               const isOpen = openId === faq.id;
 
@@ -168,8 +105,7 @@ export default function FAQSection() {
                 </div>
               );
             })}
-          </div>
-        )}
+        </div>
       </div>
     </section>
   );

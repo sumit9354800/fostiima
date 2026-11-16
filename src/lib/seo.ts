@@ -91,17 +91,31 @@ export type PageSeo = {
   /** Complete title, used as given (no site-name suffix is added). */
   title?: string;
   description?: string;
+  /** Comma-separated, output as given in <meta name="keywords">. */
+  keywords?: string;
   ogTitle?: string;
   ogDescription?: string;
 };
 
 /**
  * Applies the client-supplied SEO text for `path` (src/config/page-seo.ts) to
- * a page's existing metadata. Only title, description and the Open Graph /
- * Twitter title and description are replaced, and only where a value is
- * supplied; canonical, robots, images and every other field are kept.
+ * a page's existing metadata. Only title, description, keywords and the Open
+ * Graph / Twitter title and description are replaced, and only where a value
+ * is supplied; canonical, robots, images and every other field are kept.
+ *
+ * A page-level openGraph object replaces the root layout's entirely, so one
+ * without images would lose the layout's default share image; it is added back
+ * here. Images a page sets itself are never changed.
  */
-export function withPageSeo(path: string, metadata: Metadata): Metadata {
+export function withPageSeo(path: string, pageMetadata: Metadata): Metadata {
+  const metadata: Metadata =
+    pageMetadata.openGraph && !pageMetadata.openGraph.images
+      ? {
+          ...pageMetadata,
+          openGraph: { ...pageMetadata.openGraph, images: [DEFAULT_OG_IMAGE] },
+        }
+      : pageMetadata;
+
   const seo = PAGE_SEO[path];
   if (!seo) return metadata;
 
@@ -112,6 +126,7 @@ export function withPageSeo(path: string, metadata: Metadata): Metadata {
 
   if (seo.title) result.title = { absolute: seo.title };
   if (seo.description) result.description = seo.description;
+  if (seo.keywords) result.keywords = seo.keywords;
 
   if (ogTitle || ogDescription) {
     // A page without its own openGraph inherits the root layout's; supplying
