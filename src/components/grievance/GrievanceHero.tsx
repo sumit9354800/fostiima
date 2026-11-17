@@ -4,7 +4,9 @@ import { useState } from "react";
 import { ShieldCheck } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = "/banner/grievance-banner.webp";
+// "/banner/grievance-banner.webp" never existed (404, GSC November 2026).
+// Empty until the client supplies a banner; the section's fallback is shown.
+const heroImage = "";
 
 export default function GrievanceHero() {
   const [imageError, setImageError] = useState(false);

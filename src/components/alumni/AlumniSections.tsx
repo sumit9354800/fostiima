@@ -53,7 +53,8 @@ const alumniSections: AlumniSection[] = [
     description:
       "The HR Committee at FOSTIIMA Business School wants to be the most trusted and industry-connected student group on campus. Our aim is to prepare students to become HR professionals who can look ahead and prepare for change, not just react to it. We want to get students ready for the HR jobs of the future — jobs that will involve AI, hybrid and gig workers, ESG-linked people strategies, and new rules that keep changing.",
 
-    image: "/alumni/hr.webp",
+    // No image until the client supplies one: "/alumni/hr.webp" never
+    // existed (404, GSC November 2026).
 
     icon: Users,
   },
@@ -105,7 +106,8 @@ const alumniSections: AlumniSection[] = [
     description:
       "The Student Interface Committee acts as the vital bridge between the student body and campus administration, ensuring transparent communication, constructive engagement, and continuous improvement in student life. The committee’s agenda focuses on gathering structured feedback regarding academic services, campus amenities, and administrative support to address student concerns promptly. By facilitating regular dialogue, town halls, and open forums, the committee fosters a collaborative environment where student voices actively inform institutional decisions. Additionally, it streamlines grievance redressal mechanisms, promotes peer mentorship, and coordinates key campus initiatives to enhance overall student satisfaction. Through proactive leadership and structured communication channels, the committee remains dedicated to cultivating an inclusive, responsive, and student-centric campus ecosystem.",
 
-    image: "/alumni/student-interface.webp",
+    // No image until the client supplies one: "/alumni/student-interface.webp" never
+    // existed (404, GSC November 2026).
 
     icon: HeartHandshake,
   },
@@ -118,7 +120,8 @@ const alumniSections: AlumniSection[] = [
     description:
       'Driven by the motto "Together we lead, Together we achieve," the Events & Sports Committee is dedicated to building an active, inclusive, and vibrant campus life where every student feels empowered to discover their talents, participate in competitive sports, and gain meaningful experiences. The committee focuses on organizing fair, seamlessly executed cultural, athletic, and institutional events that cultivate essential life skills beyond academics. By fostering dynamic opportunities for student engagement, the committee systematically develops leadership, teamwork, event execution, creative problem-solving, and sportsmanship, while instilling time management, effective communication, and social responsibility across the student body.',
 
-    image: "/alumni/events-sports.webp",
+    // No image until the client supplies one: "/alumni/events-sports.webp" never
+    // existed (404, GSC November 2026).
 
     icon: Trophy,
   },
@@ -131,7 +134,8 @@ const alumniSections: AlumniSection[] = [
     description:
       "The Literary Committee fosters an active intellectual and creative ecosystem by encouraging self-expression, critical thinking, and effective communication across campus. Its agenda focuses on organizing diverse literary engagements, including debates, creative writing workshops, book discussions, poetry slams, and panel talks with guest authors. The committee manages the publication of the annual college magazine and campus newsletters, offering students a structured platform to showcase their written work and editorial skills. Additionally, it oversees literary competitions, coordinates inter-college festival participation, and builds inclusive forums where students can refine their public speaking, analytical reasoning, and creative expression.",
 
-    image: "/alumni/literary.webp",
+    // No image until the client supplies one: "/alumni/literary.webp" never
+    // existed (404, GSC November 2026).
 
     icon: CalendarDays,
   },

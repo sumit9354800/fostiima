@@ -23,8 +23,6 @@ const DIRECT_RESPONSE_PATHS = [
   "blog/tag/best-pgdm-colleges-in-delhi-ncr/feed",
   "blog/tag/mba-institute-in-delhi-ncr/feed",
   "blog/tag/best-pgdm-college-in-delhi-ncr/feed",
-  // GSC sheet: "Keep 404" (also blocked in robots.ts).
-  "blog/the-ultimate-guide-to-success-when-seeking-an-mba-pgdm",
 ];
 
 // Legacy URLs that Google Search Console reports as "Alternate page with proper
@@ -83,6 +81,49 @@ const LEGACY_REDIRECTS: { source: string; destination: string }[] = [
     source: "/blog/list-of-mba-specializations-in-india",
     destination: "/blog/mba-specializations-in-india",
   },
+  // November 2026 SEO redirect sheet ("Remove current redirect and 301 to ...").
+  // Destinations exactly as given in the sheet.
+  ...Object.entries({
+    "top-business-school-in-delhi":
+      "/blog/top-business-school-in-delhi-which-is-the-best-ranked-business-school-in-india",
+    "cuet-pg-exam":
+      "/blog/cuet-pg-2025-notification-exam-date-eligibility-courses-exam-pattern-syllabus-exam-preparation-tips",
+    "top-mba-marketing-interview-questions-2024": "/blog",
+    "top-6-popular-pgdm-specializations-in-india": "/blog",
+    __trashed: "/blog",
+    "cuet-pg-mba-syllabus":
+      "/blog/cuet-pg-2025-notification-exam-date-eligibility-courses-exam-pattern-syllabus-exam-preparation-tips",
+    "mba-eligibility-criteria":
+      "/blog/mba-eligibility-admission-criteria-minimum-qualification-and-percentage-entrance-exams-2024",
+    "business-schools-in-delhi-makes-better-managers":
+      "/blog/top-business-school-in-delhi-which-is-the-best-ranked-business-school-in-india",
+    "mba-entrance-exams":
+      "/blog/mba-entrance-exams-dates-2024-check-top-exams-key-dates",
+    "gmat-exam-date":
+      "/blog/gmat-exam-date-eligibility-criteria-exam-pattern-2025",
+    "top-mba-colleges-in-india-accepting-xat-score": "/blog",
+    "curriculum-the-focal-point-of-management-institute-in-delhi":
+      "/blog/curriculum-the-focal-point-of-management-courses-in-delhi",
+    "academic-events": "/blog",
+    pgdm: "/blog",
+    "cat-exam":
+      "/blog/cat-exam-2024-exam-dates-syllabus-preparation-tips-registration-eligibility-pattern",
+    "how-elon-musk-did-made-a-massive-deal-with-twitter": "/blog",
+    "post-graduate-diploma-in-management":
+      "/blog/what-how-and-when-of-post-graduate-diploma-in-management",
+    // Supersedes the October sheet's "Keep 404" for this URL.
+    "the-ultimate-guide-to-success-when-seeking-an-mba-pgdm":
+      "/blog/the-ultimate-guide-to-success-when-seeking-an-mbapgdm",
+    "could-not-complete-your-cap-calls":
+      "/blog/could-not-complete-your-cap-calls-do-not-lose-heart-elite-batch-is-here-for-you",
+    "pgdm-marketing-in-hrm": "/blog",
+    "top-mba-colleges-in-delhi-with-fees":
+      "/blog/mba-colleges-in-delhi-fee-structure",
+    "pgdm-institute-in-delhi-ncr":
+      "/blog/top-pgdm-institutes-in-delhi-ncr-courses-fees-admissions-career-opportunities",
+    "group-discussion-for-mba-admission":
+      "/blog/gd-topics-group-discussion-topics-for-mba-admission-2024",
+  }).map(([slug, destination]) => ({ source: `/blog/${slug}`, destination })),
 ];
 // Pages from the old PHP site that Google still crawls (GSC "Look out for
 // previous internal links and remove them", October 2026). Nothing on the site

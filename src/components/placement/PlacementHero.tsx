@@ -4,7 +4,9 @@ import { useState } from "react";
 import { BriefcaseBusiness } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = "/banner/placement-banner.webp";
+// "/banner/placement-banner.webp" never existed (404, GSC November 2026).
+// Empty until the client supplies a banner; the section's fallback is shown.
+const heroImage = "";
 
 export default function PlacementHero() {
   const [imageError, setImageError] = useState(false);

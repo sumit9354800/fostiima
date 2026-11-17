@@ -42,7 +42,6 @@ export default function robots(): MetadataRoute.Robots {
         // No current page has ".php" in its path; this also covers every
         // "/life-at-fostiima.php/nggallery/..." gallery URL.
         "/*.php",
-        "/blog/the-ultimate-guide-to-success-when-seeking-an-mba-pgdm",
         // Malformed homepage URLs "/&" and "/$". "$" is the end-of-URL anchor
         // in robots.txt, so a literal "$" must be written as "%24".
         "/&",

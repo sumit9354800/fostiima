@@ -5,7 +5,9 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import { academicsData } from "@/data/academics";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = "/programs/pgdm.png";
+// The PGDM programme image (src/data/programs.ts). "/programs/pgdm.png" was
+// removed in d6f5082 and returned 404 (GSC, November 2026).
+const heroImage = "/home/programs/programs1.webp";
 
 export default function AcademicsHero() {
   return (
@@ -24,6 +26,10 @@ export default function AcademicsHero() {
               src={heroImage}
               alt="FOSTIIMA Business School management education"
               className="h-full w-full object-cover"
+              // Decorative background under a 75% overlay. "low" stops React
+              // emitting a preload hint, which the /academics links' route
+              // prefetch (navbar, footer) applied on every page.
+              fetchPriority="low"
             />
           </div>
 

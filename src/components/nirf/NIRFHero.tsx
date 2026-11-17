@@ -4,7 +4,9 @@ import { useState } from "react";
 import { BarChart3 } from "lucide-react";
 import { cloudinaryAsset } from "@/lib/cloudinary";
 
-const heroImage = "/banner/nirf-banner.webp";
+// "/banner/nirf-banner.webp" never existed (404, GSC November 2026).
+// Empty until the client supplies a banner; the section's fallback is shown.
+const heroImage = "";
 
 export default function NIRFHero() {
   const [imageError, setImageError] = useState(false);
