@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { isMissingColumnError } from "@/lib/prisma-missing-column";
 
 export const runtime = "nodejs";
 
@@ -101,34 +102,51 @@ export async function GET(request: Request) {
         : {}),
     };
 
+    const listSelect = {
+      id: true,
+      fullName: true,
+      mobile: true,
+      email: true,
+      state: true,
+      city: true,
+      course: true,
+      graduationStatus: true,
+      remarks: true,
+      consent: true,
+      source: true,
+      status: true,
+      emailSent: true,
+      emailError: true,
+      createdAt: true,
+      updatedAt: true,
+    } as const;
+
+    const findPage = (select: typeof listSelect & { qualifyingExam?: true }) =>
+      prisma.admissionEnquiry.findMany({
+        where,
+        orderBy: {
+          createdAt: "desc",
+        },
+        skip: (page - 1) * pageSize,
+        take: pageSize,
+        select,
+      });
+
+    // Until the qualifyingExam column exists in the live database
+    // (prisma/manual-migrations/2026-11-18-add-admission-qualifying-exam.sql),
+    // list the enquiries without it instead of failing.
+    const findEnquiries = async () => {
+      try {
+        return await findPage({ ...listSelect, qualifyingExam: true });
+      } catch (error) {
+        if (!isMissingColumnError(error, "qualifyingExam")) throw error;
+        return findPage(listSelect);
+      }
+    };
+
     const [enquiries, total, statusCounts] =
       await Promise.all([
-        prisma.admissionEnquiry.findMany({
-          where,
-          orderBy: {
-            createdAt: "desc",
-          },
-          skip: (page - 1) * pageSize,
-          take: pageSize,
-          select: {
-            id: true,
-            fullName: true,
-            mobile: true,
-            email: true,
-            state: true,
-            city: true,
-            course: true,
-            graduationStatus: true,
-            remarks: true,
-            consent: true,
-            source: true,
-            status: true,
-            emailSent: true,
-            emailError: true,
-            createdAt: true,
-            updatedAt: true,
-          },
-        }),
+        findEnquiries(),
 
         prisma.admissionEnquiry.count({ where }),
 

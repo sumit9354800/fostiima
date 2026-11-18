@@ -1,8 +1,6 @@
-/* eslint-disable react-hooks/set-state-in-effect */
-
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -21,11 +19,11 @@ import TurnstileWidget, {
   type TurnstileHandle,
 } from "@/components/forms/TurnstileWidget";
 import { captureAttribution, thankYouPath } from "@/lib/lead-attribution";
-
-const API_BASE = "https://countriesnow.space/api/v0.1";
-
-// Cache city lists so revisiting a state does not require another request.
-const cityCache = new Map<string, string[]>();
+import {
+  GRADUATION_STATUS_OPTIONS,
+  QUALIFYING_EXAM_LABEL,
+  QUALIFYING_EXAM_OPTIONS,
+} from "@/lib/admission-form-options";
 
 // Simple visual CAPTCHA. For strong bot protection, also validate a server-side
 // CAPTCHA token (for example, Cloudflare Turnstile) inside the API route.
@@ -69,17 +67,11 @@ type FormValues = {
   mobile: string;
   email: string;
   state: string;
-  city: string;
   course: string;
   graduationStatus: string;
+  qualifyingExam: string;
   remarks: string;
   consent: boolean;
-};
-
-type ApiResponse<T> = {
-  error: boolean;
-  msg: string;
-  data: T;
 };
 
 const initialValues: FormValues = {
@@ -87,9 +79,9 @@ const initialValues: FormValues = {
   mobile: "",
   email: "",
   state: "",
-  city: "",
   course: "PGDM",
   graduationStatus: "",
+  qualifyingExam: "",
   remarks: "",
   consent: false,
 };
@@ -97,11 +89,7 @@ const initialValues: FormValues = {
 export default function AdmissionEnquiryForm() {
   const router = useRouter();
   const [values, setValues] = useState<FormValues>(initialValues);
-  const [cities, setCities] = useState<string[]>([]);
-  const [citiesLoading, setCitiesLoading] = useState(false);
-  const [cityRetryKey, setCityRetryKey] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [locationError, setLocationError] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
  const [captchaCode, setCaptchaCode] = useState(() => generateCaptcha());
@@ -115,85 +103,6 @@ export default function AdmissionEnquiryForm() {
   // States are local, so they are available immediately.
   const states: readonly string[] = INDIAN_STATES;
 
-  useEffect(() => {
-    const selectedState = values.state;
-
-    if (!selectedState) {
-      setCities([]);
-      setCitiesLoading(false);
-      return;
-    }
-
-    const cachedCities = cityCache.get(selectedState);
-
-    if (cachedCities) {
-      setCities(cachedCities);
-      setCitiesLoading(false);
-      setLocationError("");
-      return;
-    }
-
-    const controller = new AbortController();
-
-    async function loadCities() {
-      setCities([]);
-      setCitiesLoading(true);
-      setLocationError("");
-
-      try {
-        const response = await fetch(`${API_BASE}/countries/state/cities`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            country: "India",
-            state: selectedState,
-          }),
-          signal: controller.signal,
-        });
-
-        if (!response.ok) {
-          throw new Error("Unable to load cities.");
-        }
-
-        const result: ApiResponse<string[]> = await response.json();
-
-        if (result.error || !Array.isArray(result.data)) {
-          throw new Error("City data is currently unavailable.");
-        }
-
-        const uniqueCities = [
-          ...new Set(
-            result.data.filter(
-              (city): city is string =>
-                typeof city === "string" && city.trim().length > 0,
-            ),
-          ),
-        ].sort((a, b) => a.localeCompare(b));
-
-        cityCache.set(selectedState, uniqueCities);
-        setCities(uniqueCities);
-      } catch (error) {
-        if (error instanceof Error && error.name === "AbortError") {
-          return;
-        }
-
-        setLocationError(
-          "Cities could not be loaded. Please retry or choose Other.",
-        );
-      } finally {
-        if (!controller.signal.aborted) {
-          setCitiesLoading(false);
-        }
-      }
-    }
-
-    loadCities();
-
-    return () => controller.abort();
-  }, [values.state, cityRetryKey]);
-
   function updateField<K extends keyof FormValues>(
     key: K,
     value: FormValues[K],
@@ -202,14 +111,6 @@ export default function AdmissionEnquiryForm() {
       ...current,
       [key]: value,
     }));
-  }
-
-  function retryCities() {
-    if (!values.state) return;
-
-    cityCache.delete(values.state);
-    setLocationError("");
-    setCityRetryKey((current) => current + 1);
   }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -237,13 +138,18 @@ export default function AdmissionEnquiryForm() {
       return;
     }
 
-    if (!values.state || !values.city) {
-      setMessage("Please select your state and city.");
+    if (!values.state) {
+      setMessage("Please select your state.");
       return;
     }
 
     if (!values.graduationStatus) {
       setMessage("Please select your graduation status.");
+      return;
+    }
+
+    if (!values.qualifyingExam) {
+      setMessage("Please select whether you have qualified CAT, MAT or XAT.");
       return;
     }
 
@@ -288,8 +194,6 @@ export default function AdmissionEnquiryForm() {
       // Stay locked after success: the form is navigating to /thank-you.
       submitted = true;
       setValues(initialValues);
-      setCities([]);
-      setLocationError("");
       setCaptchaInput("");
       setCaptchaCode(generateCaptcha());
 
@@ -460,14 +364,7 @@ export default function AdmissionEnquiryForm() {
               name="state"
               className={inputClass}
               value={values.state}
-              onChange={(event) => {
-                setValues((current) => ({
-                  ...current,
-                  state: event.target.value,
-                  city: "",
-                }));
-                setLocationError("");
-              }}
+              onChange={(event) => updateField("state", event.target.value)}
               required
               disabled={loading}
             >
@@ -480,68 +377,6 @@ export default function AdmissionEnquiryForm() {
             </select>
           </div>
 
-          <div>
-            <label className={labelClass} htmlFor="admission-city">
-              City <span className="text-[#C31E3B]">*</span>
-            </label>
-            <select
-              id="admission-city"
-              name="city"
-              className={inputClass}
-              value={values.city}
-              onChange={(event) => updateField("city", event.target.value)}
-              required
-              disabled={loading || !values.state || citiesLoading}
-            >
-              <option value="">
-                {!values.state
-                  ? "Select State First"
-                  : citiesLoading
-                    ? "Loading cities..."
-                    : "Select City"}
-              </option>
-              {cities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-              <option value="Other">Other</option>
-            </select>
-          </div>
-        </div>
-
-        {citiesLoading && (
-          <p className="flex items-center gap-2 text-xs text-slate-500">
-            <LoaderCircle size={14} className="animate-spin" />
-            Loading cities for {values.state}...
-          </p>
-        )}
-
-        {locationError && (
-          <div
-            role="status"
-            className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs leading-5 text-amber-800"
-          >
-            <p>{locationError}</p>
-            <button
-              type="button"
-              className="mt-2 inline-flex items-center gap-1.5 font-bold underline"
-              onClick={retryCities}
-              disabled={!values.state || citiesLoading || loading}
-            >
-              <RefreshCw size={13} />
-              Retry city loading
-            </button>
-          </div>
-        )}
-
-        {values.city === "Other" && (
-          <p className="text-xs leading-5 text-slate-500">
-            Please mention your city in the remarks field.
-          </p>
-        )}
-
-        <div className="grid gap-3 sm:grid-cols-2">
           <div>
             <label className={labelClass} htmlFor="admission-course">
               Interested Course <span className="text-[#C31E3B]">*</span>
@@ -558,7 +393,10 @@ export default function AdmissionEnquiryForm() {
               <option value="PGDM">PGDM</option>
             </select>
           </div>
+        </div>
 
+        {/* items-end keeps both selects aligned if a label wraps. */}
+        <div className="grid gap-3 sm:grid-cols-2 sm:items-end">
           <div>
             <label
               className={labelClass}
@@ -578,11 +416,38 @@ export default function AdmissionEnquiryForm() {
               disabled={loading}
             >
               <option value="">Select Graduation Status</option>
-              <option value="Graduated">Graduated</option>
-              <option value="Final Year Student">Final Year Student</option>
-              <option value="12th Pass / Undergrad">
-                12th Pass / Undergrad
-              </option>
+              {GRADUATION_STATUS_OPTIONS.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label
+              className={labelClass}
+              htmlFor="admission-qualifying-exam"
+            >
+              {QUALIFYING_EXAM_LABEL} <span className="text-[#C31E3B]">*</span>
+            </label>
+            <select
+              id="admission-qualifying-exam"
+              name="qualifyingExam"
+              className={inputClass}
+              value={values.qualifyingExam}
+              onChange={(event) =>
+                updateField("qualifyingExam", event.target.value)
+              }
+              required
+              disabled={loading}
+            >
+              <option value="">Select an option</option>
+              {QUALIFYING_EXAM_OPTIONS.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
             </select>
           </div>
         </div>

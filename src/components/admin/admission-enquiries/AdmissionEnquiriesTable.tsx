@@ -31,6 +31,8 @@ type Enquiry = {
   city: string;
   course: string;
   graduationStatus?: string | null;
+  // Absent until the column exists in the live database; null on older rows.
+  qualifyingExam?: string | null;
   remarks: string | null;
   source: string;
   status: string;
@@ -434,6 +436,11 @@ export default function AdmissionEnquiriesTable() {
                               {enquiry.graduationStatus}
                             </span>
                           )}
+                          {enquiry.qualifyingExam && (
+                            <span className="ml-1.5 inline-flex items-center rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-700">
+                              CAT/MAT/XAT: {enquiry.qualifyingExam}
+                            </span>
+                          )}
                         </p>
                       </td>
 
@@ -454,7 +461,8 @@ export default function AdmissionEnquiriesTable() {
 
                       <td className="px-5 py-4">
                         <p className="text-sm text-slate-700">
-                          {enquiry.city}
+                          {/* New enquiries have no city (field removed). */}
+                          {enquiry.city || "—"}
                         </p>
                         <p className="mt-1 text-xs text-slate-500">
                           {enquiry.state}
@@ -639,7 +647,7 @@ export default function AdmissionEnquiriesTable() {
                   <MapPin size={17} className="text-slate-400" />
                   <p className="mt-3 text-xs text-slate-500">Location</p>
                   <p className="mt-1 text-sm font-semibold text-slate-800">
-                    {selected.city}, {selected.state}
+                    {[selected.city, selected.state].filter(Boolean).join(", ")}
                   </p>
                 </div>
 
@@ -648,6 +656,16 @@ export default function AdmissionEnquiriesTable() {
                   <p className="mt-3 text-xs text-slate-500">Graduation Status</p>
                   <p className="mt-1 text-sm font-semibold text-slate-800">
                     {selected.graduationStatus || "Not specified"}
+                  </p>
+                </div>
+
+                <div className="rounded-xl bg-slate-50 p-4">
+                  <GraduationCap size={17} className="text-slate-400" />
+                  <p className="mt-3 text-xs text-slate-500">
+                    Qualified CAT, MAT, XAT?
+                  </p>
+                  <p className="mt-1 text-sm font-semibold text-slate-800">
+                    {selected.qualifyingExam || "Not specified"}
                   </p>
                 </div>
 

@@ -22,6 +22,8 @@ for (const key of [
 type Row = Record<string, unknown>;
 const created: { model: string; data: Row }[] = [];
 let failNextCreate = false;
+// Simulates the live database before the qualifyingExam column is added.
+let qualifyingExamColumnMissing = false;
 
 function fakeModel(model: string) {
   return {
@@ -29,6 +31,12 @@ function fakeModel(model: string) {
       if (failNextCreate) {
         failNextCreate = false;
         throw new Error("simulated database failure");
+      }
+      if (qualifyingExamColumnMissing && "qualifyingExam" in data) {
+        throw Object.assign(
+          new Error("The column `qualifyingExam` does not exist in the current database."),
+          { code: "P2022" },
+        );
       }
       created.push({ model, data });
       return { id: `${model}-${created.length}`, createdAt: new Date(), ...data };
@@ -56,6 +64,7 @@ before(async () => {
 beforeEach(() => {
   created.length = 0;
   failNextCreate = false;
+  qualifyingExamColumnMissing = false;
 });
 
 const GCLID = "Cj0KCQiA_test-gclid_1234567890";
@@ -71,7 +80,7 @@ const ATTRIBUTION_FIELDS = [
 // The columns each table has (prisma/schema.prisma). A create may only use these.
 const ADMISSION_COLUMNS = new Set([
   "fullName", "mobile", "email", "state", "city", "course", "graduationStatus",
-  "remarks", "consent", "source", "status", "emailSent",
+  "qualifyingExam", "remarks", "consent", "source", "status", "emailSent",
 ]);
 const CONTACT_COLUMNS = new Set([
   "name", "email", "phone", "subject", "message", "status", "emailSent",
@@ -94,9 +103,9 @@ const admission = {
   mobile: "9876543210",
   email: "test.student@example.com",
   state: "Delhi",
-  city: "New Delhi",
   course: "PGDM",
   graduationStatus: "Graduated",
+  qualifyingExam: "CAT",
   remarks: "",
   consent: true,
 };
@@ -190,6 +199,84 @@ describe("POST /api/admission-enquiries", () => {
     const response = await admissionRoute.POST(post(admission));
     assert.equal(response.status, 500);
     assert.equal((await response.json()).success, false);
+  });
+});
+
+describe("POST /api/admission-enquiries: November 2026 form fields", () => {
+  for (const option of ["CAT", "MAT", "XAT", "None of the above"]) {
+    test(`qualifyingExam "${option}" is accepted and stored`, async () => {
+      const response = await admissionRoute.POST(post({ ...admission, qualifyingExam: option }));
+      assert.equal(response.status, 201);
+      assert.equal(created.length, 1);
+      assert.equal(created[0].data.qualifyingExam, option);
+    });
+  }
+
+  for (const value of ["", "GMAT", "cat", "CAT, MAT", "None", 1, null]) {
+    test(`qualifyingExam ${JSON.stringify(value)} is rejected and nothing is stored`, async () => {
+      const response = await admissionRoute.POST(post({ ...admission, qualifyingExam: value }));
+      const json = await response.json();
+      assert.equal(response.status, 400);
+      assert.equal(json.success, false);
+      assert.equal(created.length, 0);
+    });
+  }
+
+  test("missing qualifyingExam is rejected", async () => {
+    const { qualifyingExam: _omit, ...withoutQualification } = admission;
+    void _omit;
+    const response = await admissionRoute.POST(post(withoutQualification));
+    assert.equal(response.status, 400);
+    assert.equal(created.length, 0);
+  });
+
+  test("submission without city succeeds and stores an empty city", async () => {
+    assert.equal("city" in admission, false);
+    const response = await admissionRoute.POST(post(admission));
+    assert.equal(response.status, 201);
+    assert.equal(created[0].data.city, "");
+  });
+
+  test("an older client that still sends city keeps working", async () => {
+    const response = await admissionRoute.POST(post({ ...admission, city: "New Delhi" }));
+    assert.equal(response.status, 201);
+    assert.equal(created[0].data.city, "New Delhi");
+  });
+
+  test('"12th Pass / Undergrad" is rejected for new submissions', async () => {
+    for (const value of ["12th Pass / Undergrad", "12th Pass"]) {
+      const response = await admissionRoute.POST(post({ ...admission, graduationStatus: value }));
+      const json = await response.json();
+      assert.equal(response.status, 400);
+      assert.equal(json.error, "Please select a valid graduation status.");
+    }
+    assert.equal(created.length, 0);
+  });
+
+  test("the remaining graduation statuses are still accepted", async () => {
+    for (const value of ["Graduated", "Final Year Student"]) {
+      const response = await admissionRoute.POST(post({ ...admission, graduationStatus: value }));
+      assert.equal(response.status, 201);
+    }
+    assert.deepEqual(created.map((row) => row.data.graduationStatus), ["Graduated", "Final Year Student"]);
+  });
+
+  test("before the column exists in the live DB, the lead is still saved (without qualifyingExam)", async () => {
+    qualifyingExamColumnMissing = true;
+    const response = await admissionRoute.POST(post(admission));
+    const json = await response.json();
+    assert.equal(response.status, 201);
+    assert.equal(json.success, true);
+    assert.equal(created.length, 1);
+    assert.equal("qualifyingExam" in created[0].data, false);
+    assert.equal(created[0].data.graduationStatus, "Graduated");
+  });
+
+  test("other database errors are not mistaken for the missing column", async () => {
+    failNextCreate = true;
+    const response = await admissionRoute.POST(post(admission));
+    assert.equal(response.status, 500);
+    assert.equal(created.length, 0);
   });
 });
 

@@ -46,12 +46,22 @@ const NEW_ADMISSION = {
 };
 
 let lastAdmissionSelect: Record<string, unknown> | undefined;
+// Simulates the live database before the qualifyingExam column is added.
+let qualifyingExamColumnMissing = false;
+let admissionFindManyCalls = 0;
 let contactRows: Record<string, unknown>[] = [];
 
 (globalThis as unknown as { prisma: unknown }).prisma = {
   admissionEnquiry: {
     async findMany(args: { select?: Record<string, unknown> }) {
+      admissionFindManyCalls += 1;
       lastAdmissionSelect = args.select;
+      if (qualifyingExamColumnMissing && args.select?.qualifyingExam) {
+        throw Object.assign(
+          new Error("The column `qualifyingExam` does not exist in the current database."),
+          { code: "P2022" },
+        );
+      }
       return [NEW_ADMISSION, LEGACY_ADMISSION];
     },
     async count() {
@@ -129,6 +139,33 @@ describe("Admin lead data", () => {
     assert.equal(lastAdmissionSelect?.source, true);
     for (const field of ATTRIBUTION_FIELDS) {
       assert.equal(lastAdmissionSelect?.[field], undefined, field);
+    }
+  });
+
+  test("admission list selects qualifyingExam alongside the existing fields", async () => {
+    qualifyingExamColumnMissing = false;
+    admissionFindManyCalls = 0;
+    const response = await admissionAdmin.GET(listRequest());
+    assert.equal(response.status, 200);
+    assert.equal(admissionFindManyCalls, 1);
+    assert.equal(lastAdmissionSelect?.qualifyingExam, true);
+    for (const field of ["city", "state", "graduationStatus", "remarks", "source"]) {
+      assert.equal(lastAdmissionSelect?.[field], true, field);
+    }
+  });
+
+  test("admission list still loads (without qualifyingExam) before the column exists", async () => {
+    qualifyingExamColumnMissing = true;
+    admissionFindManyCalls = 0;
+    try {
+      const response = await admissionAdmin.GET(listRequest());
+      const json = await response.json();
+      assert.equal(response.status, 200);
+      assert.equal(json.enquiries.length, 2);
+      assert.equal(admissionFindManyCalls, 2);
+      assert.equal(lastAdmissionSelect?.qualifyingExam, undefined);
+    } finally {
+      qualifyingExamColumnMissing = false;
     }
   });
 

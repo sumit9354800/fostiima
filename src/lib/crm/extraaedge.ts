@@ -16,9 +16,10 @@ export type CrmLeadInput = {
   mobile: string; // 10-digit Indian mobile (existing format)
   email: string;
   state: string;
-  city: string;
+  city: string; // "" for enquiries after the City field was removed
   course: string;
   graduationStatus: string;
+  qualifyingExam: string | null; // CAT / MAT / XAT / None of the above
   remarks: string | null;
   source: string; // allowlisted label, e.g. "ChatGPT" or "FOSTIIMA Website"
   utmCampaign?: string;

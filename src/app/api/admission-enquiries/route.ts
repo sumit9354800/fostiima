@@ -7,6 +7,13 @@ import {
   resolveLeadAttribution,
 } from "@/lib/lead-attribution";
 import { isTurnstileEnforced, verifyTurnstile } from "@/lib/turnstile";
+import {
+  GRADUATION_STATUS_OPTIONS,
+  QUALIFYING_EXAM_LABEL,
+  QUALIFYING_EXAM_OPTIONS,
+  isOneOf,
+} from "@/lib/admission-form-options";
+import { isMissingColumnError } from "@/lib/prisma-missing-column";
 
 export const runtime = "nodejs";
 
@@ -18,18 +25,13 @@ type AdmissionEnquiryBody = {
   city?: unknown;
   course?: unknown;
   graduationStatus?: unknown;
+  qualifyingExam?: unknown;
   remarks?: unknown;
   consent?: unknown;
   source?: unknown;
   attribution?: unknown;
   turnstileToken?: unknown;
 };
-
-const ALLOWED_GRADUATION_STATUSES = [
-  "Graduated",
-  "Final Year Student",
-  "12th Pass / Undergrad",
-] as const;
 
 function cleanText(value: unknown, maxLength: number): string {
   if (typeof value !== "string") return "";
@@ -57,6 +59,7 @@ function createAdmissionEmail(data: {
   city: string;
   course: string;
   graduationStatus: string;
+  qualifyingExam: string;
   remarks: string;
   attributionRows: [string, string][];
 }) {
@@ -87,9 +90,10 @@ function createAdmissionEmail(data: {
                 ${row("Mobile Number", data.mobile)}
                 ${row("Email Address", data.email)}
                 ${row("State", data.state)}
-                ${row("City", data.city)}
+                ${data.city ? row("City", data.city) : ""}
                 ${row("Course", data.course)}
                 ${row("Graduation Status", data.graduationStatus)}
+                ${row(QUALIFYING_EXAM_LABEL, data.qualifyingExam)}
               </table>
               <div style="margin-top:24px">
                 <p style="font-weight:700;color:#061a3a">Remarks</p>
@@ -127,9 +131,12 @@ export async function POST(request: Request) {
     const mobile = cleanText(body.mobile, 20).replace(/\D/g, "");
     const email = cleanText(body.email, 254).toLowerCase();
     const state = cleanText(body.state, 100);
+    // City was removed from the form (November 2026). Still accepted if a
+    // client sends it; otherwise stored as "" because the column is NOT NULL.
     const city = cleanText(body.city, 150);
     const course = cleanText(body.course, 100) || "PGDM";
     const graduationStatus = cleanText(body.graduationStatus, 100);
+    const qualifyingExam = cleanText(body.qualifyingExam, 50);
     const remarks = cleanText(body.remarks, 5000);
     // Derived server-side from the validated raw attribution
     // (lib/lead-attribution.ts). Any client-supplied body.source is ignored.
@@ -137,7 +144,14 @@ export async function POST(request: Request) {
       body.attribution,
     );
 
-    if (!fullName || !mobile || !email || !state || !city || !graduationStatus) {
+    if (
+      !fullName ||
+      !mobile ||
+      !email ||
+      !state ||
+      !graduationStatus ||
+      !qualifyingExam
+    ) {
       return NextResponse.json(
         {
           success: false,
@@ -147,15 +161,21 @@ export async function POST(request: Request) {
       );
     }
 
-    if (
-      !ALLOWED_GRADUATION_STATUSES.includes(
-        graduationStatus as (typeof ALLOWED_GRADUATION_STATUSES)[number],
-      )
-    ) {
+    if (!isOneOf(GRADUATION_STATUS_OPTIONS, graduationStatus)) {
       return NextResponse.json(
         {
           success: false,
           error: "Please select a valid graduation status.",
+        },
+        { status: 400 },
+      );
+    }
+
+    if (!isOneOf(QUALIFYING_EXAM_OPTIONS, qualifyingExam)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Please select whether you have qualified CAT, MAT or XAT.",
         },
         { status: 400 },
       );
@@ -204,28 +224,45 @@ export async function POST(request: Request) {
     }
 
     // Save first so email issues never cause the enquiry to be lost.
-    const enquiry = await prisma.admissionEnquiry.create({
-      data: {
-        fullName,
-        mobile,
-        email,
-        state,
-        city,
-        course,
-        graduationStatus,
-        remarks: remarks || null,
-        consent: true,
-        // Server-derived label. The raw attribution columns are not in the
-        // production database yet; the details still go in the email below.
-        source,
-        status: "NEW",
-        emailSent: false,
-      },
-      select: {
-        id: true,
-        createdAt: true,
-      },
-    });
+    const baseData = {
+      fullName,
+      mobile,
+      email,
+      state,
+      city,
+      course,
+      graduationStatus,
+      remarks: remarks || null,
+      consent: true,
+      // Server-derived label. The raw attribution columns are not in the
+      // production database yet; the details still go in the email below.
+      source,
+      status: "NEW",
+      emailSent: false,
+    };
+    const createSelect = { id: true, createdAt: true } as const;
+
+    let enquiry: { id: string; createdAt: Date };
+    try {
+      enquiry = await prisma.admissionEnquiry.create({
+        data: { ...baseData, qualifyingExam },
+        select: createSelect,
+      });
+    } catch (createError) {
+      // Until the qualifyingExam column exists in the live database, save the
+      // lead without it rather than lose it. The answer is still emailed.
+      if (!isMissingColumnError(createError, "qualifyingExam")) {
+        throw createError;
+      }
+      console.error(
+        "[ADMISSION_QUALIFYING_EXAM_COLUMN_MISSING]",
+        "Run prisma/manual-migrations/2026-11-18-add-admission-qualifying-exam.sql",
+      );
+      enquiry = await prisma.admissionEnquiry.create({
+        data: baseData,
+        select: createSelect,
+      });
+    }
 
     const apiKey = process.env.RESEND_API_KEY;
     const fromEmail = process.env.RESEND_FROM_EMAIL;
@@ -270,6 +307,7 @@ export async function POST(request: Request) {
           city,
           course,
           graduationStatus,
+          qualifyingExam,
           remarks,
           attributionRows: attributionSummary(attribution, classification),
         }),
