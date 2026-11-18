@@ -3,6 +3,8 @@
 
 import { useState } from "react";
 import AdmissionEnquiryForm from "@/components/forms/AdmissionEnquiryForm";
+import FAQSection from "@/components/home/FAQSection";
+import { PGDM_ADMISSION_FAQS } from "@/data/pgdm-admission-faqs";
 import {
   Menu,
   X,
@@ -355,6 +357,14 @@ export default function PGDMAdmissionPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQS (src/data/pgdm-admission-faqs.ts) */}
+      <FAQSection
+        sectionId="faqs"
+        faqs={PGDM_ADMISSION_FAQS}
+        numbered
+        description="Find quick answers to common questions about PGDM eligibility, entrance exams, fees, scholarships and placements at FOSTIIMA."
+      />
 
       {/* FINAL CTA */}
       <section className="bg-[#071a38] py-14">

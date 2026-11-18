@@ -7,6 +7,7 @@
 import { careerOpenings } from "@/data/careers";
 import { facultyData } from "@/data/faculty";
 import { HOMEPAGE_FAQS } from "@/data/homepage-faqs";
+import { PGDM_ADMISSION_FAQS } from "@/data/pgdm-admission-faqs";
 
 export type JsonLdObject = Readonly<Record<string, unknown>>;
 
@@ -74,6 +75,28 @@ export const PAGE_STRUCTURED_DATA: Readonly<Record<string, readonly JsonLdObject
         "@id": "https://www.fostiima.org/#website"
       },
       "mainEntity": HOMEPAGE_FAQS.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }
+  ],
+  // FAQPage only: built from the list the page's FAQ section renders
+  // (src/data/pgdm-admission-faqs.ts, from "FOSTIIMA_PGDM_FAQs.docx"), so the
+  // markup always matches the visible questions.
+  "/pgdm-admission": [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://www.fostiima.org/pgdm-admission#faq",
+      "url": "https://www.fostiima.org/pgdm-admission",
+      "isPartOf": {
+        "@id": "https://www.fostiima.org/#website"
+      },
+      "mainEntity": PGDM_ADMISSION_FAQS.map((faq) => ({
         "@type": "Question",
         "name": faq.question,
         "acceptedAnswer": {

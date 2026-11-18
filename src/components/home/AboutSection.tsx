@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   Award,
   BriefcaseBusiness,
   Building2,
@@ -6,6 +7,7 @@ import {
   Landmark,
   ShieldCheck,
 } from "lucide-react";
+import Link from "next/link";
 
 import { getHomeAbout } from "@/lib/admin/home";
 import { readOrFallback } from "@/lib/content-cache";
@@ -90,6 +92,33 @@ export default async function AboutSection() {
               {about.description2 && (
                 <p>{about.description2}</p>
               )}
+            </div>
+
+            {/* Featured Guides & Articles */}
+            <div className="mt-6 border-t border-slate-100 pt-5">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#c31e3b]">
+                Featured Guides &amp; Insights
+              </p>
+              <ul className="mt-3 space-y-2.5 text-sm">
+                <li>
+                  <Link
+                    href="/blog/pgdm-colleges-in-delhi-ncr-a-complete-guide-for-management-aspirants"
+                    className="group inline-flex items-center gap-1.5 font-medium text-[#123b79] transition hover:text-[#c31e3b]"
+                  >
+                    <span>PGDM Colleges in Delhi NCR: A Complete Guide for Management Aspirants</span>
+                    <ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/top-business-school-in-delhi-which-is-the-best-ranked-business-school-in-india"
+                    className="group inline-flex items-center gap-1.5 font-medium text-[#123b79] transition hover:text-[#c31e3b]"
+                  >
+                    <span>Top Business School in Delhi: Which Is the Best Ranked Business School in India?</span>
+                    <ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
 

@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import BlogContent from "@/components/blog/BlogContent";
 import { getBlogBySlug } from "@/lib/queries";
 import { buildPageMetadata, withPageSeo } from "@/lib/seo";
-import Link from "next/link";
+
+const OPTIMIZED_COVER_HOSTS = new Set([
+  "bdaddtyz0jzeqxij.public.blob.vercel-storage.com",
+]);
+
+function isOptimizableCover(src: string) {
+  try {
+    const url = new URL(src);
+    return (
+      url.protocol === "https:" &&
+      OPTIMIZED_COVER_HOSTS.has(url.hostname)
+    );
+  } catch {
+    return false;
+  }
+}
 
 type BlogDetailPageProps = {
   params: Promise<{
@@ -123,12 +140,28 @@ export default async function BlogDetailPage({
 
       {blog.coverImage && (
         <section className="mx-auto max-w-5xl px-6 pt-10 sm:px-8 lg:px-10">
-          <div className="overflow-hidden border border-[#dbe3ee] bg-white">
-            <img
-              src={blog.coverImage}
-              alt={blog.coverImageAlt}
-              className="h-auto max-h-[560px] w-full object-cover"
-            />
+          <div className="relative aspect-[16/9] max-h-[560px] w-full overflow-hidden border border-[#dbe3ee] bg-white">
+            {isOptimizableCover(blog.coverImage) ? (
+              <Image
+                src={blog.coverImage}
+                alt={blog.coverImageAlt || blog.title}
+                fill
+                priority
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="object-cover"
+              />
+            ) : (
+              <img
+                src={blog.coverImage}
+                alt={blog.coverImageAlt || blog.title}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width={1200}
+                height={675}
+                className="h-full w-full object-cover"
+              />
+            )}
           </div>
         </section>
       )}

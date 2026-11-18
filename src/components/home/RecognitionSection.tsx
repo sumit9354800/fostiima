@@ -47,20 +47,20 @@ export default function RecognitionSection() {
           {/* Badges */}
           <div className="flex items-center gap-8 sm:gap-10">
             {recognitions.map((recognition) => (
-              <a
+              <div
                 key={recognition.src}
-                href={recognition.src}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-20 w-20 items-center justify-center rounded-xl border border-slate-200 bg-white p-2 transition hover:border-[#123b79]/30 hover:shadow-md sm:h-24 sm:w-24"
-                title="View recognition badge"
+                className="flex h-20 w-20 items-center justify-center rounded-xl border border-slate-200 bg-white p-2 sm:h-24 sm:w-24"
               >
                 <img
                   src={recognition.src}
                   alt={recognition.alt}
+                  width={96}
+                  height={96}
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-full max-w-full object-contain"
                 />
-              </a>
+              </div>
             ))}
           </div>
 

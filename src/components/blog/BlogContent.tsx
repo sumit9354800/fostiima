@@ -10,7 +10,8 @@ type BlogContentProps = {
  */
 function escapeHtml(value: string) {
   return value
-    .replace(/&/g, "&amp;")
+    .replace(/&amp;amp;/g, "&amp;")
+    .replace(/&(?!(?:amp|lt|gt|quot|#039|#39|#x27|apos|nbsp);)/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
@@ -43,7 +44,7 @@ function sanitizeParagraphHtml(value: string) {
     return escapeHtml(value).replace(/\r?\n/g, "<br />");
   }
 
-  let html = value;
+  let html = value.replace(/&amp;amp;/g, "&amp;");
 
   // Remove unsupported HTML tags.
   html = html.replace(

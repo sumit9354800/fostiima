@@ -7,7 +7,7 @@ import {
   getConclaveEventBySlug,
   getPublishedConclaveEvents,
 } from "@/data/conclave";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, withPageSeo } from "@/lib/seo";
 import Image from "next/image";
 
 type EventDetailPageProps = {
@@ -34,13 +34,18 @@ export async function generateMetadata({
     };
   }
 
-  return buildPageMetadata({
-    title: event.title,
-    description: event.excerpt,
-    path: `/conclave-conference/${event.slug}`,
-    image: event.bgImage?.trim() || null,
-    imageAlt: event.title,
-  });
+  // Events listed in src/config/page-seo.ts get their client-supplied
+  // description; the others keep event.excerpt.
+  return withPageSeo(
+    `/conclave-conference/${event.slug}`,
+    buildPageMetadata({
+      title: event.title,
+      description: event.excerpt,
+      path: `/conclave-conference/${event.slug}`,
+      image: event.bgImage?.trim() || null,
+      imageAlt: event.title,
+    }),
+  );
 }
 
 export default async function EventDetailPage({

@@ -6,11 +6,35 @@ import { ChevronDown } from "lucide-react";
 
 import { HOMEPAGE_FAQS } from "@/data/homepage-faqs";
 
-// The approved homepage FAQs (src/data/homepage-faqs.ts), the same list the
-// FAQPage JSON-LD is built from, so they are in the server-rendered HTML and
-// always match the structured data. Admin FAQ edits do not change this list.
-export default function FAQSection() {
-  const faqs = HOMEPAGE_FAQS;
+export type FaqItem = {
+  id: string;
+  question: string;
+  /** Shown as written: "\n" line breaks and "\n\n" paragraph breaks are kept. */
+  answer: string;
+  /** Optional label shown above the answer. */
+  category?: string;
+};
+
+const HOMEPAGE_DESCRIPTION =
+  "Find quick answers to common questions about academics, admissions, campus life and placements at FOSTIIMA.";
+
+// With no props this renders the approved homepage FAQs
+// (src/data/homepage-faqs.ts). Other pages pass their own list. Each list is
+// also the one that page's FAQPage JSON-LD is built from, so the FAQs are in
+// the server-rendered HTML and always match the structured data. Admin FAQ
+// edits do not change these lists.
+export default function FAQSection({
+  faqs = HOMEPAGE_FAQS,
+  description = HOMEPAGE_DESCRIPTION,
+  sectionId,
+  numbered = false,
+}: {
+  faqs?: readonly FaqItem[];
+  description?: string;
+  sectionId?: string;
+  /** Show 1, 2, 3… in the badge instead of "?". Display only: not in the data or JSON-LD. */
+  numbered?: boolean;
+} = {}) {
   const [openId, setOpenId] = useState<string | null>(null);
 
   function toggleFAQ(id: string) {
@@ -18,7 +42,10 @@ export default function FAQSection() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-white py-14 sm:py-16">
+    <section
+      id={sectionId}
+      className="relative scroll-mt-24 overflow-hidden bg-white py-14 sm:py-16"
+    >
       <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#dbeafe]/50 blur-3xl" />
       <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-[#fee2e2]/50 blur-3xl" />
 
@@ -34,13 +61,12 @@ export default function FAQSection() {
           </h2>
 
           <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
-            Find quick answers to common questions about academics, admissions,
-            campus life and placements at FOSTIIMA.
+            {description}
           </p>
         </div>
 
         <div className="space-y-3">
-            {faqs.map((faq) => {
+            {faqs.map((faq, index) => {
               const isOpen = openId === faq.id;
 
               return (
@@ -67,7 +93,7 @@ export default function FAQSection() {
                             : "bg-[#dbeafe] text-[#1555a5]"
                         }`}
                       >
-                        ?
+                        {numbered ? index + 1 : "?"}
                       </span>
 
                       <span className="text-sm font-semibold leading-6 text-[#102a56] sm:text-base">
@@ -84,6 +110,9 @@ export default function FAQSection() {
 
                   <div
                     id={`faq-answer-${faq.id}`}
+                    // Collapsed answers stay in the HTML (for search engines)
+                    // but are hidden from screen readers until opened.
+                    aria-hidden={!isOpen}
                     className={`grid transition-all duration-300 ${
                       isOpen
                         ? "grid-rows-[1fr] opacity-100"
@@ -92,9 +121,11 @@ export default function FAQSection() {
                   >
                     <div className="min-h-0 overflow-hidden">
                       <div className="border-t border-slate-100 px-5 pb-5 pt-4 pl-[76px] sm:px-6 sm:pl-[76px]">
-                        <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.16em] text-[#c31e3b]">
-                          {faq.category}
-                        </span>
+                        {faq.category && (
+                          <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.16em] text-[#c31e3b]">
+                            {faq.category}
+                          </span>
+                        )}
 
                         <p className="whitespace-pre-line text-sm leading-7 text-slate-600">
                           {faq.answer}

@@ -46,9 +46,9 @@ export default function FinalPlacementContent({
                 Selected Batch
               </p>
 
-              <h1 className="mt-2 text-2xl font-extrabold tracking-tight text-[#102a56] sm:text-3xl">
+              <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-[#102a56] sm:text-3xl">
                 {selectedBatch.title}
-              </h1>
+              </h2>
             </div>
 
             <div className="grid gap-6 xl:grid-cols-2">

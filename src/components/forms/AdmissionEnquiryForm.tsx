@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -92,13 +92,23 @@ export default function AdmissionEnquiryForm() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
- const [captchaCode, setCaptchaCode] = useState(() => generateCaptcha());
+  // Empty on the server and in the first client render, so the hydrated HTML
+  // matches; the code is generated in the browser after mount (below).
+  // Generating it during render gave the server and the browser different
+  // random codes (React hydration error #418).
+  const [captchaCode, setCaptchaCode] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
   // Synchronous in-flight guard: `loading` state only blocks a second submit
   // after a re-render, so two fast clicks could both get through.
   const [submissionGuard] = useState(createSubmissionGuard);
   const turnstileRef = useRef<TurnstileHandle>(null);
   const [turnstileToken, setTurnstileToken] = useState("");
+
+  // Browser-only random value: set once after hydration.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCaptchaCode(generateCaptcha());
+  }, []);
 
   // States are local, so they are available immediately.
   const states: readonly string[] = INDIAN_STATES;
@@ -123,6 +133,13 @@ export default function AdmissionEnquiryForm() {
 
     if (!cleanedMobile) {
       setMessage("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    // Not generated yet (before hydration finishes): never compare against an
+    // empty code, which an empty input would otherwise match.
+    if (!captchaCode) {
+      setMessage("The verification code is still loading. Please try again.");
       return;
     }
 
@@ -477,10 +494,14 @@ export default function AdmissionEnquiryForm() {
 
           <div className="grid grid-cols-[1fr_1fr_auto] items-stretch gap-2">
             <div
-              aria-label={`Verification code: ${captchaCode}`}
+              aria-label={
+                captchaCode
+                  ? `Verification code: ${captchaCode}`
+                  : "Verification code loading"
+              }
               className="flex min-h-11 select-none items-center justify-center rounded-lg border border-dashed border-slate-300 bg-slate-50 px-3 font-mono text-lg font-extrabold tracking-[0.3em] text-[#123B79]"
             >
-              {captchaCode}
+              {captchaCode || "·····"}
             </div>
 
             <input

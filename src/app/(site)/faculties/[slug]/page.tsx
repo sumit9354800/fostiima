@@ -58,15 +58,21 @@ export async function generateMetadata({
     };
   }
 
+  // Some records have no experience value; leaving the clause in would print
+  // ",  industry experience" with nothing before it.
+  const summary = faculty.experience.trim()
+    ? `${faculty.name} - ${faculty.qualification}, ${faculty.experience} industry experience.`
+    : `${faculty.name} - ${faculty.qualification}.`;
+
   return {
     title: `${faculty.name} | Core Faculty | FOSTIIMA Business School`,
-    description: `${faculty.name} - ${faculty.qualification}, ${faculty.experience} industry experience. Explore faculty expertise at FOSTIIMA Business School.`,
+    description: `${summary} Explore faculty expertise at FOSTIIMA Business School.`,
     alternates: {
       canonical: `/faculties/${faculty.slug}`,
     },
     openGraph: {
       title: `${faculty.name} | FOSTIIMA Business School`,
-      description: `${faculty.name} - ${faculty.qualification}, ${faculty.experience} industry experience.`,
+      description: summary,
       type: "profile",
       images: faculty.image
         ? [

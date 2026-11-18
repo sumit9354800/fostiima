@@ -88,6 +88,17 @@ export const PAGE_SEO: Readonly<Record<string, PageSeo>> = {
     ogTitle: "Fostiima Conclaves and Conferences",
     ogDescription: "See the conclaves and conferences hosted by Fostiima Business School.",
   },
+  // Client-approved descriptions (November 2026), not from the spreadsheet.
+  // Description only: the titles stay as generated from the event data, and
+  // event.excerpt (shown on the page) is unchanged.
+  "/conclave-conference/margdarshak-4": {
+    description: "Explore Margdarshak 4.0 by FOSTIIMA Business School, featuring Mission AI Sashakt Bharat, an initiative focused on AI-driven innovation and India's future.",
+    ogDescription: "Explore Margdarshak 4.0 by FOSTIIMA Business School, featuring Mission AI Sashakt Bharat, an initiative focused on AI-driven innovation and India's future.",
+  },
+  "/conclave-conference/mission-ai-sashakt-bharat": {
+    description: "Discover Mission AI Sashakt Bharat, an event by FOSTIIMA Business School exploring artificial intelligence, innovation and India's AI-powered future.",
+    ogDescription: "Discover Mission AI Sashakt Bharat, an event by FOSTIIMA Business School exploring artificial intelligence, innovation and India's AI-powered future.",
+  },
   "/contact-us": {
     // R12
     title: "Contact Us | Fostiima Business School, Delhi",
