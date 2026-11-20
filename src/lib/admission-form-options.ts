@@ -12,10 +12,7 @@ export const GRADUATION_STATUS_OPTIONS = [
 export const QUALIFYING_EXAM_LABEL = "Have you qualified ?";
 
 export const QUALIFYING_EXAM_OPTIONS = [
-  "CAT",
-  "MAT",
-  "XAT",
-  "None of the above",
+  "CMAT",
 ] as const;
 
 export function isOneOf<T extends string>(
