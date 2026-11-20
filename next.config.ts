@@ -66,6 +66,10 @@ const LEGACY_REDIRECTS: { source: string; destination: string }[] = [
       "/conclave-conference/margdarshak-awards-:ceremony(Ceremony|ceremony)",
     destination: "/conclave-conference/margdarshak-3-award-ceremony",
   },
+  // The Balance Sheet page's canonical and og:url pointed to this plural URL
+  // (a 404) from 27 Oct to 16 Nov 2026; send anything that picked it up to
+  // the real page.
+  { source: "/balance-sheets", destination: "/balance-sheet" },
   // October GSC sheet rows R2, R8, R10 and R11. Listed here (not after the
   // trailing-slash rule) so "/x/" redirects in one hop instead of two.
   {
