@@ -1,4 +1,4 @@
--- Adds the "Have you qualified CMAT?" answer to admission enquiries.
+-- Adds the "Have you qualified CAT, CMAT, XAT?" answer to admission enquiries.
 --
 -- Additive and nullable: existing rows keep NULL and are not modified. The
 -- city column is NOT changed: new enquiries store an empty string there,

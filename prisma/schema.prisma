@@ -269,7 +269,7 @@ model AdmissionEnquiry {
   city       String   @db.VarChar(150)
   course           String   @default("PGDM") @db.VarChar(100)
   graduationStatus String?  @db.VarChar(100)
-  // "Have you qualified CMAT?" (November 2026). Nullable: older rows
+  // "Have you qualified CAT, CMAT, XAT?" (November 2026). Nullable: older rows
   // have no answer. Added to the live database by
   // prisma/manual-migrations/2026-11-18-add-admission-qualifying-exam.sql.
   qualifyingExam   String?  @db.VarChar(50)
