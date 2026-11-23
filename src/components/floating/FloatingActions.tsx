@@ -1,6 +1,7 @@
 "use client";
 
 import { ADMISSIONS_PHONE } from "@/config/contact";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Download, FileText, PhoneCall, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -42,7 +43,27 @@ const FORMS: Record<
 };
 
 const FORM_KEYS = Object.keys(FORMS) as FormKey[];
-const AUTO_OPEN_KEY = "fostiima_apply_popup_shown";
+
+// Auto-open: the Brochure form on the homepage after 1 s, the Apply form on
+// every other page after 5 s. Each is shown at most once per browser-tab
+// session and has its own flag, so an Apply popup seen on another page does
+// not stop the homepage Brochure popup (and vice versa). The Apply key is
+// unchanged from before, so existing sessions keep their Apply state.
+const AUTO_OPEN: Record<
+  "home" | "other",
+  { form: FormKey; delayMs: number; storageKey: string }
+> = {
+  home: {
+    form: "brochure",
+    delayMs: 1000,
+    storageKey: "fostiima_brochure_popup_shown",
+  },
+  other: {
+    form: "apply",
+    delayMs: 5000,
+    storageKey: "fostiima_apply_popup_shown",
+  },
+};
 
 function loadScript(src: string): Promise<void> {
   return new Promise((resolve) => {
@@ -143,27 +164,38 @@ export default function FloatingActions() {
     return () => observer.disconnect();
   }, []);
 
-  /* Auto-open apply popup once per session */
+  /* Auto-open once per session: Brochure on the homepage, Apply elsewhere.
+     Re-runs only when the visitor moves onto or off the homepage, so the
+     Apply timer keeps running across other pages as before, and a pending
+     timer is cleared when the page type changes. */
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   useEffect(() => {
+    const { form, delayMs, storageKey } = isHome
+      ? AUTO_OPEN.home
+      : AUTO_OPEN.other;
+
     let alreadyShown = false;
     try {
-      alreadyShown = sessionStorage.getItem(AUTO_OPEN_KEY) === "1";
+      alreadyShown = sessionStorage.getItem(storageKey) === "1";
     } catch {
       /* ignore */
     }
     if (alreadyShown) return;
 
     const timer = window.setTimeout(() => {
-      setActivePopup((current) => current ?? "apply");
+      // Never replace a popup the visitor already has open.
+      setActivePopup((current) => current ?? form);
       try {
-        sessionStorage.setItem(AUTO_OPEN_KEY, "1");
+        sessionStorage.setItem(storageKey, "1");
       } catch {
         /* ignore */
       }
-    }, 5000);
+    }, delayMs);
 
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [isHome]);
 
   return (
     <>
