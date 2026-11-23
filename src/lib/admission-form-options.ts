@@ -15,6 +15,8 @@ export const QUALIFYING_EXAM_OPTIONS = [
   "CAT",
   "CMAT",
   "XAT",
+  "NMAT",
+  "SNAP",
 ] as const;
 
 export function isOneOf<T extends string>(
