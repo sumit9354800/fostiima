@@ -44,6 +44,13 @@ const FORMS: Record<
 
 const FORM_KEYS = Object.keys(FORMS) as FormKey[];
 
+// Exact form container ids (ee-form-2, ee-form-5, ee-form-6). Only these are
+// treated as stray copies by the safety net below; other widget elements
+// such as the OTP modal "ee-form-6-form-6-enterOtp" must stay.
+const CONTAINER_IDS: ReadonlySet<string> = new Set(
+  FORM_KEYS.map((key) => FORMS[key].containerId),
+);
+
 // Auto-open: the Brochure form on the homepage after 1 s, the Apply form on
 // every other page after 5 s. Each is shown at most once per browser-tab
 // session and has its own flag, so an Apply popup seen on another page does
@@ -144,12 +151,15 @@ export default function FloatingActions() {
     });
   }, [activePopup]);
 
-  /* Safety net: if the widget ever appends a form directly to <body>
-     (below the footer), remove it. Real forms live only inside our modal. */
+  /* Safety net: if the widget ever appends a form container directly to
+     <body> (below the footer), remove it. Real forms live only inside our
+     modal. Matches the exact container ids only: the widget's OTP step is a
+     modal added to <body> with an id like "ee-form-6-form-6-enterOtp", and
+     removing it left an empty dark overlay instead of the OTP boxes. */
   useEffect(() => {
     const isStray = (node: Node) =>
       node instanceof HTMLElement &&
-      /^ee-form-/.test(node.id) &&
+      CONTAINER_IDS.has(node.id) &&
       !rootRef.current?.contains(node);
 
     const observer = new MutationObserver((mutations) => {
